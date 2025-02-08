@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 1}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 1 (due 5~PM, February 7)}
+\begin{enumerate}
+  \item Prove that
+    \begin{equation}
+      (2n+1) + (2n+3) + (2n+5) + \ldots + (4n-1) = 3n^2
+    \end{equation}
+    for all $n\in \N$.
+  \item For $n\in \N\cup\{0\}$, the Pell numbers are defined by
+    \begin{equation}
+      P_n= \begin{cases}
+      0 & \qquad \text{if $n=0$,} \\
+      1 & \qquad \text{if $n=1$,} \\
+        2P_{n-1} + P_{n-2} & \qquad \text{otherwise.}
+      \end{cases}
+    \end{equation}
+    \begin{enumerate}
+      \item Define
+        \begin{equation}
+          f(n) = \frac{(1+\sqrt2)^n - (1-\sqrt2)^n}{2\sqrt2}.
+        \end{equation}
+        Let $H_n$ be the proposition that ``both $P_n=f(n)$ and
+        $P_{n-1}=f(n-1)$.'' Use mathematical induction to prove that $H_n$ is
+        true for all $n\in \N$, and deduce that $P_n =f(n)$ for all $n\in \N
+        \cup\{0\}$.
+      \item Define the rational number $\lambda = (P_8+P_9)/P_9$. Why is
+        $|\lambda - \sqrt{2}|$ small?
+    \end{enumerate}
+  \item Prove that $\sqrt2+\sqrt5$ is irrational.
+  \item In the lectures, we introduced the field properties A1--A4, M1--M4, DL,
+    and O1--O5.
+    \begin{enumerate}
+      \item Which of the field properties hold for $\N$?
+      \item Which of the field properties hold for $\Z$?
+      \item Consider the binary numbers $\B=\{0,1\}$, where addition and multiplication
+        are defined as
+        \begin{center}
+          \begin{tabular}{lll}
+            $0+0=0$,\qquad&$0+1=1$, \qquad &$1+1=0$, \\[0.4em]
+            $0\times0 =0$, \qquad&$0\times 1 =0$, \qquad&$1\times 1=1$,
+          \end{tabular}
+        \end{center}
+        and the ordering is defined so that $0\le 1$. Which of the field properties hold for $\B$?
+    \end{enumerate}
+  \item Using the field properties of $\R$, prove that
+    \begin{enumerate}
+      \item $0<1$.
+      \item If $0<a<b$ then $0<b^{-1}<a^{-1}$, for all $a,b \in \R$.
+    \end{enumerate}
+  \item Consider each of the following sets:
+    \begin{center}
+      \begin{tabular}{lll}
+        $A=[1,2) \cup (3,\infty)$, \qquad& $B= \{r \in \Q \sep r<2\}$,\qquad& $C=\{r \in \Q \sep r^2<2 \}$, \\[0.4em]
+        $D=\{\tfrac{1}{m}+n \sep m,n\in \N\}$, \qquad& $E=\{\sqrt2, e, \pi\}$, \qquad& $F= \{2-x^2 \sep x\in \R$\}.
+      \end{tabular}
+    \end{center}
+    For each set, determine its minimum and maximum if they exist. Find the infimum and supremum, writing your answers in terms of infinity for unbounded sets. Detailed proofs are not required.
+  \item Let $a,b, \epsilon\in \R$. Prove the following statements, or find a
+    counterexample:
+    \begin{enumerate}
+      \item $a<b$ if and only if $a<b+\epsilon$ for all $\epsilon>0$.
+      \item $a \le b$ if and only if $a<b+\epsilon$ for all $\epsilon>0$.
+    \end{enumerate}
+  \item Let $A$ and $B$ be non-empty bounded subsets of $\R$ and define $A-B=\{a-b \sep a\in A, b\in B\}$. Prove that $\sup (A-B) = \sup A - \inf B$.
+
+  \item Let $C$ and $D$ be non-empty bounded subsets of $\R$. For each of the three statements, either prove the result or find a counterexample:
+    \begin{enumerate}
+      \item Define $M=\{cd \sep c\in C, d\in D\}$. Then $\inf M = (\inf C)(\inf D)$.
+      \item If $\sup C <\inf D$, then there exists an $r\in \R$ such that $c<r<d$ for all $c\in C$ and $d\in D$.
+      \item If there exists an $r\in \R$ such that $c<r<d$ for all $c\in C$ and $d\in D$, then $\sup C<\inf D$.
+    \end{enumerate}
+  \item Define the set of irrational numbers as $\I=\R \setminus \Q$. Prove that if
+    $a<b$ then there exists $x\in\I$ such that $a<x<b$. \textit{(Hint: it may be useful to consider the
+    set $\{ r+\sqrt2 \sep r\in \Q\} \subseteq \I$.)}
+  \item For each of the following sequences defined for $n\in \N$, calculate
+    its limit if it exists:
+    \begin{enumerate}
+      \item $\frac{n^2+3}{n^2-3}$
+      \item $(-1)^n n$
+      \item $\frac{4n+2}{3-5n^2}$
+      \item $\sqrt{n}-\sqrt{n-1}$
+      \item $\sqrt{n^2+n}-n$
+      \item $n!/8^n$
+    \end{enumerate}
+    Detailed proofs are not required, but you should justify your answers.
+  \item
+    \begin{enumerate}
+      \item Find a sequence $(q_n)$ of rational numbers having a limit $\lim
+        q_n$ that is an irrational number.
+      \item Find a sequence $(p_n)$ of irrational numbers having a limit $\lim
+        p_n$ that is a rational number.
+    \end{enumerate}    
+  \item \textbf{Optional.} Find an infinite collection of sets $S_1, S_2, S_3,
+    \ldots$ such that every $S_i$ has an infinite number of elements, $S_i \cap
+    S_j = \emptyset$ for all $i\ne j$, and $\bigcup_{i=1}^\infty S_i = \N$.
+  \item \textbf{Optional.} By writing a computer program or otherwise, show
+    that $\lambda$ from question 2(b) is the closest member of the set $\{p/q
+    \sep p\in \Z, q \in \N, q<P_{10}\}$ to $\sqrt{2}$.
+\end{enumerate}
+\end{document}
