@@ -1,0 +1,11 @@
+* E:\ECE270 Lab\Draft1.asc
+V1 Vin 0 SINE(0V 1mV 1KHz) AC 1V 0
+R1 Vm Vin 100
+R2 Vyicheng Vm 300K
+XU1 0 Vm 5Vp 5Vm Vyicheng LT1498
+V2 5Vp 0 +5V
+V3 5Vm 0 -5V
+.tran 0 3ms 0mS 1uS
+.lib LTC.lib
+.backanno
+.end

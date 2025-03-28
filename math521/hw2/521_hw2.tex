@@ -1,0 +1,180 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 2}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 2 (due 5~PM, February 21)}
+\begin{enumerate}
+  \item Find an example of two sequences $(a_n)$ and $(b_n)$ such that
+    $(a_n)$ and $(a_nb_n)$ both converge, but $(b_n)$ does not.
+  \item For each of the following statements about a sequence $(a_n)$ and a
+    real number $a$, either prove the result or find a counterexample:
+    \begin{enumerate}
+      \item If $\lim a_n = a$ then $\lim |a_n|=|a|$.
+      \item If $\lim |a_n|=0$ then $\lim a_n=0$.
+      \item If $\lim |a_n|=|a|$ then $\lim a_n = a$.
+    \end{enumerate}
+  \item Prove that if $\lim a_n =0$ and $|b_n-b| \le a_n$ for all $n\in
+    \N$, then $\lim b_n=b$.
+  \item Prove that if $\lim a_n = \infty$ and $(b_n)$ is bounded below,
+    then $\lim (a_n+b_n) = \infty$.
+  \item Let $x_1=2$ and define
+    \begin{equation}
+      x_{n+1} = \frac12 \left( x_n + \frac2{x_n}\right).
+      \label{eq:heron}
+    \end{equation}
+    \begin{enumerate}
+      \item Show that $x_n^2$ is always greater than or equal to 2, and use
+        this to show that $x_n$ is a non-increasing sequence. Use this to show
+        that $(x_n)$ converges, and deduce that $\lim x_n = \sqrt{2}$.
+      \item Each $x_n$ is a rational number, and thus Eq.~\eqref{eq:heron}
+        provides a method to generate accurate rational approximations
+        to $\sqrt{2}$, similar to question 2 about the Pell numbers $P_n$ on
+        Assignment 1. Show that $x_5 = (P_{15}+P_{16})/P_{16}$.
+      \item \textbf{Optional.} Is there a general relationship between $x_n$
+        and the Pell numbers?
+    \end{enumerate}
+  \item
+    Consider the sequence $(x_n)$ where $x_1=\frac14$ and
+    \begin{equation}
+      x_{n+1}=rx_n(1-x_n)
+    \end{equation}
+    for $n\in \N$, where $r>0$.
+    \begin{enumerate}
+      \item For the case when $r=\tfrac34$, prove that $\lim x_n =0$.
+      \item Consider the case when $r=\tfrac52$, and introduce the sequence
+        $(z_n)$ such that $x_n = \tfrac35 + z_n$. Derive a recurrence relation
+        giving $z_{n+1}$ in terms of $z_n$. Prove that if $z_n \in
+        (-\tfrac1{10},\tfrac1{10})$ then
+        \begin{equation}
+          |z_{n+1}| \le \tfrac34 |z_n|.
+        \end{equation}
+      \item Using the result from part (b), or otherwise, prove that $(x_n)$
+        converges to $\tfrac35$.
+      \item \textbf{Optional.} Does $(x_n)$ converge when $r=3.82$?
+      \item \textbf{Optional.} Does $(x_n)$ converge when $r=3.83$? Suppose the
+        sequence $(y_n)$ satisfies $y_n=x_{3n}$. Does $(y_n)$ converge?
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Suppose that $(x_n)$ is a convergent sequence. Prove that the
+        sequence $(y_n)$ given by the averages,
+        \begin{equation}
+          y_n=\frac{1}{n} \sum_{i=1}^n x_i
+        \end{equation}
+        also converges to the same limit.
+      \item Find an example where $(y_n)$ converges but $(x_n)$ does not.
+      \item \textbf{Optional.} Suppose $(z_n)$ diverges to $\infty$ and define
+        $x_n=(-1)^n z_n$ for all $n\in \N$. Is it possible to find an example
+        where $(y_n)$ converges?
+    \end{enumerate}
+  \item Let $(a_n)$ be a sequence such that for $n\in \N$,
+    \begin{equation}
+      a_n = \begin{cases}
+        1& \qquad \text{for $n$ odd,} \\
+        -1-2^{-n} & \qquad \text{for $n$ even.}
+      \end{cases}
+    \end{equation}
+    Calculate the monotonic sequences
+    \begin{equation}
+      u_N = \inf\{a_n \sep n>N\}, \qquad v_N = \sup\{a_n \sep n>N\}
+    \end{equation}
+    for each $N\in \N$. Determine $\lim \inf a_n$ and $\lim \sup a_n$.
+  \item \label{ite:q1}Define the function $f: \N \to \N$ so that $f(n)$ equals the largest
+    power of 2 that divides $n$. Table~\ref{tbl:fofn} shows examples of
+    evaluating $f$. Let $(s_n)$ be a sequence.
+    \begin{enumerate}
+      \item Find the set of subsequential limits when $s_n=\tfrac{1}{f(n)}$.
+      \item Find the set of subsequential limits when $s_n=f(3n)$.
+      \item \textbf{Optional.} Find the set of subsequential limits when $s_n =
+        f(n+1) + \tfrac{1}{f(n)}$.
+    \end{enumerate}
+    \begin{table}[b]
+      \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+          \hline
+          $n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+          \hline
+          $f(n)$ & 1 & 2 & 1 & 4 & 1 & 2 & 1 & 8 & 1 & 2 & 1 & 4 & 1 & 2 & 1 & 16 \\
+          \hline
+        \end{tabular}
+      \end{center}
+      \caption{The first sixteen values of the function $f$ defined in question
+      \ref{ite:q1}.\label{tbl:fofn}}
+    \end{table}
+  \item Let $(a_n)$ be a sequence such that $\lim \inf |a_n|=0$. Prove that
+    there is a subsequence $(a_{n_k})$ such that $\sum_{k=1}^\infty a_{n_k}$
+    converges.
+  \item Determine the convergence or divergence of each of the following
+    series defined for $n\in \N$:
+    \[
+      \textrm{(a)}\;\sum_n \frac{1}{2^n+n^2}, \quad
+      \textrm{(b)}\;\sum_n \frac{\cos n}{n^2}, \quad
+      \textrm{(c)}\;\sum_n \frac{1}{\sqrt{n!}},
+    \]
+    \[
+      \textrm{(d)}\;\sum_n \exp\left(-n+2\cos \tfrac{\pi n}{2} \right), \quad
+      \textrm{(e)}\;\sum_n \frac{n!}{n^n}.
+    \]    
+  \item \textbf{Optional -- iterated limits.}\footnote{This is adapted from
+    \textit{Understanding Analysis} by S.~Abbot, exercise 2.3.13.} Let $a_{mn}$
+    be a doubly-indexed array where $m,n\in \N$. What should $\lim_{m,n\to
+  \infty} a_{mn}$ represent?
+    \begin{enumerate}
+      \item Let $a_{mn} = m/(m+n)$ and compute the iterated limits
+        \begin{equation}
+          \lim_{n\to\infty} \left( \lim_{m \to \infty} a_{mn}\right), \qquad
+          \lim_{m\to\infty} \left( \lim_{n \to \infty} a_{mn} \right).
+          \label{eq:iter}
+        \end{equation}
+        Define $\lim_{m,n\to \infty} a_{mn} = a$ to mean that for all $\epsilon>0$,
+        there exists $N$ such that for all $m,n >N$, $|a_{mn} - a|<\epsilon$.
+      \item Consider the two different definitions,
+        \begin{equation}
+          a_{mn} = \frac{1}{m+n}, \qquad a_{mn} = \frac{mn}{m^2+n^2}.
+        \end{equation}
+        For each definition, determine whether $\lim_{m,n} a_{mn}$ exists, and
+        whether the iterated limits in Eq.~\eqref{eq:iter} exist. How do these
+        three values compare?
+      \item Find an example where $\lim_{m,n} a_{mn}$ exists but neither
+        iterated limit can be computed.
+      \item Assume $\lim_{m,n} a_{mn} = a$, and assume that for each fixed
+        $m\in \N$, $\lim_{n\to \infty} (a_{mn}) \to b_m$. Show $\lim_{m\to
+        \infty} b_m = a$.
+      \item Prove that if $\lim_{m,n} a_{mn}$ exists and the iterated limits
+        both exist, then all three limits must be equal.
+    \end{enumerate}
+\end{enumerate}
+\end{document}

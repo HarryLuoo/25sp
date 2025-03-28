@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+\usepackage[font=footnotesize,skip=-10pt]{caption}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 4}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 4 (due 5~PM, March 21)}
+\begin{enumerate}
+  \item Consider the metric space $(\Q,d)$ with $d(x,y) = |x-y|$ and define
+    $F=\{ p\in \Q \sep 2<p^2<5\}$. Show that $F$ is closed and bounded in $\Q$
+    but that $F$ is not compact. Is $F$ open in $\Q$?
+  \item If $(S,d)$ is a metric space, prove that the finite union of compact
+    sets in $S$ is compact. Construct an example to show this does not
+    generalize to infinite unions.
+  \item Let $(S,d_S)$ and $(T,d_T)$ be two metric spaces. Define a product set
+    $S\times T=\{(s,t) \sep s\in S, t\in T\}$. For two elements $(s_1,t_1),
+    (s_2,t_2)\in S\times T$, define the metric
+    \begin{equation}
+      d_{S\times T}((s_1,t_1),(s_2,t_2)) = d_S(s_1,s_2) + d_T(t_1,t_2).
+    \end{equation}
+    Let $K \subseteq S$ and $L \subseteq T$, and define $K\times L = \{(s,t)
+    \sep s\in K, t\in L\}$. Show that if $K\times L$ is compact, then $K$ and
+    $L$ are also compact. \textbf{Optional:} is the converse result true?
+  \item Determine the interior and closure of the following subsets of $\R$:
+    \begin{equation}
+      A= (-1,1] \cap \Q, \qquad B = (-1,1] \cup \Q.
+    \end{equation}
+  \item Consider the function
+    \begin{equation}
+      h(x) = \begin{cases}
+        1-x^2 & \qquad \text{for $x\in \Q$,} \\
+        0 & \qquad \text{for $x\notin \Q$.}
+      \end{cases}
+    \end{equation}
+    Show that $h$ is continuous at $\pm 1$ but at no other points.
+  \item For $\alpha \in \R$, define
+    \begin{equation}
+      f(x) = \begin{cases}
+        |x|^\alpha \sin \tfrac1x & \qquad \text{for $x\ne 0$,} \\
+        0 & \qquad \text{for $x=0$.}
+      \end{cases}
+    \end{equation}
+    Find the exact range of values of $\alpha$ for which $f$ is continuous
+    at 0.
+  \item
+    \begin{enumerate}
+      \item Let $f$ be a continuous real-valued function on an interval
+        $(a,b)$. Show that if $f(q)=0$ for all rational numbers $q$ in $(a,b)$,
+        then $f(x)=0$ for all $x\in (a,b)$.
+      \item Let $f$ and $g$ be continuous real-valued functions on an interval
+        $(a,b)$. Show that if $f(q)=g(q)$ for all rational numbers $q$ in
+        $(a,b)$, then $f(x)=g(x)$ for all $x\in (a,b)$.
+      \item Do the results from parts (a) and (b) still hold for a closed
+        interval $[a,b]$?
+    \end{enumerate}
+  \item Let $f$ be a real-valued function on $\R$. Suppose that for a given
+    $x \in \R$,
+    \begin{equation}
+      \lim_{n\to\infty} \left( f(x+a_n) - f(x-a_n) \right) =0
+    \end{equation}
+    for all sequences $(a_n)$ that converge to 0. Is $f$ continuous at $x$?
+  \item Suppose that $f$ is a real-valued continuous function on $\R$ and
+    $f(a)f(b)<0$ for some $a,b\in \R$. Prove that there exists an $x$ between
+    $a$ and $b$ such that $f(x)=0$.
+  \item Let $f$ be a continuous function on $[a,b]$. Show that the function
+    $f^*$ defined as $f^*(x) = \sup \{f(z) \sep a \le z \le x\}$ is an
+    increasing continuous function on $[a,b]$.
+  \item \textbf{Optional.} A real-valued function on an interval $I$ is called
+    convex if for all $x,y\in I$ and $\lambda \in (0,1)$, then
+    \begin{equation}
+      f((1-\lambda)x+\lambda y) \ge (1-\lambda) f(x) + \lambda f(y).
+    \end{equation}
+    Suppose that $f$ is convex on $[a,b]$. Prove that $f$ is continuous on
+    $(a,b)$, but need not be continuous at $a$ or $b$.    
+\end{enumerate}
+\end{document}

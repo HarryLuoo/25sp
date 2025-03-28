@@ -69,7 +69,38 @@ which is a Gaussian distribution with mean $mu = overline( x) = N p,quad  sigma^
 
 #line(length: 100%)
 == Probability Distribution with Multivariables
-Consider two r.v. $u, v$ , which can assume possible values $u_i, v_i$ for $i = 1,2,dots, M; j = 1,2, dots, N$ 
+Consider two r.v. $u, v$ , which can assume possible values $u_i, v_i$ for $i = 1,2,dots, M; j = 1,2, dots, N.$ 
+
+- Normalization conditoin $ 
+    sum_(i=1)^(M) sum_(j= 1)^(N) P(u_i, v_j) = 1. 
+$ 
+- Unconditioned prob. distribution: $ 
+    P(u_i) = sum_(j=1)^(N) P(u_i, v_j), quad P(v_j) = sum_(i=1)^(M) P(u_i, v_j). 
+$ 
+- Statistical independence: $ 
+    P(u_i, v_j) = P(u_i) P(v_j),
+$
+  in which case the mean of the product is the product of the means: $ 
+    overline( u v) = overline( u) med overline( v).
+$
+
+#line(length: 100%)
+== Continuous probability distribution
+For continuous r.v. $x in (a_1, a_2)$, assign value of r.v. to $f(x)$.  
+
+The probability density function $p(x)$ is normalized: $ 
+    integral_(a_1)^(a_2) p(x) dif x = 1.
+$
+The mean and variance are defined as: $ 
+    overline( x) = integral_(a_1)^(a_2) f(x) p(x) dif x,
+     quad "var"(x) = integral_(a_1)^(a_2) (x - overline( x) )^2 p(x) dif x.
+$
+- Especially, $p(x) dif x $ represents prob. to find $x$ in $[x, x + dif x]$. 
+
+- 
+
+
+
 
 
 

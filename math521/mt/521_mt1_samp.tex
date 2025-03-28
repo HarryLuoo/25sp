@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,mathpazo,amsmath,amsfonts,nicefrac,microtype}
+
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Sample midterm questions}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sep}{\,:\,}
+\setlength{\unitlength}{0.5mm}
+\renewcommand{\labelitemii}{$\diamond$}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Math 521: Midterm 1 information}
+\begin{itemize}
+  \item The course midterm will take place in class on Wednesday March 12,
+    from 9:57am--10:42am.
+  \item The exam will cover everything in class up to the end of the lecture on
+    February 28.
+  \item The exam is closed book---no textbooks, notebooks, calculators,
+    or smartphones allowed. You will not be expected to know every theorem by
+    heart, but you will be expected to remember the basic definitions, such as
+    suprema/infima, convergence/divergence, subsequential limits, interiors and
+    closures. You should also be familiar with the limit theorems for
+    determining convergence of sequences, and the tests for determining series
+    convergence and divergence. 
+  \item There will be three questions in total. At least one question will
+    involve constructing a mathematical proof.
+  \item If a question uses the word ``prove'', then you will be expected to
+    write down a mathematical proof similar to those in the textbook or given in
+    the homework solutions. If a question uses weaker langauge, such as
+    ``determine'', ``justify'', or ``compute'', a less rigorous argument will
+    still receive full credit.
+  \item You can assume a number of basic results, such as
+    \begin{itemize}
+      \item $\sum n^{-p}$ converges if and only if $p>1$,
+      \item the triangle inequality: $|a|+|b|\ge |a+b|$ for all $a,b\in \R$,
+      \item $|b|<a$ if and only if $-a<b<a$,
+      \item $\lim_{n\to \infty} a^n= 0$ for $|a|<1$,
+      \item $\lim_{n\to \infty} n^{1/n} = 1$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Sample midterm questions}
+The following questions are of a similar style to the ones that will be on the
+midterm. They are designed to test familiarity with basic concepts, and will
+generally be more straightforward than some of the questions on the homework.
+\begin{enumerate}
+  \item Prove that $1+\sqrt{1+\sqrt{2}}$ is irrational.
+  \item Consider the following series defined for $n \in \N$:
+    \[
+    \sum_n \frac{8^n}{(n!)^2}, \qquad \sum_n \frac{(-1)^n}{\sqrt{n^2+n}}, \qquad \sum_n \frac{6^n}{n^n}, \qquad \sum_n \frac{1}{n+\nicefrac{1}{2}}.
+    \]
+    For each series, determine whether they converge or diverge. If you make
+    use of any of the theorems for determining series properties, you should
+    state which one you use.
+  \item
+    \begin{enumerate}
+      \item Let $S$ and $T$ be non-empty bounded subsets of $\R$. Prove that
+	$\sup S\cup T = \max \{\sup S,\sup T\}$ and $\sup S \cap T \le \min \{
+	\sup S, \sup T\}$.
+      \item Extend part (a) to the cases where $S$ and $T$ are not bounded.
+      \item Give an example where $\sup S \cap T < \min \{ \sup S, \sup T\}$.
+    \end{enumerate}
+  \item Suppose that $(s_n)$ is a convergent sequence and $(t_n)$ is a sequence
+    that diverges to $\infty$. Prove that
+    \[
+    \lim_{n \to \infty} s_n+t_n = \infty.
+    \]
+  \item Consider the two sets
+    \[
+    A = (0,1] \cup [4,\infty), \qquad B = \left\{\frac{1}{2n} \sep n \in \N\right\}.
+    \]
+    For each set, determine its maximum and minimum if they exist. For
+    each set, determine its supremum and infimum. Detailed proofs are
+    not required, but you should justify your answers.
+  \item Prove that the functions
+    \[
+    d_1(x,y) = (x-y)^4, \qquad d_2(x,y) = 1 + |x-y|,
+    \]
+    \[
+    d_3(x,y)=
+    \begin{cases}
+      x-y & \qquad \textrm{if $x>y$,} \\
+      2(y-x) & \qquad \textrm{if $x \le y,$}
+    \end{cases}
+    \]
+    are not metrics on $\R$.
+  \item
+    \begin{enumerate}
+      \item Prove that if $r$ is irrational, then $r^{1/4}$ and $r+1$ are also irrational.
+      \item Prove that $(\sqrt{2}+\sqrt{3})^{1/4}+1$ is irrational.
+    \end{enumerate}
+  \item Let $S$ be a non-empty bounded subset of $\R$. Define $T=\{|x| \sep
+    x\in S\}$ to be the set of all absolute values of elements in $S$. Prove
+    that $\sup T = \max\{ \sup S, -\inf S\}$.
+  \item
+    \begin{enumerate}
+      \item Prove that $\sqrt{3}-\sqrt{2}$ is irrational.
+      \item Consider the sets
+        \[
+          A = [0,\sqrt{3}-\sqrt{2}] \cap \Q, \qquad B = [0,\sqrt{3}-\sqrt{2}] \cup \Q.
+        \]
+        For each set, determine its maximum, minimum, supremum, and infimum, or
+        state that these values do not exist. Detailed proofs are not required,
+        but you should justify your answers.
+    \end{enumerate}
+  \item Let $(a_n)$ be a sequence and suppose that $\lim_{n\to\infty} n^2a_n=c
+    \in \R$. Prove that $\sum a_n$ converges absolutely.
+  \item Consider the function $f(x)=4x+x^2$, and the sequence
+    $(s_n)$ defined recursively as
+    \[
+      s_{n+1} = f(s_n).
+    \] 
+    \begin{enumerate}
+      \item If $s_0=1$, prove that $\lim_{n\to\infty} s_n = \infty$.
+      \item What is the minimum of $f$ on the interval $[-4,0]$?
+      \item Sketch the function $f$ on the interval $[-4,0]$.
+      \item If $s_0 \in [-4,0]$, prove that $(s_n)$ has a convergent subsequence.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Consider the function $d: \R \times \R \to \R$ defined as
+        \[
+          d(x,y) = \begin{cases}
+            0 & \qquad \text{if $x=y$,} \\
+            1+|x-y| & \qquad \text{if $x\ne y$.}
+          \end{cases}
+        \]
+        Prove that $d$ is a metric on $\R$.
+      \item For the metric space $(\R,d)$, is the set
+        \[
+          A=\{\tfrac1n \sep n \in \N\} \cup \{0\}
+        \]
+        compact? Prove your assertion.
+    \end{enumerate}
+    
+\end{enumerate}
+\end{document}

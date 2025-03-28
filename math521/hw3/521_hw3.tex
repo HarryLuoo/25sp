@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+\usepackage[font=footnotesize,skip=-10pt]{caption}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 3}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 3 (due 5~PM, March 7)}
+\begin{enumerate}
+  \item Suppose that $0 \le a_n < 1$ for all $n\in \N$. Prove that if
+    $\sum_{n=1}^\infty a_n$ converges, then $\sum_{n=1}^\infty a_n^2$ and
+    $\sum_{n=1}^\infty a_n/(1-a_n)$ also converge. Are the converse statements
+    true?
+  \item Let $(u_n)$ and $(v_n)$ be sequences of positive real numbers for $n\in
+    \N$. For each of the following statements, either prove it or provide a
+    counterexample.
+    \begin{enumerate}
+        \item If $(u_n)$ and $(v_n)$ are equal except at finitely many $n$, then
+      $\sum u_n$ and $\sum v_n$ either both converge or both diverge.
+        \item If $(u_n)$ and $(v_n)$ are equal at infinitely many $n$, then $\sum
+      u_n$ and $\sum v_n$ either both converge or both diverge.
+        \item If $\sum u_n$ and $\sum v_n$ diverge, then $\sum u_n v_n$ diverges.
+        \item If $(u_n/v_n) \to 1$ as $n \to \infty$, then $\sum u_n$ and $\sum
+      v_n$ both converge or both diverge.
+        \item If $u_n-v_n\to 0$, then $\sum u_n$ and $\sum v_n$ both converge
+      or both diverge.
+        \item If $(u_{n+1}/u_n)>k>1$ for infinitely many $n$, then $\sum u_n$
+      diverges.
+    \end{enumerate}
+  \item Let $s_n$ be the sum of the first $n$ terms of the series
+    \begin{equation}
+      1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{5}} - \ldots
+    \end{equation}
+    and let $t_n$ be the sum of the first $n$ terms of the rearranged series
+    \begin{equation}
+      1 + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{5}} + \frac{1}{\sqrt{7}} - \frac{1}{\sqrt{4}} + \ldots,
+    \end{equation}
+    which is formed by taking two positive terms and then one negative term.
+    Prove that $(s_n)$ converges. Prove that $t_{3n} \ge s_{2n} + n/\sqrt{4n-1}$
+    and hence that $(t_n)$ diverges.
+  \item
+    \begin{enumerate}
+      \item Let $(a_n)$ be a decreasing sequence of positive numbers. Prove
+        that the series
+        \begin{equation}
+          \sum_{n=1}^\infty a_n  \qquad \text{and} \qquad \sum_{n=1}^\infty 2^n a_{2^n}
+        \end{equation}
+        both converge or both diverge.
+      \item Using part (a), prove that $\sum_{n=1}^\infty n^{-\alpha}$ is convergent if and only if $\alpha>1$.
+      \item Prove that $\sum_{n=2}^\infty n^{-1} (\log n)^{-\alpha}$ is convergent if and only if $\alpha>1$.
+    \end{enumerate}
+  \item
+    Using the integral test, or otherwise, determine whether the following series converge:
+    \[
+      \textrm{(a)}\;\sum_n \frac{1}{\sqrt{n}\log n}, \quad
+      \textrm{(b)}\;\sum_n \frac{1}{n(\log n)(\log(\log n))}, \quad
+      \textrm{(c)}\;\sum_n \frac{\log n}{n}, \quad
+      \textrm{(d)}\;\sum_n \frac{\log n}{n^2}.
+    \]
+  \item \textbf{Optional.} Find a sequence $(a_n)$ such that
+    \begin{equation}
+      \lim_{n\to\infty} a_n n(\log n)(\log(\log n)) =0
+    \end{equation}
+    but $\sum a_n$ diverges.
+  \item Consider the functions defined for $x,y\in \R$:
+    \[
+      d_1(x,y) = (x-y)^2, \qquad d_2(x,y) = \sqrt{|x-y|}, \qquad d_3(x,y) = |x^3-y^3|,
+    \]
+    \[
+      d_4(x,y) = |x^4 - y^4|, \qquad d_5(x,y) = \min \{ |x-y|, 1\}.
+    \]
+    For each function, determine whether it is a metric or not. For the
+    functions that are metrics, calculate the neighborhood $N_2(1)$.
+  \item Define the distance function
+    \begin{equation}
+      d(x,y) = \begin{cases}
+        |x|+ |y| & \qquad \text{for $x\ne y$,} \\
+        0 & \qquad \text{for $x=y$.}
+      \end{cases}
+    \end{equation}
+    Prove that $d$ is a metric on $\R$. For $0<a<b$, show that the
+    open interval $(a,b) = \{x \in \R \sep a<x<b\}$ is both open
+    and closed with respect to $d$. Determine whether or not $(\R,d)$
+    is a complete metric space.
+  \item Let $B$ be the set of all bounded sequences $\vu=(u_1,u_2,\ldots)$. For
+    each of the following functions, prove that it is a metric, or explain why
+    it is not.
+    \begin{enumerate}
+      \item $d(\vu,\vv)=\sup\{|u_j - v_j| \sep j \in \N\}$.
+      \item $d(\vu,\vv)=\sum_{j=1}^\infty 2^{-j} |u_j - v_j|$.
+      \item $d(\vu,\vv)=\sum_{j=1}^\infty \tfrac{1}{j} |u_j -v_j|$.
+    \end{enumerate}
+    \textbf{Optional.} For the three different definitions of $d$, determine
+    whether or not $(B,d)$ is a complete metric space.
+  \item Consider $\R^2$ with positions written as $\vx=(x_1,x_2)$, and
+    define the Euclidean norm as $\|\vx\| = (x_1^2+x_2^2)^{1/2}$.
+    The Poincar\'e disk consists of the points $S=\{\vx \sep \|\vx\|<1\}$
+    with metric
+    \begin{equation}
+      d(\vx,\vy) = \cosh^{-1} \left( 1+ \frac{2\|\vx-\vy\|^2}{(1-\|\vx\|^2) (1-\|\vy\|^2)} \right)
+    \end{equation}
+    for all $\vx,\vy\in S$. Define $r=\cosh^{-1} \tfrac{3}{2}$. Draw the
+    Poincar\'e disk, and then calculate and draw the neighborhoods $N_r(\vx)$
+    for $\vx=(0,0)$, $(\tfrac12,0)$, and $(\tfrac34,0)$.\footnote{This can be
+    done analytically, although you may use a computer if you wish.}
+  \item Let $(p_n)$ be a Cauchy sequence in a metric space $(S,d)$.
+    Suppose that a subsequence $(p_{n_k})$ converges to a point $p\in S$.
+    Prove that the full sequence converges to $p$.
+\end{enumerate}
+\end{document}
