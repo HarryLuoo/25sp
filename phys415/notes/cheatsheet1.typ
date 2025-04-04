@@ -1,10 +1,13 @@
 #import "@preview/physica:0.9.3": *
 #import "@preview/ilm:1.4.0": *
-#show heading: text.with(size: 9pt, weight: 1000)
-#set text(7pt)
-#set page(margin: (x: 0.2cm, y: 0.2cm),numbering: "1/1", columns: 4, flipped: true, paper: "us-letter")
+//#show heading: text.with(size: 9pt, weight: 1000)
+//#set page(margin: (x: 0.2cm, y: 0.2cm),numbering: "1/1", columns: 4, flipped: true, paper: "us-letter")
+//#show math.equation: set text(7pt)
+
+#set text(12pt)
+#set page(margin: (x: 1cm, y: 1.2cm),numbering: "1/1", columns: 1, flipped: false, paper: "us-letter")
 #set math.equation(numbering:"[1")
-#show math.equation: set text(7pt)
+
 #set math.cases(gap: 0.2em)
 
 

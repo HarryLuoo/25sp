@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{hyperref}
 
 % Other useful packages
 \usepackage{geometry}
@@ -12,14 +13,15 @@
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{setspace}
+\usepackage{cite}
 \setstretch{1.2}     
 
 % Page margins
-\geometry{margin=1in}
+\geometry{margin=0.8in}
 
 
 % Title information
-\title{[DRAFT] The Brachistrochrone Problem: a Finite Element Approach \thanks{Honors optional project for MATH 521}}
+\title{The Brachistrochrone Problem: a Finite Element Approach \thanks{Honors optional project for MATH 521}}
 
 \author{Guizhong (Harry) Luo}
 \date{03/2025}
@@ -29,30 +31,53 @@
 \begin{abstract}
     The Brachistochrone problem seeks the path \(y(x)\) between two points that allows a particle sliding under gravity to travel in the minimum possible time. We present a numerical solution using the Finite Element Analysis (FEA) method. The continuous problem, formulated as minimizing the time functional 
     \begin{equation}
-    T[y(x)] = \int_0^{x_f} \frac{\sqrt{1 + (y'(x))^2}}{\sqrt{2gy(x)}} dx,
+    T[y(x)] = \int_0^{x_\mathrm{f}}\frac{\sqrt{1 + (y'(x))^2}}{\sqrt{2gy(x)}} dx,
     \label{eq:T}
     \end{equation}
         is discretized using P2 quadratic elements and approximated via Gaussian quadrature. This transforms the variational problem into a finite-dimensional nonlinear optimization problem, which is then optimized using the L-BFGS-B algorithm. 
-    The numerical result nearly identical to the analytical cycloid solution, with a difference of \(0.1502\%\)
+    The numerical result is nearly identical to the analytical cycloid solution, with a difference of \(0.1502\%\)
 \end{abstract}
 
 
 \section{Introduction}
-!!TODO: Introduce the background of the problem, and derive the total time functional. State the analytical solution as a cycloid.
+The classic Brachistochrone problem, first stated by Johann Bernoulli in \textit{Acta Eruditorum} in June, 1696, as a novel problem placed before the ``finest mathematicians of our time" \cite{Bernoulli1696BrachWikip}. He wrote: 
+\begin{quotation}
+    Given two points A and B in a vertical plane, what is the curve traced out by a point acted on only by gravity, which starts at A and reaches B in the shortest time.
+\end{quotation}
+This problem was solved by many canonical figures soon after it was proposed. Prominent mathematicians involved includes Leibniz, L'Hospital, Newton, and the two Bernoullis\cite{Padyala2019Brachistochrone}. We here include a standard setup of the problem.
 
+Considering energy conservation, a bead subject only to gravity and moving from rest obtains a speed \(v = \sqrt{2 g y}\) at vertical displacement \(y\). In standard 2D Euclidean space, the infinitesimal arc length is given by the metric:
+\[
+ ds = \sqrt{1 + (y'(x))^2} dx,
+\]
+where \(y'(x) = dy / dx.\) Hence, the total time \(T\) is found by integrating the time differential \(dt = ds / v\) over the path \(y(x)\). We then have time as a functional of the path function:
+\[
+T[y(x)] = \int_0^{x_\mathrm{f}}dt =  \int_0^{x_\mathrm{f}} \frac{ds}{v} =  \int_0^{x_\mathrm{f}} \frac{\sqrt{1 + (y'(x))^2}}{\sqrt{2gy(x)}} dx.
+\]
+
+The solution has been found using various methods, including an analogy to the path of light via Fermat's principle of least time, and famously through the calculus of variations using the Euler-Lagrange equation \cite{WeissteinBrachistochrone}. The path of fastest descent is a segment of an inverted cycloid, which can be described parametrically (for parameter $a$ determined by the endpoint $(x_f, y_f)$) as:
+\begin{align*}
+x(\theta) &= a (\theta - \sin \theta) \\
+y(\theta) &= a (1 - \cos \theta).
+\end{align*}
+
+
+It is also worth noting that in 1638, Galileo Galilei had tried to solve a similar problem for the path of the fastest descent from a point to a wall \cite{Galilei1638Discorsi}. He proposed a path traced by the arc of a circle connecting the two endpoints. We will make use of Galileo's wisdom later to set up our initial guess for optimization.
+
+ Some 329 years after the original challenge, we revisit this problem with a modern numerical approach. This paper details a solution using the Finite Element Method, a technique offering powerful tools for solving variational problems computationally. The methodology and results will be elaborated in the successive sections.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Finite Element Formulation}
     
     We employ quadratic (P2) finite elements to discretize the time functional and approximate the unknown path \(y(x)\).
     
-    First, we divide the domain \( \left[0, x_f\right] \) into \(N \) uniform finite elements, each of length \( h = x_f / N \). We define a total of \(2N+1\) global nodes along the domain. The coordinate of the \(m\)-th global node (where \(m = 0, 1, \ldots, 2N\)) is given by
+    First, we divide the domain \( \left[0, x_{\mathrm{f}}\right] \) into \(N \) uniform finite elements, each of length \( h = x_{\mathrm{f}} / N \). We define a total of \(2N+1\) global nodes along the domain. The coordinate of the \(m\)-th global node (where \(m = 0, 1, \ldots, 2N\)) is given by
     \[ x_m = m \frac{h}{2}. \]
     Note that nodes with even indices \(m=2n\) ($n=0..N$) lie at the boundaries between elements (or domain ends), while nodes with odd indices \(m=2n+1\) ($n=0..N-1$) lie at the midpoints of the elements.
     
     An element \(e\) (where \(e = 1, 2, \ldots, N\)) is defined by three consecutive global nodes: a start node \(i = 2(e-1)\), a midpoint node \(j = 2e-1\), and an end node \(k = 2e\). The element thus spans the physical interval \( [x_i, x_k] \).
     
     We seek to determine the approximate vertical position \( y \) at each global node \(m\). Let \( y_m \approx y(x_m) \) denote the nodal value at node \(m\). These \( y_m \) values are the fundamental variables in our discretized problem. The boundary conditions fix the values at the first and last nodes:
-    \[ y_{0} = y(x_{0}) = y(0) = 0 \quad , \quad y_{2N} = y(x_{2N}) = y(x_f) = y_f. \]
+    \[ y_{0} = y(x_{0}) = y(0) = 0 \quad , \quad y_{2N} = y(x_{2N}) = y(x_{\mathrm{f}}) = y_f. \]
     The actual unknowns to be solved for are the values at the interior nodes ($m = 1, 2, \ldots, 2N-1$). We collect these unknown nodal values into the vector of degrees of freedom:
     \begin{equation}
     \mathbf{y_\text{int}} = \left[ y_1, y_2, \ldots, y_{2N-1} \right]^\top \in \mathbb{R}^{2N-1}.
@@ -74,7 +99,8 @@
     \[
         dx = J d\xi = \frac{h}{2} d\xi.
     \]
-    
+
+   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
 \subsection{Quadratic Shape Functions for Approximating \( y(x) \) and \( y'(x) \) }
     
@@ -123,10 +149,10 @@
     
     For numerical optimization, we minimize the functional \( T^* \) which omits the constant factor \( \frac{1}{\sqrt{2g}} \) from the original total time functional (Eq.~\eqref{eq:T}) to get:
     \begin{equation}
-        T^*[y(x)] = \int_0^{x_f} \sqrt{\frac{1 + (y'(x))^2}{y(x)}} dx .
+        T^*[y(x)] = \int_0^{x_{\mathrm{f}}} \sqrt{\frac{1 + (y'(x))^2}{y(x)}} dx .
     \label{eq:T*}
     \end{equation}
-    We approximate this functional by replacing the exact function \( y(x) \) and its derivative \( y'(x) \) with their finite element approximations \( y_h (x) \) and \( y'_h (x) \). The integral over the full domain \( [0, x_f] \) is computed as the sum of integrals over each element \(e\):
+    We approximate this functional by replacing the exact function \( y(x) \) and its derivative \( y'(x) \) with their finite element approximations \( y_h (x) \) and \( y'_h (x) \). The integral over the full domain \( [0, x_{\mathrm{f}}] \) is computed as the sum of integrals over each element \(e\):
     \begin{equation}
         T^*[y(x)] \approx T_h(\mathbf{y_\text{int}}) = \sum_{e=1}^{N} T_e^*(\mathbf{y}_e) \label{eq:Th}
     \end{equation}
@@ -349,7 +375,7 @@ The assembly process calculates \( \mathbf{G} \) by iterating through the elemen
 After iterating through all elements, the vector \( \mathbf{G} \) holds the complete gradient \( \nabla T_h(\mathbf{y_\text{int}}) \).
 \section{Numerical Solution and Results}
 
-With the discretized objective function \( T_h(\mathbf{y_\text{int}}) \) (Eq.~\eqref{eq:Te*approx}) and its gradient \( \nabla T_h(\mathbf{y_\text{int}}) \) (Eq.~\eqref{eq:gradT}) derived, the Brachistochrone problem is reduced to a finite-dimensional optimization problem (Eq.~\eqref{eq:minT}). We solve this numerically using the Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS-B) algorithm, which iteratively minimizes \( T_h(\mathbf{y_\text{int}}) \) using function and gradient evaluations.
+With the discretized objective function \( T_h(\mathbf{y_\text{int}}) \) (Eq.~\eqref{eq:Te*approx}) and its gradient \( \nabla T_h(\mathbf{y_\text{int}}) \) (Eq.~\eqref{eq:gradT}) derived, the Brachistochrone problem is reduced to a finite-dimensional optimization problem (Eq.~\eqref{eq:minT}). We solve this numerically using the Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS-B) algorithm, which iteratively minimizes \( T_h(\mathbf{y_\text{int}}) \) using function and gradient evaluations. The code implementation is found at \nameref{app:appendix}
 
 For an initial guess, we adopt a circular arc path, as considered by Galileo.  The physical constraint \(y(x) \ge 0\) is enforced by setting lower bounds \( y_m \ge \epsilon \) for all unknown nodal values within the L-BFGS-B solver.
 
@@ -363,12 +389,29 @@ Figure \ref{fig:1} demonstrates excellent agreement between the P2 FEA solution 
     \label{fig:1}
 \end{figure}
 
-\newpage
-\section*{Appendix}
-Code used for Numrical Solution:
 
+\section{Conclusion}
+
+
+In this work, we presented a numerical solution to the classic Brachistochrone problem utilizing the Finite Element Method with quadratic (P2) shape functions. By discretizing the time functional and employing Gaussian quadrature --- specifically, tailored Gauss-Jacobi quadrature to accurately handle the integrable singularity at the starting point and Gauss-Legendre quadrature elsewhere --- we transformed the variational problem into a finite-dimensional nonlinear optimization task. This task was effectively solved using the L-BFGS-B algorithm, leveraging the analytically derived gradient of the discretized functional. Our results demonstrate excellent agreement with the known analytical cycloid solution, achieving a minimum descent time within 0.15\% of the theoretical value, thereby validating the robustness and accuracy of the P2 FEM approach for this problem.
+
+
+!!TODO: lit Review
+
+
+
+\bibliographystyle{plain} 
+\bibliography{references}
+
+
+
+
+\newpage
+\section*{Appendix: Code used for Numerical Solution}
+\label{app:appendix}
+\fontsize{9}{9}\selectfont
 \begin{verbatim}
-    import numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize, brentq
 from scipy.special import roots_jacobi
@@ -416,9 +459,8 @@ def global_calc(y_unk, h, yf, N):
     """Global T* and gradient assembly"""
     y = np.zeros(2*N+1)
     y[1:-1], y[-1] = y_unk, yf
-
     T, g = 0, np.zeros(len(y_unk))
-
+    
     for i in range(1, N+1):
         idx = [2*(i-1), 2*i-1, 2*i]
         Ti, gi = element(y[idx], h, first=(i==1))
