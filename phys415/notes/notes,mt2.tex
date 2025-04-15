@@ -1,0 +1,915 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{physics} % For derivatives: \pdv, \dv, \expval{}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black]{hyperref}
+\usepackage{lmodern} % Use a modern font
+\usepackage[T1]{fontenc}
+\usepackage{mathtools} % For \coloneqq
+\usepackage{xcolor}
+
+% Define Boltzmann constant = 1
+% Note: We will write equations with k_B implicitly set to 1.
+% Temperature T has units of energy.
+% Entropy S = ln(Omega) is dimensionless.
+% Gas constant R = N_A (Avogadro's number).
+\renewcommand{\hbar}{h/(2\pi)} % Use standard notation, ensure h is defined if needed. Planck constant h.
+
+\newcommand{\avg}[1]{\expval{#1}} % Use physics package convention
+\newcommand{\variance}{\mathrm{var}}
+\newcommand{\rmsd}{\Delta} % RMS deviation symbol
+\newcommand{\const}{\text{const.}}
+\newcommand{\mathe}{\mathrm{e}} % Upright e for exponential
+
+\title{Thermal Physics Notes}
+\author{Refined Landau Style ($k_B = 1$)}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\part*{Part 1: Foundations and Thermodynamics}
+
+\section{Foundations: Probability and Statistics}
+Statistical mechanics builds upon probability theory to describe systems with many degrees of freedom. We first review essential concepts using the random walk as a concrete example.
+
+\subsection{The Random Walk and Binomial Distribution}
+Consider a simple model: a one-dimensional random walk over $N$ steps, each of length $l$. The probability of moving right is $p$, and left is $q=1-p$.
+Let $n_R$ be the number of steps right and $n_L$ be the number of steps left, such that $N = n_R + n_L$. The final position is $x = (n_R - n_L)l$.
+We can express the number of steps in terms of the net displacement $m = x/l$:
+\begin{equation*}
+    n_R = \frac{N+m}{2}, \qquad n_L = \frac{N-m}{2}
+\end{equation*}
+The number of distinct paths leading to $m$ steps net displacement to the right is given by the binomial coefficient $\binom{N}{n_R}$. The probability of any specific path is $p^{n_R} q^{n_L}$.
+Therefore, the probability of ending at position $x=ml$ after $N$ steps follows the Binomial Distribution:
+\begin{equation}
+    P_N(m) = \binom{N}{n_R} p^{n_R} q^{n_L} = \frac{N!}{n_R! n_L!} p^{n_R} (1-p)^{n_L}
+\end{equation}
+where $n_R = (N+m)/2$.
+
+\subsection{Moments of a Distribution}
+Key characteristics of a probability distribution $P(x_i)$ are its moments:
+\begin{itemize}
+    \item Mean (average value): $\avg{x} = \sum_i P(x_i) x_i$
+    \item Variance (spread squared): $\variance(x) = \sigma^2 = \avg{(x - \avg{x})^2} = \avg{x^2} - (\avg{x})^2$
+    \item Standard Deviation (RMS fluctuation): $\rmsd x_{\mathrm{rms}} = \sqrt{\variance(x)}$
+\end{itemize}
+For the number of right steps $n_R$ in the binomial distribution:
+\begin{align}
+    \avg{n_R} &= Np \\
+    \variance(n_R) &= Npq \\
+    \rmsd n_{R, \mathrm{rms}} &= \sqrt{Npq}
+\end{align}
+The relative width measures the distribution's sharpness around the mean:
+\begin{equation}
+    \frac{\rmsd n_{R, \mathrm{rms}}}{\avg{n_R}} = \frac{\sqrt{Npq}}{Np} = \sqrt{\frac{q}{p}} \frac{1}{\sqrt{N}}
+\end{equation}
+For large $N$, the relative width approaches zero ($\propto 1/\sqrt{N}$), indicating the distribution becomes highly peaked.
+
+\subsection{Gaussian Approximation (Large N Limit)}
+In the limit of many steps ($N \gg 1$), calculations involving factorials become cumbersome. We use Stirling's approximation for large $N$:
+\begin{equation*}
+    \ln N! \approx N \ln N - N + \frac{1}{2} \ln(2 \pi N) \quad \text{(or often just } N \ln N - N\text{)}
+\end{equation*}
+Applying this to the Binomial distribution and expanding around the mean $\mu = Np$, we find it approaches a continuous Gaussian (Normal) distribution:
+\begin{equation}
+    P_N(n_R) \approx \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(n_R - \mu)^2}{2 \sigma^2} \right]
+\end{equation}
+where $\mu = Np$ is the mean and $\sigma^2 = Npq$ is the variance. This approximation is excellent when the mean number of steps is far from the boundaries, i.e., $Npq \gg 1$.
+
+\subsection{Multivariable Probability and Change of Variables}
+We often deal with multiple random variables or need to find the distribution of a function of a random variable.
+\begin{itemize}
+    \item Marginal Probability: $P_u(u_i) = \sum_j P(u_i, v_j)$ (integrating out other variables).
+    \item Uncorrelated Variables: $P(u_i, v_j) = P_u(u_i) P_v(v_j)$.
+    \item Change of Variables: If $y = f(x)$ and $x$ has probability density $p(x)$, the density for $y$ is $\tilde{p}(y)$. It accounts for the mapping of probability density: $\tilde{p}(y) dy = \sum p(x_i) dx_i$.
+        \begin{equation}
+           \tilde{p}(y) = \sum_i p(x_i) \abs{\dv{x}{y}}_{x=x_i} = \sum_i \frac{p(x_i)}{\abs{\dv{y}{x}}_{x=x_i}}
+        \end{equation}
+        where the sum is over all roots $x_i$ such that $f(x_i) = y$.
+\end{itemize}
+
+\subsubsection*{Example: Component of a Random 2D Vector}
+Consider a 2D vector $\vec{B}$ of fixed magnitude $B$ with uniform random orientation $\theta \in [0, 2\pi)$. The probability density for the angle is $p(\theta)=1/(2\pi)$. We seek the probability density $\tilde{p}(B_x)$ for the x-component, $B_x = B \cos\theta$.
+For a given $B_x$ ($|B_x|<B$), there are two angles $\theta_1 = \arccos(B_x/B)$ and $\theta_2 = 2\pi - \theta_1$.
+The Jacobian is $\dv{B_x}{\theta} = -B \sin\theta$, so $\abs{\dv{\theta}{B_x}} = 1/\abs{-B \sin\theta} = 1/\sqrt{B^2 - B_x^2}$.
+Applying the change of variables formula:
+\begin{align}
+    \tilde{p}(B_x) &= p(\theta_1) \abs{\dv{\theta}{B_x}}_{\theta_1} + p(\theta_2) \abs{\dv{\theta}{B_x}}_{\theta_2} \\
+                   &= \frac{1}{2\pi} \frac{1}{\sqrt{B^2 - B_x^2}} + \frac{1}{2\pi} \frac{1}{\sqrt{B^2 - B_x^2}} \\
+                   &= \frac{1}{\pi \sqrt{B^2 - B_x^2}}
+\end{align}
+The resulting probability density is:
+\begin{equation}
+    \tilde{p}(B_x) = \begin{cases} \frac{1}{\pi \sqrt{B^2 - B_x^2}} & \text{if } |B_x| < B \\ 0 & \text{otherwise} \end{cases}
+\end{equation}
+
+\section{The Statistical Basis of Thermodynamics}
+Here we connect the microscopic world of particles to macroscopic thermodynamics.
+
+\subsection{Microstates and Macrostates}
+A \textit{microstate} specifies the exact state of every particle (e.g., all positions and momenta in classical mechanics, or the overall quantum state). A \textit{macrostate} is defined by observable macroscopic parameters like total energy $E$, volume $V$, and particle number $N$. A single macrostate typically corresponds to a vast number of microstates.
+
+\subsection{The Fundamental Postulate}
+For an isolated macroscopic system in equilibrium, characterized by fixed $(E, V, N)$ (within small tolerances), let $\Omega(E, V, N)$ denote the total number of distinct microstates accessible to the system. The cornerstone of statistical mechanics is the fundamental postulate:
+\textit{All accessible microstates of an isolated system in equilibrium are equally probable.}
+The probability of finding the system in any specific accessible microstate $\mu_i$ is therefore:
+\begin{equation*}
+    P(\mu_i) = \frac{1}{\Omega(E, V, N)}
+\end{equation*}
+
+\subsection{Statistical Definition of Macroscopic Parameters}
+If a macroscopic parameter $y$ (e.g., pressure, magnetization) can take value $y_k$ in certain microstates, the probability of observing $y_k$ is proportional to the number of microstates $\Omega(E; y_k)$ consistent with both $E$ and $y_k$:
+\begin{equation}
+    P(y_k) = \frac{\Omega(E; y_k)}{\Omega(E)}, \qquad \text{where } \Omega(E) = \sum_k \Omega(E; y_k)
+\end{equation}
+The average value (expectation value) of $y$ is calculated using these probabilities:
+\begin{equation}
+    \avg{y} = \sum_k y_k P(y_k) = \frac{\sum_k y_k \Omega(E; y_k)}{\Omega(E)}
+\end{equation}
+
+\subsubsection*{Example: Three Spin-1/2 Particles}
+Consider 3 non-interacting spins in a field $H$. Single spin energy is $\mp \mu H$ for $m_s = \pm 1/2$.
+Suppose the total energy is fixed at $E = -\mu H$. This requires two spins up ($+1/2$) and one spin down ($-1/2$). The accessible microstates are $(+,+,-)$, $(+,-,+)$, $(-,+,+)$. Thus, $\Omega(E=-\mu H) = 3$.
+Now consider the state of the first spin. The microstates where $m_1 = +1/2$ are $(+,+,-)$ and $(+,-,+)$. So, $\Omega(E; m_1=+1/2) = 2$.
+The probability that the first spin is up is $P(m_1=+1/2) = \Omega(E; m_1=+1/2) / \Omega(E) = 2/3$.
+
+\subsection{Density of States}
+For systems with continuous or quasi-continuous energy levels (like classical systems or quantum systems in the thermodynamic limit), it's useful to define the \textit{density of states} $\omega(E)$, such that $\omega(E) \delta E$ is the number of microstates with energy between $E$ and $E+\delta E$. We often write this number simply as $\Omega(E)$, understanding the implicit energy shell $\delta E$:
+\begin{equation*}
+    \Omega(E) \equiv \omega(E) \delta E
+\end{equation*}
+
+\subsubsection*{Example: Classical Monatomic Ideal Gas}
+For $N$ classical point particles in volume $V$, the Hamiltonian is $H = \sum_{i=1}^N \frac{\vec{p}_i^2}{2m}$.
+The number of states $\Omega(E)$ corresponds to the volume of phase space within the energy shell $[E, E+\delta E]$. The position part gives $V^N$. The momentum part is the volume of a thin hyperspherical shell in $3N$-dimensional momentum space.
+The volume of a $D$-dimensional hypersphere of radius $R$ scales as $R^D$. Here $D=3N$ and $R=\sqrt{2mE}$. The phase space volume $\Sigma(E)$ with energy *up to* $E$ scales as $V^N (\sqrt{E})^{3N} = V^N E^{3N/2}$.
+The density of states is $\omega(E) = d\Sigma/dE \propto V^N E^{3N/2 - 1}$.
+For large $N$, the term $-1$ is negligible. It is common practice (though slightly imprecise) to approximate the number of states \textit{in the shell} $\Omega(E)$ as being proportional to the dominant term:
+\begin{equation*}
+    \Omega(E) \propto V^N E^{3N/2} \quad (\text{Large } N \text{ approximation})
+\end{equation*}
+The proportionality constants and $\delta E$ are often absorbed when defining entropy via logarithms.
+
+\section{Interaction Between Systems and Laws of Thermodynamics}
+Now we consider how macroscopic systems interact and exchange energy, leading to the fundamental laws of thermodynamics.
+
+\subsection{Types of Interaction: Heat and Work}
+Consider a system interacting with its surroundings. Energy transfer can occur via two macroscopic mechanisms:
+\begin{itemize}
+    \item \textbf{Heat ($Q$):} Energy transfer due to a temperature difference, occurring when external parameters (like volume) are held fixed. By definition, $Q = \Delta \avg{E}$ under these conditions. Heat is energy transfer associated with microscopic degrees of freedom.
+    \item \textbf{Work ($W$):} Energy transfer due to changes in macroscopic external parameters (e.g., volume change against external pressure, changing magnetic field). Work done \textit{by} the system is defined as $W = -\avg{\Delta_x E}$, where $\Delta_x E$ is the energy change solely due to the change in parameter $x$. Work is energy transfer associated with macroscopic degrees of freedom.
+\end{itemize}
+For a general interaction involving both mechanisms, the total change in the system's average energy $\Delta \avg{E}$ is related to heat absorbed $Q$ and work done $W$ by:
+\begin{equation*}
+    Q = \Delta \avg{E} + W \quad \implies \quad \Delta \avg{E} = Q - W
+\end{equation*}
+
+\subsection{The First Law of Thermodynamics}
+This is the principle of energy conservation applied to thermodynamic processes. For an infinitesimal change, the change in internal energy $dE$ (we now drop the average notation $\avg{E}$) equals the infinitesimal heat absorbed $\delta Q$ minus the infinitesimal work done \textit{by} the system $\delta W$:
+\begin{equation}
+    dE = \delta Q - \delta W
+\end{equation}
+Here, $E$ is a \textit{state function}, meaning $dE$ is an exact differential; its change depends only on the initial and final states. However, $\delta Q$ and $\delta W$ are \textit{inexact differentials}; the heat and work depend on the specific path taken between states.
+
+\subsection{Quasistatic Processes and Generalized Forces}
+A \textit{quasistatic} process occurs so slowly that the system remains infinitesimally close to equilibrium at all stages. This allows macroscopic parameters (like T, P) to be well-defined throughout the system.
+If the system's Hamiltonian $H(q, p; x)$ depends on an external parameter $x$ (like volume $V$), a change $dx$ causes an energy change $dE = (\partial H / \partial x) dx$. Averaging over an equilibrium ensemble: $dE = \avg{\partial H / \partial x} dx$.
+This energy change corresponds to work done *on* the system. The work done *by* the system is $\delta W = -dE = -\avg{\partial H / \partial x} dx$.
+We define the \textit{generalized force} $\chi$ conjugate to the parameter $x$ as:
+\begin{equation}
+    \chi \equiv -\avg{\frac{\partial H}{\partial x}}
+\end{equation}
+Then the quasistatic work done by the system is:
+\begin{equation}
+    \delta W = \chi dx
+\end{equation}
+
+\subsubsection*{Example: Piston}
+If the external parameter is volume $V$, the conjugate generalized force is the pressure $P$. The definition implies $P = -\avg{\partial H / \partial V}$. (Thermodynamically, $P = -\pdv{E}{V}_S$).
+The quasistatic work done by the system during a volume change $dV$ is:
+\begin{equation*}
+    \delta W = P dV
+\end{equation*}
+For a finite volume change from $V_i$ to $V_f$, the total work is $W = \int_{V_i}^{V_f} P(V) dV$.
+
+\subsection{Thermal Equilibrium, Entropy, and Temperature}
+Consider two systems (1 and 2) in thermal contact, forming an isolated composite system with total energy $E = E_1 + E_2$. The number of microstates of the combined system, when system 1 has energy $E_1$, is $\Omega_{total}(E_1) = \Omega_1(E_1) \Omega_2(E - E_1)$.
+In equilibrium, the system will be found in the macrostate that maximizes the total number of microstates $\Omega_{total}$. Since $\ln x$ is monotonic, this is equivalent to maximizing $\ln \Omega_{total} = \ln \Omega_1(E_1) + \ln \Omega_2(E - E_1)$.
+The condition for maximum is $\frac{d}{dE_1} (\ln \Omega_1 + \ln \Omega_2) = 0$:
+\begin{equation*}
+    \pdv{\ln \Omega_1}{E_1} + \pdv{\ln \Omega_2}{E_2} \pdv{E_2}{E_1} = 0 \implies \pdv{\ln \Omega_1}{E_1}_{E_1=\Tilde{E}_1} = \pdv{\ln \Omega_2}{E_2}_{E_2=E-\Tilde{E}_1}
+\end{equation*}
+where $\Tilde{E}_1$ is the most probable energy distribution. This suggests defining a quantity whose equality signifies equilibrium.
+We define the dimensionless \textit{statistical entropy} $S$ as:
+\begin{equation}
+    S(E, V, N) \equiv \ln \Omega(E, V, N)
+\end{equation}
+Entropy is additive for combined systems ($S_{total} = S_1 + S_2$). Equilibrium maximizes total entropy.
+We define the \textit{statistical temperature} $T$ (with units of energy since $k_B=1$) as:
+\begin{equation}
+    \frac{1}{T} \equiv \pdv{S}{E}_{V, N}
+\end{equation}
+With these definitions, the condition for thermal equilibrium becomes simply $T_1 = T_2$.
+For macroscopic systems (large N), the function $\Omega_{total}(E_1)$ is incredibly sharply peaked around the equilibrium energy $\Tilde{E}_1$. Fluctuations $\Delta E / \avg{E}$ are typically negligible, scaling as $1/\sqrt{N}$. Stability requires the entropy $S$ to be a concave function of $E$, meaning $\pdv[2]{S}{E}_{V} \leq 0$, which implies $\pdv{^2 S}{E^2}_{V} \leq 0$.
+
+\subsection{The Second Law of Thermodynamics}
+When two isolated systems initially at different temperatures $T_1 \neq T_2$ are brought into thermal contact, energy $dE_1$ flows spontaneously until equilibrium is reached. The change in total entropy is:
+\begin{equation*}
+    dS_{total} = dS_1 + dS_2 = \pdv{S_1}{E_1} dE_1 + \pdv{S_2}{E_2} dE_2 = \frac{1}{T_1} dE_1 + \frac{1}{T_2} (-dE_1) = \left( \frac{1}{T_1} - \frac{1}{T_2} \right) dE_1
+\end{equation*}
+Energy flows from hot to cold: if $T_2 > T_1$, then $dE_1 > 0$, and $(1/T_1 - 1/T_2) > 0$, so $dS_{total} > 0$. If $T_1 > T_2$, then $dE_1 < 0$, and $(1/T_1 - 1/T_2) < 0$, so $dS_{total} > 0$. In general, for any spontaneous process in an isolated system, the entropy increases or stays the same. This leads to the Second Law:
+\textit{For any process occurring in an isolated system, the total entropy never decreases:}
+\begin{equation}
+    \Delta S_{total} \ge 0
+\end{equation}
+The equality holds for idealized \textit{reversible} processes (sequences of equilibrium states), while the inequality holds for \textit{irreversible} (spontaneous, real-world) processes.
+
+\subsection{The Fundamental Thermodynamic Relation}
+Consider a system undergoing an infinitesimal, quasistatic process involving changes in both entropy (due to heat) and volume (due to work). The total differential of energy $E(S, V)$ is:
+\begin{equation*}
+    dE = \pdv{E}{S}_{V} dS + \pdv{E}{V}_{S} dV
+\end{equation*}
+From the definitions of temperature $T = (\partial E / \partial S)_V$ and pressure $P = -(\partial E / \partial V)_S$, we obtain the \textit{fundamental thermodynamic relation} for a closed system (N fixed):
+\begin{equation} \label{eq:fundamental_relation}
+    \boxed{dE = T dS - P dV}
+\end{equation}
+This central equation combines the First Law ($dE = \delta Q - \delta W$) and the Second Law (through $T$ and $S$) for reversible processes. Comparing $dE = TdS - PdV$ with $dE = \delta Q_{rev} - P dV$ (for quasistatic PV work), we identify the reversible heat transfer:
+\begin{equation}
+    \delta Q_{rev} = T dS \quad \implies \quad dS = \frac{\delta Q_{rev}}{T}
+\end{equation}
+This provides a way to calculate entropy changes macroscopically from reversible heat measurements. For an adiabatic reversible process ($\delta Q_{rev}=0$), $dS=0$, so such processes are \textit{isentropic}.
+We can also write $S=S(E,V)$, giving $dS = \pdv{S}{E}_V dE + \pdv{S}{V}_E dV = \frac{1}{T} dE + \frac{P}{T} dV$. This yields another useful relation:
+\begin{equation*}
+    \frac{P}{T} = \pdv{S}{V}_{E}
+\end{equation*}
+Equilibrium between two systems (1, 2) that can exchange energy and volume ($E=E_1+E_2, V=V_1+V_2$) requires maximization of $S = S_1(E_1, V_1) + S_2(E-E_1, V-V_1)$. This leads to $\partial S / \partial E_1 = 0 \implies T_1 = T_2$, and $\partial S / \partial V_1 = 0 \implies P_1/T_1 = P_2/T_2$. Together, these imply mechanical equilibrium $P_1 = P_2$.
+
+\subsection{Summary of Thermodynamic Laws}
+The four fundamental laws governing macroscopic systems:
+\begin{enumerate}
+    \item[0.] \textbf{Zeroth Law:} If systems A and B are separately in thermal equilibrium with C, then A and B are in thermal equilibrium with each other. (Establishes temperature as a valid concept).
+    \item[1.] \textbf{First Law:} $dE = \delta Q - \delta W$. (Energy is conserved).
+    \item[2.] \textbf{Second Law:} $\Delta S_{total} \ge 0$ for an isolated system. For a system interacting with a reservoir at T, $dS \ge \delta Q / T$. (Defines direction of spontaneous change, limits efficiency).
+    \item[3.] \textbf{Third Law:} As temperature approaches absolute zero ($T \to 0$), the entropy approaches a constant value $S_0$, independent of other parameters. Often $S_0 = 0$ for systems with a unique ground state. ($\lim_{T \to 0} S(T, X) = S_0$). (Implies absolute zero is unattainable).
+\end{enumerate}
+
+\section{Thermodynamic Response Functions}
+These measurable quantities characterize how a system's state variables change in response to external stimuli. (Recall $k_B = 1$, $T$ is energy, $S$ is dimensionless, $R=N_A$).
+
+\subsection{Heat Capacities}
+Heat capacity relates the heat absorbed to the temperature change under specific conditions: $\delta Q = C_x dT$ (quasistatic, constant $x$).
+\begin{itemize}
+    \item Heat Capacity at Constant Volume ($C_V$): At constant V, $dE = \delta Q_V$. Using $\delta Q_{rev} = TdS$:
+        \begin{equation}
+            C_V = \left(\frac{\delta Q}{dT}\right)_V = T\pdv{S}{T}_{V} = \pdv{E}{T}_{V}
+        \end{equation}
+    \item Heat Capacity at Constant Pressure ($C_P$): Use enthalpy $H = E + PV$, so $dH = TdS + VdP$. At constant P, $dH = TdS = \delta Q_P$.
+        \begin{equation}
+            C_P = \left(\frac{\delta Q}{dT}\right)_P = T\pdv{S}{T}_{P} = \pdv{H}{T}_{P}
+        \end{equation}
+\end{itemize}
+Heat capacities allow calculation of entropy changes with temperature at constant $x$:
+\begin{equation}
+    S(T_2, x) - S(T_1, x) = \int_{T_1}^{T_2} \frac{\delta Q_x}{T} = \int_{T_1}^{T_2} \frac{C_x(T)}{T} dT
+\end{equation}
+
+\subsection{Compressibility and Expansivity}
+These describe mechanical responses:
+\begin{itemize}
+    \item Isothermal Compressibility ($\kappa_T$): Relative volume change with pressure at constant T.
+        \begin{equation}
+            \kappa_T = -\frac{1}{V} \pdv{V}{P}_{T} \quad (\kappa_T > 0 \text{ for stability})
+        \end{equation}
+    \item Isobaric Expansion Coefficient ($\alpha_P$): Relative volume change with temperature at constant P.
+        \begin{equation}
+            \alpha_P = \frac{1}{V} \pdv{V}{T}_{P}
+        \end{equation}
+\end{itemize}
+
+\section{Application: The Ideal Gas}
+The ideal gas provides a simple, exactly solvable model illustrating many thermodynamic concepts. It describes non-interacting point particles.
+
+\subsection{Statistical Derivation (Monatomic)}
+We use the approximate entropy derived from $\Omega(E) \propto V^N E^{3N/2}$:
+\begin{equation*}
+    S(E, V, N) = \ln \Omega \approx N \ln V + \frac{3N}{2} \ln E + \const
+\end{equation*}
+Applying the statistical definitions of T and P:
+\begin{enumerate}
+    \item Temperature: $\frac{1}{T} = \pdv{S}{E}_{V,N} = \frac{3N}{2E} \implies E = \frac{3}{2} N T$.
+          The internal energy of a classical ideal monatomic gas depends only on temperature.
+    \item Pressure: $\frac{P}{T} = \pdv{S}{V}_{E,N} = \frac{N}{V} \implies PV = N T$.
+          This is the ideal gas equation of state.
+\end{enumerate}
+
+\subsection{Ideal Gas Law and Molar Quantities}
+Writing particle number $N$ in terms of moles $\nu$ and Avogadro's number $N_A$: $N = \nu N_A$. The gas constant is $R=N_A k_B = N_A$ (since $k_B=1$).
+\begin{gather}
+    PV = \nu N_A T \\
+    E = \frac{3}{2} \nu N_A T
+\end{gather}
+
+\subsection{Specific Heats (Monatomic)}
+Molar specific heat $c_x = C_x / \nu$.
+\begin{itemize}
+    \item Constant Volume:
+        \begin{equation}
+            c_v = \frac{C_V}{\nu} = \frac{1}{\nu} \pdv{E}{T}_{V} = \frac{1}{\nu} \dv{}{T} \left(\frac{3}{2} \nu N_A T\right) = \frac{3}{2} N_A
+        \end{equation}
+    \item Constant Pressure: Use $H = E + PV = E + \nu N_A T$. Since $E=E(T)$, $H=H(T)$.
+        \begin{equation}
+            c_p = \frac{C_P}{\nu} = \frac{1}{\nu} \pdv{H}{T}_{P} = \frac{1}{\nu} \dv{}{T} \left(\frac{3}{2} \nu N_A T + \nu N_A T\right) = \frac{5}{2} N_A
+        \end{equation}
+\end{itemize}
+The general relation $c_p - c_v = N_A (=R)$ holds for any ideal gas because $E=E(T)$ and $PV=\nu N_A T$. Also, $dE = C_V dT = \nu c_v dT$ generally for ideal gases.
+
+\subsection{Adiabatic Index}
+The ratio of specific heats $\gamma = c_p / c_v$ is important for adiabatic processes.
+For a monatomic ideal gas:
+\begin{equation}
+    \gamma = \frac{c_p}{c_v} = \frac{5/2 N_A}{3/2 N_A} = \frac{5}{3}
+\end{equation}
+
+\subsection{Ideal Gas Processes}
+\begin{itemize}
+    \item \textbf{Isothermal} (T=const): From $PV=NT$, we have $PV = \const$.
+    \item \textbf{Adiabatic} (Q=0, S=const): For a quasistatic adiabatic process, $dE = \delta Q - \delta W = -P dV$. Also $dE = C_V dT = \nu c_v dT$.
+        \begin{equation*}
+            \nu c_v dT + P dV = 0
+        \end{equation*}
+        Substitute $P = \nu N_A T / V$ and use $N_A = c_p - c_v$:
+        \begin{align*}
+            \nu c_v dT + \frac{\nu (c_p - c_v) T}{V} dV &= 0 \\
+            \frac{dT}{T} + \frac{c_p - c_v}{c_v} \frac{dV}{V} &= 0 \\
+            \frac{dT}{T} + (\gamma - 1) \frac{dV}{V} &= 0
+        \end{align*}
+        Integrating this (assuming constant $\gamma$): $\ln T + (\gamma - 1) \ln V = \const$, which leads to:
+        \begin{equation}
+            T V^{\gamma-1} = \const
+        \end{equation}
+        Using $T \propto PV$, we can rewrite this in terms of P and V:
+        \begin{equation}
+            P V^{\gamma} = \const
+        \end{equation}
+\end{itemize}
+
+\part*{Part 2: Thermodynamic Potentials, Ensembles, and Applications}
+We introduce alternative thermodynamic potentials useful for different constraints, explore statistical ensembles beyond the microcanonical (isolated system), and apply the framework to specific physical systems.
+
+\section{Thermodynamic Potentials}
+The internal energy $E$ is naturally expressed as $E(S, V, N)$. By performing Legendre transformations, we can change the natural variables to those more easily controlled experimentally (like T, P), leading to other thermodynamic potentials. Each potential has the property that it is minimized at equilibrium under its respective natural constraints.
+We include the chemical potential term $\mu dN$ for systems with variable particle number, where $\mu = \pdv{E}{N}_{S,V}$.
+\begin{description}
+    \item[Internal Energy] $E(S, V, N)$
+        \begin{equation*} dE = T dS - P dV + \mu dN \end{equation*}
+    \item[Enthalpy] $H = E + PV$. Natural variables $H(S, P, N)$.
+        \begin{equation*} dH = T dS + V dP + \mu dN \qquad (\text{Useful for constant P processes}) \end{equation*}
+    \item[Helmholtz Free Energy] $F = E - TS$. Natural variables $F(T, V, N)$.
+        \begin{equation*} dF = -S dT - P dV + \mu dN \qquad (\text{Useful for constant T, V; links to canonical ensemble}) \end{equation*}
+    \item[Gibbs Free Energy] $G = H - TS = E - TS + PV$. Natural variables $G(T, P, N)$.
+        \begin{equation*} dG = -S dT + V dP + \mu dN \qquad (\text{Useful for constant T, P; phase transitions, chemical reactions}) \end{equation*}
+    \item[Grand Potential] $\Phi = F - \mu N = E - TS - \mu N$. Natural variables $\Phi(T, V, \mu)$.
+        \begin{equation*} d\Phi = -S dT - P dV - N d\mu \qquad (\text{Useful for constant T, V, } \mu\text{; links to grand canonical ensemble}) \end{equation*}
+\end{description}
+From these differentials, we can read off various partial derivatives, e.g., $T = \pdv{E}{S}_V = \pdv{H}{S}_P$, $P = -\pdv{E}{V}_S = -\pdv{F}{V}_T$, $S = -\pdv{F}{T}_V = -\pdv{G}{T}_P$, $\mu = \pdv{E}{N}_{S,V} = \pdv{F}{N}_{T,V} = \pdv{G}{N}_{T,P}$, etc.
+
+\section{Maxwell Relations}
+Since the thermodynamic potentials are state functions, their differentials are exact. This implies that mixed second partial derivatives are equal (Schwarz's theorem). Applying this to the differentials of $E, H, F, G$ yields the Maxwell relations, which connect seemingly unrelated derivatives.
+Example: From $dF = -S dT - P dV$, we have $\pdv[2]{F}{V}{T} = \pdv[2]{F}{T}{V}$.
+This implies $-\pdv{S}{V}_{T} = -\pdv{P}{T}_{V}$.
+The four main Maxwell relations are:
+\begin{align}
+    \pdv{T}{V}_{S} &= -\pdv{P}{S}_{V} && (\text{from } dE) \\
+    \pdv{T}{P}_{S} &= \pdv{V}{S}_{P} && (\text{from } dH) \\
+    \pdv{S}{V}_{T} &= \pdv{P}{T}_{V} && (\text{from } dF) \label{eq:maxwell_F} \\
+    \pdv{S}{P}_{T} &= -\pdv{V}{T}_{P} && (\text{from } dG) \label{eq:maxwell_G}
+\end{align}
+These are powerful tools for relating measurable quantities (like derivatives involving P, V, T) to less directly accessible quantities (like derivatives involving S).
+
+\subsection{Relation between Heat Capacities}
+We can derive the general relation between $C_P$ and $C_V$ using Maxwell relations.
+Consider entropy as a function of T and V, $S(T, V)$. Its differential is $dS = \pdv{S}{T}_{V} dT + \pdv{S}{V}_{T} dV$.
+Multiply by T: $T dS = T \pdv{S}{T}_{V} dT + T \pdv{S}{V}_{T} dV = C_V dT + T \pdv{P}{T}_{V} dV$, using $C_V = T\pdv{S}{T}_V$ and Maxwell relation \eqref{eq:maxwell_F}.
+Now consider $S(T, P)$. $dS = \pdv{S}{T}_{P} dT + \pdv{S}{P}_{T} dP$.
+Multiply by T: $T dS = C_P dT + T \pdv{S}{P}_{T} dP = C_P dT - T \pdv{V}{T}_{P} dP$, using $C_P = T\pdv{S}{T}_P$ and Maxwell relation \eqref{eq:maxwell_G}.
+To relate these, express $dV$ in the first equation in terms of $dT$ and $dP$: $dV = \pdv{V}{T}_{P} dT + \pdv{V}{P}_{T} dP$.
+Substitute: $T dS = C_V dT + T \pdv{P}{T}_{V} (\pdv{V}{T}_{P} dT + \pdv{V}{P}_{T} dP)$.
+$T dS = \left[ C_V + T \pdv{P}{T}_{V} \pdv{V}{T}_{P} \right] dT + \left[ T \pdv{P}{T}_{V} \pdv{V}{P}_{T} \right] dP$.
+Comparing the coefficients of $dT$ in this expression and the one derived from $S(T, P)$:
+\begin{equation*}
+    C_P = C_V + T \pdv{P}{T}_{V} \pdv{V}{T}_{P}
+\end{equation*}
+Using the cyclic relation $\pdv{P}{T}_{V} \pdv{T}{V}_{P} \pdv{V}{P}_{T} = -1$, we can write $\pdv{P}{T}_{V} = - \frac{\pdv{V}{T}_{P}}{\pdv{V}{P}_{T}}$.
+Substituting this gives: $C_P - C_V = -T \left(\pdv{V}{T}_{P}\right)^2 / \pdv{V}{P}_{T}$.
+Introducing the response functions $\alpha_P = \frac{1}{V}\pdv{V}{T}_{P}$ and $\kappa_T = -\frac{1}{V}\pdv{V}{P}_{T}$:
+\begin{equation}
+    C_P - C_V = \frac{V T \alpha_P^2}{\kappa_T}
+\end{equation}
+Since $V, T, \kappa_T$ are positive for stable systems, and $\alpha_P^2 \ge 0$, this shows $C_P \ge C_V$.
+
+\subsection{Implications of the Third Law ($S \to S_0$ as $T \to 0$)}
+The third law requires that entropy becomes constant as $T \to 0$. This has consequences for response functions:
+\begin{itemize}
+    \item $C_V = T \pdv{S}{T}_{V} \to 0$ as $T \to 0$.
+    \item $C_P = T \pdv{S}{T}_{P} \to 0$ as $T \to 0$.
+    \item From Maxwell relation \eqref{eq:maxwell_G}, $\pdv{S}{P}_{T} = -\pdv{V}{T}_{P} = -V \alpha_P$. Since $\pdv{S}{P}_{T}$ must remain finite as $T \to 0$, the thermal expansion coefficient must vanish: $\alpha_P \to 0$.
+    \item Similarly, from \eqref{eq:maxwell_F}, $\pdv{S}{V}_{T} = \pdv{P}{T}_{V}$. Since $\pdv{S}{V}_{T}$ must remain finite, $\pdv{P}{T}_{V} \to 0$.
+    \item The ratio $\frac{C_P - C_V}{C_V} = \frac{V T \alpha_P^2}{\kappa_T C_V}$. The limit depends on how fast $\alpha_P$ and $C_V$ go to zero, but typically $C_P/C_V \to 1$ as $T \to 0$.
+\end{itemize}
+
+\section{Calculating Entropy and Energy from Measurables}
+We can determine $S(T,V)$ and $E(T,V)$ if we know the equation of state $P(T,V)$ and the heat capacity $C_V(T, V_0)$ at some reference volume $V_0$.
+
+\subsection{Entropy $S(T,V)$}
+Starting with $S(T,V)$, the differential is $dS = \pdv{S}{T}_{V} dT + \pdv{S}{V}_{T} dV$.
+Using $C_V = T \pdv{S}{T}_{V}$ and Maxwell relation $\pdv{S}{V}_{T} = \pdv{P}{T}_{V}$:
+\begin{equation} \label{eq:dS_TV}
+    dS = \frac{C_V(T,V)}{T} dT + \pdv{P}{T}_{V} dV
+\end{equation}
+To find $S(T,V)$ relative to a reference state $(T_0, V_0)$, we integrate $dS$ along a convenient path. For example, path $(T_0, V_0) \to (T_0, V) \to (T, V)$:
+\begin{equation}
+    S(T,V) - S(T_0,V_0) = \int_{V_0}^V \pdv{P(T_0, V')}{T}_{V} dV' + \int_{T_0}^T \frac{C_V(T', V)}{T'} dT'
+\end{equation}
+Note that $C_V$ itself might depend on volume. The exactness of $dS$ requires $\pdv[2]{S}{V}{T} = \pdv[2]{S}{T}{V}$, which implies:
+\begin{equation*}
+    \pdv{}{V}_T \left( \frac{C_V}{T} \right) = \pdv{}{T}_V \left( \pdv{P}{T}_{V} \right) \implies \pdv{C_V}{V}_{T} = T \pdv[2]{P}{T^2}{V}
+\end{equation*}
+This relation allows us to find $C_V(T,V)$ at any volume if it's known at one volume $V_0$:
+\begin{equation*}
+    C_V(T,V) = C_V(T,V_0) + \int_{V_0}^V T \pdv[2]{P(T, V')}{T^2}{V} dV'
+\end{equation*}
+
+\subsection{Internal Energy $E(T,V)$}
+From the fundamental relation $dE = T dS - P dV$, substitute the expression \eqref{eq:dS_TV} for $dS$:
+\begin{align*}
+    dE &= T \left( \frac{C_V(T,V)}{T} dT + \pdv{P}{T}_{V} dV \right) - P dV \\
+       &= C_V(T,V) dT + \left[ T \pdv{P}{T}_{V} - P \right] dV
+\end{align*}
+This differential shows $\pdv{E}{T}_{V} = C_V$ and the important relation for the volume dependence of energy:
+\begin{equation} \label{eq:dEdV_T}
+    \pdv{E}{V}_{T} = T \pdv{P}{T}_{V} - P
+\end{equation}
+Integrating $dE$ from $(T_0, V_0)$ to $(T, V)$ along the same path $(T_0, V_0) \to (T_0, V) \to (T, V)$:
+\begin{equation}
+    E(T,V) - E(T_0,V_0) = \int_{V_0}^V \left[ T_0 \pdv{P(T_0, V')}{T}_{V} - P(T_0, V') \right] dV' + \int_{T_0}^T C_V(T', V) dT'
+\end{equation}
+
+\section{Thermodynamic Processes}
+We analyze specific irreversible processes.
+
+\subsection{Free Expansion (Joule Expansion)}
+An isolated system ($Q=0$) expands into a vacuum ($W=0$), e.g., gas initially in volume $V_1$ expands to fill $V_2 > V_1$.
+From the First Law, $\Delta E = Q - W = 0$. The internal energy remains constant.
+The temperature change during this constant-E process is described by the Joule coefficient:
+\begin{equation*}
+    \mu_J \equiv \pdv{T}{V}_{E}
+\end{equation*}
+Using the cyclic relation and $\pdv{E}{T}_V = C_V$, $\pdv{E}{V}_T$:
+$\pdv{T}{V}_{E} = - \frac{\pdv{E}{V}_{T}}{\pdv{E}{T}_{V}} = -\frac{1}{C_V} \pdv{E}{V}_{T}$. Using Eq. \eqref{eq:dEdV_T}:
+\begin{equation}
+    \mu_J = -\frac{1}{C_V} \left[ T \pdv{P}{T}_{V} - P \right] = \frac{1}{C_V} \left[ P - T \pdv{P}{T}_{V} \right]
+\end{equation}
+The final temperature is $T_2 = T_1 + \int_{V_1}^{V_2} \mu_J(E, V) dV$ (integral at constant E).
+Entropy change: At constant E, $dE=0=TdS-PdV \implies dS = (P/T) dV$.
+Since $P, T > 0$, $\pdv{S}{V}_{E} = P/T > 0$. Free expansion is always irreversible and increases entropy.
+\begin{equation}
+    S_2 - S_1 = \int_{V_1}^{V_2} \frac{P(E, V)}{T(E, V)} dV \quad (\text{integral at constant E})
+\end{equation}
+
+\subsubsection*{Ideal Gas in Free Expansion}
+For an ideal gas, $E=E(T)$, so $\pdv{E}{V}_T = 0$. Therefore $\mu_J = 0$.
+Since $\Delta E = 0$, it follows that $\Delta T = 0$. The temperature does not change.
+The entropy change is $\Delta S = \int_{V_1}^{V_2} \frac{P}{T} dV = \int_{V_1}^{V_2} \frac{N}{V} dV = N \ln(V_2/V_1)$.
+
+\subsubsection*{Van der Waals Gas in Free Expansion}
+Equation of State: $(P + a/v^2)(v-b) = N_A T$, where $v=V/\nu$ is molar volume.
+We found earlier $\pdv{E}{V}_{T} = a/v^2 = a N^2 / V^2$ (where $N=\nu N_A$).
+$\mu_J = -\frac{1}{C_V} \pdv{E}{V}_{T} = -\frac{a N^2}{C_V V^2}$.
+Assuming $C_V$ is roughly constant:
+$\Delta T = T_2 - T_1 = \int_{V_1}^{V_2} \mu_J dV \approx -\frac{a N^2}{C_V} \int_{V_1}^{V_2} \frac{dV}{V^2} = -\frac{a N^2}{C_V} \left( \frac{1}{V_1} - \frac{1}{V_2} \right)$.
+Since $V_2 > V_1$, the term in parentheses is positive. Thus $\Delta T < 0$. A Van der Waals gas cools upon free expansion due to attractive intermolecular forces ($a>0$).
+
+\subsection{Joule-Thomson Process (Throttling)}
+Gas flows steadily through a porous plug or valve, separating regions of constant pressure $P_1$ and $P_2$ ($P_1 > P_2$). The apparatus is insulated ($Q=0$).
+Consider a fixed amount of gas. Work done on it as it enters: $W_{in} = P_1 V_1$. Work done by it as it leaves: $W_{out} = P_2 V_2$. Net work done by gas: $W = W_{out} - W_{in} = P_2 V_2 - P_1 V_1$.
+First Law: $\Delta E = E_2 - E_1 = Q - W = 0 - (P_2 V_2 - P_1 V_1)$.
+$E_2 - E_1 = P_1 V_1 - P_2 V_2 \implies E_1 + P_1 V_1 = E_2 + P_2 V_2$.
+The process occurs at constant enthalpy: $H_1 = H_2$.
+Temperature change is described by the Joule-Thomson coefficient:
+\begin{equation*}
+    \mu_{JT} \equiv \pdv{T}{P}_{H}
+\end{equation*}
+Using cyclic relation and $C_P = \pdv{H}{T}_P$, $\pdv{H}{P}_T$:
+$\pdv{T}{P}_{H} = - \frac{\pdv{H}{P}_{T}}{\pdv{H}{T}_{P}} = -\frac{1}{C_P} \pdv{H}{P}_{T}$.
+From $dH = TdS + VdP$, we have $\pdv{H}{P}_T = T\pdv{S}{P}_T + V$. Using Maxwell \eqref{eq:maxwell_G}: $\pdv{H}{P}_T = -T\pdv{V}{T}_P + V$.
+\begin{equation}
+    \mu_{JT} = -\frac{1}{C_P} \left[ V - T\pdv{V}{T}_P \right] = \frac{V}{C_P} \left[ T \left(\frac{1}{V}\pdv{V}{T}_P\right) - 1 \right] = \frac{V}{C_P} (T \alpha_P - 1)
+\end{equation}
+The final temperature is $T_2 = T_1 + \int_{P_1}^{P_2} \mu_{JT}(H, P) dP$ (integral at constant H).
+Gas cools ($\Delta T < 0$ for $P_2 < P_1$) if $\mu_{JT} > 0$, which occurs when $T \alpha_P > 1$. Gas heats if $\mu_{JT} < 0$. The temperature where $\mu_{JT}=0$ is the inversion temperature.
+Entropy change: At constant H, $dH = 0 = TdS + VdP \implies dS = -(V/T) dP$.
+Since $V, T > 0$, $\pdv{S}{P}_{H} = -V/T < 0$. Expansion ($P_2 < P_1$, $dP<0$) always increases entropy, making the process irreversible.
+$\Delta S = -\int_{P_1}^{P_2} \frac{V(H, P)}{T(H, P)} dP$.
+
+\subsubsection*{Ideal Gas in Joule-Thomson Process}
+For an ideal gas, $H = E + PV = E(T) + N T = H(T)$. Since $\Delta H = 0$, it follows that $\Delta T = 0$. Thus $\mu_{JT} = 0$. Ideal gases show no temperature change upon throttling.
+
+\section{Heat Engines and Refrigerators}
+Thermodynamic cycles are used to convert heat into work (engines) or move heat from cold to hot using work (refrigerators). Their performance is limited by the Second Law. Consider a cycle interacting with a hot reservoir ($T_1$) and a cold reservoir ($T_2 < T_1$).
+
+\subsection{Heat Engine}
+A heat engine operates in a cycle, absorbing heat $Q_1 > 0$ from $T_1$, rejecting heat $Q_2 > 0$ to $T_2$, and producing net work $W = Q_1 - Q_2$.
+For one cycle, the engine's state returns to the start, so $\Delta S_{engine} = 0$.
+The reservoirs' entropy changes are $\Delta S_{res} = -Q_1/T_1 + Q_2/T_2$.
+Second Law requires $\Delta S_{total} = \Delta S_{engine} + \Delta S_{res} \ge 0$:
+\begin{equation*}
+    -\frac{Q_1}{T_1} + \frac{Q_2}{T_2} \ge 0 \implies \frac{Q_2}{Q_1} \ge \frac{T_2}{T_1}
+\end{equation*}
+The efficiency $\eta$ is the ratio of work output to heat input:
+\begin{equation*}
+    \eta = \frac{W}{Q_1} = \frac{Q_1 - Q_2}{Q_1} = 1 - \frac{Q_2}{Q_1}
+\end{equation*}
+Using the Second Law result:
+\begin{equation}
+    \eta \le 1 - \frac{T_2}{T_1}
+\end{equation}
+The maximum possible efficiency, $\eta_{max} = 1 - T_2/T_1$, is the \textit{Carnot efficiency}, achieved only by a reversible engine operating between $T_1$ and $T_2$. The Kelvin statement of the Second Law ("No process is possible whose sole result is the absorption of heat from a reservoir and the conversion of this heat entirely into work") is equivalent to $\eta < 1$ if $T_2 > 0$.
+
+\subsection{Refrigerator}
+A refrigerator operates in a cycle using external work $W > 0$ to extract heat $Q_2 > 0$ from the cold reservoir $T_2$ and reject heat $Q_1 = Q_2 + W$ to the hot reservoir $T_1$.
+Again, $\Delta S_{engine} = 0$, and $\Delta S_{total} = -Q_2/T_2 + Q_1/T_1 \ge 0$.
+\begin{equation*}
+    \frac{Q_1}{T_1} \ge \frac{Q_2}{T_2} \implies \frac{Q_2 + W}{T_1} \ge \frac{Q_2}{T_2}
+\end{equation*}
+Rearranging to find the minimum work required:
+\begin{equation*}
+    W \ge Q_2 \left( \frac{T_1}{T_2} - 1 \right) = Q_2 \frac{T_1 - T_2}{T_2}
+\end{equation*}
+The performance is measured by the Coefficient of Performance (COP): $\mathrm{COP}_{ref} = Q_2 / W$.
+\begin{equation}
+    \mathrm{COP}_{ref} \le \frac{T_2}{T_1 - T_2}
+\end{equation}
+The maximum COP is achieved by a reversible refrigerator (e.g., a reversed Carnot cycle). The Clausius statement of the Second Law ("No process is possible whose sole result is the transfer of heat from a colder to a hotter body") is equivalent to requiring $W > 0$ if $T_1 > T_2$.
+
+\section{Canonical Ensemble (Constant T, V, N)}
+This ensemble describes a system in thermal equilibrium with a large heat reservoir (or 'heat bath') at constant temperature $T$. The system's volume $V$ and particle number $N$ are fixed. Energy can fluctuate as it's exchanged with the reservoir.
+
+The probability $P_r$ of finding the system in a specific microstate $r$ with energy $E_r$ is given by the Boltzmann distribution:
+\begin{equation}
+    P_r = \frac{\mathe^{-E_r / T}}{Z}
+\end{equation}
+where the normalization constant $Z$ is the \textit{Canonical Partition Function}:
+\begin{equation}
+    Z(T, V, N) = \sum_r \mathe^{-E_r / T}
+\end{equation}
+The sum is over all distinct microstates $r$ accessible to the system (at fixed V, N). The energies $E_r = E_r(V, N)$ depend on volume and particle number.
+The average value of any observable $O$ (which has value $O_r$ in state $r$) is:
+\begin{equation}
+    \avg{O} = \sum_r O_r P_r = \frac{1}{Z} \sum_r O_r \mathe^{-E_r / T} = \frac{\sum_r O_r \mathe^{-E_r / T}}{\sum_r \mathe^{-E_r / T}}
+\end{equation}
+For classical systems, the sum over states $\sum_r$ is replaced by an integral over phase space, including the Gibbs factor $1/N!$ for identical particles and division by $h^{3N}$ (where $h$ is Planck's constant) to make $Z$ dimensionless:
+\begin{equation*}
+    Z_{cl} = \frac{1}{N! h^{3N}} \int \mathe^{-H(q,p)/T} d^{3N}q d^{3N}p
+\end{equation*}
+
+\subsection{Connection to Thermodynamics: Helmholtz Free Energy}
+The partition function provides the crucial link between statistical mechanics and thermodynamics via the Helmholtz Free Energy $F$:
+\begin{equation}
+    \boxed{F(T, V, N) = -T \ln Z(T, V, N)}
+\end{equation}
+This relation can be justified by comparing the statistical average energy $\avg{E}$ with the thermodynamic relation $E = F + TS = F - T\pdv{F}{T}_V$.
+Calculating $\avg{E}$ from $Z$:
+\begin{equation*}
+ \avg{E} = \sum_r E_r P_r = \frac{1}{Z} \sum_r E_r \mathe^{-E_r / T} = \frac{1}{Z} \left( -\pdv{Z}{\beta} \right)_V = -\pdv{(\ln Z)}{\beta}_V
+\end{equation*}
+where $\beta = 1/T$. Using the chain rule $\pdv{}{\beta} = \pdv{T}{\beta} \pdv{}{T} = -T^2 \pdv{}{T}$:
+\begin{equation} \label{eq:avgE_from_Z}
+ \avg{E} = T^2 \pdv{(\ln Z)}{T}_V
+\end{equation}
+Substituting $F = -T \ln Z \implies \ln Z = -F/T$:
+\begin{equation*}
+ \avg{E} = T^2 \pdv{}{T} \left( -\frac{F}{T} \right)_V = T^2 \left( -\frac{1}{T}\pdv{F}{T}_V + \frac{F}{T^2} \right) = F - T \pdv{F}{T}_V
+\end{equation*}
+This matches the thermodynamic identity $E = F + TS$ if we identify $S = -\pdv{F}{T}_V$.
+Thus, once $Z$ is calculated, all thermodynamic properties follow from $F = -T \ln Z$:
+\begin{align}
+    S &= -\pdv{F}{T}_{V,N} = \pdv{}{T}(T \ln Z)_{V,N} \\
+    P &= -\pdv{F}{V}_{T,N} = T \pdv{(\ln Z)}{V}_{T,N} \\
+    \mu &= \pdv{F}{N}_{T,V} = -T \pdv{(\ln Z)}{N}_{T,V} \\
+    E &= F+TS = T^2 \pdv{(\ln Z)}{T}_{V,N} = -\pdv{\ln Z}{\beta}_{V,N}
+\end{align}
+Energy fluctuations provide another important connection. The variance of energy is:
+\begin{equation*}
+    \avg{(\Delta E)^2} = \avg{E^2} - \avg{E}^2
+\end{equation*}
+We have $\avg{E^2} = \frac{1}{Z} \sum_r E_r^2 \mathe^{-E_r / T} = \frac{1}{Z} \pdv[2]{Z}{\beta}{2}$. Using $\pdv[2]{Z}{\beta}{2} = Z \pdv[2]{(\ln Z)}{\beta}{2} + Z (\pdv{\ln Z}{\beta})^2$, we get:
+\begin{equation*}
+    \avg{E^2} = \pdv[2]{(\ln Z)}{\beta}{2} + (\avg{E})^2
+\end{equation*}
+Therefore, $\avg{(\Delta E)^2} = \pdv[2]{(\ln Z)}{\beta}{2} = -\pdv{\avg{E}}{\beta}$. Using the chain rule again:
+\begin{equation}
+    \avg{(\Delta E)^2} = -\pdv{\avg{E}}{T} \pdv{T}{\beta} = -C_V (-T^2) = T^2 C_V
+\end{equation}
+The energy fluctuations are directly related to the heat capacity. The relative fluctuation $\frac{\sqrt{\avg{(\Delta E)^2}}}{\avg{E}} = \frac{\sqrt{T^2 C_V}}{E} \propto \frac{\sqrt{N}}{N} \sim 1/\sqrt{N}$, becoming negligible for macroscopic systems.
+
+\subsection{First and Second Laws in Canonical Ensemble}
+\begin{itemize}
+    \item Second Law perspective: At constant T, V, N, the system seeks equilibrium by minimizing the Helmholtz free energy $F$.
+    \item First Law interpretation: For a quasistatic change, $d\avg{E} = \sum_r E_r dP_r + \sum_r P_r dE_r$. The first term represents change in energy due to redistribution among levels (heat), $\sum E_r dP_r = T dS = \delta Q_{rev}$. The second term represents energy change due to shifting energy levels (work), $\sum P_r dE_r = -\delta W_{rev}$. For volume change, $dE_r = \pdv{E_r}{V} dV$, leading to $\delta W_{rev} = - (\sum P_r \pdv{E_r}{V}) dV = P dV$.
+\end{itemize}
+
+\subsection{Example: Maxwell Velocity Distribution}
+Consider a single classical particle of mass $m$ in a large gas (reservoir) at temperature T. Its energy is $E = \frac{1}{2} m \vec{v}^2$.
+The probability density for its velocity $\vec{v}$ is proportional to the Boltzmann factor: $f(\vec{v}) \propto \mathe^{-E/T} = \mathe^{-m v^2 / (2T)}$.
+Normalization requires $\int f(\vec{v}) d^3v = 1$. Let $f(\vec{v}) = C \mathe^{-m v^2 / (2T)}$.
+\begin{align*}
+ \int_{-\infty}^\infty \int_{-\infty}^\infty \int_{-\infty}^\infty C \mathe^{-m (v_x^2+v_y^2+v_z^2) / (2T)} dv_x dv_y dv_z &= 1 \\
+ C \left( \int_{-\infty}^\infty \mathe^{-m v_x^2 / (2T)} dv_x \right)^3 &= 1 \\
+ C (\sqrt{2\pi T/m})^3 &= 1 \implies C = (m / (2\pi T))^{3/2}
+\end{align*}
+The Maxwell-Boltzmann velocity distribution is:
+\begin{equation}
+    f(\vec{v}) d^3v = \left( \frac{m}{2 \pi T} \right)^{3/2} \mathe^{-m v^2 / (2T)} d^3v
+\end{equation}
+
+\section{Grand Canonical Ensemble (Constant T, V, $\mu$)}
+This ensemble describes systems that can exchange both energy and particles with a large reservoir characterized by temperature T and chemical potential $\mu$. The system volume V is fixed. Both energy E and particle number N can fluctuate.
+
+The probability $P_r$ of finding the system in state $r$ (which now specifies both the energy $E_r$ and particle number $N_r$) is given by:
+\begin{equation}
+    P_r = \frac{\mathe^{-(E_r - \mu N_r) / T}}{\mathcal{Z}}
+\end{equation}
+where $\mathcal{Z}$ is the \textit{Grand Partition Function}:
+\begin{equation}
+    \mathcal{Z}(T, V, \mu) = \sum_r \mathe^{-(E_r - \mu N_r) / T}
+\end{equation}
+The sum is over all possible states, including states with different numbers of particles. We can group the sum by particle number $N$ first, and then sum over states $r(N)$ for fixed N:
+\begin{equation}
+    \mathcal{Z}(T, V, \mu) = \sum_{N=0}^\infty \sum_{r(N)} \mathe^{-(E_{r(N)} - \mu N) / T} = \sum_{N=0}^\infty \mathe^{\mu N / T} \left( \sum_{r(N)} \mathe^{-E_{r(N)} / T} \right)
+\end{equation}
+Recognizing the inner sum as the canonical partition function $Z(T, V, N)$, we have:
+\begin{equation}
+    \mathcal{Z}(T, V, \mu) = \sum_{N=0}^\infty \mathe^{\mu N / T} Z(T, V, N) = \sum_{N=0}^\infty z^N Z(T, V, N)
+\end{equation}
+where $z = \mathe^{\mu / T}$ is the \textit{fugacity}.
+
+\subsection{Connection to Thermodynamics: Grand Potential}
+The grand partition function is related to the Grand Potential $\Phi = E - TS - \mu N$:
+\begin{equation}
+    \boxed{\Phi(T, V, \mu) = -T \ln \mathcal{Z}(T, V, \mu)}
+\end{equation}
+Thermodynamic quantities follow from the differential $d\Phi = -S dT - P dV - N d\mu$:
+\begin{align}
+    S &= -\pdv{\Phi}{T}_{V,\mu} = \pdv{}{T}(T \ln \mathcal{Z})_{V,\mu} \\
+    P &= -\pdv{\Phi}{V}_{T,\mu} = T \pdv{(\ln \mathcal{Z})}{V}_{T,\mu} \\
+    \avg{N} &= -\pdv{\Phi}{\mu}_{T,V} = T \pdv{(\ln \mathcal{Z})}{\mu}_{T,V} = z \pdv{(\ln \mathcal{Z})}{z}_{T,V}
+\end{align}
+The average energy is $\avg{E} = \Phi + T S + \mu \avg{N}$.
+Particle number fluctuations are given by:
+\begin{equation}
+    \avg{(\Delta N)^2} = \avg{N^2} - \avg{N}^2 = T \pdv{\avg{N}}{\mu}_{T,V} = T^2 \pdv[2]{(\ln \mathcal{Z})}{\mu^2}{T,V}
+\end{equation}
+The relative fluctuation $\sqrt{\avg{(\Delta N)^2}} / \avg{N} \sim 1/\sqrt{N}$.
+
+\section{Classical Ideal Gas Revisited}
+
+\subsection{Partition Function (Canonical Ensemble)}
+Let's calculate the canonical partition function $Z$ for $N$ indistinguishable, non-interacting monatomic particles. First, the single-particle partition function $\zeta$ (treating particles as distinguishable for now):
+\begin{equation*}
+    \zeta = Z(T,V,N=1)_{\text{dist}} = \frac{1}{h^3} \int d^3q \int d^3p \, \mathe^{-p^2 / (2mT)}
+\end{equation*}
+The position integral gives $V$. The momentum integral is separable: $\int d^3p \dots = (\int_{-\infty}^\infty \mathe^{-p_x^2 / (2mT)} dp_x)^3$.
+Each Gaussian integral yields $\sqrt{2 \pi m T}$.
+\begin{equation*}
+    \zeta = \frac{V}{h^3} ( \sqrt{2 \pi m T} )^3 = V \left( \frac{2 \pi m T}{h^2} \right)^{3/2}
+\end{equation*}
+It's convenient to define the \textit{thermal de Broglie wavelength}:
+\begin{equation*}
+    \lambda_{th}(T) = \frac{h}{\sqrt{2 \pi m T}}
+\end{equation*}
+This represents the typical quantum wavelength of a particle at temperature T. Then:
+\begin{equation}
+    \zeta = \frac{V}{\lambda_{th}^3}
+\end{equation}
+For N non-interacting, distinguishable particles, $Z_{\text{dist}} = \zeta^N$. For indistinguishable particles in the classical (dilute) limit, we correct for overcounting identical states using the Gibbs factor $1/N!$:
+\begin{equation}
+    Z(T,V,N) = \frac{Z_{\text{dist}}}{N!} = \frac{\zeta^N}{N!} = \frac{1}{N!} \left( \frac{V}{\lambda_{th}^3} \right)^N
+\end{equation}
+The Helmholtz Free Energy is $F = -T \ln Z = -T ( N \ln \zeta - \ln N! )$.
+Using Stirling's approximation $\ln N! \approx N \ln N - N$:
+\begin{align}
+    F &\approx -T \left( N \ln(V/\lambda_{th}^3) - (N \ln N - N) \right) \\
+      &= -N T \left( \ln \left[ \frac{V}{N \lambda_{th}^3} \right] + 1 \right) \label{eq:sackur_tetrode_F}
+\end{align}
+This gives the free energy of a classical ideal gas. Let's check consistency:
+Pressure: $P = -\pdv{F}{V}_{T,N} = - (-NT) \pdv{}{V} (\ln V + \dots)_{T,N} = NT/V$. Correct.
+Entropy: $S = -\pdv{F}{T}_{V,N}$. From \eqref{eq:sackur_tetrode_F}, noting $\lambda_{th} \propto T^{-1/2}$, so $\ln \lambda_{th}^3 \propto -\frac{3}{2} \ln T$:
+\begin{align*}
+ F &= -NT \left( \ln(V/N) - \ln(\lambda_{th}^3) + 1 \right) \\
+   &= -NT \left( \ln(V/N) + \frac{3}{2} \ln(2 \pi m / h^2) + \frac{3}{2} \ln T + 1 \right) \\
+ S &= -\pdv{F}{T}_{V,N} = N \left( \ln \left[ \frac{V}{N \lambda_{th}^3} \right] + 1 \right) + NT \left( \frac{3}{2T} \right) \\
+   &= N \left( \ln \left[ \frac{V}{N \lambda_{th}^3} \right] + \frac{5}{2} \right)
+\end{align*}
+This is the Sackur-Tetrode equation for entropy.
+Energy: $E = F+TS = -NT(\dots + 1) + NT(\dots + 5/2) = \frac{3}{2} NT$. Correct.
+
+\section{Equipartition Theorem}
+This powerful theorem applies to \textit{classical} systems in thermal equilibrium.
+
+\textbf{Theorem:} For a classical system described by Hamiltonian $H(q,p)$, each degree of freedom $x_i$ (which can be a coordinate $q_i$ or momentum $p_i$) that appears only as a quadratic term $A x_i^2$ in the Hamiltonian contributes $\frac{1}{2}T$ to the average internal energy.
+
+\textit{Proof Sketch:} Consider a term $H_i = A_i p_i^2$. Its average value is:
+\begin{equation*}
+    \avg{H_i} = \frac{\int (A_i p_i^2) \mathe^{-H(q,p)/T} d\Gamma}{\int \mathe^{-H(q,p)/T} d\Gamma}
+\end{equation*}
+Since $H = H_i + H_{\text{rest}}$ where $H_{\text{rest}}$ doesn't involve $p_i$, the integral separates:
+\begin{equation*}
+    \avg{H_i} = \frac{\int_{-\infty}^{\infty} (A_i p_i^2) \mathe^{-A_i p_i^2 / T} dp_i}{\int_{-\infty}^{\infty} \mathe^{-A_i p_i^2 / T} dp_i} \times \frac{\int \mathe^{-H_{\text{rest}}/T} d\Gamma_{\text{rest}}}{\int \mathe^{-H_{\text{rest}}/T} d\Gamma_{\text{rest}}}
+\end{equation*}
+The second factor cancels. Let $x = \sqrt{A_i/T} p_i$, $dp_i = \sqrt{T/A_i} dx$.
+\begin{equation*}
+    \avg{H_i} = \frac{\int T x^2 \mathe^{-x^2} \sqrt{T/A_i} dx}{\int \mathe^{-x^2} \sqrt{T/A_i} dx} = T \frac{\int x^2 \mathe^{-x^2} dx}{\int \mathe^{-x^2} dx}
+\end{equation*}
+The integrals are standard Gaussian integrals: $\int \mathe^{-x^2} dx = \sqrt{\pi}$ and $\int x^2 \mathe^{-x^2} dx = \sqrt{\pi}/2$.
+\begin{equation*}
+    \avg{H_i} = T \frac{\sqrt{\pi}/2}{\sqrt{\pi}} = \frac{1}{2}T
+\end{equation*}
+The same logic applies to quadratic terms $B_j q_j^2$.
+
+\subsection{Examples}
+\begin{itemize}
+    \item \textit{Monatomic ideal gas:} $H = \sum_{i=1}^N (p_{ix}^2 + p_{iy}^2 + p_{iz}^2)/(2m)$. $3N$ quadratic momentum terms. $\avg{E} = 3N \times (\frac{1}{2}T) = \frac{3}{2}NT$. $C_V = \pdv{E}{T}_V = \frac{3}{2}N$.
+    \item \textit{Diatomic ideal gas (rigid rotor):} Add rotational kinetic energy, e.g., $H_{rot} = (L_x^2 + L_y^2)/(2I)$ (2 axes perpendicular to bond). $L_x, L_y$ involve momenta quadratically. Add $2 \times (\frac{1}{2}T) = T$. Total $\avg{E} = \frac{3}{2}NT + T = \frac{5}{2}NT$. $C_V = \frac{5}{2}N$.
+    \item \textit{Diatomic ideal gas (with vibration):} Add vibrational energy $H_{vib} = p_{\xi}^2/(2\mu) + \frac{1}{2}k\xi^2$. One quadratic momentum term, one quadratic position term. Add $2 \times (\frac{1}{2}T) = T$. Total $\avg{E} = \frac{5}{2}NT + T = \frac{7}{2}NT$. $C_V = \frac{7}{2}N$. (Note: Vibration and rotation are often quantized and equipartition fails at low T).
+    \item \textit{Solid (Dulong-Petit Law):} Model atoms as 3D harmonic oscillators. $H = \sum_{i=1}^{N} (\frac{\vec{p}_i^2}{2m} + \frac{1}{2}m\omega^2 \vec{r}_i^2)$. $3N$ quadratic momentum terms + $3N$ quadratic position terms = $6N$ terms. $\avg{E} = 6N \times (\frac{1}{2}T) = 3NT$. $C_V = 3N$. This classical result holds at high temperatures.
+\end{itemize}
+
+\section{Quantum Statistics Examples}
+Equipartition fails when $T$ is comparable to or smaller than the energy level spacing ($\sim \hbar \omega$). We need quantum statistics.
+
+\subsection{Harmonic Oscillator (Quantum)}
+Energy levels $E_n = \hbar \omega (n + 1/2)$, where $n=0, 1, 2, \dots$.
+Canonical partition function for a single oscillator:
+\begin{equation*}
+    Z = \sum_{n=0}^\infty \mathe^{-E_n / T} = \sum_{n=0}^\infty \mathe^{-\hbar \omega (n+1/2) / T} = \mathe^{-\hbar \omega / (2T)} \sum_{n=0}^\infty (\mathe^{-\hbar \omega / T})^n
+\end{equation*}
+This is a geometric series with $x = \mathe^{-\hbar \omega / T} < 1$. Sum is $1/(1-x)$.
+\begin{equation}
+    Z = \frac{\mathe^{-\hbar \omega / (2T)}}{1 - \mathe^{-\hbar \omega / T}} = \frac{1}{2 \sinh(\hbar \omega / (2T))}
+\end{equation}
+Average energy $\avg{E} = T^2 \pdv{(\ln Z)}{T}$.
+\begin{equation*}
+    \ln Z = -\frac{\hbar \omega}{2T} - \ln(1 - \mathe^{-\hbar \omega / T})
+\end{equation*}
+\begin{align*}
+    \pdv{(\ln Z)}{T} &= \frac{\hbar \omega}{2T^2} - \frac{1}{1 - \mathe^{-\hbar \omega / T}} (-\mathe^{-\hbar \omega / T}) (\frac{\hbar \omega}{T^2}) \\
+                    &= \frac{\hbar \omega}{T^2} \left[ \frac{1}{2} + \frac{\mathe^{-\hbar \omega / T}}{1 - \mathe^{-\hbar \omega / T}} \right] = \frac{\hbar \omega}{T^2} \left[ \frac{1}{2} + \frac{1}{\mathe^{\hbar \omega / T} - 1} \right]
+\end{align*}
+Multiplying by $T^2$:
+\begin{equation}
+    \avg{E} = \hbar \omega \left[ \frac{1}{2} + \frac{1}{\mathe^{\hbar \omega / T} - 1} \right]
+\end{equation}
+The first term is the zero-point energy. The second term is the Planck distribution describing the average excitation number $\avg{n} = 1/(\mathe^{\hbar \omega / T} - 1)$.
+Heat capacity $C = \pdv{\avg{E}}{T}$:
+\begin{equation}
+    C = \pdv{}{T} \left[ \frac{\hbar \omega}{\mathe^{\hbar \omega / T} - 1} \right] = \dots = \left( \frac{\hbar \omega}{T} \right)^2 \frac{\mathe^{\hbar \omega / T}}{(\mathe^{\hbar \omega / T} - 1)^2}
+\end{equation}
+Behavior in limiting cases:
+\begin{itemize}
+    \item High T ($T \gg \hbar \omega$): $\mathe^{\hbar \omega / T} \approx 1 + \hbar \omega / T$. Then $\avg{E} \approx \hbar \omega (\frac{1}{2} + \frac{1}{\hbar \omega / T}) \approx T$. $C \to 1$ (per oscillator, $k_B=1$). Equipartition recovered (2 quadratic terms give T).
+    \item Low T ($T \ll \hbar \omega$): $\mathe^{\hbar \omega / T} \gg 1$. $\avg{E} \approx \hbar \omega (\frac{1}{2} + \mathe^{-\hbar \omega / T}) \to \frac{1}{2}\hbar \omega$. $C \approx (\frac{\hbar \omega}{T})^2 \mathe^{-\hbar \omega / T} \to 0$. Heat capacity freezes out exponentially.
+\end{itemize}
+
+\subsection{Einstein Solid}
+A simple model for vibrations in a solid: $N$ atoms treated as $3N$ independent 1D quantum harmonic oscillators, all with the same frequency $\omega$.
+Total average energy $\avg{E}_{total} = 3N \times \avg{E}_{\text{1D HO}}$.
+\begin{equation*}
+    \avg{E}_{total} = 3N \hbar \omega \left[ \frac{1}{2} + \frac{1}{\mathe^{\hbar \omega / T} - 1} \right]
+\end{equation*}
+Heat capacity $C_V = \pdv{\avg{E}_{total}}{T} = 3N \times C_{\text{1D HO}}$. Define the Einstein Temperature $\Theta_E = \hbar \omega$.
+\begin{equation}
+    C_V(T) = 3N \left( \frac{\Theta_E}{T} \right)^2 \frac{\mathe^{\Theta_E / T}}{(\mathe^{\Theta_E / T} - 1)^2}
+\end{equation}
+Limits:
+\begin{itemize}
+    \item High T ($T \gg \Theta_E$): $\mathe^{\Theta_E / T} \approx 1 + \Theta_E / T$. $C_V \to 3N$. Recovers classical Dulong-Petit law.
+    \item Low T ($T \ll \Theta_E$): $C_V \approx 3N (\Theta_E/T)^2 \mathe^{-\Theta_E / T} \to 0$. Captures the freezing out of heat capacity, but the exponential decay is faster than the $T^3$ dependence observed experimentally (explained by Debye model accounting for collective modes/phonons with a distribution of frequencies).
+\end{itemize}
+
+\subsection{Paramagnetism (Spin J)}
+Consider $N$ non-interacting magnetic moments (e.g., atoms with total angular momentum J) at fixed positions in an external magnetic field $\vec{H} = H \hat{z}$.
+The energy of a single moment depends on its orientation relative to the field. The z-component of angular momentum is quantized: $J_z = m \hbar$, where $m = -J, -J+1, \dots, J$. The magnetic moment is $\vec{\mu} = g \mu_B \vec{J}/\hbar$. Energy levels are $E_m = - \vec{\mu} \cdot \vec{H} = - \mu_z H = - g \mu_B m H$.
+Partition function for a single spin $Z_1$:
+\begin{equation*}
+    Z_1 = \sum_{m=-J}^{J} \mathe^{-E_m / T} = \sum_{m=-J}^{J} \mathe^{g \mu_B m H / T}
+\end{equation*}
+Let $\eta = g \mu_B H / T$. The sum is a finite geometric series $\sum_{m=-J}^{J} (\mathe^{\eta})^m$.
+\begin{equation}
+    Z_1 = \frac{\sinh((J+1/2)\eta)}{\sinh(\eta/2)}
+\end{equation}
+For $N$ such moments (assuming distinguishable sites): $Z = (Z_1)^N$.
+The average z-component of a single magnetic moment is $\avg{\mu_z} = T \pdv{(\ln Z_1)}{H}_T$.
+\begin{align*}
+    \avg{\mu_z} &= T \pdv{\eta}{H} \pdv{(\ln Z_1)}{\eta} = T \left(\frac{g \mu_B}{T}\right) \pdv{}{\eta} [\ln \sinh((J+1/2)\eta) - \ln \sinh(\eta/2)] \\
+                &= g \mu_B \left[ (J+1/2) \coth((J+1/2)\eta) - (1/2) \coth(\eta/2) \right]
+\end{align*}
+This is conveniently written using the Brillouin function $B_J(x)$:
+\begin{equation}
+    B_J(x) = \frac{1}{J} \left[ (J+1/2) \coth((J+1/2)x) - (1/2) \coth(x/2) \right]
+\end{equation}
+\begin{equation}
+    \avg{\mu_z} = g \mu_B J B_J(\eta) \qquad \text{where } \eta = g \mu_B H / T
+\end{equation}
+The total magnetization $M$ is $N$ times the average moment:
+\begin{equation}
+    M = N \avg{\mu_z} = N g \mu_B J B_J(\eta)
+\end{equation}
+Limits:
+\begin{itemize}
+    \item High T / Low H ($\eta \ll 1$): Use $\coth(x) \approx 1/x + x/3$ for small $x$.
+          $B_J(\eta) \approx \frac{J+1}{3} \eta$.
+          \begin{equation*}
+              M \approx N g \mu_B J \frac{J+1}{3} \frac{g \mu_B H}{T} = \frac{N (g \mu_B)^2 J(J+1)}{3T} H
+          \end{equation*}
+          This is the Curie Law: $M = \chi H$ with magnetic susceptibility $\chi = C/T$, where $C = \frac{N (g \mu_B)^2 J(J+1)}{3}$ is the Curie constant.
+    \item Low T / High H ($\eta \gg 1$): Use $\coth(x) \to 1$ for large $x$.
+          $B_J(\eta) \to \frac{1}{J} [ (J+1/2) - 1/2 ] = 1$.
+          \begin{equation*}
+              M \to N g \mu_B J
+          \end{equation*}
+          The magnetization saturates as all moments align with the field.
+\end{itemize}
+
+\section{Elements of Kinetic Theory}
+Kinetic theory provides a microscopic perspective on gas properties based on particle motion and collisions. We assume dilute gases (particles mostly independent between collisions).
+
+\subsection{Maxwell Velocity and Speed Distributions}
+We previously found the equilibrium distribution of velocities for classical particles:
+\begin{equation*}
+    f(\vec{v}) d^3v = \left( \frac{m}{2 \pi T} \right)^{3/2} \mathe^{-m v^2 / (2T)} d^3v
+\end{equation*}
+Often we are interested in the distribution of speeds $v = |\vec{v}|$. We integrate $f(\vec{v})$ over the angular variables in velocity space ($d^3v = v^2 dv d\Omega = v^2 \sin\theta dv d\theta d\phi$). The integral over $d\Omega$ gives $4\pi$.
+The Maxwell speed distribution is $F(v) dv$:
+\begin{equation}
+    F(v) dv = 4 \pi \left( \frac{m}{2 \pi T} \right)^{3/2} v^2 \mathe^{-m v^2 / (2T)} dv
+\end{equation}
+Various characteristic speeds can be calculated from $F(v)$:
+\begin{itemize}
+    \item Most probable speed $\tilde{v}$: Speed where $F(v)$ is maximum. Found from $dF/dv = 0$.
+        \begin{equation*} \tilde{v} = \sqrt{2T/m} \end{equation*}
+    \item Mean speed $\avg{v}$: Average value of $v$.
+        \begin{equation*} \avg{v} = \int_0^\infty v F(v) dv = \sqrt{8T/(\pi m)} \end{equation*}
+    \item Root-mean-square (RMS) speed $v_{rms}$: Square root of the average squared speed.
+        \begin{equation*} \avg{v^2} = \int_0^\infty v^2 F(v) dv = 3T/m \implies v_{rms} = \sqrt{\avg{v^2}} = \sqrt{3T/m} \end{equation*}
+\end{itemize}
+Note the ordering: $\tilde{v} : \avg{v} : v_{rms} \approx 1 : 1.128 : 1.225$.
+
+\subsection{Particle Flux and Effusion}
+Consider particles crossing a unit area perpendicular to the z-axis. The number flux $\Phi(\vec{v}) d^3v$ is the number of particles with velocity near $\vec{v}$ crossing per unit area per unit time.
+Particles with velocity $\vec{v}$ cross area $dA$ in time $dt$ if they are within a cylinder of volume $v_z dt dA$. The number density of such particles is $n f(\vec{v}) d^3v$.
+Flux = (Number) / (Area $\times$ Time) $= (n f(\vec{v}) d^3v) (v_z dt dA) / (dA dt) = n v_z f(\vec{v}) d^3v$.
+The total particle flux $\Phi_0$ in the $+z$ direction is obtained by integrating over all velocities with $v_z > 0$:
+\begin{equation*}
+    \Phi_0 = \int_{v_x=-\infty}^{\infty} \int_{v_y=-\infty}^{\infty} \int_{v_z=0}^{\infty} n v_z f(\vec{v}) dv_x dv_y dv_z
+\end{equation*}
+Performing the integrals yields:
+\begin{equation}
+    \Phi_0 = n \sqrt{\frac{T}{2\pi m}} = \frac{1}{4} n \avg{v}
+\end{equation}
+Using the ideal gas law $P=nT$:
+\begin{equation}
+    \Phi_0 = \frac{P}{\sqrt{2 \pi m T}}
+\end{equation}
+Effusion is the slow leakage of gas from a container through a small hole (area A) into a vacuum. If the hole is small enough not to disturb the equilibrium distribution inside, the rate of particle escape is:
+\begin{equation}
+    I = \Phi_0 A = \frac{P A}{\sqrt{2 \pi m T}} \quad (\text{particles/time})
+\end{equation}
+
+\subsection{Pressure of an Ideal Gas}
+Pressure arises from momentum transfer during collisions of particles with the container walls. Consider elastic collisions with a wall perpendicular to z. A particle with velocity $\vec{v}$ undergoes a momentum change $\Delta p_z = -2 m v_z$ if $v_z < 0$ (hitting the wall).
+The force on the wall is the rate of momentum transfer. The number of particles hitting area A in time dt with velocity $\vec{v}$ ($v_z>0$) is $(n f(\vec{v}) d^3v) (A v_z dt)$. Each imparts momentum $2 m v_z$ to the wall (using $v_z$ of incident particle).
+Total force $F_z = \int_{v_z>0} (\text{momentum transfer/particle}) \times (\text{number flux hitting wall})$.
+\begin{equation*}
+    F_z = \int_{v_z>0} (2 m v_z) (n v_z f(\vec{v}) d^3v) A = 2 m n A \int_{v_z>0} v_z^2 f(\vec{v}) d^3v
+\end{equation*}
+Since $f(\vec{v})$ is symmetric, the integral over $v_z>0$ is half the integral over all $v_z$:
+\begin{equation*}
+    \int_{v_z>0} v_z^2 f(\vec{v}) d^3v = \frac{1}{2} \int v_z^2 f(\vec{v}) d^3v = \frac{1}{2} \avg{v_z^2}
+\end{equation*}
+So, $F_z = 2 m n A (\frac{1}{2} \avg{v_z^2}) = m n A \avg{v_z^2}$.
+Pressure $P = F_z / A = m n \avg{v_z^2}$.
+From isotropy, $\avg{v_x^2} = \avg{v_y^2} = \avg{v_z^2}$. Since $\avg{v^2} = \avg{v_x^2+v_y^2+v_z^2} = 3 \avg{v_z^2}$.
+From equipartition (or direct calculation), $\avg{v^2} = 3T/m$. Therefore $\avg{v_z^2} = T/m$.
+Substituting gives:
+\begin{equation}
+    P = m n (T/m) = n T
+\end{equation}
+Kinetic theory successfully reproduces the ideal gas law.
+
+% Further topics could include: Mean Free Path, Collision Frequency, Transport Coefficients (Diffusion, Viscosity, Thermal Conductivity).
+
+\end{document}

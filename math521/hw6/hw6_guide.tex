@@ -1,0 +1,451 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{1ex} % Space between paragraphs
+
+\begin{document}
+
+\section*{Homework Guide: Assignment 6}
+
+\subsection*{Problem 1}
+
+\textbf{(a)} Let \(f\) be a uniformly continuous function on \(\R\), and define the sequence of functions \(f_n(x) = f(x-\tfrac{1}{n})\). Prove that \(f_n \to f\) uniformly.
+
+\textbf{(b)} Suppose that \(f\) is a continuous function on \(\R\), and again define \(f_n(x)=f(x-\tfrac{1}{n})\). Find an example where \(f_n\) does not uniformly converge to \(f\).
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Uniform Continuity \footnote{See Definition 19.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A function \(f: S \to \R\) is uniformly continuous on \(S\) if for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that for all \(x, y \in S\), if \(\abs{x - y} < \delta\), then \(\abs{f(x) - f(y)} < \epsilon\).
+\end{definition}
+
+\begin{definition}[Uniform Convergence \footnote{See Definition 24.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A sequence of functions \((f_n)\) on a set \(S\) converges uniformly to a function \(f\) on \(S\) if for every \(\epsilon > 0\), there exists an \(N \in \N\) such that for all \(n > N\) and all \(x \in S\), \(\abs{f_n(x) - f(x)} < \epsilon\).
+\end{definition}
+
+\begin{definition}[Continuity \footnote{See Definition 17.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A function \(f: S \to \R\) is continuous on \(S\) if it is continuous at every point \(x_0 \in S\).
+\end{definition}
+
+\subsubsection*{Solution Outline}
+
+\textbf{(a)}
+\begin{enumerate}
+    \item Let \(\epsilon > 0\).
+    \item Since \(f\) is uniformly continuous on \(\R\), there exists \(\delta > 0\) such that \(\abs{y - z} < \delta \implies \abs{f(y) - f(z)} < \epsilon\).
+    \item We need to show \(\forall \epsilon > 0, \exists N \in \N\) such that \(n > N \implies \abs{f_n(x) - f(x)} < \epsilon\) for all \(x \in \R\).
+    \item Consider \(\abs{f_n(x) - f(x)} = \abs{f(x - \tfrac{1}{n}) - f(x)}\).
+    \item Let \(y = x - \tfrac{1}{n}\) and \(z = x\). Then \(\abs{y - z} = \abs{-\tfrac{1}{n}} = \tfrac{1}{n}\).
+    \item We need \(\abs{y - z} < \delta\), which means \(\tfrac{1}{n} < \delta\).
+    \item Choose \(N \in \N\) such that \(N > 1/\delta\).
+    \item If \(n > N\), then \(\tfrac{1}{n} < \tfrac{1}{N} < \delta\).
+    \item Thus, for \(n > N\), \(\abs{y - z} = \tfrac{1}{n} < \delta\), which implies \(\abs{f(y) - f(z)} < \epsilon\).
+    \item This means \(\abs{f(x - \tfrac{1}{n}) - f(x)} < \epsilon\) for all \(x \in \R\) when \(n > N\).
+    \item By definition, \(f_n \to f\) uniformly on \(\R\).
+\end{enumerate}
+
+\textbf{(b)}
+\begin{enumerate}
+    \item We need a continuous function on \(\R\) that is not uniformly continuous. Consider \(f(x) = x^2\).
+    \item \(f(x) = x^2\) is continuous on \(\R\).
+    \item Define \(f_n(x) = f(x - \tfrac{1}{n}) = (x - \tfrac{1}{n})^2\).
+    \item Consider the difference:
+    \[ \abs{f_n(x) - f(x)} = \abs{(x - \tfrac{1}{n})^2 - x^2} = \abs{x^2 - \tfrac{2x}{n} + \tfrac{1}{n^2} - x^2} = \abs{-\tfrac{2x}{n} + \tfrac{1}{n^2}}. \]
+    \item For uniform convergence, for a given \(\epsilon > 0\), we need \(\exists N\) such that for \(n > N\), \(\abs{-\tfrac{2x}{n} + \tfrac{1}{n^2}} < \epsilon\) for \textit{all} \(x \in \R\).
+    \item Let \(\epsilon = 1\). Suppose such an \(N\) exists.
+    \item Choose \(n > N\). Let \(x = n\).
+    \item Then \(\abs{f_n(n) - f(n)} = \abs{-\tfrac{2n}{n} + \tfrac{1}{n^2}} = \abs{-2 + \tfrac{1}{n^2}}\).
+    \item If \(n \ge 2\), then \(0 < \tfrac{1}{n^2} \le \tfrac{1}{4}\), so \(\abs{-2 + \tfrac{1}{n^2}} = 2 - \tfrac{1}{n^2} \ge 2 - \tfrac{1}{4} = \tfrac{7}{4} > 1\).
+    \item This contradicts the assumption that \(\abs{f_n(x) - f(x)} < 1\) for all \(x\) when \(n > N\).
+    \item Therefore, the convergence is not uniform for \(f(x) = x^2\).
+\end{enumerate}
+
+\hrulefill
+
+\subsection*{Problem 2}
+
+Let \(f\) be a bounded function on \([0,1]\) so that \(\abs{f(x)} \le M\) for all \(x\in [0,1]\). Show that the Bernstein polynomials \(B_n f\) are all bounded by \(M\).
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Bounded Function \footnote{See Definition 13.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A function \(f: S \to \R\) is bounded if there exists \(M \in \R\) such that \(\abs{f(x)} \le M\) for all \(x \in S\).
+\end{definition}
+
+\begin{definition}[Bernstein Polynomials \footnote{See Section 26 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+For a function \(f\) defined on \([0, 1]\), the \(n\)-th Bernstein polynomial for \(f\) is
+\[ (B_n f)(x) = \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} f\left(\frac{k}{n}\right). \]
+\end{definition}
+
+\begin{theorem}[Binomial Theorem]
+For any real numbers \(a, b\) and any integer \(n \ge 0\),
+\[ (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}. \]
+\end{theorem}
+
+\subsubsection*{Solution Outline}
+
+\begin{enumerate}
+    \item Let \(x \in [0, 1]\). The \(n\)-th Bernstein polynomial is:
+    \[ (B_n f)(x) = \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} f\left(\frac{k}{n}\right). \]
+    \item Take the absolute value:
+    \[ \abs{(B_n f)(x)} = \abs{ \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} f\left(\frac{k}{n}\right) }. \]
+    \item Apply the triangle inequality:
+    \[ \abs{(B_n f)(x)} \le \sum_{k=0}^n \abs{ \binom{n}{k} x^k (1-x)^{n-k} f\left(\frac{k}{n}\right) }. \]
+    \item Since \(x \in [0, 1]\), the terms \(\binom{n}{k}\), \(x^k\), and \((1-x)^{n-k}\) are non-negative. Thus,
+    \[ \abs{(B_n f)(x)} \le \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} \abs{ f\left(\frac{k}{n}\right) }. \]
+    \item We are given \(\abs{f(y)} \le M\) for all \(y \in [0, 1]\). Since \(\frac{k}{n} \in [0, 1]\), we have \(\abs{f(\frac{k}{n})} \le M\).
+    \item Substitute this bound:
+    \[ \abs{(B_n f)(x)} \le \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} M. \]
+    \item Factor out \(M\):
+    \[ \abs{(B_n f)(x)} \le M \left( \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} \right). \]
+    \item By the Binomial Theorem with \(a=x\) and \(b=1-x\):
+    \[ \sum_{k=0}^n \binom{n}{k} x^k (1-x)^{n-k} = (x + (1-x))^n = 1^n = 1. \]
+    \item Substitute this back:
+    \[ \abs{(B_n f)(x)} \le M \cdot 1 = M. \]
+    \item This holds for all \(x \in [0, 1]\) and all \(n \in \N\). Thus, \(B_n f\) are uniformly bounded by \(M\).
+\end{enumerate}
+
+\hrulefill
+
+\subsection*{Problem 3}
+
+Let \(f\) and \(g\) be differentiable on an open interval \(I\) and let \(a\in I\). Define
+\[ h(x) = \begin{cases} f(x) & \text{for } x<a, \\ g(x) & \text{for } x\ge a. \end{cases} \]
+Prove that \(h\) is differentiable at \(a\) if and only if both \(f(a)=g(a)\) and \(f'(a)=g'(a)\).
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Differentiability at a Point \footnote{See Definition 28.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A function \(h\) defined on an open interval containing \(a\) is differentiable at \(a\) if the limit \(h'(a) = \lim_{x \to a} \frac{h(x) - h(a)}{x - a}\) exists.
+\end{definition}
+
+\begin{theorem}[Differentiability implies Continuity \footnote{See Theorem 28.2 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+If \(h\) is differentiable at \(a\), then \(h\) is continuous at \(a\).
+\end{theorem}
+
+\begin{definition}[Continuity at a Point \footnote{See Definition 17.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+A function \(h\) is continuous at \(a\) if \(\lim_{x \to a} h(x) = h(a)\). This requires \(\lim_{x \to a^-} h(x) = \lim_{x \to a^+} h(x) = h(a)\).
+\end{definition}
+
+\begin{theorem}[Existence of Limit \footnote{See Definition 20.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+The limit \(\lim_{x \to a} G(x)\) exists and equals \(L\) if and only if the left-hand limit \(\lim_{x \to a^-} G(x)\) and the right-hand limit \(\lim_{x \to a^+} G(x)\) both exist and equal \(L\).
+\end{theorem}
+
+\subsubsection*{Solution Outline}
+
+\textbf{($\Rightarrow$) Assume \(h\) is differentiable at \(a\).}
+\begin{enumerate}
+    \item Since \(h\) is differentiable at \(a\), it is continuous at \(a\) (Thm 28.2).
+    \item Continuity at \(a\) implies \(\lim_{x \to a^-} h(x) = \lim_{x \to a^+} h(x) = h(a)\).
+    \item Evaluate these using the definition of \(h\):
+    \begin{itemize}
+        \item \(h(a) = g(a)\).
+        \item \(\lim_{x \to a^-} h(x) = \lim_{x \to a^-} f(x) = f(a)\) (since \(f\) is continuous at \(a\)).
+        \item \(\lim_{x \to a^+} h(x) = \lim_{x \to a^+} g(x) = g(a)\) (since \(g\) is continuous at \(a\)).
+    \end{itemize}
+    \item Thus, \(f(a) = g(a)\). This is the first condition.
+    \item Since \(h\) is differentiable at \(a\), the limit \(h'(a) = \lim_{x \to a} \frac{h(x) - h(a)}{x - a}\) exists.
+    \item The left-hand and right-hand limits of the difference quotient must exist and be equal.
+    \item Left-hand derivative:
+    \[ \lim_{x \to a^-} \frac{h(x) - h(a)}{x - a} = \lim_{x \to a^-} \frac{f(x) - g(a)}{x - a}. \]
+    Using \(f(a) = g(a)\):
+    \[ \lim_{x \to a^-} \frac{f(x) - f(a)}{x - a} = f'(a) \]
+    (since \(f\) is differentiable at \(a\)).
+    \item Right-hand derivative:
+    \[ \lim_{x \to a^+} \frac{h(x) - h(a)}{x - a} = \lim_{x \to a^+} \frac{g(x) - g(a)}{x - a} = g'(a) \]
+    (since \(g\) is differentiable at \(a\)).
+    \item For \(h'(a)\) to exist, the one-sided derivatives must be equal: \(f'(a) = g'(a)\). This is the second condition.
+\end{enumerate}
+
+\textbf{($\Leftarrow$) Assume \(f(a) = g(a)\) and \(f'(a) = g'(a)\).}
+\begin{enumerate}
+    \item We need to show that \(h'(a) = \lim_{x \to a} \frac{h(x) - h(a)}{x - a}\) exists.
+    \item Examine the left-hand and right-hand limits of the difference quotient.
+    \item Left-hand derivative:
+    \[ \lim_{x \to a^-} \frac{h(x) - h(a)}{x - a} = \lim_{x \to a^-} \frac{f(x) - g(a)}{x - a}. \]
+    Using \(f(a) = g(a)\):
+    \[ \lim_{x \to a^-} \frac{f(x) - f(a)}{x - a} = f'(a). \]
+    \item Right-hand derivative:
+    \[ \lim_{x \to a^+} \frac{h(x) - h(a)}{x - a} = \lim_{x \to a^+} \frac{g(x) - g(a)}{x - a} = g'(a). \]
+    \item We are given \(f'(a) = g'(a)\). Let \(L = f'(a) = g'(a)\).
+    \item The left-hand derivative is \(L\) and the right-hand derivative is \(L\).
+    \item Since the left-hand and right-hand limits exist and are equal, the limit exists:
+    \[ \lim_{x \to a} \frac{h(x) - h(a)}{x - a} = L. \]
+    \item Therefore, \(h\) is differentiable at \(a\) and \(h'(a) = L\).
+\end{enumerate}
+
+\hrulefill
+
+\subsection*{Problem 4}
+
+Suppose \(f\) is differentiable at \(a\). Define
+\[ L_1(a,h) = \frac{f(a+h)-f(a-h)}{2h}, \quad L_2(a,h) = \frac{-f(a+2h)+8f(a+h)-8f(a-h)+f(a-2h)}{12h}. \]
+\textbf{(a)} Prove that \(\lim_{h\to 0} L_i(a,h)=f'(a)\) for \(i=1,2\).
+\textbf{(b)} Consider \(f(x)=x^5\). How does \(\abs{L_i(a,h)-f'(a)}\) behave as \(h \to 0\)?
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Differentiability at a Point \footnote{See Definition 28.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+\(f\) is differentiable at \(a\) if \(f'(a) = \lim_{k \to 0} \frac{f(a+k) - f(a)}{k}\) exists.
+This implies \(f(a+k) = f(a) + f'(a)k + \phi(k)\) where \(\lim_{k \to 0} \frac{\phi(k)}{k} = 0\).
+\end{definition}
+
+\begin{theorem}[Taylor's Theorem \footnote{See Theorem 30.2 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+If \(f\) has \(n+1\) derivatives in an interval around \(a\), then for \(x\) in that interval,
+\[ f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k + R_n(x), \]
+where \(R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\) for some \(c\) between \(a\) and \(x\).
+\end{theorem}
+
+\subsubsection*{Solution Outline}
+
+\textbf{(a)}
+\textit{For \(L_1(a,h)\):}
+\begin{enumerate}
+    \item Rewrite \(L_1(a,h)\):
+    \[ L_1(a,h) = \frac{f(a+h) - f(a) - (f(a-h) - f(a))}{2h} = \frac{1}{2} \left[ \frac{f(a+h) - f(a)}{h} - \frac{f(a-h) - f(a)}{h} \right]. \]
+    \item Let \(k = -h\). Then \(\frac{f(a-h) - f(a)}{h} = \frac{f(a+k) - f(a)}{-k} = -\frac{f(a+k) - f(a)}{k}\).
+    \item So, \(L_1(a,h) = \frac{1}{2} \left[ \frac{f(a+h) - f(a)}{h} + \frac{f(a+(-h)) - f(a)}{-h} \right]\).
+    \item Take the limit as \(h \to 0\). Since \(f\) is differentiable at \(a\):
+    \[ \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} = f'(a), \quad \lim_{h \to 0} \frac{f(a+(-h)) - f(a)}{-h} = f'(a). \]
+    \item Therefore, \(\lim_{h \to 0} L_1(a,h) = \frac{1}{2} [f'(a) + f'(a)] = f'(a)\).
+\end{enumerate}
+
+\textit{For \(L_2(a,h)\):}
+\begin{enumerate}
+    \item Use the definition \(f(a+k) = f(a) + f'(a)k + \phi(k)\), where \(\phi(k)/k \to 0\) as \(k \to 0\).
+    \item Substitute into the numerator of \(L_2(a,h)\) for \(k = 2h, h, -h, -2h\).
+    \item Sum the terms:
+    \begin{itemize}
+        \item \(f(a)\) terms: \(-1+8-8+1 = 0\).
+        \item \(f'(a)k\) terms: \(f'(a)[-2h + 8h - 8(-h) + (-2h)] = f'(a)[-2h + 8h + 8h - 2h] = 12 f'(a)h\).
+        \item Remainder terms: \(R(h) = -\phi(2h) + 8\phi(h) - 8\phi(-h) + \phi(-2h)\).
+    \end{itemize}
+    \item Numerator = \(12 f'(a)h + R(h)\).
+    \item \(L_2(a,h) = \frac{12 f'(a)h + R(h)}{12h} = f'(a) + \frac{R(h)}{12h}\).
+    \item We need to show \(\lim_{h \to 0} \frac{R(h)}{12h} = 0\).
+    \[ \frac{R(h)}{12h} = \frac{1}{12} \left[ - \frac{\phi(2h)}{h} + 8 \frac{\phi(h)}{h} - 8 \frac{\phi(-h)}{h} + \frac{\phi(-2h)}{h} \right] \]
+    \[ = \frac{1}{12} \left[ -2 \frac{\phi(2h)}{2h} + 8 \frac{\phi(h)}{h} + 8 \frac{\phi(-h)}{-h} - 2 \frac{\phi(-2h)}{-2h} \right]. \]
+    \item As \(h \to 0\), each term \(\frac{\phi(k)}{k} \to 0\).
+    \item Thus, \(\lim_{h \to 0} \frac{R(h)}{12h} = \frac{1}{12} [-2(0) + 8(0) + 8(0) - 2(0)] = 0\).
+    \item Therefore, \(\lim_{h \to 0} L_2(a,h) = f'(a) + 0 = f'(a)\).
+\end{enumerate}
+
+\textbf{(b)}
+\begin{enumerate}
+    \item Let \(f(x) = x^5\). Derivatives: \(f'(x) = 5x^4\), \(f''(x) = 20x^3\), \(f'''(x) = 60x^2\), \(f^{(4)}(x) = 120x\), \(f^{(5)}(x) = 120\), \(f^{(k)}(x) = 0\) for \(k \ge 6\).
+    \item Use Taylor expansion around \(a\):
+    \[ f(a+h) = f(a) + f'(a)h + \frac{f''(a)}{2}h^2 + \frac{f'''(a)}{6}h^3 + \frac{f^{(4)}(a)}{24}h^4 + \frac{f^{(5)}(a)}{120}h^5. \]
+    \textit{For \(L_1(a,h)\):}
+    \item Calculate \(f(a+h) - f(a-h)\) using the expansion. Odd power terms add, even power terms cancel.
+    \[ f(a+h) - f(a-h) = 2f'(a)h + 2\frac{f'''(a)}{6}h^3 + 2\frac{f^{(5)}(a)}{120}h^5 = 2f'(a)h + \frac{f'''(a)}{3}h^3 + \frac{f^{(5)}(a)}{60}h^5. \]
+    \item \(L_1(a,h) = \frac{f(a+h) - f(a-h)}{2h} = f'(a) + \frac{f'''(a)}{6}h^2 + \frac{f^{(5)}(a)}{120}h^4\).
+    \item \(L_1(a,h) - f'(a) = \frac{f'''(a)}{6}h^2 + \frac{f^{(5)}(a)}{120}h^4\).
+    \item Substitute derivatives of \(x^5\): \(f'''(a) = 60a^2\), \(f^{(5)}(a) = 120\).
+    \[ L_1(a,h) - f'(a) = \frac{60a^2}{6}h^2 + \frac{120}{120}h^4 = 10a^2 h^2 + h^4. \]
+    \item \(\abs{L_1(a,h) - f'(a)} = \abs{10a^2 h^2 + h^4} = O(h^2)\) as \(h \to 0\) (unless \(a=0\), then \(O(h^4)\)).
+    \textit{For \(L_2(a,h)\):}
+    \item Calculate \(-f(a+2h)+8f(a+h)-8f(a-h)+f(a-2h)\) using Taylor expansions.
+    \item Coefficients of \(h^j/j!\) for \(j=0, 2, 3, 4\) cancel out.
+    \item Coefficient of \(h^1/1!\): \(f'(a)[-2+8-8(-1)+(-2)] = 12 f'(a)\).
+    \item Coefficient of \(h^5/5!\): \(f^{(5)}(a)[-(2)^5+8(1)^5-8(-1)^5+(-2)^5] = f^{(5)}(a)[-32+8+8-32] = -48 f^{(5)}(a)\).
+    \item Numerator \( = 12 f'(a) h + \frac{-48 f^{(5)}(a)}{120} h^5 = 12 f'(a) h - \frac{2}{5} f^{(5)}(a) h^5\).
+    \item \(L_2(a,h) = \frac{12 f'(a) h - \frac{2}{5} f^{(5)}(a) h^5}{12h} = f'(a) - \frac{1}{30} f^{(5)}(a) h^4\).
+    \item \(L_2(a,h) - f'(a) = - \frac{1}{30} f^{(5)}(a) h^4\).
+    \item Substitute \(f^{(5)}(a) = 120\):
+    \[ L_2(a,h) - f'(a) = - \frac{1}{30} (120) h^4 = -4 h^4. \]
+    \item \(\abs{L_2(a,h) - f'(a)} = \abs{-4h^4} = 4h^4 = O(h^4)\) as \(h \to 0\).
+    \textit{Comparison:}
+    \item The error for \(L_1\) is \(O(h^2)\), while the error for \(L_2\) is \(O(h^4)\).
+    \item \(L_2\) converges to \(f'(a)\) faster than \(L_1\) as \(h \to 0\).
+\end{enumerate}
+
+\hrulefill
+
+\subsection*{Problem 5}
+
+For a real-valued function \(f\), \(x\) is a fixed point if \(f(x)=x\). Show that if \(f\) is differentiable on an interval with \(f'(x)\ne 1\), then \(f\) can have at most one fixed point.
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Fixed Point]
+A point \(x\) such that \(f(x) = x\).
+\end{definition}
+
+\begin{theorem}[Mean Value Theorem (MVT) \footnote{See Theorem 29.3 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+If \(g\) is continuous on \([a, b]\) and differentiable on \((a, b)\), then there exists \(c \in (a, b)\) such that \(g(b) - g(a) = g'(c)(b - a)\).
+\end{theorem}
+
+\begin{theorem}[Rolle's Theorem \footnote{See Theorem 29.2 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+If \(g\) is continuous on \([a, b]\), differentiable on \((a, b)\), and \(g(a) = g(b)\), then there exists \(c \in (a, b)\) such that \(g'(c) = 0\).
+\end{theorem}
+
+\subsubsection*{Solution Outline}
+
+\textbf{Method 1: Using MVT directly}
+\begin{enumerate}
+    \item Assume for contradiction that \(f\) has two distinct fixed points, \(x_1\) and \(x_2\), with \(x_1 < x_2\).
+    \item By definition, \(f(x_1) = x_1\) and \(f(x_2) = x_2\).
+    \item \(f\) is differentiable on an interval \(I\) containing \(x_1, x_2\). Thus \(f\) is continuous on \([x_1, x_2]\) and differentiable on \((x_1, x_2)\).
+    \item Apply MVT to \(f\) on \([x_1, x_2]\). There exists \(c \in (x_1, x_2)\) such that
+    \[ f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}. \]
+    \item Substitute \(f(x_1) = x_1\) and \(f(x_2) = x_2\):
+    \[ f'(c) = \frac{x_2 - x_1}{x_2 - x_1}. \]
+    \item Since \(x_1 \ne x_2\), \(x_2 - x_1 \ne 0\). Therefore, \(f'(c) = 1\).
+    \item This contradicts the hypothesis that \(f'(x) \ne 1\) for all \(x \in I\). Since \(c \in (x_1, x_2) \subseteq I\), we must have \(f'(c) \ne 1\).
+    \item The assumption of two distinct fixed points leads to a contradiction.
+    \item Therefore, \(f\) can have at most one fixed point.
+\end{enumerate}
+
+\textbf{Method 2: Using Rolle's Theorem}
+\begin{enumerate}
+    \item Define \(g(x) = f(x) - x\). Fixed points of \(f\) are roots of \(g\).
+    \item \(g\) is differentiable on \(I\) since \(f(x)\) and \(x\) are.
+    \item \(g'(x) = f'(x) - 1\).
+    \item The hypothesis \(f'(x) \ne 1\) implies \(g'(x) = f'(x) - 1 \ne 0\) for all \(x \in I\).
+    \item Assume for contradiction that \(f\) has two distinct fixed points, \(x_1\) and \(x_2\), with \(x_1 < x_2\).
+    \item Then \(g(x_1) = f(x_1) - x_1 = 0\) and \(g(x_2) = f(x_2) - x_2 = 0\).
+    \item \(g\) is continuous on \([x_1, x_2]\), differentiable on \((x_1, x_2)\), and \(g(x_1) = g(x_2) = 0\).
+    \item By Rolle's Theorem, there exists \(c \in (x_1, x_2)\) such that \(g'(c) = 0\).
+    \item This contradicts the fact that \(g'(x) \ne 0\) for all \(x \in I\).
+    \item The assumption of two distinct fixed points leads to a contradiction.
+    \item Therefore, \(f\) can have at most one fixed point.
+\end{enumerate}
+
+\hrulefill
+
+\subsection*{Problem 6}
+
+Find the following limits if they exist:
+(a) \(\lim_{x\to 0} \frac{x^3}{\sin x - x}\)
+(b) \(\lim_{x\to 0} \frac{\tan x -x}{x^3}\)
+(c) \(\lim_{x\to 0} \left( \frac{1}{\sin x} - \frac{1}{x} \right)\)
+(d) \(\lim_{x\to 0} \frac{1-\cos x}{e^{3x}-3x-1}\)
+
+\subsubsection*{Relevant Theorems}
+
+\begin{theorem}[L'Hôpital's Rule \footnote{See Theorems 30.3, 30.4 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+If \(\lim f(x) = \lim g(x) = 0\) (or \(\pm \infty\)) and \(\lim \frac{f'(x)}{g'(x)}\) exists, then \(\lim \frac{f(x)}{g(x)} = \lim \frac{f'(x)}{g'(x)}\).
+\end{theorem}
+
+\textbf{Taylor Series Expansions around 0:}
+\begin{itemize}
+    \item \(\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots\)
+    \item \(\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots\)
+    \item \(\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \dots\)
+    \item \(e^u = 1 + u + \frac{u^2}{2!} + \frac{u^3}{3!} + \dots\)
+\end{itemize}
+
+\subsubsection*{Solution Outline}
+
+\textbf{(a) \(\lim_{x\to 0} \frac{x^3}{\sin x - x}\)}
+\begin{itemize}
+    \item Taylor: \(\sin x - x = (x - \frac{x^3}{6} + O(x^5)) - x = -\frac{x^3}{6} + O(x^5)\).
+    \[ \lim_{x\to 0} \frac{x^3}{-\frac{x^3}{6} + O(x^5)} = \lim_{x\to 0} \frac{1}{-\frac{1}{6} + O(x^2)} = -6. \]
+    \item L'Hôpital (form \(\tfrac{0}{0}\)):
+    \[ \lim_{x\to 0} \frac{3x^2}{\cos x - 1} \overset{L'H}{=} \lim_{x\to 0} \frac{6x}{-\sin x} \overset{L'H}{=} \lim_{x\to 0} \frac{6}{-\cos x} = \frac{6}{-1} = -6. \]
+\end{itemize}
+
+\textbf{(b) \(\lim_{x\to 0} \frac{\tan x -x}{x^3}\)}
+\begin{itemize}
+    \item Taylor: \(\tan x - x = (x + \frac{x^3}{3} + O(x^5)) - x = \frac{x^3}{3} + O(x^5)\).
+    \[ \lim_{x\to 0} \frac{\frac{x^3}{3} + O(x^5)}{x^3} = \lim_{x\to 0} (\frac{1}{3} + O(x^2)) = \frac{1}{3}. \]
+    \item L'Hôpital (form \(\tfrac{0}{0}\)):
+    \[ \lim_{x\to 0} \frac{\sec^2 x - 1}{3x^2} \overset{L'H}{=} \lim_{x\to 0} \frac{2\sec^2 x \tan x}{6x} = \lim_{x\to 0} \frac{\sec^2 x}{3} \cdot \frac{\tan x}{x} = \frac{1}{3} \cdot 1 = \frac{1}{3}. \]
+\end{itemize}
+
+\textbf{(c) \(\lim_{x\to 0} \left( \frac{1}{\sin x} - \frac{1}{x} \right)\)}
+\begin{itemize}
+    \item Combine: \(\lim_{x\to 0} \frac{x - \sin x}{x \sin x}\). (Form \(\tfrac{0}{0}\)).
+    \item Taylor: Numerator is \(\frac{x^3}{6} + O(x^5)\). Denominator is \(x(x - \frac{x^3}{6} + \dots) = x^2 - \frac{x^4}{6} + \dots\).
+    \[ \lim_{x\to 0} \frac{\frac{x^3}{6} + O(x^5)}{x^2 + O(x^4)} = \lim_{x\to 0} \frac{x(\frac{1}{6} + O(x^2))}{1 + O(x^2)} = 0 \cdot \frac{1/6}{1} = 0. \]
+    \item L'Hôpital:
+    \[ \lim_{x\to 0} \frac{1 - \cos x}{\sin x + x \cos x} \overset{L'H}{=} \lim_{x\to 0} \frac{\sin x}{\cos x + \cos x - x \sin x} = \frac{0}{1+1-0} = 0. \]
+\end{itemize}
+
+\textbf{(d) \(\lim_{x\to 0} \frac{1-\cos x}{e^{3x}-3x-1}\)}
+\begin{itemize}
+    \item (Form \(\tfrac{0}{0}\)).
+    \item Taylor: Numerator is \(\frac{x^2}{2} + O(x^4)\). Denominator is \((1 + 3x + \frac{(3x)^2}{2} + O(x^3)) - 3x - 1 = \frac{9x^2}{2} + O(x^3)\).
+    \[ \lim_{x\to 0} \frac{\frac{x^2}{2} + O(x^4)}{\frac{9x^2}{2} + O(x^3)} = \lim_{x\to 0} \frac{\frac{1}{2} + O(x^2)}{\frac{9}{2} + O(x)} = \frac{1/2}{9/2} = \frac{1}{9}. \]
+    \item L'Hôpital:
+    \[ \lim_{x\to 0} \frac{\sin x}{3e^{3x} - 3} \overset{L'H}{=} \lim_{x\to 0} \frac{\cos x}{9e^{3x}} = \frac{1}{9}. \]
+\end{itemize}
+
+\hrulefill
+
+\subsection*{Problem 7}
+
+\textbf{(a)} Let \(f: \R \to \R\) be twice differentiable, \(f(0)=0\), \(f''(x)\ge 0\) for \(x>0\). Prove \(g(x)=f(x)/x\) is increasing for \(x>0\).
+
+\textbf{(b)} If \(f: \R \to \R\) is twice differentiable, \(f(0)=0\) and \(g(x)=f(x)/x\) is increasing for \(x>0\), show \(f''(x)\ge 0\) for \textit{some} \(x>0\), but not necessarily for \textit{all} \(x>0\).
+
+\subsubsection*{Relevant Definitions and Theorems}
+
+\begin{definition}[Increasing Function \footnote{See Definition 29.1 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*. Springer, 2013.}]
+\(g\) is increasing on an interval if \(x_1 < x_2\) implies \(g(x_1) \le g(x_2)\).
+\end{definition}
+
+\begin{theorem}[Derivative Test for Increasing Function \footnote{See Corollary 29.7 in Ross, K. A. *Elementary Analysis: The Theory of Calculus*, 2nd ed. Springer, 2013.}]
+If \(g\) is differentiable on \((a, b)\) and \(g'(x) \ge 0\) for all \(x \in (a, b)\), then \(g\) is increasing on \((a, b)\).
+\end{theorem}
+
+\subsubsection*{Solution Outline}
+
+\textbf{(a)}
+\begin{enumerate}
+    \item Define \(g(x) = f(x)/x\) for \(x > 0\). \(g\) is differentiable for \(x>0\).
+    \item We show \(g'(x) \ge 0\) for \(x > 0\).
+    \item Calculate \(g'(x)\) using the quotient rule:
+    \[ g'(x) = \frac{x f'(x) - f(x)}{x^2}. \]
+    \item Let \(N(x) = x f'(x) - f(x)\). We need to show \(N(x) \ge 0\) for \(x > 0\).
+    \item Calculate \(N'(x)\):
+    \[ N'(x) = (1 \cdot f'(x) + x f''(x)) - f'(x) = x f''(x). \]
+    \item Given \(f''(x) \ge 0\) for \(x > 0\). Since \(x > 0\), \(N'(x) = x f''(x) \ge 0\) for \(x > 0\).
+    \item Since \(N'(x) \ge 0\), \(N(x)\) is increasing on \((0, \infty)\).
+    \item Consider the limit of \(N(x)\) as \(x \to 0^+\):
+    \[ \lim_{x \to 0^+} N(x) = \lim_{x \to 0^+} (x f'(x) - f(x)). \]
+    Since \(f\) is differentiable at 0 and \(f(0)=0\), \(f'(0) = \lim_{x \to 0} f(x)/x\). Since \(f''\) exists, \(f'\) is continuous.
+    \[ \lim_{x \to 0^+} N(x) = (0 \cdot f'(0)) - f(0) = 0 - 0 = 0. \]
+    \item Since \(N(x)\) is increasing on \((0, \infty)\) and \(\lim_{x \to 0^+} N(x) = 0\), we have \(N(x) \ge 0\) for all \(x > 0\).
+    \item Therefore, \(g'(x) = N(x)/x^2 \ge 0\) for \(x > 0\).
+    \item By the theorem, \(g(x) = f(x)/x\) is increasing on \((0, \infty)\).
+\end{enumerate}
+
+\textbf{(b)}
+\begin{enumerate}
+    \item Assume \(f\) is twice differentiable, \(f(0)=0\), and \(g(x)=f(x)/x\) is increasing for \(x>0\).
+    \item From (a), \(g'(x) = \frac{x f'(x) - f(x)}{x^2} \ge 0\) for \(x > 0\).
+    \item Let \(N(x) = x f'(x) - f(x)\). Then \(N(x) \ge 0\) for \(x > 0\).
+    \item Also \(N'(x) = x f''(x)\) and \(\lim_{x \to 0^+} N(x) = 0\).
+    \item \textbf{Show \(f''(x) \ge 0\) for some \(x > 0\):}
+    Assume for contradiction that \(f''(x) < 0\) for all \(x > 0\).
+    Then \(N'(x) = x f''(x) < 0\) for all \(x > 0\).
+    This implies \(N(x)\) is strictly decreasing on \((0, \infty)\).
+    Since \(\lim_{x \to 0^+} N(x) = 0\), this would mean \(N(x) < 0\) for all \(x > 0\).
+    This contradicts \(N(x) \ge 0\).
+    Therefore, the assumption is false. There must exist some \(x_0 > 0\) such that \(f''(x_0) \ge 0\).
+    \item \textbf{Show \(f''(x)\) is not necessarily \(\ge 0\) for all \(x > 0\):}
+    Consider \(f(x) = x(1 - e^{-x}) = x - xe^{-x}\).
+    \begin{itemize}
+        \item \(f(0) = 0\). \(f\) is twice differentiable.
+        \item \(g(x) = f(x)/x = 1 - e^{-x}\) for \(x \ne 0\).
+        \item \(g'(x) = e^{-x} > 0\) for all \(x\). So \(g(x)\) is increasing for \(x > 0\).
+        \item \(f'(x) = 1 - e^{-x} + xe^{-x}\).
+        \item \(f''(x) = e^{-x} + (e^{-x} - xe^{-x}) = 2e^{-x} - xe^{-x} = (2-x)e^{-x}\).
+        \item If \(x > 2\), then \(2-x < 0\), so \(f''(x) < 0\). For example, \(f''(3) = -e^{-3} < 0\).
+        \item Thus, \(f''(x)\) is not non-negative for all \(x > 0\).
+    \end{itemize}
+    \item This example satisfies the conditions but \(f''(x)\) is negative for \(x>2\). It does satisfy \(f''(x) \ge 0\) for some \(x > 0\) (e.g., for \(x \in (0, 2]\)).
+\end{enumerate}
+
+\end{document}

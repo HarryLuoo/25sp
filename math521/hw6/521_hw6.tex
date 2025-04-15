@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+\usepackage[font=footnotesize,skip=-10pt]{caption}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 6}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 6 (due 5~PM, April 18)}
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+      \item Let $f$ be a uniformly continuous function on $\R$, and define the sequence of functions $f_n(x) = f(x-\tfrac1n)$. Prove that $f_n \to f$ uniformly.
+      \item Suppose that $f$ is a continuous function on $\R$, and again define $f_n(x)=f(x-\tfrac1n)$. Find an example where $f_n$ does not uniformly converge to $f$.
+    \end{enumerate}
+  \item Let $f$ be a bounded function on $[0,1]$ so that $|f(x)| \le M$ for all
+    $x\in [0,1]$. Show that the Bernstein polynomials $B_n f$ are all bounded
+    by $M$.
+      \item Let $f$ and $g$ be differentiable on an open interval $I$ and let $a\in I$. Define
+    \begin{equation}
+      h(x) = \begin{cases}
+        f(x) & \qquad \text{for $x<a$,} \\
+        g(x) & \qquad \text{for $x\ge a$.}
+      \end{cases}
+    \end{equation}
+    Prove that $h$ is differentiable at $a$ if and only if both $f(a)=g(a)$ and
+    $f'(a)=g'(a)$.
+  \item
+    Suppose that $f$ is differentiable at a point $a$. Define
+    \begin{eqnarray*}
+      L_1(a,h) &=& \frac{f(a+h)-f(a-h)}{2h}, \\
+      L_2(a,h) &=& \frac{-f(a+2h)+8f(a+h)-8f(a-h)+f(a-2h)}{12h}.
+    \end{eqnarray*}
+    \begin{enumerate}
+      \item Prove that $\lim_{h\to 0} L_i(a,h)=f'(a)$ for $i=1,2$.
+      \item Consider the case when $f(x)=x^5$. How does $|L_i(a,h)-f'(a)|$
+	behave as $h \to 0$ for $i=1,2$? Is there a difference in the rate
+	of convergence?
+    \end{enumerate}
+  \item For a real-valued function $f$, define $x$ to be a fixed point if
+    $f(x)=x$. Show that if $f$ is differentiable on an interval with $f'(x)\ne 1$,
+    then $f$ can have at most one fixed point.
+  \item Find the following limits if they exist:
+    \begin{enumerate}
+      \item $\lim_{x\to 0} \frac{x^3}{\sin x - x}$
+      \item $\lim_{x\to 0} \frac{\tan x -x}{x^3}$
+      \item $\lim_{x\to 0} \left( \frac{1}{\sin x} - \frac{1}{x} \right)$
+      \item $\lim_{x\to 0} \frac{1-\cos x}{e^{3x}-3x-1}$
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Let $f: \R \to \R$ be a twice differentiable function, where
+	$f(0)=0$ and $f''(x)\ge 0$ for all $x>0$. Prove that $f(x)/x$ is
+	increasing for $x>0$.
+      \item If $f: \R \to \R$ is twice differentiable, $f(0)=0$ and if $f(x)/x$
+	is increasing for all $x>0$, show that $f''(x)\ge 0$ for some $x>0$,
+	but not necessarily for all $x>0$. {\it [Hint: consider
+	$f(x)=x(1-e^{-x})$.]}
+    \end{enumerate}
+\end{enumerate}
+\end{document}

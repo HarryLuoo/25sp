@@ -1,0 +1,305 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{letterpaper, margin=0.7in}
+
+\title{Homework 5 Guide - Advanced Quantum Mechanics}
+\date{Due: 04/13/2025}
+\author{Solution Strategy Guide}
+
+\begin{document}
+\maketitle
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+%                   Problem 1                             %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+\section*{Problem 1: Particle in a box}
+
+\subsection*{Note}
+
+\subsubsection*{Background Knowledge}
+This problem contrasts the behavior of a free particle with that of a particle confined to an infinite potential well (a "box").
+\begin{itemize}
+    \item The dynamics are governed by the Time-Independent Schrödinger Equation (TISE): \(\hat{H}\psi(x) = E\psi(x)\).
+    \item For a 1D particle, the Hamiltonian is \(\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{x})\), with \(\hat{p} = -i\hbar \frac{d}{dx}\).
+    \item A free particle has \(V(x) = 0\), leading to continuous energy eigenvalues \(E > 0\).
+    \item The infinite potential well is defined by \(V(x) = 0\) for \(|x| < L/2\) and \(V(x) = \infty\) for \(|x| \ge L/2\).
+    \item The requirement that the wave function \(\psi(x)\) be continuous, combined with the infinite potential, imposes boundary conditions: \(\psi(x) = 0\) at the edges of the well (\(x = \pm L/2\)).
+    \item These boundary conditions lead to energy quantization (discrete energy levels) and specific forms for the eigenstates (standing waves).
+    \item We compare the results (energy spectrum, wave function nodes) to the quantum harmonic oscillator (QHO), characterized by \(V(x) = \frac{1}{2}m\omega^2 x^2\) and energy levels \(E_n^{HO} = \hbar\omega(n+1/2)\).
+\end{itemize}
+
+\subsubsection*{Key Equations}
+\begin{itemize}
+    \item Free particle TISE (\(E>0\)): \(-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} = E\psi\).
+    \item General solution for free particle (\(E>0\)): \(\psi(x) = A\sin(k_E x) + B\cos(k_E x)\), where \(k_E = \sqrt{2mE}/\hbar\).
+    \item Infinite potential well definition: \(V(x) = \begin{cases} \infty, & |x| \geq L/2 \\ 0, & |x|<L/2 \end{cases}\).
+    \item Boundary Conditions (BCs) for the well: \(\psi(-L/2) = \psi(L/2) = 0\).
+    \item Energy levels in the well: \(E_n = \frac{\hbar^2 \pi^2 n^2}{2mL^2}\), for \(n=1, 2, 3, \dots\).
+    \item Normalized eigenstates in the well:
+    \[ \psi_n(x) = \sqrt{\frac{2}{L}} \times \begin{cases} \cos(\frac{n\pi x}{L}) & \text{if } n \text{ is odd} \\ \sin(\frac{n\pi x}{L}) & \text{if } n \text{ is even} \end{cases} \quad \text{for } |x| < L/2, \text{ and } 0 \text{ otherwise.} \]
+    \item QHO Energy levels: \(E_n^{HO} = \hbar\omega(n+1/2)\), for \(n=0, 1, 2, \dots\).
+    \item Nodes: Points where \(\psi(x)=0\) (excluding boundaries for the box).
+\end{itemize}
+
+\subsubsection*{Solution Strategy}
+
+\paragraph{Part a): Free Particle}
+\begin{enumerate}
+    \item Write the TISE for \(V(x)=0\).
+    \item Substitute the proposed wave function \(\psi(x) = A \sin(k_E x) + B \cos(k_E x)\) into the TISE.
+    \item Calculate the second derivative \(\frac{d^2\psi}{dx^2}\).
+    \item Show that the TISE is satisfied if and only if \(k_E^2 = 2mE/\hbar^2\), confirming the form of \(k_E\).
+\end{enumerate}
+
+\paragraph{Part b): Particle in a Box}
+\begin{enumerate}
+    \item[(i)] \textbf{Energy Spectrum and Eigenstates:}
+        \begin{itemize}
+            \item Inside the well (\(|x| < L/2\)), the potential is zero, so the general solution form \(A\sin(kx) + B\cos(kx)\) still applies, with \(k=\sqrt{2mE}/\hbar\).
+            \item Apply the BC \(\psi(L/2)=0\): \(A\sin(kL/2) + B\cos(kL/2) = 0\).
+            \item Apply the BC \(\psi(-L/2)=0\): \(-A\sin(kL/2) + B\cos(kL/2) = 0\).
+            \item Solve this system of linear equations for \(A\) and \(B\). Show that non-trivial solutions exist only if \(A=0\) and \(\cos(kL/2)=0\) (leading to even states) or \(B=0\) and \(\sin(kL/2)=0\) (leading to odd states).
+            \item Combine these conditions to find the allowed values of \(k\), denoted \(k_n = n\pi/L\) for \(n=1, 2, 3, \dots\).
+            \item Derive the quantized energy levels \(E_n = \frac{\hbar^2 k_n^2}{2m}\).
+            \item Write down the corresponding unnormalized wave functions, distinguishing between odd \(n\) (cosine solutions, even parity) and even \(n\) (sine solutions, odd parity).
+            \item Normalize the wave functions over the interval \([-L/2, L/2]\) by calculating \(\int_{-L/2}^{L/2} |\psi_n(x)|^2 dx = 1\).
+        \end{itemize}
+    \item[(ii)] \textbf{Plot and Compare Spectrum:}
+        \begin{itemize}
+            \item Sketch the energy levels \(E_n \propto n^2\) for the infinite well.
+            \item Sketch the energy levels \(E_n^{HO} \propto (n+1/2)\) for the QHO.
+            \item Compare the dependence on the quantum number \(n\) and the spacing between adjacent energy levels. Note that the ground state index is \(n=1\) for the box and \(n=0\) for the HO.
+        \end{itemize}
+    \item[(iii)] \textbf{Compare Sign Changes (Nodes):}
+        \begin{itemize}
+            \item For the box, determine the number of points within the open interval \((-L/2, L/2)\) where \(\psi_n(x) = 0\) for the ground state (\(n=1\)) and the first few excited states (\(n=2, 3, \dots\)). Identify the general pattern relating the number of nodes to \(n\).
+            \item Recall (or derive using results from Problem 4) the number of nodes for the QHO ground state (\(n=0\)) and the first few excited states (\(n=1, 2, \dots\)).
+            \item Compare the number of nodes for the \(k\)-th excited state in both systems (remembering that the \(k\)-th excited state corresponds to \(n=k+1\) for the box and \(n=k\) for the QHO).
+        \end{itemize}
+\end{enumerate}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+%                   Problem 2                             %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+\section*{Problem 2: Spherical Harmonics}
+
+\subsection*{Note}
+
+\subsubsection*{Background Knowledge}
+Spherical harmonics \(Y_l^m(\theta, \phi)\) are fundamental functions in quantum mechanics for systems with spherical symmetry.
+\begin{itemize}
+    \item They are eigenfunctions of the angular momentum operators \(\hat{L}^2\) and \(\hat{L}_z\).
+    \item They form a complete orthonormal basis on the surface of a sphere.
+    \item The indices \(l\) (orbital) and \(m\) (magnetic) are integers with \(l \ge 0\) and \(-l \le m \le l\).
+    \item They are composed of an azimuthal part \(e^{im\phi}\) and a polar part involving associated Legendre polynomials \(P_l^m(\cos\theta)\).
+    \item Legendre polynomials \(P_l(x)\) (\(x = \cos\theta\)) correspond to the case \(m=0\). They are orthogonal on the interval \([-1, 1]\).
+\end{itemize}
+
+\subsubsection*{Key Equations}
+\begin{itemize}
+    \item Spherical Harmonic definition: \(Y_{l}^{m}(\theta, \phi)=\mathcal{N}_{lm} e^{i m \phi} P_{l}^{m}(\cos (\theta))\).
+    \item Normalization constant: \(\mathcal{N}_{lm} = \sqrt{\frac{(2l+1)}{4\pi} \frac{(l-m)!}{(l+m)!}}\).
+    \item Associated Legendre Polynomial (definition from problem): \(P_{l}^{m}(x)=(-1)^{m}\left(1-x^{2}\right)^{m / 2} \frac{d^{m}}{d x^{m}} P_{l}(x)\) (for \(m\ge 0\)).
+    \item Legendre Polynomial Recursion: \((l+1) P_{l+1}(x)=(2 l+1) x P_{l}(x)-l P_{l-1}(x)\), \(P_0(x)=1, P_1(x)=x\).
+    \item Spherical Harmonic Orthogonality:
+    \[ \int_{0}^{\pi} \sin\theta d\theta \int_{0}^{2\pi} d\phi [Y_{l}^{m}(\theta, \phi)]^{*} Y_{l^{\prime}}^{m^{\prime}}(\theta, \phi) = \int_{-1}^{1} dx \int_{0}^{2\pi} d\phi [Y_{l}^{m}]^{*} Y_{l^{\prime}}^{m^{\prime}} = \delta_{ll'} \delta_{mm'} \]
+    (with \(x = \cos\theta\)).
+    \item Legendre Polynomial Orthogonality: \(\int_{-1}^{1} dx P_l(x) P_{l'}(x) = \frac{2}{2l+1} \delta_{ll'}\).
+\end{itemize}
+
+\subsubsection*{Solution Strategy}
+
+\paragraph{Part a): Orthogonality in \(m\)}
+\begin{enumerate}
+    \item Write the orthogonality integral in terms of \(\theta\) and \(\phi\), then change variables to \(x = \cos\theta\).
+    \item Substitute the definition \(Y_{l}^{m}(\theta, \phi)=\mathcal{N}_{lm} e^{i m \phi} P_{l}^{m}(x)\) into the integral.
+    \item Separate the integral into a part over \(x\) (involving \(P_l^m\)) and a part over \(\phi\) (involving \(e^{im\phi}\)).
+    \item Evaluate the \(\phi\) integral: \( \int_{0}^{2\pi} d\phi (e^{im\phi})^* (e^{im'\phi}) = \int_{0}^{2\pi} d\phi e^{i(m'-m)\phi} \).
+    \item Show that this integral equals \(2\pi\) if \(m=m'\) and \(0\) if \(m \neq m'\).
+    \item Conclude that the entire integral is zero when \(m \neq m'\).
+\end{enumerate}
+
+\paragraph{Part b): Legendre Polynomials Orthogonality}
+\begin{enumerate}
+    \item Use the Legendre recursion relation, starting with \(P_0(x)=1\) and \(P_1(x)=x\), to explicitly calculate \(P_2(x)\) and \(P_3(x)\).
+    \item Select pairs \((l, l')\) from \(\{0, 1, 2, 3\}\) with \(l \neq l'\) and explicitly calculate the integral \(\int_{-1}^{1} dx P_l(x) P_{l'}(x)\). Show it evaluates to zero (e.g., calculate \(\int P_0 P_1 dx\), \(\int P_1 P_2 dx\), \(\int P_0 P_3 dx\), etc.).
+    \item Select pairs with \(l = l'\) and calculate \(\int_{-1}^{1} dx [P_l(x)]^2\). Show it is non-zero.
+    \item Relate these results to the general orthogonality property \(\int_{-1}^{1} dx P_l(x) P_{l'}(x) \propto \delta_{ll'}\). You can explicitly check the proportionality constant \(2/(2l+1)\) for the calculated cases.
+\end{enumerate}
+
+\paragraph{Part c): Specific \(Y_l^m\) Calculation}
+\begin{enumerate}
+    \item \textbf{Calculate \(Y_3^0(\theta, \phi)\):}
+        \begin{itemize}
+            \item Identify \(l=3, m=0\). Use \(P_3^0(x) = P_3(x)\) found in part (b).
+            \item Calculate the normalization constant \(\mathcal{N}_{30}\).
+            \item Combine the parts: \(Y_3^0 = \mathcal{N}_{30} e^{i0\phi} P_3(\cos\theta)\). Substitute \(x = \cos\theta\).
+        \end{itemize}
+    \item \textbf{Calculate \(Y_3^3(\theta, \phi)\):}
+        \begin{itemize}
+            \item Identify \(l=3, m=3\). Use the formula \(P_{l}^{m}(x)=(-1)^{m}\left(1-x^{2}\right)^{m / 2} \frac{d^{m}}{d x^{m}} P_{l}(x)\) to find \(P_3^3(x)\).
+            \item This requires calculating the third derivative of \(P_3(x)\).
+            \item Calculate the normalization constant \(\mathcal{N}_{33}\). Remember \(0!=1\).
+            \item Combine the parts: \(Y_3^3 = \mathcal{N}_{33} e^{i3\phi} P_3^3(\cos\theta)\). Substitute \(x=\cos\theta\) and \(1-x^2 = \sin^2\theta\). Simplify the resulting expression. Be careful with signs coming from \( (-1)^m \).
+        \end{itemize}
+\end{enumerate}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+%                   Problem 3                             %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+\section*{Problem 3: Algebra of harmonic oscillator}
+
+\subsection*{Note}
+
+\subsubsection*{Background Knowledge}
+The algebraic method provides an elegant way to solve the QHO using ladder operators (\(\hat{a}\) and \(\hat{a}^\dagger\)).
+\begin{itemize}
+    \item These operators are constructed from \(\hat{x}\) and \(\hat{p}\).
+    \item Their commutation relation \([\hat{a}, \hat{a}^\dagger] = 1\) is fundamental.
+    \item The number operator \(\hat{N} = \hat{a}^\dagger \hat{a}\) commutes with the Hamiltonian and has eigenstates \(|n\rangle\) with integer eigenvalues \(n=0, 1, 2, \dots\).
+    \item \(\hat{a}\) lowers the eigenvalue \(n\) by 1 (\(\hat{a}|n\rangle \propto |n-1\rangle\)), while \(\hat{a}^\dagger\) raises it by 1 (\(\hat{a}^\dagger|n\rangle \propto |n+1\rangle\)).
+    \item The ground state \(|0\rangle\) is defined by \(\hat{a}|0\rangle = 0\).
+    \item The uncertainty principle \(\Delta x \Delta p \ge \hbar/2\) provides a lower bound on the product of uncertainties.
+\end{itemize}
+
+\subsubsection*{Key Equations}
+\begin{itemize}
+    \item Operators: \(\hat{a}=\frac{1}{\sqrt{2} \ell}\left(\hat{x}+\frac{i \ell^{2}}{\hbar} \hat{p}\right), \quad \hat{a}^{\dagger}=\frac{1}{\sqrt{2} \ell}\left(\hat{x}-\frac{i \ell^{2}}{\hbar} \hat{p}\right)\), with \(\ell=\sqrt{\frac{\hbar}{m \omega}}\).
+    \item Number operator: \(\hat{N}=\hat{a}^{\dagger} \hat{a}\).
+    \item CCR: \([\hat{x}, \hat{p}]=i\hbar\).
+    \item Inverse relations: \(\hat{x} = \frac{\ell}{\sqrt{2}}(\hat{a}+\hat{a}^\dagger), \quad \hat{p} = \frac{\hbar}{i\ell\sqrt{2}}(\hat{a}-\hat{a}^\dagger)\).
+    \item Key commutators: \([\hat{a}, \hat{a}^\dagger]=1\), \([\hat{a}, \hat{N}]=\hat{a}\), \([\hat{a}^\dagger, \hat{N}]=-\hat{a}^\dagger\).
+    \item Action on number states: \(\hat{a}|n\rangle=\sqrt{n}|n-1\rangle\), \(\hat{a}^{\dagger}|n\rangle=\sqrt{n+1}|n+1\rangle\).
+    \item Orthonormality: \(\langle m | n \rangle = \delta_{mn}\).
+    \item Standard deviation: \(\Delta O = \sqrt{\langle \hat{O}^2 \rangle - \langle \hat{O} \rangle^2}\).
+\end{itemize}
+
+\subsubsection*{Solution Strategy}
+
+\paragraph{Part a): Basic Algebra}
+\begin{enumerate}
+    \item[i)] Calculate \([\hat{a}, \hat{a}^\dagger]\ = \hat{a}\hat{a}^\dagger - \hat{a}^\dagger\hat{a}\). Substitute the definitions of \(\hat{a}, \hat{a}^\dagger\) in terms of \(\hat{x}, \hat{p}\). Expand the product and use \([\hat{x}, \hat{p}]=i\hbar\). Simplify the result to 1.
+    \item[ii)] Calculate \(\{\hat{a}, \hat{a}^\dagger\} = \hat{a}\hat{a}^\dagger + \hat{a}^\dagger\hat{a}\). Express \(\hat{x}\) and \(\hat{p}\) in terms of \(\hat{a}, \hat{a}^\dagger\). Substitute these into \(\frac{\hat{x}^2}{\ell^2} + \frac{\ell^2 \hat{p}^2}{\hbar^2}\). Expand the terms \(\hat{x}^2\) and \(\hat{p}^2\) using \(\hat{a}, \hat{a}^\dagger\). Show that the sum simplifies to \(\hat{a}\hat{a}^\dagger + \hat{a}^\dagger\hat{a}\). (Alternatively, express \(\{\hat{a}, \hat{a}^\dagger\}\) in terms of \(\hat{x}, \hat{p}\) and simplify).
+    \item[iii)] Calculate \([\hat{a}, \hat{N}] = [\hat{a}, \hat{a}^\dagger \hat{a}]\). Use the commutator identity \([A, BC]=[A,B]C + B[A,C]\) and the known values \([\hat{a}, \hat{a}^\dagger]=1\) and \([\hat{a}, \hat{a}]=0\). Simplify the result to \(\hat{a}\).
+\end{enumerate}
+
+\paragraph{Part b): Action on Number States}
+\begin{enumerate}
+    \item[i)] To show \(\hat{a}|n\rangle=\sqrt{n}|n-1\rangle\):
+        \begin{itemize}
+            \item First, show that \(\hat{a}|n\rangle\) is an eigenstate of \(\hat{N}\) with eigenvalue \(n-1\). Use \([\hat{a}, \hat{N}]=\hat{a}\) to write \(\hat{N}\hat{a} = \hat{a}\hat{N} - \hat{a}\) and apply this to \(|n\rangle\).
+            \item Second, calculate the norm squared of \(\hat{a}|n\rangle\): \(||\hat{a}|n\rangle||^2 = \langle n | \hat{a}^\dagger \hat{a} | n \rangle = \langle n | \hat{N} | n \rangle = n\).
+            \item Conclude that \(\hat{a}|n\rangle\) must be \(c|n-1\rangle\) where \(|c|^2=n\). Use the standard phase convention \(c=\sqrt{n}\). Address the \(n=0\) case separately: \(\hat{a}|0\rangle = 0\).
+        \end{itemize}
+    \item[ii)] To show \(\hat{a}^\dagger|n\rangle=\sqrt{n+1}|n+1\rangle\):
+        \begin{itemize}
+            \item Show that \(\hat{a}^\dagger|n\rangle\) is an eigenstate of \(\hat{N}\) with eigenvalue \(n+1\). Calculate \([\hat{a}^\dagger, \hat{N}] = -\hat{a}^\dagger\) (similar to part a.iii), which gives \(\hat{N}\hat{a}^\dagger = \hat{a}^\dagger\hat{N} + \hat{a}^\dagger\). Apply this to \(|n\rangle\).
+            \item Calculate the norm squared: \(||\hat{a}^\dagger|n\rangle||^2 = \langle n | \hat{a} \hat{a}^\dagger | n \rangle\). Use \([\hat{a}, \hat{a}^\dagger]=1 \implies \hat{a}\hat{a}^\dagger = \hat{a}^\dagger\hat{a} + 1 = \hat{N} + 1\). Evaluate \(\langle n|\hat{N}+1|n\rangle = n+1\).
+            \item Conclude \(\hat{a}^\dagger|n\rangle = d|n+1\rangle\) with \(|d|^2 = n+1\). Use convention \(d=\sqrt{n+1}\).
+        \end{itemize}
+    \item[iii)] Deduce orthogonality \(\langle m | n \rangle = 0\) for \(n > m\).
+        \begin{itemize}
+            \item Use the fact that \(|n\rangle\) and \(|m\rangle\) are eigenstates of the Hermitian operator \(\hat{N}\) with different eigenvalues \(n\) and \(m\). Recall the theorem that eigenstates of a Hermitian operator corresponding to distinct eigenvalues are orthogonal.
+            \item Alternatively, use \(|n\rangle = \frac{(\hat{a}^\dagger)^n}{\sqrt{n!}}|0\rangle\) and \(|m\rangle = \frac{(\hat{a}^\dagger)^m}{\sqrt{m!}}|0\rangle\). Write \(\langle m|n\rangle = \frac{1}{\sqrt{n!m!}} \langle 0 | (\hat{a})^m (\hat{a}^\dagger)^n | 0 \rangle\). Use \(\hat{a}|0\rangle=0\) and \([\hat{a}, \hat{a}^\dagger]=1\) to commute the \(m\) operators \(\hat{a}\) to the right until they hit \(|0\rangle\). Since \(n > m\), show that there will always be remaining \(\hat{a}^\dagger\) operators, and the expression evaluates to \(\langle 0 | (\hat{a}^\dagger)^{n-m} | 0 \rangle \times \text{constant}\). However, this needs careful handling of commutations. The eigenvalue argument is simpler. The structure \((\hat{a}^\dagger)^n|0\rangle\) confirms they are eigenstates. Focus on the eigenvalue argument.
+        \end{itemize}
+\end{enumerate}
+
+\paragraph{Part d): Uncertainty Product}
+\begin{enumerate}
+    \item Calculate the expectation values \(\langle \hat{x} \rangle_n = \langle n | \hat{x} | n \rangle\) and \(\langle \hat{p} \rangle_n = \langle n | \hat{p} | n \rangle\). Express \(\hat{x}\) and \(\hat{p}\) in terms of \(\hat{a}, \hat{a}^\dagger\). Use orthogonality \(\langle n|n\pm 1\rangle=0\).
+    \item Calculate \(\langle \hat{x}^2 \rangle_n = \langle n | \hat{x}^2 | n \rangle\) and \(\langle \hat{p}^2 \rangle_n = \langle n | \hat{p}^2 | n \rangle\). Express \(\hat{x}^2\) and \(\hat{p}^2\) in terms of \(\hat{a}, \hat{a}^\dagger\). Expand the products (e.g., \((\hat{a}+\hat{a}^\dagger)^2 = \hat{a}^2 + \hat{a}\hat{a}^\dagger + \hat{a}^\dagger\hat{a} + (\hat{a}^\dagger)^2\)). Use \(\langle n | \hat{a}^2 | n \rangle = 0\), \(\langle n | (\hat{a}^\dagger)^2 | n \rangle = 0\), \(\langle n | \hat{a}\hat{a}^\dagger | n \rangle = n+1\), \(\langle n | \hat{a}^\dagger\hat{a} | n \rangle = n\).
+    \item Calculate the variances \((\Delta x)_n^2 = \langle \hat{x}^2 \rangle_n - \langle \hat{x} \rangle_n^2\) and \((\Delta p)_n^2 = \langle \hat{p}^2 \rangle_n - \langle \hat{p} \rangle_n^2\).
+    \item Find the standard deviations \(\Delta x_n\) and \(\Delta p_n\).
+    \item Calculate the product \(\Delta x_n \Delta p_n\).
+    \item Compare the result with the Heisenberg Uncertainty Principle inequality \(\Delta x \Delta p \ge \hbar/2\). Check if the QHO eigenstates satisfy it, and identify if/when they saturate the bound.
+\end{enumerate}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+%                   Problem 4                             %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+\section*{Problem 4: Hermite polynomials and the harmonic oscillator}
+
+\subsection*{Note}
+
+\subsubsection*{Background Knowledge}
+This problem connects the abstract algebraic solution (\(|n\rangle\) states) to the concrete wave functions \(\psi_n(x) = \langle x | n \rangle\) by solving the TISE in the position representation.
+\begin{itemize}
+    \item The TISE for the QHO is a second-order ordinary differential equation.
+    \item Changing to a dimensionless coordinate \(y=x/\ell\) simplifies the equation.
+    \item The asymptotic behavior of the solutions (\(x\to\pm\infty\)) suggests factoring out a Gaussian term \(e^{-y^2/2}\).
+    \item The remaining part satisfies Hermite's differential equation.
+    \item The polynomial solutions to Hermite's equation are the Hermite polynomials \(H_n(y)\).
+    \item Hermite polynomials can be defined via Rodrigues' formula and are orthogonal with respect to the weight function \(e^{-y^2}\) over \((-\infty, \infty)\).
+\end{itemize}
+
+\subsubsection*{Key Equations}
+\begin{itemize}
+    \item QHO Hamiltonian: \(\hat{H}=\frac{\hat{p}^{2}}{2 m}+\frac{m \omega^{2}}{2} \hat{x}^{2}\).
+    \item TISE: \(\hat{H} \psi_{n}(x)=E_{n} \psi_{n}(x)\) with \(E_n = \hbar\omega(n+1/2)\).
+    \item Position representation: \(\hat{p} = -i\hbar\frac{d}{dx}\).
+    \item Dimensionless variable: \(y=x/\ell\), \(\ell = \sqrt{\hbar/m\omega}\).
+    \item Transformed TISE: \(\left[y^{2}-\frac{d^{2}}{d y^{2}}\right] \phi_{n}(y)=(2 n+1) \phi_{n}(y)\), where \(\phi_n(y) = \psi_n(x)\).
+    \item Ansatz: \(\phi_{n}(y)=H_{n}(y) e^{-y^{2} / 2}\).
+    \item Hermite Equation: \(H_{n}^{\prime \prime}(y)-2 y H_{n}^{\prime}(y)+2 n H_{n}(y)=0\).
+    \item Rodrigues' formula: \(H_{n}(y)=(-1)^{n} e^{y^{2}} \frac{d^{n}}{d y^{n}} e^{-y^{2}}\).
+    \item Hermite Polynomial Orthogonality: \(\int_{-\infty}^{\infty} dy e^{-y^{2}} H_{n}(y) H_{m}(y) \propto \delta_{nm}\).
+\end{itemize}
+
+\subsubsection*{Solution Strategy}
+
+\paragraph{Part a): Derivation of Hermite's Equation}
+\begin{enumerate}
+    \item[i)] Transform the TISE to dimensionless form:
+        \begin{itemize}
+            \item Start with the TISE in \(x\) coordinates: \([-\frac{\hbar^2}{2m}\frac{d^2}{dx^2} + \frac{1}{2}m\omega^2 x^2] \psi_n(x) = E_n \psi_n(x)\).
+            \item Substitute \(x = \ell y\), \(\frac{d}{dx} = \frac{1}{\ell}\frac{d}{dy}\), \(\frac{d^2}{dx^2} = \frac{1}{\ell^2}\frac{d^2}{dy^2}\), \(\psi_n(x) = \phi_n(y)\), and \(E_n = \hbar\omega(n+1/2)\).
+            \item Use \(\ell^2 = \hbar/m\omega\) to simplify the coefficients of \(\frac{d^2}{dy^2}\) and \(y^2\).
+            \item Divide the entire equation by \(\hbar\omega/2\) and rearrange to obtain \(\left[y^{2}-\frac{d^{2}}{d y^{2}}\right] \phi_{n}(y)=(2 n+1) \phi_{n}(y)\).
+        \end{itemize}
+    \item[ii)] Derive Hermite's Equation from the Ansatz:
+        \begin{itemize}
+            \item Substitute the Ansatz \(\phi_n(y) = H_n(y) e^{-y^2/2}\) into the equation found in (i), specifically into the form \(\frac{d^2\phi_n}{dy^2} = [y^2 - (2n+1)] \phi_n(y)\).
+            \item Calculate the first derivative \(\phi_n'(y)\) using the product rule.
+            \item Calculate the second derivative \(\phi_n''(y)\) using the product rule again.
+            \item Substitute \(\phi_n''\) and \(\phi_n\) into the transformed TISE.
+            \item Cancel the common factor \(e^{-y^2/2}\) (which is non-zero).
+            \item Simplify the resulting algebraic equation involving \(H_n, H_n', H_n''\) to show it is equivalent to the Hermite equation \(H_n'' - 2yH_n' + 2nH_n = 0\).
+        \end{itemize}
+\end{enumerate}
+
+\paragraph{Part b): Solutions to Hermite's Equation}
+\begin{enumerate}
+    \item Verify Rodrigues' Formula:
+        \begin{itemize}
+            \item Follow the hint: Show \(H_0(y)\) satisfies Hermite's equation for \(n=0\).
+            \item **Inductive Step Approach:** Assume \(H_n(y)\) given by Rodrigues' formula satisfies the \(n\)-th Hermite equation. Use properties derivable from Rodrigues' formula (like recurrence relations, e.g., \(H'_{n} = 2nH_{n-1}\) and \(H_{n+1}=2yH_n - 2nH_{n-1}\)) to show that \(H_{n+1}(y)\) constructed via Rodrigues' formula satisfies the \((n+1)\)-th Hermite equation. This involves deriving those recurrence relations from Rodrigues' formula first, or taking them as known properties.
+            \item **Alternative (Direct Substitution):** Substitute \(H_n(y)\) from Rodrigues' formula directly into the Hermite equation \(H_n'' - 2yH_n' + 2nH_n = 0\). This requires careful computation of derivatives and simplification; it's a standard but potentially lengthy proof.
+        \end{itemize}
+    \item Calculate First Three Hermite Polynomials:
+        \begin{itemize}
+            \item Use Rodrigues' formula \(H_n(y) = (-1)^n e^{y^2} \frac{d^n}{dy^n} e^{-y^2}\) to compute \(H_0(y)\), \(H_1(y)\), and \(H_2(y)\) explicitly.
+        \end{itemize}
+    \item Order of \(H_n(y)\):
+        \begin{itemize}
+            \item Observe the results for \(H_0, H_1, H_2\).
+            \item Argue from Rodrigues' formula that \(\frac{d^n}{dy^n} e^{-y^2}\) is of the form \(P_n(y)e^{-y^2}\) where \(P_n(y)\) is a polynomial of degree \(n\). Multiplying by \(e^{y^2}\) leaves \(H_n(y)\) as a polynomial of degree \(n\). Note the leading term arises from differentiating \(e^{-y^2}\) \(n\) times yielding \( (-2y)^n e^{-y^2} \).
+        \end{itemize}
+\end{enumerate}
+
+\paragraph{Part c): Orthogonality of Hermite Polynomials}
+\begin{enumerate}
+    \item State the integral to be proven zero for \(n > m\): \( I_{nm} = \int_{-\infty}^{\infty} dy e^{-y^{2}} H_{n}(y) H_{m}(y) \).
+    \item Substitute Rodrigues' formula for \(H_n(y)\): \( I_{nm} = \int_{-\infty}^{\infty} dy e^{-y^2} [(-1)^n e^{y^2} (\partial_y^n e^{-y^2})] H_m(y) \). Simplify by canceling \(e^{-y^2}e^{y^2}\).
+    \item Integrate by parts \(n\) times. In each step, differentiate \(H_m(y)\) and integrate the derivative of \(e^{-y^2}\). Let \(u = H_m(y)\) (or its derivatives) and \(dv = (\partial_y^k e^{-y^2}) dy\).
+    \item Show that the boundary terms at \(\pm\infty\) vanish at each step because the exponential term \(e^{-y^2}\) decays faster than any polynomial term grows.
+    \item After \(n\) integrations, the integral becomes \( I_{nm} = (-1)^{2n} \int_{-\infty}^{\infty} dy e^{-y^2} (\partial_y^n H_m(y)) \).
+    \item Use the fact that \(H_m(y)\) is a polynomial of degree \(m\).
+    \item Since \(n > m\), the \(n\)-th derivative \(\partial_y^n H_m(y)\) is identically zero.
+    \item Conclude that the integral \(I_{nm}\) is zero for \(n > m\). By symmetry, it is also zero for \(m > n\), thus proving orthogonality for \(n \neq m\).
+\end{enumerate}
+
+
+\end{document}

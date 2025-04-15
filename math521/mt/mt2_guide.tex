@@ -1,0 +1,672 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref} % Optional: for clickable references
+
+% -- Theorem styles --
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+
+% -- Custom commands --
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\eps}{\varepsilon}
+\DeclareMathOperator{\dom}{dom} % domain
+\DeclareMathOperator{\sgn}{sgn} % sign
+
+% -- Document Setup --
+\setlength{\parskip}{0.5em} % Adds a little space between paragraphs
+\setlength{\parindent}{0pt} % No indentation for paragraphs
+
+\title{Analysis Midterm Review Notes}
+\author{(Based on Sample Midterm, HW4, HW5)}
+\date{}
+
+\begin{document}
+\maketitle
+
+These notes cover key concepts in continuity, limits, sequences, series, function sequences/series, and power series, integrating examples from the sample midterm and relevant homework problems.
+
+\section{Continuity}
+
+\subsection{Definitions}
+
+\begin{definition}[Continuity at a Point{\cite[Def 17.1]{Ross}}]
+A function \( f : S \to \R \), where \(S \subseteq \R\), is \textbf{continuous at} \( x_0 \in S \) if for every \(\eps > 0\), there exists a \(\delta > 0\) such that for all \(x \in S\),
+\[ |x - x_0| < \delta \implies |f(x) - f(x_0)| < \eps. \]
+\end{definition}
+
+\begin{definition}[Continuity on a Set{\cite[Def 17.1]{Ross}}]
+A function \(f\) is \textbf{continuous on} a set \(S' \subseteq S\) if it is continuous at every point \(x_0 \in S'\).
+\end{definition}
+
+\begin{definition}[Uniform Continuity{\cite[Def 19.1]{Ross}}]
+A function \( f : S \to \R \) is \textbf{uniformly continuous on} \(S\) if for every \(\eps > 0\), there exists a \(\delta > 0\) such that for all \(x, y \in S\),
+\[ |x - y| < \delta \implies |f(x) - f(y)| < \eps. \]
+\end{definition}
+
+\begin{remark}
+The key difference from pointwise continuity is that \(\delta\) depends only on \(\eps\) and not on the specific points \(x, y \in S\). Uniform continuity is a global property on the set \(S\).
+\end{remark}
+
+\begin{definition}[Lipschitz Continuity (HW5.1)]
+A function \( f : I \to \R \) on an interval \(I\) is \textbf{Lipschitz continuous} if there exists a constant \(L > 0\) (the Lipschitz constant) such that for all \(x, y \in I\),
+\[ |f(x) - f(y)| \le L |x-y|. \]
+\end{definition}
+
+\begin{definition}[Bounded Function{\cite[p. 123]{Ross}}]
+A function \(f: S \to \R\) is \textbf{bounded} if its range \(f(S)\) is a bounded subset of \(\R\), i.e., there exists \(M \ge 0\) such that \(|f(x)| \le M\) for all \(x \in S\).
+\end{definition}
+
+\begin{definition}[Convex Function (HW4.11)]
+A function \(f\) on an interval \(I\) is \textbf{convex} if for all \(x,y\in I\), and all \(\lambda \in (0,1)\),
+\[ f\big( (1-\lambda) x + \lambda y \big) \leq (1-\lambda) f(x) + \lambda f(y). \]
+Geometrically, the line segment connecting any two points on the graph lies above or on the graph.
+\end{definition}
+
+\subsection{Fundamental Theorems on Continuity}
+
+\begin{theorem}[Sequential Criterion for Continuity{\cite[Thm 17.2]{Ross}}]
+A function \(f: S \to \R\) is continuous at \(x_0 \in S\) if and only if for every sequence \((x_n)\) in \(S\) converging to \(x_0\), the sequence \((f(x_n))\) converges to \(f(x_0)\). That is,
+\[ \lim_{n\to\infty} x_n = x_0 \implies \lim_{n\to\infty} f(x_n) = f(x_0). \]
+\end{theorem}
+
+\begin{theorem}[Algebra of Continuous Functions{\cite[Thm 17.4]{Ross}}]
+If \(f, g: S \to \R\) are functions continuous at \(x_0 \in S\), then the functions \(f+g\), \(f-g\), \(k \cdot f\) (for any constant \(k \in \R\)), and \(f \cdot g\) are also continuous at \(x_0\). Furthermore, if \(g(x_0) \ne 0\), then the function \(f/g\) is continuous at \(x_0\) (defined on \(S' = \{x \in S : g(x) \ne 0\}\), assuming \(x_0\) is in \(S'\)).
+\end{theorem}
+
+\begin{theorem}[Composition of Continuous Functions{\cite[Thm 17.5]{Ross}}]
+Let \(f: S \to T\) and \(g: T \to \R\) be functions where \(S, T \subseteq \R\). If \(f\) is continuous at \(x_0 \in S\) and \(g\) is continuous at \(f(x_0) \in T\), then the composition \(g \circ f: S \to \R\), defined by \((g \circ f)(x) = g(f(x))\), is continuous at \(x_0\).
+\end{theorem}
+
+\begin{theorem}[Intermediate Value Theorem (IVT){\cite[Thm 18.2]{Ross}}]
+If \(f: [a, b] \to \R\) is continuous on the closed interval \([a, b]\), and if \(y_0\) is any real number between \(f(a)\) and \(f(b)\) (i.e., \(f(a) \le y_0 \le f(b)\) or \(f(b) \le y_0 \le f(a)\)), then there exists at least one \(c \in [a, b]\) such that \(f(c) = y_0\). If \(y_0\) is strictly between \(f(a)\) and \(f(b)\), then \(c\) can be chosen in the open interval \((a, b)\).
+\end{theorem}
+
+\begin{corollary}[Existence of Zeros (HW4.9)]
+If \(f: [a, b] \to \R\) is continuous and \(f(a)\) and \(f(b)\) have opposite signs (i.e., \(f(a)f(b) < 0\)), then there exists \(c \in (a, b)\) such that \(f(c) = 0\).
+\end{corollary}
+
+\begin{theorem}[Properties of Continuous Functions on Compact Sets{\cite[Thm 18.1, 19.2]{Ross}}] \label{thm:compact_cont}
+Let \(K \subset \R\) be a compact set (i.e., closed and bounded) and let \(f: K \to \R\) be continuous on \(K\). Then:
+\begin{enumerate}
+    \item \(f\) is bounded on \(K\).
+    \item \(f\) attains its maximum and minimum values on \(K\). (Extreme Value Theorem)
+    \item \(f\) is uniformly continuous on \(K\). (Heine-Cantor Theorem)
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Lipschitz implies Uniform Continuity (HW5.1a)]
+If \(f: I \to \R\) is Lipschitz continuous on an interval \(I\), then \(f\) is uniformly continuous on \(I\).
+\end{theorem}
+\begin{proof}
+Let \(f\) be Lipschitz with constant \(L>0\). Let \(\eps > 0\) be given.
+We need to find \(\delta > 0\) such that \( |x - y| < \delta \implies |f(x) - f(y)| < \eps \) for all \(x, y \in I\).
+Choose \(\delta = \eps / L\). Since \(\eps > 0\) and \(L > 0\), \(\delta > 0\).
+Now, assume \(x, y \in I\) and \(|x - y| < \delta\). By the Lipschitz condition:
+\[ |f(x) - f(y)| \le L |x - y|. \]
+Since \(|x - y| < \delta = \eps / L\), we have:
+\[ |f(x) - f(y)| < L (\eps / L) = \eps. \]
+This holds for all \(x, y \in I\). Therefore, \(f\) is uniformly continuous on \(I\).
+\end{proof}
+
+\begin{theorem}[Uniform Continuity of Sums and Compositions (HW5.2a,b)] \label{thm:uc_ops}
+Let \(S, T \subseteq \R\).
+\begin{enumerate}
+    \item If \(f, g: S \to \R\) are uniformly continuous on \(S\), then \(f+g\) is uniformly continuous on \(S\).
+    \item If \(f: S \to T\) is uniformly continuous on \(S\) and \(g: T \to \R\) is uniformly continuous on \(T\), then \(g \circ f: S \to \R\) is uniformly continuous on \(S\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1) Let \(\eps > 0\). Find \(\delta_f > 0\) for \(f\) w.r.t. \(\eps/2\) and \(\delta_g > 0\) for \(g\) w.r.t. \(\eps/2\). Let \(\delta = \min(\delta_f, \delta_g) > 0\). If \(x, y \in S\) and \(|x-y|< \delta\), then
+\[ |(f+g)(x) - (f+g)(y)| = |(f(x)-f(y)) + (g(x)-g(y))| \]
+\[ \le |f(x)-f(y)| + |g(x)-g(y)| < \frac{\eps}{2} + \frac{\eps}{2} = \eps. \]
+(2) Let \(\eps > 0\). Find \(\delta_g > 0\) for \(g\) w.r.t. \(\eps\). Find \(\delta_f > 0\) for \(f\) w.r.t. \(\delta_g\). If \(x,y \in S\) and \(|x-y| < \delta_f\), then \(|f(x)-f(y)| < \delta_g\). Let \(u=f(x), v=f(y)\). Then \(u, v \in T\) and \(|u-v| < \delta_g\), so by uniform continuity of \(g\), \(|g(u)-g(v)| < \eps\). That is, \(|(g \circ f)(x) - (g \circ f)(y)| < \eps\). The required \(\delta\) for \(g \circ f\) is \(\delta_f\).
+\end{proof}
+
+\begin{theorem}[Density of \(\Q\) and Continuous Functions (HW4.7)] \label{thm:dense_cont}
+Let \(f, g: I \to \R\) be continuous functions on an interval \(I\).
+\begin{enumerate}
+    \item If \(f(q) = 0\) for all rational numbers \(q \in I \cap \Q\), then \(f(x) = 0\) for all \(x \in I\).
+    \item If \(f(q) = g(q)\) for all rational numbers \(q \in I \cap \Q\), then \(f(x) = g(x)\) for all \(x \in I\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1) Let \(x \in I\). Since \(I \cap \Q\) is dense in \(I\) (as \(\Q\) is dense in \(\R\)), there exists a sequence \((q_n)\) in \(I \cap \Q\) such that \(q_n \to x\). By assumption, \(f(q_n) = 0\) for all \(n\). Since \(f\) is continuous at \(x\), by the sequential criterion:
+\[ f(x) = \lim_{n\to\infty} f(q_n) = \lim_{n\to\infty} 0 = 0. \]
+(2) Apply part (1) to the function \(h(x) = f(x) - g(x)\). \(h\) is continuous on \(I\), and \(h(q) = f(q) - g(q) = 0\) for all \(q \in I \cap \Q\). Therefore, \(h(x) = 0\) for all \(x \in I\), which means \(f(x) = g(x)\) for all \(x \in I\).
+\end{proof}
+
+\begin{theorem}[Growth of Uniformly Continuous Functions (HW5.3)] \label{thm:uc_growth}
+If \(f: \R \to \R\) is uniformly continuous, then there exist constants \(A, B > 0\) such that \(|f(x)| \le A + B|x|\) for all \(x \in \R\). (Linear growth bound).
+\end{theorem}
+\begin{proof}
+Since \(f\) is uniformly continuous, for \(\eps = 1\), there exists \(\delta > 0\) such that \(|u-v| < \delta \implies |f(u)-f(v)| < 1\).
+Let \(x \in \R\).
+Case 1: \(x \ge 0\). Let \(n = \lfloor x/\delta \rfloor\). So \(n \le x/\delta < n+1\). Consider points \(0, \delta, 2\delta, \dots, n\delta, x\). The distance between consecutive points is \(\le \delta\).
+Using the triangle inequality:
+\[ |f(x) - f(0)| = \left| (f(x) - f(n\delta)) + \sum_{k=1}^n (f(k\delta) - f((k-1)\delta)) \right| \]
+\[ \le |f(x) - f(n\delta)| + \sum_{k=1}^n |f(k\delta) - f((k-1)\delta)|. \]
+Since \(|x - n\delta| < \delta\) and \(|k\delta - (k-1)\delta| = \delta\), each term in the sum and the first term are less than 1 (or \(\le 1\) if \(\delta\) was chosen s.t. \(|u-v|\le \delta \implies |f(u)-f(v)| \le 1\)). There are \(n+1\) terms total.
+\[ |f(x) - f(0)| < (n+1) \cdot 1 = n+1. \]
+Since \(n \le x/\delta\), we have \(n+1 \le x/\delta + 1\).
+\[ |f(x) - f(0)| < \frac{x}{\delta} + 1. \]
+Case 2: \(x < 0\). Let \(n = \lfloor |x|/\delta \rfloor\). Consider points \(x, x+\delta, \dots, x+n\delta, 0\). A similar argument gives
+\[ |f(0) - f(x)| < (n+1) \cdot 1 \le \frac{|x|}{\delta} + 1. \]
+Combining cases: For all \(x \in \R\), \(|f(x) - f(0)| < \frac{|x|}{\delta} + 1\).
+Using \(|f(x)| \le |f(0)| + |f(x)-f(0)|\), we get
+\[ |f(x)| < |f(0)| + \frac{|x|}{\delta} + 1 = (|f(0)| + 1) + \frac{1}{\delta}|x|. \]
+Choose \(A = |f(0)| + 1\) and \(B = 1/\delta\). Both are positive constants. Thus, \(|f(x)| \le A + B|x|\).
+\end{proof}
+
+\begin{theorem}[Convexity and Continuity (HW4.11)]
+If \(f\) is convex on an open interval \((a, b)\), then \(f\) is continuous on \((a, b)\).
+\end{theorem}
+
+\subsection{Examples and Counterexamples}
+
+\begin{example}[Uniform vs. Lipschitz (HW5.1b)]
+\textbf{Problem Statement:} Find an example of a function \(g\) defined on an interval \(I\) that is uniformly continuous but not Lipschitz continuous.
+
+\textbf{Solution:} Consider \(g(x) = \sqrt{x}\) on \(I = [0, 1]\).
+\begin{itemize}
+    \item \textbf{Uniform Continuity:} \(g\) is continuous on the compact interval \([0, 1]\). By Theorem \ref{thm:compact_cont}, \(g\) is uniformly continuous on \([0, 1]\).
+    \item \textbf{Not Lipschitz:} Assume \(g\) is Lipschitz with constant \(L > 0\). Then for all \(x \in (0, 1]\) and \(y=0\), we need \(|\sqrt{x} - \sqrt{0}| \le L |x - 0|\), which means \(\sqrt{x} \le L x\). Dividing by \(\sqrt{x}\) gives \(1 \le L \sqrt{x}\), or \(\sqrt{x} \ge 1/L\). This inequality cannot hold for all \(x \in (0, 1]\), because we can choose \(x\) such that \(0 < x < (1/L)^2\). For instance, if \(x = 1/(4L^2)\) (assuming \(L \ge 1/2\) so \(x \le 1\)), then \(\sqrt{x} = 1/(2L)\), and the inequality becomes \(1/(2L) \ge 1/L\), which implies \(1/2 \ge 1\), a contradiction.
+    Alternatively, the difference quotient \(\frac{g(x)-g(0)}{x-0} = \frac{\sqrt{x}}{x} = \frac{1}{\sqrt{x}}\) is unbounded as \(x \to 0^+\). A Lipschitz function must have bounded difference quotients.
+\end{itemize}
+Thus, \(g(x)=\sqrt{x}\) on \([0,1]\) is uniformly continuous but not Lipschitz.
+\end{example}
+
+\begin{example}[Product not Uniformly Continuous (HW5.2c)]
+\textbf{Problem Statement:} Show that there exist uniformly continuous functions \(f, g\) from \(S\) to \(\R\) such that \(f \cdot g\) is not uniformly continuous.
+
+\textbf{Solution:} Let \(S = \R\). Let \(f(x) = x\) and \(g(x) = x\).
+\begin{itemize}
+    \item \(f\) and \(g\) are uniformly continuous on \(\R\): They are Lipschitz with \(L=1\), since \(|f(x)-f(y)| = |x-y| = 1 \cdot |x-y|\). By HW5.1a, they are uniformly continuous.
+    \item The product is \(h(x) = f(x)g(x) = x^2\). We show \(h\) is not uniformly continuous on \(\R\). By Theorem \ref{thm:uc_growth}, if \(h\) were uniformly continuous, it would satisfy \(|h(x)| \le A + B|x|\) for some constants \(A, B > 0\). However, \(|x^2|\) grows quadratically, faster than any linear function \(A+B|x|\) for large \(|x|\). For example, \(\lim_{x\to\infty} \frac{x^2}{A+Bx} = \infty\). Thus, \(h(x)=x^2\) cannot be uniformly continuous on \(\R\).
+\end{itemize}
+\end{example}
+
+\begin{example}[Piecewise Rational/Irrational (HW4.5)]
+\textbf{Problem Statement:} Consider \(h(x) = (1 - x^2)\) if \(x \in \Q\) and \(h(x)=0\) if \(x \notin \Q\). Show \(h\) is continuous at \(\pm 1\) but at no other points.
+
+\textbf{Solution:}
+\begin{itemize}
+    \item \textbf{Continuity at \(x_0 = 1\):} We have \(h(1) = 1-1^2 = 0\). Let \(\eps > 0\). We need \(\delta > 0\) such that \(|x-1|<\delta \implies |h(x)-h(1)| = |h(x)| < \eps\).
+        If \(x \notin \Q\), \(|h(x)| = 0 < \eps\).
+        If \(x \in \Q\), \(|h(x)| = |1-x^2| = |1-x||1+x|\).
+        Choose \(\delta_1 = 1\). If \(|x-1|<\delta_1\), then \(0 < x < 2\), so \(|1+x| < 3\).
+        Then \(|h(x)| < 3|x-1|\). We want this less than \(\eps\), so we need \(|x-1| < \eps/3\).
+        Choose \(\delta = \min(1, \eps/3)\). If \(|x-1|<\delta\), then \(|h(x)| < \eps\).
+        Thus \(h\) is continuous at \(x=1\). By symmetry (\(h(x)=h(-x)\)), \(h\) is also continuous at \(x=-1\).
+    \item \textbf{Discontinuity at \(x_0 \ne \pm 1\):}
+        Case 1: \(x_0 \in \Q\). Then \(h(x_0) = 1-x_0^2 \ne 0\). Since \(\R \setminus \Q\) is dense, there is a sequence of irrational numbers \(y_n \to x_0\). Then \(h(y_n) = 0\) for all \(n\). So \(\lim h(y_n) = 0 \ne h(x_0)\). By the sequential criterion, \(h\) is discontinuous at \(x_0\).
+        Case 2: \(x_0 \notin \Q\). Then \(h(x_0) = 0\). Since \(\Q\) is dense, there is a sequence of rational numbers \(q_n \to x_0\). Then \(h(q_n) = 1-q_n^2\). By continuity of polynomials, \(\lim h(q_n) = 1 - x_0^2\). Since \(x_0 \ne \pm 1\), \(1-x_0^2 \ne 0 = h(x_0)\). By the sequential criterion, \(h\) is discontinuous at \(x_0\).
+\end{itemize}
+\end{example}
+
+\begin{example}[Oscillatory Damped (HW4.6)]
+\textbf{Problem Statement:} For \(\alpha \in \R\), define \(f(x) = |x|^\alpha \sin (1/x)\) for \(x \ne 0\), and \(f(0)=0\). Find the exact range of \(\alpha\) for which \(f\) is continuous at 0.
+
+\textbf{Solution:} We need \(\lim_{x\to 0} f(x) = f(0) = 0\).
+Since \(-1 \le \sin(1/x) \le 1\), we have for \(x \ne 0\):
+\[ -|x|^\alpha \le f(x) \le |x|^\alpha. \]
+By the Squeeze Theorem, if \(\lim_{x\to 0} |x|^\alpha = 0\), then \(\lim_{x\to 0} f(x) = 0\).
+The limit \(\lim_{x\to 0} |x|^\alpha = 0\) if and only if \(\alpha > 0\).
+If \(\alpha = 0\), \(f(x) = \sin(1/x)\) for \(x \ne 0\). Consider \(x_n = 1/(n\pi)\). \(x_n \to 0\), but \(f(x_n) = \sin(n\pi) = 0\). Consider \(y_n = 1/(2n\pi + \pi/2)\). \(y_n \to 0\), but \(f(y_n) = \sin(2n\pi + \pi/2) = 1\). Since we get different limits (0 and 1) for sequences approaching 0, \(\lim_{x\to 0} f(x)\) does not exist for \(\alpha=0\).
+If \(\alpha < 0\), let \(\beta = -\alpha > 0\). Then \(f(x) = \frac{\sin(1/x)}{|x|^\beta}\). Consider \(y_n = 1/(2n\pi + \pi/2) \to 0\). \(f(y_n) = \frac{1}{|y_n|^\beta} = (2n\pi + \pi/2)^\beta \to \infty\). The limit is not 0.
+Therefore, \(f\) is continuous at 0 if and only if \(\alpha > 0\).
+\end{example}
+
+\begin{example}[IVT Application (Sample Midterm 5)]
+\textbf{Problem Statement:} Suppose \(f\) is continuous on \([0,2]\) and \(f(0)=f(2)\). Prove that there exist \(x, y \in [0,2]\) where \(|x-y|=1\) and \(f(x)=f(y)\).
+
+\textbf{Solution:} Define the auxiliary function \(g: [0, 1] \to \R\) by
+\[ g(x) = f(x+1) - f(x). \]
+Since \(f\) is continuous on \([0, 2]\), \(g\) is continuous on \([0, 1]\) (as a difference of continuous functions).
+Evaluate \(g\) at the endpoints:
+\[ g(0) = f(1) - f(0). \]
+\[ g(1) = f(1+1) - f(1) = f(2) - f(1). \]
+Using the given condition \(f(0) = f(2)\), we have
+\[ g(1) = f(0) - f(1) = -(f(1) - f(0)) = -g(0). \]
+If \(g(0) = 0\), then \(f(1) - f(0) = 0\), so \(f(1) = f(0)\). We can choose \(x=0, y=1\). Then \(|x-y|=1\) and \(f(x)=f(y)\).
+If \(g(0) \ne 0\), then \(g(0)\) and \(g(1)\) have opposite signs. Since \(g\) is continuous on \([0, 1]\), by the Intermediate Value Theorem, there must exist some \(c \in (0, 1)\) such that \(g(c) = 0\).
+This means \(f(c+1) - f(c) = 0\), or \(f(c+1) = f(c)\).
+We can choose \(x=c\) and \(y=c+1\). Since \(c \in (0, 1)\), both \(x, y \in [0, 2]\). Also \(|x-y| = |c - (c+1)| = 1\), and \(f(x)=f(y)\).
+In either case, the desired \(x\) and \(y\) exist.
+\end{example}
+
+\begin{example}[Function Defined by Supremum (HW4.10)]
+\textbf{Problem Statement:} Let \(f\) be continuous on \([a,b]\). Show that \(f^*(x) = \sup \{ f(z) : a \le z \le x \}\) is an increasing continuous function on \([a,b]\).
+
+\textbf{Solution:}
+\begin{itemize}
+    \item \textbf{Increasing:} Let \(a \le x < y \le b\). The set \(S_x = \{ f(z) : a \le z \le x \}\) is a subset of \(S_y = \{ f(z) : a \le z \le y \}\). Therefore, \(\sup S_x \le \sup S_y\), which means \(f^*(x) \le f^*(y)\). So \(f^*\) is increasing.
+    \item \textbf{Continuous:} Let \(x_0 \in [a, b]\) and let \(\eps > 0\). Since \(f\) is continuous on \([a, b]\), it is uniformly continuous (Thm \ref{thm:compact_cont}). There exists \(\delta > 0\) such that if \(z \in [a, b]\) and \(|z-x_0| < \delta\), then \(|f(z) - f(x_0)| < \eps\).
+        Let \(x \in [a, b]\) with \(|x-x_0| < \delta\).
+        Case 1: \(x > x_0\). Then \(f^*(x) = \max(f^*(x_0), \sup\{f(z) : x_0 < z \le x\})\). For \(z \in (x_0, x]\), we have \(|z-x_0| \le |x-x_0| < \delta\), so \(f(z) < f(x_0) + \eps \le f^*(x_0) + \eps\). Thus \(\sup\{f(z) : x_0 < z \le x\} \le f^*(x_0) + \eps\). This implies \(f^*(x) \le f^*(x_0) + \eps\). Since \(f^*\) is increasing, \(f^*(x) \ge f^*(x_0)\). So \(|f^*(x) - f^*(x_0)| = f^*(x) - f^*(x_0) \le \eps\).
+        Case 2: \(x < x_0\). Since \(f^*\) is increasing, \(f^*(x) \le f^*(x_0)\). By the Extreme Value Theorem, \(f\) attains its max on \([a, x_0]\), say at \(z_0 \in [a, x_0]\), so \(f^*(x_0) = f(z_0)\). If \(z_0 \le x\), then \(f^*(x_0) = f(z_0) \le f^*(x)\), implying \(f^*(x)=f^*(x_0)\). If \(x < z_0 \le x_0\), then \(|z_0 - x_0| \le |x-x_0| < \delta\). So \(f(z_0) < f(x_0) + \eps\). Also \(f^*(x_0)=f(z_0)\). We need to show \(f^*(x_0) - f^*(x) < \eps\). Since \(f^*(x) = \sup\{f(z): a \le z \le x\}\), we have \(f^*(x) \ge f(z)\) for \(z \in [a, x]\). It is known that \(f^*(x_0) = f(z_0)\). If we choose \(x\) close enough to \(x_0\), specifically \(|x-x_0| < \delta'\) where \(\delta'\) corresponds to \(\eps\) for uniform continuity of \(f\), a more detailed argument shows \(f^*(x_0) \le f^*(x) + \eps\).
+        Combining cases, \(|f^*(x) - f^*(x_0)| \le \eps\) when \(|x-x_0| < \delta\). So \(f^*\) is continuous.
+\end{itemize}
+\end{example}
+
+\begin{example}[Convexity and Endpoints (HW4.11)]
+\textbf{Problem Statement:} Show a convex function on \([a,b]\) is continuous on \((a,b)\) but need not be at \(a\) or \(b\).
+
+\textbf{Solution:} The proof for continuity on \((a,b)\) involves showing that for any \(x_0 \in (a,b)\), the function values \(f(x)\) are bounded above and below by linear functions passing through \(f(x_0)\) for \(x\) near \(x_0\), leading to \(|f(x)-f(x_0)| \le K|x-x_0|\) locally (Lipschitz continuity locally implies continuity).
+For the endpoint counterexample, consider \(f\) on \([0, 1]\) defined by
+\[ f(x) = \begin{cases} 1 & \text{ if } x \in (0, 1) \\ 0 & \text{ if } x = 0 \text{ or } x = 1 \end{cases} \]
+This function is convex (the segment between any two points lies above or on the graph), but \(\lim_{x\to 0^+} f(x) = 1 \ne f(0)=0\) and \(\lim_{x\to 1^-} f(x) = 1 \ne f(1)=0\), so it's discontinuous at the endpoints.
+\end{example}
+
+\section{Limits of Functions}
+
+\subsection{Definitions and Properties}
+
+\begin{definition}[Limit of a Function (Neighborhood Def){\cite[Def 20.1]{Ross}}]
+Let \(f: S \to \R\), and let \(a\) be a limit point of \(S\). We say \(\lim_{x\to a} f(x) = L\) if \(\forall \eps > 0\), \(\exists \delta > 0\) such that \(\forall x \in S\),
+\[ 0 < |x-a| < \delta \implies |f(x) - L| < \eps. \]
+\end{definition}
+
+\begin{definition}[One-Sided Limits{\cite[Def 20.8]{Ross}}]
+\begin{itemize}
+    \item \textbf{Right-hand limit:} \(\lim_{x\to a^+} f(x) = L\) if \(\forall \eps > 0\), \(\exists \delta > 0\) s.t. \(\forall x \in S\), \( a < x < a+\delta \implies |f(x) - L| < \eps \).
+    \item \textbf{Left-hand limit:} \(\lim_{x\to a^-} f(x) = L\) if \(\forall \eps > 0\), \(\exists \delta > 0\) s.t. \(\forall x \in S\), \( a-\delta < x < a \implies |f(x) - L| < \eps \).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Infinite Limits{\cite[Sec 20]{Ross}}]
+\(\lim_{x\to a} f(x) = +\infty\) if \(\forall M > 0\), \(\exists \delta > 0\) s.t. \(\forall x \in S\), \( 0 < |x-a| < \delta \implies f(x) > M \). (Similar definitions for \(-\infty\) and one-sided limits).
+\end{definition}
+
+\begin{theorem}[Two-Sided vs One-Sided Limits{\cite[Thm 20.10]{Ross}}]
+Let \(f\) be defined on an interval around \(a\), except possibly at \(a\). Then \(\lim_{x\to a} f(x) = L\) if and only if \(\lim_{x\to a^+} f(x) = L\) and \(\lim_{x\to a^-} f(x) = L\).
+\end{theorem}
+
+\begin{theorem}[Limit Laws{\cite[Thm 20.4]{Ross}}]
+If \(\lim_{x\to a} f(x) = L\) and \(\lim_{x\to a} g(x) = M\) (where \(L, M \in \R\)), then
+\begin{itemize}
+    \item \(\lim_{x\to a} (f(x)+g(x)) = L+M\)
+    \item \(\lim_{x\to a} (f(x)g(x)) = LM\)
+    \item \(\lim_{x\to a} (f(x)/g(x)) = L/M\), provided \(M\ne 0\).
+\end{itemize}
+These hold similarly for one-sided limits.
+\end{theorem}
+
+\begin{theorem}[Order Properties of Limits{\cite[Thm 20.5]{Ross}} (HW5.5a)]
+Assume \(\lim_{x\to a^+} f(x) = L\) and \(\lim_{x\to a^+} g(x) = M\) exist (as finite numbers).
+If there exists \(\delta_0 > 0\) such that \(f(x) \le g(x)\) for all \(x \in (a, a+\delta_0)\), then \(L \le M\).
+\end{theorem}
+\begin{proof}
+Assume for contradiction that \(L > M\). Let \(\eps = (L-M)/2 > 0\).
+By definition of limits, there exist \(\delta_1, \delta_2 > 0\) such that:
+If \(a < x < a+\delta_1\), then \(|f(x) - L| < \eps \implies f(x) > L - \eps = (L+M)/2\).
+If \(a < x < a+\delta_2\), then \(|g(x) - M| < \eps \implies g(x) < M + \eps = (L+M)/2\).
+Let \(\delta = \min(\delta_0, \delta_1, \delta_2) > 0\). For any \(x \in (a, a+\delta)\), we have:
+\(f(x) \le g(x)\) (since \(x \in (a, a+\delta_0)\)).
+\(f(x) > (L+M)/2\) (since \(x \in (a, a+\delta_1)\)).
+\(g(x) < (L+M)/2\) (since \(x \in (a, a+\delta_2)\)).
+Combining these gives \((L+M)/2 < f(x) \le g(x) < (L+M)/2\), which is impossible.
+Therefore, the assumption \(L > M\) must be false, so \(L \le M\).
+\end{proof}
+
+\subsection{Examples}
+
+\begin{example}[Limits of a Rational Function (HW5.4)]
+\textbf{Problem Statement:} Let \(f(x) = \frac{1}{(x+1)^2 (x-2)}\). Find the one-sided limits at \(x=2\) and \(x=-1\), and the two-sided limits if they exist.
+
+\textbf{Solution:}
+\begin{itemize}
+    \item \textbf{Near \(x=2\):}
+        As \(x \to 2^+\), \(x-2 \to 0^+\) and \((x+1)^2 \to 9\). Denominator \(\to 9 \cdot 0^+ = 0^+\). \(f(x) \to +\infty\).
+        As \(x \to 2^-\), \(x-2 \to 0^-\) and \((x+1)^2 \to 9\). Denominator \(\to 9 \cdot 0^- = 0^-\). \(f(x) \to -\infty\).
+        Since \(\lim_{x\to 2^+} f(x) \ne \lim_{x\to 2^-} f(x)\), \(\lim_{x\to 2} f(x)\) does not exist.
+    \item \textbf{Near \(x=-1\):}
+        As \(x \to -1^+\), \(x+1 \to 0^+\) so \((x+1)^2 \to 0^+\). \(x-2 \to -3\). Denominator \(\to 0^+ \cdot (-3) = 0^-\). \(f(x) \to -\infty\).
+        As \(x \to -1^-\), \(x+1 \to 0^-\) so \((x+1)^2 \to 0^+\). \(x-2 \to -3\). Denominator \(\to 0^+ \cdot (-3) = 0^-\). \(f(x) \to -\infty\).
+        Since \(\lim_{x\to -1^+} f(x) = \lim_{x\to -1^-} f(x) = -\infty\), we write \(\lim_{x\to -1} f(x) = -\infty\). (Note: This limit does not exist as a real number).
+\end{itemize}
+\end{example}
+
+\begin{example}[Limits and Strict Inequality (HW5.5b)]
+\textbf{Problem Statement:} Suppose \(f_1(x) < f_2(x)\) for \(x\) in \((a,b)\). Does it follow that \(\lim_{x\to a^+} f_1(x) < \lim_{x\to a^+} f_2(x)\)?
+
+\textbf{Solution:} No. Strict inequality between functions does not guarantee strict inequality between their limits.
+Consider \(a=0\), \(b=1\). Let \(f_1(x) = 0\) and \(f_2(x) = x\) for \(x \in (0, 1)\).
+Clearly \(f_1(x) < f_2(x)\) for all \(x \in (0, 1)\).
+However,
+\[ L_1 = \lim_{x\to 0^+} f_1(x) = \lim_{x\to 0^+} 0 = 0. \]
+\[ L_2 = \lim_{x\to 0^+} f_2(x) = \lim_{x\to 0^+} x = 0. \]
+Here \(L_1 = L_2\), not \(L_1 < L_2\).
+\end{example}
+
+\begin{example}[Symmetric Difference Limit vs. Continuity (HW4.8)]
+\textbf{Problem Statement:} Suppose \(f: \R \to \R\) is such that for a given \(x_0 \in \R\), \(\lim_{n\to\infty} (f(x_0+a_n) - f(x_0-a_n)) = 0\) for all sequences \(a_n \to 0\). Is \(f\) continuous at \(x_0\)?
+
+\textbf{Solution:} No. Consider the function
+\[ f(x) = \begin{cases} 1 & \text{ if } x = 0 \\ 0 & \text{ if } x \ne 0 \end{cases} \]
+Let \(x_0 = 0\). Let \((a_n)\) be any sequence such that \(a_n \to 0\). For \(n\) large enough, \(a_n \ne 0\), so \(-a_n \ne 0\).
+Then \(f(x_0+a_n) = f(a_n) = 0\) and \(f(x_0-a_n) = f(-a_n) = 0\).
+So, \(f(x_0+a_n) - f(x_0-a_n) = 0 - 0 = 0\). The limit is \(\lim_{n\to\infty} 0 = 0\).
+The condition holds for \(x_0 = 0\).
+However, \(f\) is not continuous at \(x_0=0\), because \(\lim_{x\to 0} f(x) = 0\), but \(f(0) = 1\).
+\end{example}
+
+\section{Convergence of Numerical Series}
+
+\subsection{Definitions}
+
+\begin{definition}
+A series \(\sum_{n=1}^\infty a_n\) \textbf{converges} to \(S \in \R\) if its sequence of partial sums \(s_k = \sum_{n=1}^k a_n\) converges to \(S\). Otherwise the series \textbf{diverges}.
+\end{definition}
+
+\subsection{Convergence Tests}
+
+\begin{theorem}[Term Test for Divergence{\cite[Thm 14.5]{Ross}}]
+If \(\sum a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\). Equivalently, if \(\lim a_n \ne 0\) or the limit DNE, then \(\sum a_n\) diverges.
+\end{theorem}
+
+\begin{theorem}[Comparison Test{\cite[Thm 14.6]{Ross}}]
+Let \(0 \le a_n \le b_n\) for \(n\) sufficiently large.
+\begin{itemize}
+    \item If \(\sum b_n\) converges, then \(\sum a_n\) converges.
+    \item If \(\sum a_n\) diverges, then \(\sum b_n\) diverges.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Limit Comparison Test{\cite[Thm 14.7]{Ross}}]
+Let \(a_n > 0, b_n > 0\) for \(n\) sufficiently large. Let \(L = \lim_{n\to\infty} (a_n / b_n)\).
+\begin{itemize}
+    \item If \(0 < L < \infty\), then \(\sum a_n\) converges iff \(\sum b_n\) converges.
+    \item If \(L = 0\) and \(\sum b_n\) converges, then \(\sum a_n\) converges.
+    \item If \(L = \infty\) and \(\sum b_n\) diverges, then \(\sum a_n\) diverges.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Alternating Series Test{\cite[Thm 15.3]{Ross}}]
+If \((a_n)\) is a sequence such that \(a_n \ge 0\), \(a_{n+1} \le a_n\) for \(n\) sufficiently large, and \(\lim a_n = 0\), then the alternating series \(\sum (-1)^n a_n\) (and \(\sum (-1)^{n+1} a_n\)) converges.
+\end{theorem}
+
+\begin{remark}[p-series{\cite[Sec 14]{Ross}}]
+The series \(\sum_{n=1}^\infty \frac{1}{n^p}\) converges if and only if \(p > 1\).
+\end{remark}
+
+\subsection{Examples}
+
+\begin{example}[Sample Midterm 4a]
+\textbf{Problem Statement:} Determine convergence/divergence of \(S_1 = \sum_{n=2}^\infty \frac{1}{\sqrt{n^2-1}}\) and \(S_2 = \sum_{n=2}^\infty \frac{(-1)^n}{\sqrt{n^2-1}}\).
+
+\textbf{Solution:}
+\begin{itemize}
+    \item For \(S_1\): Let \(a_n = 1/\sqrt{n^2-1}\). Compare with \(b_n = 1/n\). \(\sum b_n\) diverges (harmonic, p=1).
+    \[ \lim_{n\to\infty} \frac{a_n}{b_n} = \lim_{n\to\infty} \frac{n}{\sqrt{n^2-1}} = \lim_{n\to\infty} \frac{n}{n\sqrt{1-1/n^2}} = 1. \]
+    Since \(0 < 1 < \infty\), by LCT, \(S_1\) diverges.
+    \item For \(S_2\): Let \(a_n = 1/\sqrt{n^2-1}\).
+        1. \(a_n > 0\) for \(n \ge 2\).
+        2. \(a_n\) is decreasing since \(\sqrt{n^2-1}\) is increasing for \(n \ge 2\).
+        3. \(\lim_{n\to\infty} a_n = 0\).
+    By AST, \(S_2\) converges.
+\end{itemize}
+\end{example}
+
+\section{Sequences and Series of Functions}
+
+\subsection{Definitions}
+
+\begin{definition}[Pointwise Convergence{\cite[Def 24.1]{Ross}}]
+A sequence of functions \((f_n)\) defined on \(S \subseteq \R\) \textbf{converges pointwise} to \(f\) on \(S\) if for each \(x \in S\), \(\lim_{n\to\infty} f_n(x) = f(x)\).
+\end{definition}
+
+\begin{definition}[Uniform Convergence{\cite[Def 24.2]{Ross}}]
+\((f_n)\) \textbf{converges uniformly} to \(f\) on \(S\) if \(\forall \eps > 0\), \(\exists N \in \N\) such that \(\forall n > N\) and \(\forall x \in S\),
+\[ |f_n(x) - f(x)| < \eps. \]
+Equivalently, \(\lim_{n\to\infty} \sup_{x \in S} |f_n(x) - f(x)| = 0\).
+\end{definition}
+
+\begin{definition}[Uniformly Cauchy{\cite[Def 25.3]{Ross}}]
+\((f_n)\) is \textbf{uniformly Cauchy} on \(S\) if \(\forall \eps > 0\), \(\exists N \in \N\) such that \(\forall m, n > N\) and \(\forall x \in S\),
+\[ |f_n(x) - f_m(x)| < \eps. \]
+\end{definition}
+
+\subsection{Theorems on Uniform Convergence}
+
+\begin{theorem}[Cauchy Criterion{\cite[Thm 25.4]{Ross}}]
+A sequence of functions \((f_n)\) converges uniformly on \(S\) if and only if it is uniformly Cauchy on \(S\).
+\end{theorem}
+
+\begin{theorem}[Uniform Convergence implies Cauchy (Sample Midterm 6)]
+If \(f_n \to f\) uniformly on \(S\), then \((f_n)\) is uniformly Cauchy on \(S\).
+\end{theorem}
+\begin{proof}
+Let \(\eps > 0\). By uniform convergence, \(\exists N\) such that \(k > N \implies |f_k(x) - f(x)| < \eps/2\) for all \(x \in S\).
+If \(m, n > N\), then for all \(x \in S\):
+\[ |f_n(x) - f_m(x)| = |(f_n(x) - f(x)) + (f(x) - f_m(x))| \]
+\[ \le |f_n(x) - f(x)| + |f(x) - f_m(x)| < \frac{\eps}{2} + \frac{\eps}{2} = \eps. \]
+Thus \((f_n)\) is uniformly Cauchy.
+\end{proof}
+
+\begin{theorem}[Continuity of Limit Function{\cite[Thm 24.3]{Ross}} (HW5.8)]
+Let \((f_n)\) be a sequence of functions continuous on \(S \subseteq \R\). If \(f_n \to f\) uniformly on \(S\), then the limit function \(f\) is continuous on \(S\).
+\end{theorem}
+
+\begin{theorem}[Uniform Continuity of Limit Function (Sample Midterm 1)]
+Let \((f_n)\) be a sequence of uniformly continuous functions on an interval \(I\). If \(f_n \to f\) uniformly on \(I\), then the limit function \(f\) is uniformly continuous on \(I\).
+\end{theorem}
+\begin{proof}
+Let \(\eps > 0\).
+1. (Uniform Convergence) \(\exists N\) such that \(n > N \implies |f_n(z) - f(z)| < \eps/3\) for all \(z \in I\). Let \(n_0 = N+1\).
+2. (Uniform Continuity of \(f_{n_0}\)) Since \(f_{n_0}\) is uniformly continuous, \(\exists \delta > 0\) such that \(|x-y| < \delta \implies |f_{n_0}(x) - f_{n_0}(y)| < \eps/3\) for \(x, y \in I\).
+3. (Triangle Inequality) Let \(x, y \in I\) with \(|x-y| < \delta\).
+\[ |f(x)-f(y)| \le |f(x)-f_{n_0}(x)| + |f_{n_0}(x)-f_{n_0}(y)| + |f_{n_0}(y)-f(y)| \]
+\[ < \frac{\eps}{3} + \frac{\eps}{3} + \frac{\eps}{3} = \eps. \]
+Thus \(f\) is uniformly continuous on \(I\).
+\end{proof}
+
+\begin{theorem}[Boundedness of Limit Function{\cite[Ex 25.5]{Ross}} (Sample Midterm 7a)]
+Let \((f_n)\) be a sequence of bounded functions on \(S\). If \(f_n \to f\) uniformly on \(S\), then the limit function \(f\) is bounded on \(S\).
+\end{theorem}
+\begin{proof}
+Let \(\eps = 1\). By uniform convergence, \(\exists N\) such that \(n > N \implies |f_n(x) - f(x)| < 1\) for all \(x \in S\).
+Consider \(f_{N+1}\). Since it's bounded, \(\exists M\) such that \(|f_{N+1}(x)| \le M\) for all \(x \in S\).
+For any \(x \in S\):
+\[ |f(x)| = |f(x) - f_{N+1}(x) + f_{N+1}(x)| \le |f(x) - f_{N+1}(x)| + |f_{N+1}(x)| \]
+\[ < 1 + M. \]
+Let \(M' = M+1\). Then \(|f(x)| < M'\) for all \(x \in S\), so \(f\) is bounded.
+\end{proof}
+
+\begin{theorem}[Interchange of Limits{\cite[Ex 24.17]{Ross}} (Sample Midterm 3)] \label{thm:limit_interchange}
+Let \((f_n)\) be a sequence of continuous functions on \([a, b]\) converging uniformly to \(f\) on \([a, b]\). Let \((x_n)\) be a sequence in \([a, b]\) such that \(x_n \to x \in [a, b]\). Then
+\[ \lim_{n\to\infty} f_n(x_n) = f(x). \]
+\end{theorem}
+\begin{proof}
+Let \(\eps > 0\).
+1. By Thm 24.3, \(f\) is continuous on \([a, b]\). Since \(x_n \to x\), \(\exists N_1\) such that \(n > N_1 \implies |f(x_n) - f(x)| < \eps/2\).
+2. By uniform convergence, \(\exists N_2\) such that \(n > N_2 \implies |f_n(y) - f(y)| < \eps/2\) for all \(y \in [a, b]\). In particular, \(|f_n(x_n) - f(x_n)| < \eps/2\).
+3. Let \(N = \max(N_1, N_2)\). For \(n > N\):
+\[ |f_n(x_n) - f(x)| = |(f_n(x_n) - f(x_n)) + (f(x_n) - f(x))| \]
+\[ \le |f_n(x_n) - f(x_n)| + |f(x_n) - f(x)| < \frac{\eps}{2} + \frac{\eps}{2} = \eps. \]
+Thus \(\lim f_n(x_n) = f(x)\).
+\end{proof}
+
+\begin{theorem}[Weierstrass M-Test{\cite[Thm 25.7]{Ross}}]
+Let \((f_n)\) be a sequence of functions defined on \(S \subseteq \R\). Suppose there exists a sequence of non-negative numbers \((M_n)\) such that
+\begin{enumerate}
+    \item \(|f_n(x)| \le M_n\) for all \(x \in S\) and for all \(n\),
+    \item The numerical series \(\sum_{n=1}^\infty M_n\) converges.
+\end{enumerate}
+Then the series of functions \(\sum_{n=1}^\infty f_n(x)\) converges uniformly on \(S\).
+\end{theorem}
+
+\subsection{Examples}
+
+\begin{example}[Pointwise vs Uniform (HW5.7)]
+\textbf{Problem Statement:} For \(x\in [0,\infty)\), define \(f_n(x) = \tfrac{x}{n}\). (a) Find \(f(x) = \lim f_n(x)\). (b) Uniform on \([0,1]\)? (c) Uniform on \([0,\infty)\)?
+
+\textbf{Solution:}
+(a) For fixed \(x \ge 0\), \(f(x) = \lim_{n\to\infty} x/n = x \cdot 0 = 0\). Pointwise limit is \(f(x)=0\).
+(b) On \([0,1]\): We check \(\sup_{x \in [0,1]} |f_n(x) - f(x)| = \sup_{x \in [0,1]} |x/n - 0| = \sup_{x \in [0,1]} x/n\). Since \(x/n\) increases with \(x\), the supremum occurs at \(x=1\).
+\[ M_n = \sup_{x \in [0,1]} |f_n(x) - f(x)| = 1/n. \]
+Since \(\lim_{n\to\infty} M_n = \lim 1/n = 0\), convergence is uniform on \([0,1]\).
+(c) On \([0,\infty)\): We check \(\sup_{x \in [0,\infty)} |f_n(x) - f(x)| = \sup_{x \in [0,\infty)} x/n\). For any fixed \(n\), \(x/n\) is unbounded as \(x \to \infty\).
+\[ M_n = \sup_{x \in [0,\infty)} |f_n(x) - f(x)| = \infty. \]
+Since \(M_n \not\to 0\), convergence is not uniform on \([0,\infty)\).
+\end{example}
+
+\begin{example}[Pointwise/Uniform Convergence and Continuity (HW5.8)]
+\textbf{Problem Statement:} Analyze continuity and convergence for (a) \(f_n(x) = 1\) if \(x=1/k\) (\(k=1..n\)), 0 otherwise; (b) \(g_n(x) = x\) if \(x=1/k\) (\(k=1..n\)), 0 otherwise.
+
+\textbf{Solution:}
+(a) Sequence \(f_n\):
+    \begin{itemize}
+        \item Continuity of \(f_n\) at 0: \(f_n(0)=0\). For \(|x|<1/n\), \(x \ne 1/k\) for \(k=1..n\), so \(f_n(x)=0\). Thus \(\lim_{x\to 0} f_n(x) = 0 = f_n(0)\). Yes, \(f_n\) continuous at 0.
+        \item Pointwise limit \(f(x)\): If \(x=1/k\), then \(f_n(x)=1\) for \(n \ge k\), so \(f(x)=1\). Otherwise \(f_n(x)=0\) for all \(n\), so \(f(x)=0\).
+        \[ f(x) = \begin{cases} 1 & \text{if } x=1/k \text{ for some integer } k \ge 1, \\ 0 & \text{otherwise.} \end{cases} \]
+        \item Uniform convergence: \(M_n = \sup |f_n(x)-f(x)|\). Consider \(x=1/(n+1)\). \(f_n(x)=0\), \(f(x)=1\). So \(|f_n(x)-f(x)|=1\). Thus \(M_n \ge 1\). Since \(M_n \not\to 0\), convergence is not uniform.
+        \item Continuity of \(f\) at 0: \(f(0)=0\). Let \(x_k = 1/k \to 0\). \(f(x_k)=1\). \(\lim f(x_k)=1 \ne f(0)\). No, \(f\) is not continuous at 0.
+    \end{itemize}
+(b) Sequence \(g_n\):
+    \begin{itemize}
+        \item Continuity of \(g_n\) at 0: \(g_n(0)=0\). For \(|x|<1/n\), \(g_n(x)=0\). Thus \(\lim_{x\to 0} g_n(x) = 0 = g_n(0)\). Yes, \(g_n\) continuous at 0.
+        \item Pointwise limit \(g(x)\): If \(x=1/k\), then \(g_n(x)=x\) for \(n \ge k\), so \(g(x)=x\). Otherwise \(g_n(x)=0\), so \(g(x)=0\).
+        \[ g(x) = \begin{cases} x & \text{if } x=1/k \text{ for some integer } k \ge 1, \\ 0 & \text{otherwise.} \end{cases} \]
+        \item Uniform convergence: \(M_n = \sup |g_n(x)-g(x)|\). The difference is non-zero only if \(x=1/k\) for \(k>n\), where \(|g_n(x)-g(x)| = |0-x| = 1/k\).
+        \[ M_n = \sup \{ 1/k : k > n \} = 1/(n+1). \]
+        Since \(\lim M_n = \lim 1/(n+1) = 0\), convergence is uniform.
+        \item Continuity of \(g\) at 0: \(g(0)=0\). We have \(|g(x)| \le |x|\) (since \(g(x)\) is either 0 or \(x\)). Let \(\eps>0\). Choose \(\delta=\eps\). If \(|x-0|<\delta\), then \(|g(x)-g(0)| = |g(x)| \le |x| < \delta = \eps\). Yes, \(g\) is continuous at 0. (Consistent with Thm 24.3).
+    \end{itemize}
+\end{example}
+
+\begin{example}[Pointwise Limit Need Not Be Bounded (Sample Midterm 7b)]
+\textbf{Problem Statement:} Construct \(S \subseteq \R\) and a sequence of bounded functions \((f_n)\) on \(S\) such that \(f_n \to f\) pointwise, but \(f\) is not bounded.
+
+\textbf{Solution:} Let \(S = (0, 1]\). Define \(f_n: S \to \R\) by
+\[ f_n(x) = \min\left\{n, \frac{1}{x}\right\}. \]
+\begin{itemize}
+    \item Boundedness of \(f_n\): For any \(x \in (0, 1]\), \(1/x \ge 1\). If \(1/x \le n\), then \(f_n(x)=1/x\). If \(1/x > n\), then \(f_n(x)=n\). In either case, \(0 < f_n(x) \le \max(n, 1/x)\). More simply, \(f_n(x)\) is either \(n\) or \(1/x\). If \(x \ge 1/n\), \(1/x \le n\), so \(f_n(x)=1/x \le n\). If \(x < 1/n\), \(f_n(x)=n\). Thus, \(|f_n(x)| \le n\) for all \(x \in S\). Each \(f_n\) is bounded.
+    \item Pointwise Limit: Let \(x \in (0, 1]\) be fixed. Choose \(N \in \N\) such that \(N > 1/x\). For all \(n > N\), we have \(n > 1/x\), which implies \(x > 1/n\). By definition of \(f_n\), for \(n > N\), \(f_n(x) = 1/x\). The sequence \((f_n(x))\) is eventually constant (\(1/x\)), so \(\lim_{n\to\infty} f_n(x) = 1/x\). The pointwise limit is \(f(x) = 1/x\).
+    \item Unboundedness of \(f\): The limit function \(f(x) = 1/x\) is not bounded on \(S = (0, 1]\) because \(\lim_{x\to 0^+} f(x) = +\infty\).
+\end{itemize}
+\end{example}
+
+\begin{example}[M-Test Application (Sample Midterm 2b alt)]
+\textbf{Problem Statement:} Show that \(f_3(y)=\sum_{n=1}^\infty \frac{1}{n^2} \left( \frac{y}{1+y^2}\right)^n\) converges for all \(y\in \R\).
+
+\textbf{Solution:} Let \(f_n(y) = \frac{1}{n^2} \left( \frac{y}{1+y^2}\right)^n\). Let \(g(y) = y/(1+y^2)\). We find the maximum of \(|g(y)|\). \(g'(y) = (1-y^2)/(1+y^2)^2\). Critical points at \(y=\pm 1\). \(g(1)=1/2\), \(g(-1)=-1/2\). Also \(g(0)=0\) and \(\lim_{y\to\pm\infty} g(y) = 0\). So the maximum absolute value is \(|g(\pm 1)| = 1/2\). Thus, \(|g(y)| \le 1/2\) for all \(y \in \R\).
+Now bound \(|f_n(y)|\):
+\[ |f_n(y)| = \left| \frac{1}{n^2} (g(y))^n \right| = \frac{1}{n^2} |g(y)|^n \le \frac{1}{n^2} \left(\frac{1}{2}\right)^n. \]
+Let \(M_n = \frac{1}{n^2 2^n}\). The series \(\sum M_n\) converges by comparison with the convergent p-series \(\sum 1/n^2\) (since \(1/2^n \le 1\)).
+By the Weierstrass M-Test, the series \(\sum f_n(y)\) converges uniformly on \(\R\). Uniform convergence implies pointwise convergence for all \(y \in \R\).
+\end{example}
+
+\section{Power Series}
+
+\subsection{Definitions and Basic Properties}
+
+\begin{definition}[Power Series{\cite[Sec 23]{Ross}}]
+A \textbf{power series} centered at \(a\) is an infinite series of the form
+\[ \sum_{n=0}^\infty a_n (x-a)^n = a_0 + a_1(x-a) + a_2(x-a)^2 + \dots \]
+We often consider \(a=0\): \(\sum a_n x^n\).
+\end{definition}
+
+\begin{theorem}[Radius of Convergence{\cite[Thm 23.1]{Ross}}]
+For any power series \(\sum a_n (x-a)^n\), there exists a unique \(R \in [0, \infty]\), called the \textbf{radius of convergence}, such that:
+\begin{itemize}
+    \item The series converges absolutely for all \(x\) satisfying \(|x-a| < R\).
+    \item The series diverges for all \(x\) satisfying \(|x-a| > R\).
+\end{itemize}
+The value \(R\) is given by the formula:
+\[ R = \frac{1}{\limsup_{n\to\infty} |a_n|^{1/n}} \]
+(with conventions \(1/0=\infty\) and \(1/\infty=0\)).
+\end{theorem}
+
+\begin{prop}[Ratio Test for Radius of Convergence{\cite[Sec 9]{Ross}}]
+If the limit \(L = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right|\) exists (possibly \(0\) or \(\infty\)), then the radius of convergence is \(R = 1/L\) (with conventions \(1/0=\infty, 1/\infty=0\)).
+\end{prop}
+
+\begin{definition}[Interval of Convergence]
+The set of all \(x \in \R\) for which the power series \(\sum a_n (x-a)^n\) converges. It is always an interval centered at \(a\). If \(0 < R < \infty\), the interval is one of \((a-R, a+R)\), \([a-R, a+R)\), \((a-R, a+R]\), or \([a-R, a+R]\). Convergence at the endpoints \(x=a\pm R\) must be tested separately.
+\end{definition}
+
+\begin{theorem}[Uniform Convergence of Power Series{\cite[Thm 26.1]{Ross}}]
+If a power series \(\sum a_n (x-a)^n\) has radius of convergence \(R > 0\), then for any \(c\) such that \(0 < c < R\), the series converges uniformly on the closed interval \([a-c, a+c]\).
+\end{theorem}
+
+\begin{corollary}[Continuity of Power Series]
+The function \(f(x) = \sum a_n (x-a)^n\) defined by a power series is continuous on its open interval of convergence \((a-R, a+R)\).
+\end{corollary}
+
+\subsection{Examples}
+
+\begin{example}[Calculating R and Interval (HW5.6)]
+\textbf{Problem Statement:} For each series, find the radius \(R\) and the interval of convergence \(I\).
+\begin{enumerate}
+    \item \(\sum_{n=0}^\infty n^2 x^n\): \(a_n=n^2\). Use Ratio Test:
+    \[ L = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n\to\infty} \frac{(n+1)^2}{n^2} = \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)^2 = 1. \]
+    \(R = 1/L = 1\). Check endpoints \(x=\pm 1\): \(\sum (\pm 1)^n n^2\). Since \(|(\pm 1)^n n^2| = n^2 \not\to 0\), both diverge by Term Test. \(I = (-1, 1)\).
+    \item \(\sum_{n=1}^\infty \left(\frac{x}{n}\right)^n = \sum_{n=1}^\infty \frac{1}{n^n} x^n\): \(a_n=1/n^n\). Use Root Test:
+    \[ \alpha = \limsup_{n\to\infty} |a_n|^{1/n} = \limsup_{n\to\infty} \left|\frac{1}{n^n}\right|^{1/n} = \limsup_{n\to\infty} \frac{1}{n} = 0. \]
+    \(R = 1/\alpha = 1/0 = \infty\). \(I = (-\infty, \infty)\).
+    \item \(\sum_{n=1}^\infty x^{n!}\): Coefficients \(a_k=1\) if \(k=m!\) for some \(m\ge 1\), \(a_k=0\) otherwise. Use Root Test:
+    \[ \alpha = \limsup_{k\to\infty} |a_k|^{1/k}. \]
+    The sequence \(|a_k|^{1/k}\) contains terms equal to 1 infinitely often (when \(k=m!\)). The other terms are 0. The limit superior is 1.
+    \(R = 1/\alpha = 1\). Check endpoints \(x=\pm 1\):
+    If \(x=1\), \(\sum 1^{n!} = \sum 1\), diverges.
+    If \(x=-1\), \(\sum (-1)^{n!} = (-1)^1 + (-1)^2 + (-1)^6 + \dots = -1 + 1 + 1 + \dots\). Terms are \(-1, 1, 1, \dots\), do not approach 0. Diverges by Term Test.
+    \(I = (-1, 1)\).
+    \item \(\sum_{n=0}^\infty 5^n x^{2n+1}\): Rewrite as \(x \sum_{n=0}^\infty 5^n (x^2)^n\). Let \(y=x^2\). Series is \(x \sum (5y)^n\). This is geometric, converges iff \(|5y|<1 \implies |y|<1/5\). So \(|x^2|<1/5 \implies x^2<1/5 \implies |x|<1/\sqrt{5}\).
+    \(R = 1/\sqrt{5}\). Check endpoints \(x=\pm 1/\sqrt{5}\):
+    If \(x=1/\sqrt{5}\), series is \(\sum 5^n (1/\sqrt{5})^{2n+1} = \sum \frac{5^n}{5^n \sqrt{5}} = \sum 1/\sqrt{5}\), diverges (Term Test).
+    If \(x=-1/\sqrt{5}\), series is \(\sum 5^n (-1/\sqrt{5})^{2n+1} = \sum (-1) \frac{5^n}{5^n \sqrt{5}} = \sum -1/\sqrt{5}\), diverges (Term Test).
+    \(I = (-1/\sqrt{5}, 1/\sqrt{5})\).
+\end{enumerate}
+\end{example}
+
+\begin{example}[Calculating R (Sample Midterm 2a)]
+\textbf{Problem Statement:} Find \(R\) for \(f_1(x)=\sum_{n=1}^\infty \frac{x^n}{n^2}\) and \(f_2(x)=\sum_{n=0}^\infty \frac{x^{2n}}{2^n}\).
+
+\textbf{Solution:}
+\begin{itemize}
+    \item For \(f_1\): \(a_n=1/n^2\). Ratio Test: \(L = \lim |a_{n+1}/a_n| = \lim n^2/(n+1)^2 = 1\). \(R=1/1=1\).
+    \item For \(f_2\): Let \(y=x^2\). Series is \(\sum y^n / 2^n = \sum (1/2^n) y^n\). For this series in \(y\), use Ratio Test on coefficients \(b_n=1/2^n\): \(L_y = \lim |b_{n+1}/b_n| = \lim (1/2^{n+1})/(1/2^n) = 1/2\). Radius for \(y\) is \(R_y=1/(1/2)=2\). Converges for \(|y|<2\). Substitute back: \(|x^2|<2 \implies x^2<2 \implies |x|<\sqrt{2}\). Radius for \(x\) is \(R=\sqrt{2}\).
+\end{itemize}
+\end{example}
+
+\begin{example}[Using Endpoint Behavior for R (Sample Midterm 4b)]
+\textbf{Problem Statement:} Find \(R\) for \(\sum_{n=2}^\infty \frac{5^n x^n}{\sqrt{n^2-1}}\). Use results from SM 4a: \(\sum 1/\sqrt{n^2-1}\) diverges, \(\sum (-1)^n/\sqrt{n^2-1}\) converges.
+
+\textbf{Solution:} Let the power series be \(S(x)\).
+\begin{itemize}
+    \item Test \(x=1/5\): \(S(1/5) = \sum \frac{5^n (1/5)^n}{\sqrt{n^2-1}} = \sum \frac{1}{\sqrt{n^2-1}}\). This diverges. Since the series diverges at \(x=1/5\), we must have \(R \le |1/5| = 1/5\).
+    \item Test \(x=-1/5\): \(S(-1/5) = \sum \frac{5^n (-1/5)^n}{\sqrt{n^2-1}} = \sum \frac{(-1)^n}{\sqrt{n^2-1}}\). This converges. Since the series converges at \(x=-1/5\), we must have \(R \ge |-1/5| = 1/5\).
+\end{itemize}
+Combining \(R \le 1/5\) and \(R \ge 1/5\), we conclude \(R=1/5\).
+\end{example}
+
+\begin{example}[Function Series as Power Series (Sample Midterm 2b)]
+\textbf{Problem Statement:} Show that \(f_3(y)=\sum_{n=1}^\infty \frac{1}{n^2} \left( \frac{y}{1+y^2}\right)^n\) converges for all \(y\in \R\).
+
+\textbf{Solution:} Let \(x = g(y) = \frac{y}{1+y^2}\). The series is \(f_1(x) = \sum_{n=1}^\infty \frac{x^n}{n^2}\).
+From SM 2a, \(f_1(x)\) has \(R=1\).
+Check endpoints for \(f_1(x)\):
+If \(x=1\), \(\sum 1/n^2\) converges (p-series, p=2).
+If \(x=-1\), \(\sum (-1)^n/n^2\) converges (AST or absolutely).
+So, the interval of convergence for \(f_1(x)\) is \([-1, 1]\).
+Now find the range of \(g(y) = y/(1+y^2)\). As shown in HW5 M-Test example, \(|g(y)| \le 1/2\) for all \(y \in \R\). The range is \([-1/2, 1/2]\).
+Since the argument \(x = g(y)\) always lies in \([-1/2, 1/2]\), and this interval is contained within the interval of convergence \([-1, 1]\) for \(f_1(x)\), the series \(f_3(y) = f_1(g(y))\) converges for all \(y \in \R\).
+\end{example}
+
+% --- Bibliography ---
+\begin{thebibliography}{99}
+\bibitem{Ross} Ross, K. A. *Elementary Analysis: The Theory of Calculus*. 2nd ed., Springer, 2013.
+% Note: Specific citations like [Def 17.1] refer to definitions/theorems in Ross.
+\end{thebibliography}
+
+\end{document}

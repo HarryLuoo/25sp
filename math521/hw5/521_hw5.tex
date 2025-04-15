@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+\usepackage[font=footnotesize,skip=-10pt]{caption}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 5}}
+
+% Macro definitions
+
+
+\begin{document}
+\section*{Math 521: Assignment 5 (due 5~PM, April 4)}
+\begin{enumerate}
+  \item A real-valued function $f$ on an interval $I$ is said to be
+    \textit{Lipschitz continuous} if there exists an $L>0$ such that
+    for all $x,y \in I$,
+    \begin{equation}
+      |f(x)-f(y)| \le L |x-y|.
+    \end{equation}
+    \begin{enumerate}
+      \item Show that if a function is Lipschitz continuous, then it is
+        uniformly continuous.
+      \item Find an example of a function $g$ defined on an interval $I$
+        that is uniformly continuous but not Lipschitz continuous.
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}
+      \item Let $S$ be a subset of $\R$, and let $f:S \to \R$ and $g:\R \to \R$
+	be uniformly continuous functions. Prove that the composition $g \circ
+	f: S \to \R$ is uniformly continuous.
+      \item Let $f$ and $g$ be two uniformly continuous functions from $S$
+	to $\R$. Prove that $f+g$ is uniformly continuous.
+      \item Show that there exist uniformly continuous functions $f$ and $g$
+	from $S$ to $\R$ such that the multiplication $f\cdot g$ is not
+	uniformly continuous.
+    \end{enumerate}
+    
+  \item Let $f$ be a uniformly continuous real-valued function on $\R$. Prove
+    that there are constants $A$ and $B$ such that $|f(x)|\le A+B|x|$ for all
+    $x\in \R$.
+
+  \item
+    \begin{enumerate}
+      \item Sketch the function $f(x)=(x+1)^{-2} (x-2)^{-1}$.
+      \item Determine $\lim_{x\to 2^+} f(x)$, $\lim_{x\to 2^-} f(x)$,
+        $\lim_{x\to -1^+} f(x)$, and $\lim_{x \to -1^-} f(x)$.
+      \item Determine $\lim_{x\to 2} f(x)$ and $\lim_{x\to-1} f(x)$ if
+        they exist.
+    \end{enumerate}
+
+  \item Suppose that the limits $L_1 = \lim_{x\to a^+} f_1(x)$ and $L_2 = \lim_{x\to
+    a^+} f_2(x)$ exist.
+    \begin{enumerate}
+      \item Prove that if $f_1(x) \le f_2(x)$ for some interval $(a,b)$, then
+        $L_1\le L_2$.
+      \item Suppose that $f_1(x) < f_2(x)$ for some interval $(a,b)$. Is it
+        always true that $L_1 <L_2$?
+    \end{enumerate}
+
+  \item For each of the following power series, find the radius of convergence
+    and determine the exact interval of convergence:
+    \begin{enumerate}
+      \item $\sum_n n^2 x^n$
+      \item $\sum_n \left(\frac{x}{n}\right)^n$
+      \item $\sum_n x^{n!}$
+      \item $\sum_n 5^n x^{2n+1}$
+    \end{enumerate}
+
+  \item For $x\in [0,\infty)$, define $f_n(x) = \tfrac{x}{n}$.
+    \begin{enumerate}
+      \item Find $f(x) = \lim_{n\to\infty} f_n(x)$.
+      \item Determine whether $f_n \to f$ uniformly on $[0,1]$.
+      \item Determine whether $f_n \to f$ uniformly on $[0,\infty)$.
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}
+      \item Define a sequence of functions on $\R$ as
+        \begin{equation}
+          f_n(x) = \begin{cases}
+            1 & \qquad \text{if $x=1,\tfrac12,\tfrac13,\ldots,\tfrac1n$,} \\
+            0 & \qquad \text{otherwise,}
+          \end{cases}
+        \end{equation}
+        and let $f$ be the pointwise limit of $f_n$. Is each $f_n$ continuous at $0$? Does $f_n \to f$ uniformly on $\R$? Is $f$ continuous at 0?
+
+      \item Repeat part (a) for the sequence of functions
+        \begin{equation}
+          g_n(x) = \begin{cases}
+            x & \qquad \text{if $x=1,\tfrac12,\tfrac13,\ldots,\tfrac1n$,} \\
+            0 & \qquad \text{otherwise.}
+          \end{cases}
+        \end{equation}
+        
+    \end{enumerate}
+\end{enumerate}
+\end{document}

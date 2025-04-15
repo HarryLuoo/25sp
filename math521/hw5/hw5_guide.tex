@@ -1,0 +1,643 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=1in]{geometry}
+% For standard real numbers symbol
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\section*{Problem 1: Lipschitz and Uniform Continuity}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition 19.1 (Uniform Continuity):} Let \(f\) be a real-valued function defined on a set \(S \subseteq \R\). Then \(f\) is \textbf{uniformly continuous} on \(S\) if for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta\), then \(|f(x) - f(y)| < \epsilon\).
+        \begin{itemize}
+            \item The key difference from pointwise continuity is that \(\delta\) depends only on \(\epsilon\), not on the specific points \(x\) or \(y\) in \(S\).
+        \end{itemize}
+
+    \item \textbf{Definition (Lipschitz Continuity):} A real-valued function \(f\) on an interval \(I\) is said to be \textbf{Lipschitz continuous} if there exists a constant \(L > 0\) such that for all \(x, y \in I\),
+        \[ |f(x) - f(y)| \le L |x-y|. \]
+        The constant \(L\) is called a Lipschitz constant for \(f\).
+
+    \item \textbf{Relationship:} Lipschitz continuity is a stronger condition than uniform continuity.
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+  \item[(a)] \textbf{Show that if a function is Lipschitz continuous, then it is uniformly continuous.}
+
+    Let \(f: I \to \R\) be a Lipschitz continuous function on an interval \(I\). By definition, there exists a constant \(L > 0\) such that for all \(x, y \in I\),
+    \[ |f(x) - f(y)| \le L |x-y|. \]
+    We want to show that \(f\) is uniformly continuous on \(I\). Let \(\epsilon > 0\) be given. We need to find a \(\delta > 0\) such that for all \(x, y \in I\), if \(|x-y| < \delta\), then \(|f(x) - f(y)| < \epsilon\).
+
+    Choose \(\delta = \frac{\epsilon}{L}\). Since \(L > 0\) and \(\epsilon > 0\), we have \(\delta > 0\).
+    Now, let \(x, y \in I\) such that \(|x-y| < \delta\). Using the Lipschitz condition, we have
+    \[ |f(x) - f(y)| \le L |x-y|. \]
+    Since \(|x-y| < \delta = \frac{\epsilon}{L}\), we can substitute this into the inequality:
+    \[ |f(x) - f(y)| \le L |x-y| < L \left( \frac{\epsilon}{L} \right) = \epsilon. \]
+    Thus, for any \(\epsilon > 0\), we found a \(\delta = \epsilon/L > 0\) such that for all \(x, y \in I\), if \(|x-y| < \delta\), then \(|f(x) - f(y)| < \epsilon\).
+    Therefore, \(f\) is uniformly continuous on \(I\).
+
+  \item[(b)] \textbf{Find an example of a function \(g\) defined on an interval \(I\) that is uniformly continuous but not Lipschitz continuous.}
+
+    Consider the function \(g(x) = \sqrt{x}\) defined on the interval \(I = [0, 1]\).
+
+    \begin{itemize}
+        \item \textbf{Uniform Continuity:}
+            The function \(g(x) = \sqrt{x}\) is continuous on the closed and bounded interval \([0, 1]\). By Theorem 19.5 (Heine-Cantor Theorem), a continuous function on a compact set (like \([0, 1]\)) is uniformly continuous. Thus, \(g(x) = \sqrt{x}\) is uniformly continuous on \([0, 1]\).
+
+        \item \textbf{Not Lipschitz Continuous:}
+            Assume, for the sake of contradiction, that \(g(x) = \sqrt{x}\) is Lipschitz continuous on \([0, 1]\). Then there exists a constant \(L > 0\) such that for all \(x, y \in [0, 1]\),
+            \[ |\sqrt{x} - \sqrt{y}| \le L |x-y|. \]
+            Let's choose \(y = 0\). Then for all \(x \in (0, 1]\), we must have
+            \[ |\sqrt{x} - \sqrt{0}| \le L |x-0| \]
+            \[ \sqrt{x} \le L x. \]
+            Dividing by \(\sqrt{x}\) (since \(x > 0\)), we get
+            \[ 1 \le L \sqrt{x} \]
+            which implies
+            \[ \frac{1}{L} \le \sqrt{x}. \]
+            This inequality must hold for all \(x \in (0, 1]\). However, as \(x \to 0^+\), \(\sqrt{x} \to 0\). We can choose \(x\) small enough such that \(\sqrt{x} < \frac{1}{L}\). For example, choose \(x = \frac{1}{4L^2}\). If \(L \ge 1/2\), then \(x = 1/(4L^2) \le 1/(4(1/4))=1\), so \(x \in (0, 1]\). Then \(\sqrt{x} = \frac{1}{2L}\), and the inequality becomes
+            \[ \frac{1}{L} \le \frac{1}{2L}, \]
+            which simplifies to \(1 \le \frac{1}{2}\), a contradiction.
+            Alternatively, consider the ratio for \(y=0\):
+            \[ \frac{|g(x) - g(0)|}{|x-0|} = \frac{\sqrt{x}}{x} = \frac{1}{\sqrt{x}}. \]
+            As \(x \to 0^+\), this ratio \(\frac{1}{\sqrt{x}} \to \infty\). If \(g\) were Lipschitz, this ratio would be bounded by \(L\). Since the ratio is unbounded, \(g\) cannot be Lipschitz continuous on \([0, 1]\).
+    \end{itemize}
+    Therefore, \(g(x) = \sqrt{x}\) on \(I = [0, 1]\) is uniformly continuous but not Lipschitz continuous.
+\end{enumerate}
+
+\section*{Problem 2: Uniform Continuity and Operations}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition 19.1 (Uniform Continuity):} As defined in Problem 1.
+    \item \textbf{Theorem 19.4:} If \(f: S \to \R\) is uniformly continuous on \(S\) and \(g: T \to \R\) is uniformly continuous on \(T\), where \(f(S) \subseteq T\), then the composition \(g \circ f: S \to \R\) is uniformly continuous on \(S\).
+    \item \textbf{Theorem 19.6 (Algebraic Properties for Uniform Continuity):} If \(f\) and \(g\) are uniformly continuous functions from a set \(S \subseteq \R\) to \(\R\), then:
+        \begin{itemize}
+            \item \(f+g\) is uniformly continuous on \(S\).
+            \item \(kf\) is uniformly continuous on \(S\) for any constant \(k\).
+            \item The product \(f \cdot g\) is not necessarily uniformly continuous on \(S\). However, if both \(f\) and \(g\) are bounded on \(S\), then \(f \cdot g\) is uniformly continuous on \(S\).
+        \end{itemize}
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+  \item[(a)] \textbf{Let \(S \subseteq \R\), \(f: S \to \R\), \(g: \R \to \R\) be uniformly continuous functions. Prove \(g \circ f: S \to \R\) is uniformly continuous.}
+    \textit{(Note: The problem statement specifies \(g: \R \to \R\), so \(f(S) \subseteq \R\) is trivially satisfied).}
+
+    Let \(\epsilon > 0\) be given. Since \(g\) is uniformly continuous on \(\R\), there exists a \(\delta_g > 0\) such that for all \(u, v \in \R\), if \(|u-v| < \delta_g\), then \(|g(u) - g(v)| < \epsilon\).
+
+    Since \(f\) is uniformly continuous on \(S\), for this \(\delta_g > 0\) (treating \(\delta_g\) as an \(\epsilon\) for \(f\)), there exists a \(\delta_f > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta_f\), then \(|f(x) - f(y)| < \delta_g\).
+
+    Now, let \(x, y \in S\) such that \(|x-y| < \delta_f\).
+    By the uniform continuity of \(f\), we have \(|f(x) - f(y)| < \delta_g\).
+    Let \(u = f(x)\) and \(v = f(y)\). Then \(u, v \in f(S) \subseteq \R\), and we have \(|u-v| < \delta_g\).
+    By the uniform continuity of \(g\), since \(|u-v| < \delta_g\), we have \(|g(u) - g(v)| < \epsilon\).
+    Substituting back \(u=f(x)\) and \(v=f(y)\), we get
+    \[ |g(f(x)) - g(f(y))| < \epsilon. \]
+    This means \(|(g \circ f)(x) - (g \circ f)(y)| < \epsilon\).
+
+    Thus, for any \(\epsilon > 0\), we found a \(\delta = \delta_f > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta\), then \(|(g \circ f)(x) - (g \circ f)(y)| < \epsilon\).
+    Therefore, \(g \circ f\) is uniformly continuous on \(S\).
+
+  \item[(b)] \textbf{Let \(f\) and \(g\) be two uniformly continuous functions from \(S\) to \(\R\). Prove that \(f+g\) is uniformly continuous.}
+
+    Let \(\epsilon > 0\) be given. Since \(f\) is uniformly continuous on \(S\), there exists a \(\delta_f > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta_f\), then \(|f(x) - f(y)| < \epsilon/2\).
+    Since \(g\) is uniformly continuous on \(S\), there exists a \(\delta_g > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta_g\), then \(|g(x) - g(y)| < \epsilon/2\).
+
+    Choose \(\delta = \min(\delta_f, \delta_g)\). Since \(\delta_f > 0\) and \(\delta_g > 0\), we have \(\delta > 0\).
+    Now, let \(x, y \in S\) such that \(|x-y| < \delta\).
+    Since \(|x-y| < \delta \le \delta_f\), we have \(|f(x) - f(y)| < \epsilon/2\).
+    Since \(|x-y| < \delta \le \delta_g\), we have \(|g(x) - g(y)| < \epsilon/2\).
+
+    Consider the function \(h(x) = f(x) + g(x)\). We want to show \(|h(x) - h(y)| < \epsilon\).
+    Using the triangle inequality:
+    \[ |h(x) - h(y)| = |(f(x) + g(x)) - (f(y) + g(y))| \]
+    \[ = |(f(x) - f(y)) + (g(x) - g(y))| \]
+    \[ \le |f(x) - f(y)| + |g(x) - g(y)|. \]
+    Substituting the bounds we found:
+    \[ |h(x) - h(y)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon. \]
+    Thus, for any \(\epsilon > 0\), we found a \(\delta > 0\) such that for all \(x, y \in S\), if \(|x-y| < \delta\), then \(|(f+g)(x) - (f+g)(y)| < \epsilon\).
+    Therefore, \(f+g\) is uniformly continuous on \(S\).
+
+  \item[(c)] \textbf{Show that there exist uniformly continuous functions \(f\) and \(g\) from \(S\) to \(\R\) such that the multiplication \(f \cdot g\) is not uniformly continuous.}
+
+    Let \(S = \R\). Consider the functions \(f(x) = x\) and \(g(x) = x\).
+
+    \begin{itemize}
+        \item \textbf{Uniform Continuity of \(f\) and \(g\):}
+            Let \(\epsilon > 0\) be given. Choose \(\delta = \epsilon\). Then for any \(x, y \in \R\), if \(|x-y| < \delta\), then
+            \[ |f(x) - f(y)| = |x-y| < \delta = \epsilon. \]
+            So \(f(x) = x\) is uniformly continuous on \(\R\). Similarly, \(g(x) = x\) is uniformly continuous on \(\R\).
+
+        \item \textbf{Product \(f \cdot g\):}
+            The product is \(h(x) = f(x)g(x) = x^2\). We need to show that \(h(x) = x^2\) is not uniformly continuous on \(\R\).
+            We can show this by negating the definition of uniform continuity. We need to find an \(\epsilon > 0\) such that for every \(\delta > 0\), there exist \(x, y \in \R\) with \(|x-y| < \delta\) but \(|h(x) - h(y)| \ge \epsilon\).
+
+            Let \(\epsilon = 1\). Let \(\delta > 0\) be any positive number. We need to find \(x, y \in \R\) such that \(|x-y| < \delta\) and \(|x^2 - y^2| \ge 1\).
+            Choose \(x = \frac{1}{\delta} + \frac{\delta}{2}\) and \(y = \frac{1}{\delta}\).
+            Then \(|x-y| = |\frac{\delta}{2}| = \frac{\delta}{2} < \delta\).
+            Now consider the difference in the function values:
+            \[ |h(x) - h(y)| = |x^2 - y^2| = |(x-y)(x+y)| \]
+            \[ = \left| \frac{\delta}{2} \left( \left(\frac{1}{\delta} + \frac{\delta}{2}\right) + \frac{1}{\delta} \right) \right| \]
+            \[ = \left| \frac{\delta}{2} \left( \frac{2}{\delta} + \frac{\delta}{2} \right) \right| \]
+            \[ = \left| 1 + \frac{\delta^2}{4} \right| = 1 + \frac{\delta^2}{4}. \]
+            Since \(\delta > 0\), \(\frac{\delta^2}{4} > 0\), so \(1 + \frac{\delta^2}{4} > 1\).
+            Thus, we have found \(x, y\) such that \(|x-y| < \delta\) but \(|h(x) - h(y)| = 1 + \frac{\delta^2}{4} \ge 1 = \epsilon\).
+
+            Since this holds for any \(\delta > 0\), the function \(h(x) = x^2\) is not uniformly continuous on \(\R\).
+    \end{itemize}
+    Therefore, the product of two uniformly continuous functions is not necessarily uniformly continuous.
+\end{enumerate}
+
+\section*{Problem 3: Growth of Uniformly Continuous Functions on \(\mathbb{R}\)}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition 19.1 (Uniform Continuity):} As defined previously.
+    \item \textbf{Triangle Inequality:} For any real numbers \(a, b\), \(|a+b| \le |a| + |b|\). Also, \(|a-b| \ge ||a| - |b||\).
+    \item \textbf{Idea:} Uniform continuity limits how fast the function can grow. If a function grows too quickly (e.g., quadratically like \(x^2\)), it cannot be uniformly continuous on \(\mathbb{R}\).
+\end{itemize}
+
+\subsection*{Solution}
+
+Let \(f: \R \to \R\) be a uniformly continuous function. We want to prove that there exist constants \(A > 0\) and \(B > 0\) such that \(|f(x)| \le A + B|x|\) for all \(x \in \R\).
+
+Since \(f\) is uniformly continuous on \(\R\), for \(\epsilon = 1\), there exists a \(\delta_0 > 0\) such that for all \(u, v \in \R\), if \(|u-v| < \delta_0\), then \(|f(u) - f(v)| < 1\).
+Let's choose \(\delta = \delta_0/2\). Then \(\delta > 0\). If \(|u-v| \le \delta\), then \(|u-v| < \delta_0\), which implies \(|f(u) - f(v)| < 1\).
+
+Consider any \(x \in \R\).
+If \(x = 0\), then \(|f(0)| \le A + B|0|\) requires \(|f(0)| \le A\). So we will need to choose \(A\) large enough to accommodate this.
+
+Let \(x > 0\). Choose an integer \(n\) such that \(n\delta \le x < (n+1)\delta\). Note \(n = \lfloor x/\delta \rfloor \ge 0\).
+Consider the points \(0, \delta, 2\delta, \ldots, n\delta, x\).
+The distance between consecutive points in the sequence \(0, \delta, 2\delta, \ldots, n\delta\) is \(\delta\).
+The distance between \(n\delta\) and \(x\) is \(x - n\delta < (n+1)\delta - n\delta = \delta\).
+So, the distance between any two consecutive points in \(0, \delta, 2\delta, \dots, n\delta, x\) is less than or equal to \(\delta\).
+
+Using the triangle inequality repeatedly:
+\[ f(x) - f(0) = (f(x) - f(n\delta)) + (f(n\delta) - f((n-1)\delta)) + \dots + (f(\delta) - f(0)). \]
+Taking absolute values:
+\[ |f(x) - f(0)| = \left|(f(x) - f(n\delta)) + \sum_{k=1}^{n} (f(k\delta) - f((k-1)\delta))\right| \]
+\[ \le |f(x) - f(n\delta)| + \sum_{k=1}^{n} |f(k\delta) - f((k-1)\delta)|. \]
+Since the distance between consecutive points is \(\le \delta\):
+\begin{itemize}
+    \item \(|x - n\delta| < \delta\), so \(|f(x) - f(n\delta)| < 1\).
+    \item For \(k=1, \ldots, n\), \(|k\delta - (k-1)\delta| = |\delta| = \delta\). So, \(|f(k\delta) - f((k-1)\delta)| < 1\).
+\end{itemize}
+So,
+\[ |f(x) - f(0)| \le 1 + \sum_{k=1}^{n} 1 = 1 + n. \]
+We know \(n = \lfloor x/\delta \rfloor\), so \(n \le x/\delta\).
+Substituting this, we get:
+\[ |f(x) - f(0)| \le 1 + \frac{x}{\delta}. \]
+Using the triangle inequality \(|f(x)| - |f(0)| \le |f(x) - f(0)|\), we have:
+\[ |f(x)| \le |f(0)| + |f(x) - f(0)| \le |f(0)| + 1 + \frac{x}{\delta}. \]
+Since \(x > 0\), \(|x| = x\). So for \(x > 0\):
+\[ |f(x)| \le (|f(0)| + 1) + \frac{1}{\delta} |x|. \]
+
+Now, let \(x < 0\). Let \(y = -x > 0\). Choose an integer \(m\) such that \(m\delta \le y < (m+1)\delta\). Note \(m = \lfloor y/\delta \rfloor = \lfloor -x/\delta \rfloor \ge 0\).
+Consider the points \(x, x+\delta, x+2\delta, \ldots, x+m\delta, 0\).
+Let \(x_k = x + k\delta\). The points are \(x_0, x_1, \dots, x_m, 0\).
+The distance between consecutive points \(x_{k-1}\) and \(x_k\) is \(\delta\).
+The distance between \(x_m = x+m\delta\) and \(0\) is \(|x+m\delta| = |-y+m\delta| = |y-m\delta|\). Since \(m\delta \le y < (m+1)\delta\), we have \(0 \le y-m\delta < \delta\). So \(|x_m - 0| < \delta\).
+Using the triangle inequality:
+\[ f(0) - f(x) = (f(0) - f(x_m)) + (f(x_m) - f(x_{m-1})) + \dots + (f(x_1) - f(x_0)). \]
+\[ |f(0) - f(x)| \le |f(0) - f(x_m)| + \sum_{k=1}^{m} |f(x_k) - f(x_{k-1})|. \]
+Since the distance between consecutive points is \(\le \delta\), each term is less than 1.
+\[ |f(0) - f(x)| \le 1 + \sum_{k=1}^{m} 1 = 1 + m. \]
+We know \(m = \lfloor -x/\delta \rfloor\), so \(m \le -x/\delta\).
+\[ |f(x) - f(0)| = |f(0) - f(x)| \le 1 + m \le 1 - \frac{x}{\delta}. \]
+Using the triangle inequality \(|f(x)| - |f(0)| \le |f(x) - f(0)|\):
+\[ |f(x)| \le |f(0)| + |f(x) - f(0)| \le |f(0)| + 1 - \frac{x}{\delta}. \]
+Since \(x < 0\), \(|x| = -x\). So for \(x < 0\):
+\[ |f(x)| \le (|f(0)| + 1) + \frac{1}{\delta} |x|. \]
+
+Combining the cases \(x > 0\), \(x < 0\), and \(x = 0\):
+We can choose \(A = |f(0)| + 1\) and \(B = \frac{1}{\delta}\). Both \(A\) and \(B\) are positive constants (since \(\delta > 0\)).
+Then, for all \(x \in \R\), we have:
+\[ |f(x)| \le A + B|x|. \]
+This completes the proof.
+
+\section*{Problem 4: Limits of a Rational Function}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition (Limit of a Function):} Let \(f\) be a function defined on \(S \subseteq \R\), let \(a\) be a limit point of \(S\). We say \(\lim_{x\to a} f(x) = L\) if for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that for all \(x \in S\), if \(0 < |x-a| < \delta\), then \(|f(x) - L| < \epsilon\).
+    \item \textbf{Definition (One-Sided Limits):}
+        \begin{itemize}
+            \item \textbf{Right-hand limit:} \(\lim_{x\to a^+} f(x) = L\) if for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that for all \(x \in S\), if \(a < x < a+\delta\), then \(|f(x) - L| < \epsilon\).
+            \item \textbf{Left-hand limit:} \(\lim_{x\to a^-} f(x) = L\) if for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that for all \(x \in S\), if \(a-\delta < x < a\), then \(|f(x) - L| < \epsilon\).
+        \end{itemize}
+    \item \textbf{Theorem 20.10:} \(\lim_{x\to a} f(x) = L\) if and only if \(\lim_{x\to a^+} f(x) = L\) and \(\lim_{x\to a^-} f(x) = L\).
+    \item \textbf{Infinite Limits:} We say \(\lim_{x\to a^+} f(x) = +\infty\) if for every \(M > 0\), there exists a \(\delta > 0\) such that for all \(x\), if \(a < x < a+\delta\), then \(f(x) > M\). Similar definitions hold for \(-\infty\) and for \(x \to a^-\) or \(x \to a\).
+    \item \textbf{Rational Functions:} A function \(f(x) = P(x)/Q(x)\), where \(P, Q\) are polynomials. Limits can often be evaluated by substitution, unless \(Q(a)=0\). If \(Q(a)=0\) and \(P(a) \ne 0\), there is a vertical asymptote at \(x=a\). If \(Q(a)=0\) and \(P(a) = 0\), there might be a hole or a vertical asymptote.
+\end{itemize}
+
+\subsection*{Solution}
+
+The function is \(f(x) = \frac{1}{(x+1)^2 (x-2)}\). The domain is \(\R \setminus \{-1, 2\}\).
+
+\begin{enumerate}
+  \item[(a)] \textbf{Sketch the function \(f(x)=(x+1)^{-2} (x-2)^{-1}\).}
+
+    \begin{enumerate}
+        \item \textbf{Vertical Asymptotes:} The denominator is zero when \(x = -1\) or \(x = 2\). The numerator is 1 (never zero). So, we have vertical asymptotes at \(x = -1\) and \(x = 2\).
+        \item \textbf{Horizontal Asymptotes:} As \(x \to \pm \infty\), the denominator \((x+1)^2 (x-2) \approx x^2 \cdot x = x^3\) behaves like \(x^3\). So, \(f(x) \approx \frac{1}{x^3}\).
+            \[ \lim_{x\to \infty} \frac{1}{(x+1)^2 (x-2)} = 0 \]
+            \[ \lim_{x\to -\infty} \frac{1}{(x+1)^2 (x-2)} = 0 \]
+            There is a horizontal asymptote at \(y = 0\).
+        \item \textbf{Behavior near asymptotes:}
+            \begin{itemize}
+                \item Near \(x = 2\):
+                    \begin{itemize}
+                        \item As \(x \to 2^+\), \(x > 2\), so \(x-2 > 0\). Also \((x+1)^2\) is positive (approx \(3^2 = 9\)). So the denominator is small and positive. \(f(x) \to +\infty\).
+                        \item As \(x \to 2^-\), \(x < 2\), so \(x-2 < 0\). Also \((x+1)^2\) is positive. So the denominator is small and negative. \(f(x) \to -\infty\).
+                    \end{itemize}
+                \item Near \(x = -1\):
+                    \begin{itemize}
+                        \item As \(x \to -1^+\), \(x > -1\), so \(x+1\) is small and positive. \((x+1)^2\) is small and positive. \(x-2\) is negative (approx -3). So the denominator is small and negative (\(+ \times - = -\)). \(f(x) \to -\infty\).
+                        \item As \(x \to -1^-\), \(x < -1\), so \(x+1\) is small and negative. \((x+1)^2\) is small and positive. \(x-2\) is negative (approx -3). So the denominator is small and negative (\(+ \times - = -\)). \(f(x) \to -\infty\).
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{Intercepts:}
+            \begin{itemize}
+                \item y-intercept: Set \(x=0\). \(f(0) = \frac{1}{(0+1)^2 (0-2)} = \frac{1}{1 \cdot (-2)} = -\frac{1}{2}\). The y-intercept is \((0, -1/2)\).
+                \item x-intercept: Set \(f(x)=0\). \(\frac{1}{(x+1)^2 (x-2)} = 0\). This equation has no solution as the numerator is never zero. There are no x-intercepts.
+            \end{itemize}
+        \item \textbf{Sign analysis:}
+            \begin{itemize}
+                \item For \(x > 2\): \((x+1)^2 > 0\), \(x-2 > 0\). \(f(x) > 0\).
+                \item For \(-1 < x < 2\): \((x+1)^2 > 0\), \(x-2 < 0\). \(f(x) < 0\).
+                \item For \(x < -1\): \((x+1)^2 > 0\), \(x-2 < 0\). \(f(x) < 0\).
+            \end{itemize}
+    \end{enumerate}
+
+    \textbf{Sketch description:}
+    Draw axes, mark points \(-1\) and \(2\) on x-axis, mark \(-1/2\) on y-axis. Draw vertical lines at \(x=-1\) and \(x=2\). Draw horizontal line at \(y=0\). Plot the y-intercept \((0, -1/2)\). Region \(x>2\): Starts from \(+\infty\) near \(x=2\), decreases towards the horizontal asymptote \(y=0\). Region \(-1 < x < 2\): Starts from \(-\infty\) near \(x=-1\), passes through \((0, -1/2)\), goes down to \(-\infty\) near \(x=2\). Region \(x<-1\): Approaches the horizontal asymptote \(y=0\) from below as \(x \to -\infty\). Decreases towards \(-\infty\) as \(x \to -1^-\).
+
+  \item[(b)] \textbf{Determine the limits.}
+    \begin{itemize}
+        \item \(\lim_{x\to 2^+} f(x)\): As \(x \to 2^+\), \(x > 2\). Then \(x-2 \to 0^+\) and \((x+1)^2 \to (2+1)^2 = 9\). The denominator \((x+1)^2 (x-2)\) approaches \(9 \times 0^+ = 0^+\). The numerator is 1.
+            \[ \lim_{x\to 2^+} \frac{1}{(x+1)^2 (x-2)} = +\infty. \]
+        \item \(\lim_{x\to 2^-} f(x)\): As \(x \to 2^-\), \(x < 2\). Then \(x-2 \to 0^-\) and \((x+1)^2 \to 9\). The denominator \((x+1)^2 (x-2)\) approaches \(9 \times 0^- = 0^-\). The numerator is 1.
+            \[ \lim_{x\to 2^-} \frac{1}{(x+1)^2 (x-2)} = -\infty. \]
+        \item \(\lim_{x\to -1^+} f(x)\): As \(x \to -1^+\), \(x > -1\). Then \(x+1 \to 0^+\), so \((x+1)^2 \to 0^+\). Also \(x-2 \to -1-2 = -3\). The denominator \((x+1)^2 (x-2)\) approaches \(0^+ \times (-3) = 0^-\). The numerator is 1.
+            \[ \lim_{x\to -1^+} \frac{1}{(x+1)^2 (x-2)} = -\infty. \]
+        \item \(\lim_{x\to -1^-} f(x)\): As \(x \to -1^-\), \(x < -1\). Then \(x+1 \to 0^-\), so \((x+1)^2 \to 0^+\). Also \(x-2 \to -3\). The denominator \((x+1)^2 (x-2)\) approaches \(0^+ \times (-3) = 0^-\). The numerator is 1.
+            \[ \lim_{x\to -1^-} \frac{1}{(x+1)^2 (x-2)} = -\infty. \]
+    \end{itemize}
+
+  \item[(c)] \textbf{Determine \(\lim_{x\to 2} f(x)\) and \(\lim_{x\to -1} f(x)\) if they exist.}
+    \begin{itemize}
+        \item For the limit \(\lim_{x\to 2} f(x)\) to exist, the left-hand and right-hand limits must exist and be equal (Theorem 20.10).
+            From part (b), \(\lim_{x\to 2^+} f(x) = +\infty\) and \(\lim_{x\to 2^-} f(x) = -\infty\). Since these are not equal (and not finite), the two-sided limit \(\lim_{x\to 2} f(x)\) does not exist.
+
+        \item For the limit \(\lim_{x\to -1} f(x)\) to exist, the left-hand and right-hand limits must exist and be equal.
+            From part (b), \(\lim_{x\to -1^+} f(x) = -\infty\) and \(\lim_{x\to -1^-} f(x) = -\infty\). Since both one-sided limits tend to \(-\infty\), we can say that the limit exists in the extended sense:
+            \[ \lim_{x\to -1} f(x) = -\infty. \]
+            If "exist" means "exist as a finite real number", then the limit does not exist. The limit \(\lim_{x\to -1} f(x)\) does not exist as a finite real number. However, it is often written as \( \lim_{x\to -1} f(x) = -\infty \).
+    \end{itemize}
+\end{enumerate}
+
+\section*{Problem 5: Limits and Inequalities}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition (One-Sided Limits):} As defined in Problem 4.
+    \item \textbf{Limit Laws}:** If \(\lim_{x\to a^+} f(x) = L\) and \(\lim_{x\to a^+} g(x) = M\), then \(\lim_{x\to a^+} (f(x)+g(x)) = L+M\), \(\lim_{x\to a^+} (f(x)g(x)) = LM\), etc.
+    \item \textbf{Theorem 20.5 (Order Properties of Limits):} Assume \(\lim_{x\to a} f(x) = L\) and \(\lim_{x\to a} g(x) = M\).
+        \begin{itemize}
+            \item If \(f(x) \le g(x)\) for all \(x\) in some interval \((a-\delta_0, a+\delta_0) \setminus \{a\}\), then \(L \le M\).
+            \item This theorem also holds for one-sided limits.
+        \end{itemize}
+\end{itemize}
+
+\subsection*{Solution}
+
+Suppose \(L_1 = \lim_{x\to a^+} f_1(x)\) and \(L_2 = \lim_{x\to a^+} f_2(x)\) exist.
+
+\begin{enumerate}
+  \item[(a)] \textbf{Prove that if \(f_1(x) \le f_2(x)\) for some interval \((a,b)\), then \(L_1\le L_2\).}
+
+    Assume, for the sake of contradiction, that \(L_1 > L_2\).
+    Let \(\epsilon = \frac{L_1 - L_2}{2}\). Since \(L_1 > L_2\), we have \(\epsilon > 0\).
+
+    By the definition of the right-hand limit \(L_1 = \lim_{x\to a^+} f_1(x)\), there exists a \(\delta_1 > 0\) such that for all \(x\), if \(a < x < a + \delta_1\), then \(|f_1(x) - L_1| < \epsilon\). This implies \(L_1 - \epsilon < f_1(x) < L_1 + \epsilon\). In particular, \(f_1(x) > L_1 - \epsilon\).
+
+    By the definition of the right-hand limit \(L_2 = \lim_{x\to a^+} f_2(x)\), there exists a \(\delta_2 > 0\) such that for all \(x\), if \(a < x < a + \delta_2\), then \(|f_2(x) - L_2| < \epsilon\). This implies \(L_2 - \epsilon < f_2(x) < L_2 + \epsilon\). In particular, \(f_2(x) < L_2 + \epsilon\).
+
+    We are given that \(f_1(x) \le f_2(x)\) for \(x \in (a, b)\). Let \(b' = b\).
+    Choose \(\delta = \min(\delta_1, \delta_2, b' - a)\). Note that since \(\delta_1 > 0\), \(\delta_2 > 0\), and \(b' > a\), we have \(\delta > 0\).
+    For any \(x\) such that \(a < x < a + \delta\), we have:
+    \begin{enumerate}
+        \item \(a < x < a + \delta \le a + \delta_1\), so \(f_1(x) > L_1 - \epsilon\).
+        \item \(a < x < a + \delta \le a + \delta_2\), so \(f_2(x) < L_2 + \epsilon\).
+        \item \(a < x < a + \delta \le a + (b' - a) = b'\), so \(x \in (a, b')\), which means \(f_1(x) \le f_2(x)\).
+    \end{enumerate}
+    Combining these inequalities for \(x\) in \((a, a+\delta)\):
+    \[ L_1 - \epsilon < f_1(x) \le f_2(x) < L_2 + \epsilon. \]
+    So, \(L_1 - \epsilon < L_2 + \epsilon\).
+    Substituting \(\epsilon = \frac{L_1 - L_2}{2}\):
+    \[ L_1 - \frac{L_1 - L_2}{2} < L_2 + \frac{L_1 - L_2}{2} \]
+    \[ \frac{2L_1 - (L_1 - L_2)}{2} < \frac{2L_2 + (L_1 - L_2)}{2} \]
+    \[ \frac{L_1 + L_2}{2} < \frac{L_1 + L_2}{2}. \]
+    This is a strict inequality \(\frac{L_1 + L_2}{2} < \frac{L_1 + L_2}{2}\), which is impossible.
+    Therefore, our initial assumption \(L_1 > L_2\) must be false.
+    We conclude that \(L_1 \le L_2\).
+
+  \item[(b)] \textbf{Suppose that \(f_1(x) < f_2(x)\) for some interval \((a,b)\). Is it always true that \(L_1 < L_2\)?}
+
+    No, it is not always true that \(L_1 < L_2\). The limits can be equal even if the functions satisfy a strict inequality.
+
+    \textbf{Counterexample:}
+    Let \(a = 0\). Consider the interval \((0, 1)\) (so \(b=1\)).
+    Let \(f_1(x) = 0\) for all \(x \in (0, 1)\).
+    Let \(f_2(x) = x\) for all \(x \in (0, 1)\).
+
+    Then for all \(x \in (0, 1)\), we have \(f_1(x) = 0 < x = f_2(x)\). So the condition \(f_1(x) < f_2(x)\) holds on \((a,b) = (0, 1)\).
+
+    Now, let's find the limits as \(x \to a^+ = 0^+\):
+    \[ L_1 = \lim_{x\to 0^+} f_1(x) = \lim_{x\to 0^+} 0 = 0. \]
+    \[ L_2 = \lim_{x\to 0^+} f_2(x) = \lim_{x\to 0^+} x = 0. \]
+    In this case, \(L_1 = 0\) and \(L_2 = 0\), so \(L_1 = L_2\).
+    This contradicts the claim that \(L_1 < L_2\) must hold.
+
+    Therefore, \(f_1(x) < f_2(x)\) on \((a,b)\) does not imply \(L_1 < L_2\).
+\end{enumerate}
+
+\section*{Problem 6: Power Series Convergence}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition (Power Series):} A power series centered at \(a\) is an infinite series of the form \(\sum_{n=0}^\infty a_n (x-a)^n\).
+    \item \textbf{Theorem 23.1 (Radius of Convergence):} For any power series \(\sum a_n (x-a)^n\), there exists \(R \in [0, \infty]\), called the \textbf{radius of convergence}, such that:
+        \begin{itemize}
+            \item The series converges absolutely for \(|x-a| < R\).
+            \item The series diverges for \(|x-a| > R\).
+            \item The convergence/divergence at the endpoints \(x = a \pm R\) (if \(0 < R < \infty\)) must be checked separately.
+        \end{itemize}
+    \item \textbf{Formulas for Radius of Convergence:}
+        \begin{itemize}
+            \item \textbf{Ratio Test:} If \(L = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right|\) exists, then \(R = 1/L\) (with \(R=\infty\) if \(L=0\) and \(R=0\) if \(L=\infty\)).
+            \item \textbf{Root Test:} Let \(\alpha = \limsup_{n\to\infty} |a_n|^{1/n}\). Then \(R = 1/\alpha\) (with \(R=\infty\) if \(\alpha=0\) and \(R=0\) if \(\alpha=\infty\)). The root test formula \(R = 1/\limsup |a_n|^{1/n}\) always works.
+        \end{itemize}
+    \item \textbf{Interval of Convergence:} The set of all \(x\) for which the power series converges. It is typically of the form \((a-R, a+R)\), \([a-R, a+R)\), \((a-R, a+R]\), or \([a-R, a+R]\) when \(0 < R < \infty\). If \(R=0\), it's just \(\{a\}\). If \(R=\infty\), it's \((-\infty, \infty)\).
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+  \item[(a)] \(\sum_{n=0}^\infty n^2 x^n\) \\
+    This is a power series centered at \(a=0\) with coefficients \(a_n = n^2\).
+    We use the Ratio Test for absolute convergence. Let \(b_n = n^2 x^n\).
+    \[ \lim_{n\to\infty} \left| \frac{b_{n+1}}{b_n} \right| = \lim_{n\to\infty} \left| \frac{(n+1)^2 x^{n+1}}{n^2 x^n} \right| = \lim_{n\to\infty} \left| \frac{(n+1)^2}{n^2} x \right| \]
+    \[ = \lim_{n\to\infty} \left( \frac{n+1}{n} \right)^2 |x| = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^2 |x| = (1)^2 |x| = |x|. \]
+    The series converges absolutely if this limit is less than 1, i.e., \(|x| < 1\).
+    The series diverges if this limit is greater than 1, i.e., \(|x| > 1\).
+    The radius of convergence is \(R = 1\).
+
+    Now check endpoints \(x = 1\) and \(x = -1\).
+    \begin{itemize}
+        \item At \(x = 1\): The series becomes \(\sum_{n=0}^\infty n^2 (1)^n = \sum_{n=0}^\infty n^2\). Since \(\lim_{n\to\infty} n^2 = \infty \ne 0\), the series diverges by the Term Test (Theorem 14.6).
+        \item At \(x = -1\): The series becomes \(\sum_{n=0}^\infty n^2 (-1)^n\). Since \(\lim_{n\to\infty} |n^2 (-1)^n| = \lim_{n\to\infty} n^2 = \infty \ne 0\), the series diverges by the Term Test.
+    \end{itemize}
+    The interval of convergence is \((-1, 1)\).
+
+  \item[(b)] \(\sum_{n=1}^\infty \left(\frac{x}{n}\right)^n\) \\
+    This is a power series \(\sum_{n=1}^\infty \frac{1}{n^n} x^n\) centered at \(a=0\) with coefficients \(a_n = 1/n^n\).
+    We use the Root Test for absolute convergence. Let \(b_n = (x/n)^n\).
+    \[ \limsup_{n\to\infty} |b_n|^{1/n} = \limsup_{n\to\infty} \left| \left(\frac{x}{n}\right)^n \right|^{1/n} = \limsup_{n\to\infty} \left| \frac{x}{n} \right| \]
+    \[ = |x| \limsup_{n\to\infty} \frac{1}{n} = |x| \cdot 0 = 0. \]
+    Since the limit \(0\) is less than 1 for all \(x \in \R\), the series converges absolutely for all \(x\).
+    The radius of convergence is \(R = \infty\).
+    The interval of convergence is \((-\infty, \infty)\).
+
+  \item[(c)] \(\sum_{n=1}^\infty x^{n!}\) \\
+    This is a power series centered at \(a=0\). The coefficients \(a_k\) are:
+    \(a_k = 1\) if \(k = n!\) for some \(n \ge 1\) (i.e., k = 1, 2, 6, 24, 120, ...).
+    \(a_k = 0\) otherwise.
+    The Ratio Test is difficult to apply because many coefficients are zero. We use the Root Test formula \(R = 1/\alpha\) where \(\alpha = \limsup_{k\to\infty} |a_k|^{1/k}\).
+    The terms \(|a_k|^{1/k}\) are either \(1^{1/k} = 1\) (if \(k=n!\)) or \(0^{1/k} = 0\) (if \(k\) is not a factorial).
+    To find the limit superior, we look at the sequence \(|a_k|^{1/k}\): \(1, 1, 0, 0, 0, 1, 0, \ldots, 0, 1, 0, \ldots\) (1 at positions 1!, 2!, 3!, ...).
+    The supremum of the tails \(\sup \{|a_m|^{1/m} : m \ge k\}\) is always 1 for any \(k\), because there will always be a factorial \(n! \ge k\) for large enough \(n\), making \(a_{n!} = 1\).
+    So, \(\alpha = \limsup_{k\to\infty} |a_k|^{1/k} = 1\).
+    The radius of convergence is \(R = 1/\alpha = 1/1 = 1\).
+
+    The series converges absolutely for \(|x| < 1\) and diverges for \(|x| > 1\).
+    Check endpoints \(x = 1\) and \(x = -1\).
+    \begin{itemize}
+        \item At \(x = 1\): The series becomes \(\sum_{n=1}^\infty (1)^{n!} = \sum_{n=1}^\infty 1\). This series clearly diverges (terms do not go to 0).
+        \item At \(x = -1\): The series becomes \(\sum_{n=1}^\infty (-1)^{n!}\). For \(n \ge 2\), \(n!\) is an even number (\(2!=2, 3!=6, 4!=24, \dots\)). So \( (-1)^{n!} = 1\) for \(n \ge 2\). The series is \((-1)^{1!} + (-1)^{2!} + (-1)^{3!} + \dots = -1 + 1 + 1 + 1 + \dots\). The terms are \(a_1 = -1\) and \(a_n = 1\) for \(n \ge 2\). Since \(\lim_{n\to\infty} a_n = 1 \ne 0\), the series diverges by the Term Test.
+    \end{itemize}
+    The interval of convergence is \((-1, 1)\).
+
+  \item[(d)] \(\sum_{n=0}^\infty 5^n x^{2n+1}\) \\
+    Rewrite the series: \(\sum_{n=0}^\infty 5^n x \cdot x^{2n} = x \sum_{n=0}^\infty 5^n (x^2)^n\).
+    Let \(y = x^2\). The series becomes \(x \sum_{n=0}^\infty 5^n y^n\).
+    This is a geometric series in \(y\) with ratio \(5y\). It converges if and only if \(|5y| < 1\), i.e., \(|y| < 1/5\).
+    Substituting back \(y = x^2\), the series converges if \(|x^2| < 1/5\), which means \(x^2 < 1/5\).
+    This inequality holds if \(-\frac{1}{\sqrt{5}} < x < \frac{1}{\sqrt{5}}\).
+
+    Alternatively, use the Ratio Test on the original series \(\sum b_n(x)\) where \(b_n(x) = 5^n x^{2n+1}\).
+    \[ \lim_{n\to\infty} \left| \frac{b_{n+1}(x)}{b_n(x)} \right| = \lim_{n\to\infty} \left| \frac{5^{n+1} x^{2(n+1)+1}}{5^n x^{2n+1}} \right| = \lim_{n\to\infty} \left| \frac{5^{n+1} x^{2n+3}}{5^n x^{2n+1}} \right| \]
+    \[ = \lim_{n\to\infty} \left| 5 x^2 \right| = 5 |x^2| = 5 x^2. \]
+    The series converges absolutely if \(5 x^2 < 1\), i.e., \(x^2 < 1/5\).
+    The series diverges if \(5 x^2 > 1\), i.e., \(x^2 > 1/5\).
+    The radius of convergence is \(R = 1/\sqrt{5}\).
+
+    Now check endpoints \(x = 1/\sqrt{5}\) and \(x = -1/\sqrt{5}\).
+    \begin{itemize}
+        \item At \(x = 1/\sqrt{5}\): The series becomes \(\sum_{n=0}^\infty 5^n \left(\frac{1}{\sqrt{5}}\right)^{2n+1} = \sum_{n=0}^\infty 5^n \frac{1}{(\sqrt{5})^{2n} \sqrt{5}} = \sum_{n=0}^\infty 5^n \frac{1}{5^n \sqrt{5}} = \sum_{n=0}^\infty \frac{1}{\sqrt{5}}\). This series diverges because the terms \(\frac{1}{\sqrt{5}}\) do not approach 0.
+        \item At \(x = -1/\sqrt{5}\): The series becomes \(\sum_{n=0}^\infty 5^n \left(-\frac{1}{\sqrt{5}}\right)^{2n+1} = \sum_{n=0}^\infty 5^n (-1)^{2n+1} \left(\frac{1}{\sqrt{5}}\right)^{2n+1}\). Since \(2n+1\) is always odd, \((-1)^{2n+1} = -1\). The series is \(\sum_{n=0}^\infty 5^n (-1) \frac{1}{5^n \sqrt{5}} = \sum_{n=0}^\infty -\frac{1}{\sqrt{5}}\). This series also diverges because the terms \(-\frac{1}{\sqrt{5}}\) do not approach 0.
+    \end{itemize}
+    The interval of convergence is \((-\frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}})\).
+\end{enumerate}
+
+\section*{Problem 7: Pointwise and Uniform Convergence}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition 24.1 (Pointwise Convergence):} Let \((f_n)\) be a sequence of functions defined on a set \(S \subseteq \R\). The sequence \((f_n)\) converges \textbf{pointwise} on \(S\) to a function \(f\) if for each \(x \in S\), the sequence of real numbers \((f_n(x))\) converges to \(f(x)\). That is, for every \(x \in S\) and every \(\epsilon > 0\), there exists an \(N\) such that if \(n > N\), then \(|f_n(x) - f(x)| < \epsilon\).
+    \item \textbf{Definition 24.2 (Uniform Convergence):} A sequence of functions \((f_n)\) converges \textbf{uniformly} on \(S\) to a function \(f\) if for every \(\epsilon > 0\), there exists an \(N\) such that for all \(n > N\) and for all \(x \in S\), we have \(|f_n(x) - f(x)| < \epsilon\).
+        \begin{itemize}
+            \item The key difference from pointwise convergence is that \(N\) depends only on \(\epsilon\), not on \(x\).
+        \end{itemize}
+    \item \textbf{Supremum Norm Test (related to Definition 24.2):} \(f_n \to f\) uniformly on \(S\) if and only if \(\lim_{n\to\infty} \sup_{x \in S} |f_n(x) - f(x)| = 0\).
+\end{itemize}
+
+\subsection*{Solution}
+
+Let \(f_n(x) = \frac{x}{n}\) for \(x \in [0, \infty)\).
+
+\begin{enumerate}
+  \item[(a)] \textbf{Find \(f(x) = \lim_{n\to\infty} f_n(x)\).}
+
+    For any fixed \(x \in [0, \infty)\), we consider the limit of the sequence \((f_n(x))_{n=1}^\infty\):
+    \[ f(x) = \lim_{n\to\infty} f_n(x) = \lim_{n\to\infty} \frac{x}{n}. \]
+    Since \(x\) is a fixed real number, this limit is:
+    \[ f(x) = x \lim_{n\to\infty} \frac{1}{n} = x \cdot 0 = 0. \]
+    Thus, the sequence of functions \((f_n)\) converges pointwise to the function \(f(x) = 0\) on \([0, \infty)\).
+
+  \item[(b)] \textbf{Determine whether \(f_n \to f\) uniformly on \([0, 1]\).}
+
+    We need to check if \(\lim_{n\to\infty} \sup_{x \in [0,1]} |f_n(x) - f(x)| = 0\).
+    Here \(f(x) = 0\), so we consider:
+    \[ |f_n(x) - f(x)| = \left| \frac{x}{n} - 0 \right| = \frac{x}{n} \]
+    (since \(x \ge 0\) and \(n \ge 1\)).
+    We need to find the supremum of this expression for \(x \in [0, 1]\).
+    \[ M_n = \sup_{x \in [0,1]} |f_n(x) - f(x)| = \sup_{x \in [0,1]} \frac{x}{n}. \]
+    Since \(\frac{x}{n}\) is an increasing function of \(x\) (for fixed \(n\)), the supremum on \([0, 1]\) occurs at \(x = 1\).
+    \[ M_n = \frac{1}{n}. \]
+    Now we check if \(M_n \to 0\) as \(n \to \infty\):
+    \[ \lim_{n\to\infty} M_n = \lim_{n\to\infty} \frac{1}{n} = 0. \]
+    Since the limit is 0, the convergence \(f_n \to f\) is uniform on \([0, 1]\).
+
+  \item[(c)] \textbf{Determine whether \(f_n \to f\) uniformly on \([0, \infty)\).}
+
+    We need to check if \(\lim_{n\to\infty} \sup_{x \in [0,\infty)} |f_n(x) - f(x)| = 0\).
+    \[ |f_n(x) - f(x)| = \frac{x}{n} \quad \text{for } x \in [0, \infty). \]
+    We need to find the supremum of this expression for \(x \in [0, \infty)\).
+    \[ M_n = \sup_{x \in [0,\infty)} |f_n(x) - f(x)| = \sup_{x \in [0,\infty)} \frac{x}{n}. \]
+    For any fixed \(n\), the function \(\frac{x}{n}\) is unbounded on \([0, \infty)\). For example, as \(x \to \infty\), \(\frac{x}{n} \to \infty\).
+    Therefore, the supremum is infinite:
+    \[ M_n = \sup_{x \in [0,\infty)} \frac{x}{n} = \infty \]
+    for every \(n \ge 1\).
+    Since \(M_n\) does not converge to 0 (it's always \(\infty\)), the convergence \(f_n \to f\) is not uniform on \([0, \infty)\).
+
+    Alternatively, using the definition: Uniform convergence requires that for a given \(\epsilon > 0\), there exists \(N\) such that for all \(n > N\), \(|f_n(x) - f(x)| < \epsilon\) for all \(x \in [0, \infty)\).
+    This means we need \(\frac{x}{n} < \epsilon\) for all \(x \in [0, \infty)\) when \(n > N\).
+    This is equivalent to \(x < n\epsilon\) for all \(x \in [0, \infty)\).
+    But this is impossible, since \(x\) can be arbitrarily large. For any \(n\) and any \(\epsilon\), we can always find an \(x\) (e.g., \(x = n\epsilon\)) such that \(x \not< n\epsilon\).
+    Thus, the convergence is not uniform on \([0, \infty)\).
+\end{enumerate}
+
+
+\section*{Problem 8: Pointwise/Uniform Convergence and Continuity}
+
+\subsection*{Review Notes}
+
+\begin{itemize}
+    \item \textbf{Definition (Continuity at a Point):} A function \(g: S \to \R\) is continuous at \(c \in S\) if \(\lim_{x\to c, x\in S} g(x) = g(c)\). This means for every \(\epsilon > 0\), there exists a \(\delta > 0\) such that if \(x \in S\) and \(|x-c| < \delta\), then \(|g(x) - g(c)| < \epsilon\).
+    \item \textbf{Pointwise Convergence:} As defined in Problem 7.
+    \item \textbf{Uniform Convergence:} As defined in Problem 7.
+    \item \textbf{Theorem 24.3 (Uniform Convergence and Continuity):} Let \((f_n)\) be a sequence of functions on \(S \subseteq \R\) that converges uniformly to \(f\) on \(S\). If each \(f_n\) is continuous at a point \(c \in S\), then the limit function \(f\) is also continuous at \(c\).
+        \begin{itemize}
+            \item \textbf{Corollary:} If \(f_n \to f\) uniformly on \(S\) and each \(f_n\) is continuous on \(S\), then \(f\) is continuous on \(S\).
+            \item \textbf{Contrapositive:} If \(f_n \to f\) pointwise on \(S\), each \(f_n\) is continuous on \(S\), but \(f\) is not continuous on \(S\), then the convergence cannot be uniform.
+        \end{itemize}
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+  \item[(a)] \textbf{Sequence \(f_n(x)\)}
+    \[ f_n(x) = \begin{cases} 1 & \text{if } x=1/k \text{ for } k=1, 2, \ldots, n, \\ 0 & \text{otherwise.} \end{cases} \]
+    Defined on \(\R\).
+
+    \begin{itemize}
+        \item \textbf{Is each \(f_n\) continuous at 0?} \\
+            We need to check if \(\lim_{x\to 0} f_n(x) = f_n(0)\).
+            First, \(f_n(0)\). Is \(0\) in the set \(\{1, 1/2, \ldots, 1/n\}\)? No, these are all positive. So, \(f_n(0) = 0\) by the 'otherwise' case.
+            Now, we need the limit \(\lim_{x\to 0} f_n(x)\). Consider any \(\delta > 0\). We need to evaluate \(f_n(x)\) for \(x\) in \((-\delta, \delta) \setminus \{0\}\).
+            The points where \(f_n(x) = 1\) are \(1, 1/2, \ldots, 1/n\). Only \(1/n\) is the closest to 0 among these.
+            We can choose \(\delta\) small enough such that the interval \((-\delta, \delta)\) does not contain any of the points \(1, 1/2, \ldots, 1/n\). Specifically, choose \(\delta = 1/(n+1)\). Then \(0 < |x| < \delta = 1/(n+1)\) implies \(x\) cannot be any of \(1, 1/2, \ldots, 1/n\) (since the smallest of these is \(1/n\), and \(1/(n+1) < 1/n\)).
+            So, for \(0 < |x| < 1/(n+1)\), \(f_n(x) = 0\).
+            Therefore, \(\lim_{x\to 0} f_n(x) = 0\).
+            Since \(\lim_{x\to 0} f_n(x) = 0\) and \(f_n(0) = 0\), yes, each \(f_n\) is continuous at 0.
+
+        \item \textbf{Pointwise limit \(f(x)\):} \\
+            Let \(x \in \R\) be fixed. We want to find \(f(x) = \lim_{n\to\infty} f_n(x)\).
+            Case 1: \(x\) is of the form \(1/k\) for some integer \(k \ge 1\).
+            Then for all \(n \ge k\), \(x = 1/k\) is in the set \(\{1, 1/2, \ldots, 1/n\}\), so \(f_n(x) = 1\) for all \(n \ge k\). The sequence \((f_n(x))\) for large \(n\) is \((1, 1, 1, \ldots)\). Thus, \(\lim_{n\to\infty} f_n(x) = 1\).
+            Case 2: \(x\) is not of the form \(1/k\) for any integer \(k \ge 1\).
+            Then \(x\) is never in the set \(\{1, 1/2, \ldots, 1/n\}\) for any \(n\). So \(f_n(x) = 0\) for all \(n\). The sequence \((f_n(x))\) is \((0, 0, 0, \ldots)\). Thus, \(\lim_{n\to\infty} f_n(x) = 0\).
+            Combining these cases, the pointwise limit function \(f(x)\) is:
+            \[ f(x) = \begin{cases} 1 & \text{if } x=1/k \text{ for some integer } k \ge 1, \\ 0 & \text{otherwise.} \end{cases} \]
+
+        \item \textbf{Does \(f_n \to f\) uniformly on \(\R\)?} \\
+            We check \(\lim_{n\to\infty} \sup_{x \in \R} |f_n(x) - f(x)|\).
+            \[ |f_n(x) - f(x)| \]
+            If \(x = 1/k\) for \(k = 1, \ldots, n\): \(|f_n(x) - f(x)| = |1 - 1| = 0\).
+            If \(x = 1/k\) for \(k > n\): \(f_n(x) = 0\) (since \(1/k\) is not in \(\{1, \dots, 1/n\}\)). \(f(x) = 1\) (since \(x\) is of the form \(1/k\)). So \(|f_n(x) - f(x)| = |0 - 1| = 1\).
+            If \(x\) is not of the form \(1/k\): \(f_n(x) = 0\) and \(f(x) = 0\). So \(|f_n(x) - f(x)| = |0 - 0| = 0\).
+            The difference is non-zero only for \(x = 1/k\) with \(k > n\), where the difference is 1.
+            So, for any \(n\),
+            \[ M_n = \sup_{x \in \R} |f_n(x) - f(x)| = \sup \{ |f_n(1/k) - f(1/k)| : k > n \} = \sup \{ 1 \} = 1. \]
+            Since \(\lim_{n\to\infty} M_n = \lim_{n\to\infty} 1 = 1 \ne 0\), the convergence is not uniform on \(\R\).
+
+        \item \textbf{Is \(f\) continuous at 0?} \\
+            We need to check if \(\lim_{x\to 0} f(x) = f(0)\).
+            First, what is \(f(0)\)? Since 0 is not of the form \(1/k\) for \(k \ge 1\), \(f(0) = 0\).
+            Now, consider the limit \(\lim_{x\to 0} f(x)\). We need to see how \(f(x)\) behaves for \(x\) near 0.
+            In any interval \((-\delta, \delta)\) around 0 (with \(\delta > 0\)), no matter how small \(\delta\) is, there exists an integer \(k\) such that \(1/k < \delta\). For such \(x = 1/k\), we have \(f(x) = 1\).
+            For example, take the sequence \(x_k = 1/k\). Then \(x_k \to 0\) as \(k \to \infty\). But \(f(x_k) = f(1/k) = 1\) for all \(k\).
+            So, \(\lim_{k\to\infty} f(x_k) = 1\).
+            However, we can also take a sequence like \(y_k = 1/(k\sqrt{2})\). Then \(y_k \to 0\). Since \(y_k\) is never of the form \(1/m\), \(f(y_k) = 0\) for all \(k\). So \(\lim_{k\to\infty} f(y_k) = 0\).
+            Since we found sequences approaching 0 on which \(f\) has different limits, the limit \(\lim_{x\to 0} f(x)\) does not exist.
+            Therefore, \(f\) is not continuous at 0.
+            (Note: This confirms the convergence is not uniform, as \(f_n\) are continuous at 0 but \(f\) is not.)
+    \end{itemize}
+
+  \item[(b)] \textbf{Repeat part (a) for the sequence \(g_n(x)\)}
+    \[ g_n(x) = \begin{cases} x & \text{if } x=1/k \text{ for } k=1, 2, \ldots, n, \\ 0 & \text{otherwise.} \end{cases} \]
+
+    \begin{itemize}
+        \item \textbf{Is each \(g_n\) continuous at 0?}\\
+            \(g_n(0) = 0\) since 0 is not of the form \(1/k\).
+            Limit \(\lim_{x\to 0} g_n(x)\). Choose \(\delta = 1/(n+1)\). For \(0 < |x| < \delta\), \(x\) is not in \(\{1, \dots, 1/n\}\), so \(g_n(x) = 0\).
+            Thus, \(\lim_{x\to 0} g_n(x) = 0\).
+            Since \(\lim_{x\to 0} g_n(x) = 0\) and \(g_n(0) = 0\), yes, each \(g_n\) is continuous at 0.
+
+        \item \textbf{Pointwise limit \(g(x)\):} \\
+            Let \(x \in \R\) be fixed. Find \(g(x) = \lim_{n\to\infty} g_n(x)\).
+            Case 1: \(x = 1/k\) for some integer \(k \ge 1\).
+            For all \(n \ge k\), \(x = 1/k\) is in \(\{1, \dots, 1/n\}\), so \(g_n(x) = x\). The sequence \((g_n(x))\) for large \(n\) is \((x, x, x, \ldots)\). Thus, \(\lim_{n\to\infty} g_n(x) = x\).
+            Case 2: \(x\) is not of the form \(1/k\) for any integer \(k \ge 1\).
+            Then \(g_n(x) = 0\) for all \(n\). The sequence is \((0, 0, 0, \ldots)\). Thus, \(\lim_{n\to\infty} g_n(x) = 0\).
+            Combining these cases, the pointwise limit function \(g(x)\) is:
+            \[ g(x) = \begin{cases} x & \text{if } x=1/k \text{ for some integer } k \ge 1, \\ 0 & \text{otherwise.} \end{cases} \]
+            Note: \(g(x)\) could also be written as \(g(x) = x \cdot f(x)\) where \(f(x)\) is the limit function from part (a).
+
+        \item \textbf{Does \(g_n \to g\) uniformly on \(\R\)?} \\
+            We check \(\lim_{n\to\infty} \sup_{x \in \R} |g_n(x) - g(x)|\).
+            \[ |g_n(x) - g(x)| \]
+            If \(x = 1/k\) for \(k = 1, \ldots, n\): \(|g_n(x) - g(x)| = |x - x| = 0\).
+            If \(x = 1/k\) for \(k > n\): \(g_n(x) = 0\). \(g(x) = x\). So \(|g_n(x) - g(x)| = |0 - x| = |x| = 1/k\).
+            If \(x\) is not of the form \(1/k\): \(g_n(x) = 0\) and \(g(x) = 0\). So \(|g_n(x) - g(x)| = 0\).
+            The difference is non-zero only for \(x = 1/k\) with \(k > n\), where the difference is \(1/k\).
+            So, for any \(n\),
+            \[ M_n = \sup_{x \in \R} |g_n(x) - g(x)| = \sup \{ |g_n(1/k) - g(1/k)| : k > n \} = \sup \{ 1/k : k > n \}. \]
+            The set \(\{1/k : k > n\}\) contains \(1/(n+1), 1/(n+2), \ldots\). The supremum of this set is \(1/(n+1)\) (achieved at \(k=n+1\)).
+            \[ M_n = \frac{1}{n+1}. \]
+            Now we check if \(M_n \to 0\) as \(n \to \infty\):
+            \[ \lim_{n\to\infty} M_n = \lim_{n\to\infty} \frac{1}{n+1} = 0. \]
+            Since the limit is 0, the convergence \(g_n \to g\) is uniform on \(\R\).
+
+        \item \textbf{Is \(g\) continuous at 0?} \\
+            We need to check if \(\lim_{x\to 0} g(x) = g(0)\).
+            First, \(g(0) = 0\) since 0 is not \(1/k\).
+            Now, consider the limit \(\lim_{x\to 0} g(x)\). We want to know if for any \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(0 < |x| < \delta\), then \(|g(x) - g(0)| = |g(x)| < \epsilon\).
+            Recall \(g(x)\) is either \(x\) (if \(x=1/k\)) or \(0\) (otherwise).
+            So, \(|g(x)|\) is either \(|x|\) or \(0\). In both cases, \(|g(x)| \le |x|\).
+            Let \(\epsilon > 0\) be given. Choose \(\delta = \epsilon\).
+            If \(x \in \R\) and \(0 < |x| < \delta = \epsilon\), then
+            \[ |g(x) - g(0)| = |g(x)| \le |x| < \delta = \epsilon. \]
+            So, \(|g(x)| < \epsilon\).
+            Therefore, \(\lim_{x\to 0} g(x) = 0\).
+            Since \(\lim_{x\to 0} g(x) = 0\) and \(g(0) = 0\), yes, \(g\) is continuous at 0.
+            (This is consistent with Theorem 24.3: \(g_n\) are continuous at 0, \(g_n \to g\) uniformly, so \(g\) must be continuous at 0).
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

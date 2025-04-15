@@ -2,7 +2,8 @@
 #import "@preview/ilm:1.4.0": *
 #show heading: text.with(size: 7pt, weight: 1000)
 #set text(6pt)
-#set page(margin: (x: 0.3cm, y: 0.3cm),numbering: "1/1", columns: 4, flipped: false)
+#set page(paper: "us-letter")
+#set page(margin: (x: 0.3cm, y: 0.3cm),numbering: "1/1", columns: 5, flipped: true)
 //#set math.equation(numbering:"(1)")
 // #show math.equation: set text(11pt)
 // #set math.cases(gap: 0.2em)
@@ -10,6 +11,23 @@
 - Fundamental Relation $dif E = T dif S - p dif V $ .
 - First Law: $dif E = delta Q - delta W$ .
 - Second Law: $delta Q = T delta S$ for quasistatic.
+- Ideal Gas Law 
+  Writing $N = nu N_A,$ we have $ 
+      p V = nu R T, quad R equiv N_A k_B 
+  $ 
+= Response function
+- Heat Capacities: $delta Q|_x = C_x dif T$ 
+    - for $delta Q|_V = (dif E + delta W)|_V => C_V = (pdv(E,T))_V$.
+    - for $delta Q|_p = (dif E + delta W)|_p => C_p = (pdv(E,T))_p + p(pdv(V,T))_P$.
+Useful so that combined with $dif S = (delta Q) / T = C_V / T dif T:$ $ 
+    S(x,T_2)=S(x,T_1) + integral_(T_1)^(T_2) frac(C_x, T) dif T
+$ 
+
+- Compressibility $ kappa_T = -1/V (pdv(V,p))_T $ 
+- Expansivity: $ 
+    alpha_p = 1/V (pdv(V,T))_p 
+$ 
+
 
 = Thermodynamic Potentials
 energy $E, quad E(S,V), quad dif E = T dif S - p dif V$ 
