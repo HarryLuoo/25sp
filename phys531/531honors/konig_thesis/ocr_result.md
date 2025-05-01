@@ -1,0 +1,8808 @@
+# Interaction and disorder effects in topological insulators 
+
+## Wechselwirkungs- und Unordnungseffekte in topologischen Isolatoren
+
+Zur Erlangung des akademischen Grades eines
+
+## DOKTORS DER NATURWISSENSCHAFTEN
+
+von der Fakultät für Physik
+des Karlsruher Instituts für Technologie
+genehmigte
+DISSERTATION
+von
+Dipl. Phys. Elio Johannes König aus Karlsruhe.
+
+Tag der mündlichen Prüfung: 14.7.2014
+Referent: Prof. Dr. A. D. Mirlin
+Korreferent: Prof. Dr. A. Shnirman
+
+
+
+
+Meiner lieben Mutter,
+die ihr Promotionsvorhaben meiner Erziehung opferte.
+
+
+
+
+# Introduction 
+
+"Das Volumen des Festkörpers schuf Gott, ihre Oberfläche wurde vom Teufel gemacht." "God made the bulk, surfaces were invented by the devil"
+W. Pauli $(1900-1958)$ as quoted in Refs. [1, 2].
+
+From the viewpoint of Wolfgang Pauli's judgment, this thesis shall be about the dark side of physics: It will be devoted to the surface states of a novel class of materials, namely topological insulators (TIs) [3-6], which I define below.
+
+Obviously, Wolfgang Pauli was not having TIs in mind. During the period of his working life one of the major scientific revolutions took place, the development of quantum mechanics, and Pauli's discoveries were among the most important contributions. The application of quantum mechanics to solid state systems is strongly linked to Felix Bloch's name. A crucial physical ingredient to the Blochtheorem [7] is the separation of mass scales between light electrons and heavy ions constituting a solid. Neglecting electron-electron interactions, the behavior of the bulk boils down to the quantized motion of independent electrons permeating the quasi-static, periodic, ionic lattice. The solution to Schrödinger's equation in the presence of a periodic potential [7-10] gives rise to the band structure of the energy spectrum. Many of its important features and the qualitative shape of the Bloch wave eigenfunctions are a sole consequence of this theorem in combination with the point group of the crystal. In several relevant physical systems successful quantitative predictions can even be achieved analytically. Once it was understood that low-energy excitations of solids can be seen as electronic Bloch waves, a consistent explanation of various bulk properties (both thermodynamics and transport) immediately followed. It appears to be very likely that this marvelously simple and aesthetic picture inspired Pauli when he pronounced the bon mot reported above.
+
+The transparent bulk picture, which strongly relies on the periodic lattice potential, naturally loses its validity at the boundary of a solid. There, a plethora of further competing physical effects, such as adsorption and the question about the surface reconstruction, complicate (and enrich) the straightforward adaptation of Bloch-like arguments. During Pauli's times surface science was rather unexplored but since then tremendous revelations and progress were achieved in this field. Discoveries of relevance for the physics discussed in the present thesis comprise the two dimensional electron systems (2DESs) arising in semiconductor heterostructures and, as already mentioned above, TI boundary states.
+
+# Topological insulators are different from ordinary solids. 
+
+While for traditional materials surface and bulk properties are to large extend unrelated, TIs realize a holographic principle: The boundary physics crucially depends on the characteristics of the interior.
+
+Topological insulators have a band gap in their bulk, hence the name. However, differently from conventional insulators, the bundle of Bloch states is "twisted" in a way to be explained in Chap. 2. This twist leads to a non-trivial topological index. By the bulk-boundary correspondence [11-13] and Callias' theorem [14, 15], gapless, extended states arise at the interface of two topologically distinct insulators. In retrospect we understand that the quantum Hall effect (QHE) [16] at given quantized transverse conductance was the first example of a TI : The Landau levels (LLs) provide the bulk band gap which is accompanied by the topological Thouless-Kohmoto-Nightingale-den-Nijs (TKNN) [17] invariant and the protected chiral edge states.
+
+## Topological insulators are of fundamental scientific interest.
+
+Topological phases do not fit into the scheme of conventional states of matter. Following the seminal work by Ginzburg and Landau [18] solid state systems were traditionally classified by means of symmetries and the paradigm of spontaneously broken symmetries. In contrast, TIs do not possess a symmetry breaking order parameter, but instead are characterized by the concept of topological invariants exposed above. That reason alone is of major importance for the fundamental scientific interest in TIs, since the condensed matter physicist's vocation is to explore ever new appearances of nature.
+
+The robustness of TI boundary states with respect to a random impurity potential is a question of main significance for the present thesis. Conventional disordered electronic systems in two or less spatial dimensions are subjected to the paradigm of Anderson localization [19]. This quantum effect relies on the enhanced return probability in low-dimensional stochastic motion and the destructive self-interference of wave packages. Electron-electron interaction commonly strengthens the tendency towards localization. Therefore, it is a question of primary fundamental interest, how Anderson localization is avoided on the boundary of TIs.
+
+Furthermore, TIs provide the condensed matter realization of many abstract concepts from fundamental physics and quantum field theory. Many intriguing theories from high energy physics could never be experimentally addressed in view of the enormously elaborate, expensive and time-consuming measurements. Some of the effects in particle physics occur on energy scales far beyond human accessibility. Present day condensed matter experiments on TIs can provide a proof of principle for abstract ideas on low-dimensional relativistic quantum field theory (QFT) in curved space-time such as anomalies [20, 21], theta vacua [22-24], axion dynamics [4, 25, 26], and many more.
+
+Finally, several topological states of matter are expected to host excitations sufficing exotic quantum statistics ("anyons"). The wave function of a pair of conventional, indistinguishable quantum mechanical particles acquires a phase $\phi=0(\bmod 2 \pi)$ (bosons) or $\phi=\pi(\bmod 2 \pi)$ (fermions) upon particle exchange. A question of fundamental relevance is whether more complicated representations of the braid group exist in nature (e.g. other values of $\phi$ ). As suggested by several theoretical works, this might be the case on the boundary of TIs and, in particular, the self-adjoint Majorana fermions at the ends of certain superconducting quantum wires constitute an important example [27].
+
+## The experimental realization of topological insulators indicates promising applications.
+
+The immense scientific interest towards TIs was particularly boosted by the experimental discovery of two-dimensional (2D) and three-dimensional (3D) time reversal (TR) invariant TIs less then ten years
+
+ago [28, 29]. In contrast to the TKNN integer, their topological index takes only values in $\mathbb{Z}_{2}$.
+The 2D TI phase, which is also called quantum Spin Hall effect (QSH), was first theoretically predicted [30, 31] and subsequently experimentally observed [28] in Cadmium Telluride - Mercury Telluride heterostructures. A major characteristic signature of the measurement is the quantized two point conductance $g=2 e^{2} / h$. The commonly accepted explanation for this phenomenon relies on the topologically protected transport along the one-dimensional edges of the sample [32].
+
+The discriminating feature of all 3D TIs is the massless Dirac state on the 2D boundary which was first spectroscopically detected in Bismuth Antimonide alloys [29] and subsequently in many other materials, amongst them Bismuth Selenide $\left(\mathrm{Bi}_{2} \mathrm{Se}_{3}\right)$ crystals and strained Mercury Telluride (HgTe) [3]. To present date, various experimental groups confirmed predominant surface state transport (for a review see Ref. [33]), in particular elucidating ambipolar field-effect [34-37] and the typical QHE steps of Dirac electrons [38-42], Aharonov-Bohm oscillations [43-45] as well as weak antilocalization (WAL) corrections in the magnetoconductivity data [46-48].
+
+More recently [49-51], there was substantial evidence for Majorana edge modes at the ends of superconducting nano wires (InSb, $\mathrm{Al}-\mathrm{InAs}, \mathrm{Nb}-\mathrm{InSb}$ ). Majorana fermions are particular examples of topological boundary states. They are their own antiparticles and reside in an energy level right at the center of the superconducting gap. One observable under experimental investigation is the tunneling conductance which, in the presence of Majorana modes, is supposed to exhibit a peak at vanishing bias voltage. Present day measurements are in accordance with the theoretical scenario but not sufficiently affirmative to speak about the discovery of Majorana fermions.
+
+Finally, in latest experiments [52] the anomalous QHE was observed in Chromium-doped ( $\mathrm{Bi}, \mathrm{Sb})_{2} \mathrm{Te}_{3}$ films. The transverse conductance was measured as a function of external magnetic field and manifested a strongly hysteretic, quantized behavior. Even though, from the theoretical viewpoint, the observed electronic phase corresponds to the "usual" quantum Hall (QH) state, the quantized transverse conductance at vanishing external field is of principal interest for potential applications.
+
+Indeed, the protected quantum transport properties of TI boundary states are extremely attractive for industrial technology. During the last decades, the building blocks (e.g. computer chips) of electronic devices continuously shrunk in size while their complexity exponentially increased (Moore's law). Thus the constituent components are steadily approaching the nano-scale at which quantum effects become important. Robust quantum electronics is needed. For a long time, the QHE was the only available TI state, but the necessary strong external magnetic field hampered economic exploitation. In contrast, the recent realization of the anomalous QHE and of TR invariant TIs indicate facilitated industrial use.
+
+These novel phases of matter, in particular the QSH, naturally suggest spintronic applications. Spintronics is a field of research where various physical phenomena are investigated with the aim of taking functional advantage of the electronic spin degree of freedom. Particularly important for data storage is the giant magnetoresistance in layered ferromagnet-paramagnet-structures [53, 54]. In comparison to charge transport, the neutral spin current [55, 56] is characterized by a much weaker relaxation rate making it attractive for applications.
+
+Eventually, topological quantum computation [57] is a long-term target which can be realized utilizing topological states of matter. While data processing is achieved by means of manipulation of binary digits (bits) in traditional computers and by means of local operations on quantum states (qubits) in quantum computers, topological quantum computation shall be based on the braiding properties of anyonic particles. In contrast to conventional quantum computers, the non-local data storage in topological quantum computers is expected to be much more robust. The above mentioned Majorana fermions are regarded as promising candidates.
+
+# What is the effect of impurities and electron-electron interaction on topological insulators? 
+
+In this thesis, I want to address the following important questions:
+(i) What are the semiclassical transport properties of 2D Dirac surface states in the presence of an external magnetic field?
+(ii) How does disorder affect the transport properties of 2D systems with chiral (sublattice) symmetry (e.g. surface states of 3D TIs)?
+(iii) How will their density of states (DOS) behave, if additionally infinitely strong impurities are introduced to the system?
+(iv) How do disorder and electron-electron interaction influence the quantum transport in thin films of the experimentally realized TR invariant 3D TIs?
+(v) What is the character of the QHE in these systems?
+(vi) Can the surface states of disordered, TR invariant 3D TIs become superconducting? What is the mechanism of the phase transition and how does the transition temperature depend on the impurity concentration?
+
+Before turning to these questions, two introductory chapters are included in the present dissertation. First, in Chap. 1 I will review various features of quantum transport in disordered systems, Anderson localization, the field theoretical description in the presence and absence of electron-electron interactions and the most prominent applications of these methods. Second, in the subsequent Chap. 2, the concept of topological states of matter is introduced and explained in great detail and from various different viewpoints.
+
+Subsequently, Chap. 3 is devoted to question number (i). I present the semiclassical calculation of transport coefficients in the following two regimes: (a) the cyclotron motion of electrons can be treated classically, (b) the cyclotron motion of electrons is treated quantum mechanically but the impurity potential is smooth (semiclassical). For case (a) two situations occur: Zeeman coupling can be neglected or Zeeman coupling is important and leads to the anomalous Hall effect (AHE).
+
+Next, Chap. 4 is devoted to questions (ii) and (iii). It is demonstrated that the localization physics in random systems with chiral symmetry is driven by topological defects in the quantum field theoretical description of the problem. Surface states of TIs are shown to evade this mechanism. Towards the end of the chapter, I explain why the DOS in the presence of infinitely strong impurities displays universal behavior different from the universal behavior in the situation of weak impurities studied before [58, 59]. The entire chapter is of equal importance for graphene with particular type of impurities and various other random 2D systems with chiral symmetry.
+
+Further, Chap. 5 deals with question (iv). It addresses the situation of most experiments where predominant surface transport was observed. The temperature and frequency dependence of conductance in thin 3D TI films is calculated. Quantum effects stemming from impurity scattering of surface states and electron-electron interactions in the diffusive regime are taken into account.
+
+The unconventional QHE of surface states, question (v), is investigated in Chap. 6. There, standard arguments in favor of integer quantization of Hall response, such as Laughlin's flux insertion argument, are translated to the case of Dirac fermions and the half-integer QHE. The field theory describing this effect is developed and possible experimental tests are discussed.
+
+Eventually, in Chap. 7 the last question (vi) is addressed. The research presented in this chapter is still ongoing. Yet, I present several important results such as the separation of regimes in AC transport and the nature of the phase transition. This last chapter is of major importance also for other 2DESs than TI surface states.
+
+For the sake of better readability, I tried to make notations as coherent as possible throughout the thesis. The lists of acronyms and notations can be found on pages 199 and 202 respectively.
+
+
+
+
+# Contents 
+
+Introduction ..... V
+1 Fundamentals: Quantum transport in disordered systems ..... 1
+1.1 Single particle localization in a random potential ..... 1
+1.1.1 Anderson localization ..... 1
+1.1.2 Scaling theory of Anderson transitions ..... 1
+1.2 Quantum corrections to conductivity ..... 2
+1.2.1 The role of dimensionality and interference corrections ..... 3
+1.2.2 Diagrammatic technique ..... 4
+1.2.3 Interference corrections ..... 5
+1.2.4 Interaction induced corrections ..... 6
+1.2.5 Experimental reality of quantum corrections ..... 6
+1.3 The role of symmetries ..... 7
+1.3.1 What are symmetric spaces? ..... 9
+1.3.2 Classification by symmetric spaces ..... 10
+1.4 Non-linear sigma models ..... 10
+1.4.1 An illustrative example ..... 11
+1.4.2 Non-linear sigma model of disordered metals ..... 12
+1.4.3 The renormalization group ..... 12
+1.4.4 Comparison: diffusive sigma models and the illustrative example ..... 13
+1.5 Field theory of interacting disordered systems ..... 13
+1.5.1 Clean and disordered Fermi liquid ..... 14
+1.5.2 Non-linear sigma model with interactions ..... 16
+1.5.3 Metal-insulator transition ..... 18
+1.5.4 Superconducting transition in amorphous films ..... 19
+2 Fundamentals: Topological Insulators ..... 23
+2.1 A prototype for topological insulators: The quantum Hall effect ..... 23
+2.2 Index theorems ..... 24
+2.2.1 Atiyah-Singer index theorem ..... 25
+2.2.2 Callias-Bott-Seeley Index theorem ..... 26
+2.2.3 Fermionic zero modes in a soliton background ..... 27
+2.3 Quantum field theoretical anomalies ..... 29
+2.3.1 Perturbation theory anomalies ..... 29
+2.3.2 Path-integral: Fujikawa method ..... 30
+2.3.3 Parity anomaly ..... 31
+2.3.4 Anomalies and Goldstone bosons: The Wess-Zumino action ..... 32
+2.3.5 Descent relation and 't Hooft matching condition ..... 33
+
+2.4 Theoretical approaches to topological insulators ..... 34
+2.4.1 Bloch band description ..... 34
+2.4.2 Diffusive non-linear sigma models ..... 35
+2.4.3 Topological field theory of electromagnetic fields ..... 38
+2.4.4 Electromagnetic and gravitational anomalies ..... 38
+2.4.5 BF-theory ..... 39
+2.5 3D topological insulators ..... 40
+2.5.1 Conductivity for disordered Dirac fermions with chiral symmetry ..... 40
+2.5.2 Experimental realization of 3D topological insulators ..... 40
+2.5.3 Basic quantum mechanical calculations ..... 41
+3 Semiclassical transport calculations ..... 45
+3.1 Drude transport theory ..... 46
+3.2 Boltzmann transport theory: Anomalous Hall effect. ..... 47
+3.2.1 Formalism ..... 47
+3.2.2 Derivation of exposed equations of motion ..... 48
+3.2.3 Comment on the equations of motion ..... 49
+3.2.4 Full Boltzmann equation ..... 50
+3.2.5 Semiclassical conductivity tensor ..... 51
+3.3 Quantum Hall effect: Semiclassical vortex state calculation ..... 52
+3.4 Summary of chapter 3 ..... 56
+4 The localization problem in chiral symmetry classes ..... 57
+4.1 Disordered systems with chiral symmetry ..... 57
+4.1.1 Physical realizations ..... 57
+4.1.2 Absence of perturbative conductivity corrections ..... 58
+4.2 Topologically driven localization ..... 60
+4.2.1 How to circumvent Gade's and Wegner's argument ..... 60
+4.2.2 Technical description ..... 60
+4.2.3 RG equations and discussion ..... 61
+4.2.4 Topological protection from localization ..... 62
+4.2.5 Topologically driven localization in the symplectic Wigner-Dyson class ..... 63
+4.3 Chiral systems with strong impurities ..... 63
+4.3.1 Effective field theory for a bipartite lattice with vacancies ..... 63
+4.3.2 Density of states: Analytical study ..... 64
+4.4 Tight binding model on a bipartite lattice with vacancies: Numerics ..... 66
+4.5 Summary of chapter 4 ..... 68
+5 Interaction effects in 3D topological insulators slabs ..... 69
+5.1 Topological insulator slabs: Experimental setup and theoretical model ..... 70
+5.1.1 Setup and relevant length scales ..... 70
+5.1.2 Interaction ..... 71
+5.1.3 Microscopic Hamiltonian ..... 75
+5.2 Perturbative calculation of conductivity corrections. ..... 77
+5.3 Sigma-model description ..... 78
+5.3.1 Symmetries of the action ..... 78
+
+5.3.2 Quasiclassical conductivity ..... 80
+5.3.3 Fermionic currents and bosonization rules ..... 80
+5.3.4 Bosonization of the kinetic part ..... 80
+5.3.5 Free NL $\sigma$ M of class AII ..... 81
+5.3.6 Interacting NL $\sigma \mathrm{M}$ ..... 83
+5.3.7 Inclusion of scalar and vector potentials into the NL $\sigma \mathrm{M}$ ..... 88
+5.4 One-loop renormalization group ..... 90
+5.4.1 Diffusive propagators ..... 91
+5.4.2 RG invariants ..... 92
+5.4.3 Renormalization of conductivities ..... 93
+5.4.4 Renormalization of the interaction amplitudes ..... 94
+5.4.5 The one-loop RG equations ..... 95
+5.5 Analysis of the RG equations ..... 96
+5.5.1 Two equal surfaces ..... 96
+5.5.2 General RG flow ..... 100
+5.6 Discussion and experimental predictions ..... 105
+5.6.1 Parameters ..... 105
+5.6.2 Exemplary 3D topological insulator materials ..... 107
+5.7 Summary of chapter 5 ..... 111
+6 Half-integer quantum Hall effect ..... 115
+6.1 Quantum Hall effect and topological magnetoelectric effect ..... 116
+6.1.1 The QHE on the surface of 3D topological insulators ..... 116
+6.1.2 Can one measure a half-integer $g_{x y}$ in a transport experiment? ..... 117
+6.1.3 Topological magnetoelectric effect ..... 118
+6.2 Laughlin argument ..... 120
+6.2.1 Phenomenology ..... 121
+6.2.2 Edge states, spectral flow, and microscopics ..... 122
+6.3 Field theory of localization ..... 125
+6.3.1 Parity anomaly ..... 125
+6.3.2 Gauged NL $\sigma$ M of integer QHE ..... 127
+6.3.3 Gauged NL $\sigma$ M of half-integer QHE ..... 127
+6.3.4 RG analysis of the sigma model ..... 128
+6.4 Starting values of RG: Levitation scenario and phase diagram ..... 130
+6.4.1 Phase Diagram ..... 131
+6.4.2 Levitation of critical states ..... 131
+6.5 Experimental realization ..... 133
+6.5.1 Typical experimental scales ..... 133
+6.5.2 Image magnetic monopole effect ..... 133
+6.5.3 AFM measurement of the electric mirror charge ..... 138
+6.5.4 Spectroscopic measurement: Topological Faraday and Kerr rotation ..... 139
+6.6 Summary of chapter 6 ..... 140
+7 Superconducting instability ..... 141
+7.1 Outline of the problem ..... 141
+7.2 Ginzburg Landau theory ..... 142
+
+7.3 Mean-field treatment on the basis of disordered, interacting fermions ..... 144
+7.3.1 Microscopic model ..... 144
+7.3.2 Saddle point equations and solution ..... 145
+7.3.3 Derivation of symmetry broken sigma model ..... 146
+7.3.4 Non-interacting diffusion ..... 147
+7.3.5 Linear response and crossover to XY-model ..... 147
+7.4 Beyond mean-field treatment on the basis of the normal state sigma model ..... 148
+7.4.1 Saddle-point equations ..... 148
+7.4.2 Analysis of length scales ..... 149
+7.4.3 Strategy and preliminary results ..... 150
+7.4.4 Kosterlitz-Thouless transition for topological insulator surface states ..... 153
+7.4.5 Physical observables ..... 153
+7.5 Summary of chapter 7 ..... 155
+Conclusions ..... 157
+Acknowledgements ..... 161
+References ..... 165
+Bibliography ..... 194
+Notation And Symbols ..... 195
+Acronyms ..... 197
+Notation ..... 201
+A Basic calculations ..... 203
+A. 1 Basic calculations in the absence of orbital magnetic field ..... 203
+A.1.1 Eigenvalue problem of clean Hamiltonian ..... 203
+A.1.2 The zero chemical potential density $n_{0}$ for topological insulators ..... 204
+A. 2 Berry connection and Berry curvature. ..... 205
+A. 3 Landau levels in the presence of orbital magnetic field $\vec{B}=B \hat{e}_{z}$ ..... 206
+A.3.1 The particle density at zero chemical potential ..... 207
+B Semiclassical transport calculations ..... 209
+B. 1 Drude transport theory ..... 209
+B.1.1 Classical special relativity ..... 209
+B. 2 Boltzmann treatment of the problem and anomalous Hall effect ..... 212
+B.2.1 Derivation of clean equations of motion ..... 212
+B.2.2 Derivation of side jump contributions ..... 213
+B.2.3 Geometrical foundations of Hamiltonian mechanics ..... 214
+B.2.4 The collision kernel and side step contributions ..... 216
+B.2.5 Full Boltzmann equation ..... 217
+B.2.6 Conservation laws at $\mathbf{E}=0$. ..... 217
+B.2.7 Back to the Boltzmann equation ..... 218
+
+B.2.8 Solution of the Boltzmann equation ..... 219
+B.2.9 Conductivity tensor ..... 221
+B.2.10 Evaluation for Dirac fermions ..... 222
+B. 3 Vortex states ..... 223
+B.3.1 Current operators ..... 224
+B.3.2 Gradient expansion ..... 224
+B.3.3 Current density ..... 225
+C Interaction effects in 3D topological insulators slabs ..... 229
+C. 1 Non-Abelian bosonization and the topological term ..... 229
+C.1.1 Gauged WZNW model ..... 229
+C.1.2 Instanton configuration ..... 230
+C. 2 Effect of dielectric environment on Coulomb interaction ..... 231
+C.2.1 Electrostatic potential and single particle effects ..... 231
+C.2.2 Interaction parameters ..... 232
+C. 3 Clean Fermi liquid ..... 233
+C.3.1 Resummation of interaction amplitudes ..... 234
+C.3.2 Definitions ..... 234
+C.3.3 Ward identities ..... 235
+C.3.4 Screening of the Coulomb interaction ..... 235
+C.3.5 Total density-density response ..... 237
+C.3.6 Bare NL $\sigma$ M coupling constants ..... 237
+C. 4 Detailed derivation of RG equations ..... 238
+C. 5 Stability of the fixed plane of equal surfaces ..... 241
+C. 6 RG flow for externally screened interaction ..... 241
+D Half-integer quantum Hall effect ..... 243
+D. 1 Derivation of the NL $\sigma$ M describing the half-integer QHE ..... 243
+D.1.1 No net $B$-field: Non-Abelian bosonization. ..... 243
+D.1.2 Finite net magnetic field: Gradient expansion ..... 246
+D. 2 Magnetic mirror charge for a double QH structure ..... 251
+D.2.1 Position of the mirror charges ..... 251
+D.2.2 Solution of the image charge problem for the thin film ..... 252
+E Superconducting instability ..... 257
+E. 1 Symmetry analysis ..... 257
+E.1.1 $\mathbf{U}(1)$ gauge invariance ..... 257
+E.1.2 Symmetry analysis of disordered systems ..... 258
+E. 2 Proof of saddle point solution ..... 261
+E. 3 Gradient expansion ..... 262
+E.3.1 Self energies and notation ..... 262
+E.3.2 Rotated Green's function and expansion of effective action ..... 262
+E.3.3 Frequency term and Cooper interaction ..... 264
+E.3.4 Density response ..... 264
+E.3.5 Gradient term: paramagnetic contribution ..... 265
+E.3.6 Gradient term: diamagnetic contribution ..... 266
+
+E.3.7 Collection of all terms. ..... 266
+E. 4 Bogoliubov-deGennes NL $\sigma \mathrm{M}$ and s-wave superconductivity ..... 267
+F Symmetry classification of disordered systems ..... 269
+
+# Fundamentals: Quantum transport in disordered systems 
+
+The title of this thesis contains three major words: "interaction", "disorder" and "topological insulators". The central term is the most important, as the physics in dirty systems is fundamentally different as compared to their clean counterparts. Therefore this thesis starts with an overview of the most important concepts of disordered and random quantum mechanical systems. The important "interaction effects" are also discussed within the present chapter. The novel state of matter "topological insulators" will be explained in a separate subsequent introductory chapter, Chap. 2.
+
+I partly base this chapter on my Diploma thesis, Ref. [60].
+
+### 1.1 Single particle localization in a random potential
+
+### 1.1.1 Anderson localization
+
+In 1957, Philip Warren Anderson first realized that a quantum-mechanical particle subjected to a random potential might be localized, if the disorder strength is large enough [19]. At first glance, this does not seem surprising: Also a classical particle which has sufficiently small energy, will be localized in the relatively deep valleys of a disordered potential landscape. But this is not the interesting point: The striking fact of Anderson's discovery is that the theorem predicts localization even when there is none to be expected classically. Furthermore, at given disorder strength, there do not exist energies at which both localized and delocalized states are present. ${ }^{1}$ Finally, all states being either localized or all states delocalized, Anderson localization is a quantum-mechanical phenomenon with macroscopic effects. There exist two distinct phases (insulator and metal) and therefore at some point a phase transition occurs: The Anderson transition.
+
+### 1.1.2 Scaling theory of Anderson transitions
+
+Only about twenty years after Anderson's fundamental article a phenomenological scaling theory of this phase transition was developed. Following the ideas of Thouless and Wegner the "Gang of Four" (Abrahams, Anderson, Licciardello and Ramakrishnan) formulated a one parameter scaling theory for
+
+[^0]
+[^0]:    ${ }^{1}$ Mott's argument: Imagine the coexistence of the two. Then a small change in the disorder configuration would cause some extended states to be changed into extended states leaking into the region of a localized state, mix with it and therefore extend it. In this sense, localized states are not stable against extended states of the same energy [61, 62].
+
+![img-0.jpeg](img-0.jpeg)
+
+Figure 1.1: $\beta$ function for one, two and three dimensions. Original plot from Ref. [63]
+the dimensionless conductance g [63]. Three main (physical) assumptions were made: First, $\frac{d \mathrm{~h} g}{d \mathrm{~h} L}=$ $\beta_{d}(g(L))$ does not explicitly depend on the system-size $L$ for all values of $g$, second $\beta_{d}(g)$ is continuous and monotonously increasing and third the following asymptotics hold:
+
+$$
+g(L)= \begin{cases}\sigma L^{d-2} & \text { Ohm's law for macroscopic transport for large } g \\ g_{a} e^{-\frac{h}{\xi}} & \text { Anderson localization for small } g\end{cases}
+$$
+
+( $\sigma$ denotes the conductivity, $\xi$ the localization length and $L^{d}$ the size of the $d$-dimensional hypercube.)
+From these assumptions Abrahams et al. concluded that the $\beta$ function must qualitatively behave ${ }^{2}$ as given in Fig. 1.1.
+
+This implies the following consequences: First there is no metallic state at or below two dimensions. Second for $d>2$ there exists a metallic phase and a metal-insulator-transition (MIT) point, at which the $\beta$ function vanishes for finite conductance $g=g_{c}$ and hence zero minimal conductivity $\sigma_{c}=$ $g_{c} L^{2-d} \xrightarrow{L \rightarrow \infty} 0$. Third, at $2+\epsilon$ dimension there exists a MIT at $g \sim \frac{1}{\epsilon}$.
+
+The "Gang of Four"-scaling theory was a milestone in the understanding of the Anderson phase transition. Its importance and implications will be reviewed in the context of the microscopically motivated QFT, see Sec. 1.4. Instead, in the following sections, the focus will be spotted onto the role of very basic properties of the system: dimensionality and symmetry.
+
+# 1.2 Quantum corrections to conductivity 
+
+Before turning to the QFT of disordered metals and to the renormalization group (RG) technique, it is worth to briefly review standard perturbative results concerning quantum corrections to the classical Drude conductivity $\sigma_{x x}^{D}$. Generally, the perturbation series expands about the state of "good metal", i.e. $\sigma_{x x}^{D} \gg e^{2} / h$ or, equivalently $k_{F} l \gg 1$ (where $k_{F}$ is the Fermi wavenumber and $l$ is the mean free path.)
+
+[^0]
+[^0]:    ${ }^{2} \mathrm{~A}$ negative $\beta$ function means decreasing conductance with increasing system size (decreasing temperature) and vice versa. The asymptotic, positive constant value $\left.\beta_{d>2}\right|_{g \rightarrow \infty}$ correspond to increasing conductance but constant conductivity.
+
+# 1.2.1 The role of dimensionality and interference corrections 
+
+The origin of interference correction and the fundamental dependence on dimensionality can be understood qualitatively following arguments by A.I. Larkin and D.E. Khmel'nitskii [64-66].
+![img-1.jpeg](img-1.jpeg)
+
+Figure 1.2: Two paths joining $A$ to $B$.
+![img-2.jpeg](img-2.jpeg)
+
+Figure 1.3: Self-intersecting paths with the opposite propagation through the loop.
+
+Consider an electron propagating from point A to point B in a dirty metal. The total probability for this propagation has to be calculated quantum mechanically (i.e. summing amplitudes $A_{i}$ corresponding to different trajectories and squaring afterwards): $W=\left|\sum_{i} A_{i}\right|^{2}=\sum_{i}\left|A_{i}\right|^{2}+\sum_{i \neq j} A_{i} A_{j}^{*}$. The second term describes the interference of amplitudes belonging to different paths.
+
+The electron-propagation along different paths results in a phase difference of its wave function; e.g. along paths of the type 1 and 2 in Fig. 1.2. However, the effect of this phase difference vanishes as the average over the interference term $\left\langle\cos \left(\Delta \phi_{j}-\Delta \phi_{i}\right)\right\rangle$ is zero.
+
+Nevertheless, there do exist paths where interference plays a crucial role: these are the self-intersecting trajectories, depicted in Fig. 1.3. For each of them there always exists a second path which is exactly the same up to the fact that the loop is taken the other way round. Still $\Delta \phi$ is the same for both and hence $W=\left|A_{1}+A_{2}\right|^{2}=4\left|A_{1}\right|^{2}$. This is twice the classical value!
+
+We see that quantum-interference enhances the impact of self-intersecting trajectories. Those suppress conductivity as the scattering probability increases. ${ }^{3}$ But how does the crucial dependence on the dimension arise?
+
+Classically, the probability for self-intersecting trajectories in phase space is zero, because they are "infinitesimally thin". However, quantum-mechanically, they have a finite thickness of the order of the de Broglie wave length $\lambda_{d B}=\frac{\hbar}{p_{0}}$. Therefore, the particle going to start its loop at point O in Fig. 1.3 "occupies" a finite volume element $\sim \lambda_{d B}^{d-1} v d t$ in the time-interval $[0, d t]$. In addition, within a certain time $t \in\left[\tau, \tau_{\phi}\right]^{4}$ it might access any point within the volume $(D t)^{\frac{d}{2}}(D$ is the classical diffusion coefficient). The probability of coming back to the initial point at time $t$ is the fraction of these two volumes $p_{\text {return }} \sim v d t \lambda_{d B}^{d-1} /(D t)^{\frac{d}{2}}$.
+
+As the conductivity is decreased by the presence of self-intersecting trajectories, the interference induced relative correction to conductivity is
+
+$$
+\frac{\Delta \sigma}{\sigma} \sim-\int_{\tau}^{\tau_{\phi}} \frac{\lambda_{d B}^{d-1} v d t}{(D t)^{\frac{d}{2}}}
+$$
+
+a quantity which diverges for $d \leq 2$ as $\tau_{\phi} \xrightarrow{T \rightarrow 0} \infty$. For $d=3$ it depends on the ratio $\lambda_{d B} / l$ and justifies classical treatment for the mean free path $l$ much greater than the de Broglie wavelength $\lambda_{d B}$.
+
+[^0]
+[^0]:    ${ }^{3}$...as already mentioned in Anderson's 1958 paper.
+    ${ }^{4}$ i.e. a time longer than the (impurity-) scattering time $\tau$ but shorter than a timescale $\tau_{\phi}$ where inelastic interaction destroys these arguments based on coherence.
+
+![img-3.jpeg](img-3.jpeg)
+
+Figure 1.4: Diffuson mode: the particle-hole mode. Throughout this thesis, arrowed lines correspond to fermionic propagators, while dashes correspond to correlations of disorder potential, Eq. (1.2).
+![img-4.jpeg](img-4.jpeg)
+
+Figure 1.5: Cooperon mode: the particle-particle mode
+
+In conclusion, the critical dimension $d_{c}=2$ predicted by the "Gang of Four"-scaling can be explained qualitatively by Larkin's and Khmel'nitskii's arguments. This is the motivation for considering a spatial dimension of two (or nearby) within many works on Anderson localization and within this thesis.
+
+# 1.2.2 Diagrammatic technique 
+
+Here, I want to give a very compact review of the diagrammatic technique for disordered systems and refer to the textbooks [61, 62, 67] for further details.
+
+The quantum mechanical single particle problem of motion in an impure environment is described by a Hamiltonian which includes the superposition of many impurity potentials. Whenever one is interested in macroscopic response functions, it is plausible to treat the position of impurities statistically. The impurity problem is thus equivalent to a problem made up of a random potential with a given probability distribution. In the limit when impurities are infinitely weak but infinitely dense, ${ }^{5}$ this distribution is Gaussian. Mostly in this thesis, I will work in this regime. In view of the universality exclusively determined by symmetries, see Sec. 1.3, the results are expected to hold beyond this approximation. However, for particularly strong impurities novel physical aspects are relevant, such as the Kondo effect [69] or effects described in Sec. 4.3.2.
+
+For reviewing exemplary building blocks, I would like to concentrate on conventional electrons with parabolic dispersion and a white noise Gaussian disorder potential
+
+$$
+\left\langle V(\mathbf{x}) V\left(\mathbf{x}^{\prime}\right)\right\rangle=\frac{1}{2 \pi \nu \tau} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+$$
+
+(The DOS is denoted by $\nu$ and $\tau$ turns out to be the elastic scattering rate.) In the limit $k_{F} l \gg 1$
+
+[^0]
+[^0]:    ${ }^{5}$ It is assumed that $n_{\text {imp }} V_{\text {imp }}^{2}=$ const. for vanishing inverse impurity density $n_{\text {imp }}^{-1} \rightarrow 0$ and strength $V_{\text {imp }} \rightarrow 0$ [68].
+
+the single particle Green's function can be determined in self-consistent Born approximation (SCBA), which corresponds to the resummation of Fock-type rainbow diagrams:
+
+$$
+\langle G(\mathbf{p})\rangle_{S C B A}=\frac{1}{i \epsilon_{n}+\mu-\frac{\mathbf{p}^{2}}{2 m}+\frac{i}{2 \tau} \operatorname{sign}\left(\epsilon_{n}\right)}
+$$
+
+(The chemical potential is $\mu$ and I use Matsubara technique with frequencies $\epsilon_{n}$.) While electronic states decay on the length scale of the mean free path $l=v_{F} \tau$ ( $v_{F}$ is the Fermi velocity), there are long lived diffuson and (in the presence of TR symmetry) Cooperon excitations depicted in Figs. 1.4 and 1.5. Their propagator corresponds to the resolvent of the diffusion equation
+
+$$
+\Gamma_{\mathbf{q}, m} \sim \frac{1}{\left|\omega_{m}\right|+D \mathbf{q}^{2}}
+$$
+
+(The diffusion coefficient in dimension $d$ is $D=v_{F}^{2} \tau / d$.)
+
+# 1.2.3 Interference corrections 
+
+By means of the diagrammatic technique and Kubo linear response formalism it is possible to reproduce the classical Drude conductance:
+![img-5.jpeg](img-5.jpeg)
+
+Note that the disorder induced transport time $\tau_{t r}$ is finite at zero temperature ("residual conductivity"). As explained, quantum corrections to conductivity can be obtained perturbatively in $1 / k_{F} l$. In two or less spatial dimensions these corrections diverge for divergent infrared (IR) cut-off length scale $L$, see also the qualitative arguments in Sec. 1.2.1. I here concentrate on $d=2[70,71]$ :
+![img-6.jpeg](img-6.jpeg)
+
+It is apparent from the Feynman diagram that the correction is due to the long lived Cooperons. For electrons with parabolic dispersion, $\alpha^{\prime}=1$ in this formula. This is the weak localization (WL) effect, a precursor of strong Anderson localization. In contrast, in the case of strong spin orbit coupling the triplet component of diffusive soft modes is gapped out and $\alpha^{\prime}=-\frac{1}{2}$. Thus in this case the Cooperon correction changes sign (WAL). In the spirit of the Larkin-Khmel'nitskii argument, Sec. 1.2.1, WAL is physically related to the destructive interference of time-reversed paths for particles with spin $\frac{1}{2}$.
+
+As Cooperons are gapped by magnetic field, the leading order quantum corrections vanish in strong magnetic field $\left(\alpha^{\prime}=0\right)$. The crossover at given scale $L$ can be probed in magnetoresistance experiments:
+
+$$
+\sigma(B, L)-\sigma(B=0, L)=-\frac{e^{2} \alpha^{\prime}}{2 \pi^{2} \hbar}\left[\ln \left(\frac{l_{B}^{2}}{4 L^{2}}\right)-\psi\left(\frac{1}{2}+\frac{l_{B}^{2}}{4 L^{2}}\right)\right]
+$$
+
+where $\psi$ is the digamma function and $l_{B}=\sqrt{\hbar /|e B|}$ is the magnetic length.
+
+In macroscopic solid state systems the IR cut-off is set by the dephasing length
+
+$$
+L \sim l_{\phi}=\sqrt{D \tau_{\phi}} \propto T^{-p / 2}
+$$
+
+The loss of phase coherence is typically provoked by electron-electron interactions $(p=1)$ or electronphonon interactions $(p=2)$ or a combination of the two.
+
+# 1.2.4 Interaction induced corrections 
+
+Up to now I concentrated on the case of single-particle interference corrections, the electron-electron interaction entering only in the cut-off $l_{\phi}$. This is justifiable, inasmuch in the potentially strongly correlated electron system (with density parameter up to $r_{s} \sim 1$ ) the low energy excitations carry the same quantum numbers as free electrons (Landau's "Fermi-liquid theory", see Sec. 1.5.1) [67, 72]. Therefore in many respects the electron liquid is akin to the electron gas.
+
+However, concerning the conductivity, the residual interactions in the theory (in particular those stemming from Coulomb repulsion) lead to additional quantum corrections [Altshuler-Aronov (AA) corrections] [71, 73], which are comparable in magnitude to weak (anti-)localization. For simplicity, I here concentrate again on $\mathrm{d}=2$ and on long-range interactions in the singlet channel. The leading order correction is ${ }^{6}$
+![img-7.jpeg](img-7.jpeg)
+
+It is important to remark, that this expression does not depend on the strength of interaction. The universal value stems from overscreening the Coulomb interaction $U_{0}(\mathbf{q})$
+
+$$
+U^{s t}(\mathbf{q})=\frac{U_{0}(\mathbf{q})}{1+U_{0}(\mathbf{q}) \frac{\partial n}{\partial \mu}} \stackrel{q e^{2} \frac{\partial n}{\partial \mu} \ll 1}{\approx} \frac{1}{\frac{\partial n}{\partial \mu}}
+$$
+
+where $\frac{\partial n}{\partial \mu}$ denotes the thermodynamic DOS and the superscript ${ }^{s t}$ stands for the static limit. The approximation is justified as long as the mean free path exceeds the screening length. ${ }^{7}$ In the calculation of conductivity an additional factor of $\frac{\partial n}{\partial \mu}$ appears, leading to the universal result.
+
+### 1.2.5 Experimental reality of quantum corrections
+
+All of the effects exposed in Eqs. (1.6),(1.7) and (1.9) play an important role for quantum transport experiments, in particular also concerning 3D TI samples. In Fig. 1.6 a reprint of data taken on a $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ sample is given [48]. In the parameter regime corresponding to that plot, the system is a nontopological 2D metal with strong spin orbit coupling. ${ }^{8}$ Indeed, the magnetoconductance is negative (this is the WAL effect). The experimental data (Fig. 1.6, left) could be fitted to Eq. (1.7) yielding constant $\alpha^{\prime} \approx-1 / 2$ over a range of one decade in carrier density and two orders of magnitude in
+
+[^0]
+[^0]:    ${ }^{6}$ It turns out that this universal result is leading order in $1 / k_{F} l$ but exact in interaction strength, see Sec. 1.5.
+    ${ }^{7}$ At the level of random phase approximation (RPA), this condition is $1 \ll \frac{\epsilon^{2}}{\epsilon} \epsilon l \sim \alpha \frac{\epsilon}{v_{F}} \frac{1}{2} k_{F} l$ which is indeed fulfilled as long as the dielectric constant $\epsilon$ does not take extreme values.
+    ${ }^{8}$ The system can be tuned into a TI by applying sufficiently strong external gate voltage [48].
+
+![img-8.jpeg](img-8.jpeg)
+
+Figure 1.6: Magnetoconductance [left,(a)] and temperature dependent conductivity at [right,(b)] of thin $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ films [48]. For the purpose of this introduction, I concentrate on perpendicular magnetic field $\left[0^{\circ}\right.$, marked by squares in (a) $]$.
+mobility. On the other hand, the slope $\kappa$ in the logarithmic temperature dependence (Fig. 1.6, right) is positive, indicating localizing behavior. The apparent contradiction is resolved if one combines WAL and AA effects, i.e. Eqs. (1.6) and (1.9). According to these equations, one theoretically expects
+
+$$
+\kappa=1+\alpha^{\prime}=1 / 2
+$$
+
+at zero magnetic field, which is in reasonable agreement with experiment. See Ref. [48] for further discussion.
+
+# 1.3 The role of symmetries 
+
+The different universal values of $\alpha^{\prime}$ in (1.6) in the presence or absence of TR and or spin-rotational invariance can actually be related to geometric properties of certain manifolds reflecting the symmetries of the system. Historically, the symmetry classification of random Hamiltonians goes back to 1951, when Eugene Wigner [74] started to investigate heavy nuclei by their symmetries. This influenced Freeman Dyson: He developed the Random-Matrix-Theory of Hamiltonians, a theory which should be applied to nuclei in which "all shell structure is washed out and [that] no quantum numbers other than spin an parity remain good" [75].
+
+An electronic disordered system has very little symmetries (at least before averaging over disorder configurations). In this sense, most quantum numbers are "washed out", too, and a classification analogous to Wigner's and Dyson's heavy nuclei is justified.
+
+Time-reversal symmetry The works concerning atomic nuclei were based on the investigation of TR symmetry of the systems. Time reversion is represented by an antiunitary operator $T=U K$ (U unitary, K denotes complex conjugation) which might square to $+\mathbf{1}$ or $-\mathbf{1}$ depending on systems with even respectively odd total angular momentum. The transformation of the Hamiltonian is
+
+$$
+\mathcal{T}: H \rightarrow U H^{T} U^{-1}
+$$
+
+There is a total of three Wigner-Dyson classes: The TR symmetry is absent, present and $T^{2}=\mathbf{1}$, or present and $T^{2}=-\mathbf{1}$.
+
+As long as one requires the Hamiltonian to be invariant under energy shifts, these three classes are the only ones. Dropping this constraint one can extend the symmetry classification.
+
+Particle-hole symmetry Another rather illustrative concept of symmetry is charge conjugation [in other words particle-hole (PH) symmetry]. As is well-known from basic quantum mechanics it is also represented by an antiunitary operator of the form $Q=V K$ (V unitary): ${ }^{9}$
+
+$$
+\mathcal{Q}: H \rightarrow-V H^{T} V^{-1}
+$$
+
+Particle hole symmetry again can be absent, present and $Q^{2}=\mathbf{1}$, or present and $Q^{2}=-\mathbf{1}$.
+Collecting all combinations of TR and PH symmetry, one eventually obtains 9 different symmetry classes. However, the combined symmetry has also to be considered:
+
+Chiral symmetry and the total number of symmetry classes The chiral symmetry - it can be understood to be the combination of the upper two - is represented by a unitary operator $W$
+
+$$
+\mathcal{C}: H \rightarrow-W H W^{-1}
+$$
+
+As chiral symmetry can either be present or absent in the absence of the two other symmetries, in total ten symmetry classes can be constructed [5]:
+
+$$
+10=\left.3\right|_{T^{2}=0, \pm 1} \times\left.3\right|_{Q^{2}=0, \pm 1}+\left.1\right|_{C=1, T=0, Q=0}
+$$
+
+Usually, they are grouped into three Wigner-Dyson classes, three chiral classes and the four other Bogoliubov-deGennes classes. The latter were only discovered in 1996 by Altland and Zirnbauer for certain superconducting systems [76].
+
+The possibility of writing one of the symmetries as the product of the two other ones is a relict of the absence of further such symmetries: Any combination of symmetries of the three types exposed above will either commute with the Hamiltonian ${ }^{10}$ or reproduce a symmetry falling into one of the three classes.
+
+Mathematical expression of symmetries In principle, any unitary matrices $U, W$ are equally good to define the action of $\mathcal{T}, \mathcal{C}$ and $\mathcal{Q}=\mathcal{C} \circ \mathcal{T}$. However certain representations are common and appropriate [77]:
+
+For example, for a Wigner-Dyson system with time-reversion invariance and $T^{2}=\mathbf{1}, U=\mathbf{1}$ can be chosen and hence $H$ is symmetric.
+In the corresponding class where $T^{2}=-\mathbf{1}, U=\sigma_{y}$ is common, then $H=\sigma_{y} H^{T} \sigma_{y}$.
+The chiral symmetry is usually realized by means of $W=\sigma_{z}$, therefore $\left\{H, \sigma_{z}\right\}=0$ and $H$ becomes block off-diagonal.
+This way, the Matrix $i H$ becomes an element of the tangent space of a certain symmetric space (see Sec. 1.3.1). Thus, a classification of disordered systems according to Cartan's table of symmetric spaces is appropriate. This was first realized by Altland and Zirnbauer [76, 78]. The classification table itself is given on the last page of the appendix.
+
+[^0]
+[^0]:    ${ }^{9}$ The unusual notation $Q$ is used in order to keep $C$ free for "chiral" and $K$ for complex conjugation.
+    ${ }^{10}$ then block diagonalization produces two Hamiltonians of a certain symmetry class
+
+![img-9.jpeg](img-9.jpeg)
+
+Figure 1.7: The geodesic reflection $s_{p}$ maps points $\gamma(t)$ on $s_{p}(\gamma(t))$ leaving $p=\gamma(0)$ invariant $\left(\gamma: t \mapsto \gamma(t) \in M\right.$ is the geodesic curve). The differential mapping $\left.d s_{p}\right|_{p}$ at $p$ reverses the direction of tangent vectors.
+
+# 1.3.1 What are symmetric spaces? 
+
+Symmetric spaces are the underlying mathematical concept for the classification of random matrices and (electronic) disordered systems. Furthermore, the effective field theories dealt with in the non-linear sigma model (NLeM) approach also live on symmetric spaces. Finally, the topology-driven phenomena in disordered systems (like topological insulators) rely on the topological properties of symmetric spaces. Here a brief review is given, based on Refs. [79, 80].
+
+Symmetric spaces from the geometric point of view A connected Riemannian manifold $\left(M,\langle\cdot, \cdot\rangle\right)$ is called symmetric space, if for all points $p \in M$ there exists an isometry $s_{p}: M \rightarrow M$ such that
+
+1. p is fixed under $s_{p}\left(s_{p}(p)=p\right)$ and
+2. the differential mapping from the tangent space $T_{p} M$ onto itself has the property $\left.d s_{p}\right|_{p}=-\left.\mathrm{id}\right|_{T_{p} M}$.
+
+As the operation $s_{p}$ simply reflects all tangent vectors, it is called geodesic reflection: Any point on a geodesic will be mapped on the corresponding opposite point in the sense of Fig. 1.7.
+
+It follows, that $M$ is homogeneous with respect to group operations of the isometry group Iso $(M)$. Accordingly, for any two points on $M$ there is an isometry mapping the one onto the other. This mathematically reflects the equivalence of all points, which is of physical interest for the manifold of equivalent saddle points.
+
+Simple examples of symmetric spaces sufficing conditions 1. and 2. are spheres $\mathbb{S}^{d}$.
+Symmetric spaces from the group theoretical point of view The geometric definition of a symmetric space can be brought to a group theoretical language:
+
+Let $M$ be a connected symmetric space. Denote the compact subgroup of $\operatorname{Iso}(M)$ by $\mathbf{G}=\operatorname{Iso}^{\circ}(M)$ and pick out some base point $x_{0}$. Then the symmetric space is diffeomorphic to ${ }^{11} \frac{\mathbf{G}}{\mathbf{K}}$ where $\mathbf{K}$ is the compact stabilizer $\mathbf{K}=\left\{g \in \mathbf{G} \mid g \cdot x_{0}=x_{0}\right\}$. ${ }^{12}$ The converse theorem also holds: Let $\mathbf{G}$ be a connected Lie Group, and $\mathbf{K}$ a compact subgroup of G. ${ }^{13}$ Then $M=\frac{\mathbf{G}}{\mathbf{K}}$ is a symmetric space in the above given Riemannian/geometric sense with respect to any G-invariant Riemannian metric.
+
+[^0]
+[^0]:    ${ }^{11}$ the quotient group is defined by the equivalence relation $g \sim h: \Leftrightarrow g \cdot x_{0}=h \cdot x_{0}$ for $g, h \in \mathbf{G}$.
+    ${ }^{12}$ The geodesic reflection is incorporated into an involutive automorphism of $\mathbf{G}: \sigma: g \mapsto s g s=s g s^{-1}$. The set $F i x(\sigma)$ of fix points of $\sigma$ is a closed subgroup of $\mathbf{G}$ and $F i x^{\circ}(\sigma) \subseteq \mathbf{K} \subseteq F i x(\sigma)$.
+    ${ }^{13}$ Further an involutive map $\sigma \in \operatorname{Aut} G$ with $F i x^{\circ}(\sigma) \subseteq \mathbf{K} \subseteq F i x(\sigma)$ has to be assumed. The geodesic reflection at a given base point $x_{0}=e K$ is $s_{x_{0}}(g \mathbf{K})=\sigma(g) \mathbf{K}$.
+
+Symmetric spaces on the level of Lie-Algebras Consider $\mathbf{G}$ and $\mathbf{K}$ as in the paragraph above with corresponding Lie-Algebras $\mathfrak{g}$ and $\mathfrak{k}$. Further, a non-trivial involutive Lie-Algebra automorphism $\theta$ of $\mathfrak{g}$, i.e. $\theta^{2}=\mathrm{id}_{\mathfrak{g}}$, is introduced. ${ }^{14}$ Usually, $\theta$ is called the Cartan-involution and it translates the geodesic reflection $s_{p}$ to Lie-algebraic level. Then the Lie-algebra can be written as the direct sum $\mathfrak{g}=\mathfrak{k} \oplus \mathfrak{p}$ ("Cartan decomposition") of the following two entities:
+
+1. First, there is the subalgebra $\mathfrak{k}=\{X \in \mathfrak{g} \mid \theta(X)=X\}$ of generators which are invariant under $\theta$.
+2. Second, $\mathfrak{p}=\{X \in \mathfrak{g} \mid \theta(X)=-X\}$ represents all tangent vectors which are reflected by $\theta$.
+
+The Lie brackets of generators from the respective subsets fulfill the "Cartan-relations": $[\mathfrak{k}, \mathfrak{k}] \subseteq \mathfrak{k}$, $[\mathfrak{k}, \mathfrak{p}] \subseteq \mathfrak{k}$, $[\mathfrak{p}, \mathfrak{p}] \subseteq \mathfrak{k}$. Note that $\mathfrak{p}$ is the tangent space $T_{\mathbf{I}}\left(\frac{\mathfrak{G}}{\mathbf{K}}\right)$.
+
+# 1.3.2 Classification by symmetric spaces 
+
+The connection from the symmetry classification of Hamiltonians to symmetric spaces is carried out on this Lie-algebraic level: One simply determines the tangent space $\mathfrak{p}$ to which the Hamiltonian multiplied by the imaginary unit $(i H)$ belongs.
+
+The exemplary Hamiltonians given above display one of the following symmetries: $H=H^{T}, H=$ $\sigma_{y} H^{T} \sigma_{y}$ or $\left\{H, \sigma_{z}\right\}=0$. Therefore $i H$ lies in $\frac{u(N)}{\varrho(N)}, \frac{u(2 N)}{\mathrm{sp}(2 N)}$ or $\frac{u(2 N)}{\mathrm{n}(N) \times \mathrm{n}(N)}$ respectively.
+
+Mathematical arguments for the completeness of symmetry classes In 1926, a complete classification of symmetric spaces was obtained by Elie Cartan. For the purpose of random-matrix theory and disordered systems, one is interested in compact irreducible symmetric spaces, and the matrix groups have to be of arbitrary matrix size, i.e. exceptional Lie groups (like $\mathrm{E}_{8}$ ) will not be considered. Under these constraints, there exists a family of seven coset spaces of Lie groups (symmetric spaces of type I) and further four symmetric spaces of type II, which are simple, compact and connected Lie groups. In this mathematical setting, the orthogonal group in even and odd dimensions are regarded as two distinct classes D respectively B. Typically, in the condensed matter context, this distinction is dropped: Its physical realization would be a disordered superconductor, but the matrix size of Bogoliubov-Hamiltonians is usually even (it is a bilinear form of Nambu spinors which treat creator and corresponding annihilator at once). Therefore a total of ten symmetry classes is obtained. This is a strong indication that the number of classes is complete, any other symmetry class would exceed the Cartan scheme. A rigorous proof has been given by Heinzner et al. in 2004 [81].
+
+### 1.4 Non-linear sigma models
+
+Around 1980, the equivalence between the localization problem and the NLorM on coset spaces was understood [82-85]. Starting from a microscopic description in terms of a single-particle Hamiltonian this effective QFT can directly be derived.
+
+A brief technical summary is as follows (see Chaps. 6 and 7 and corresponding appendices for a concrete detailed derivation): First the partition function is averaged over disorder producing an effective four-fermion vertex. This vertex is decoupled by a Hubbard-Stratonovich transformation. Then the set
+
+[^0]
+[^0]:    ${ }^{14}$ Actually, $\theta$ is the differential map of the Lie Group involution $\sigma$, i.e. $\theta=d \sigma_{e}$.
+
+of saddle-points corresponding to SCBA (Sec. 1.2) is determined. Onto this set of saddle-points, which will be denoted by $\mathcal{M}_{\sigma}$, the (quantum-) fields are mapped. It is an interesting observation, that $\mathcal{M}_{\sigma}$ equally has the structure of a symmetric space. ${ }^{15}$
+
+An alternative derivation applicable for systems of Dirac electrons is non-Abelian bosonization [8689], see Chaps. 5 and 6 and corresponding appendices.
+
+Physically, the field living on the non-linear sigma model manifold $\mathcal{M}_{\sigma}$ describes the long range diffuson and Cooperon modes. The two of them being related by TR symmetry, it makes sense to describe them by a unified, symmetrized object. Depending on the symmetries of the system, different soft modes are present, and hence $\mathcal{M}_{\sigma}$ differs (see the table of symmetry classes, App. F).
+
+# 1.4.1 An illustrative example 
+
+The most illustrative example of a NL $\sigma \mathrm{M}$ occurs in a system which is governed by a Mexican hat potential. Within a mean-field approach such potentials arise (usually) below the critical temperature of a thermodynamic phase transition associated to the breakdown of continuous symmetries. The system spontaneously falling into a definite ground state out of the (degenerate) ground state manifold causes spontaneous symmetry breaking (SSB). By Goldstone's theorem, massless modes appear which describe the alteration of the ground state over spatial extension. All this happens within the ground state manifold, in the simplest example a circle, see Fig. 1.8. Furthermore, also massive modes appear, which describe changes perpendicular to the ground state manifold. In the NL $\sigma \mathrm{M}$ treatment, the massive modes are neglected, as they are strongly suppressed for energetic reasons, see Fig. 1.9.
+![img-10.jpeg](img-10.jpeg)
+
+Figure 1.8: Mexican hat potential, massless and massive mode.
+![img-11.jpeg](img-11.jpeg)
+
+Figure 1.9: The simplest NL $\sigma M$ manifold: a circle.
+
+Physically, Figs. 1.8 and 1.9 characterize the phase transition from normal to superfluid state in Helium-4 or any other system, where a spontaneous breaking of $\mathbf{U}(1)$ symmetry appears. Already in this simple example the role of topology becomes apparent, as the Goldstone boson lives on a topologically non-trivial manifold: a circle.
+
+Both Goldstone and diffusive modes have propagators $\Gamma \sim 1 / p^{2}$, making 2D a special (critical) dimensionality. The action of the 2D NL $\sigma \mathrm{M}$ is
+
+$$
+S[Q]=\frac{1}{16 \pi t} \int d^{2} x \operatorname{tr}\left[\nabla Q \nabla Q^{-1}\right]
+$$
+
+[^0]
+[^0]:    ${ }^{15}$ The saddle-point manifold $\mathcal{M}_{\sigma}$ is uniquely determined by the symmetry of the random Hamiltonian and thus related to the symmetric space generated by $\exp (i H)$. In the case of the complex classes A and AIII the two manifolds are dual one to the other.
+
+In general, $Q$ is a matrix and the symbol tr denotes the trace in the space of matrix indices of $Q$. For the problem of the $\mathbf{U}(1)$ SSB phase however, $Q=e^{i \phi}$. Further, the coupling constant $t$ was introduced. In the context of Helium-4, it is inversely proportional to the superfluid density. The meaning of Eq. (1.16) for disordered conductors will be discussed in the following section.
+
+# 1.4.2 Non-linear sigma model of disordered metals 
+
+In this work, the major focus is on two dimensional disordered metals. The circular NLeM arising due to SSB and the phase transition in a mean-field theory of superfluidity can be seen as a conceptional prototype. In contrast to the Abelian $\mathbf{U}(1)$ model, the low energy theory of diffusive metals is governed by a field $Q$ which lives on some more complicated symmetric space (see App. F). The prefactor $\frac{1}{t}$ is proportional to the conductance.
+
+In order to cope with the ensemble average over quenched disorder realizations three possible routes for the NLeM are known: Schwinger-Keldysh techique [90], supersymmetry [66] and the replica trick [91]. In this thesis, I will employ the latter, giving $Q$ an $N_{R} \times N_{R}$ matrix size. The trick formally relies on the identity for the free energy
+
+$$
+\ln \mathcal{Z}=\lim _{N_{R} \rightarrow 0} \frac{\mathcal{Z}^{N_{R}}-1}{N_{R}}
+$$
+
+The limit of vanishing number of replicas $N_{R}$ is mathematically innocuous in perturbative calculations and a standard tool not only in the context of disordered or glassy systems, but also offers one route to prove the linked cluster theorem [92].
+
+### 1.4.3 The renormalization group
+
+The QFT associated to the action (1.16) is defined by the partition function
+
+$$
+\mathcal{Z}=\int \mathcal{D} Q e^{-S[Q]}
+$$
+
+Implicitly, the symbol $\int \mathcal{D} Q$ denotes integration over all possible field configurations with associated momenta in $[1 / L, 1 / l]$. In order to obtain information on the Anderson transition, a perturbative RG treatment is performed with the NLeM. The idea of Wilsonian RG [93, 94] contains three steps: First, split the fields of the theory in fast and slow modes. Second, average the fast fields out, their effects are incorporated into the remaining "slow" $Q$ fields. Third, rescale the slow fields in a manner, that their support in momentum space is again $[1 / L, 1 / l]$. In the second step, approximations are made, and only a well defined set of infinitely many Feynman graphs might be kept. For NLeMs in 2D these are the logarithmic diagrams ordered in a power series of $t$. The resummation of infinitely many diagrams is encoded in the differential equation defining the $\beta$ function, cf. Sec. 1.1.2. Qualitatively, averaging "fast" modes reflects the condensed matter physicist's interest in the very long-distance ( sample size) behavior of the diffusive modes.
+
+From a more general, field theoretical perspective, the RG technique was introduced to give ultraviolet (UV) divergent field theories a well defined sense in the limit $1 / l \rightarrow \infty$. A theory where this is possible is called renormalizable and 2D NLeMs fall into this category. One can then iteratively in looporders introduce (formally divergent) counterterms in the action, with the benefit that the generating functional becomes finite. For the case of sigma models, divergencies do not only stem from the UV but also from the IR. To handle the latter singularities, a mass term with mass $1 / L$ has to be added. The
+
+consistency of the RG procedure is encoded in a differential equation, the Callan-Symanzik equation, of which the $\beta$ function exposed in Sec. 1.1.2 is a fundamental ingredient [95].
+
+For the diffusive NL $\sigma \mathrm{M}$, the leading order coefficient of the $\beta$ function can be read off from the perturbative weak (anti-)localization correction, Eq. (1.6), see also the table on the last page of this thesis, App. F. In particular, the WAL effect in the presence of strong spin orbit-coupling combined with the paradigm of Anderson localization inevitably implies a 2D metal-insulator transition (MIT) in class AII.
+
+# 1.4.4 Comparison: diffusive sigma models and the illustrative example 
+
+In the case of usual phase transitions (e.g. in superfluids or the Heisenberg ferromagnet) self-consistent average over the interaction term generates an effective mean-field "potential", for example the superconducting gap function or the magnetization. By symmetry arguments they are constrained to certain manifolds and the spontaneous symmetry breaking occurs, when the system falls into a definite ground state corresponding to a point on this manifold. Soft variations of the order parameter, the Goldstone modes, are then described by NL $\sigma \mathrm{Ms}$.
+
+For disordered systems the situation is similar: The interaction with the disorder potential is also self-consistently (SCBA) averaged out, yielding an effective mean-field potential, namely the HubbardStratonovich field. Analogously, there exists a mechanism of "symmetry breaking", namely when a saddle-point corresponding to SCBA is determined, as well as a NL $\sigma \mathrm{M}$ treating the fluctuations of the field.
+
+However there are substantial differences. To begin with $Q$ does not play the role of an order parameter. Additionally, RG of diffusive NL $\sigma \mathrm{Ms}$ can be qualitatively different: Usual NL $\sigma \mathrm{Ms}$ of SSB phases suffice the Mermin-Wagner theorem [96], according to which any continuous, compact, non-Abelian symmetry can not be spontaneously broken in two or less spatial dimensions. ${ }^{16}$ In terms of RG it follows that the coupling constant $t$ increases (decreases) flowing to the infrared (ultraviolet). This is called "asymptotic freedom" and occurs, most prominently, also in non-Abelian gauge theories. Diffusive NL $\sigma \mathrm{Ms}$ can circumvent Mermin-Wagner theorem making WAL possible. Technically this occurs in the replica limit, or, in supersymmetric formulation, due to the non-compact bosonic sector. ${ }^{17}$ One of the striking characteristics of Anderson transitions is related to these pecularities: multifractality. At the metal-insulator transition point there are infinitely many relevant operators leading to a continuous set of anomalous scaling dimensions for the moments of the wavefunction [77].
+
+### 1.5 Field theory of interacting disordered systems
+
+In the previous section I have reviewed, how the singular interference corrections to conductivity, Eq. (1.6) and the scaling hypothesis for the Anderson transition, Sec. 1.1.2, are field theoretically based in the microscopically motivated NL $\sigma \mathrm{M}$, Eq. (1.16).
+
+On the other hand, Eq. (1.9) shows that electron-electron interactions are equally important for the localization problem in disordered electronic systems. In this section I summarize the most important
+
+[^0]
+[^0]:    ${ }^{16}$ For quantum phase transitions: "...two or less space-time dimensions."
+    ${ }^{17}$ Actually, systems of purely non-compact symmetry are already very curious: There is always SSB, in particular also in $d \leq 2$ dimensions. Further, non-compact NL $\sigma \mathrm{Ms}$ are, at least in one loop approximation, asymptotically free in the infrared. For details, see e.g. the talk [97] and Refs. therein. In disordered electronic systems, there is a competition between compact and non-compact symmetries.
+
+facts on interacting disordered systems, ${ }^{18}$ for more details see the reviews [98-100].
+
+# 1.5.1 Clean and disordered Fermi liquid 
+
+![img-12.jpeg](img-12.jpeg)
+![img-13.jpeg](img-13.jpeg)
+
+Figure 1.10: Interaction channels of small energy momentum transfer (capital letters $P, K$ ) in the FL theory. Classification according to the tensor structure in spin-space (index $s_{i}$ ). Upper left: Exemplary contribution to the one Coulomb-line reducible small angle scattering amplitude. Lower left: Exemplary contribution to the one-Coulomb-line irreducible small-angle scattering amplitude. Upper right: Exemplary contribution to the large-angle scattering amplitude. Lower right: Exemplary contribution to the scattering amplitude in the Cooper channel.
+
+The main statement of Landau's Fermi liquid theory [67, 72, 101] is that, in the absence of spontaneous symmetry breaking, ${ }^{19}$ the low-energy ${ }^{20}$ excitations of a strongly correlated fermionic system are fermions (quasiparticles) with the same quantum number as the free particles. Their decay rate is small compared to the Fermi energy.
+
+Landau's phenomenological theory can be put on firm ground using field theoretic techniques. The exact electronic Green's function (i.e. two point correlator) can be shown to contain a singular part (quasiparticle pole) with weight $0<a<1$ and an additional regular contribution [102]. In the entire thesis I reabsorb $a$ into a redefinition of fermionic fields and scattering amplitude.
+
+Another particularly important quantity in the QFT of strongly interacting fermions are the four point correlators. These implicitly define the full interaction amplitudes. The latter are subdivided in different channels of small energy-momentum transfer according to their tensor structure in spin space, see Fig. 1.10. They include, among others, resonant particle-hole (particle-particle) bubbles, a singular contribution when the two fermionic propagators have close $\mathrm{d}+1$ momentum. In order to handle the
+
+[^0]
+[^0]:    ${ }^{18}$ This section is partly based on the unpublished typeset by this dissertation's author of the lecture notes on "Field theories of disordered condensed-matter systems", course given by A. D. Mirlin, P. M. Ostrovsky and I. V. Gornyi in the winter semester 2010/2011 at the KIT.
+    ${ }^{19}$ The spectrum of the interacting system is adiabatically connected to the free problem.
+    ${ }^{20}$ Low energy as compared to the Fermi energy.
+
+divergence, the scattering amplitude $I$ is defined (in each channel): It contains only the one bubble irreducible diagrams of $\Gamma$ and is thus regular. By definition its resummation with bubbles equals the full $\Gamma$ (for simplicity any spin structure is omitted here).
+
+The bubble of a particle and a hole (or particle) of similar $\mathrm{d}+1$ momenta has a singular and a regular contribution
+
+$$
+R_{n, \mathbf{p}}\left(\omega_{m}, \mathbf{q}\right) \equiv G\left(\epsilon_{n_{i}}, \mathbf{p}_{i}\right) G\left(\epsilon_{n_{i}}+\omega_{m}, \mathbf{p}_{i}+\mathbf{q}\right)=-\beta \frac{v_{F} \hat{p} \cdot \mathbf{q}}{v_{F} \hat{p} \cdot \mathbf{q}-i \omega_{n}} \delta_{P}+\text { reg }
+$$
+
+at vanishing $\left(\omega_{m}, \mathbf{q}\right) .\left(\delta_{P}\right.$ constrains the fast energy-momentum $P$ on the Fermi surface.)
+From the above expressions it becomes evident that the $\omega$-limit of the scattering amplitude ${ }^{21}$
+
+$$
+\Gamma^{\omega}=\lim _{\omega \rightarrow 0}\left(\lim _{q \rightarrow 0} \Gamma(\omega, \mathbf{q})\right)
+$$
+
+is regular at vanishing $\left(\omega_{m}, \mathbf{q}\right)$ and the dependence of $\Gamma_{\hat{p}, \hat{p}^{\prime}}\left(\omega_{m}, \mathbf{q}\right)$ on the transferred $d+1$ momentum is governed by the multiple resummation
+
+$$
+\Gamma_{\hat{p}, \hat{p}^{\prime}}\left(\omega_{m}, \mathbf{q}\right)=\Gamma_{\hat{p}, \hat{p}^{\prime}}^{\omega}+\int_{\hat{p}_{i}} \Gamma_{\hat{p}, \hat{p}_{i}}^{\omega} \frac{-v_{F} \hat{p}_{i} \cdot \mathbf{q}}{v_{F} \hat{p}_{i} \cdot \mathbf{q}-i \omega_{m}} \Gamma_{\hat{p}_{i}, \hat{p}^{\prime}}^{\omega}+\ldots
+$$
+
+It can be shown that $\Gamma^{\omega}=F$ where $F$ are the phenomenological FL interaction parameters.
+As will be explained below, for the purpose of disordered systems it is more useful to extract the static limit
+
+$$
+\Gamma^{q}=\lim _{q \rightarrow 0}\left(\lim _{\omega \rightarrow 0} \Gamma(\omega, \mathbf{q})\right)
+$$
+
+of $\Gamma(\omega, \mathbf{q})$ (i.e. $F$ summed up with retarded-retarded/advanced-advanced bubbles). Using this quantity the full amplitude is given by
+
+$$
+\Gamma_{\hat{p}, \hat{p}^{\prime}}\left(\omega_{m}, \mathbf{q}\right)=\Gamma_{\hat{p}, \hat{p}^{\prime}}^{q}+\int_{\hat{p}_{i}} \Gamma_{\hat{p}, \hat{p}_{i}}^{q} \frac{-i \omega_{m}}{v_{F} \hat{p}_{i} \cdot \mathbf{q}-i \omega_{m}} \Gamma_{\hat{p}_{i}, \hat{p}^{\prime}}^{q}+\ldots
+$$
+
+All presented formulas apply to the short range interactions $\Gamma^{1}, \Gamma^{2}$ and $\Gamma^{c}$. The long-range interaction $\Gamma^{0}$ requires special treatment. It needs to be RPA screened by the full FL polarization operator $\Pi\left(\omega_{m}, \mathbf{q}\right)$ which involves short range interactions.
+
+Upon inclusion of sufficiently weak disorder (in the sense $k_{F} l \gg 1$ ) the $q$-limit quantities (e.g. $\Gamma^{q}$ ) remain unchanged, because they are determined by scales much shorter than the mean free path. On the contrary, the dynamic part of scattering amplitudes, i.e. the retarded-advanced particle-hole/particleparticle bubbles, has to be replaced by its diffusive counterpart [98, 100]:
+
+$$
+\frac{\omega_{n}}{\omega_{n}+i v_{F} \hat{p} \cdot \mathbf{q}} \rightarrow \frac{\omega_{n}}{\omega_{n}+D q^{2}}
+$$
+
+[^0]
+[^0]:    ${ }^{21}$ The limiting procedure of Matsubara frequencies involves analytic continuation and is explained in Ref. [101].
+
+![img-14.jpeg](img-14.jpeg)
+
+Figure 1.11: A diagram contributing in the resummation of $\Gamma^{0}$ in the diffusive limit. The retardedadvanced sections become diffusons for energies below $1 / \tau$.
+
+This replacement is best understood diagrammatically: All channels $\Gamma(\omega, \mathbf{q})$ are determined by infinite resummation of $\Gamma^{q}$ with retarded-advanced particle-hole (particle-particle) bubbles. In the disordered case the latter become Diffusons (Cooperons), see Fig. 1.11 for the exemplary case of $\Gamma^{0}$.
+
+Another important consequence of disorder is to gap out all harmonics of the particle-hole bubbles except the zeroth harmonic (broken rotational symmetry). Therefore, the higher harmonics of $\Gamma_{\hat{p}_{1}, \hat{p}_{2}}$ are not coupled to the long-range diffusive modes and I henceforth denote $\Gamma=\left\langle\Gamma_{\hat{p}_{1}, \hat{p}_{2}}\right\rangle_{\text {Fermi surface }}$.
+
+# 1.5.2 Non-linear sigma model with interactions 
+
+On the basis of the disordered FL, the diffusive NL $\sigma \mathrm{M}$ of interacting electrons can be derived [103, 104]. As before, the QFT can be obtained by functional integration and gradient expansion, again it is constructed on the saddle point manifold of the free problem. The interaction terms then formally correspond to particular mass terms in the action:
+
+$$
+S=S_{\sigma}+S_{i n t}^{(\rho)}+S_{i n t}^{(\sigma)}+S_{i n t}^{(c)}
+$$
+
+with
+
+$$
+\begin{aligned}
+S_{\sigma} & =\frac{g}{32} \int_{\mathbf{x}} \operatorname{tr}\left[(\nabla Q)^{2}\right]-4 \pi T z \int_{\mathbf{x}} \operatorname{tr} \eta Q \\
+S_{i n t}^{(\rho)} & =\frac{\pi T}{4} \Gamma_{\rho} \sum_{\alpha, n} \sum_{r=0,3} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r 0} Q\right] \operatorname{tr}\left[I_{-n}^{\alpha} t_{r 0} Q\right] \\
+S_{i n t}^{(\sigma)} & =\frac{\pi T}{4} \Gamma_{t} \sum_{\alpha, n} \sum_{r=0,3} \sum_{j=1,2,3} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r j} Q\right] \operatorname{tr}\left[I_{-n}^{\alpha} t_{r j} Q\right] \\
+S_{i n t}^{(c)} & =\frac{\pi T}{2} \Gamma_{c} \sum_{\alpha, n} \sum_{r=0,3}(-)^{r} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r 0} Q I_{n}^{\alpha} t_{r 0} Q\right]
+\end{aligned}
+$$
+
+In this case, where both time reversal and spin-rotational invariance are assumed (non-interacting class AI), the $Q$ matrices are symplectic, traceless and involutive and have non-trivial structure in replica, Matsubara, spin and Nambu spaces. Following Ref. [105] I here use the convention $t_{r j}=\tau_{r} \otimes \sigma_{j}$ where $\tau_{r}=\left(\mathbf{1}_{r}, \vec{r}\right)$ are the identity and the Pauli matrices in Nambu space, while $\sigma_{j}=\left(\mathbf{1}_{\sigma}, \vec{\sigma}\right)$ are those in spin space. Here and throughout the dissertation I use a convention in which $\alpha, \beta=1, \ldots, N_{R}$ denote replicas and $m, n=-N_{M}^{\prime}, \ldots, N_{M}^{\prime}-1$ Matsubara indices. The following matrices, which are trivial in
+
+Nambu and spin spaces, occur:
+
+$$
+\begin{aligned}
+\Lambda_{n m}^{\alpha \beta} & =\operatorname{sgn}(n) \delta^{\alpha \beta} \delta_{n m} \\
+\eta_{n m}^{\alpha \beta} & =n \delta^{\alpha \beta} \delta_{n m} \\
+\left(I_{n_{0}}^{\alpha_{0}}\right)_{n m}^{\alpha \beta} & =\delta^{\alpha_{0} \alpha} \delta^{\alpha_{0} \beta} \delta_{n-m, n_{0}}
+\end{aligned}
+$$
+
+The coupling constants of the NL $\sigma \mathrm{M}$ are the dimensionless conductivity $g$, the $q$-limits of interaction amplitudes in density (singlet), triplet and Cooper channel
+
+$$
+\begin{aligned}
+\Gamma_{\rho} & =-\frac{\pi \nu}{4}\left(2 \Gamma^{0, q}+2 \Gamma^{1, q}-\Gamma^{2, q}\right) \\
+\Gamma_{t} & =\frac{\pi \nu}{4} \Gamma^{2, q} \\
+\Gamma_{c} & =\frac{\pi \nu}{4} \Gamma^{c, q}
+\end{aligned}
+$$
+
+and the prefactor $z$ of the frequency term, which is related to the renormalization of specific heat. Note that it does not flow in the non-interacting case and keeps the bare value $z^{(0)}=\pi \nu / 4$. In the presence of long range Coulomb interaction $\left(\Gamma^{0} \neq 0\right)$ the NL $\sigma \mathrm{M}$ is " $\mathcal{F}$-invariant" [106]. Essentially this means electrostatic gauge invariance (i.e. invariance under time dependent but space independent phase rotations) and fixes $z+\Gamma_{\rho}=0$. More technical details can be found in Secs. 5.3.1 and 5.3.7, where $\mathcal{F}$-invariance for double layer FLs is discussed.
+
+The one loop RG equations are $[98,99,105,107]$
+
+$$
+\begin{aligned}
+\frac{1}{t} \frac{d t}{d y} & =t\left[1+f\left(\gamma_{\rho}\right)+3 f\left(\gamma_{t}\right)-\gamma_{c}\right] \\
+\frac{d \gamma_{\rho}}{d y} & =-\frac{t}{2}\left(1+\gamma_{\rho}\right)\left(\gamma_{\rho}+3 \gamma_{t}+2 \gamma_{c}\right) \\
+\frac{d \gamma_{t}}{d y} & =-\frac{t}{2}\left(1+\gamma_{t}\right)\left(\gamma_{\rho}-\gamma_{t}-2 \gamma_{c}\left(1+2 \gamma_{t}\right)\right) \\
+\frac{d \gamma_{c}}{d y} & =-\frac{t}{2}\left[\left(1+\gamma_{c}\right)\left(\gamma_{\rho}-3 \gamma_{t}\right)+6 \gamma_{c}\left(\gamma_{t}-\ln \left(1+\gamma_{t}\right)\right)\right]-2 \gamma_{c}^{2}
+\end{aligned}
+$$
+
+(The running scale is $y=\ln L / l$.) It is a necessary consequence of dimensional analysis, that the RG equations can be written in terms of reduced coupling constants $\gamma_{i}=\frac{\Gamma_{i}}{z}(i=\rho, t, c)$. The function
+
+$$
+f(x)=1-\frac{1+x}{x} \ln (1+x) \sim \begin{cases}1, & \text { as } x \rightarrow-1 \\ -\frac{x}{2}, & \text { as } x \rightarrow 0\end{cases}
+$$
+
+was introduced. These RG equations are perturbative in ${ }^{22} t=2 /(\pi g)$ and $\gamma_{c}$ but exact in $\gamma_{\rho}$ and $\gamma_{t}$. I neglected terms beyond leading order in the small parameters $t, t \gamma_{c}$ on the right hand side (RHS) of Eqs. (1.28). ${ }^{23}$
+
+[^0]
+[^0]:    ${ }^{22}$ Note that I am using the same convention for $t$ in the NL $\sigma \mathrm{M}$ in Eqs. (1.16) and (1.25).
+    ${ }^{23}$ These terms are known [107] but partially unpublished. I acknowledge LS. Burmistrov, LV. Gornyi and A.D. Mirlin for sharing their unpublished notes with me.
+
+![img-15.jpeg](img-15.jpeg)
+
+Figure 1.12: Temperature dependent resistivity for various carrier densities [109]. Note the nonmonotonic curve below the dotted separatrix.
+
+Eqs. (1.28) contain the WL effect [first term " 1 " in the square bracket of Eq. (1.28a)], which is also present in non-interacting systems and the Cooper instability, last term " $-2 \gamma_{c}^{2 \sigma}$ in Eq. (1.28d) which is also present in clean systems [108]. All other terms stem from the interplay of disorder and interactions, in particular the second term " $f\left(\gamma_{\rho}\right)$ " in the square bracket of Eq. (1.28a) reproduces the AA effect, Eq. (1.9). Note the preservation of $\mathcal{F}$-invariance at $\gamma_{\rho}=-1$.
+
+In the case of a system with strong spin-orbit coupling (for example for 3D TI surface states) the following modifications to Eqs. (1.28) occur. First, one should replace the WL by the WAL effect, i.e. " 1 " in the square bracket of Eq. (1.28a) by " $-1 / 2$ ". Second, the triplet channel is gapped out and $\gamma_{t}$ should be removed from all equations.
+
+In the following, I would like to briefly expose some outstanding scientific questions which can be solved by means of the interacting NL $\sigma \mathrm{M}$.
+
+# 1.5.3 Metal-insulator transition 
+
+In contrast to the expectation founded on the scaling theory (Sec. 1.1.2), Kravchenko et al. [109] experimentally discovered a MIT in the 2DES created in Silicon field effect transistors (see Fig. 1.12). The effect crucially depends on the (relatively small) carrier concentration ${ }^{24} n \sim 10^{11} \mathrm{~cm}^{-2}$ while the sensitivity to an in-plane magnetic field hints to the importance of the electronic spin. These curious findings were subsequently theoretically explained by Punnoose and Finkelstein [110] in an analysis based on Eqs. (1.28) for the case of Coulomb interaction $\gamma_{\rho}=-1$ and Cooper repulsion $\gamma_{c}>0$ (then $\gamma_{c} \rightarrow \sqrt{t} \approx 0$ very quickly under RG ). ${ }^{25}$
+
+According to the RG-equations, the resistance initially increases at small $\gamma_{t}$ (insulating behavior due to AA and WL effects). However, $\gamma_{t}>0$ increases itself under RG (an effect missed in perturbation theory) and eventually the antilocalizing " $3 f\left(\gamma_{t}\right)$ "-term in Eq. (1.28b) dominates. This leads to nonmonotonic (and eventually metallic) resistivity curves as in Fig. 1.12) and proves the presence of the
+
+[^0]
+[^0]:    ${ }^{24}$ Recall, that the interaction strength (determined by the dimensionless density parameter $r_{s}$ ) is strong for dilute and weak for dense concentrations respectively.
+    ${ }^{25}$ Actually, for the system under consideration, an additional valley degeneracy $n_{V}=2$ had to be incorporated into Eqs. (1.28) [110]. It does not change the qualitative picture, so I omit it in this introductory review.
+
+delocalized phase. On the other hand at sufficiently strong disorder the system has to be insulating (Anderson localization) and therefore a MIT in between of the two phases has to exist.
+
+The above theory has two important drawbacks: First, as usual, being perturbative in $t$ it can not treat the region of the actual phase transition at the order of $t \sim 1$. Second, and more severely, the above RG-equations imply $\gamma_{t} \rightarrow \infty$ (corresponding to strong spin correlations) at some finite temperature and the theory breaks down. A way out of this dilemma is provided by a two-loop calculation combined with expansion in large valley number $n_{V} \gg 1$ [110].
+
+# 1.5.4 Superconducting transition in amorphous films 
+
+Next, I would like to review the application of the interacting NL $\sigma \mathrm{M}$ to the superconducting transition in disordered materials (I thus consider $\gamma_{c}<0$ in this section). Before doing so, it is beneficial to place the NL $\sigma \mathrm{M}$ treatment in the context of various different theories concerning this problem.
+
+## A quick review
+
+Superconductivity, i.e., the phenomenon of frictionless transport and perfect diamagnetism, is a consequence of long-ranged correlations of the complex order parameter $\Delta(\mathbf{x})$ in a theory of charged particles:
+
+$$
+\langle\Delta(\mathbf{x}) \Delta(0)\rangle \stackrel{x \rightarrow \infty}{\sim} \begin{cases}e^{-x / \xi} & \text { exponential decay in the normal state }(\xi \text { is the correlation length }) \\ \langle\Delta\rangle^{2} & \text { constant in the superconducting state }\end{cases}
+$$
+
+In two spatial dimensions at finite temperature ${ }^{26}$ true long-range order is not possible in view of the Mermin-Wagner theorem. In this case, one resorts to the following weaker definition:
+
+$$
+\langle\Delta(\mathbf{x}) \Delta(0)\rangle \stackrel{x \rightarrow \infty}{\sim} \begin{cases}e^{-x / \xi} & \text { exponential decay in the normal state } \\ 1 / x^{\eta} & \text { algebraic decay }(0<\eta<1) \text { in the superconducting state }\end{cases}
+$$
+
+Typically, the following two sufficient conditions are fulfilled in a superconductor:
+
+1. The modulus of the expectation value $|\langle\Delta(\mathbf{x})\rangle|$ is non-vanishing and (nearly) homogeneous.
+2. Strong phase fluctuations of $\phi=\arg (\langle\Delta(\mathbf{x})\rangle)$ are suppressed due to sufficiently large phase rigidity.
+
+As a consequence of these conditions, two different mechanisms driving the transition between the superconducting and the normal state are often distinguished [111]:
+
+1. The expectation value $\langle\Delta(\mathbf{x})\rangle$ vanishes across the transition.
+2. The expectation value $\langle\Delta(\mathbf{x})\rangle \neq 0$ is locally finite, but the phase rigidity vanishes across the transition.
+
+The first of these two mechanisms is sometimes referred to as "fermionic" scenario. It includes the Bardeen-Cooper-Schrieffer theory and related theories, in particular also the NL $\sigma \mathrm{M}$ treatment. In contrast, in the second "bosonic" mechanism, the phase fluctuations of preformed Cooper pairs drive the transition, typically the fermionic spectrum displays a pseudogap even in the normal state.
+
+[^0]
+[^0]:    ${ }^{26} \ldots$ or in one spatial dimension at zero temperature...
+
+![img-16.jpeg](img-16.jpeg)
+
+Figure 1.13: $R G$-flow of the BKT transition according to Eqs. (1.32). The blue shaded region indicates the basin of attraction for the superconducting state, while the critical end point $\left(K^{*}, z_{v}^{*}\right)=(1,0)$ is indicated by a green dot. Here and in all following $R G$ diagrams, arrows indicate the flow towards the infrared.
+
+A particularly important representative of bosonic theories is the Berezinskii-Kosterlitz-Thouless (BKT) theory [112, 113]. As exposed above, Sec. 1.4.2, the phase degree of freedom corresponds to a Goldstone boson. In view of the Mermin-Wagner theorem exposed in Sec. 1.4.4 one could expect the impossibility of superconductivity in 2D. However, the spontaneous symmetry breaking (SSB) of $\mathbf{U}(1)$ is special: since the manifold of Goldstone bosons is flat the associate NL$\sigma$ M, Eq. (1.16) with $Q=e^{i \phi}$, is not renormalized perturbatively (it is Gaussian). The inclusion of non-perturbative effects (vortices) leads to a two parameter RG [114]:
+
+$$
+\begin{aligned}
+\frac{d K^{-1}}{d y} & =z_{v}^{2} \\
+\frac{d z_{v}}{d y} & =2(1-K) z_{v}
+\end{aligned}
+$$
+
+Here, $K$ is the phase rigidity which enters Eq. (1.16) by replacing $1 /(16 t) \rightarrow K$. Inside the vortex core the kinetic energy diverges, its regularized contribution is encoded in the second parameter of scaling, namely the Boltzmann weight ("fugacity") $z_{v} \ll 1$ of the vortices. The RG equations imply a line of attractive points $K>1, z_{v}=0$ corresponding to the superconducting state. This line ends in the BKT transition point $\left(K^{*}, z_{v}^{*}\right)=(1,0)$, see Fig. 1.13.
+
+In the following I will return to the fermionic mechanism and the review of RG in the interacting, diffusive NL$\sigma$ M. Chap. 7 will be devoted to the connection between fermionic and bosonic scenarios.
+
+# Suppression of $T_{c}$ in the presence of Coulomb interaction 
+
+The transition temperature $T_{c}$ of superconductivity corresponds to the running scale $y_{c}$ at which the Cooper channel coupling constant $\gamma_{c}$ diverges. Here, I focus on the case of Coulomb interaction ( $\gamma_{\rho}=$ -1 ) and negligible triplet channel $\gamma_{t} \approx 0[98,115,116]$. When $T_{c}$ does not differ too much from the
+
+clean mean field temperature $T_{B C S}$ it is justified to solve Eq. (1.28d) at given fixed $t$. The solution
+
+$$
+\gamma_{c}(y)=\frac{t}{8}+\frac{\sqrt{\frac{t}{4}+\left(\frac{t}{8}\right)^{2}}}{\tanh \left[\sqrt{\frac{t}{4}+\left(\frac{t}{8}\right)^{2}} 2\left(y-y_{c}\right)\right]}
+$$
+
+has to obey the boundary condition $\gamma_{c}(0) \equiv \gamma_{c}^{(0)}=\frac{1}{\ln T_{B C S} T}$ leading to
+
+$$
+\frac{T_{c}}{T_{B C S}}=e^{-\frac{t}{\gamma_{c}^{(0)}}}\left(\frac{1+\frac{\sqrt{t} / 2}{\gamma_{c}^{(0)}-t / 8}}{1-\frac{\sqrt{t} / 2}{\gamma_{c}^{(0)}-t / 8}}\right)^{\frac{1}{\sqrt{t}}}
+$$
+
+and thus to suppression of $T_{c}$. This formula is in nice agreement with experimental data [115].
+
+# Enhancement of $T_{c}$ in the presence of short-range interaction 
+
+Equally, it is very instructive to consider the limit of short-range interaction and strong disorder for Eqs. (1.28) [105]. Then $\left|\gamma_{i}^{(0)}\right| \equiv \gamma_{i}(0) \ll t^{(0)} \equiv t(0) \ll 1$ at the UV scale and all interaction corrections to the resistance can be neglected. Similarly, Eqs. (1.28b)-(1.28d) can be linearized keeping as the only non-linearity the clean term $-2 \gamma_{c}$ (Cooper instability). It is smaller than the linear terms, and therefore omitted in the first part of a two-step RG. In this first step the system quickly (at RG scale $y \sim 1$ ) adjusts to $-\gamma_{\rho}=\gamma_{t}=\gamma_{c}$. In the subsequent second RG step, these couplings suffice
+
+$$
+\frac{d \gamma_{c}}{d y}=2 t \gamma_{c}-2 \gamma_{c}^{2} / 3
+$$
+
+Now there is a trade-off: when $\gamma_{i}^{(0)} \ll\left(t^{(0)}\right)^{2} \forall i=s, t, c$ the system flows to an insulator before any instability can occur. Contrary, if $\left(t^{(0)}\right)^{2},\left|\gamma_{s, t}\right| \ll\left|\gamma_{c}\right| \ll t^{(0)}$ the instability occurs before localization. Again the scale of divergence dictates the transition temperature
+
+$$
+\frac{T_{c}}{T_{B C S}} \sim e^{-\frac{1}{\gamma_{c}^{(0)}} e^{-\frac{2}{t^{(0)}}\left(i-\frac{\gamma^{(0)}}{l\left(\rho_{c}\right)}\right)}
+$$
+
+Note that, because of the condition $-\gamma_{c}^{(0)} \ll t^{(0)}$ the first exponential dominates and leads to enhancement for $T_{c}$. The physical mechanism behind this phenomenon is wavefunction multifractality, which leads to an enhancement of matrix elements of interaction.
+
+
+
+
+# Chapter 2 
+
+## Fundamentals: Topological Insulators
+
+## What are topological insulators?
+
+A $d$-dimensional topological insulator, in the sense in which I will use it in this thesis, has the following defining characteristics:
+
+- A mobility gap in the $d$-dimensional bulk and simultaneous presence of ...
+- ... $(d-1)$-dimensional boundary states ...
+- ... which are topologically protected from Anderson localization. ${ }^{1}$
+
+Topological protection means stability against not too strong disorder and interparticle interactions. This definition shall be explained in more detail in this chapter.
+
+### 2.1 A prototype for topological insulators: The quantum Hall effect
+
+The prototypical example of a topological insulator was already discovered back in 1980. In von Klitzing's famous experiment [16], the 2DES created in a Silicon field effect transistor was subjected to a strong magnetic field (nearly 20 Tesla) and the transverse resistivity was measured as a function of carrier density. In contrast to the classical Hall resistivity, which is inversely proportional to the carrier density, a series of steps corresponding to
+
+$$
+\sigma_{x y}=n e^{2} / h ; n \in \mathbb{N}
+$$
+
+was observed. At the plateaux of quantized Hall conductivity, the longitudinal conductance was virtually vanishing. The very first experiment was already sufficiently precise to determine the fine structure constant $\alpha$ of quantum electrodynamics (QED) with an accuracy of about 1 part per million. ${ }^{2}$
+
+The astonishing precision and robustness of quantization in a macroscopic and impure solid state system immediately called for theoretical explanations. All of the successful explanations are based on topological aspects and a (mobility) gap and are interrelated. I will summarize them here as they form a basis for theories on modern topological insulators. ${ }^{3}$
+
+[^0]
+[^0]:    ${ }^{1}$ The last defining property applies only to the case $d \geq 2$.
+    ${ }^{2}$ The value for the speed of light was taken from other publications. By that time the speed of light was not yet a defined constant of the SI system.
+    ${ }^{3}$ The QHE has a strongly interacting counterpart, the fractional QHE. For the present thesis an overview of strongly
+
+# 2 Fundamentals: Topological Insulators 
+
+Chern number and TKNN invariant A valid theoretical description for the (potentially disordered) quantum mechanical system of the 2DES in magnetic field places the system on a torus by assigning (twisted) periodic boundary conditions. The components of in-plane electric field $E_{i}$ define further boundary phases $\theta_{i}$. Then the wavefunctions of the problem correspond to sections of a principal $\mathbf{U}(1)$ bundle defined over the the torus $\mathbb{T}^{2} \ni\left(\theta_{1}, \theta_{2}\right)$. It turns out that the linear response Hall conductivity coincides with the first Chern class of this bundle [117, 118] (see Secs. 2.2.1,2.4.1).
+
+In an older variant of this argumentation, the clean system in the presence of a periodic potential was considered and the (potentially fractional) Hall conductance was related to the Chern class of a $\mathbf{U}(1)$-bundle over the Brillouin zone [17]. Fibre bundles are reviewed in Sec. 2.2.1 and clean TI with a periodic potential in Sec. 2.4.1.
+
+Edge states Another important paradigm is the appearance of gapless edge states at the boundary of QHE or more generally of TI samples (see the definition in the beginning of this chapter). The quantized Hall resistance can be explained by means of an integer number of non-localizable chiral edge channels. I will return to the issue of fermionic zero modes below, Sec. 2.2.3, and comment on the topological aspects, Sec. 2.2.2.
+
+Flux insertion In a (gedanken) experiment the QHE system is placed on a Corbino disc. The central hole is pierced by a solenoidal flux which is adiabatically increased by one flux quantum. Then there is a charge $Q=\sigma_{x y} h / e$ transferred from the outer to the inner perimeter. Therefore charge quantization implies a quantization of Hall conductivity [119] reproducing Eq. (2.1). The topological ingredient in this argument is (again) a $\mathbf{U}(1)$ gauge theory (principle bundle) over a manifold which is not simply connected. I will return to flux insertion arguments below in Sec. 6.2.
+
+Topological field theory (TFT) of disordered electrons The major technical tool in the present thesis involves the field theory of disordered conductors, the $\mathrm{NL} \sigma \mathrm{M}$. As was first realized by Levine, Libby, and Pruisken [24] in the context of the QHE, such field theories allow for topological terms. I will explain more details about such field theories and the origin of Hall quantization below, Sec. 2.4.2 and Chap. 6.
+
+TFT of electromagnetic fields Finally, the phenomenon of QHE can be described by means of Chern-Simons (CS) theories of electromagnetic gauge potentials. The concept of TFT of gauge potentials can be generalized to modern topological insulators as well [4], see Secs. 2.4.3 and 2.4.5. The intimately related quantum field theoretical anomalies are reviewed in Sec. 2.3.
+
+### 2.2 Index theorems
+
+In this digression, I first review basic notions from differential geometry. Then I present the AtiyahSinger (AS) index theorem, which is crucial for the understanding of the LL eigenstates of 3D TI surface states. The very appearence of surface states is a consequence of the Callias-Bott-Seeley index theorem, Sec. 2.2.2. Quantum field theoretical anomalies are intimately related to the index theorems and are important for the understanding of topological protection from localization.
+
+[^0]
+[^0]:    interacting topological states is not needed. I will thus omit the discussion of topologically ordered states, symmetry protected topological order, group cohomology and topological Kondo insulators.
+
+# 2.2.1 Atiyah-Singer index theorem 
+
+The AS index theorem [120, 121] ("even-dimensional index theorem") relates the analytical index of a differential operator to the topological index of the fibre bundle where its eigenfunctions live.
+
+Topological index: the theory of fibre bundles Gauge theories correspond mathematically to the theory of principle fibre bundles. Leaving most details to standard textbooks [122, 123] I here repeat that a fibre bundle with total space $E$ is a manifold, which locally resembles the Cartesian product of two manifolds: the base manifold $M$ and the typical fibre $F$. This is formally achieved by means of the local trivialization which lives on a certain chart of the base manifold. Coordinate changes between local trivializations of different, overlapping charts are accomplished by means of the transition functions. The latter take values in the structure group G of the bundle. A fibre bundle is equipped with a projection $\pi: E \rightarrow M$ whereas a section is a smooth map $s: M \rightarrow E$ satisfying $\pi \circ s=\mathrm{id}_{M}$. A vector bundle (principle bundle) is a fibre bundle whose typical fibre is a vector space (the structure group). It is possible to construct an associated vector bundle to each principle bundle and vice versa. Elements of principle bundles can be parallelly transported along curves on $M$ by means of the connection one-form $\mathcal{A}=-i q A_{\mu} d x^{\mu}$, which corresponds to the gauge potential in physics. The curvature two-form $\mathcal{F}=-i q F_{\mu \nu} d x^{\mu} d x^{\nu}$ characterizing the bundle's geometry is called field strength tensor in gauge theories. ${ }^{4}$
+
+Of course, in general there are many inequivalent ways to construct fibre bundles from two given manifolds $M$ and $F$. They can be classified by means of their "twist" in the transition functions. For principle bundles these topological properties are encoded geometrically in $\mathcal{F}$. Among all topological quantities Chern class, Pontryagin class, Euler class, etc. I would like to draw the attention on the Chern character (suitable for complex vector bundles)
+
+$$
+\operatorname{ch}(\mathcal{F})=\sum_{j} \operatorname{ch}_{j}(\mathcal{F})=\sum_{j} \frac{1}{j!} \operatorname{tr}\left(\frac{i \mathcal{F}}{2 \pi}\right)^{j}
+$$
+
+For concreteness, I would like to consider the $(D \in 2 \mathbb{N})$-dimensional sphere as base manifold $M$. Then the integral $\int_{M} \operatorname{ch}_{D / 2}(\mathcal{F})$ is topologically quantized and determined by different homotopy classes of the $(D-1)$ st homotopy group of the gauge group G. ${ }^{5}$
+
+Since Chern characters are closed forms, they are also locally exact
+
+$$
+c h_{j}(\mathcal{F}) \stackrel{\text { locally }}{=} d Q_{2 j-1}(\mathcal{A}, \mathcal{F})
+$$
+
+The $(2 j-1)$-form $Q_{2 j-1}$ is called Chern-Simons form. Written out in three dimensions
+
+$$
+\int_{M} Q_{3}=\frac{1}{8 \pi^{2}} \epsilon^{\mu \nu \rho} \int_{M} \operatorname{tr} \mathcal{A}_{\mu} \partial_{\nu} \mathcal{A}_{\rho}+\frac{2}{3} \mathcal{A}_{\mu} \mathcal{A}_{\nu} \mathcal{A}_{\rho}
+$$
+
+[^0]
+[^0]:    ${ }^{4}$ In the geometrical notation, both the charge $\varphi$ and an imaginary unit are absorbed into the gauge potential.
+    ${ }^{5}$ For the calculation of the integral, select two charts (e.g. northern and southern hemisphere) of the base manifolds which intersect on a thin hyperring $\mathbb{S}^{D-1} \times(-\epsilon, \epsilon)$. The smooth gauge potentials from northern and southern hemisphere are related by transition functions $t_{N S}: \mathbb{S}^{D-1} \times(-\epsilon, \epsilon) \rightarrow G$ on the equator. It turns out that the value of the integral is determined by the winding of this mapping only (recall that $\operatorname{ch}_{j}(\mathcal{F})$ is a total derivative in coordinate representation).
+
+Analytical index of a differential operator Consider a differential operator $\mathcal{D}$, say the Hamiltonian acting on wave functions $\Psi(\mathbf{x})(\mathbf{x} \in M)$. Mathematically, the differential operator is a mapping
+
+$$
+\mathcal{D}: \Gamma(M, E) \rightarrow \Gamma(M, F)
+$$
+
+where $E$ and $F$ are vectorbundles over $M . \Psi \in \Gamma(M, E)$ can be considered as sections of these vectorbundles. Then the index of $\mathcal{D}$ is defined by means of the adjoint map ${ }^{6}$
+
+$$
+\mathcal{D}^{\dagger}: \Gamma(M, F) \rightarrow \Gamma(M, E)
+$$
+
+as
+
+$$
+\operatorname{ind} \mathcal{D}=\operatorname{dim} \operatorname{ker} \mathcal{D}-\operatorname{dim} \operatorname{ker} \mathcal{D}^{\dagger}
+$$
+
+A physically particularly important example is constituted by the twisted spin bundle and massless Dirac particles in $D \in 2 \mathbb{N}$ dimensional space-time. Due to chiral symmetry the Dirac operator can be written as a block off-diagonal matrix in Weyl representation ${ }^{7}$
+
+$$
+i \mathcal{D}_{\mu} \gamma^{\mu}=i \mathcal{D}=\left(\begin{array}{cc}
+0 & \mathcal{D}^{\dagger} \\
+\mathcal{D} & 0
+\end{array}\right)
+$$
+
+( $\mathcal{D}_{\mu}$ are covariant derivatives containing the gauge potential $\mathcal{A}$ of the gauge group $\mathbf{G}$ and the spin connection $\omega$ for non-flat base manifold.) Mathematically, wave functions (or fields) $\Psi_{ \pm}$of chirality $\pm 1$ are sections of different product bundles $\Delta^{ \pm}(M) \otimes A$ ( $A$ is an associated vector bundle to the principle bundle $P(M, G))$. Then
+
+$$
+\operatorname{ind} \mathcal{D}=\nu_{+}-\nu_{-}
+$$
+
+where $\nu_{+}\left(\nu_{-}\right)$denotes the number of zero modes of positive (negative) chirality.
+Atiyah-Singer index theorem The AS index theorem for $D$-dimensional base manifolds is
+
+$$
+\operatorname{ind} \mathcal{D}=\nu_{+}-\nu_{-}=\int_{M} \hat{A}(\mathcal{R}) \operatorname{ch}(\mathcal{F})
+$$
+
+In the simplest case of flat spaces (tori or compactified $\mathbb{R}^{D}$ ) the Dirac genus $\hat{A}(\mathcal{R})$ is trivially unity ( $\mathcal{R}$ is the curvature two-form of the base manifold). An important consequence of this theorem for the present thesis is given in the full spin polarization of the zeroth LL in 3D TI surface states, see Tab. 2.2. An idea of the "physicist's proof" will be given in Sec. 2.3.2. I will return to Eq. (2.10) in the context of the parity anomaly, Secs. 2.3.3 and 6.3.1.
+
+# 2.2.2 Callias-Bott-Seeley Index theorem 
+
+The Callias-Bott-Seeley index theorem [14, 15] is the odd-dimensional counterpart of the Atiyah-Singer theorem. It relates the disbalance of zero modes with opposite chirality to the winding number of a bosonic background field at infinity.
+
+Consider the following Dirac equation in $d+1$ space-time dimensions ( $d$ odd)
+
+$$
+\left[\boldsymbol{\Pi}_{i} \alpha^{i}+\beta \Phi(\mathbf{x})\right] \Psi=i \partial_{i} \Psi
+$$
+
+[^0]
+[^0]:    ${ }^{6}$ The adjoint is defined by a means of the scalar product of wavefunctions.
+    ${ }^{7}$ In this representation $\gamma_{5}=\operatorname{diag}(1,-1)$ and projectors $\left(1+\gamma_{5}\right) / 2\left(\left(1-\gamma_{5}\right) / 2\right)$ project on positive (negative) chirality.
+
+Here and in the rest of this thesis, $\boldsymbol{\Pi}_{i}=-i \partial_{i}-q A_{i}(\mathbf{x})$ denotes the kinetic momentum operator. The background gauge potential $A_{i}$ and the background "Higgs"-field $\Phi$ are $m \times m$ hermitian matrices, $\Psi$ is a $2 p m$-component spinor with $p=2^{(d-1) / 2}$. The following $2 p \times 2 p$ block off-diagonal matrices enter the Dirac equation (2.11)
+
+$$
+\alpha_{i}=\left(\begin{array}{cc}
+0 & \delta^{i} \\
+\delta^{i} & 0
+\end{array}\right) \text { and } \beta=\left(\begin{array}{cc}
+0 & -i \mathbf{1}_{p} \\
+i \mathbf{1}_{p} & 0
+\end{array}\right)
+$$
+
+The $\delta^{i}$ s fulfil the Clifford algebra $\left\{\delta^{i}, \delta^{j}\right\}=2 \delta_{i j} \mathbf{1}_{p}$. Then Eq. (2.11) takes the form
+
+$$
+-\left(\begin{array}{cc}
+0 & L^{\dagger} \\
+L & 0
+\end{array}\right) \Psi=E \Psi
+$$
+
+with $L^{\dagger}=-\boldsymbol{\Pi}_{i} \delta^{i}+i \Phi$. Under the assumption, that $A_{i}$ vanish at infinity where matrix elements of $\Phi$ approach homogeneous functions of order zero, ${ }^{8}$ the Callias-Bott-Seeley index theorem states that
+
+$$
+\operatorname{ind}(L)=\nu_{+}-\nu_{-}=-\frac{1}{2\left(\frac{d-1}{2}\right)!}\left(\frac{i}{8 \pi}\right)^{\frac{d-1}{2}} \lim _{|\mathbf{x}| \rightarrow \infty} \int_{S_{|\mathbf{x}|}^{d-1}} \operatorname{tr}\left[U(\mathbf{x})(d U(\mathbf{x}))^{d-1}\right]
+$$
+
+In this equation the following hermitian unitary matrix $U=|\Phi(\mathbf{x})|^{-1} \Phi(\mathbf{x})$ with $|\Phi|=\left(\Phi^{\dagger} \Phi\right)^{1 / 2}$ was introduced.
+
+# 2.2.3 Fermionic zero modes in a soliton background 
+
+The appearance of topological surface states in condensed matter setups is a direct consequence of the Callias-Bott-Seeley index theorem. One of the most often quoted Hamiltonians in the context of TIs is the Bernevig-Hughes-Zhang (or simply: Dirac) Hamiltonian which is a $4 \times 4$ matrix in the space spanned by two sets of Pauli matrices $\sigma_{\mu} \otimes \tau_{\mu}$. It describes the effective band structure of both 2D and 3D TR invariant TI:
+
+$$
+H_{M(z)}=v_{0} \boldsymbol{\Pi}_{i} \sigma_{i} \tau_{x}+M(z) \tau_{z}
+$$
+
+The Hamiltonian anticommutes ${ }^{9}$ with $\tau_{y}$ and thus the spectrum is invariant with respect to reflection about zero energy $E=0$. The role of "Higgs" background field is played by the spatially dependent mass $M(z) \otimes \mathbf{1}_{\sigma}$, the interface of a TI and a trivial insulator is defined to be where $M(z)$ changes sign. For simplicity, spatially constant mass $M$ of equal modulus inside the bulk of the two insulators is assumed. For concreteness I choose $M(z) \xrightarrow{|z| \rightarrow \infty} \operatorname{sign}(z) M_{\infty}$. Applying the Callias-Bott-Seeley theorem (2.14) to this effectively one-dimensional problem yields
+
+$$
+\nu_{-}-\nu_{+}=\frac{1}{2} \lim _{|z| \rightarrow \infty} \operatorname{tr}^{(\sigma)}\left[\frac{M(|z|)}{|M(|z|)|}-\frac{M(-|z|)}{|M(-|z|)|}\right]=2
+$$
+
+Thus at the interface between topological and trivial insulators, there are at least two zero modes, the number two stems from degeneracy in $\sigma$ space.
+
+[^0]
+[^0]:    ${ }^{8}$ This means $\Phi_{\alpha \beta}(\mathbf{x}) \stackrel{|x| \rightarrow \infty}{\sim} \Phi_{\alpha \beta}(\alpha \mathbf{x})$ for $\alpha \in \mathbb{R}$.
+    ${ }^{9}$ Hence, it can be brought to the off-diagonal form Eq. (2.13).
+
+In this thesis the focus lies on disordered TIs. The Callias-Bott-Seeley index of Hamiltonian (2.15) supplemented with impurity potentials can be expected to be given by Eq. (2.16) whenever average and variance of random potentials are small as compared to $M_{\infty}$.
+
+Zero energy solution To find zero modes of the clean Hamiltonian (2.15) I define the function $m(z)$ such that $v_{0} \partial_{z} m(z)=M(z)$ and $v_{0} m(z) \xrightarrow{|z| \rightarrow \infty}|z| M_{\infty}$. Using the Ansatz for the wavefunction
+
+$$
+u_{0}(x, y, z)=e^{-m(z) \sigma_{z} \tau_{y}} \Psi(x, y)=\left[e^{m(z)} \frac{1-\sigma_{z} \tau_{y}}{2}+e^{-m(z)} \frac{1+\sigma_{z} \tau_{y}}{2}\right] \Psi(x, y)
+$$
+
+one obtains for the Dirac equation without gauge potentials
+
+$$
+H_{M(z)} u_{0}=E u_{0} \Rightarrow v_{0}(\sigma \cdot \mathbf{p}) \tau_{x} \Psi(x, y)=E \Psi(x, y)
+$$
+
+The effective eigenvalue equation involves a massless Dirac Hamiltonian with spectrum $E(\mathbf{p})=v_{0}|\mathbf{p}|$ where $\mathbf{p}$ is the 2 D momentum. However, the associated zero energy solution is not always normalizable. Integration in $z$-direction requires ${ }^{10}$
+
+$$
+\frac{1-\sigma_{z} \tau_{y}}{2} \Psi=0, \text { if } M_{\infty}>0, \text { or } \frac{1+\sigma_{z} \tau_{y}}{2} \Psi=0, \text { if } M_{\infty}<0
+$$
+
+Thus the zero energy solution contains only half of the degrees of freedom [it has given chirality because of Eq. (2.14)]. In the simplest case considered here, it is localized right at the interface (kink position), however, the Callias-Bott-Seeley theorem ensures its presence even for more complicated problems. In condensed matter physics, the appearance of zero modes on the boundary of topological insulators is called bulk-boundary correspondance [11-13].
+
+Effective low-energy Hamiltonian In this thesis, the bulkstates and the dispersion in $z$ direction are neglected altogether for all problems related to 3D TI surface states. This is justified, as energies $|E| \ll\left|M_{\infty}\right|$ are considered. In the case $M_{\infty}>0$ the normalization condition enforces
+
+$$
+\Psi(\mathbf{x})=\left(\psi(\mathbf{x}), i \sigma_{z} \psi(\mathbf{x})\right)^{T}
+$$
+
+Here, the wavefunction $\psi(\mathbf{x})$ is a two-spinor in $\sigma$-space. By consequence, the Schrödinger equation becomes
+
+$$
+H_{0} \psi=E \psi
+$$
+
+The surface state Hamiltonian is
+
+$$
+H_{0}=v_{0} \boldsymbol{\Pi} \wedge \sigma
+$$
+
+I restored the gauge potentials $A_{x, y}(x, y)$, which do alter the physics in $z$-direction responsible for appearance of the zero modes. More details on the zero modes in strong magnetic field can be found in Chap. 6.1.1. I use the notation $\mathbf{a} \wedge \mathbf{b}=\epsilon_{i j} a_{i} b_{j}$.
+
+[^0]
+[^0]:    ${ }^{10}$ I assume polynomial dependence of $\Psi(x, y, z)$ on $z$ for $|z| \rightarrow \infty$.
+
+Fractional fermion number The fact that the normalization condition removes half of the degrees of freedom can also be regarded as a manifestation of fermion number fractionalization [124, 125], a phenomenon intimately connected with the Callias-Bott-Seeley theorem [126]. To show this, I will need the following identity. It is based on chiral symmetry and the completeness of eigenstates $\left\{\Psi_{E}^{t o p}\right\}$ $\left(\left\{\Psi_{E}^{\text {tric }}\right\}\right)$ of $H_{m(z)}$, Eq. (2.15), for a topological (trivial) interface: ${ }^{11}$
+
+$$
+\begin{aligned}
+0 & =\left(\sum_{d_{-\infty}}^{0^{-}} d E\left|\Psi_{E}^{t o p}(\mathbf{x})\right|^{2}+\left|u_{0}(\mathbf{x})\right|^{2}+\sum_{d_{0}^{+}}^{+\infty} d E\left|\Psi_{E}^{t o p}(\mathbf{x})\right|^{2}\right)-\sum_{d_{-\infty}}^{+\infty} d E\left|\Psi_{E}^{\text {tric }}(\mathbf{x})\right|^{2} \\
+& \stackrel{\left\{H_{\cdot} \tau_{2}\right\}=0}{=} 2\left[\sum_{d_{-\infty}}^{0^{-}} d E\left(\left|\Psi_{E}^{t o p}(\mathbf{x})\right|^{2}-\left|\Psi_{E}^{\text {tric. }}(\mathbf{x})\right|^{2}\right)+\frac{\left|u_{0}(\mathbf{x})\right|^{2}}{2}\right]
+\end{aligned}
+$$
+
+Then one can calculate the relative fermion number comparing topological and non-topological situation:
+
+$$
+N \equiv \int d^{d} x \sum_{d_{-\infty}}^{0^{-}} d E\left(\left|\Psi_{E}^{t o p}(\mathbf{x})\right|^{2}-\left|\Psi_{E}^{\text {tric. }}(\mathbf{x})\right|^{2}\right)=-\frac{1}{2} \int d^{d} x\left|u_{0}(\mathbf{x})\right|^{2}=-\frac{1}{2}
+$$
+
+In the presence of a background magnetic field $B_{z} \neq 0$ there is an additional factor $\frac{\Phi}{\Phi_{0}}=\frac{B_{z} A e}{h}$ reflecting the degeneracy zero modes. I obtain the same result also by means of a completely different method, Sec. 2.5.3. The Smrcka-Streda formula [127] relates the particle density to transverse conductivity and thus the fermion number fractionalization is at the heart of the half-integer QHE of Dirac fermions (see Sec. 6.1.1).
+
+# 2.3 Quantum field theoretical anomalies 
+
+The notion "quantum field theoretical anomaly" is used if a symmetry of a classical Lagrangian is unevitably lost upon quantization of the theory.
+
+### 2.3.1 Perturbation theory anomalies
+
+The most prominent examples of anomalies are the Schwinger [128] and Adler-Bell-Jackiw [129, 130] anomalies in $D=2$ and $D=4$ space-time dimensions respectively. They concern the theory of massless Dirac fermions coupled to gauge potentials:
+
+$$
+S_{k i n}=\int_{\mathbf{x}} \bar{\psi}(-i \mathcal{D}) \psi=\int_{\mathbf{x}} \bar{\psi}\left(\begin{array}{cc}
+0 & -\mathcal{D}_{-} \\
+\mathcal{D}_{+} & 0
+\end{array}\right) \psi
+$$
+
+Following the Hamiltonian (2.22) we choose $\gamma^{(1)}=\sigma_{y}, \gamma^{(2)}=-\sigma_{x}$ and $\gamma_{5}=\sigma_{z}$ in the case $D=2$. In view of chiral symmetry, the vector and axial vector currents
+
+$$
+j_{a}^{\mu}=\bar{\psi} \gamma^{\mu} T_{a} \psi \text { and } j_{a, 5}^{\mu}=\bar{\psi} \gamma^{\mu} \gamma_{5} T_{a} \psi
+$$
+
+are both classically conserved (Noether theorem). The letter $a$ labels generators $T_{a}$ of the gauge group. However, this statement does not hold in the quantized theory. In view of the anomalous diagrams
+
+[^0]
+[^0]:    ${ }^{11} \mathrm{~A}$ trivial interface has by definition Callias index zero.
+
+![img-17.jpeg](img-17.jpeg)
+
+Figure 2.1: Diagrams responsible for the chiral anomaly in $D=2$ (left) and $D=4$ (right).
+displayed in Fig. 2.1 the anomalous Ward identities for singlet currents are $\left(j_{a, 5}^{\mu} \equiv j_{5}^{\mu}\right.$ for $\left.T_{a}=\mathbf{1}\right)$
+
+$$
+\begin{array}{ll}
+\left\langle\partial_{\mu} j_{5}^{\mu}\right\rangle_{A}=\frac{i q}{2 \pi} e^{\mu \nu} \operatorname{tr} F_{\mu \nu} & \text { "Axial anomaly" for } D=2 \\
+\left\langle\partial_{\mu} j_{5}^{\mu}\right\rangle_{A}=i\left(\frac{q}{4 \pi}\right)^{2} e^{\mu \nu \rho \sigma} \operatorname{tr} F_{\mu \nu} F_{\rho \sigma} & \text { "Axial anomaly" for } D=4
+\end{array}
+$$
+
+The symbol $\langle\ldots\rangle_{A}$ denotes quantum average at fixed background gauge potential. The factors of $i$ disappear in Minkowski space time.
+
+# 2.3.2 Path-integral: Fujikawa method 
+
+Perturbation theory anomalies (Fig. 2.1) are intimately connected to the Atiyah-Singer index theorem, Eq. (2.10). Consider the Euclidean path integral formulation of the QFT with action (2.25). In the general case particles of opposite chirality couple differently to gauge potentials
+
+$$
+\begin{aligned}
+\mathcal{D}_{-} & =\partial_{-}-i q_{-} A_{-} \\
+\mathcal{D}_{+} & =\partial_{-}-i q_{+} A_{+}
+\end{aligned}
+$$
+
+(For any vectors $\mathbf{v}$ I use $v_{ \pm}=v_{x} \pm i v_{y}$.) Under an infinitesimal local chiral rotation
+
+$$
+\psi \rightarrow \psi^{\prime}=e^{i \gamma_{5} \alpha(\mathbf{x}) T_{a}} \psi \text { and } \bar{\psi}^{\prime}=\bar{\psi} \rightarrow \bar{\psi} e^{i \gamma_{5} \alpha(\mathbf{x}) T_{a}}
+$$
+
+the action changes by
+
+$$
+S[\bar{\psi}, \psi] \rightarrow S\left[\bar{\psi}^{\prime}, \psi^{\prime}\right]=S[\bar{\psi}, \psi]-\int_{\mathbf{x}} \frac{\alpha_{a}}{2}\left(D_{-}^{a b} j_{b, 5}^{(+)}+D_{+}^{a b} j_{b, 5}^{(-)}\right)
+$$
+
+The covariant derivative $D_{+}^{a b}=\delta_{a b} \partial_{ \pm}+q f_{a c b} A_{ \pm}^{c}\left(\left[T_{a}, T_{b}\right]=i f_{a b c} T_{c}\right)$ becomes the usual partial derivative for trivial $T_{a}=\mathbf{1}$. At the same time the measure of the path integral also changes
+
+$$
+\mathcal{D}[\bar{\psi}, \psi] \rightarrow \mathcal{D}\left[\bar{\psi}^{\prime}, \psi^{\prime}\right]=\mathcal{D}[\bar{\psi}, \psi] \mathcal{J}_{5}
+$$
+
+by the Jacobian
+
+$$
+\ln \mathcal{J}_{5}=-2 i \lim _{M \rightarrow \infty} \int_{\mathbf{x}} \alpha(\mathbf{x}) \sum_{m} \chi_{m}^{i}(\mathbf{x}) T_{a} \gamma_{5} e^{-\frac{(-i \mathcal{D})^{2}}{M^{2}}} \phi_{m}(\mathbf{x}) \stackrel{D=2}{=} \frac{i}{2 \pi} \int_{\mathbf{x}} \alpha \operatorname{tr} T_{a}\left[\mathcal{D}_{+}, \mathcal{D}_{-}\right]
+$$
+
+The orthonormal right (left) eigenfunctions $\phi_{m}(\mathbf{x})\left(\chi_{m}^{\dagger}(\mathbf{x})\right)$ of $-i \mathcal{D}$ were introduced, they are hermitian conjugates for $q_{+}=q_{-}$. The Jacobian is evaluated by the standard heat-kernel regularization [20, 122, 131, 132]. In the simplest case, where $q_{+}=q_{-}$and $T_{a}=\mathbf{1}$, one can exploit the orthonormality
+
+$$
+\int_{\mathbf{x}} \phi_{m}^{\dagger}(\mathbf{x}) \gamma_{5} e^{-\frac{(-i \mathcal{D})^{2}}{\lambda I^{2}}} \phi_{m}(\mathbf{x})=0 \text { for } m \neq 0
+$$
+
+to see that the anomaly stems from the zero modes and the anomalous RHS of Eq. (2.27) is determined by the index $\nu_{+}-\nu_{-}$. The generalized version of the 2D anomalous Ward-identities is
+
+$$
+\frac{1}{2}\left(D_{-}^{a b} j_{b, 5}^{(+)}+D_{+}^{a b} j_{b, 5}^{(-)}\right)=\frac{-i}{2 \pi} \operatorname{tr} T_{a}\left[\mathcal{D}_{+}, \mathcal{D}_{-}\right]
+$$
+
+This formula reproduces Eq. (2.27) in the simplest limit. It further catches another sort of anomaly: The so-called non-Abelian anomaly (or gauge anomaly), occuring in a problem of chiral (Weyl) fermions coupled to gauge potentials (when $q_{+} q_{-}=0$ ).
+
+Generally, anomalies in QFT can be interpreted as a quantum-mechanical uncertainty principle: The gauge and chiral symmetry can not be imposed at the same time, because the operators $-i \mathcal{D}$ and $\gamma_{5}$ do not commute (they can not be diagonalized simultaneously). To have a meaningful theory one needs to preserve gauge invariance and thus chooses to diagonalize $-i \mathcal{D}$ at the expense of $\gamma_{5}$. Indeed the anomaly equals the expectation value of the commutator of the two operators [20, 132].
+
+# 2.3.3 Parity anomaly 
+
+Consider massless Dirac fermions described by the Lagrangian (2.25) in odd dimensional space-time. For concreteness I focus on the $D=3$ dimensional Matsubara action of Hamiltonian (2.22).
+
+$$
+S[\bar{\psi}, \psi]=\int_{\tau, \mathbf{x}} \bar{\psi}\left(D_{\tau}+H_{0}-\mu\right) \psi
+$$
+
+(The long time derivative contains the scalar potential $\Phi, \mu$ is the chemical potential.) Apart from gauge invariance under the gauge group $\mathbf{G}$, the action is invariant under the parity transformation of $(2+1)$ dimensional space-time:
+
+$$
+\begin{aligned}
+(x, y, \tau) & \rightarrow(-x, y, \tau) \\
+\left(A_{x}, A_{y}, \Phi\right) & \rightarrow\left(-A_{x}, A_{y}, \Phi,\right) \\
+\psi & \rightarrow \sigma_{x} \psi \\
+\bar{\psi} & \rightarrow \bar{\psi} \sigma_{x}
+\end{aligned}
+$$
+
+Note that this transformation leaves the Maxwell term invariant. (However, a fixed background $B$-field does not obey this symmetry since $B$ is a pseudoscalar in $D=3$.)
+
+The peculiar fact about $(2+1)$ dimensional gauge theories is that invariance under parity transformation does not always persist to the quantized theory [133-136]. Following Ref. [137] I will however distinguish between "parity anomaly" and "intrinsic parity anomaly", of course both effects are related.
+
+The notion of parity anomaly follows Ref. [133] and arises often in the context of condensed matter physics. It boils down to calculating $\sigma_{x y}$ for the problem of massive $(2+1)$ dimensional Dirac fermions in the absence of any other energy scale. The result is $\sigma_{y x}=\frac{\operatorname{sign}(m) e^{2}}{2} \frac{e^{2}}{h}$. As there is no other energy
+
+scale, the mass $m$ breaks time reversal and parity symmetries on all scales and therefore $\sigma_{x y}(m)$ is discontinuous at $m=0$. One concludes that upon integration of Dirac electrons and subsequent $m \rightarrow 0$ limit the effective gauge theory contains a CS-term with prefactor $\vartheta=\frac{2 \pi h}{e^{2}} \sigma_{y x} \rightarrow \pm \pi$. (See also Sec. 2.4.3, below, for details on the CS-theory.) The notion parity anomaly means that the Lagrangian of fermions coupled to gauge potentials preserves parity upon taking the massless limit, while the effective electrodynamic Lagrangian does not. Not surprisingly, this "anomaly" disappears as soon as another infrared energy scale is introduced. In the example of 3D TIs this can be finite temperature [137], a finite disorder scattering rate [138], or a finite bulk band gap $M_{\infty}$ [139]. Then, $\sigma_{x y}(m)$ becomes a continous function of $m$ and $\sigma_{x y}(0)=0$.
+
+The notion of intrinsic parity anomaly is more subtle. According to the early works [134, 135, 140], which treat the case of strictly massless fermions, in the process of field-quantization one has two options:
+(i) One can choose a regularization scheme in a manner preserving parity. But then the partition function acquires a sign $(-)^{k}$ under large gauge transformations.
+(ii) Alternatively, one can regularize in such a manner to preserve gauge invariance. In this case, a CS-term with angle $\vartheta=\pi(\bmod 2 \pi)$ appears after integration of fermions. The latter breaks parity.
+
+A theory with anomalously broken gauge symmetry is inconsistent, therefore, whenever $(-)^{k} \neq 1$ option (ii) must be chosen. A common variant of these regularization schemes is to use regularization as in (i) and to add the CS 3 -form by hand to the fermionic action [135] when the latter contributes additional factor of $(-)^{k}$ under large gauge transformations.
+
+To proof assertion (i) one needs to unwind the gauge potentials $e A_{n}(\mathbf{x}, \tau)=-i U_{n}^{-1} \nabla U_{n}$ associated to large gauge transformations $U_{n} \in \mathbf{G}$. A fourth dimension (with coordinate $s$ ) is introduced and it can be shown that $k$ equals the analytical index $\nu_{+}-\nu_{-}$of the corresponding four dimensional Dirac operator. For non-Abelian gauge groups with third homotopy group $\Pi_{3}(\mathbf{G})=\mathbb{Z}$ the AS index theorem, Eq. (2.10), immediately implies $k=n$ ( $n$ is the homotopy class of $U_{n}$ ) [134, 135].
+
+The discussion of the parity anomaly in the context of 3D TI surface states can be found in Sec. 6.3.1.
+
+# 2.3.4 Anomalies and Goldstone bosons: The Wess-Zumino action 
+
+One of the most prominent physical realizations of QFT anomalies is the $\pi_{0} \rightarrow \gamma \gamma$ decay in nuclear physics. Pions $\pi$ are pseudoscalar Goldstone bosons associated to the SSB of chiral symmetry. A naïve estimate of their decay rate into photons leads to $\Gamma \sim 10^{13} s^{-1}$ while the experimentally observed rate is three orders of magnitude faster. The theoretical explanation for this enhancement is the anomalous diagram in Fig. 2.1 (right): Since the Pion transmits an axial current, it can be coupled to the triangle diagram at the red vertex $\gamma_{\mu} \gamma_{5}$.
+
+The fate of Goldstone bosens $Q$ (e.g. diffusons and Cooperons, see Sec. 1.4) in anomalous fermionic theories is crucial for the present thesis. Fermions and bosons are coupled via "vector potentials" $Q^{-1} \nabla Q$, this way QFT anomalies lead to additional terms in the NL$\sigma$ M. Here, I briefly discuss the appearance of one of them, the Wess-Zumino (WZ) term. Consider the fermionic action (2.25) supplemented by the term
+
+$$
+S_{d i s}=-i \gamma \int_{\mathbf{x}} \bar{\psi}\left(\begin{array}{cc}
+Q & 0 \\
+0 & Q^{-1}
+\end{array}\right) \psi
+$$
+
+The unitary field $Q(\mathbf{x})$ describes diffusive soft modes on the saddle point manifold in class AIII. This term can be unwinded by
+
+$$
+\psi \rightarrow \psi^{\prime}=\left(\begin{array}{cc}
+Q & 0 \\
+0 & \mathbf{1}
+\end{array}\right) \psi \text { and } \bar{\psi} \rightarrow \bar{\psi}^{\prime}=\bar{\psi}\left(\begin{array}{cc}
+\mathbf{1} & 0 \\
+0 & Q^{-1}
+\end{array}\right)
+$$
+
+However, in view of the anomalous Jacobian, this unwinding is performed by many infinitesimal steps, with an generalized field
+
+$$
+\bar{Q}(\mathbf{x}, s)= \begin{cases}Q(\mathbf{x}), & s=0 \\ \mathbf{1} & s=1\end{cases}
+$$
+
+In the course of unwinding, Goldstone bosons enter the kinetic term of the theory in the described manner as a "vector potential". The accumulation (integration over $s$ ) of infinitesimal Jacobians of the form (2.32) leads to the Wess-Zumino-Novikov-Witten (WZNW) action [132, 141-144]:
+
+$$
+\begin{aligned}
+S_{W Z N W} & =\int_{\mathbf{x}} \frac{1}{2}\left(D_{i} \phi\right)^{2} \\
+& =\int_{\mathbf{x}} \frac{1}{8 \pi} \operatorname{Tr} D_{i} \tilde{U}^{\dagger} D_{i} \tilde{U} \\
+& +\int_{\mathbf{x}, w} \frac{-i}{12 \pi} \epsilon_{i j k} \operatorname{Tr}\left(\tilde{U}^{\dagger} D_{i} \tilde{U}\right)\left(\tilde{U}^{\dagger} D_{j} \tilde{U}\right)\left(\tilde{U}^{\dagger} D_{k} \tilde{U}\right) \\
+& +\int_{\mathbf{x}, w} \frac{i}{8 \pi} \epsilon_{i j k} \operatorname{Tr} F_{i j}\left(\tilde{U}^{\dagger} D_{k} \tilde{U}+D_{k} \tilde{U} \tilde{U}^{\dagger}\right)
+\end{aligned}
+$$
+
+The field $Q$ has been split into a phase $\phi$ and its special unitary part. The symbol $D_{i}$ denotes long derivatives, which are $D_{i}=\partial_{i}-i q A_{i}^{(0)}$ when acting on a scalar field and $D_{i}=\partial_{i}-i q\left[A_{i}, \cdot\right]$ when acting on a matrix field. The meaning of this action and its implication for Anderson localization are discussed in Sec. 2.4.2, below.
+
+# 2.3.5 Descent relation and 't Hooft matching condition 
+
+As I discussed, the chiral anomaly (also axial or Abelian anomaly), Eqs. (2.27), in $D$ (even) dimensions is determined by the Chern character $c h_{D / 2}(\mathcal{F})$ while the $(D-1)$-dimensional parity anomaly reviewed in the preceeding section by the corresponding CS form $Q_{D-1}$. This is not a coincidence, but the first of a series of "descent relations" [20]. The next step in these descent relations relates the parity anomaly to the non-Abelian or "consistent" anomaly which I alluded to in the discussion after Eq. (2.34).
+
+Anomalies can be used to obtain information about the low-energy theory of strongly interacting or disordered fermionic systems. This follows the 't Hooft matching condition [131, 145]. Imagine, for concreteness in the condensed matter setup, a theory of single valley Dirac fermions (for example on the boundary of 2 D or 3 D Tls). Furthermore, assume the theory to be anomalous in some global symmetry group G. For auxiliary purposes, promote this symmetry to a local symmetry and introduce fictitious gauge potentials. Now the theory is inconsistent, but it can be made consistent if a second valley of gauged spectator fermions (e.g. the opposite boundary of the TI) with opposite anomaly is added.
+
+Now interparticle interactions between the original fermions are turned on (spectator fermions remain non-interacting). They might be arbitrarily strong, but for the moment I assume no SSB to occur. At
+
+UV length scales shorter then the mean free path induced by interparticle collisions, the theory is asymptotically free and, as explained, anomalies of original and spectator fermions cancel up.
+
+What is the low-energy theory of the strongly interacting original fermions?
+By construction, the spectators, which are still free at the IR, have an anomaly in the fictitious gauge sector opposite to the anomaly of original particles at the UV. Consistency requires that, whatever the long-wavelength theory of strongly interacting Dirac particles is, it still has to produce the same anomaly as at short length scales. One particular realization is when the IR theory of strongly interacting chiral Dirac fermions equals the UV theory up to renormalization of parameters. This happens to be the case in certain 1D models where "refermionization" technique is applicable.
+
+Similar arguments also lead to constraints on the theory of Goldstone bosons in the case of SSB: Now the original fermions are "trapped", therefore the only massless low-energy excitations, the Goldstone bosons, have to provide the same anomaly as the original fermions.
+
+One can also use such arguments to obtain insights in the fate of Dirac fermions subjected to disorder: If the disorder potential respects the chiral symmetry, then in each disorder realization anomalies occur and by the above argumentation the low-energy theory can still be described by Dirac electrons (in accordance with findings exposed in Sec. 2.5.1). Also in the presence of more general disorder potentials which do not preserve the chiral symmetry, one concludes the presence of some massless, extended excitations at long length scales (otherwise no anomaly can be produced). In the disorder averaged field theory, the NLorM, this role is played by the diffusive Goldstone bosons, which are protected by the presence of topological terms.
+
+# 2.4 Theoretical approaches to topological insulators 
+
+As disorder plays a dominant role in the prototypical TI (the QHE), the classification of TIs is based on the Cartan-Altland-Zirnbauer symmetry classification of disordered systems, see Secs. 1.3 and App. F.
+
+### 2.4.1 Bloch band description
+
+One of the most popular strategies to characterize TIs is by means of the bulk band structure of a clean band insulator $[5,30,31,146-148]$. It is based on the fibre bundle of Bloch states $\left\{\left|u_{\hat{a}}(\mathbf{k})\right\rangle\right\}$ over the toroidal Brillouin zone which shall also be used in the context of the AHE, Sec. 3.2. Consider for concreteness symmetry class A and define the $m+n$ matrix
+
+$$
+Q_{\text {Bloch }}(\mathbf{k})=\sum_{\hat{a}, \text { filled }}\left|u_{\hat{a}}(\mathbf{k})\right\rangle\left\langle u_{\hat{a}}(\mathbf{k})\right|-\sum_{\hat{a}, \text { empty }}\left|u_{\hat{a}}(\mathbf{k})\right\rangle\left\langle u_{\hat{a}}(\mathbf{k})\right|
+$$
+
+Of all Bloch states $m(n)$ are filled (empty) at zero temperature. Note that I here presented a local definition, and locally in the Bloch basis $Q_{\text {Bloch }}(\mathbf{k})=\Lambda \equiv \operatorname{diag}\left(\mathbf{1}_{m},-\mathbf{1}_{n}\right)$. The abstract $Q_{\text {Bloch }}$ is thus locally diagonalized by unitary matrices:
+
+$$
+Q_{\text {Bloch }}(\mathbf{k})=U(\mathbf{k}) \Lambda U(\mathbf{k})^{\dagger} \in \frac{\mathbf{U}(n+m)}{\mathbf{U}(n) \times \mathbf{U}(m)}
+$$
+
+The mapping from the Brillouin zone to the complex Grassmannian manifold
+
+$$
+Q_{\text {Bloch }}: \mathbb{T}^{d} \rightarrow \frac{\mathbf{U}(n+m)}{\mathbf{U}(n) \times \mathbf{U}(m)} ; \mathbf{k} \mapsto Q_{\text {Bloch }}(\mathbf{k})
+$$
+
+| Symmetry class | 1D TI | 2D TI | 3D TI | 4D TI | 5D TI | 6D TI | 7D TI | 8D TI |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| AI | 0 | 0 | 0 | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ |
+| BDI | $\mathbb{Z}$ | 0 | 0 | 0 | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ |
+| BD | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 | 0 | 0 | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ |
+| DIII | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 | 0 | 0 | $2 \mathbb{Z}$ | 0 |
+| AII | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 | 0 | 0 | $2 \mathbb{Z}$ |
+| CII | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 | 0 | 0 |
+| C | 0 | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 | 0 |
+| CI | 0 | 0 | $2 \mathbb{Z}$ | 0 | $\mathbb{Z}_{2}$ | $\mathbb{Z}_{2}$ | $\mathbb{Z}$ | 0 |
+| A | 0 | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ |
+| AIII | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ | 0 | $\mathbb{Z}$ | 0 |
+
+Table 2.1: The periodic table of topological insulators.
+can be topologically classified by means of the stable (for $n, m \rightarrow \infty$ ) homotopy groups of the target manifold. ${ }^{12}$ Repeating this argumentaion for all symmetry classes of disordered systems leads to Tab. 2.1.
+
+More geometrically speaking, in the above construction the band insulator is described by a vector bundle with the Brillouin zone as base manifold and the projective space of occupied states as typical fibre. The gauge group is given by $\mathbf{U}(m)$ in the example of class A. Topologically different insulators correspond to topologically distinct fibre bundles and thus the classification of TIs is equivalent to the classification of vector bundles alluded to in Sec. 2.2.1. Leaving further details to the book [122] and the pedagogical review [149], this is achieved by means of classifying bundles, of which the Grassmannian manifold is an example. The classification of clean TIs with arbitrary number of bands for all Cartan-Altland-Zirnbauer classes can then be obtained using $K$-Theory $[6,150]$. From this theory, the Bott periodicity of 2 (8) for the complex (real) symmetry classes A and AIII (all others) directly follows.
+
+# 2.4.2 Diffusive non-linear sigma models 
+
+Another route for classification of TIs is offered by the field theory of disordered media introduced in Sec. 1.4. It is based on the defining requirement that boundary states of TIs should be protected from Anderson localization [5]. In the NL $\sigma \mathrm{M}$ description the topological protection is manifested by the presence of a WZ or a $\mathbb{Z}_{2}$ theta term (see Secs. 2.3.4 and below for more details). The table 2.1 can be reproduced from the NL $\sigma \mathrm{M}$ perspective by defining
+
+$$
+d \text {-dimensional TI of type }\left\{\begin{array}{l}
+\mathbb{Z} \\
+\mathbb{Z}_{2}
+\end{array}\right\} \stackrel{\text { def }}{\leftrightarrows} \text { boundary NL } \sigma \mathrm{M} \text { contains a }\left\{\begin{array}{c}
+\text { WZNW-term } \\
+\mathbb{Z}_{2} \text {-term }
+\end{array}\right\}
+$$
+
+By consequence, $d$-dimensional $\mathbb{Z}\left(\mathbb{Z}_{2}\right)$ TIs are possible if $\pi_{d}\left(\mathcal{M}_{\sigma}\right)=\mathbb{Z}\left(\pi_{d-1}\left(\mathcal{M}_{\sigma}\right)=\mathbb{Z}_{2}\right)$ for a given symmetry class.
+
+[^0]
+[^0]:    ${ }^{12}$ Actually, the mapping from the torus to the target manifold is richer than the information encoded in the homotopy groups. The topologically non-trivial mappings associated to lower homotopy groups $\pi_{1}, \ldots \pi_{d-1}$ are the origin of weak TIs [149].
+
+![img-18.jpeg](img-18.jpeg)
+
+Figure 2.2: Extension of the base manifold to the lower (left) respectively upper (right) hemisphere. In the picture the physical space is a 1-sphere representing a 2-sphere, and the extension a 2-hemisphere representing the 3-hemisphere. The physical space is the boundary of the hemisphere, here depicted by a black line.
+
+Wess-Zumino-Novikov-Witten terms in $d=2$ For a "principal chiral model", i.e. a 2D NLeM defined on a Lie group $\mathbf{U}(N), \mathbf{O}(N)$ or $\mathbf{S p}(2 N)$, the second homotopy group is trivial but $\pi_{3}\left(\mathcal{M}_{\sigma}\right)=\mathbb{Z}$. This allows for WZ terms, see Eq. (2.40). In the case of $\mathbf{U}(N)$ it is
+
+$$
+i S_{W Z}=\frac{i k}{12 \pi} \int d^{2} x \int_{0}^{1} d s \epsilon_{\mu \nu \lambda} \operatorname{tr}\left(\tilde{Q}^{-1} \partial_{\mu} \tilde{Q}\right)\left(\tilde{Q}^{-1} \partial_{\nu} \tilde{Q}\right)\left(\tilde{Q}^{-1} \partial_{\lambda} \tilde{Q}\right)
+$$
+
+In order to write the WZ term in a manifestly invariant form, the field $Q: \mathbb{S}^{2} \rightarrow \mathbf{U}(N)$ has to be extended to
+
+$$
+\tilde{Q}: \mathbb{S}^{2} \times[0,1] \rightarrow \mathbf{U}(N) \text { s.th. } \tilde{Q}(\mathbf{x}, 1)=\mathbf{1} ; \tilde{Q}(\mathbf{x}, 0)=\tilde{Q}(\mathbf{x})
+$$
+
+This is topologically equivalent to the base manifold being extended from a 2-sphere to a 3-hemisphere of which the the 2-sphere is the boundary (see Fig. 2.2, left). The vanishing homotopy group $\pi_{2}\left(\mathcal{M}_{\sigma}\right)=0$ is a necessary condition.
+
+One could also imagine extensions in the other direction, i.e.
+
+$$
+\tilde{Q}: \mathbb{S}^{2} \times[-1,0] \rightarrow \mathbf{U}(N) \text { s.th. } \tilde{Q}(\mathbf{x}, 0)=\tilde{Q}(\mathbf{x}) ; \tilde{Q}(\mathbf{x},-1)=\mathbf{1}
+$$
+
+and the base manifold is extended to the upper 3-hemisphere (see Fig. 2.2, right). In that case the WZ term (2.45) acquires an extra minus sign, as the orientation of the manifold is inversed.
+The way of extending the base manifold does not matter,
+
+$$
+i S_{W Z}^{s \in[0,1]}-i S_{W Z}^{s \in[-1,0]}=\frac{i k}{12 \pi} \int_{\mathbb{S}^{3}} d^{2} x d s \epsilon_{\mu \nu \lambda} \operatorname{tr}\left(\tilde{Q}^{-1} \partial_{\mu} \tilde{Q}\right)\left(\tilde{Q}^{-1} \partial_{\nu} \tilde{Q}\right)\left(\tilde{Q}^{-1} \partial_{\lambda} \tilde{Q}\right)=i 2 \pi k
+$$
+
+This integral measures the winding of $\tilde{Q}: \mathbb{S}^{3} \rightarrow \mathbf{U}(N)$, see figure (2.3) and consequently provides the topological quantization condition for the WZ-level $k$. It is important to stress that the WZ term itself is not quantized.
+"Local" representation of the WZ term. There is also another representation of the WZ term for which the $Q$-field is not extended. In order to understand its appearance, some notions from differential geometry are used.
+
+For any non-Abelian, simple group G (the target space) there exists a 3 -form $\omega$ which is invariant under group rotations, closed $(d \omega=0)$ and locally exact $\omega=d \lambda$ ( $\lambda$ being a 2 -form). Further let $\tilde{Q}$ be
+
+![img-19.jpeg](img-19.jpeg)
+
+Figure 2.3: The mapping $\tilde{Q}: \mathbb{S}^{3} \rightarrow \mathbb{S}^{3} \subset \mathbf{U}(N)$. The WZNW-level $k$ is the winding number of this mapping.
+the field on the extended base manifold $B$ and $\tilde{Q}^{*}$ denote the pullback of differential forms. ${ }^{13}$ Using the commutativity of exterior derivative with the pullback and Stokes' theorem
+
+$$
+i S_{W Z}:=i 2 \pi k \int_{B} \tilde{Q}^{*} \omega=i 2 \pi k \int_{B} \tilde{Q}^{*} d \lambda=i 2 \pi k \int_{B} d\left(\tilde{Q}^{*} \lambda\right)=i 2 \pi k \int_{\partial B=\mathbb{S}^{2}} Q^{*} \lambda
+$$
+
+With the help of coordinates $\phi_{i}$ on the target manifold, the formula is represented in a less abstract way
+
+$$
+i S_{W Z}=i 2 \pi k \int d^{2} x \epsilon^{\mu \nu} \lambda_{i j}(\phi(\mathbf{x})) \partial_{\mu} \phi^{i} \partial_{\nu} \phi^{j}
+$$
+
+$\left(\lambda_{i j}=\lambda\left(\frac{\partial}{\partial \phi^{i}}, \frac{\partial}{\partial \phi^{j}}\right)\right.$ is the coordinate representation of $\lambda$.) It is of central importance to remark that the local ${ }^{14}$ condition $\omega=d \lambda$ allows only for the local representation (2.46) (therefore the coordinate dependence). A global ${ }^{15}$ rotation of the $Q$-fields produces the following correction to $\lambda_{i j}[86]$
+
+$$
+\lambda_{i j} \rightarrow \lambda_{i j}+\frac{\partial \beta_{j}}{\partial \phi^{i}}-\frac{\partial \beta_{i}}{\partial \phi^{j}}
+$$
+
+(The $\beta(\phi)$ incorporate this rotation and are not explicitly space dependent (only $\phi$ is).) The WZ term is corrected as well
+
+$$
+\delta i S_{W Z}=i 2 \pi k \int d^{2} x \epsilon^{\mu \nu}\left(\frac{\partial \beta_{j}}{\partial \phi^{i}}-\frac{\partial \beta_{i}}{\partial \phi^{j}}\right) \partial_{\mu} \phi^{i} \partial_{\nu} \phi^{j}=i 4 \pi k \int d^{2} x \partial_{\mu}\left(\epsilon^{\mu \nu} \beta_{j} \partial_{\nu} \phi^{j}\right)
+$$
+
+As the base manifold is compactified to a sphere, the integral vanishes and the WZNW-model is invariant under group operations also in its "local" representation.
+$\mathbb{Z}_{2}$-topological terms $\mathbb{Z}_{2}$-topological terms can arise for spin- $\frac{1}{2}$-particles with spin-orbit coupling and preserved time-reversal symmetry, and are related to Kramer's degeneracy. This is the case for the classes CII and AII. The following topological term is added to the action:[138, 151]
+
+$$
+i S_{t o p}=i \pi N[Q], N[Q]=0,1
+$$
+
+A local notion of this $\mathbb{Z}_{2}$-topological term, based on the WZ term will be presented in this thesis, Sec. 5.3.5, see also Refs. [60, 152-154].
+
+[^0]
+[^0]:    ${ }^{13}$ The pullback is defined $\left(\tilde{Q}^{*}(\omega)\right) \mathbf{v}=\omega(d \tilde{Q}(\mathbf{v}))$ for any vector field $\mathbf{v} \in \mathcal{V} B$.
+    ${ }^{14}$ Local in the sense of the target manifold.
+    ${ }^{15}$ Here global in the sense of the base manifold: The rotation is $x$-independent.
+
+When do WZ and $\mathbb{Z}_{2}$ terms occur? Concerning path integral technique, it was explained in Sec. 2.3.4 how WZ terms appear as a consequence of the non-Abelian anomaly. In operator formalism the anomaly is reflected in the Schwinger-term of the Kac-Moody algebra. The latter is the basis of non-Abelian bosonization of massless Dirac-fermions [86] and characterizes a certain conformal field theory.
+
+The presence or absence of chiral anomaly and topological terms depend on the underlying microscopic theory. For example the single valley Dirac electron on the surfaces of 3D TI of class AII produces an anomaly and a $\mathbb{Z}_{2}$ topological term. However, in thin 3D TI samples the two Dirac fermions of opposite major surfaces hybridize by tunneling: the anomalies cancel up and so do the topological terms. The classification of 2D Dirac Hamiltonians with random potential was performed in Ref. [155].
+
+# 2.4.3 Topological field theory of electromagnetic fields 
+
+A particularly elegant description of topological states in condensed matter physics are TFTs of the $\mathbf{U}(1)$ gauge potentials. This way they constitute a generalization of the CS bulk theory of the QHE :
+
+$$
+S=\frac{\vartheta}{2 \pi} \frac{\alpha}{4 \pi} \int d^{2} x d t e^{\mu \nu \rho} A_{\mu} \partial_{\nu} A_{\rho}
+$$
+
+The prefactor $\frac{\vartheta}{2 \pi} \frac{\alpha}{2 \pi}=\sigma_{y x}$ is determined by the quantized Hall conductance. It has been explained in Sec. 2.2.1 that CS forms are intimately linked to Chern characters.
+
+For the discussion of the electromagnetic TFT of TIs I exclusively concentrate on the electromagnetic bulk theory of 3D TI of class AII, leaving all other cases to the review [4]. It was shown to contain the $\mathbf{E} \cdot \mathbf{B}$ term $[4,156]$ (second Chern character):
+
+$$
+\begin{aligned}
+S_{\vartheta} & =\frac{\vartheta}{2 \pi} \frac{\alpha}{16 \pi} \int d^{3} x d t e^{\mu \nu \rho \tau} F_{\mu \nu} F_{\rho \tau} \\
+& =\frac{\vartheta}{2 \pi} \frac{\alpha}{2 \pi} \int d^{3} x d t \mathbf{E} \cdot \mathbf{B} \\
+& =\frac{\vartheta}{2 \pi} \frac{\alpha}{4 \pi} \int d^{3} x d t e^{\mu \nu \rho \tau} \partial_{\mu}\left(A_{\nu} \partial_{\rho} A_{\tau}\right)
+\end{aligned}
+$$
+
+(The fine structure constant of QED is denoted by $\alpha=e^{2} / c \hbar$.) Since this term leads to non-trivial constituent equations, see also Eqs. (6.10) in Sec. 6.1.3, the authors of Ref. [157] coined the term "topological magnetoelectric effect". As can be seen from the last line, Eq. (2.50c), the $\mathbf{E} \cdot \mathbf{B}$ term is determined by a quantized (topological) integral $S_{\vartheta}=\vartheta n$ (where $n \in \mathbb{Z}$ ) if the base manifold has no boundary. Then, TR invariance restricts $\vartheta$ to values 0 or $\pi(\bmod 2 \pi) .{ }^{16}$
+
+According to electrodynamics in macroscopic media an insulator is a system which has no free charges (the action contains only the Maxwell term and no currents). Extending this logic [4], a topological (trivial) insulator is defined by the presence (absence) of an additional topological term in the electromagnetic bulk action. In class AII and three spatial dimensions this topological term is $S_{\vartheta}$ with $\vartheta=\pi(\bmod 2 \pi)$.
+
+### 2.4.4 Electromagnetic and gravitational anomalies
+
+Yet another way of classifying TIs, Tab. 2.1, generalizes the ideas of electromagnetic TFT introduced above: As explained in Sec. 2.3, Chern characters are related to QFT anomalies. The periodic table of
+
+[^0]
+[^0]:    ${ }^{16}$ Even though $S_{\vartheta} \rightarrow-S_{\vartheta}$ under TR, since $S_{\vartheta}=\vartheta n$ the partition function is invariant for $\vartheta=0 \bmod (2 \pi)$ or $\vartheta=\pi$ $\bmod (2 \pi)$.
+
+TIs can be obtained by the following paradigm [21]: ${ }^{17}$
+
+| Complex classes <br> (A, AIII) | d-dim. <br> TI of <br> type $\mathbb{Z}$ | Non-Abelian anomaly on (d-1)-dim. boundary <br> or <br> Axial anomaly in d-dim. bulk. |
+| :-- | :--: | :--: |
+| Real classes | d-dim. | Gravitational non-Ab. anomaly on (d-1)-dim. boundary |
+| w/o U(1) symm. | TI of | or |
+| (D, C, DIII, CI) | type $\mathbb{Z}$ | Gravitational axial anomaly in d-dim. bulk. |
+| Real classes | d-dim. | Mixed non-Ab. anomaly on (d-1)-dim. boundary |
+| w. U(1) symm. | TI of | or |
+| (AI, BDI, AII, CII) | type $\mathbb{Z}$ | Mixed axial anomaly in d-dim. bulk. |
+| Real classes | d-dim. | Global anomaly |
+| (D, C, DIII, CI, | TI of | (Anomaly under large |
+| AI, BDI, AII, CII) | type $\mathbb{Z}_{2}$ | gauge transformation.) |
+
+In the previous review I omitted explaining the notion of gravitational anomaly: It is a consequence of the $\bar{A}(\mathcal{R})$ genus in Eq. (2.10) and corresponds to anomalous breaking of coordinate covariance. The mixed anomaly combines gravitational and electromagnetic anomalies.
+
+# 2.4.5 BF-theory 
+
+The notion BF theory originally stands for background field theory and describes gauge theories with a gauge group $\mathbf{G}$ and a Lagrangian
+
+$$
+\mathcal{L}_{B F}=\operatorname{tr} B \wedge F
+$$
+
+Here, $F$ is the curvature two-form (i.e. the field strength tensor) and the field $B$ is a $D-2$ tensor transforming under the adjoint representation of $\mathbf{G}[158,159]$. The $\mathbf{U}(1)$ version of such field theories can be used for the description of TIs akin to the CS theory description of the QHE [160-162]. A bulk theory for the latter at filling fraction $1 / k$ is
+
+$$
+\mathcal{L}=-\frac{k}{4 \pi} \epsilon^{\mu \nu \rho} a_{\mu} \partial_{\nu} a_{\rho}+\frac{1}{2 \pi} \epsilon^{\mu \nu \rho} a_{\mu} \partial_{\nu} A_{\rho}-\frac{1}{12 \pi} \epsilon^{\mu \nu \rho} A_{\mu} \partial_{\nu} A_{\rho}
+$$
+
+While the physical electromagnetic field ${ }^{18}$ is denoted by $A_{\mu}$ the statistical gauge potential (describing the braiding statistics of quasiparticles) $a_{\mu}$ is coupled to $A_{\mu}$ in a fashion equivalent to Eq. (2.51).
+
+Similarly, for the exemplary case for TR invariant 3D TI the bulk BF theory is [162]
+
+$$
+\mathcal{L}=-\frac{\theta}{8 \pi^{2}} \epsilon^{\mu \nu \rho \sigma} \partial_{\sigma} a_{\mu} \partial_{\nu} a_{\rho}-\frac{1}{2 \pi} \epsilon^{\mu \nu \rho \sigma} b_{\sigma \mu} \partial_{\nu} a_{\rho}+\frac{1}{2 \pi} \epsilon^{\mu \nu \rho \sigma} b_{\sigma \mu} \partial_{\nu} A_{\rho}
+$$
+
+The prefactor $\theta$ of the first term is fixed to values $\theta=0$ or $\pi(\bmod 2 \pi)$ as a consequence of arguments [160] similar to case of the E-B term, Eq. (2.50), or by the guiding principle of cancellation of anomalies
+
+[^0]
+[^0]:    ${ }^{17}$ Recall that $d$ is the spatial dimension and the possibility of anomalies is determined by the space-time dimension $D=d+1$. The connection of global anomalies and $\mathbb{Z}_{2}$ topological insulators is not yet confirmed.
+    ${ }^{18}$ The magnetic field generating the $Q H$ state is not enclosed in $A_{\mu}$.
+
+[162]. In contrast to the case of the QHE for 3D TIs there are two sorts of matter fields ( $b_{\mu \nu}$ and $a_{\mu}$ ). Integration of them leads to the $\mathbf{E} \cdot \mathbf{B}$-term of $A_{\mu}$ fields, Eq. (2.50).
+
+BF theories of TIs can be derived by the method of functional bosonization, together with appropriate descent relations [161].
+
+# 2.5 3D topological insulators 
+
+Part of this thesis will be devoted to 2D surface states of 3D TIs of class AIII and CII (Chap. 4). Most other parts concern surface states of the $\mathbb{Z}_{2}$ TI of class AII (Chaps. 5, 6, 7).
+
+### 2.5.1 Conductivity for disordered Dirac fermions with chiral symmetry
+
+As already mentioned above, Sec. 2.3.5, the 't Hooft matching condition indicates absence of localization for certain anomalous QFTs of Dirac fermions. In particular, this applies to the case, when the valley (flavor) degeneracy of Dirac particles is odd, as in the case of 3D TI surface states. On the level of principle chiral NL$\sigma$ Ms (e.g. in class AIII) the absence of localization is ensured by the presence of a WZ term which leads to a critical fixed point at which $\sigma=\sigma^{\text {clean }}$. At this fixed point the theory is exactly solvable [87, 163-165]. To understand the critical value of conductivity, I repeat the argument given in Ref. [166]: Consider Hamiltonian (2.22) supplemented by disorder preserving the $\left(H=-\sigma_{z} H \sigma_{z}\right)$-symmetry. Further, because of the Dirac-structure of the Hamiltonian, the current operator follows $\hat{j}_{\mu}=-i \epsilon_{\mu \nu} \hat{j}_{\nu, 5}$. Then, the Kubo formula for conductivity can be rewritten as
+
+$$
+\begin{aligned}
+\sigma_{x x} & =-\frac{1}{\pi} \sum_{\alpha=x, y} \int d^{2}\left(r-r^{\prime}\right) \operatorname{tr}\left[j_{\alpha} \mathcal{G}_{R}\left(\mathbf{r}, \mathbf{r}^{\prime}\right) j_{\alpha} \mathcal{G}_{R}\left(\mathbf{r}^{\prime}, \mathbf{r}\right)\right] \\
+& \propto\left.\frac{\delta^{2}}{\delta A_{\alpha} \delta A_{\alpha}}\right|_{\mathbf{A}=0} \mathcal{Z}[\mathbf{A}] \propto\left.\frac{\delta}{\delta A_{\alpha}}\right|_{\mathbf{A}=0} \int \operatorname{tr} j_{\alpha} \mathcal{G}_{R}[\mathbf{A}]
+\end{aligned}
+$$
+
+The RHS is proportional to the second derivative of the partition function with respect to a constant vector potential $\mathbf{A}$. As the partition function is gauge invariant, it should be independent of such a constant vector potential and $\sigma_{x x}=0$. However, this argument does not hold for the clean conductivity bubble (recall Fig. 2.1): $\int d^{2} k\left[\operatorname{tr} j_{\alpha} \mathcal{G}_{R}^{\text {clean }}(\mathbf{k})\right]$ is UV divergent and anomalous. A definite regularization scheme will bring the gauge-independence argument to collapse leading to $\sigma=\sigma^{\text {clean }}$.
+
+### 2.5.2 Experimental realization of 3D topological insulators
+
+The 3D TI state has been first experimentally realized in Bismuth Antimony alloys [29]. Most recent experiments are performed on samples made of Bismuth Chalcogenides, pure Antimony, Antimony telluride as well as in strained HgTe [3, 42].
+
+As has been explained in Sec. 2.2.3 topological surface states occur as a consequence of "band inversion", i.e. when materials with similar low-energy Hamiltonian (2.15) but opposite mass are adjacent. Chemically, this band inversion is caused by the strong spin-orbit coupling $H_{S O}=\lambda \mathbf{L} \cdot \mathbf{S}$ (note the heavy elements occuring in TI materials). For sufficiently large $\lambda$ electronic bands stemming from odd-parity atomic orbitals get lifted above even-parity bands. The low-energy bulk Hamiltonian of 3D TIs up to quadratic order in $\mathbf{p}$ is a generalization of Eq. (2.15):
+
+$$
+H(\mathbf{p})=\epsilon_{0}(\mathbf{p})+v_{0} \mathbf{p} \cdot \boldsymbol{\sigma} \tau_{x}+\mathcal{M}(\mathbf{p}) \tau_{z}
+$$
+
+Here $\epsilon_{0}(\mathbf{p})$ is a quadratic dispersion and $\mathcal{M}(\mathbf{p})=M_{\infty}-B_{1} p_{z}^{2}-B_{2} p_{\perp}^{2}$. The interface TI - vacuum contains zero a mode provided $M_{\infty} / B_{1}>0$ [4]. Pauli matrices $\sigma_{i}$ correspond to the spin-degree of freedom, ${ }^{19}$ while $\tau_{i}$ matrices act in band (i.e. parity) space.
+
+In the vast majority of experiments the characteristic feature of observation is the surface Dirac state. Often it is detected directly by means of spin and angle resolved photo emission spectroscopy [3, 29]. Transport experiments (for review see Ref. [33]) on 3D TI samples unveil surface transport via the ambipolar field effect [34-37] (continuous tuning from hole to electron band without gap closing) and Aharonov-Bohm oscillations [43-45]. Another signature in transport data is the carrier density dependence of WAL prefactor $\alpha^{\prime}$ [see Eq. (1.6)]: a crossover from $\alpha^{\prime}=-1 / 2$ reflecting one bulk channel to $\alpha^{\prime}=-1$ reflecting two parallel surface channels was observed [48]. The possibly most convincing experimental evidence for surface Dirac transport is given by the odd QHE series [38-42] (see Chap. 6).
+
+# 2.5.3 Basic quantum mechanical calculations 
+
+In this section I present basic quantum mechanic results which are useful throughout the thesis. More details can be found in App. A. The table 2.2 allows direct comparison of the two quantum mechanical systems of 2D Dirac fermions and 2DES with parabolic dispersion. For the latter, quantities like the DOS and the particle density are to be understood per spin.
+
+The Hamiltonain of 3D TI surface states under investigatin in Tab. 2.2 is
+
+$$
+H_{0}=v_{0} \boldsymbol{\Pi} \wedge \sigma+m v_{0}^{2} \sigma_{z}
+$$
+
+As compared to Eq. (2.22), a Dirac mass was included here. As explained above, matrices $\sigma_{i}$ are associated to the spin degree of freedom of the electrons. Therefore, the mass term introduced here corresponds to Zeeman coupling to an external magnetic field: $m v_{0}^{2}=-g \mu_{B} B$, where $g$ is the gyromagnetic factor, $\mu_{B}$ the Bohr magneton and $B$ the magnetic field in $z$-direction.
+
+## The density contribution of the filled hole band
+
+For TI surface states, the particle densities reported in table 2.2 contain the divergent contribution from the filled hole band. In this subsection and App. A, I present explicitly the regularization scheme (point split regularization) used to derive the presented results. This regularization scheme implies $\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right) \equiv 0$. The partition of unity discussed in App. A is explicitly used.
+
+First consider the case without magnetic field. Then the contribution to the particle density by the filled hole band $n_{0}$ vanishes: ${ }^{20}$
+
+$$
+\begin{aligned}
+n_{0}(\mathbf{x}) & =\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int(d p) \operatorname{tr}\langle\mathbf{x} \mid \mathbf{p}, \xi=-1\rangle_{D D}\langle\mathbf{p}, \xi=-1 \mid \mathbf{x}^{\prime}\rangle \\
+& =\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int(d p) e^{i \mathbf{p}\left(\mathbf{x}^{\prime}-\mathbf{x}\right)} \operatorname{tr}\left|u_{\xi=-1, \mathbf{p}}\right\rangle\left\langle u_{\xi=-1, \mathbf{p}}\right| \\
+& =\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+\end{aligned}
+$$
+
+[^0]
+[^0]:    ${ }^{19}$ Of course, in view of spin-orbit coupling, spin is not a good quantum number but rather the total angular momentum. ${ }^{20}$ Because of gauge invariance the exposed point split regularization scheme should be supplemented by a Wilson line. The latter has no effect here, so it is omitted.
+
+| Quantity | 3D TI surface states | usual 2DES |
+| :--: | :--: | :--: |
+| Hamiltonian $H_{0}$ | $v_{0} \boldsymbol{\Pi} \wedge \sigma+m v_{0}^{2} \sigma_{z}$ | $\frac{\mathbf{p}^{2}}{2 m}$ |
+| Spectrum w/o B-field | $\epsilon_{\xi}(\mathbf{p})=\xi \sqrt{m^{2} v_{0}^{4}+v_{0}^{2} \mathbf{p}^{2}}$ | $\epsilon(\mathbf{p})=\frac{\mathbf{p}^{2}}{2 m}$ |
+| Eigenstates w/o B-field | $e^{i \mathbf{p r}}\left|u_{\xi, \mathbf{p}}\right\rangle$ $\left.\left|u_{\xi, \mathbf{p}}\right\rangle \equiv \frac{1}{\sqrt{2}}\binom{\xi \sqrt{1+\frac{m v_{0}^{2}}{\xi \epsilon_{p}}} e^{i \phi / 2}}{-\sqrt{1-\frac{m v_{0}^{2}}{\xi \epsilon_{p}}} e^{-i \phi / 2}}\right)$ | $e^{i \mathbf{p r}}$ |
+| DOS $\nu(E)$ w/o B-field | $\frac{|E|}{2 \pi v_{0}^{2}} \theta\left(E^{2}-\left(m v_{0}^{2}\right)^{2}\right)$ | $\frac{m}{2 \pi} \theta(E)$ |
+| Berry curvature | $\Omega_{\xi}=-\frac{m v_{0}^{2}}{2 \epsilon_{p}^{2}}$ | $-$ |
+| Particle density $n(\mu)(T=0 K)$ | $\operatorname{sign}(\mu) \frac{\mu^{2}-\left(m v_{0}^{2}\right)^{2}}{4 \pi v_{0}^{2}} \theta\left(\mu^{2}-\left(m v_{0}^{2}\right)^{2}\right)$ | $\frac{m \mu}{2 \pi} \theta(\mu)$ |
+| Cyclotron frequency: classical | $\Omega_{c}^{c 1}=\left|\frac{e B v_{0}^{2}}{\epsilon c}\right|$ | $\omega_{c}=\left|\frac{e B}{m c}\right|$ |
+| Cyclotron frequency: quantum | $\Omega_{c}=\sqrt{2|e B| v_{0}^{2} / \hbar}$ | $\omega_{c}=\left|\frac{e B}{m c}\right|$ |
+| Spectrum with B-field | $E_{n}=\operatorname{sgn}(n) \sqrt{\left(m v_{0}^{2}\right)^{2}+\Omega_{c}^{2}|n|}, n \neq 0$ $E_{0}=\operatorname{sign}(q B) m v_{0}^{2}$ | $E_{n}=\omega_{c}\left(n+\frac{1}{2}\right)$ |
+| Eigenstates $(q B<0)$ | $\begin{aligned} & ||n, k\rangle_{D}=\frac{\binom{\left(-m v_{0}^{2}-E_{n}\right)||n|-1, k\rangle}{\Omega_{c} \sqrt{|n|}| | n, k\rangle} \text { }}{\sqrt{2 E_{n}^{2}+2 m v_{0}^{2} E_{n}}} \\ & \mid n, k\rangle_{D}=(0,|0, k\rangle)^{T} \end{aligned}$ | $|n, k\rangle$ |
+| Eigenstates $(q B>0)$ | $\begin{aligned} & ||n, k\rangle_{D}=\frac{\binom{\Omega_{c} \sqrt{|n|}| | n|, k\rangle}{\left(m v_{0}^{2}-E_{n}\right)|| | n|-1, k\rangle}}{\sqrt{2 E_{n}^{2}-2 m v_{0}^{2} E_{n}}} \\ & \mid n, k\rangle_{D}=(|0, k\rangle, 0)^{T} \end{aligned}$ | $|n, k\rangle$ |
+| Particle density $n(\mu)(T=0 K)$ | $\left(\nu_{L L}-\operatorname{sign}(q B m) \frac{1}{2}\right) \frac{B}{\Phi_{0}}$ | $\nu_{L L} \frac{B}{\Phi_{0}}$ |
+
+Table 2.2: Table for comparison of basic quantum mechanical properties of TI surface states and usual 2DES with parabolic dispersion. As above $\Pi=\mathbf{p}-q \mathbf{A}$ denotes the kinetic momentum (for electrons $q=e=-|e|$ ). In the absence of orbital magnetic field, the quantum numbers for TI surface states (2DES with parabolic dispersion) are the momentum and the band index $\xi= \pm 1$ (only the momentum). The spinor $\left|u_{\xi, \mathbf{p}}\right\rangle$ for the Dirac fermions is presented in polar coordinates $\mathbf{p}=p(\sin \phi, \cos \phi)$. The chemical potential entering the zero temperature particle density is counted from the Dirac point for TI surface states and from the bottom of the band for 2DESs. The (vanishing) anomalous contribution of the filled hole band is discussed in the main text. In the presence of magnetic field the LL states of the TI (2DES) are labelled by LL index $n \in \mathbb{Z}$ $\left(n \in \mathbb{N}_{0}\right)$ and by $k=1, \cdots, B A / \Phi_{0} \quad(A$ is the area penetrated by the flux). The spinor eigenstates $|n, k\rangle_{D}$ of the Dirac problem are given in terms of the eigenstates $|n, k\rangle$ of the 2DES, the zeroth LL eigenstate is explicitly presented for clarity. The particle density $n(\mu)$ is given as a function of the filling fraction $\nu_{L L}$ (for TI $\nu_{L L}$ denotes the difference [number of filled LL with positive energy]-[number of empty LL with negative energy]). The anomalous contribution of the filled hole band is discussed in the main text.
+
+Analogously, when a magnetic field is present, the sum over LLs with negative index $n<0$ [the lower (upper) sign corresponds to the case $q B<0(q B>0)$ ] is
+
+$$
+\begin{aligned}
+\lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \sum_{k, n<0} \operatorname{tr}\langle\mathbf{x} \mid n, k\rangle_{D D}\left\langle n, k \mid \mathbf{x}^{\prime}\right\rangle= & \lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \sum_{k, n<0}\left\{\frac{\langle\mathbf{x}||n|, k\rangle\langle | n|, k|\mathbf{x}^{\prime}\rangle+\langle\mathbf{x}||n|-1, k\rangle\langle | n|-1, k\left|\mathbf{x}^{\prime}\right\rangle}{2}\right. \\
+& \left.\mp m v_{0}^{2} \frac{\langle\mathbf{x}||n|, k\rangle\langle | n|, k\left|\mathbf{x}^{\prime}\right\rangle-\langle\mathbf{x}||n|-1, k\rangle\langle | n|-1, k\left|\mathbf{x}^{\prime}\right\rangle}{2 E_{n}}\right\} \\
+\doteq & -\frac{1}{2} \frac{B}{\Phi_{0}}+\lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+\end{aligned}
+$$
+
+The first contribution is a direct consequence of the fully spin polarized zeroth LL. The symbol $\doteq$ denotes the fact that the term proportional to $m v_{0}^{2}$ vanishes under spatial average. Taking into account the value of the zeroth LL energy the average density at zero temperature and chemical potential turns out to be
+
+$$
+\bar{n}_{0}=-\operatorname{sign}(q B m) \frac{1}{2} \frac{B}{\Phi_{0}}
+$$
+
+Therefore, the contribution of the filled hole band to the particle density is finite in the presence of an external magnetic field, while it vanishes for $B=0$. The reason for the qualitatively different results with and without $B$-field has deep geometrical reasons: As explained, the anomalous contribution to $n_{0}$ stems from the (analytical) index $\nu_{+}-\nu_{-}$. By virtue of the Atiyah-Singer index theorem [120, 121], Eq. (2.10), the latter is determined by the instanton number of the non-trivial background gauge potential (topological index). The present case of 3D TI surface states is a $\mathbf{U}(1)$ gauge theory over the compactified plane $\mathbb{R}^{2} \cup\{\infty\}^{\text {homen. }} \mathbb{S}^{2}$. In this situation the term instanton number means number of magnetic monopoles enclosed by the two-sphere, or differently said, the total magnetic flux through the plane.
+
+The same results for the particle density can be obtained also by means of other regularization schemes, see e.g. Ref. [133]. Also note that the results for the density obtained by the point split regularization scheme and the results based on the Jackiw-Rebbi proof of fermion number fractionalization (Sec. 2.2.3) coincide in the thermodynamic limit.
+
+
+
+
+# 3 
+
+## Semiclassical transport calculations
+
+In this chapter I will address question (i) from the introduction: The semiclassical calculation of the conductivity tensor is presented here. This is of particular relevance, since it constitutes the starting point for the calculations in the subsequent Chaps. 4-7 where quantum mechanical effects in the conductivity tensor will be discussed. Following the common strategy, quantum effects such as weak localization are included perturbatively on top of the semiclassical transport properties determined in the following. Since quantum corrections to conductivity can be neglected when the dephasing rate $1 / \tau_{\phi}(T)$ is of the order of the elastic scattering rate, the results presented here are of relevance for experiments at sufficiently high temperature or on extremely clean samples.
+
+I address the semiclassical conductivity tensor in different parameter regimes determined by the energy scales of mass $m v_{0}^{2}$ (i.e. Zeeman energy), classical cyclotron frequency $\Omega_{c}^{c l}$, kinetic energy at the Fermi surface $\epsilon_{F}=|\mu|-\left|m v_{0}^{2}\right|$, and transport and quantum scattering rates $1 / \tau_{t r} \leq 1 / \tau_{q}$.
+
+In Secs. 3.1 and 3.2 I employ Drude as well as Boltzmann formalism. Both are good descriptions of TI surface states provided the quasiparticle picture is justified and quantization of cyclotron motion can be neglected: $\Omega_{c}^{c l} \tau_{q} \ll 1 \ll \epsilon_{F} \tau_{q}$. Note that the regime $\Omega_{c}^{c l} \tau_{q} \ll 1 \ll \Omega_{c}^{c l} \tau_{t r}$ is controlled and accessible for the case of long-range impurities. One further needs to distinguish the following regimes: (a) $m v_{0}^{2} \ll 1 / \tau_{q}$ : strong scattering, interband coherence can be neglected. (b) $1 / \tau_{q} \ll m v_{0}^{2}$ : interbandcoherence is important and leads to the AHE. The regime (a) is accessible by the Drude theory as well as by Boltzmann's equation. In Sec. 3.2 I will concentrate on a modified kinetic equation valid in regime (b).
+
+Finally, in Sec. 3.3 an alternative approach is undertaken. It relies on the gradient expansion of the scalar potential (which includes disorder, external electric field and chemical potential) in powers of the magnetic length $l_{B}$. The calculation is based on the principle of local thermodynamic equilibrium but
+
+| Sec. 3.1 (Drude) | $\Omega_{c}^{c l} \tau_{q} \ll 1 \ll \epsilon_{F} \tau_{q}, \quad m v_{0}^{2} \tau_{q} \ll 1, \quad 1 / \tau_{t r} \lesssim 1 / \tau_{\phi}$, |  |  |  |
+| :--: | :--: | :--: | :--: | :--: |
+| Sec. 3.2 (Boltzmann) | $\Omega_{c}^{c l} \tau_{q} \ll 1 \ll \epsilon_{F} \tau_{q}, \quad 1 \ll m v_{0}^{2} \tau_{q} \ll \mu \tau_{q}, \quad 1 / \tau_{t r} \lesssim 1 / \tau_{\phi}$, | linear response. |  |  |
+| Sec. 3.3 (Vortex states) | $l_{B} \partial_{\mathbf{x}} V \ll V, \quad m=0$, | local TD eq. |  |  |
+
+Table 3.1: Regimes of validity of the subsequent semiclassical calculations. The abbreviation "local TD eq." denotes "local thermodynamic equilibrium".
+
+goes beyond linear response. In principle it is also possible to investigate vortex states with Zeeman splitting [167], however, for simplicity I will focus on the case $m=0$.
+
+This chapter is partially based on Ref. [168].
+
+# 3.1 Drude transport theory 
+
+Drude transport theory relies on the static solution of the classical single particle equation of motion
+
+$$
+\dot{\mathbf{p}}_{i}=q\left(\mathbf{E}_{i}+\epsilon_{i j} \mathbf{v}_{j} \frac{B}{c}\right)-\frac{\mathbf{p}}{\tau_{t r}}
+$$
+
+where $1 / \tau_{t r}$ is the phenomenological transport rate. The case of 3D TI surface states involves its special relativistic version. In Eq. (3.1) this is encoded in the velocity $\mathbf{v}=v_{0}^{2} \mathbf{p} / \epsilon_{\xi}$. The Lorentz group $L_{v_{0}}$ associated to the emergent relativistic structure ${ }^{1}$ (with limiting speed $v_{0}$ ) is extensively discussed in App. B.1. Following the standard logic, one can define the electromagnetic field strength tensor ( $\mathbf{E}$ and $B$ denote physical electromagnetic fields),
+
+$$
+F^{\mu \nu}=\left(\begin{array}{ccc}
+0 & \frac{c}{v_{0}} E_{x} & \frac{c}{v_{0}} E_{y} \\
+-\frac{c}{v_{0}} E_{x} & 0 & B \\
+-\frac{c}{v_{0}} E_{y} & -B & 0
+\end{array}\right)
+$$
+
+which is a tensor under $L_{v_{0}}$ transformations. In contrast to the field strength tensor of usual relativistic particles (symmetry $L_{c}$, with $c$ the speed of light) additional large factors of $c / v_{0}$ enhance the electric in comparison to the magnetic field. In the limit $c / v_{0} \rightarrow \infty$ the electrodynamic theory is replaced by electrostatics.
+
+The steady state solution of Eq. (3.1) (to which the particle relaxes after time $\tau_{t r}$ ) is
+
+$$
+\mathbf{p}=\frac{q \tau_{t r}}{1+\left(\Omega_{c}^{e l} \cdot \tau_{t r}\right)^{2}}\left(\begin{array}{cc}
+1 & \zeta \Omega_{c}^{e l} \cdot \tau_{t r} \\
+-\zeta \Omega_{c}^{e l} \cdot \tau_{t r} & 1
+\end{array}\right) \mathbf{E}
+$$
+
+where $\zeta=\operatorname{sign}\left(B q \epsilon_{\xi}\right)$. The ratio $\Omega_{c}^{e l} / \omega_{c}=1 / \sqrt{1+\frac{(v_{0} \mathbf{p})^{2}}{\left(m v_{0}^{2}\right)^{2}}}$ approaches unity in the non-relativistic limit. As the current density $\mathbf{j}=q n \frac{v_{0}^{2} \mathbf{p}}{n}$ is determined by particles at the Fermi surface $\epsilon_{\xi}=\mu$, the classical conductivity tensor immediately follows to be
+
+$$
+\underline{\sigma}=\frac{\sigma_{x x}^{(0)}}{1+\left(\Omega_{c}^{e l} \cdot \tau_{t r}\right)^{2}}\left(\begin{array}{cc}
+1 & \zeta \Omega_{c}^{e l} \cdot \tau_{t r} \\
+-\zeta \Omega_{c}^{e l} \cdot \tau_{t r} & 1
+\end{array}\right)
+$$
+
+where
+
+$$
+\sigma_{x x}^{(0)}=\frac{v_{0}^{2} q^{2} n \tau_{t r}}{\mu}=q^{2} \nu(\mu) D(\mu)
+$$
+
+and $D=D(\mu)=\frac{v_{F}^{2} \tau_{t r}}{2}=\frac{\mu^{2}-\left(m v_{0}^{2}\right)^{2}}{\mu^{2}} \frac{v_{0}^{2} \tau_{t r}}{2}$ is the diffusion coefficient.
+
+[^0]
+[^0]:    ${ }^{1}$ Note that I do not consider dynamic electromagnetic fields. Clearly, the $L_{v_{0}}$-symmetry would be broken by a Maxwell term in the classical action.
+
+# 3.2 Boltzmann transport theory: Anomalous Hall effect. 
+
+In this chapter I present the semiclassical calculation of the conductivity tensor in the presence of a magnetic field using Boltzmann technique: both orbital coupling and Zeeman energy (i.e. finite mass) are taken into account. More details can be found in App. B.2.
+
+### 3.2.1 Formalism
+
+The important concepts for the semiclassical treatment of AHE are reviewed in Refs. [169, 170]. The contributions to the AHE are threefold.
+
+1. Intrinsic AHE ( includes the contribution of integral over Berry connection $\Omega_{\xi}$ ),
+2. Siew scattering:
+a) conventional $\left(\omega_{l l^{\prime}} \propto V^{3}\right)$,
+b) intrinsic $\left(\omega_{l l^{\prime}} \propto V^{4}\right)$,
+3. Side jump:
+a) side jump accumulation,
+b) modification of collision integral in view of work performed due to the side jump at a single scattering event.
+
+The quantity $\omega_{l^{\prime} l}$ is the squared scattering amplitude from state $l=(\mathbf{p}, \xi)$ to $l^{\prime}=\left(\mathbf{p}^{\prime}, \xi^{\prime}\right)$. These contributions modify the equations of motion (I use the same color code as in the above enumeration)
+
+$$
+\begin{aligned}
+& \dot{r}_{i}=\overbrace{\frac{\partial \epsilon_{\xi}(\mathbf{p})}{\partial p_{i}}}^{\equiv \mathrm{e}_{l}^{\prime \xi} \dot{p}_{j} \Omega_{\xi}}-\epsilon_{i j} \dot{p}_{j} \Omega_{\xi}+\sum_{l^{\prime}} \omega_{l^{\prime} l}\left(\delta \mathbf{r}_{l^{\prime} l}\right)_{i} \\
+& \dot{p}_{i}=F_{i}=q\left(E_{i}+\epsilon_{i j} \dot{r}_{j} B / c\right)
+\end{aligned}
+$$
+
+as well as the collision integral of the Boltzmann equation
+
+$$
+\partial_{t} f+\dot{\mathbf{r}} \cdot \partial_{\mathbf{x}} f+\dot{\mathbf{p}} \cdot \partial_{\mathbf{p}} f=\operatorname{St}[f]
+$$
+
+where
+
+$$
+\operatorname{St}[f]=-\sum_{l^{\prime}}\left[\omega_{l^{\prime} l} f_{l}-\omega_{l l^{\prime}} f_{l^{\prime}}\right]
+$$
+
+From these formulae, the duality between Berry curvature $\Omega_{\xi}$ and magnetic field becomes apparent. While $\Omega_{\xi}=\epsilon_{i j} \partial_{\mathbf{p}_{i}}, \mathcal{A}_{\xi, j}$ couples to the time derivative of momentum, the magnetic field $B=\epsilon_{i j} \partial_{\mathbf{x}_{i}} A_{j}$ couples to the velocity of the particle. I will return to this duality in Sec. 3.2.3.
+
+The precise modification of the collision integral, which involves the work $W_{1 \rightarrow 2}=\mathbf{F} \delta \mathbf{r}_{l_{2} l_{1}}$, will be exposed below, Sec. 3.2.4.
+
+It is worth noting, that the collision integral for elastic scattering does not contain Pauli blocking terms (which would change the results due to skew scattering). The reason is, that in contrast to the case of inelastic scattering, the incoming and outgoing states $l$ and $l^{\prime}$ should be considered as a single
+
+scattering state, and thus Pauli blocking factors [e.g. $\left.f_{l}\left(1-f_{F}\right)\right]$ are superfluous. ${ }^{2}$ This can also be understood in the derivation of the Boltzmann equation from Schwinger-Keldysh quantum field theory: Since elastic scattering is evoked by a static disorder potential (it only couples to $\gamma_{c l}$ in Keldysh space) the collision integral in the quantum kinetic equation $\Sigma^{K}-\left(\Sigma^{R} \circ F-F \circ \Sigma^{A}\right)$ contains only a single Keldysh Green's function or self energy and thus only a single distribution function.
+
+# 3.2.2 Derivation of exposed equations of motion 
+
+To make this thesis self-contained, I here briefly review the derivation of equations of motion.
+I first focus on the intrinsic AHE, i.e. the clean equation of motion [171], [172] (more details can also be found in App. B.2.1). The derivation relies on the construction of wave packets in an external electromagnetic field
+
+$$
+\left\langle\mathbf{r} \mid \Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle \equiv \Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(\mathbf{r}, t)=e^{i q \mathbf{A}\left(\mathbf{r}_{c}, t\right) \cdot \mathbf{r}} \int(d k) w(\mathbf{k}, t) e^{-i \epsilon_{\xi}(\mathbf{k}) t} e^{i \mathbf{k r}}\left|u_{\xi, \mathbf{k}}\right\rangle
+$$
+
+which are assumed to be peaked in phase space around the classical coordinate $\left(\mathbf{r}_{c}, \mathbf{k}_{c}\right)$. Under the semiclassical assumptions the following Lagrangian
+
+$$
+L\left(\mathbf{r}_{c}, \dot{\mathbf{r}}_{c}, \mathbf{k}_{c}, \dot{\mathbf{k}}_{c}, t\right)=\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| i \frac{d}{d t}-H\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle
+$$
+
+can be evaluated approximately,
+
+$$
+L\left(\mathbf{r}_{c}, \dot{\mathbf{r}}_{c}, \mathbf{k}_{c}, \dot{\mathbf{k}}_{c}, t\right)=\dot{\mathbf{r}}_{c}\left(\mathbf{k}_{c}+q \mathbf{A}\right)+\dot{\mathbf{k}}_{c} \mathcal{A}_{\xi}-\epsilon_{\xi}\left(\mathbf{k}_{c}\right)
+$$
+
+(The Berry connection is denoted by $\mathcal{A}_{\xi}$ ). It produces the intrinsic AHE contribution to the equations of motion, Eq. (3.7).
+
+Next, I briefly comment on the derivation of the side jump contribution (see App. B.2.2 for more details). The general strategy outlined in the original paper [173] is to investigate scattering wave packets
+
+$$
+\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{o n t}(\mathbf{r}, t)=e^{i q \mathbf{A}\left(\mathbf{r}_{c}, t\right) \cdot \mathbf{r}} \int(d k) w(\mathbf{k}, t) \psi_{\xi, \mathbf{k}}^{o n t}(\mathbf{r}, t)
+$$
+
+with $\psi_{\xi, \mathbf{k}}^{o n t}(\mathbf{r}, t)$ being scattering states. By means of incoming and outgoing wave packets (3.10) and (3.13) the asymptotic trajectories $\left.\mathbf{r}_{c}(t)\right|_{t \rightarrow \mp \infty}$ are analyzed, extrapolated to $t=0$ and subtracted one from another. It turns out that the two trajectories do not cross at the scattering center, but at a position shifted as follows for an exemplary scattering event $l_{1} \rightarrow l_{2}$
+
+$$
+\delta \mathbf{r}_{l_{2} l_{1}}=\left" \mathbf{r}_{l_{2}}(t=0)-\mathbf{r}_{l_{1}}(t=0) "=\left\langle u_{\xi_{2}, \mathbf{k}_{2}}\right| i \partial_{\mathbf{k}_{2}} u_{\xi_{2}, \mathbf{k}_{2}}\right\rangle-\left\langle u_{\xi_{1}, \mathbf{k}_{1}}\right| i \partial_{\mathbf{k}_{1}} u_{\xi_{1}, \mathbf{k}_{1}}\right\rangle-\left(\partial_{\mathbf{k}_{1}}+\partial_{\mathbf{k}_{2}}\right) \arg \left(V_{l_{2}, l_{1}}\right)
+$$
+
+The derivation in the presence of smooth, external electromagnetic fields can be found in App. B.2.2. Note that in the case of intraband scattering off a radial, spin-independent potential, it is possible to replace $\arg \left(V_{l_{2}, l_{1}}\right) \rightarrow \arg \left(\left\langle u_{\xi, \mathbf{k}_{2}} \mid u_{\xi, \mathbf{k}_{1}}\right\rangle\right)$. The presented side jump formula is invariant under local $\mathbf{U}(1)$ transformations in $\mathbf{k}$ space.
+
+Following Ref. [174], the side jump contribution for Dirac bands is
+
+$$
+\delta \mathbf{r}_{l^{\prime} l}=\frac{\Omega_{\xi} \epsilon\left(\mathbf{k}-\mathbf{k}^{\prime}\right)}{\left|\left\langle u_{\xi, \mathbf{k}} \mid u_{\xi^{\prime}, \mathbf{k}^{\prime}}\right\rangle\right|^{2}}
+$$
+
+[^0]
+[^0]:    ${ }^{2}$ I acknowledge Prof. Peter Woelfle's explanations in this regard.
+
+With the help of this formula, the side jump accumulation can be rewritten as
+
+$$
+\sum_{p^{\prime}} \omega_{l^{\prime} l}\left(\delta \mathbf{r}_{l^{\prime} l}\right)=\left(1-\frac{q B \Omega_{\xi}}{c}\right) \frac{\Omega_{\xi \xi} \mathbf{k}}{\tau^{s j}}
+$$
+
+where for Dirac fermions
+
+$$
+\frac{1}{\tau^{s j}}=\int\left(d p^{\prime}\right) \omega_{l^{\prime} l} \frac{1-\cos \left(\phi-\phi^{\prime}\right)}{\left|\left\langle u_{\xi, \mathbf{k}} \mid u_{\xi^{\prime}, \mathbf{k}^{\prime}}\right\rangle\right|^{2}}
+$$
+
+The appearance of the prefactor $\left(1-\frac{q B \Omega_{\xi}}{c}\right)$ will be explained in the subsequent Sec. 3.2.3.
+The subscript ${ }_{c}$ for classical coordinates is omitted in what follows.
+
+# 3.2.3 Comment on the equations of motion 
+
+The equations of motion can be diagonalized as follows [175-177]:
+
+$$
+\binom{\dot{r}_{i}}{\dot{p}_{i}}=\frac{1}{1-\frac{\Omega_{\xi} q B}{c}}\binom{v_{i}^{(\xi)}+\sum_{l^{\prime}} \omega_{l^{\prime} l}\left(\delta \mathbf{r}_{l^{\prime} l}\right)_{i}-\epsilon_{i j} \Omega_{\xi} q E_{j}}{\epsilon_{i j}\left(\mathbf{v}^{(\xi)}+\sum_{l^{\prime}} \omega_{l^{\prime} l}\left(\delta \mathbf{r}_{l^{\prime} l}\right)\right)_{j} \frac{q B}{c}+q E_{i}}
+$$
+
+Formally, there is an interesting singularity ${ }^{3}$ at $1=\frac{\Omega_{\xi} q B}{c}$. This singularity and the exotic structure of the equations of motion evoked some interest from the perspective of mathematical physics [176]. It turns out that at the singularity the system loses one of its degrees of freedom and the motion is purely transverse. To shed further light on these facts, the geometrical foundations of Hamilton mechanics are reviewed in App. B.2.3 and the connection to the present problem is drawn. It is no surprise, that with the side jump contribution the equations of motion (3.18) are non-Hamiltonian. In contrast, the clean dynamics is perfectly Hamiltonian and the associated symplectic 2-form takes the following form in the physical coordinate system $\xi_{\alpha}=(\mathbf{x}, \mathbf{p})_{\alpha}$ of the phase space:
+
+$$
+\omega=\omega_{\alpha \beta} d \xi^{\alpha} d \xi^{\beta}=\left(\begin{array}{cc}
+\frac{q B}{c} \xi & -\mathbf{1} \\
+\mathbf{1} & \Omega_{\xi \xi}
+\end{array}\right)_{\alpha \beta} d \xi^{\alpha} d \xi^{\beta}
+$$
+
+Similarly, the Poisson bracket which is defined by the matrix inverse of $\omega_{\alpha \beta}$ is quite unconventional. By Darboux theorem, canonical momentum and position coordinates could also be chosen. In that frame the Poisson bracket takes the usual form. In contrast, using physical coordinates, the implication of Eq. (3.19) is the additional term in the invariant phase space volume element
+
+$$
+d V=\sqrt{\operatorname{det} \omega_{\alpha \beta}} \prod_{\alpha} d \xi_{\alpha}=\left(1-\frac{q \Omega_{\xi} B}{c}\right) d^{2} p d^{2} x
+$$
+
+Therefore, in the Boltzmann equation (3.8) and the equations determining current the following replacement has to be undertaken,
+
+$$
+\sum_{l^{\prime}} \rightarrow \int\left(d p^{\prime}\right)\left(1-\frac{q B \Omega_{\xi^{\prime}}}{c}\right)
+$$
+
+[^0]
+[^0]:    ${ }^{3}$ However, it should be kept in mind that this singularity lies outside the regime of applicability of the theory to semiclassical dynamics of Dirac fermions.
+
+In the remainder of this section polar coordinates determining each momentum $\mathbf{p}$ by modulus of kinetic energy and angle $(\epsilon, \phi)$ are employed. ${ }^{4}$ In this notation
+
+$$
+\hat{p}=(\cos \phi, \sin \phi), \hat{e}_{\phi}=(-\sin \phi, \cos \phi)=-\underline{e} \hat{p}
+$$
+
+and
+
+$$
+\nabla_{\mathbf{p}} f_{l}=\hat{p} \frac{\partial \epsilon}{\partial p} \partial_{\epsilon} f_{l}+\frac{\hat{e}_{\phi}}{p} \partial_{\phi} f_{l}=\mathbf{v}^{(\xi)} \partial_{\epsilon_{\xi}} f_{l}+\frac{\hat{e}_{\phi}}{p} \partial_{\phi} f_{l}
+$$
+
+# 3.2.4 Full Boltzmann equation 
+
+I would like to return to the Boltzmann equation presented above, Eq. (3.8). It is worth to split the contribution from $\hat{\mathbf{p}} \nabla_{\mathbf{p}} f$ into two terms according to
+
+$$
+\hat{\mathbf{p}} \partial_{\mathbf{p}} f=\hat{\mathbf{p}}_{\text {clean }} \partial_{\mathbf{p}} f+\frac{q B / c}{1-q B \Omega / c}\left(\partial_{\mathbf{p}} f\right)_{\underline{\xi}}\left[\sum_{l^{\prime}} \omega_{l^{\prime} l} \delta r_{l^{\prime} l}\right]
+$$
+
+Bringing the last term to the RHS of the Boltzmann equation leads to
+
+$$
+\left.\partial_{t} f+\dot{\mathbf{r}} \partial_{\mathbf{r}} f+\hat{\mathbf{p}}_{\text {clean }} \partial_{\mathbf{p}} f=\left.S t[f]\right|_{f u l l}
+$$
+
+with
+
+$$
+\left.S t[f]\right|_{f u l l}=\left.S t[f]\right|_{(s)}+\left.S t[f]\right|_{(a)}+\left.S t[f]\right|_{W_{E}}+\left.S t[f]\right|_{W_{B}}
+$$
+
+The various terms are
+
+$$
+\begin{aligned}
+\left.S t[f]\right|_{(s)} & =-\sum_{l^{\prime}} \omega_{l^{\prime} l}^{(s)}\left(f_{l}-f_{l^{\prime}}\right) \\
+\left.S t[f]\right|_{(a)} & =-\sum_{l^{\prime}} \omega_{l^{\prime} l}^{(a)}\left(f_{l}+f_{l^{\prime}}\right) \\
+\left.S t[f]\right|_{W_{E}} & =-\sum_{l^{\prime}} \omega_{l l^{\prime}}^{(s)} \delta \mathbf{r}_{l l^{\prime}} \frac{q \mathbf{E}}{1-\frac{q B \Omega_{\xi}}{c}} \partial_{\epsilon_{\xi}} f_{l^{\prime}} \\
+\left.S t[f]\right|_{W_{B}} & =-\sum_{l^{\prime}} \omega_{l l^{\prime}}^{(s)} \delta \mathbf{r}_{l l^{\prime}} \frac{\epsilon \mathbf{v}^{(\xi)} \frac{q B}{c}}{1-\frac{q B \Omega_{\xi}}{c}}\left(\partial_{\epsilon_{\xi}} f_{l}-\partial_{\epsilon_{\xi}} f_{l^{\prime}}\right)
+\end{aligned}
+$$
+
+Here, I introduced the notation $\omega_{l^{\prime} l}^{(s)}=\left(\omega_{l^{\prime} l}+\omega_{l l^{\prime}}\right) / 2$ and $\omega_{l^{\prime} l}^{(a)}=\left(\omega_{l^{\prime} l}-\omega_{l l^{\prime}}\right) / 2$ and neglected accumulation of side jump and skew scattering effects.
+
+The last two terms $\left.S t[f]\right|_{W_{E}}$ and $\left.S t[f]\right|_{W_{B}}$ are a modification of the collision integral by side jump contributions. As explained above, Sec. 3.2.2, upon a scattering event $l_{1} \rightarrow l_{2}$ the final state obtains a trajectory which is shifted by $\delta \mathbf{r}_{l_{2} l_{1}}$ as compared to the initial state. If the scattering takes place in an external electric field the kinetic energy is no longer conserved [169, 170] since the potential energy changes at the scattering event by
+
+$$
+\Delta \epsilon^{\delta \mathbf{r}_{l_{2} l_{1}}}=" U\left(\mathbf{r}_{l_{2}}\right)-U\left(\mathbf{r}_{l_{1}}\right)"=\nabla U \delta \mathbf{r}_{l_{2} l_{1}}=-q \mathbf{E} \delta \mathbf{r}_{l_{2} l_{1}}
+$$
+
+[^0]
+[^0]:    ${ }^{4}$ Note the different definition of polar coordinates as compared to Tab. 2.2 on p. 42 . Note that $\epsilon=\left|\epsilon_{\xi}\right|$ is positive.
+
+![img-20.jpeg](img-20.jpeg)
+
+Figure 3.1: Dependence of the conductivity tensor on chemical potential. The transverse conductivity was separated in intrinsic (red, $\sigma_{x y}^{\text {(intr.) }}$ ) and Fermi surface (violet, $\delta \sigma_{x y}$ ) contributions. Dashed curves are obtained by point reflection about the origin and visualize the magnitude of the AHE contributions.
+
+More generally (in the presence of both $\mathbf{E}$ and $B$ fields), there is a work $W_{1 \rightarrow 2}=\mathbf{F} \delta \mathbf{r}_{l_{2} l_{1}}$ to be performed at a scattering event $l_{1} \rightarrow l_{2}$ with side jump. The work by the electric field is encoded in $\left.S t[f]\right|_{W_{E}}$. Interestingly, also the magnetic field performs work, as the trajectory is discontinuous. This work, together with the last term in Eq. (3.24), determines $\left.S t[f]\right|_{W_{B}}$. Only if side jump effects from left hand side (LHS) and RHS are combined the theory is consistent with particle number and energy conservation. For more details, see Apps. B.2.4 and B.2.6.
+
+# 3.2.5 Semiclassical conductivity tensor 
+
+Here, I present the conductivity tensor to leading order in the small parameters $m v_{0}^{2} / \mu, \Omega_{c}^{c l} \cdot / \mu$ ) and for the case of Dirac fermions. The general solution can be found in App. B.2.9. The leading order longitudinal
+
+$$
+\sigma_{x x}=\sigma_{x x}^{(0)}\left[\frac{1+2 \frac{\zeta \Omega_{c}^{d} \cdot \tau_{t r}}{1+\left(\Omega_{c}^{d} \cdot \tau_{t r}\right)^{2}} \frac{\tau_{t r}}{\tau_{o}}}{1+\left(\Omega_{c}^{d} \cdot \tau_{t r}\right)^{2}}+\frac{m v_{0}^{2}}{\mu} \frac{1}{\mu \tau_{s j}} \frac{\zeta \Omega_{c}^{d} \cdot \tau_{t r}}{1+\left(\Omega_{c}^{d} \cdot \tau_{t r}\right)^{2}}\right]
+$$
+
+and transversal conductivity
+
+$$
+\begin{aligned}
+\sigma_{x y} & =-\frac{q^{2}}{4 \pi}\left[\operatorname{sign}(m) \theta\left(m^{2} v_{0}^{4}-\mu^{2}\right)+\frac{m v_{0}^{2}}{|\mu|} \theta\left(\mu^{2}-m^{2} v_{0}^{4}\right)\right] \\
+& +\sigma_{x x}^{(0)}\left[\frac{\zeta \Omega_{c}^{c l} \tau_{t r}\left(1+2 \frac{\zeta \Omega_{c}^{d} \tau_{t r}}{1+\left(\Omega_{c}^{d} \tau_{t r}\right)^{2}} \frac{\tau_{t r}}{\tau_{o}}\right)}{1+\left(\Omega_{c}^{d} \tau_{t r}\right)^{2}}-\frac{\tau_{t r} / \tau_{o}}{1+\left(\Omega_{c}^{d} \tau_{t r}\right)^{2}}-\frac{m v_{0}^{2}}{\mu} \frac{1}{\mu \tau_{s j}} \frac{1}{1+\left(\Omega_{c}^{d} \cdot \tau_{t r}\right)^{2}}\right]
+\end{aligned}
+$$
+
+![img-21.jpeg](img-21.jpeg)
+
+Figure 3.2: Dependence of the conductivity tensor on the magnetic field. The transverse conductivity was separated in intrinsic (red, $\sigma_{x y}^{\text {(intr.) }}$ ) and Fermi surface (violet, $\delta \sigma_{x y}$ ) contributions. Dashed curves are obtained by reflection $B \rightarrow-B$ and visualize the magnitude of the AHE contributions. The dot-dashed vertical lines denote the position where $\Omega_{c}^{d} \tau_{t r}=1$. In the inset, the contributions to the transverse conductance are plotted in the vanishing $B$-field limit.
+contain contribution from all of the presented mechanisms (Intrinsic AHE, skew scattering rate $1 / \tau_{a}$ and Side jump rate $1 / \tau_{s j}$ ) listed in the beginning of Sec. 3.2.1. Recall the definition of the zero field classical longitudinal conductivity $\sigma_{x x}^{(0)}=q^{2} \nu D$ in Eq. (3.5). Note that the contribution of the work by the $B$-field is subleading in the case of short range impurities, as it is suppressed by $\frac{m v_{0}^{2}}{\mu} \frac{\Omega_{c}^{d}}{\rho} \frac{\tau_{t r}}{\tau_{s j}}$. The expressions for the various scattering rates are also given in App. B.2.10 for the case of short range impurities.
+
+In the limit $B=0$ the result matches the result of Ref. [174], while in the case of zero Zeeman energy $m=0$ the Drude result Eq. (3.4) is recovered. It should be noticed, that traditional AHE experiments are performed varying an external, finite magnetic field. Thus, the semiclassical conductivity tensor derived here constitutes an important generalization of the previous result. The transport coefficients are plotted in Figs. 3.1 and 3.2.
+
+# 3.3 Quantum Hall effect: Semiclassical vortex state calculation 
+
+In this section the semiclassical vortex state calculation of the current density of a single 2D Dirac fermion in the presence of orbital coupling to a magnetic field and arbitrary, sufficiently smooth potential landscape is presented. More details can be found in App. B.3.
+
+The fermionic Hamiltonian under consideration is
+
+$$
+H=H_{0}+V(\mathbf{x})
+$$
+
+While $H_{0}$ is the clean 3D TI Hamiltonian introduced in Tab. 2.2 on p. 42, the scalar potential $V(\mathbf{x})$ includes disorder, chemical and electrostatic potentials.
+
+In this section symmetric gauge is chosen and I employ the "vortex states" representation of LL wave functions which was introduced in Refs. [178, 179]. In this overcomplete basis of LL eigenstates the discrete quantum number $k$ is replaced by the continuum guiding center position $\mathbf{R} \in \mathbb{R}^{2}$. The wave function for the $n$-th LL of electrons with parabolic dispersion (cf. table 2.2 on p. 42) is:
+
+$$
+\langle\mathbf{r} \mid n, \mathbf{R}\rangle=\frac{e^{i n \arg (\mathbf{r}-\mathbf{R})}}{\sqrt{2 \pi n!} l_{B}}\left|\frac{\mathbf{r}-\mathbf{R}}{\sqrt{2} l_{B}}\right|^{n} e^{-\frac{(\mathbf{r}-\mathbf{R})^{2}-2 i \phi \cdot(\mathbf{r} \times \mathbf{R})}{4 l_{B}^{2}}}
+$$
+
+The vortex states are 'semiorthogonal' and fulfill the following completeness relation
+
+$$
+\left\langle n, \mathbf{R} \mid n^{\prime}, \mathbf{R}^{\prime}\right\rangle=\delta_{n n^{\prime}} e^{-\frac{\left\langle\mathbf{R}-\mathbf{R}^{\prime}\right\rangle^{2}-2 i \phi \cdot\left\langle\mathbf{R} \times \mathbf{R}^{\prime}\right\rangle}{4 l_{B}^{2}}} \text { and } \int \frac{d^{2} R}{2 \pi l_{B}^{2}} \sum_{n=0}^{\infty}|n, \mathbf{R}\rangle\langle n, \mathbf{R}|=\mathbf{1}
+$$
+
+Note the importance of the order in the resolution of identity. First the summation is performed and then the integration over $\mathbf{R}$. The partial completeness relation in a single LL ,
+
+$$
+\int d^{2} R\langle\mathbf{r} \mid n, \mathbf{R}\rangle\left\langle n^{\prime}, \mathbf{R} \mid \mathbf{r}^{\prime}\right\rangle=\left\langle n, \mathbf{r} \mid n^{\prime} \mathbf{r}^{\prime}\right\rangle
+$$
+
+follows trivially from the identity $\langle\mathbf{r} \mid n, \mathbf{R}\rangle=\langle n, \mathbf{r} \mid \mathbf{R}\rangle$.
+Since in this calculation I will restrict myself to the case of massless Dirac fermions and positive magnetic field, I use the following notation for the eigenstates
+
+$$
+|n, \mathbf{R}\rangle_{D}=\frac{1}{\sqrt{1+\eta_{n}^{2}}}\binom{-\eta_{n}| | n|-1, \mathbf{R}\rangle}{|n|, \mathbf{R}\rangle}
+$$
+
+with eigenenergies $E_{n}=\Omega_{c} \eta_{n} \sqrt{|n|}\left[\eta_{n}=\operatorname{sign}(n)\right.$ for $n \neq 0$ and $\left.\eta_{0}=0\right]$.
+The goal of the calculation is the current density which enters the Maxwell-equations of the macroscopic gauge potentials $A_{\mu}$. It is defined by the local coupling Lagrangian:
+
+$$
+\mathcal{L}_{\text {coupling }}=\sum_{i=x, y} J_{i} A_{i}
+$$
+
+The calculation goes beyond linear response theory: in general the potential $V$ is strong. As a consequence of Eq. (3.30), I concentrate on stationary current distributions. The semiclassical calculation relies on the following assumptions:
+(i) The scalar potential $V(\mathbf{x})$ is smooth on the scale of the magnetic length.
+(ii) The macroscopic gauge potential $\mathbf{A}(\mathbf{x})$ is smooth on the scale of the magnetic length.
+(iii) Local thermodynamic equilibrium on the typical length scale of $V(\mathbf{x})$.
+
+Requirement (ii) can be regarded as the defining distinction between the gauge potential creating the magnetic field $\mathcal{A}_{i}$ and the probing gauge potential $A_{i}$. At this level of approximation the electron position and the vortex (guiding center) position become indistinguishable.
+
+It is useful to consider the quantities $J_{ \pm}=J_{x} \pm i J_{y}$ instead of components of $\mathbf{J}$. They are
+
+$$
+J_{ \pm}(\mathbf{x})=\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}}\left\langle\psi^{\dagger}(t, \mathbf{x}) j_{ \pm} \psi\left(t, \mathbf{x}^{\prime}\right)\right\rangle
+$$
+
+with
+
+$$
+j_{+}=-2 i e v_{F}\left(\begin{array}{ll}
+0 & 1 \\
+0 & 0
+\end{array}\right), j_{-}=2 i e v_{F}\left(\begin{array}{ll}
+0 & 0 \\
+1 & 0
+\end{array}\right)
+$$
+
+Here, $\psi^{\dagger}(t, \mathbf{x})$ and $\psi(t, \mathbf{x})$ are fermionic field operators with two spinor components. Thus $J_{ \pm}$are proportional to the off-diagonal elements of the fermionic Green's function $G_{\sigma \sigma^{\prime}}(t, \mathbf{x} ; t, \mathbf{x})$ at equal point and time. Since ultraviolet divergencies are expected [unbounded spectrum of Hamiltonian (3.30)] I use point-split regularization for the computation of $J_{ \pm}(\mathbf{x})$ as in the calculation of fermionic density reported in Sec. 2.5.3. Strictly speaking, to make this procedure $\mathrm{U}(1)$ gauge invariant a Wilson line $e^{i e \int_{\mathbf{x}^{\prime}} A(\mathbf{y}) d^{3} y}$ should be inserted in the end of Eqs. (3.36),(3.38) and (3.39). However, it drops out in the limit $\mathbf{x} \rightarrow \mathbf{x}^{\prime}$ and is thus omitted for simplicity. The physical reason is that at small splitting $\left|\mathbf{x}-\mathbf{x}^{\prime}\right| \ll l_{B}$, the RHS of Eq. (3.36) is invariant under the "macroscopic" (slow) local $\mathbf{U}(1)$ symmetry associated with potentials $\mathbf{A}$ even before taking the limit $\mathbf{x} \rightarrow \mathbf{x}^{\prime}$.
+
+Taking the assumptions (i) - (iii) into account, Eq. (3.36) becomes (see App. B.3)
+
+$$
+J_{ \pm}(\mathbf{x}) \approx \frac{ \pm i|e|}{2 \pi} \lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int d^{2} R \sum_{|n|=0}^{\infty} \sum_{\eta_{n}} n_{F}\left(E_{n}+V(\mathbf{R})\right)_{D}\langle n, \mathbf{R} \mid \mathbf{x}\rangle\left\langle\mathbf{x}^{\prime} \mid n, \mathbf{R}\right\rangle_{D} \partial_{ \pm} V(\mathbf{R})
+$$
+
+This formula has a very simple physical meaning: In order to find the local current density $J_{ \pm}(\mathbf{x})$ as a response to the electric field $\partial_{ \pm} V(\mathbf{R})$, sum over all locally filled Landau levels and convolute with $\left|\langle\mathbf{x}| n, \mathbf{R}\rangle_{D}\right|^{2}$.
+
+First, I would like to concentrate on the simpler case of zero temperature and chemical potential $\mu=0^{+}$. The current density in this limit and within linear response approximation shall be called $X_{ \pm}$ and (taking advantage of the smoothness of $V(\mathbf{x})$ ) turns out to be
+
+$$
+\begin{aligned}
+X_{ \pm}(\mathbf{x}) & =\frac{ \pm i|e| \partial_{ \pm} V(\mathbf{x})}{2 \pi} \lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int d^{2} R \sum_{n \leq 0} D\langle n, \mathbf{R} \mid \mathbf{x}\rangle\left\langle\mathbf{x}^{\prime} \mid n, \mathbf{R}\right\rangle_{D} \\
+& = \pm i|e| \partial_{ \pm} V(\mathbf{x})\left[\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} l_{B}^{2} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)+\frac{1}{4 \pi}\right]
+\end{aligned}
+$$
+
+The first term in the angular bracket (delta function) derives from the resolution of identity of usual (equidistant) LL [see Eq. (3.32)] and represents the expected divergence. The formal point splitting procedure cures the singularity as $\lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right) \equiv 0$. In contrast, the second contribution corresponds to half-integer $\sigma_{x y}=e^{2} / 2 h$. Its appearance is a direct consequence of the definite chirality of the zeroth LL wave function (cf. Tab. 2.2 on p. 42). ${ }^{5}$ This calculation thus provides a "pedestrian" approach to the Atiyah-Singer (AS) index theorem [120, 121].
+
+Now I would like to return to the general situation of arbitrary temperature and chemical potential. To make the divergence in Eq. (3.38) manifest and in order to subsequently cure it, I add and subtract $X_{ \pm}$to/from it. The quantity $J_{ \pm}-X_{ \pm}$is regular, since the divergence has been shifted entirely into $X_{ \pm}$
+
+[^0]
+[^0]:    ${ }^{5}$ Recently [167], in an independent semiclassical calculation, which was also based on vortex states, the Zeeman term $E_{Z} \sigma_{z}$ and the parabolic kinetic term $\frac{\mu^{2}}{2 m}$ were also taken into account in addition to Eq. (2.22). The parabolic term dominates at large $|n|$, thus the spectrum is bounded from below and the UV divergence is cured. In the formal limit $m \rightarrow \infty$ the zeroth LL was shown to produce a half-integer contribution to the Hall conductivity, in accordance with Eq. (3.39).
+
+and is regularized by the formal point-splitting procedure. One can therefore take the $\mathbf{x}^{\prime} \rightarrow \mathbf{x}$ limit, rearrange integrals and sums and exploit one last time the smoothness of $V(\mathbf{x})$ to obtain
+
+$$
+\begin{aligned}
+J_{ \pm}(\mathbf{x})=\frac{ \pm i|e|}{2 \pi} \partial_{ \pm} V(\mathbf{x}) & {\left[\begin{array}{l}
+\sum_{n>0} n_{F}\left(E_{n}+V(\mathbf{x})\right) \\
++ \sum_{n \leq 0}\left[n_{F}\left(E_{n}+V(\mathbf{x})\right)-1\right] \\
++\frac{1}{2}
+\end{array}\right] .}
+\end{aligned}
+$$
+
+The local transverse conductivity is thus
+
+$$
+\begin{aligned}
+\sigma_{y x}(\mathbf{x})=\frac{e^{2}}{h} & {\left[\begin{array}{l}
+\sum_{n>0} n_{F}\left(E_{n}+V(\mathbf{x})\right) \\
++ \sum_{n \leq 0}\left[n_{F}\left(E_{n}+V(\mathbf{x})\right)-1\right] \\
++\frac{1}{2}
+\end{array}\right] .}
+\end{aligned}
+$$
+
+The semiclassical current density, Eq. (3.40), has the following features:
+
+- First, the current density follows equipotential lines (i.e., it is perpendicular to the local electric field).
+- Second, the strength of the current density is determined by the local filling factor of LLs, see Eq. (3.41).
+- Third, the crucial difference between conventional 2DESs and Dirac fermions is the half-integer contribution by the filled hole band, i.e., the last term in the square brackets of Eqs. (3.40) and (3.41). It can be regarded as a manifestation of the AS index theorem [120, 121].
+
+It is worthwhile repeating that in contrast to usual linear response calculations, Eqs. (3.40) and (3.41) are also valid in the case of strong static electric field. They will be applied to study the image monopole effect discussed in Sec. 6.5.2.
+
+# 3.4 Summary of chapter 3 
+
+The third chapter of the present thesis was devoted to the semiclassical magnetotransport properties of 3D TI surface states. The word "semiclassical" has the following meanings in the different sections of the chapter.
+
+The first two sections 3.1 and 3.2 were devoted to the limit in which the quantization of cyclotron motion can be neglected. In addition it was assumed that the quasiparticle picture holds, i.e., that the Fermi wave length exceeds the elastic mean free path. In contrast, in Sec. 3.3 the transport properties in the limit of well pronounced Landau levels were investigated. In this case, the semiclassical approximation relied on the smoothness of the external potential. For a summary of the regimes addressed in the various sections, see Tab. 3.1.
+
+The main result of the present chapter is the semiclassical conductivity tensor as a function of Zeeman energy and orbital magnetic field, see Eqs. (3.29) in Sec. 3.2. It represents a generalization to previous calculations [174] which assumed zero orbital magnetic field. This is particularly important, inasmuch AHE experiments probe the behavior of Hall conductance as a function of orbital magnetic field. The results are not only of relevance to 3D TI surface states but also to other 2D materials and were plotted in Figs. 3.1 and 3.2.
+
+The other important findings presented in this chapter regard Sec. 3.3 and the semiclassical calculation of the local current density in the regime of distinct LLs and smooth scalar potential. The solution to this problem, which describes the physics of guiding center motion, already foresees important aspects of the half-integer QHE discussed in Chap. 6, below. In particular, the half-integer contribution to the transverse conductivity by the filled hole band ("Dirac sea") is especially transparent in the calculation presented here, see Eq. (3.41).
+
+# 4 <br> Chapter 4 
+
+## The localization problem in chiral symmetry classes
+
+This chapter is devoted to the localization problem in chiral symmetry classes. It is partially based on and extends the work published in Refs. [60, 152, 180].
+
+### 4.1 Disordered systems with chiral symmetry
+
+### 4.1.1 Physical realizations
+
+The localization problem in chiral symmetry classes (for a definition see Sec. 1.3) was first considered around 1990, both in the context of the low energy limit of QCD [181] and in lattice models designed for solid state applications [58, 59]. Following more recent developments, the localization problem for systems with chiral symmetry appears in the context of the electronic Dirac surface states of 3D TI of the Altland-Zirnbauer classes AIII and CII (chiral unitary and chiral symplectic), see Tab. 2.1, and graphene [182].
+
+Graphene is a single layer of graphite. The $s p^{2}$-hybridized carbon atoms form a hexagonal lattice and their $p_{z}$-orbitals, oriented vertically to the lattice, allow for electronic mobility as they weakly overlap. The latter can be described by a tight-binding approach including next-neighbor hopping on
+![img-22.jpeg](img-22.jpeg)
+
+Figure 4.1: Left: The hexagonal lattice of graphene with vacancies. Right: The clean spectrum in reciprocal space. The low energy physics in Graphene is described by a Dirac equation (orange and green cones).
+
+a hexagonal lattice, see Fig. 4.1, left. The spectrum of the clean tight-binding model is plotted next to it, Fig. 4.1, right. On account of the bipartite structure of the honeycomb lattice, the model is manifestly chiral, cf. Sec. 1.3. Furthermore, the band structure of graphene includes two very peculiar points ( $K, K^{\prime}$ ) per Brillouin zone, at which the conduction and valence band touch each other (orange and green cones in Fig. 4.1, right). In the vicinity of these points, the effective low energy Hamiltonian has Dirac-like form
+
+$$
+H=v_{0} \tau_{3} \sigma \cdot \mathbf{k}
+$$
+
+Here, $\tau_{3}$ is the third Pauli-matrix operating in the $K-K^{\prime}$-space and $\sigma_{i}$ are Pauli matrices acting in the sublattice space.
+
+Depending on the type of disorder, all ten symmetry classes of the Altland-Zirnbauer table (App. F) can be obtained. Ostrovsky, Gornyi and Mirlin classified all possible kinds of disorder by symmetries of the Hamiltonian (4.1) [166, 183, 184]. All cases in which disorder leads to criticality are summarized in Tab. 4.1. The shaded rows correspond to chiral symmetry classes.
+
+In particular, the problem of disordered chiral models is related to the problem of quantum percolation: One realization of a random chiral system is graphene with vacancies (see Fig. 4.1, left). Imagine a tight-binding model of graphene, from which sites are gradually removed. It is well known that at a critical vacancy density $n_{c} \approx 0.3$ there is a percolation threshold [185]. Thus the conductivity definitely vanishes for higher concentration. The question is whether quantum mechanical particles hopping from site to site will undergo Anderson localization before the percolation transition takes place (at weaker disorder).
+
+As a matter of fact, the physics in the presence of strong point like impurities (such as vacancies) turns out to be fundamentally different from the behavior for weak impurities. The following sections 4.1.24.2.4 are devoted to the latter situation corresponding to chiral systems with smooth disorder. In Sec. 4.3, the effect of vacancies will be investigated.
+
+# 4.1.2 Absence of perturbative conductivity corrections 
+
+The localization problem for chiral symmetry classes can be mapped on a NL $\sigma \mathrm{M}$ described by the following action $[58,59]$ :
+
+$$
+S[Q]=\int d^{2} x\left[\frac{\sigma}{8 \pi s} \operatorname{tr}\left[\nabla Q^{-1} \nabla Q\right]-\frac{c}{8 \pi s}\left[t r Q^{-1} \nabla Q\right]^{2}+i \pi \rho E \operatorname{tr}\left[Q^{\dagger}+Q\right]\right]
+$$
+
+$Q \in \mathbf{U}\left(N_{R}\right), \mathbf{U}\left(N_{R}\right) / \mathbf{S p}\left(N_{R}\right)$ or $\mathbf{U}\left(N_{R}\right) / \mathbf{O}\left(N_{R}\right)$ for symmetry classes AIII, BDI or CII respectively (in these classes $s=1,2$ or 2 correspondingly). The last term proportional to the dimensionful constant $\rho$ is the energy term and breaks chiral symmetry. It will be omitted everywhere except for Sec. 4.3. In classes AIII and CII a WZ term respectively $\mathbb{Z}_{2}$-topological term might be added. The prefactor of the kinetic term is proportional to the dimensionless conductance $\sigma$.
+
+The second term ("Gade term") appears only in the chiral symmetry classes, because the NL $\sigma \mathrm{M}$ manifolds allow for traceful generators, cf. App. F. Even though it usually does not appear in the direct NL $\sigma \mathrm{M}$ derivation, it is generated within renormalization. The physical interpretation of the parameter $c$ is not apparent. However, both the DOS (see below, Sec. 4.3) and the scaling of the localization length depend on it.
+
+Vanishing $\beta$ function in perturbative RG: Gade's and Wegner's argument One major peculiarity of chiral systems is the absence of conductivity corrections in perturbative RG. To see this, I rewrite
+
+| Disorder | Class | Criticality |
+| :-- | :--: | :--: |
+| Vacancies, strong potential impurities | BDI | Gade |
+| Vacancies and random magnetic field | AIII | Gade |
+| $\sigma_{3} \tau_{1,2}$-disorder | CII | Gade |
+| Dislocations | CI | WZNW |
+| Dislocations and random magnetic field | AIII | WZNW |
+| Ripples, random magnetic field | $2 \times$ AIII | WZNW |
+| Charged impurities | $2 \times$ AII | $\theta=\pi$ |
+| Random Dirac mass | $2 \times \mathrm{D}$ | $\theta=\pi$ |
+| Charged impurities and random magnetic field | $2 \times \mathrm{A}$ | $\theta=\pi$ |
+
+Table 4.1: Types of disorder in graphene which lead to critical behavior. WZNW and $\theta=\pi$ refers to criticality as described Sec. 2.4.2, Gade-criticality is explained in Sec. 4.1.2. Shaded rows denote chiral symmetry classes. Adapted from Ref. [184].
+$Q$ in Eq. (4.2) as $Q=e^{i \frac{\phi}{N_{R}}} U$ ( $U$ is an element of the special submanifold of NL $\sigma \mathrm{M}$ manifold and $\operatorname{det} Q=e^{i \phi}$ ). As a functional of $U$ and $\phi$ the action is
+
+$$
+S[U, \phi]=\int d^{2} x\left[\frac{\sigma}{8 \pi s} \operatorname{tr}\left[\nabla U^{-1} \nabla U\right]+\left(\frac{\sigma+N_{R} c}{8 \pi s N_{R}}\right)(\nabla \phi)^{2}\right]
+$$
+
+Hence the theory is Gaussian in the phase $\phi$ and its prefactor is not renormalized.
+
+$$
+\frac{d}{d y}\left(\sigma+N_{R} c\right)=0
+$$
+
+Recall that $y=L / l$ encodes the running scale. Using this and assuming non-singular $\beta$-functions $\beta_{\sigma}$ and $\beta_{c}$ in the replica limit, it follows that the conductivity corrections vanish in every order of perturbation theory:
+
+$$
+\begin{aligned}
+& \frac{d \sigma}{d y}=\beta_{\sigma}\left(N_{R}\right)=-N_{R} \beta_{c}\left(N_{R}\right) \rightarrow 0, \\
+& \frac{d c}{d y}=\beta_{c}\left(N_{R}\right) \quad \rightarrow \beta_{c}(0)<\infty .
+\end{aligned}
+$$
+
+Hence, for any $\sigma$ the system is critical: this is called the critical Gade phase.
+Numerical simulations The critical Gade phase was observed in numerical simulations of disordered chiral systems in the beginning of the past decade [186, 187]. Additionally, in both references a transition between critically delocalized and localized phases within the chiral symmetry class was observed. Hence there seems to be a contradiction between numerical results and implications of Eq. (4.5):
+
+- On the one hand, Gade's and Wegner's argument rules out any kind of conductivity corrections. Within the NL $\sigma \mathrm{M}$ approach, there is no evidence suggesting the existence of an insulating phase.
+- On the other hand, numerical simulations do indicate the existence of a localized phase.
+
+In this chapter a resolution of this apparent dichotomy will be provided.
+
+# 4.2 Topologically driven localization 
+
+### 4.2.1 How to circumvent Gade's and Wegner's argument
+
+It seems as if Gade's and Wegner's argument leading to vanishing $\beta_{\sigma}$-function prevented any kind of metal-insulator transition. Still a loophole exists: as $\phi \in \mathbb{S}^{1}$ lives on a topologically non-trivial manifold, $S[\phi]$ is not really Gaussian. Topological excitations, namely vortices, are allowed. Their logarithmic interaction produces logarithmic corrections to the coupling constants under RG. All this is to some extent similar to the BKT transition [112, 113] discussed in Sec. 1.5.4.
+
+The possibility of vortices is very much related to the fact that systems of disordered chiral symmetry classes can be TIs in one spatial dimension, see Tab. 2.1: The first homotopy group of the $\mathrm{NL} \sigma \mathrm{M}$ manifold is $\Pi_{1}\left(\mathcal{M}_{\sigma}\right)=\mathbb{Z}$.
+
+The parametrization $Q=e^{i \frac{\pi}{N_{R}}} U$ employed in Sec. 4.1.2 has to be treated with care: The unitary group is not the direct product of its subgroups $\mathbf{U}\left(N_{R}\right) \neq \mathbf{U}(1) \times \mathbf{S U}\left(N_{R}\right)$ but rather their semi-direct product [188], [189]. ${ }^{1}$ Following these mathematical subtleties, vortices in the following $\mathbf{U}(1)$ subgroup shall be considered. ${ }^{2}$
+
+$$
+Q_{\text {vortex }}=\left(\begin{array}{cc}
+e^{i \phi(\mathbf{x})} & 0 \\
+0 & \mathbf{1}
+\end{array}\right)
+$$
+
+The vortex field $\phi$, which enters only the first replica, is defined by the winding acquired along a contour around its center:
+
+$$
+\oint d \mathbf{s} \cdot \nabla \phi=2 \pi
+$$
+
+Similarly to the case of vortex excitations in superconductors the kinetic energy of the NL $\sigma \mathrm{M}$ diverges as the center of the vortex is approached. This leads to the concept of "vortex core".
+
+Recall that the NL $\sigma \mathrm{M}$ is an effective theory describing excitations on length scales much larger than the mean free path $l$. Thus, inside the vortex core of area $l^{2}$, the physics beyond the NL $\sigma \mathrm{M}$ has to be taken into account leading to a regularization of the above mentioned divergence. The regularized kinetic energy of the core is encoded in the Boltzmann weight ("fugacity") associated to each vortex excitation
+
+$$
+z_{v, 0} \sim e^{-\sigma_{0}}
+$$
+
+In this formula $\sigma_{0}$ is the bare (Drude) value of the NL $\sigma \mathrm{M}$ coupling constant $\sigma$.
+
+### 4.2.2 Technical description
+
+In Refs. $[60,152]$ the derivation of the RG equations is presented in detail. The renormalization of the NL $\sigma \mathrm{M}$ is performed by means of the background field technique [94]. A set of "Kubo formulae" is
+
+[^0]
+[^0]:    ${ }^{1}$ For the semidirect product $\mathbf{U}(N)=\mathbf{U}(1) \rtimes \mathbf{S U}(N)$ the $\mathbf{U}(1)$-subgroup is realized by diag $\left(e^{i \phi}, 1,1, . ., 1\right)=: e^{i \phi} \hat{\mathrm{~h}}$. The semidirect product comes along with the following multiplication:
+
+    $$
+    *:(\mathbf{U}(1) \rtimes \mathbf{S U}(N)) \times(\mathbf{U}(1) \rtimes \mathbf{S U}(N)) \rightarrow \begin{aligned}
+& \mathbf{U}(1) \rtimes \mathbf{S U}(N) \\
+& \left(e^{i \phi} \hat{\mathrm{~h}}, U\right) *\left(e^{i \phi} \hat{\mathrm{~h}}, V\right):=\left(e^{i \phi} \hat{\mathrm{~h}} U e^{i \phi} \hat{\mathrm{~h}} U^{-1}, U V\right)
+    \end{aligned}
+    $$
+
+    which is nothing but the usual matrix multiplication once the elements of tuples are combined.
+    ${ }^{2}$ For simplicity, the vortex field is entering only the first replica here. Physically, vortices entering a $\mathbf{U}(1)$ subgroup in other replicas are of equal importance and are straightforwardly included in the end of the calculation.
+
+derived according to which $\sigma$ and $c$ were expressed in terms of correlators of $Q$ matrices (analogous to the case of the instanton calculation in the QHE, Ref. [190, 191]). These correlators are perturbatively evaluated, and also the effect of the WZ term in class AIII and $\mathbb{Z}_{2}$ instantons in class CII can be included.
+
+To obtain corrections due to vortices perturbatively in $z_{v} \ll 1$ a single vortex-antivortex pair is included into a given replica. The effect of their logarithmic interaction is taken into account analogously to the case of the BKT transition, Ref. [114], which was discussed in Sec. 1.5.4. The effect was integrated over all directions in replica space, where the pair may reside. Note that the fugacity is itself subjected to renormalization and Eq. (4.7) only constitutes the bare value.
+
+For class AIII the RG equations could also be derived by means of a dual, "sine-Gordon" like theory.
+
+# 4.2.3 RG equations and discussion 
+
+The RG equation describing the renormalization of the action, (4.2) in the various symmetry classes are in the replica limit (recall that $y=\ln L / l$ determines the running scale):
+
+$$
+\begin{aligned}
+\frac{d \sigma}{d y} & =-\sigma z_{v}^{2} \\
+\frac{d K}{d y} & = \begin{cases}\frac{1}{4}-2 K z_{v}^{2}, & \text { AIII, } \\
+\frac{1}{8}-2 K z_{v}^{2}+\frac{\sigma z_{v}^{2}}{16}, & \text { CII, } \\
+\frac{1}{2}-2 K z_{v}^{2}-\frac{\sigma z_{v}^{2}}{4}, & \text { BDI. }\end{cases} \\
+\frac{d z_{v}}{d y} & =(2-K) z_{v} .
+\end{aligned}
+$$
+
+These equations are expressed in terms of the stiffness parameter $K$ :
+
+$$
+K= \begin{cases}(\sigma+c) / 4, & \text { AIII, } \\ (\sigma+c) / 8, & \text { CII, } \\ (\sigma+2 c) / 4, & \text { BDI. }\end{cases}
+$$
+
+It is worth to repeat, that these RG equations are perturbative in $z_{v} \ll 1$. Additionally, for classes CII and BDI they are also perturbative in $1 / \sigma \ll 1$. (This assumption is not necessary for class AIII.) In all three of the classes the effect of vortices is localizing as long as $z_{v} \neq 0$. In the absence of vortices $z_{v}=0$ the Gade-Wegner result is recovered [58, 59].
+
+For the analysis of RG equations I focus on symmetry class AIII. In this case, Eqs. (4.8b) and (4.8c) decouple from the RG equation for conductivity $\sigma$. The flow is depicted in Fig. 4.2. There is a repulsive critical point at $\left(K_{*}=2, z_{v, *}=1 / 4\right)$ and a black separatrix which separates the flow towards the Gade phase $\left(K \rightarrow \infty, z_{v}=0\right)$ (blue) and the insulating phase where vortices proliferate $z_{v} \rightarrow \infty$ (red). Since the derivation of RG equations is based on $z_{v} \ll 1$ the position of the critical point is at the border of applicability of the theory. The qualitative picture should be correct though and similar in classes BDI and CII.
+
+![img-23.jpeg](img-23.jpeg)
+
+Figure 4.2: $R G$ flow corresponding to Eqs. (4.8) for class AIII.
+
+# 4.2.4 Topological protection from localization 
+
+As explained in Secs. 2.4.2 and 4.1.2, the action (4.2) might be supplemented by a WZ or a $\mathbb{Z}_{2}$ topological term. In particular, for Dirac fermions with disorder preserving the chiral symmetry, these terms were explicitly derived in Refs. [60, 152, 164]. In both cases, the important physical implication of this term is the absence of localization: The WZ term (evoking the WZNW RG flow) translates the argument of Sec. 2.5.1 to the NLorM.
+
+How can the absence of localization be understood if vortices which drive the system into the localized phase [see Eqs. (4.8)] are present?
+
+First consider the model with the WZ term. The $\mathbb{Z}_{2}$ term can be understood as its descendant afterwards. The manifestly $\mathbf{U}\left(N_{R}\right)$-invariant definition of the WZ term relies on the extension of the base manifold from a 2 -sphere to a 3 -hemisphere. This way of defining the WZ term is, however, not opportune in the presence of vortices. Inside the vortex core the theory is not defined (more informally, there are holes in the base manifold). In the usual situation without vortices, the expansion into the third dimension is such that the base manifold is continuously shrunk to a point (see. Fig. 2.2 on p. 36). However, it is not clear how to unambiguously define this procedure when the vortex holes are present.
+
+Therefore, it is more convenient to consider the "local" expression of the WZ term, Eq. (2.46). It is constructed without the extended base manifold but is tied to a certain coordinate representation $\phi^{i}$. Then, the global rotation of $Q$-fields represented by $\beta_{k}\left(\phi^{i}\right)$ produces the following correction to the WZ term
+
+$$
+i \delta S_{W Z}=i 4 \pi k \int d^{2} x \partial_{\mu}\left(\epsilon^{\mu \nu} \beta_{j} \partial_{\nu} \phi^{j}\right)
+$$
+
+As long as vortices are absent this integral vanishes due to the compactified base-manifold $\mathbb{R} \cup\{\infty\} \simeq \mathbb{S}^{2}$, and the theory is $\mathbf{U}\left(N_{R}\right)$ invariant. On the contrary, when vortices are present, this term does not vanish. Hence, the theory which is defined outside the vortex core yields a boundary contribution for each vortex
+
+$$
+i \delta S_{W Z}=i 4 \pi k \oint_{\text {Vortex }} d \mathbf{s} \cdot\left(\beta_{j} \nabla \phi^{j}\right)=: i \phi(\beta)
+$$
+
+It seems that the action loses its $\mathbf{U}\left(N_{R}\right)$-invariance as soon as both a vortex and the WZ term are present. However, the $\mathbf{U}\left(N_{R}\right)$-invariance is a strict symmetry from the underlying fermionic theory. Rewriting the theory in terms of the NLorM should not destroy this basic property. How can this happen?
+
+It has been stressed that inside the vortex core the NL $\sigma \mathrm{M}$ description breaks down. The core was replaced by a hole in the sample and an estimated core energy cost encoded in $z_{v}$. This brute approximation is obviously not physical. Inside the core, there exists another theory describing the physics which is not known. In order to restore the $\mathbf{U}\left(N_{R}\right)$ symmetry, this theory must have boundary conditions such that it produces an additional term $-i \phi(\beta)$ under the above mentioned global transformation of $Q$-fields. Thus the vortices have to carry a complex fugacity $z_{v} e^{i \phi}$. The additional vortex degree of freedom $\phi$ transforms in the way to keep the theory $\mathbf{U}\left(N_{R}\right)$-symmetric. The average over the phase, however, eventually destroys the effect of the vortices.
+
+For class CII with the $\mathbb{Z}_{2}$-topological term the argumentation is similar. The phase $\phi(\beta)$ can only acquire values 0 and $\pi$ and so can the phase of the fugacity. This discrete degree of freedom resembles the presence or absence of Majorana zero modes in the vortex of a p-wave superconductor. In any case, the average over the sign of the fugacity cancels the vortex contributions.
+
+# 4.2.5 Topologically driven localization in the symplectic Wigner-Dyson class 
+
+In view of the non-trivial first homotopy group of the NL $\sigma \mathrm{M}$ manifold (see App. F) the importance of $\mathbb{Z}_{2}$ vortex defects in the NL $\sigma \mathrm{M}$ field theory for the symplectic class AII was pointed out in Refs. [60, 152]. Their influence on the localization physics and topological phases of matter was subsequently investigated by Fu and Kane in Ref. [192]. First, it was shown that from NL $\sigma \mathrm{M}$ perspective, the $\mathbb{Z}_{2}$ topological invariant which distinguishes the bulk of the ordinary Anderson insulator from the QSH insulator is the sign of the fugacity $z_{v}$ of the vortices. Second, RG equations for class AII including vortex excitations were perturbatively derived in the vicinity of $N_{R}=1$ replica. On the basis of this calculation the authors argued, that vortices are crucial for localization. It follows, that the transition from symplectic metal to QSH insulator falls in the same universality class as the ordinary 2D MIT in class AII (this is consistent with current numerical data [193-195]). Finally, it was explicitly shown that vortices are forbidden on the surface of 3D weak TIs and this way they can avoid localization [196].
+
+Note that the effect of vortices is erased on the surface of strong 3D TIs of class AII [154]. The mechanism is the same as for class CII discussed above, Sec. 4.2.4.
+
+### 4.3 Chiral systems with strong impurities
+
+While the previous sections of the present chapter were mostly dedicated to the localization problem in chiral systems with a smooth disorder potential, the attention is now turned towards strong, point-like impurities, e.g., vacancies in graphene. In particular, the energy dependence of the DOS in chiral systems is under scrutiny and the situation of different vacancy concentrations in the two sublattices is also considered.
+
+### 4.3.1 Effective field theory for a bipartite lattice with vacancies
+
+Recently, the effective field theory (NL $\sigma \mathrm{M}$ ) was derived for a vacancy disordered, bipartite lattice [180]. The system under investigation is a tight binding model composed by two stacked square lattices with bond disorder and vacancies. It can be expected, that results obtained for this model also apply to other systems of the same universality class, for example to vacancy disordered graphene. The NL $\sigma \mathrm{M}$, Eq. (4.2), turns out that to be augmented by the following terms
+
+$$
+S_{\text {vac. }}=\int_{\mathbf{x}}\left[\left(n_{A}-n_{B}\right) \operatorname{tr} \ln Q-\frac{n}{2}(\operatorname{tr} \ln Q)^{2}\right]
+$$
+
+Here, $n_{A}\left(n_{B}\right)$ denotes the vacancy concentration in sublattice $A$ (sublattice $B$ ) and the total vacancy concentration is $n=n_{A}+n_{B}$. A 0 D version of the first (imbalance) term in Eq. (4.12) also appears in the calculation of the eigenvalue statistics in the imbalanced chiral random matrix theory [197]. Using the decomposition $Q=\exp \left(i \phi / N_{R}\right) U$ of unitary matrices, as in Sec. 4.1.2, it becomes apparent that the phase degree of freedom is massive and vacancies break the symmetry group down to special unitary transformations. Since the first homotopy group $\pi_{1}\left(\mathbf{S U}\left(N_{R}\right)\right)=\{1\}$ is trivial, this suggests that the vortex induced corrections to RG equations (4.8) are absent for the localization problem of chiral classes with strong impurities, such as vacancy disordered graphene.
+
+# 4.3.2 Density of states: Analytical study 
+
+In this section, the behavior of the DOS as a function of energy $E$ shall be investigated. To this end, the renormalization of the full NLeM defined by Eqs. (4.2) and (4.12) has to be analyzed. In particular, it is worthwhile repeating that now the situation of nonzero energy $E \neq 0$ is investigated, while previously $E=0$ was assumed in this chapter. As I just explained, vortex excitations are gapped out at finite vacancy concentration and are thus immaterial for the long-distance physics. The perturbative RG equations for $\sigma$ and $c$, are hence given by Eqs. (4.8a), (4.8b) at $z_{v}=0$ [58]. In addition (concentrating on class AIII) the energy is renormalized as
+
+$$
+\frac{d \ln E}{d y}=\frac{c+4 \pi n L^{2}}{\sigma^{2}}
+$$
+
+Thus the presence of vacancies $(n \neq 0)$ drastically changes the RG as compared to the $n=0$ result [58]. In particular, the "beta function" contains a term involving the running scale $L$ and dominating the ultimate long-distance behavior.
+
+I would briefly like to review [58] the behavior of the DOS at $n=0$. It diverges as a function of energy according to
+
+$$
+\nu(E) \sim \frac{1}{|E|} e^{-\sqrt{2} \sigma \sqrt{|\ln (E / \tilde{E})|}}
+$$
+
+The energy scale $\tilde{E}$ is typically set by the band width. This result is obtained as follows: The RG equations for $\sigma$ and $c(4.8 \mathrm{a}),(4.8 \mathrm{~b})$ (at $z_{v}=0$ ) and for energy $E(4.13)$ (at $n=0$ ) are integrated leading to
+
+$$
+\ln [E(y) / E]=\frac{c_{0} y+y^{2} / 2}{\sigma^{2}}
+$$
+
+in the exemplary case of class AIII. The subscript " 0 " denotes bare values of NLeM coupling constants and the notation $E_{0}=E$ is used. The chiral RG is only valid as long as energy is small and $E\left(L_{c}\right)=\tilde{E}$ sets the lengthscale
+
+$$
+L_{c} \sim l \exp \left[\sqrt{2} \sigma \sqrt{\ln \tilde{E} / E}\right]
+$$
+
+of crossover to class A. Thus, $L_{c}$ also determines the localization length and the DOS can be estimated by $\nu(E) \sim 1 /\left(E L_{c}^{2}\right)$ in the 0 D blocks of size $L_{c}^{2}$. This leads to Eq. (4.14).
+
+Now I would like to turn the attention to the DOS of chiral systems with vacancies. Again, the RG equations are employed to derive the final result. The scale dependent energy in the long-distance limit behaves as
+
+$$
+\ln [E(y) / E]=\frac{2 \pi n L^{2}}{\sigma^{2}}
+$$
+
+The RG stops at the length scale $L_{c}$ set by $\sigma /\left(\rho L_{c}^{2}\right) \sim \max \left(E\left(L_{c}\right), \Delta\right)$, where $\Delta=2 \pi \rho\left(n_{A}-n_{B}\right)$ is the energy scale associated to the vacancy imbalance. For the case of absent imbalance the length scale $L_{c}$ is set by
+
+$$
+L_{c} \sim \sigma \sqrt{\left|\ln E \tau_{n}\right| / n}
+$$
+
+Here, the time scale $\tau_{n}=4 \pi \rho \sigma / n$ was introduced and the limit $E \tau_{n} \ll 1$ was considered. Contrary, in the case of sufficiently strong imbalance, the correlation length is $L_{c} \sim \sqrt{\sigma /(\rho \Delta)}$.
+
+Once the RG stops at the length scale $L_{c}$, the system can be considered to be consisting of many 0 D blocks of size $L_{c}^{2} \ll L^{2}\left(L^{2}\right.$ is the area of the sample). The DOS of a single block is given by the 0 D DOS evaluated at scale $L_{c}$ and energy $E\left(L_{c}\right)$,
+
+$$
+\nu(E)=\left.\frac{E\left(L_{c}\right)}{E} \nu_{0 \mathrm{D}}\left(E\left(L_{c}\right)\right)\right|_{L=L_{c}}
+$$
+
+The prefactor $E\left(L_{c}\right) / E$ accounts for the renormalization of energy in the defining relation for the DOS, $\nu(E) \propto \partial N / \partial E$, where $N$ is the particle density. Since the vacancy imbalance varies from block to block, the quasiclassical $\left(n_{A, B} L_{c}^{2} \gg 1\right)$ result for the 0 D DOS $\nu(E)$
+
+$$
+\nu_{0 \mathrm{D}}(E)=2 \rho\left[\pi \delta\left(\frac{E}{\Delta_{L_{c}}}\right)+\sqrt{1-\frac{\Delta_{L_{c}}^{2}}{E^{2}}}\right]
+$$
+
+is averaged over Gaussian fluctuations of $\Delta_{L_{c}}$ with mean $\Delta$ and dispersion $r=\sqrt{n} /\left(2 \pi \rho L_{c}\right)$. This way the averaged DOS of the macroscopic sample is obtained. For small imbalance and at low energies, the averaged DOS is
+
+$$
+\left.\bar{\nu}_{0 \mathrm{D}}(E)\right|_{L=L_{c}} \simeq \sqrt{2 \pi} \rho[2 r \delta(E)+E / r]
+$$
+
+The final result for the asymptotic, low energy DOS in the cases of absent and weak imbalance relies on the evaluation of $\bar{\nu}_{0 D}$ employing the quoted results for the length scale $L_{c}$,
+
+$$
+\begin{array}{ll}
+\nu(E) \sim \frac{\rho}{E \tau_{n}\left|\ln E \tau_{n}\right|^{3 / 2}}, & n_{A}=n_{B}, \text { (balance) } \\
+\nu(E) \sim \frac{\rho}{\sqrt{\Delta \tau_{n}}}\left[\delta\left(\frac{E}{\Delta}\right)+E \tau_{n} e^{1 / \Delta \tau_{n}}\right], & E e^{1 / \Delta \tau_{n}} \ll \Delta \ll 1 / \tau_{n}, \text { (weak imbalance) }
+\end{array}
+$$
+
+In contrast, for strong imbalance $\Delta \tau_{n} \gg 1$, the RG stops very quickly and the DOS is mainly given by Eq. (4.20). Local variations around $\Delta$ are rare and the associated subgap tails can be obtained by the method of optimal fluctuations (instantonic saddle points of the action). The result is
+
+$$
+\nu(E) \sim \begin{cases}\exp \left[-\frac{\Delta \tau_{n}}{3}(2 \epsilon)^{3 / 2}\right], & \epsilon=1-\frac{E}{\Delta} \ll 1 \\ (E / \Delta)^{\Delta \tau_{n}}, & E \ll \Delta\end{cases}
+$$
+
+# Analysis of results 
+
+As compared to the behavior in the presence of smooth disorder, Eqs. (4.14) and (4.16), the DOS and correlation length $L_{c}$ display a fundamentally different dependence on energy, see Fig. 4.3.
+
+First, as compared to the situation of a smooth random potential, the correlation length $L_{c}(E)$ diverges much more slowly in the presence of vacancies. In the situation of an imbalanced vacancy distribution, the divergence is cut altogether.
+
+Second, the DOS in the presence of a strong vacancy imbalance has the following features: To begin with, there is a delta-peak in the center of the spectrum. This reflects the $N_{Z M} \geq\left|n_{A}-n_{B}\right| L^{2}$ zero modes that appear because the off-diagonal subblocks of the chiral Hamiltonian are rectangular. ${ }^{3}$ Mathematically, the zero modes are a manifestation of the rank-nullity theorem, which can be regarded as a discrete version of the index theorems discussed in Sec. 2.2. To compensate the spectral weight accumulated in the delta peak, a (pseudo-)gap of width $2 \Delta$ forms in the center of the spectrum. For energies $E \simeq \pm \Delta$, exponential tails leak into the gap region. These exponential tails give way to a non-universal power law for extremely small energies, see Eq. (4.22c).
+
+Third, the DOS in the case of weak vacancy imbalance, Eq. (4.22b), still displays the delta-resonance associated to the zero-modes. However, instead of the (pseudo-)gap, the spectrum displays a linear dip in the DOS close to the band center. For larger energies, the behavior crosses over to the balanced situation.
+
+Fourth, in the situation of fully balanced vacancy concentration, the asymptotic low energy behavior of the DOS, Eq. (4.22a), displays a divergence, which is much stronger than the divergence in the absence of vacancies, Eq. (4.14). This phenomenon has two origins: One factor, is that the DOS in the presence of vacancies has a stronger dependence on the correlation length [ $\nu \sim 1 /\left(E L_{c}^{3} \sqrt{n}\right)$ with vacancies as compared to $\nu \sim 1 /\left(E L_{c}^{2}\right)$ without]. The other reason is the much slower divergence of $L_{c}$ which I discussed in the beginning of this analysis.
+
+### 4.4 Tight binding model on a bipartite lattice with vacancies: Numerics
+
+Recently, the localization problem [198] of vacancy-disordered graphene [199-202] enjoyed increased numerical interest.
+
+In these numerical studies no evidence of a MIT in chiral symmetry classes could be observed. This is in contrast to the older works [186, 187] quoted above. However, it is of crucial importance to notice the fundamental difference between these simulations: While Refs. [186, 187] addressed the situation of smooth disorder, the works [198-202] studied the case of vacancies. It was explained above, that the driving mechanism of the MIT in chiral symmetry classes are the vortex excitations in the NLeM fields. As I remarked, these excitations can only occur in the situation of smooth disorder, while in the presence of strong impurities, such as vacancies, vortices are energetically inaccessible. Therefore, the numerical findings from Refs. [186, 187] and Refs. [198-202] are both in accordance with the theory developed in this chapter.
+
+Furthermore, the energy dependence of the DOS was analyzed numerically [199-202]. The behavior described by Eq. (4.14) was observed [199-201] for small vacancy concentrations $n \ll n_{c} \approx 0.3$. This corresponds to the situation when the RG equation for the energy, Eq. (4.13) is dominated by the term proportional to $c$.
+
+[^0]
+[^0]:    ${ }^{3}$ Actually, every vacancy is accompanied by one trivial zero mode. In the main body I use the word "zero modes" for those occurring in the remaining physical Hilbert space which is $\left(N_{\text {sites }}-n L^{2}\right) \times\left(N_{\text {sites }}-n L^{2}\right)$ dimensional ( $N_{\text {sites }}$ is the number of sites, $n L^{2}$ the total number of vacancies).
+
+![img-24.jpeg](img-24.jpeg)
+
+Figure 4.3: Schematic behavior of the DOS in chiral symmetry classes. The divergence for a system governed by smooth disorder, Eq. (4.14), (pink curve) is much weaker than the divergence when there is a finite, sublattice balanced density of vacancies, Eq. (4.22a), (red curve). In the presence of an imbalanced vacancy distribution, the DOS displays a delta peak at $E=0$ reflecting the zero-modes in the system. While for weak imbalance, Eq. (4.22b), the DOS linearly vanishes when approaching the band center, in the case of strong imbalance a pseudo-gap of size $\Delta=2 \pi \rho\left(n_{A}-n_{B}\right)$ forms.
+
+Contrary, for higher vacancy concentrations or equivalently at extremely low energies the behavior drastically changes displaying in particular a stronger singularity at the band center. The numerical data is consistent with the divergence predicted in Eq. (4.22a) [202].
+
+Eventually, the imbalanced situation $n_{A} \neq n_{B}$ was also numerically investigated: While the definite analysis of numerical data in the imbalanced case is still underway, qualitative features of Eqs. (4.22b) - (4.22c) were reported in Refs. [199-201]. These include in particular the peak at zero energy, as well as the linear dip for weak imbalance and the pseudo-gap for large imbalance respectively.
+
+# 4.5 Summary of chapter 4 
+
+In this chapter the localization problem of chiral symmetry classes was investigated. As explained in the beginning of the chapter, Sec. 4.1.1, physical realizations are surface states of 3D TIs of symmetry classes AIII and CII as well as graphene.
+
+Two physical observables were investigated: the conductivity and the density of states (DOS). For both of them, two different types of disorder were considered: on the one hand, the situation of a smooth disorder potential, on the other hand strong point like impurities (e.g. vacancies in bipartite lattices). In the latter case, also the imbalanced situation (different densities of vacancies in the two sublattices) was analyzed.
+
+The major results, which extend the findings of previous studies [58, 59], are summarized in the following table.
+
+|  | smooth disorder potential | vacancies |
+| :--: | :--: | :--: |
+| conductivity | While perturbative quantum corrections to conductivity are absent [58, 59], it was shown that topological defects in the NLeM-field (vortices) have a localizing effect, see Eqs. (4.8). The associated MIT is displayed in Fig. 4.2. Dirac fermions avoid localization, see Sec. 4.2.4. | The $\mathbf{U}(1)$-phase degree of freedom of the unitary NLeM-fields is gapped in the presence of vacancies, see Eq. (4.12). <br> Therefore, the vortex-induced localization cannot occur in this case. |
+| DOS $\nu(E)$ | The interplay of RG equations for energy and the coupling constant $c$ of the theory, Eq. (4.2), implies $[58,59]$ a non-trivial divergence of the DOS at zero energy, see Eq. (4.14). | The presence of vacancies modifies the RG equation for energy, see Eq. (4.13). As a consequence, the divergence of $\nu(E)$ is much stronger than in the case of smooth disorder, see Eq. (4.22a). For imbalanced vacancy concentrations, the DOS displays a deltapeak at $E=0$. States, which are close by in energy are repelled, see Eq. (4.22b) and Fig. 4.3. |
+
+In conclusion, it is worthwhile repeating, that the analytical findings are consistent with numerical studies [186, 187, 198-202]. Note that, concerning vacancy disordered chiral systems, the numerical works [198-202] were performed on graphene samples, while the analytical investigation was undertaken on two stacked square lattices. The excellent agreement between analytics and numerics for two microscopically different models should be seen as yet another manifestation of universal behavior in random quantum systems.
+
+On the other hand, the fact that vacancy-disordered chiral models and chiral systems with smooth disorder configurations behave fundamentally differently, shows, that the classification of universality classes of disordered systems is finer than the table of random Hamiltonians reported in App. F.
+
+# 5 <br> Interaction effects in 3D topological insulators slabs 
+
+The experimental importance of disorder and electron-electron interactions in 3D TI ${ }^{1}$ materials [48, 203, 204] was already exposed in Sec. 1.2.5. Inspired by these recent experimental advances, I present here a detailed analysis of interference and interaction corrections to conductivity in the most conventional setup for transport experiments: the slab geometry, in which the 3D TI samples are rather thin (down to $\sim 10 \mathrm{~nm}$ ) although still thick enough to support well separated surface states. As will be explained in more detail, the long-range Coulomb interaction between the two major surfaces plays an important role. The quantum corrections to conductivity in the diffusive regime contain both the WAL effect as well as corrections of AA type (see Sec. 1.2.4) induced by inter- and intrasurface interaction, see Fig. 5.1.
+
+Before turning to the problem of two interacting 3D TI surfaces I would like to review the results of Ref. [205]. There a single 3D TI surface was analyzed. Recall that 3D TI surface states have a kinetic Hamiltonian (2.22) consisting only of the Rashba term. Therefore spin-rotation invariance is broken on all energy scales and the interference correction is of WAL type. The topological surface state corresponds to a single carrier channel of class AII and $\alpha^{\prime}=-1 / 2$ in Eq. (1.6) on p. 5. At the same time the localizing AA correction is twice as strong as WAL. So in total the scale (temperature) dependence of conductivity is localizing (akin to the case of a single bulk channel, Fig. 1.6). However, since Dirac fermions can not be strongly localized, the localizing flow must stop at some critical conductance of order one. This self-organized effect was named "interaction-induced criticality". It crucially relies on the universal AA correction. As explained in Secs. 1.2.4 and 1.5.2, universality is a consequence of the unitary limit of long-range Coulomb interaction [ $\gamma_{s}=-1$ in Eqs. (1.28)]. In the presence of external screening (e.g. by the second surface) this universality is (partially) lost. The fate of interaction-induced criticality is one motivation for the work presented in this chapter.
+
+This chapter is based on Ref. [154]. It is structured as follows: First, in Sec. 5.1, I introduce the system which shall be posed under examination and specify the parameter regime addressed in this chapter. Then a perturbative, Altshuler-Aronov-like calculation will be presented in Sec. 5.2. Subsequently, the effective field theory is derived in Sec. 5.3. Details on the renormalization of this low energy theory can be found in Sec. 5.4, while the associated RG flow is investigated in Sec. 5.5. I conclude this chapter with an extensive comparison to experimental setups, Sec. 5.6.
+
+[^0]
+[^0]:    ${ }^{1}$ In this and the subsequent two chapters, I will use the expression 3D TI for 3D TIs of symmetry class AII.
+
+![img-25.jpeg](img-25.jpeg)
+
+Figure 5.1: Pictographic representation of the model investigated in this chapter: Diffusively propagating surface states at different chemical potentials which interact with each other by means of long-range Coulomb interaction.
+
+# 5.1 Topological insulator slabs: Experimental setup and theoretical model 
+
+### 5.1.1 Setup and relevant length scales
+
+A typical experimental setup is shown in Fig. 5.2. The analysis is valid in the regime where the penetration depth of surface states $a$ is small with respect to the slab thickness $d$. Therefore intersurface tunneling (which would destroy the topological protection) is neglected. Further, I assume the disorder correlation length (depicted by the range of the impurity potentials) to be small $\xi \ll d$. A generic case is treated: the vicinity to a possible coat or, respectively, to the substrate may induce a different degree of disorder on the top and bottom surfaces. The corresponding mean free paths $l_{1}$ and $l_{2}$ are thus considered as two independent parameters. Moreover, also the chemical potentials $\mu_{1}$ and $\mu_{2}$ on the two surfaces are allowed to be different. [As above $\mu_{s}=0$ corresponds to the system being at the Dirac point. In this chapter $s=1,2$ denotes the surface index. Sometimes the notion top (bottom) surface will be used for $s=1(s=2)$.] The chemical potentials may be experimentally controlled by means of electrostatic gates. The focus is on the situation where both $\mu_{1}$ and $\mu_{2}$ lie well within the bulk gap $M_{\infty}$. The extension of the results to the experimentally important regime when only one of chemical potentials is located within the bulk gap, $\left|\mu_{1}\right| \ll M_{\infty} \lesssim\left|\mu_{2}\right|$, can be found in section 5.5.2.
+
+If the electrostatic gates are present and too close ${ }^{2}$ to the sample, Coulomb interaction is externally screened and the electron-electron interaction is purely short range. However, such an experimental scenario is a rare exception from the rule. Therefore, in the main text I assume sufficiently distant gates and concentrate on the limit of long-range Coulomb interaction. In addition general RG equations are derived in App. C.4. These allow to explore the crossover from the long-range case to the short-range one, see App. C.6. Qualitatively, the RG flow for a sufficiently strong short-range interaction in the case of externally screened surfaces turns out to be similar to the flow in the absence of external screening.
+
+Since I assume that the thickness $d$ of the sample is much smaller than its other linear dimensions, I neglect contributions of the four side faces of the film (whose area is proportional to $d$ ).
+
+[^0]
+[^0]:    ${ }^{2}$ Closer than the typical length scale $L_{E}$ of the system, see Eq. (5.3).
+
+![img-26.jpeg](img-26.jpeg)
+
+Figure 5.2: Scheme of a typical experimental setup. The hierarchy of length scales is explained in the main text.
+
+# Hierarchy of length scales in the diffusive regime 
+
+The goal of the present analysis is to study conduction properties of thin 3D TI slabs in the diffusive regime, i.e., at energy scales $E$ far below the elastic scattering rates $1 / \tau_{s}$ of both surfaces,
+
+$$
+E \ll \min _{s=1,2} 1 / \tau_{s}
+$$
+
+In turn the elastic scattering rates are assumed to be small compared to the chemical potentials
+
+$$
+1 / \tau_{s} \ll\left|\mu_{s}\right|
+$$
+
+In experiment $E$ is set by the AC frequency $(E=\omega)$ or by temperature $\left(E=k_{B} T\right)$, whichever of the two is larger. Equation (5.1) is equivalent to the hierarchy of length scales
+
+$$
+l \ll L_{E}
+$$
+
+where the maximal mean free path $l=\max _{s=1,2} l_{s}$ and the length scale $L_{E}=\min _{s=1,2}\left(D_{s} / E\right)^{1 / 2}$ were introduced ( $D_{s}$ being the diffusion coefficients of the two surfaces).
+
+### 5.1.2 Interaction
+
+Can Coulomb interaction between the top and bottom surface states play an important role in the experiment? To answer this question, I compare the sample thickness with all natural length scales of the system: the screening length $l_{\text {scr }}$, the (maximal) mean free path $l$ and the experimentally tunable scale $L_{E}$.
+
+## RPA screening of Coulomb interaction
+
+The Coulomb interaction is given by (in this chapter and App. C underlined symbols denote $2 \times 2$ matrices in the surface space)
+
+$$
+\underline{\underline{U}}_{0}(\mathbf{r})=\frac{e^{2}}{\epsilon}\left(\begin{array}{cc}
+\frac{1}{r} & \frac{1}{\sqrt{r^{2}+d^{2}}} \\
+\frac{1}{\sqrt{r^{2}+d^{2}}} & \frac{1}{\frac{1}{r}}
+\end{array}\right)
+$$
+
+where $\epsilon$ denotes the effective dielectric constant.
+Fourier transformation and RPA-screening leads to [206-209] $\left(U(\mathbf{q},-i \omega) \equiv 2 \pi e^{2} / \epsilon q\right)$
+
+$$
+\underline{U}_{\mathrm{scr}}(\mathbf{q})=\frac{\underline{U}(\mathbf{q})}{1-\left(\Pi_{1}+\Pi_{2}\right) U(\mathbf{q})+U(\mathbf{q})^{2} \Pi_{1} \Pi_{2}\left(1-e^{-2 d q}\right)}
+$$
+
+with
+
+$$
+\underline{U}(\mathbf{q},-i \omega)=U\left(\begin{array}{cc}
+1-\Pi_{2} U(\mathbf{q})\left(1-e^{-2 d q}\right) & e^{-d q} \\
+e^{-d q} & 1-\Pi_{1} U(\mathbf{q})\left(1-e^{-2 d q}\right)
+\end{array}\right)
+$$
+
+Here $\Pi_{s}=\Pi_{s}(\mathbf{q},-i \omega)$ is the polarization operator of the surface states.
+In the present section I will concentrate on the statically screened interaction potential. In this limit the polarization operator is determined by the thermodynamic density of states: $\Pi_{s}(\mathbf{q},-i \omega=0)=$ $-\nu_{s}$.
+
+# Thin 3D TI slabs vs. thick 3D TI slabs: Importance of intersurface interaction 
+
+In the diffusive regime defined by the condition (5.3), the wave vector $q$ satisfies the inequality $1 / L_{E} \ll$ $q \ll 1 / l$. Therefore, in a sample of thickness $d \gg L_{E}$ it always holds that $d q \gg 1$ and the two surfaces decouple
+
+$$
+\underline{U}_{\mathrm{scr}} \stackrel{d \gg L_{E}}{\simeq} 2 \pi \frac{e^{2}}{\epsilon}\left(\begin{array}{cc}
+\frac{1}{q+\kappa_{1}} & 0 \\
+0 & \frac{1}{q+\kappa_{2}}
+\end{array}\right)
+$$
+
+where $\kappa_{s}=2 \pi e^{2} \nu_{s} / \epsilon$ is the inverse Thomas-Fermi screening length for a single surface $s$. A universal form of the Altshuler-Aronov correction to conductivity induced by the Coulomb interaction [73, 205] arises in the limit of unitary scattering when one can neglect $q$ as compared with $\kappa_{s}$ in Eq. (5.6) (see Sec. 1.2.4). The unitary limit is achieved if $\kappa_{s}^{-1} \ll l$ (the meaning of this condition as well as the complementary case are discussed in Sec. 5.3.6).
+
+In the opposite limit of a small interlayer distance, $d \ll l$, one can approximate $e^{-d q} \approx 1$ in the whole diffusive regime. This implies
+
+$$
+\underline{U}_{\mathrm{scr}} \stackrel{d \ll l}{=} \frac{2 \pi e^{2}}{\epsilon} \frac{1}{q+\kappa_{1}+\kappa_{2}+2 d \kappa_{1} \kappa_{2}(1-q d)}\left(\begin{array}{cc}
+1+2 \kappa_{2} d & 1 \\
+1 & 1+2 \kappa_{1} d
+\end{array}\right)
+$$
+
+At the first glance, it looks as if also a negative interaction potential was possible. However, this is not the case as shall be explained in what follows. Depending on the hierarchy of the length scales $\kappa_{1}^{-1}, \kappa_{2}^{-1}$ and $d$ the following scenarios are conceivable.
+
+First, consider $\kappa_{s} d \ll 1$ for both $s=1$ and $s=2$. In this case, the $q$ dependence of the interaction potential implies the definition of the coupled layer screening length $l_{\text {scr }}$ :
+
+$$
+\left(\underline{U}_{\mathrm{scr}}\right)_{s s^{\prime}}(\mathbf{q}) \sim \frac{1}{q+\kappa_{1}+\kappa_{2}} \Rightarrow l_{\mathrm{scr}}=\frac{1}{\kappa_{1}+\kappa_{2}}
+$$
+
+If in addition the condition $l_{\text {scr }} \ll l$ is fulfilled, the Coulomb interaction potential (5.7) becomes "overscreened" ( $q$-independent) for all diffusive momenta $q \ll l^{-1}$.
+
+Second, in case that $\kappa_{s} d \gg 1$ for at least one surface, the $q$-dependence of $\underline{U}_{\text {scr }}$ is always negligible and thus the notion of coupled layer screening length is meaningless. It is worthwhile to remark that,
+
+![img-27.jpeg](img-27.jpeg)
+
+Figure 5.3: Sketch of the regimes discussed in the main text in the plane of spanned by the slab thickness (d) and the Thomas-Fermi screening length $\left(\kappa^{-1}\right)$. For simplicity, only the case of comparable screening lengths, $\kappa_{1}^{-1} \sim \kappa_{2}^{-1} \sim \kappa^{-1}$ is shown. The regimes $\boldsymbol{I}$ and $\boldsymbol{I I}$ correspond to effectively decoupled surfaces [see Eq. (5.6)] studied in Ref. [205], while in regimes III and IV intersurface interaction is important [see Eq. (5.7)]. The conductivity corrections in I and III are due to "overscreened" Coulomb interaction. In contrast, in II and IV this type of corrections sets in only in the low-energy regime where the running length scale (i.e., the typical scale $L_{E}$ ) exceeds the screening length.
+as expected, the potential (5.7) reduces to the decoupled form (5.6) in the limit when $\kappa_{s}^{-1} \ll d$ for both surfaces (which also implies that $\kappa_{s}^{-1} \ll l$ ).
+
+In this chapter the conductivity corrections in the unitary limit of $q$-independent interaction, see Eqs. (5.90), will be discussed. As expected, in the limit of decoupled surfaces, $\kappa_{s}^{-1} \ll d$, they reproduce the result of Ref. [205] outlined in the introduction to this chapter. In contrast, whenever $d \ll \kappa_{1}^{-1}$ or $d \ll \kappa_{2}^{-1}$ novel conductivity corrections induced by intersurface electron-electron interaction emerge.
+
+Finally, in the intermediate regime $l \ll d \ll L_{E}$ the scale-dependent conductivity can be obtained by the following two-step RG analysis. First, one integrates the single-surface RG equations starting from the shortest scale $l$ up to the intersurface distance $d$. After this, one uses the running coupling constants at scale $d$ as starting values for the coupled-surface RG flow and integrates these RG equations up to the scale $l_{E}$.
+
+Different regimes discussed above are shown schematically in Fig. 5.3 in the parameter plane $d-\kappa^{-1}$. For simplicity, there it is assumed that the two surfaces have comparable screening lengths: $\kappa_{1}^{-1} \sim \kappa_{2}^{-1}$.
+
+In the end of the chapter, Sec. 5.6, a detailed analysis of the regions and limits of applicability of the theory with respect to representative experimental setups is given. In particular, it is shown that the hierarchy of scales $d \ll l \ll L_{E}$ is realistic.
+
+# Thomas-Fermi screening length for realistic experimental setups 
+
+In order to illustrate the importance of intersurface interaction (i.e., the relevance of the inequality $d \lesssim \kappa_{s}^{-1}$ ) under realistic conditions, the dependence of the screening length on the Fermi momentum is depicted in Fig. 5.4.
+
+According to Tab. 2.2 on p. 42 the DOS at the Fermi surface is $\nu\left(\mu_{s}\right)=k_{F}^{(s)} / 2 \pi \hbar v_{0}$, where $k_{F}^{(s)}$ is
+
+![img-28.jpeg](img-28.jpeg)
+
+Figure 5.4: Plot of the single surface screening length $\kappa_{s}^{-1}$ as a function of Fermi wave vector $k_{F}$. The red curve (large dashes) is the lower bound (corresponding to $\alpha_{T I}=1$ ) of the screening length. The solid, blue curve is the screening length for $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ slab with experimental parameters given in Tab. 5.1 on p. 108. For the latter, the required minimal thickness and maximal Fermi momentum are also depicted (dotted blue lines). The disorder-induced regularization of the divergence at small Fermi momentum is schematically represented by the black dot-dashed curve.
+the Fermi wave vector of the $s$-th surface state. Therefore, it holds that
+
+$$
+\kappa_{s}^{-1}=\frac{1}{\alpha_{T I}} \frac{1}{k_{F}^{(s)}}
+$$
+
+The dimensionless parameter $\alpha_{T I}=e^{2} / \epsilon \hbar v_{0}$ was introduced. It is the effective coupling constant of the Coulomb interaction and is equal to $c / \epsilon v_{0}$ times the fine structure constant $\alpha$ of QED. Clearly, $\alpha_{T I}$ plays the same role as the dimensionless density parameter $r_{s}$ in conventional theories of electrons in parabolic bands. The interaction is by assumption not too strong, $\alpha_{T I} \lesssim 1$; otherwise the system may become unstable, see a discussion at the end of Sec. 5.1.3.
+
+The dashed red curve in Fig. 5.4 represents the lower bound (corresponding to $\alpha_{T I}=1$ ) of $\kappa_{s}^{-1}$ as a function of $k_{F}^{(s)}$. The actual value of $\kappa_{s}^{-1}$ for an exemplary case of $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ (experimental parameters can be found in Tab. 5.1 on p. 108) is depicted by the blue solid curve. It is apparent that the screening length can by far exceed the thickness of the topological insulator film. Indeed, the $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ experiments $[34,48,203,204]$ are performed on probes of thickness $d \simeq 1-100 \mathrm{~nm}$. For this material, the assumption of separate gapless surface states (no tunneling) is both numerically [210] and experimentally [211] shown to be valid down to $d \simeq 10 \mathrm{~nm}$ (blue horizontal dashed line). Thus, relevant experimental values of $d$ in the experiments of interest range from $d \simeq 10 \mathrm{~nm}$ up to $d \simeq 100 \mathrm{~nm}$. On the other hand, surface electrons have a maximal Fermi wave vector of $k_{F} \sim 0.1 / \AA$ associated with $\mu=M_{\infty}=0.3 \mathrm{eV}$, see blue vertical dashed line. For the lowest concentration, increase of the screening length is limited by disorder. In this way, one estimates the range of $\kappa_{s}^{-1}$ as $20-200 \mathrm{~nm}$, so that the condition $\kappa_{s}^{-1}>d$ can be easily fulfilled. This is particularly the case for relatively thin slabs ( $d \simeq 10$ nm ) and in the vicinity of surface Dirac point.
+
+# Generalizations and refinements 
+
+The above analysis proves the relevance of the intersurface electron-electron interaction. In fact, in course of this analysis several simplifying assumptions were made. They require certain refinements which I list here for the reader's benefit. First, in general, the coating material $\left(\epsilon_{1}\right)$, the topological insulator $\left(\epsilon_{2}\right)$, and the substrate $\left(\epsilon_{3}\right)$ are all dielectrica with different dielectric constants $\epsilon_{1} \neq \epsilon_{2} \neq \epsilon_{3}$. In order to determine the exact Coulomb interaction, one has to solve the electrostatic problem of a point charge in such a sandwich structure of dielectrica [212-214], see App. C.2. Second, the longrange Coulomb interaction is accompanied by short-range contributions, which, in particular, induce corrections to the polarization operator which affect the screening length. More precise calculations taking FL corrections into account can be found in Sec. 5.3.6 and App. C.3. Finally, I neglected the dependence of the Fermi velocity $v_{0}$ on the chemical potential $\mu_{s}$, see Sec. 5.1.3. However, all these refinements do not modify the conclusion of the importance of interaction between the surface states. I now proceed with the mathematical formulation of the problem.
+
+### 5.1.3 Microscopic Hamiltonian
+
+The model under consideration is schematically depicted in Fig. 5.1. It is described in path integral technique by
+
+$$
+\mathcal{Z}=\int \mathcal{D}[\bar{\psi}, \psi] e^{-S[\bar{\psi}, \psi]}
+$$
+
+by the following microscopic Matsubara action
+
+$$
+S[\bar{\psi}, \psi]=\int_{\tau, \mathbf{x}} \bar{\psi}\left(\partial_{\tau}+\mathrm{H}_{0}+\mathrm{H}_{\mathrm{dis}}\right) \psi+S_{\mathrm{int}}
+$$
+
+The fermionic fields $\bar{\psi}(\mathbf{x}, \tau)=\left(\bar{\psi}_{1}^{\uparrow}, \bar{\psi}_{1}^{\downarrow}, \bar{\psi}_{2}^{\uparrow}, \bar{\psi}_{2}^{\downarrow}\right)$ and $\psi(\mathbf{x}, \tau)=\left(\psi_{1}^{\uparrow}, \psi_{1}^{\downarrow}, \psi_{2}^{\uparrow}, \psi_{2}^{\downarrow}\right)^{T}$ describe the spinful $(\uparrow, \downarrow)$ excitations living on surfaces $s=1$ and $s=2$. The one particle Hamiltonian which characterizes the surface $s$ reads [recall Eq. (2.22)]
+
+$$
+\left(\mathrm{H}_{0}+\mathrm{H}_{\mathrm{dis}}\right)_{s}=\left(V_{s}(\mathbf{x})-\mu_{s}\right) \otimes \mathbf{I}_{\sigma}+i(-)^{s} v_{F}^{(s)} \nabla \wedge \vec{\sigma}
+$$
+
+where $\mathbf{I}_{\sigma}$ is the unit matrix in spin space and the disorder potentials $V_{s}(\mathbf{x})$ for two surfaces are assumed to be white-noise distributed and uncorrelated:
+
+$$
+\left\langle V_{s}(\mathbf{x}) V_{s^{\prime}}\left(\mathbf{x}^{\prime}\right)\right\rangle=\frac{\delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right) \delta_{s s^{\prime}}}{\pi \nu_{s} \tau_{s}}
+$$
+
+The disorder strengths $1 / \pi \nu_{s} \tau_{s}$ may be different for two surfaces.
+It is worthwhile emphasizing the following physical implications of this Hamiltonian.
+
+- First, the model (and its analysis below) corresponds to the general case in which the chemical potentials $\mu_{1}, \mu_{2}$ and hence the carrier densities of the two surfaces may differ.
+- Second, since the disorder potentials are different for two surfaces, no inter-surface diffuson and Cooperon modes will arise. Note that the considered model of fully uncorrelated disorder correctly describes the low-energy physics of the majority of experimental setups, even in the presence of moderate inter-surface correlations of disorder. Indeed, any mismatch in chemical potentials and/or disorder configurations leads to an energy gap in the inter-surface soft modes. Two physical regimes are conceivable:
+
+(i) almost identical surfaces in almost fully correlated random potentials, $\left|\mu_{1}-\mu_{2}\right| \ll 1 / \tau_{s}$ and $\left\langle\left[V_{1}(\mathbf{x})-V_{2}\left(\mathbf{x}^{\prime}\right)\right]^{2}\right\rangle \ll \sum_{s=1,2}\left\langle V_{s}(\mathbf{x}) V_{s}\left(\mathbf{x}^{\prime}\right)\right\rangle ;$
+(ii) all other parameter regimes, when at least one of the conditions in (i) is not fulfilled.
+
+The model under consideration is designed for the case (ii), where the gap is comparable to the elastic scattering rate and intersurface soft modes do not enter the diffusive theory at all. It also applies to the case (i) in the ultimate large-scale limit (i.e., at energy scales below the gap). In this case there will be, however, an additional, intermediate regime in the temperature dependence (or AC frequency dependence) which is not considered in the present analysis.
+
+- Third, the quantity $\vec{\sigma}$ in Eq. (5.12) in general does not describe the physical spin. First, since spin-orbit interaction is strong in 3D TI materials, the total angular momentum $\mathbf{J}$ is a conserved quantum number on atomic level, while spin is not. In addition, in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ structures the effective spin $\sigma$ is determined by a linear combination of real spin and the parity (band) degrees of freedom. The mixing angle depends on how the crystal is cut [215]. In this case also the Fermi velocity becomes anisotropic.
+- Fourth, because of interaction effects, the true dispersion relation is not linear but contains logarithmic corrections (or more generally is subjected to "ballistic" RG [216-218]) which leads to dependence of the Fermi velocity on the chemical potential. This is reflected in the notation $v_{0}^{(s)} \equiv v_{0}\left(\mu_{s}\right)$.
+- Similarly, also the strength of the disorder may be substantially different for both surfaces, so that the (quantum) mean free times $\tau_{s}$ are considered as two independent input parameters. This is primarily because the vicinity to the substrate or, respectively, to the coating material makes the impurity concentration on both surfaces a priori different. In addition, $\tau_{s}$ acquire renormalization corrections, leading to a logarithmic dependence on $\mu_{s}[166,217,219,220]$.
+- The (pseudo-)spin texture on the top and bottom surfaces is opposite (denoted by the factor $(-)^{s}$ ).
+- Finally, in some materials (in particular, in $\mathrm{Bi}_{2} \mathrm{Te}_{3}$ ), the Dirac cone is strongly warped. I neglect the warping as it does not affect the main result of this chapter, namely the (universal) RG equations. Recently [221], it has been shown that warping only influences the dephasing length (i.e., the length scale at which the RG flow is stopped).
+
+The interaction is mediated by the Coulomb potential, see Eq. (5.4) and App. C.2. With the definition $\rho_{s}(\tau, \mathbf{x})=\bar{\psi}_{s}(\tau, \mathbf{x}) \psi_{s}(\tau, \mathbf{x})$ the corresponding contribution to the action is given by
+
+$$
+S_{\mathrm{int}}=\frac{1}{2} \sum_{s s^{\prime}} \int_{\tau, \mathbf{x}, \mathbf{x}^{\prime}} \rho_{s}(\tau, \mathbf{x}) U_{0, s s^{\prime}}\left(\left|\mathbf{x}-\mathbf{x}^{\prime}\right|\right) \rho_{s^{\prime}}\left(\tau, \mathbf{x}^{\prime}\right)
+$$
+
+For equal surfaces $\left(v_{0}^{(1)}=v_{0}^{(2)}\right)$, a simple rescaling of equations (5.11) and (5.14) shows that the effective coupling to the Coulomb interaction is $\alpha_{T I}$. It can, in general, become of the order of unity. Since the perturbation theory is insufficient in such a case, the more general, yet phenomenological, FL theory is employed to access the behavior for energies down to the elastic scattering rates $\tau_{1,2}^{-1}$, see Secs. 5.3.6, 5.3.6 and App. C.3). This (clean) FL theory will then be a starting point for the interacting diffusive problem at energies below the elastic scattering rate.
+
+If the interaction becomes too strong, it might in principle drive the system into a phase with spontaneously broken symmetry [222, 223]. Examples are the Stoner instability [224] as well as more exotic phenomena such as topological exciton condensation [225], which is specific to 3D TI thin slabs. Throughout the analysis, I assume that the system is not in a vicinity of such an instability. To the best of my knowledge, this assumption is consistent with all transport experiments on 3D TI slabs addressed in this chapter.
+
+# 5.2 Perturbative calculation of conductivity corrections. 
+
+Before turning to the powerful NLeM treatment of the problem it is instructive to first perform a perturbative calculation of corrections to the longitudinal conductivity $\sigma_{s}$ of surface $s$. Following the introductory review to this chapter and the standard diagrammatic approach exposed in Sec. 1.2.2, the interplay of two effects is expected: WAL and interaction corrections (AA).
+
+$$
+\sigma_{s}(T)=2 \pi \nu_{s} D_{s} \frac{e^{2}}{h}+\delta \sigma_{s}^{(W A L)}\left(l_{\phi}(T)\right)+\delta \sigma_{s}^{(A A)}(T)
+$$
+
+The interference effect, being a single particle effect, is unaffected by the presence of the opposite 3D TI surface. Thus $\delta \sigma_{s}^{(W A L)}$ is determined by Eq. (1.6) with $\alpha^{\prime}=-1 / 2$ for each surface separately ${ }^{3}$
+
+$$
+\delta \sigma_{s}^{(W A L)}\left(l_{\phi}(T)\right)=-\frac{1}{2} \frac{e^{2}}{2 \pi^{2} \hbar} \ln T \tau
+$$
+
+In contrast the AA contribution is still given by the diagrams exposed in Eq. (1.9). However, one now needs to take into account mutual screening of surface states. Therefore the integral determining the AA is modified and now takes the form
+
+$$
+\delta \sigma_{s}^{(A A)}(T)=i \frac{\sigma_{s}}{\pi} \int_{\omega} \int_{\mathbf{q}} \frac{D_{s} \mathbf{q}^{2} U_{s s}\left(\mathbf{q},-i \omega\right)}{\left(-i \omega+D_{s} \mathbf{q}^{2}\right)^{3}} \partial_{\omega}\left[\omega \operatorname{coth} \frac{\omega}{2 T}\right]
+$$
+
+This is the same form as reported in Ref. [73], with sole replacement of $U_{s s}(\mathbf{q},-i \omega)$ from Eq. (5.5) instead of the single 2DES screened Coulomb interaction. It corresponds to the case of spinless electronic degrees of freedom, which is indeed the case for Dirac particles in the limit $T \ll 1 / \tau_{1,2} \ll \mu_{1,2}$ (see Sec. 5.3.6 below). Following the discussion in the previous section intersurface interaction is negligible for sufficiently distant surfaces $d \gg l$. I here concentrate on the more interesting case $d \ll l$ and a potential $U_{s s}$ as reported in Eq. (5.7). As usual, the integral is dominated by the interval $\omega \in(T, 1 / \tau)$, while the prefactor now differs from Eq. (1.9):
+
+$$
+\delta \sigma_{s}^{(A A)}(T)=\frac{e^{2}}{2 \pi^{2} \hbar}\left[1-\frac{D_{\bar{s}} \kappa_{\bar{s}}}{\kappa_{s}\left[D_{s}-D_{\bar{s}}\left(1+2 d \kappa_{\bar{s}}\right)\right]} \ln \frac{\kappa_{s} D_{s}+D_{\bar{s}} \kappa_{\bar{s}}}{D_{\bar{s}}\left[\kappa_{\bar{s}}+\kappa_{s}\left(1+2 d \kappa_{\bar{s}}\right)\right]}\right] \ln T \tau
+$$
+
+I introduced the notation $\bar{s}=1(\bar{s}=2)$ for $s=2(s=1)$. This result contains already important physical insight for the problem under consideration:
+
+- The interaction correction is a complicated function of the three dimensionless parameters $D_{1} / D_{2}$, $\kappa_{1} / \kappa_{2}$ and $d \kappa_{1}$.
+
+[^0]
+[^0]:    ${ }^{3}$ In accordance to the typical experimental situation, I assume electron-electron interaction to be the dominant dephasing mechanism. In fact, the intersurface interaction enters $l_{\phi}$ in Eq. (5.16).
+
+- In the simplest case of equal surfaces $D_{1}=D_{2}$ and $\kappa_{1}=\kappa_{2}$, the term in square brackets of Eq. (5.2) is a smooth function of $\kappa_{s} d$ which smoothly interpolates between the following two limits:
+- The term in brackets is $1 / 2$ for $\kappa_{s} d=0$. This is the point in parameter space with the weakest AA correction. In the $\kappa_{s} d=0$ limit intra- and intersurface interaction is equally strong. In this sense the surface degree of freedom can be considered as a degeneracy degree of freedom, akin to spin in usual conductors. As I explained in Sec. 1.2.2 the AA correction for a single layer corresponds to a universal value 1 in the square bracket, even in the spinful case. The correction per "spin" presented in Eq. (5.18) is thus half as strong.
+- The term in brackets is 1 for $\kappa_{s} d \rightarrow \infty$. This yields the correct universal limit for each surface separately, since the two channels of conductions are fully separated.
+
+However, the perturbation theory is insufficient to fully understand the system of coupled 3D TI surfaces. Apart from the general wish to systematically sum up the logarithmic corrections (RG method) there are reasons specific to the problem of coupled 3D TI surfaces motivating a more sophisticated treatment.
+
+- As explained in Sec. 1.5.2 the universal AA effect for long-range Coulomb interaction corresponds to the $\mathcal{F}$-invariant fixed point $\gamma_{\rho}=-1$ of the RG equation (1.28b). Eq. (5.18) suggests that, because of mutual screening, the coupled surface system is away from this fixed point. Therefore, and because of the similarity to spinful metals, one expects the interaction parameters to be themselves subjected to renormalization. What is the self-consistent treatment describing the reciprocal influence of interaction and conductivity corrections?
+- From Eqs. (5.16) and (5.18) one directly sees the opposite impact of WAL and AA effects. In the thin limit $\kappa_{s} d=0$ of equal surfaces they even cancel completely. The natural question is which of these two competing physical mechanisms dominates the low energy (long length scale) behavior.
+
+In the following sections, the QFT capable to answer these questions shall be developed.
+
+# 5.3 Sigma-model description 
+
+The physics in the low-energy (low-temperature, long-length-scale) regime of interest (see Eqs. (5.1) and (5.2)) is controlled by coupled diffuson and Cooperon modes encoded in the NL $\sigma \mathrm{M}$. This section is devoted to the derivation of this effective field theory.
+
+### 5.3.1 Symmetries of the action
+
+The structure of the diffusive low-energy theory is controlled by symmetries of the microscopic action. The information about other microscopic details enters the theory only via the values of the coupling constants. I thus begin by analyzing symmetries of the problem.
+
+First, the system obeys the time reversal symmetry $H=\sigma_{y} H^{T} \sigma_{y}$. Second, assuming no intersurface tunneling the particle number is conserved in each surface separately. This implies invariance of the action with respect to $\mathbf{U}(1) \times \mathbf{U}(1)$ transformations (global in space and time).
+
+The presence of Coulomb interaction promotes the $\mathbf{U}(1)$ symmetry in the total-density channel, $\rho_{1}+\rho_{2}$, to transformations which are local in time but global in space. In other words, rotations of
+
+fermionic fields,
+
+$$
+\psi_{s}(\tau, \mathbf{x}) \rightarrow \bar{\psi}_{s}(\tau, \mathbf{x}) \exp \left[-i \chi_{s}(\tau)\right], \psi_{s}(\tau, \mathbf{x}) \rightarrow \exp \left[i \chi_{s}(\tau)\right] \psi_{s}(\tau, \mathbf{x})
+$$
+
+with equal phases $\chi_{1}(\tau)=\chi_{2}(\tau)$ leave the action (5.11) invariant. This is a special case of " $\mathcal{F}$ invariance" [106] exposed in Sec. 1.5.2 and has important consequences for the present problem. The $\mathcal{F}$-invariance generally states that in each channel with long-range interaction, time-dependent but spatially constant $\mathbf{U}(1)$ rotations are symmetries of the action. In this problem, as it follows from the $q \rightarrow 0$ limit of the Coulomb interaction:
+
+$$
+\underline{U}(\mathbf{q}) \stackrel{q \rightarrow 0}{\propto} \frac{1}{q}\left(\begin{array}{ll}
+1 & 1 \\
+1 & 1
+\end{array}\right)
+$$
+
+only the interaction between the total densities is long-ranged. The structure of Eq. (5.20) remains true also in the case of asymmetric dielectric environment, see App. C.3.4.
+
+To make the time-reversal symmetry explicit, I define particle-hole bispinors by combining $\psi$ and $\bar{\psi}$ fields [83, 99]. In the momentum space the bispinors read
+
+$$
+\Phi_{n}(\mathbf{k})=\frac{1}{\sqrt{2}}\binom{\bar{\psi}_{n}(-\mathbf{k})^{T}}{i \sigma_{y} \psi_{n}(\mathbf{k})}
+$$
+
+and
+
+$$
+\bar{\Phi}_{n}(\mathbf{k})=\left[C \Phi_{n}(-\mathbf{k})\right]^{T} \text { with } C=i \sigma_{y} \tau_{x}
+$$
+
+where $n$ is the index associated to the fermionic Matsubara frequency $i \epsilon_{n}$, and $\tau$ matrices act in the particle-hole space. This allows to rewrite the one-particle Hamiltonian as
+
+$$
+S^{\text {free }}=-\sum_{n} \int_{\mathbf{k}} \bar{\Phi}_{n}(\mathbf{k})\left(i \epsilon_{n}-H^{T}(-\mathbf{k})\right) \Phi_{n}(\mathbf{k})
+$$
+
+It is convenient to perform a rotation of bispinors
+
+$$
+\eta=\sqrt{\tau_{x}} \Phi
+$$
+
+where $\sqrt{\tau_{x}}=e^{-i \pi / 4}\left(\mathbf{I}_{\tau}+i \tau_{x}\right) / \sqrt{2}$. The free action then takes the form
+
+$$
+S^{\text {free }}=-\sum_{s} \int_{\mathbf{x}} \eta_{s}^{T}\left\{\left[i \hat{\epsilon}-V_{s}+\mu_{s}\right]\left(-i \sigma_{y}\right)+(-)^{s+1} v_{F}^{(s)}\left(\partial_{x}-i \partial_{y} \sigma_{z}\right)\right\} \eta_{s}
+$$
+
+The Matsubara frequency summation is incorporated into the scalar product $\eta^{T}(\ldots) \eta$. In these notations, $\hat{\epsilon}$ is a diagonal matrix in the Matsubara space consisting of entries $\epsilon_{n}$.
+
+For performing the average over disorder, the theory is replicated $N_{R}$ times. Furthermore, in order to implement the $\mathbf{U}(1)$-gauge invariance in the framework of the NLorM, a double cutoff truncation procedure with $N_{M} \ll N_{M}^{\prime}$ for the Matsubara frequencies is applied [106]. Physically, $N_{M}^{\prime}$ and $N_{M}$ can be interpreted as the numbers of retained Matsubara harmonics for fast (electrons of the original theory) and slow (diffusons and Cooperons of the NLorM) degrees of freedom, respectively. As a consequence, $\eta$ becomes a $\left(2_{s} \times 2_{\sigma} \times 2_{\tau} \times 2 N_{M}^{\prime} \times N_{R}\right)$-dimensional Grassmannian vector field. Except for the frequency term, the free action (5.25) is manifestly invariant under global orthogonal rotations of the kind
+
+$$
+\eta_{s} \rightarrow\left(O_{s} \otimes \mathbf{I}_{\sigma}\right) \eta_{s} \text { with } O_{s} \in \mathbf{O}\left(2_{\tau} \times 2 N_{M}^{\prime} \times N_{R}\right)
+$$
+
+Since the surfaces are fully decoupled in the absence of interactions, the rotations $O_{1}$ and $O_{2}$ of the fields corresponding to the top and bottom surfaces are completely independent.
+
+# 5.3.2 Quasiclassical conductivity 
+
+As explained in Sec. 1.2.2, the quasiclassical treatment of disorder involves the fermionic self-energy to SCBA approximation:
+
+$$
+\Sigma_{n}^{s}=\frac{-2 i \sigma_{y}}{\pi \nu_{s} \tau_{s}}\left\langle\eta_{\mathbf{x}, s} \eta_{\mathbf{x}, s}^{T}\right\rangle_{\mathrm{SCBA}}
+$$
+
+As before $\langle\ldots\rangle_{\mathrm{SCBA}}$ denotes the self-consistent treatment, i.e., a shift $\mu_{s} \rightarrow \mu_{s}+\Sigma_{n}^{s}$ in the fermionic propagator. Equation (5.27) yields for the imaginary part of the self-energy $\operatorname{Im}\left(\Sigma_{n}^{s}\right)=\left(i / 2 \tau_{s}\right) \operatorname{sgn}(n)$. The quasiclassical Drude DC conductance of the non-interacting problem in the absence of a magnetic field is
+
+$$
+\sigma_{s}^{D}=2 \pi \nu_{s} D_{s} \frac{e^{2}}{h}
+$$
+
+with $D_{s}=\left(v_{F}^{(s)}\right)^{2} \tau_{s}$. Note that for Dirac fermions the transport time is twice the quantum mean free time $\tau_{s}$. In the diagrammatic language, this is a consequence of vertex corrections.
+
+### 5.3.3 Fermionic currents and bosonization rules
+
+To derive the NL$\sigma$ M, I use the method of non-Abelian bosonization [86, 87, 89, 164, 226]. An advantage of this approach is that non-trivial topological properties of the Dirac fermions are translated into the field theory in a particularly transparent way (see the introductory chapter 2).
+
+In the first step, the kinetic term (Sec. 5.3.4, below) is bosonized and subsequently also the terms induced by the chemical potential, disorder and frequency (Sec. 5.3.5, below). Since only interaction couples the two surfaces, I omit the surface index $s$ in Secs. 5.3.4 and 5.3.5. This index is restored later in Sec. 5.3.6 where the interaction is included.
+
+Local left $\left(\eta_{\uparrow} \rightarrow O_{L} \eta_{\uparrow}\right)$ and right $\left(\eta_{\downarrow} \rightarrow O_{R} \eta_{\downarrow}\right)$ rotations define the left and right currents. The bosonization rules for these currents as well as for the mass term are
+
+$$
+\begin{gathered}
+j_{+}=v_{0} \eta_{\uparrow} \eta_{\uparrow}^{T} \leftrightarrow \frac{1}{8 \pi}\left(O \partial_{+} O^{T}\right) \\
+j_{-}=v_{0} \eta_{\downarrow} \eta_{\downarrow}^{T} \leftrightarrow \frac{1}{8 \pi}\left(O^{T} \partial_{-} O\right) \\
+\eta_{\uparrow} \eta_{\downarrow}^{T} \leftrightarrow i \lambda O
+\end{gathered}
+$$
+
+where $\partial_{ \pm}=\partial_{\varphi} \pm i \partial_{y}$. The energy scale $\lambda$ is of the order of the UV cutoff and is introduced here for dimensional reasons; see Sec. 5.3.5 and 5.4.2 for a discussion of its physical meaning. Note that in general, the UV cutoff is different for the top and bottom surfaces, $\lambda_{1} \neq \lambda_{2}$. Further, $O$ is an orthogonal $\left(2_{\tau} \times 2 N_{M}^{\prime} \times N_{R}\right) \times\left(2_{\tau} \times 2 N_{M}^{\prime} \times N_{R}\right)$ matrix field.
+
+### 5.3.4 Bosonization of the kinetic part
+
+The kinetic part of (5.25) is nothing but the Euclidean counterpart of the model considered in Ref. [86]. Upon non-Abelian bosonization it yields the WZNW action
+
+$$
+S_{\mathrm{WZNW}}=\int_{\mathbf{x}} \frac{1}{16 \pi} \operatorname{tr} \nabla O \nabla O^{-1}+\frac{i}{24 \pi} \Gamma_{W Z}
+$$
+
+where $\Gamma_{W Z}$ is the WZ term
+
+$$
+\Gamma_{W Z}=\int_{\mathbf{x}, w} \epsilon_{\mu \nu \rho} \operatorname{tr}\left[\left(\hat{O}^{-1} \partial_{\mu} \hat{O}\right)\left(\hat{O}^{-1} \partial_{\nu} \hat{O}\right)\left(\hat{O}^{-1} \partial_{\rho} \hat{O}\right)\right]
+$$
+
+As explained in Secs. 2.3.4 and 2.4.2, the definition of the WZ term involves an auxiliary coordinate $w \in[0,1]$ and smooth fields $\tilde{O}(\mathbf{x}, w)$ satisfying $\tilde{O}(\mathbf{x}, w=0)=$ const. and $\tilde{O}(\mathbf{x}, w=1)=O(\mathbf{x})$. As a result the compactified two-dimensional coordinate space $\mathbb{R}^{2} \cup\{\infty\} \simeq \mathbb{S}^{2}$ is promoted to the solid 3 -ball $\mathbb{B}^{3}$ (i.e., the "filled" sphere).
+
+# 5.3.5 Free NL$\sigma$ M of class AII 
+
+## Disorder, frequency, and the chemical potential
+
+The action (5.30) is the bosonized counterpart of the second (proportional to velocity) term of the microscopic action (5.25).
+
+Now the attention is turned towards the symmetry breaking first term in Eq. (5.25) which carries information about the chemical potentials, frequency and random potential.
+
+Bosonization of the terms with frequency and the chemical potential in the microscopic action (5.25) yields
+
+$$
+\delta S=2 \int_{\mathbf{x}} \operatorname{tr}\left[(i \hat{\epsilon}+\mu) \eta_{\uparrow} \eta_{\downarrow}^{T}\right] \leftrightarrow-2 \lambda \int_{\mathbf{x}} \operatorname{tr}(\hat{\epsilon}-i \mu) O
+$$
+
+Upon disorder averaging and bosonization, the term with random potential provides the following contribution to the field theory:
+
+$$
+\begin{aligned}
+\delta S_{\mathrm{dis}} & =-\frac{1}{\pi \nu \tau} \int_{\mathbf{x}}\left(\operatorname{tr} \eta_{\uparrow} \eta_{\downarrow}^{T}\right)^{2}+\frac{1}{\pi \nu \tau} \int_{\mathbf{x}} \operatorname{tr}\left(\eta_{\uparrow} \eta_{\downarrow}^{T}\right)^{2} \\
+& \leftrightarrow \frac{\lambda^{2}}{\pi \nu \tau} \int_{\mathbf{x}}(\operatorname{tr} O)^{2}+\frac{\lambda^{2}}{2 \pi \nu \tau} \int_{\mathbf{x}} \operatorname{tr}\left(O^{T}-O\right)^{T}\left(O^{T}-O\right)
+\end{aligned}
+$$
+
+As one can readily see, disorder induces mass terms for $O$-matrices. Both mass terms in Eq. (5.33) are strictly non-negative. Therefore, they are minimized by an arbitrary traceless symmetric orthogonal matrix. It is convenient to choose the specific saddle-point solution as
+
+$$
+O=\Lambda
+$$
+
+This saddle-point solution coincides with the SCBA. Indeed, Eq. (5.27) can be written as
+
+$$
+\begin{aligned}
+\frac{i}{2 \tau} \Lambda \otimes \mathbf{1}_{\sigma} & =\frac{2}{\pi \nu \tau}\left\langle\left(\begin{array}{cc}
+-\eta_{\downarrow} \eta_{\uparrow}^{T} & -\eta_{\downarrow} \eta_{\downarrow}^{T} \\
+\eta_{\uparrow} \eta_{\uparrow}^{T} & \eta_{\uparrow} \eta_{\downarrow}^{T}
+\end{array}\right)\right\rangle_{\mathrm{SCBA}} \\
+& \leftrightarrow \frac{2}{\pi \nu \tau}\left\langle\left(\begin{array}{cc}
+i \lambda O^{T} & \frac{-1}{8 \pi \nu_{0}} O^{T} \partial_{-} O \\
+\frac{1}{8 \pi \nu_{0}} O \partial_{+} O^{T} & i \lambda O
+\end{array}\right)\right\rangle_{S C B A}
+\end{aligned}
+$$
+
+It is solved by the saddle-point solution (5.34) provided the auxiliary UV energy scale $\lambda$ introduced in Eq. (5.29) is related to the DOS (i.e., to the chemical potential),
+
+$$
+\lambda=\frac{\pi \nu}{4}=\frac{|\mu|}{8 v_{0}^{2}}
+$$
+
+I will rederive this relation from a different viewpoint below, see Sec. 5.4.2.
+Equation (5.34) is not the only solution of the saddle point equation. It is easy to see that rotations
+
+$$
+O \rightarrow O_{\text {soft }}^{T} O O_{\text {soft }}, O_{\text {soft }} \in \mathbf{G}=\mathbf{O}\left(2_{\tau} \times 2 N_{M} \times N_{R}\right)
+$$
+
+leave the mass term unaffected. On the other hand, the saddle-point $O=\Lambda$ is invariant under rotations from a smaller group, $O_{\text {soft }} \in \mathbf{K}=\mathbf{O}\left(2_{\tau} \times N_{M} \times N_{R}\right) \times \mathbf{O}\left(2_{\tau} \times N_{M} \times N_{R}\right)$. This can be understood as a breakdown of symmetry $\mathbf{G} \rightarrow \mathbf{K}$ with a non-trivial manifold of saddle-points annihilating the mass term. Allowing for a slow variation of $O_{\text {soft }}$ and restricting other terms in the action to this manifold, one obtains the NL $\sigma \mathrm{M}$ action.
+
+# Free NL $\sigma$ M with $\mathbb{Z}_{2}$ topological term 
+
+As I have just discussed, only the soft modes
+
+$$
+Q=O_{\text {soft }}^{T} \Lambda O_{\text {soft }} \text { with } O_{\text {soft }} \in \mathbf{G}
+$$
+
+should be kept in the low-energy theory. The subscript soft will be omitted in the remainder. The NL $\sigma \mathrm{M}$ manifold is thus $\mathcal{M}=\mathbf{G} / \mathbf{K}$. I also rename the coupling constants according to the conventional notation of diffusive NL $\sigma \mathrm{Ms}$ and restore the surface index $s$,
+
+$$
+S^{\text {free }}=\sum_{s} \int_{\mathbf{x}} \frac{\sigma_{s}}{16} \operatorname{tr}\left(\nabla Q_{s}\right)^{2}-2 \pi T z_{s} \operatorname{tr}\left[\hat{\eta} Q_{s}\right]+i S_{s}^{(\theta)}
+$$
+
+One can show within linear response theory (Sec. 5.3.7) that $\sigma_{s}$ measures the Direct current (DC) conductivity of surface $s$ (in units $e^{2} / h$ ). Its bare value is the Drude conductance depending on the chemical potential $\mu_{s}$, as can be directly verified, see App. C.1.1. The coupling constants $z_{s}$ determine the renormalization of the specific heat.
+
+The non-trivial second homotopy group of the NL $\sigma \mathrm{M}$ manifold $\pi_{2}(\mathcal{M})=\mathbb{Z}_{2}$ allows for topological excitations (instantons), similarly to the QHE theory (see Sec. 2.1 and Chap. 6). A crucial difference is that in the QHE case the second homotopy group is $\mathbb{Z}$, so that any integer topological charge (number of instantons) is allowed. Contrary to this, in the present case any configuration of an even number of instantons can be continuously deformed to the trivial, constant vacuum configuration. Therefore, the theta term $S_{s}^{(\theta)}$ appearing in (5.39) only distinguishes between an even $\left|S_{s}^{(\theta)}=0(\bmod 2 \pi)\right|$ and odd $\left|S_{s}^{(\theta)}=\pi(\bmod 2 \pi)\right|$ number of instantons.
+
+As explained, such a $\mathbb{Z}_{2}$ theta term $S^{(\theta)}$ does not appear in the case of usual metals with strong spinorbit coupling; it results from the Dirac-fermion nature of carriers and is a hallmark of topologically protected metals (in this case, the surface of a topological insulator). The topological term flips the sign of the instanton effects (as compared to the case of a usual metal with spin-orbit interaction) from localizing to delocalizing. Thus, the theta term signifies the protection against Anderson localization in the NL $\sigma \mathrm{M}$ approach.
+
+In the following I will show that $S_{s}^{(\theta)}$ is nothing but the WZ term (obtained from non-Abelian bosonization) restricted to the smaller symmetry group [153, 154]:
+
+$$
+S_{s}^{(\theta)}=\left.\frac{1}{24 \pi} \Gamma_{W Z_{s}}\right|_{\dot{O}_{s}(\mathbf{x}, w=1)=Q_{s}(\mathbf{x})=Q_{s}^{T}(\mathbf{x})}
+$$
+
+Note that, since the second homotopy group of the NL $\sigma \mathrm{M}$ manifold is non-trivial, the definition of the WZ term requires that away from $w=1$ the extended fields can take values in the big orthogonal group G.
+
+To show that Eq. (5.40) is indeed the $\mathbb{Z}_{2}$ theta-term, one can proceed in the same way as was recently done for symmetry class CII $[60,152]$. First of all, it is straightforward to check that $S_{s}^{(\theta)}$
+
+is invariant under small variations of the sigma-model field, $Q_{s} \rightarrow Q_{s}^{\prime}=Q_{s}+\delta Q_{s}\left(Q_{s}^{\prime 2}=\mathbf{1}=Q_{s}^{2}\right)$. Thus, $S_{s}^{(\theta)}$ only depends on the topology of the field configuration. This immediately implies that it is zero in the topologically trivial sector. In order to proof that $S_{s}^{(\theta)}$ also returns the correct value $S_{s}^{(\theta)}=\pi(\bmod 2 \pi)$ in the topologically non-trivial sector, it is sufficient to insert a single instanton into $S_{s}^{(\theta)}$. Instantons are field configurations that per definition can not be continuously deformed into the vacuum configuration. Introducing the third dimension and allowing the field to take values in the entire orthogonal group one can continuously shrink the instanton in the $w=1$ sphere to the constant at $w=0$. A necessary condition for this untwisting to happen is that for some subinterval of $(0,1)$ the field leaves the NL $\sigma \mathrm{M}$ manifold for the larger orthogonal group. A direct calculation shows that the group volume covered while untwisting indeed yields the value $i S_{s}^{(\theta)}=i \pi$, see App. C.1.2.
+
+There have been alternative derivations of the $\mathbb{Z}_{2}$ term before [138, 151]. Viewing this theta term as a symmetry-broken WZ -term, Eq. (5.40), yields a local expression for it and implies the following advantages. First, this form is very useful for understanding the crossover between 3D TIs of class DIII and AII. Second and more importantly, an analysis of response of the system to an external electric field requires coupling of the diffusive matter fields to $\mathbf{U}(1)$ gauge potentials. In particular, one should gauge the topological term, which can be done in a standard way by using a local expression for it (see Sec. 5.3.7). I will discuss in detail (Chap. 6) that such a procedure yields the correct linear response theory for the half-integer QHE of Dirac fermions.
+
+In addition to the non-trivial second homotopy group the NL $\sigma \mathrm{M}$ manifold of the class AII possesses also a non-trivial first homotopy group, $\pi_{1}(\mathcal{M})=\mathbb{Z}_{2}$. As explained in Sec. 4.2.5, this allows for vortex-defects which were argued to be crucial for Anderson localization in 2D [192].
+
+On the surface of a strong 3D TI, the effect of vortices is erased by the $\mathbb{Z}_{2}$ topological term, in the same way as argued previously [152] for the case of the symmetry class CII (Secs. 4.2.4 and 4.2.5). For this reason, the vortices need not be taken into account in the present context.
+
+# 5.3.6 Interacting NL $\sigma \mathbf{M}$ 
+
+In the previous subsection I have derived the diffusive NL $\sigma \mathrm{M}$ for non-interacting particles. The next step is to include the electron-electron interactions.
+
+## Interacting Fermi gas
+
+I concentrate first on the case of a weak Coulomb interaction $\left(\alpha_{T I} \ll 1\right)$. At length scales larger than the screening length the interaction is effectively pointlike:
+
+$$
+S_{\mathrm{int}}=\frac{T}{2} \sum_{m, n ; s s^{\prime}} \int_{\mathbf{x}} \operatorname{tr}\left(I_{m}^{\alpha} \psi_{s} \bar{\psi}_{s}\right) U_{s s^{\prime}}^{q}\left(I_{-m}^{\alpha} \psi_{s^{\prime}} \bar{\psi}_{s^{\prime}}\right)
+$$
+
+where $U_{s s^{\prime}}^{q}$ is the "overscreened" Coulomb interaction matrix i.e., the $q \rightarrow 0$ limit of Eq. (5.7) (for its generalization in case of an asymmetric dielectric environment, see App. C.2). The bosonization rules lead to
+
+$$
+\begin{aligned}
+\operatorname{tr} I_{m}^{\alpha} \psi_{s} \bar{\psi}_{s} & =\operatorname{tr} I_{m}^{\alpha}\left(1-\tau_{y}\right) \eta_{s, \uparrow} \eta_{s, \downarrow}^{T}-\operatorname{tr} I_{m}^{\alpha}\left(1-\tau_{y}\right) \eta_{s, \downarrow} \eta_{s, \uparrow}^{T} \\
+& \leftrightarrow i \lambda\left[\operatorname{tr} I_{m}^{\alpha}\left(1-\tau_{y}\right)\left(O_{s}+O_{s}^{T}\right)\right]
+\end{aligned}
+$$
+
+When disorder is introduced, the matrices $O$ become restricted to the sigma-model manifold $\mathcal{M}$, and one obtains
+
+$$
+S_{\mathrm{int}}=-\lambda^{2} 8 T \sum_{m, \alpha ; s s^{\prime}} \int_{\mathbf{x}} \operatorname{tr}\left[J_{-m}^{\alpha} Q_{s}\right] U_{s s^{\prime}}^{q} \operatorname{tr}\left[J_{m}^{\alpha} Q_{s^{\prime}}\right]
+$$
+
+In the present chapter I will use $J_{n}^{\alpha}=I_{n}^{\alpha} \frac{1+\alpha_{s}}{2}$. As has been already emphasized, the aim is to treat the general case of strong interactions up to $\alpha_{T I} \sim 1$. Therefore, in the following (and in more detail in App. C.3), the FL theory of strongly interacting surface states of a thin 3D TI film will be exposed.
+
+# Effective spinless theory 
+
+One of the most striking peculiarities of the surface states of 3D topological insulators is their Rashbalike kinetic term. As a consequence, spin and momentum are locked in a manner visualized in Fig. 5.5. Such states are called helical; one associates helicity eigenvalues $+1(-1)$ with states with positive (respectively, negative) kinetic energy. As has been stated above, the interest is in the low energy regime $E \ll\left|\mu_{1,2}\right|$. Hence, at each of the surfaces only one type of helical states represents dynamical low energy degrees of freedom, while the other one is suppressed by a mass $\approx 2\left|\mu_{1,2}\right|$. Therefore, the projection onto the appropriate helicity eigenstates of each surface is performed by means of the following projection operator ${ }^{4}$
+
+$$
+\mathcal{P}_{s}=\left|\mu_{s}, \mathbf{p}\right\rangle\left\langle\mu_{s}, \mathbf{p}\right| \text { with }\left|\mu_{s}, \mathbf{p}\right\rangle=\frac{1}{\sqrt{2}}\binom{1}{i \operatorname{sgn} \mu_{s} e^{i \phi(\mathbf{p})}}
+$$
+
+where I have defined the polar angle $\phi$ of the momentum, $p_{x} \equiv|\mathbf{p}| \cos \phi$ and $p_{y} \equiv|\mathbf{p}| \sin \phi$. The clean single-particle action becomes effectively spinless:
+
+$$
+S_{0}^{(s)}=-\sum_{s} \int_{\mathbf{p}} \bar{\zeta}_{s}(\mathbf{p})\left[i \bar{\epsilon}+\operatorname{sgn}\left(\mu_{s}\right)\left(\left|\mu_{s}\right|-v_{0}^{s}|\mathbf{p}|\right)\right] \zeta_{s}(\mathbf{p})
+$$
+
+where $\zeta_{s}, \bar{\zeta}_{s}$ are the fields associated with the helicity eigenstates, $\zeta_{s}=\left\langle\mu_{s}, \mathbf{p}\right| \psi_{s}$ and $\bar{\zeta}_{s}=\bar{\psi}_{s, \sigma}\left|\mu_{s}, \mathbf{p}\right\rangle$.
+
+## Scattering channels
+
+In the presence of a Fermi surface, the electron-electron interaction at low energies decouples into separate scattering channels defined by small energy-momentum transfer and by the tensor structure in the surface space:
+
+$$
+S_{\mathrm{int}}=-\frac{T}{2} \int_{P_{1}, P_{2}, K} \sum_{\alpha}\left[\mathcal{O}_{0+1}^{I A}+\mathcal{O}_{2}^{I A}+\mathcal{O}_{c}^{I A}\right]
+$$
+
+with
+
+$$
+\begin{aligned}
+\mathcal{O}_{0+1}^{I A} & =\sum_{s_{1} s_{2}}\left[\bar{\zeta}_{s_{1}}^{\alpha}\left(P_{1}\right) \zeta_{s_{1}}^{\alpha}\left(P_{1}+K\right)\right] \Gamma_{s_{1}, s_{2} ; \hat{p}_{1}, \hat{p}_{2}}^{0+1}\left[\bar{\zeta}_{s_{2}}^{\alpha}\left(P_{2}\right) \zeta_{s_{2}}^{\alpha}\left(P_{2}-K\right)\right] \\
+\mathcal{O}_{2}^{I A} & =\sum_{s_{1} s_{2}}\left[\bar{\zeta}_{s_{1}}^{\alpha}\left(P_{2}\right) \zeta_{s_{1}}^{\alpha}\left(P_{1}+K\right)\right] \Gamma_{s_{1}, s_{2} ; \hat{p}_{1}, \hat{p}_{2}}^{2, q}\left[\bar{\zeta}_{s_{2}}^{\alpha}\left(P_{1}\right) \zeta_{s_{2}}^{\alpha}\left(P_{2}-K\right)\right] \\
+\mathcal{O}_{c}^{I A} & =\sum_{s_{1} s_{2}}\left[\bar{\zeta}_{s_{1}}^{\alpha}\left(P_{2}\right) \zeta_{s_{1}}^{\alpha}\left(-P_{1}+K\right)\right] \Gamma_{s_{1}, s_{2} ; \hat{p}_{1}, \hat{p}_{2}}^{c, q}\left[\bar{\zeta}_{s_{2}}^{\alpha}\left(-P_{2}+K\right) \zeta_{s_{2}}^{\alpha}\left(P_{1}\right)\right]
+\end{aligned}
+$$
+
+[^0]
+[^0]:    ${ }^{4}$ Recall the Dirac eigenstates reported in Tab. 2.2 on p. 42 . Note the different convention of polar coordinates there and here.
+
+![img-29.jpeg](img-29.jpeg)
+
+Figure 5.5: Schematic representation of the Dirac cone and the strong Rashba spin orbit coupling. If the chemical potential (black plane) is large compared to the typical energy scale $E$ (e.g., temperature), only one kind of helical states can take part in the dynamics.
+
+Here the capital letters denote $2+1$ momenta. The smallness of $K=\left(\omega_{m}, \mathbf{q}\right)$ means that the following conditions hold $\left(\omega_{m},|\mathbf{q}|\right) \ll\left(\left|\mu_{s}\right|, p_{F}^{(s)}\right)$ for both $s=1,2$. It is worthwhile to emphasize that all "Dirac factors" of 3D surface electrons are included in the angular dependence of the scattering amplitudes (subscripts $\Gamma_{\bar{p}_{1}, \bar{p}_{2}}$ ).
+
+The three scattering channels are referred to as small angle scattering channel $\left(\Gamma^{0+1}\right)$, large angle scattering channel $\left(\Gamma^{2}\right)$, and the Cooper channel $\left(\Gamma^{c}\right)$. The quantities entering Eq. (5.46) are the static limit of the corresponding scattering amplitude, $\Gamma\left(\omega_{m}=0, \mathbf{q}\right)$. They already include static screening and do not acquire any tree-level corrections due to disorder [98, 100]. Exemplary diagrams are given in Figs. 1.10 on p. 14. (In the present context surface indices play the role of pseudospin.) In Figs. 1.10, the small angle scattering amplitude is subdivided into its one Coulomb line reducible part $\left(\Gamma^{0}\right)$ and irreducible part $\left(\Gamma^{1}\right)$ such that
+
+$$
+\Gamma^{0+1}=\Gamma^{0}+\Gamma^{1}
+$$
+
+The irreducible part $\Gamma^{1}$ also includes the short range interaction induced by the finite thickness of the 3D TI film (see Apps. C. 2 and C.3.6).
+
+For the short-range interaction amplitudes $\left(\Gamma^{1}, \Gamma^{2}, \Gamma^{c}\right)$, the static limit coincides with the "q-limit" $\Gamma^{q}=\lim _{q \rightarrow 0} \Gamma\left(\omega_{m}=0, \mathbf{q}\right)$, see also App. C.3. It should be kept in mind that for the one-Coulomb-line-reducible part $\Gamma^{0}$ (it is long-ranged) the "q-limit" $\Gamma^{0, q}$ is only a valid approximation if the mean free path $l$ exceeds the screening length. This applies to most realistic situations. (In the opposite case $\Gamma^{0}$ is parametrically small. On top of this, the $q$-dependence of the Coulomb potential implies a strong scale dependence of both conductivity corrections and the interaction amplitude until the running scale reaches the screening length at which $\Gamma^{0} \approx \Gamma^{0, q}$ is again justified.)
+
+I conclude this section with a side remark concerning the topological exciton condensation [225]. In order to find the conventional pole structure of the FL Green's functions for the case $\operatorname{sgn}\left(\mu_{s}\right)=-1$ one needs to transpose the bilinear form in action (5.45) and swap the notation $\zeta_{s}\left(\epsilon_{n}\right) \leftrightarrow \bar{\zeta}_{s}\left(-\epsilon_{n}\right)$. If $\operatorname{sgn}\left(\mu_{1} \mu_{2}\right)=-1$, this interchange of notations obviously happens in only one surface. In this case, the large-angle scattering amplitude $\Gamma_{12}^{2}$ and the Cooper-channel amplitude $\Gamma_{12}^{c}$ are interchanged. Even though this procedure illustrates the analogy between exciton condensation (divergence in $\Gamma_{12}^{2}$ ) and Cooper instability (divergence in $\Gamma_{12}^{c}$ ), in the following I choose to keep the original notation of $\zeta_{s}$ and $\bar{\zeta}_{s}$ also in the case of $\mu_{s}<0$.
+
+![img-30.jpeg](img-30.jpeg)
+
+Figure 5.6: A diagram contributing to $\Gamma^{0}$.
+
+# Clean Fermi liquid theory 
+
+A systematic treatment of the scattering amplitudes involves the field-theory of the FL [67, 72, 101] (see the introductory Sec. 1.5.1 and App. C.3.) It is valid down to energy scales $\sim \tau_{1,2}^{-1}$ and therefore constitutes the starting point for the effective diffusive theory at lower energies, $T \ll \tau_{1,2}^{-1}$.
+
+The conservation of the particle number separately in each of the two surfaces leads to the following Ward identities:
+
+$$
+\Pi_{s_{1}, s_{2}}^{\omega} \equiv \lim _{\omega_{m} \rightarrow 0} \Pi_{s_{1}, s_{2}}\left(\omega_{m}, \mathbf{q}=0\right)=0
+$$
+
+and
+
+$$
+\Pi_{s_{1}, s_{2}}^{g} \equiv \lim _{|\mathbf{q}| \rightarrow 0} \Pi_{s_{1}, s_{2}}\left(\omega_{m}=0, \mathbf{q}\right)=-\frac{\partial n_{s_{1}}}{\partial \mu_{s_{2}}}
+$$
+
+Since these identities reflect the gauge invariance, they can not be altered during the RG procedure. Thus, the static polarization operator is always given by the compressibility $\partial n_{s_{1}} / \partial \mu_{s_{2}}$.
+
+The FL theory in a restricted sense contains only short range interactions $\Gamma^{1}, \Gamma^{2}$ and $\Gamma^{c}$. For electrons in metals, one has also to include the long-range Coulomb interaction. Following Ref. [101], the associated scattering amplitude $\Gamma^{0}$ is obtained by means of static RPA-screening of Coulomb interaction with the help of the FL renormalized polarization operator and triangular vertices (see Fig. 5.6). In App. C. 3 I explicitly present the formal FL treatment. This determines the interaction amplitudes at ballistic scales. They will serve as bare coupling constants of the diffusive NLeM (see Sec. 5.3.6). The attention is now turned to the disordered FL. This will allow to find out which of the interaction channels give rise to soft modes within the problem.
+
+## Diffusive Fermi liquid theory
+
+I explained in Sec. 1.5.1 that the full amplitudes $\Gamma^{0+1}(K), \Gamma^{2}(K)$ and $\Gamma^{c}(K)$ contain, among others, diagrams describing multiple particle-hole (in the Cooper channel, particle-particle) scattering. The very idea of dirty FL lies in replacing the dynamic part of these particle-hole (particle-particle) sections by their diffusive counterpart $[98,100]$. In particular, only the zeroth angular harmonic of the scattering amplitudes survives in the diffusive limit.
+
+The scattering amplitude $\Gamma_{12}^{2}$ (as well as $\Gamma_{12}^{c}$ ) contains only particle-hole (respectively, particleparticle) sections consisting of modes from opposite surfaces of the topological insulator. Since disorder is assumed to be uncorrelated between the surfaces, these modes will not become diffusive and are hence not of interest for the present investigation. I therefore do not consider $\Gamma_{12}^{2}$ and $\Gamma_{12}^{c}$ any longer. As one can see from Figs. 1.10, the large angle scattering amplitudes $\Gamma_{11}^{2}$ and $\Gamma_{22}^{2}$ cannot be distinguished from the small angle scattering amplitudes $\Gamma_{11}^{0+1}$ and $\Gamma_{22}^{0+1}$, respectively. Hence, the effect of $\Gamma_{11}^{2}$ and
+
+$\Gamma_{22}^{2}$ will be included into the 'singlet channel', which has the following matrix structure in the surface space
+
+$$
+\Gamma^{p}=\left(\begin{array}{cc}
+\Gamma_{11}^{0+1-2} & \Gamma_{12}^{0+1} \\
+\Gamma_{12}^{0+1} & \Gamma_{22}^{0+1-2}
+\end{array}\right)
+$$
+
+The following shorthand notation will be used
+
+$$
+\Gamma^{0+1-2}=\Gamma^{0+1}-\Gamma^{2}
+$$
+
+The intrasurface Cooper channel interaction $\Gamma_{s s}^{c}$ will be also neglected. Its bare value is repulsive for the case Coulomb interaction, so that the Cooper renormalization on ballistic scales $1 / \tau \ll E \ll|\mu|$ renders it small on the UV scale of the diffusive theory (i.e., at the mean free path). Within the diffusive RG of a single 3D TI surface it quickly becomes of the order of $1 / \sqrt{\sigma}$ and thus negligible (see Sec. 1.5.2). Consequently I drop the Cooper channel amplitude and do not consider the superconducting instability in this chapter. The case of attractive bare Cooper interaction will be discussed in Chap. 7.
+
+# Bosonization of Fermi Liquid 
+
+The non-Abelian bosonization relies on the Dirac nature of the 2D electrons and on the associated non-Abelian anomaly. On the other hand, for $\alpha_{T I} \sim 1$ the spectrum of the system gets strongly renormalized by interaction. An appropriate description in such a situation is the FL theory which is restricted to fermionic excitations close to the Fermi level. So, one can ask whether the result of nonAbelian bosonization remains applicable for $\alpha_{T I} \sim 1$. The answer is yes, for the following reasons. All terms of the bosonized theory except for the $\mathbb{Z}_{2}$ theta term are determined by fermionic excitations close to the Fermi energy. Therefore, they equally hold for the FL if the coupling constants are appropriately redefined in terms of the corresponding FL parameters.
+
+On the other hand, the $\mathbb{Z}_{2}$ theta term is a consequence of the chiral anomaly and thus the only term determined by energies far from $\mu$. However, it is well known that anomalies in quantum field theories are insensitive to interactions. Hence, the $\mathbb{Z}_{2}$ term in the diffusive NL $\sigma \mathrm{M}$ persists even for $\alpha_{T I} \sim 1$. This follows also from the key property of the FL state: its spectrum is adiabatically connected to the free spectrum. This implies that topological implications remain unchanged. This can also be seen as a consequence of the 't Hooft matching condition introduced in Sec. 2.3.5. To summarize, the only difference between the NL $\sigma \mathrm{M}$ for the weakly interacting Fermi gas ( $\alpha_{T I} \ll 1$ ) and the $\mathrm{FL}\left(\alpha_{T I} \sim 1\right)$ is the replacement of the interaction strength by the appropriate FL constant $\underline{U}^{q} \rightarrow-\underline{\Gamma}^{p}$ in Eq. (5.43).
+
+## Bare value of scattering amplitudes
+
+According to the formal FL treatment (App. C.3.4), the singlet-channel interaction amplitude is given by
+
+$$
+\underline{\nu} \underline{\Gamma}^{p} \underline{\nu}=-\underline{\nu}-\frac{\operatorname{det} \underline{\Pi}^{q}}{\Pi_{11}^{q}+\Pi_{22}^{q}+2 \Pi_{12}^{q}}\left(\begin{array}{cc}
+1 & -1 \\
+-1 & 1
+\end{array}\right)
+$$
+
+where $(\underline{\nu})_{s s^{\prime}}=\nu_{s} \delta_{s s^{\prime}}$ and
+
+$$
+\underline{\Pi}^{q}=-\underline{\nu}-\underline{\nu}\left(\begin{array}{cc}
+\Gamma_{11}^{1-2} & \Gamma_{12}^{1} \\
+\Gamma_{12}^{1} & \Gamma_{22}^{1-2}
+\end{array}\right) \underline{\nu}
+$$
+
+Here $\Gamma^{1-2}=\Gamma^{1}-\Gamma^{2}$. The remarkably simple matrix structure of $\underline{\nu}+\underline{\nu} \underline{\Gamma}^{p} \underline{\nu}$ is actually due to the presence of the long-range Coulomb interaction. This fact will be explained by means of $\mathcal{F}$-invariance in Sec. 5.3.7. It has very important consequences for the RG flow in the diffusive regime, see Sec. 5.4.2.
+
+# Action of NL $\sigma \mathbf{M}$ 
+
+I am now in a position to present the full action of the diffusive interacting NL $\sigma \mathrm{M}$ for the problem under consideration:
+
+$$
+S=\sum_{s}\left[S_{s}^{(\mathrm{kin})}+i S_{s}^{(\theta)}\right]+S^{(\eta+\mathrm{int})}
+$$
+
+It contains the kinetic term
+
+$$
+S_{s}^{(\mathrm{kin})}=\frac{\sigma_{s}}{16} \int_{\mathbf{x}} \operatorname{tr}\left(\nabla Q_{s}\right)^{2}
+$$
+
+and the $\mathbb{Z}_{2}$ theta term
+
+$$
+\left.S_{s}^{(\theta)}=\frac{1}{24 \pi} \Gamma_{s}\right|_{\dot{O}_{s}(\mathbf{x}, w=1)=Q_{s}(\mathbf{x})=Q_{s}^{T}(\mathbf{x})}
+$$
+
+for each of the surfaces, as well as the frequency and interaction terms,
+
+$$
+S^{(\eta+\mathrm{int})}=-\pi T\left[\sum_{s} 2 z_{s} \operatorname{tr} \dot{\eta} Q_{s}-\sum_{s s^{\prime} ; n, \alpha} \operatorname{tr}\left[J_{n}^{\alpha} Q_{s}\right] \Gamma_{s s^{\prime}} \operatorname{tr}\left[J_{-n}^{\alpha} Q_{s^{\prime}}\right]\right]
+$$
+
+Here the following notation was introduced
+
+$$
+\Gamma_{s s^{\prime}}=\frac{8}{\pi} \lambda_{s} \Gamma_{s s^{\prime}}^{\rho} \lambda_{s^{\prime}}
+$$
+
+### 5.3.7 Inclusion of scalar and vector potentials into the NL $\sigma \mathbf{M}$
+
+In this subsection, the consequences of the gauge invariance for the interacting NL $\sigma \mathrm{M}$ are investigated.
+
+## Electromagnetic gauge invariance
+
+Following the standard procedure the scalar potential $\Phi_{s}$ and the vector potential $A_{\mu, s}$ for surface $s$ are included in the microscopic action (5.11) by means of covariant derivatives. This makes the action gauge-invariant, i.e., unchanged under local $\mathbf{U}(1)$-rotations of the fermionic fields $\psi$ and $\bar{\psi}$ accompanied by the corresponding gauge transformation of the potentials. Note that locality implies independent rotations on the top and bottom surfaces of the TI film.
+
+The rotations of $\psi$-fields imply the following rotation of bispinors:
+
+$$
+\eta_{s}(\mathbf{x}) \rightarrow W_{s} \eta_{s}(\mathbf{x})
+$$
+
+where
+
+$$
+W_{s}=\left[e^{-i \bar{\chi}_{s}^{T}} \frac{1+\tau_{y}}{2}+e^{i \bar{\chi}_{s}} \frac{1-\tau_{y}}{2}\right]
+$$
+
+and I use the following convention for hatted matrices: $\hat{a} \equiv \sum_{n, \alpha} a_{n}^{\alpha} f_{n}^{\alpha}$. It is worth to recall that the $\eta_{s}$ fields are considered as vectors in the Matsubara space. Upon introducing replica indices in the theory, the $\mathbf{U}(1)$ rotation angles and correspondingly the gauge potentials get replicated as well.
+
+# $\mathcal{F}$-algebra and $\mathcal{F}$-invariance 
+
+As a direct consequence of (5.60), $Q$-matrices transform under a gauge transformation $\chi_{s}$ in the following way:
+
+$$
+Q_{s} \rightarrow W_{s} Q_{s} W_{s}^{T}
+$$
+
+Under such rotations, in the limit $N_{M}^{\prime}, N_{M} \rightarrow \infty, N_{M} / N_{M}^{\prime} \rightarrow 0$, the frequency term acquires the correction $[106]$
+
+$$
+\delta_{\chi} \operatorname{tr} \dot{\eta} Q_{s}=2 \sum_{n, \alpha}\left[n \chi_{s, n}^{\alpha} \operatorname{tr} J_{-n}^{\alpha} Q_{s}-n^{2} \chi_{s, n}^{\alpha} \chi_{s,-n}^{\alpha}\right]
+$$
+
+while the factors entering the interaction term vary as follows:
+
+$$
+\delta_{\chi} \operatorname{tr} J_{n}^{\alpha} Q_{s}=-i 2 n \chi_{s, n}^{\alpha}
+$$
+
+As explained in Secs. 1.5.2 and 5.3.1, the presence of the Coulomb interaction implies invariance of the fermionic action (5.11) under a simultaneous rotation in both surfaces by the same spatially constant ("global") but time-dependent $\mathbf{U}(1)$-phase even without inclusion of gauge potentials (" $\mathcal{F}$-invariance"). This symmetry has to be preserved on NLeM level, implying that
+
+$$
+(\underline{z}+\underline{\Gamma})\binom{1}{1}=0
+$$
+
+Here $(\underline{z})_{s s^{\prime}}=z_{s} \delta_{s s^{\prime}}$. Since the intersurface interaction is symmetric, $\Gamma_{12}=\Gamma_{21}$, Eq. (5.65) yields
+
+$$
+\underline{z}+\underline{\Gamma}=\text { const. } \times\left(\begin{array}{cc}
+1 & -1 \\
+-1 & 1
+\end{array}\right)
+$$
+
+This relation is consistent with Eq. (5.53). However, contrary to Eq. (5.53), the relation (5.66) is manifestly imposed by the symmetry (" $\mathcal{F}$-invariance") of the action (5.55). It should therefore remain intact under RG flow.
+
+## Gauging the NL $\sigma \mathbf{M}$ and linear-response theory
+
+Generally, the requirement of gauge invariance prescribes the correct coupling to the scalar and vector potentials in the action of the NLeM, Eq. (5.55). In particular, in the kinetic term one has to replace $\partial_{\mu} Q_{s} \rightarrow D_{\mu, s} Q_{s}$ with the long derivative $D_{\mu}$ of the form
+
+$$
+D_{\mu, s} Q_{s} \equiv \partial_{\mu} Q_{s}+\sum_{n, \alpha} i A_{\mu, s,-n}^{\alpha}\left[J_{n}^{\alpha}-\left(J_{n}^{\alpha}\right)^{T}, Q_{s}\right]
+$$
+
+For simplicity, the electron charge is absorbed into the vector potential here and in the following subsection.
+
+The local expression of the $\mathbb{Z}_{2}$ theta term, i.e, the WZ term, Eq. (5.57), also allows of inclusion of gauge potentials. [141-144, 227, 228] However, the situation is more subtle here. Specifically, it turns out that the contribution of non-topological gauge potentials to the topological term $S^{(0)}$ vanishes. Thus Eq. (5.40) with short derivatives is the correct topological term in the gauged theory. I explicitly
+
+show this in App. C.1.1. Note that, being topologically quantized, the theta term is invariant under smooth $\mathbf{U}(1)$ rotations also without long derivatives. ${ }^{5}$
+
+As the theory is non-local in the imaginary time, the inclusion of the scalar potential is non-linear. The corresponding term that should be added to the NLeM (5.55) reads
+
+$$
+S^{\Phi}=-2 \sum_{n \alpha, s s^{\prime}} \Phi_{n, s}^{\alpha}(\underline{z}+\underline{\Gamma})_{s s^{\prime}} \operatorname{tr} J_{n}^{\alpha} Q_{s}+\frac{1}{\pi T} \sum_{n \alpha, s s^{\prime}} \Phi_{n, s}^{\alpha}(\underline{z}+\underline{\Gamma})_{s s^{\prime}} \Phi_{-n, s}^{\alpha}
+$$
+
+The inclusion of the scalar and vector potentials allow to express the density-density correlation function and the conductivity in terms of the matrix fields $Q_{s}$ by means of the linear-response theory. In particular, a double differentiation of the partition function with respect to the scalar potential yields the density-density response,
+
+$$
+\begin{aligned}
+\Pi_{s s^{\prime}}^{\mathrm{RPA}}\left(\omega_{n}, \mathbf{q}\right)= & -\frac{2}{\pi}(z+\Gamma)_{s s^{\prime}} \\
+& +4 T \sum_{s_{1}, s_{2}}(z+\Gamma)_{s s_{1}}\left\langle\operatorname{tr} J_{n}^{\alpha} Q_{s_{1}}(\mathbf{q}) \operatorname{tr} J_{-n}^{\alpha} Q_{s_{2}}(-\mathbf{q})\right\rangle(z+\Gamma)_{s_{2} s^{\prime}}
+\end{aligned}
+$$
+
+Here $\langle\ldots\rangle$ denotes average with respect to the action (5.55). The superscript ${ }^{\mathrm{RPA}}$ emphasizes that the quantity appearing in the total density-density response includes RPA resummation. It is thus one-Coulomb-line-reducible and only its irreducible part corresponds to the polarization operator.
+
+In the same spirit, one obtains the expression for the conductivity (in units of $e^{2} / h$ ) at a finite, positive frequency $\omega_{n}$ :
+
+$$
+\sigma_{s s^{\prime}}^{\prime}\left(\omega_{n}\right)=B_{1}^{(s)} \delta_{s s^{\prime}}+B_{2}^{\left(s s^{\prime}\right)}
+$$
+
+Here I introduced two correlators: ${ }^{6}$
+
+$$
+B_{1}^{(s)}=-\frac{\sigma_{s}}{8 n}\left\langle\operatorname{tr}\left[J_{n}^{\alpha}-\left(J_{n}^{\alpha}\right)^{T}, Q_{s}\right]\left[J_{-n}^{\alpha}-\left(J_{-n}^{\alpha}\right)^{T}, Q_{s}\right]\right\rangle
+$$
+
+and
+
+$$
+\begin{aligned}
+B_{2}^{\left(s s^{\prime}\right)}= & \frac{\sigma_{s} \sigma_{s^{\prime}}}{128 n} \int_{\mathbf{x}-\mathbf{x}^{\prime}} \sum_{\mu=x, y} \\
+& \left\langle\operatorname{tr}\left\{\left[J_{n}^{\alpha}-\left(J_{n}^{\alpha}\right)^{T}, Q_{s}\right] \partial_{\mu} Q_{s}\right\}_{\mathbf{x}} \operatorname{tr}\left\{\left[J_{-n}^{\alpha}-\left(J_{-n}^{\alpha}\right)^{T}, Q_{s^{\prime}}\right] \partial_{\mu} Q_{s^{\prime}}\right\}_{\mathbf{x}^{\prime}}\right\rangle
+\end{aligned}
+$$
+
+Evaluation at the saddle-point (inserting $Q_{s}=\Lambda$ ) leads to the classical value $\sigma_{s s^{\prime}}^{\prime}\left(\omega_{n}\right)=\sigma_{s} \delta_{s s^{\prime}}$. Hence the dimensionless coupling constant of the NLeM has been identified with the physical conductivity in units of $e^{2} / h$.
+
+# 5.4 One-loop renormalization group 
+
+In the preceding section the diffusive NLeM, Eqs. (5.55), was derived. I will now investigate its behavior under renormalization. This will allow, in particular, to deduce the scale dependence of the
+
+[^0]
+[^0]:    ${ }^{5}$ The invariance under large gauge transformations is explained in Sec. 6.3.
+    ${ }^{6}$ In the publication [154] there was misprint (missing minus sign) in Eq. (5.71). It is corrected here.
+
+conductivity. The most important steps of the calculation are presented in the main text; further details can be found in App. C.4.
+
+The renormalization of the NLeM parameters is calculated within the linear-response formalism (rather than the background-field method). This is favorable since it implies a more direct physical interpretation of the NLeM coupling constants. Furthermore, this way one can in principle treat simultaneously different infrared regulators, such as temperature or frequency. However, for the sake of clarity of presentation I restrict myself to a purely field-theoretical regularization scheme and add a mass term to the action
+
+$$
+S_{L}=-\sum_{s=1,2} \frac{\sigma_{s} L^{-2}}{8} \int_{\mathbf{x}} \operatorname{tr} \Lambda Q_{s}
+$$
+
+The connection between the running length scale $L$ and the physical regulators temperature or frequency was analyzed in Ref. [229]. Roughly speaking, in the presence of a single infrared scale $E$, e.g. when calculating DC conductance at finite temperature and assuming an infinite sample, one can replace $L$ by $L_{E}$ in the results.
+
+All UV -divergent contributions are calculated in the dimensional regularization scheme. This allows to preserve the local $\mathrm{O}\left(2_{\tau} \times N_{M} \times N_{R}\right) \times \mathrm{O}\left(2_{\tau} \times N_{M} \times N_{R}\right)$-symmetry of the $Q$-matrix (5.38) and to ensure the renormalizability of the theory.
+
+# 5.4.1 Diffusive propagators 
+
+I employ the exponential parametrization of the matrix fields $Q_{s}=\Lambda \exp W_{s}$. The antisymmetric fields
+
+$$
+W_{s}=\left(\begin{array}{cc}
+0 & q_{s} \\
+-q_{s}^{T} & 0
+\end{array}\right)
+$$
+
+anticommute with $\Lambda$. Further, the following set of real matrices in the particle-hole space is defined: $\bar{\tau}_{\mu} \equiv 2^{-1 / 2}\left(\mathbf{1}, \tau_{x}, i \tau_{y}, \tau_{z}\right)$. This allows to introduce the fields $q^{(\mu)} \equiv \operatorname{tr}^{\tau} q \bar{\tau}_{\mu}^{T}$, where $\operatorname{tr}^{\tau}$ is the trace in the particle-hole space only. With these definitions at hand, the action, Eqs. (5.55) and (5.73), is expanded to quadratic order in $q^{(\mu)}$ and hence the NLeM propagators that describe the diffusive motion in the particle-hole (diffusons) and particle-particle (Cooperons) channels are obtained.
+
+The fields $q^{(1)}$ and $q^{(3)}$ describe Cooperons. Their propagator is unaffected by interaction (since I have discarded the interaction in the Cooper channel),
+
+$$
+\left\langle\left[q_{s}^{(\mu)}(\mathbf{p})\right]_{m_{1} m_{2}}^{\alpha_{1} \alpha_{2}}\left[q_{s^{\prime}}^{(\nu)}(-\mathbf{p})\right]_{n_{1} n_{2}}^{\beta_{1} \beta_{2}}\right\rangle=\frac{4}{\sigma_{s}} D_{s}\left(\omega_{n_{12}}, \mathbf{p}\right) \delta_{s s^{\prime}} \delta_{\mu \nu} \delta_{n_{1} m_{1}} \delta_{n_{2} m_{2}} \delta_{\alpha_{1} \beta_{1}} \delta_{\alpha_{2} \beta_{2}}\left(\delta_{\mu 1}+\delta_{\mu 3}\right)
+$$
+
+where
+
+$$
+\left[D_{s}\left(\omega_{n_{12}}, \mathbf{p}\right)\right]^{-1}=\mathbf{p}^{2}+L^{-2}+\frac{4 z_{s}}{\sigma_{s}} \omega_{n_{12}}
+$$
+
+The Matsubara indices $n_{1}, m_{1}$ are non-negative, while the indices $n_{2}, m_{2}$ are negative. The following notation was also introduced: $n_{12} \equiv n_{1}-n_{2}>0$ and $m_{12} \equiv m_{1}-m_{2}>0$.
+
+Next, diffusons $q^{(0)}$ and $q^{(2)}$ are considered. Their Green's function, written as a matrix in surface space, is
+
+$$
+\begin{aligned}
+\left\langle\left[q_{s^{\prime}}^{(\mu)}(\mathbf{p})\right]_{m_{1} m_{2}}^{\alpha_{1} \alpha_{2}}\left[q_{s^{\prime}}^{(\nu)}(-\mathbf{p})\right]_{n_{1} n_{2}}^{\beta_{1} \beta_{2}}\right\rangle= & \frac{4}{\sigma_{s}} D_{s}\left(\omega_{n_{12}}, \mathbf{p}\right) \delta_{\mu \nu} \delta_{n_{12}, m_{12}} \delta_{\alpha_{1} \beta_{1}} \delta_{\alpha_{2} \beta_{2}}\left(\delta_{\mu 0}+\delta_{\mu 2}\right) \\
+& \times\left[\delta_{n_{1} m_{1}} \delta_{s s^{\prime}}-\frac{8 \pi T}{\sigma_{s^{\prime}}} \delta^{\alpha_{1} \alpha_{2}}\left(\underline{\Gamma D^{c}}\left(\omega_{n_{12}}, \mathbf{p}\right)\right)_{s s^{\prime}}\right]
+\end{aligned}
+$$
+
+Here I have introduced the notation
+
+$$
+\left[D^{c}\left(\omega_{n_{12}}, \mathbf{p}\right)\right]_{s s^{\prime}}^{-1}=D_{s}^{-1}\left(\omega_{n_{12}}, \mathbf{p}\right) \delta_{s s^{\prime}}+\frac{4 \omega_{n_{12}}}{\sigma_{s}} \Gamma_{s s^{\prime}}
+$$
+
+# 5.4.2 RG invariants 
+
+The bare action contains, aside from the mass $L^{-1}$, seven running coupling constants: $\sigma_{1}, \sigma_{2}, z_{1}, z_{2}$, $\Gamma_{11}, \Gamma_{22}$ and $\Gamma_{12}$. In this section it will be shown that three linear combinations of them are conserved under RG. To this end the density-density response (5.69) is evaluated at the tree level:
+
+$$
+\underline{\Pi}^{\mathrm{RPA}}(\omega, \mathbf{p})=-\frac{2}{\pi}[\underline{z}+\underline{\Gamma}]\left(1-4 \omega \underline{\sigma}^{-1} \underline{D}^{c}(\omega, \mathbf{p})[\underline{z}+\underline{\Gamma}]\right)
+$$
+
+where $(\underline{\sigma})_{s s^{\prime}}=\sigma_{s} \delta_{s s^{\prime}}$. There is no need for IR regularization here and therefore the mass term (5.73) is omitted.
+
+On the other hand, the density-density response function can be obtained from the fermionic formulation of the theory, see App. C.3.5:
+
+$$
+\underline{\Pi}^{\mathrm{RPA}}=\left[\underline{\Pi}^{q}-\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}\right]\left(1+\omega \underline{\Delta}^{\Gamma}(\omega, \mathbf{p})\left[\underline{\Pi}^{q}-\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}\right]\right)
+$$
+
+where
+
+$$
+\Delta^{\Gamma}(\omega, \mathbf{p})=\left[\underline{\nu} \underline{D} \mathbf{p}^{2}+\omega\left(\underline{\nu}+\underline{\nu} \underline{\Gamma}^{\rho, q} \underline{\nu}\right)\right]^{-1}
+$$
+
+The equality of Eqs. (5.78) and (5.79) relates two functions of momentum and frequency. In the static limit, I find the following constraint connecting the NL $\sigma \mathrm{M}$ coupling constants with physical FL parameters:
+
+$$
+\frac{2}{\pi}(\underline{z}+\underline{\Gamma})=-\underline{\Pi}^{q}+\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}
+$$
+
+Next, from comparison of momentum dependence in Eqs. (5.78) and (5.79), I find the Einstein relation: $\sigma_{s}=2 \pi \nu_{s} D_{s}$. Accordingly, $\sigma$ measures the conductance in units of $e^{2} / h$, consistently with what has been found in Secs. 5.3.2 and 5.3.7.
+
+In view of gauge invariance (Sec. 5.3.6), the static polarization operator entering Eq. (5.81) is nothing but the compressibility
+
+$$
+\Pi^{s s^{\prime}, q}=-\frac{\partial n_{s}}{\partial \mu_{s^{\prime}}}
+$$
+
+Its value is not renormalized because it can be expressed as a derivative of a physical observable with respect to the chemical potentials. On ballistic scales the chemical potential enters logarithmically
+
+divergent corrections only as the UV cutoff of the integrals. In the diffusive regime, the UV cutoff is provided by the scattering rates $\tau_{s}^{-1} \ll\left|\mu_{s}\right|$. Therefore, diffusive contributions to the derivative with respect to the chemical potential vanish [98]. Since $\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}$ only depends on $\underline{\Pi}^{q}$ (see App. C.3.4) it is not renormalized as well. Therefore, the RHS of (5.81) is not renormalized and hence neither is its LHS, i.e., $\underline{z}+\underline{\Gamma}$. This matrix constraint yields three RG invariants: $z_{1}+\Gamma_{11}, z_{2}+\Gamma_{22}$, and $\Gamma_{12}$. Thus, only four out of seven NL $\sigma \mathrm{M}$ parameters are independent running coupling constants. I emphasize that, in contrast to Eq. (5.66), this reasoning is valid also in the absence of long-range interaction.
+
+Finally, one can evaluate Eq. (5.81) on the bare level. Expressing the static polarization operator as $\underline{\Pi}^{q}=-\underline{\nu}-\underline{\nu} \underline{\Gamma}^{1-2} \underline{\nu}$ and using the definition of $z_{s}$ in Sec. 5.3.5 one finds the following relations for the bare values
+
+$$
+\frac{4 \lambda_{s}}{\pi} \equiv \frac{2}{\pi} z_{s}=\nu_{s}
+$$
+
+Equivalently, the same relationship between $\lambda_{s}$ and $\nu_{s}$ can be obtained by comparing the bare definition of $\underline{\Gamma}[\mathrm{Eq} .(5.59)]$ with the RHS of (5.81). The relation (5.82) has been foreseen earlier on the basis of SCBA, see Eq. (5.36). In conclusion, the SCBA and the density response independently show that the UV cutoff scale for the bosonization is automatically set by the chemical potential (which is also very natural from the physical point of view).
+
+# 5.4.3 Renormalization of conductivities 
+
+## Correlator $B_{1}$
+
+I will first present the analysis of the correlator $B_{1}^{(s)}$, Eq. (5.71). The one-loop correction is determined by the expansion to second order in $\eta^{(\mu)}$. The tensor structure in particle-hole space implies that the diffuson contribution $(\mu=0,2)$ vanishes. The classical value together with the Cooperon contribution $(\mu=1,3)$ is
+
+$$
+B_{1}^{(s)}=\sigma_{s}+2 \int_{\mathbf{p}} D_{s}\left(\omega_{n}, \mathbf{p}\right)
+$$
+
+This term is evaluated in the announced regularization scheme:
+
+$$
+B_{1}^{(s)}=\sigma_{s}+2 \mathrm{I}_{1}^{(2+\epsilon)}=\sigma_{s}+\frac{1}{2 \pi}\left[-\frac{2}{\epsilon}+2 \ln L / l+\text { const. }\right]
+$$
+
+For dimensional reasons the reference length scale $l$ was introduced. For the present diffusive problem it is set by the mean free path $l=\max _{s=1,2} l_{s}$. The following standard dimensionless integral was evaluated
+
+$$
+\begin{aligned}
+\mathrm{I}_{1}^{(D)} & \equiv l^{D-2} \int \frac{d^{D} p}{(2 \pi)^{D}} \frac{1}{\mathbf{p}^{2}+L^{-2}} \\
+& =\frac{\left(\frac{l^{2}}{L^{2}}\right)^{\frac{D}{2}-1}}{(4 \pi)^{\frac{D}{2}}} \Gamma\left(1-\frac{D}{2}\right) \\
+& \stackrel{D=2+\epsilon}{=} \frac{1}{4 \pi}\left[-\frac{2}{\epsilon}+2 \ln L / l+\ln 4 \pi-\gamma+\mathcal{O}(\epsilon)\right]
+\end{aligned}
+$$
+
+where $\gamma \approx 0.577$ is the Euler-Mascheroni constant.
+The logarithmic term in Eq. (5.84) is nothing but the well-known weak-antilocalization effect [70].
+
+# Correlator $B_{2}$ 
+
+Next I turn the attention to $B_{2}^{\left(s s^{\prime}\right)}$, Eq. (5.72). Because of the presence of gradients it does not contribute neither at classical nor at tree level. Furthermore, due to the absence of the Cooper channel and the uncorrelated disorder on the top and bottom surfaces, there are no quantum corrections to the transconductance $\sigma_{12}$. The correlator $B_{2}^{\left(s s^{\prime}\right)}$ can be recast into the form (see App. C.4)
+
+$$
+\begin{aligned}
+B_{2}^{\left(s s^{\prime}\right)}= & \frac{16 \delta_{s s^{\prime}}}{n \sigma_{s}} \int_{\mathbf{p}} \mathbf{p}^{2} \sum_{\omega_{m}>0} \omega_{m} \\
+& \times\left[\left(\underline{D \Gamma D^{\prime \prime}}\right)_{s s}\left(\omega_{m}, \mathbf{p}\right) D_{s}\left(\omega_{m+n}, \mathbf{p}\right)-\left(\underline{D \Gamma D^{\prime \prime}}\right)_{s s}\left(\omega_{m+n}, \mathbf{p}\right) D_{s}\left(\omega_{m+2 n}, \mathbf{p}\right)\right]
+\end{aligned}
+$$
+
+For its evaluation it is instructive to separate contributions stemming from intrasurface interaction $\Gamma_{s s}$ and intersurface interaction $\Gamma_{12}$. This leads to
+
+$$
+\begin{aligned}
+B_{2}^{s s^{\prime}} & =-4 \delta_{s s^{\prime}}\left(\underbrace{1-\frac{1+\gamma_{s s}}{\gamma_{s s}} \ln \left(1+\gamma_{s s}\right)}_{\text {single surface }}+\underbrace{\left(1+\gamma_{s s}\right)\left(\frac{\ln \left(1+\gamma_{s s}\right)}{\gamma_{s s}}-\frac{\ln \left(1+\tilde{\gamma}_{s s}\right)}{\tilde{\gamma}_{s s}}\right)}_{\text {intersurface interaction }}\right) I_{2}^{(2+\epsilon)} \\
+& =-\frac{\delta_{s s^{\prime}}}{\pi}\left(1-\frac{1+\gamma_{s s}}{\tilde{\gamma}_{s s}} \ln \left(1+\tilde{\gamma}_{s s}\right)\right)\left[-\frac{2}{\epsilon}+2 \ln L / l+\text { const }\right]
+\end{aligned}
+$$
+
+In analogy to the notation introduced in Sec. 1.5.2 I defined $\gamma_{s s}=\Gamma_{s s} / z_{s}, \tilde{\gamma}_{11}=\gamma_{11}+\left(\sigma_{1} / \sigma_{2}\right)\left(1+\gamma_{11}\right)$ and $\tilde{\gamma}_{22}=\gamma_{22}+\left(\sigma_{2} / \sigma_{1}\right)\left(1+\gamma_{22}\right)$. Note that in the limit of $z_{2}+\Gamma_{22}=0$ [which corresponds to $\Gamma_{12}=0=z_{1}+\Gamma_{11}$ in view of (5.66)] one recovers the well-known conductivity corrections to $\sigma_{11}$ for a single surface (see also Secs. 1.5.2 above and 5.5.2, below). Further, in Eq. (5.86) the second standard diverging integral was evaluated
+
+$$
+\begin{aligned}
+\mathrm{I}_{2}^{(D)} & \equiv l^{D-2} \int \frac{d^{D} p}{(2 \pi)^{D}} \frac{\mathbf{p}^{2}}{\left(\mathbf{p}^{2}+L^{-2}\right)^{2}} \\
+& =\frac{\left(\frac{l^{2}}{L^{2}}\right)^{\frac{D}{2}-1}}{(4 \pi)^{\frac{D}{2}}} \frac{D}{2} \Gamma\left(1-\frac{D}{2}\right) \\
+& \stackrel{D=2+\epsilon}{=} \frac{1}{4 \pi}\left[-\frac{2}{\epsilon}+2 \ln L / l+\ln 4 \pi-1-\gamma+\mathcal{O}(\epsilon)\right]
+\end{aligned}
+$$
+
+### 5.4.4 Renormalization of the interaction amplitudes
+
+The renormalization of the interaction amplitudes, or equivalently, of Finkelstein parameters $z_{s}$, is intimately linked to the renormalization of the specific heat [230]. This is because the scale (e.g. temperature) dependence of the total thermodynamic potential $\Omega$ is governed by the scale dependence of $z_{s}$. In the present case of coupled surfaces one can only extract the correction to the sum $z_{1}+z_{2}$ from the (one-loop) correction to the total thermodynamic potential [229]:
+
+$$
+z_{1}^{\prime}+z_{2}^{\prime}=\frac{1}{2 \pi \operatorname{tr} \eta \Lambda} \frac{\partial}{\partial T} \frac{\Omega}{T}
+$$
+
+At the classical level Eq. (5.87) yields the relation $z_{1}^{\prime}+z_{2}^{\prime}=z_{1}+z_{2}$. Evaluating the quantum corrections in Eq. (5.87), one finds
+
+$$
+\left(z_{1}^{\prime}+z_{2}^{\prime}\right)=\left(z_{1}+z_{2}\right)+2 \sum_{s=1,2} \Gamma_{s s} \int_{\mathbf{p}} D_{s}(0, \mathbf{p})
+$$
+
+As the correction is a sum of contributions from the two opposite surfaces, it is natural to assume that the parameters $z_{s}$ are renormalized separately (and without intersurface interaction effects):
+
+$$
+\begin{aligned}
+z_{s}^{\prime} & =z_{s}+2 \Gamma_{s s} \int_{\mathbf{p}} D_{s}(0, \mathbf{p}) \\
+& =z_{s}+2 \frac{\Gamma_{s s}}{\sigma_{s}} \mathrm{I}_{1}^{(2+\epsilon)} \\
+& =z_{s}+\frac{1}{2 \pi} \frac{\Gamma_{s s}}{\sigma_{s}}\left[-\frac{2}{\epsilon}+2 \ln L / l+\text { const }\right]
+\end{aligned}
+$$
+
+I have directly proven this assumption of separate $z_{s}$ renormalization by the background field method. ${ }^{7}$
+
+# 5.4.5 The one-loop RG equations 
+
+Applying the minimal subtraction scheme to Eqs. (5.84), (5.86) and (5.89), yields the one-loop perturbative RG equations:
+
+$$
+\begin{aligned}
+\frac{d \sigma_{1}}{d y} & =-\frac{2}{\pi} F\left(\gamma_{11}, \frac{\sigma_{1}}{\sigma_{2}}\right) \\
+\frac{d \sigma_{2}}{d y} & =-\frac{2}{\pi} F\left(\gamma_{22}, \frac{\sigma_{2}}{\sigma_{1}}\right) \\
+\frac{d \gamma_{11}}{d y} & =-\frac{\gamma_{11}\left(1+\gamma_{11}\right)}{\pi \sigma_{1}} \\
+\frac{d \gamma_{22}}{d y} & =-\frac{\gamma_{22}\left(1+\gamma_{22}\right)}{\pi \sigma_{2}}
+\end{aligned}
+$$
+
+where $y=\ln L / l, \gamma_{s s}=\Gamma_{s s} / z_{s}, l=\max _{s=1,2} l_{s}$ and
+
+$$
+F(\gamma, x)=\frac{1}{2}-\frac{1+\gamma}{x\left[1+\gamma\left(1+\frac{1}{x}\right)\right]} \ln [(1+x)(1+\gamma)]
+$$
+
+[^0]
+[^0]:    ${ }^{7}$ Instead of considering the renormalization of $z_{s}$ one can equivalently consider the renormalization of $\Gamma_{s s}$. It is governed by the interaction term $S^{\text {int }}$ in Eq. (5.58). Within the background field method two types of contributions can arise. First, there is $\left\langle S^{\text {int }}\right\rangle_{\text {fast }}$. This term does not involve a frequency integration. Because disorder is uncorrelated between the surfaces, $\Gamma_{11}$ and $\Gamma_{22}$ are renormalized separately. This is described by Eq. (5.89). All possible further contributions at this order would arise from $\left\langle\left(S^{\text {int }}\right)^{2}\right\rangle_{\text {fast }}$. This term generates so-called ring diagrams [98]. I have explicitly checked that the ring diagrams vanish in one-loop approximation.
+
+Recall that $\Gamma_{12}, z_{1}+\Gamma_{11}$ and $z_{2}+\Gamma_{22}$ are not renormalized. It is worth to mention that the mass $L^{-1}$ acquires a quantum correction [229] but it does not affect the one-loop renormalization of the other parameters $\sigma_{s}, z_{s}$ and $\Gamma_{s s^{\prime}}$.
+
+For an alternative presentation of the RG equations (5.90) I introduce the total conductivity $\sigma=$ $\sigma_{1}+\sigma_{2}$ and the ratio of the conductivities of the two surfaces $t=\sigma_{1} / \sigma_{2}$. In terms of these parameters the RG equations take the following form:
+
+$$
+\begin{aligned}
+& \frac{d \sigma}{d y}=-\frac{2}{\pi}\left\{1-\frac{1}{t} \frac{1+\gamma_{11}}{1+\gamma_{11}\left(1+\frac{1}{t}\right)} \ln \left[(1+t)\left(1+\gamma_{11}\right)\right]-t \frac{1+\gamma_{22}}{1+\gamma_{22}(1+t)} \ln \left[\left(1+\frac{1}{t}\right)\left(1+\gamma_{22}\right)\right]\right\} \\
+& \frac{d t}{d y}=-\frac{2}{\pi} \frac{1+t}{\sigma}\left\{\frac{1-t}{2}-\frac{1}{t} \frac{\left(1+\gamma_{11}\right) \ln \left[(1+t)\left(1+\gamma_{11}\right)\right]}{1+\gamma_{11}\left(1+\frac{1}{t}\right)}+t^{2} \frac{\left(1+\gamma_{22}\right) \ln \left[\left(1+\frac{1}{t}\right)\left(1+\gamma_{22}\right)\right]}{1+\gamma_{22}(1+t)}\right\} \\
+& \frac{d \gamma_{11}}{d y}=-\left(1+\frac{1}{t}\right) \frac{\gamma_{11}\left(1+\gamma_{11}\right)}{\pi \sigma} \\
+& \frac{d \gamma_{22}}{d y}=-(1+t) \frac{\gamma_{22}\left(1+\gamma_{22}\right)}{\pi \sigma}
+\end{aligned}
+$$
+
+# 5.5 Analysis of the RG equations 
+
+It is worthwhile to remind the reader that the RG equations (5.90) describe the quantum corrections to conductivity due to the interplay of two distinct effects which were discussed in the introductory Secs. 1.2.3 and 1.2.4 as well as in Sec. 5.2 for the present problem. First, they contain weak antilocalization (WAL) corrections $\delta \sigma_{s}^{W A L}=(1 / \pi) \ln L / l$ due to quantum interference in a disordered system with the strong spin-orbit coupling. Second, there are interaction-induced contributions of Altshuler-Aronov (AA) type, including effects of both long-range and short-range interactions. The result (5.90) was obtained perturbatively to leading order in $1 / \sigma_{s} \ll 1$ but it is exact in the singlet interaction amplitudes. While these equations describe the experimentally most relevant case of Coulomb interaction, in App. C. 6 I also present the RG equations for the case of short-range interaction.
+
+Equations (5.90) which determine the flow of the coupling constants $\sigma_{1}, \sigma_{2}, \gamma_{11}$ and $\gamma_{22}$ imply a rich phase diagram in the four-dimensional parameter space. Before discussing the general four-dimensional RG flow I highlight the simpler case of two equal surfaces.
+
+### 5.5.1 Two equal surfaces
+
+Equal surfaces are defined by $\sigma_{1}=\sigma_{2}=\sigma / 2, \gamma_{11}=\gamma_{22}=\gamma$ and, because of Eq. (5.66), $\gamma_{12}=-1-\gamma$. It can be checked that the plane of identical surfaces is an attractive fixed plane of the four dimensional
+
+![img-31.jpeg](img-31.jpeg)
+
+Figure 5.7: $R G$ flow for equal surfaces in the parameter space $\sigma$ (total conductivity) and $\gamma$ (intrasurface interaction strength). The bare interaction strength $\gamma_{0}$ is determined by the parameter $\kappa d$ yielding $\gamma_{0}=-1\left(\gamma_{0}=-1 / 2\right)$ in the limits $\kappa d \rightarrow \infty(\kappa d \rightarrow 0)$, see Eq. (5.96). Thus the scale dependence of conductivity is expected to exhibit a characteristic, non-monotonic behavior.
+
+RG-flow (see App. C.5). The RG equations for the two coupling constants $\sigma$ and $\gamma$ are
+
+$$
+\begin{aligned}
+& \frac{d \sigma}{d y}=-\frac{2}{\pi}\left[1-\frac{2+2 \gamma}{1+2 \gamma} \ln (2+2 \gamma)\right] \\
+& \frac{d \gamma}{d y}=-\frac{2 \gamma(1+\gamma)}{\pi \sigma}
+\end{aligned}
+$$
+
+Experimentally, the case of equal surfaces is realized if both surfaces are characterized by the same mean free path and the same carrier density and, furthermore, if the dielectric environment of the probe is symmetric $\left(\epsilon_{1}=\epsilon_{3}\right)$.
+
+# Flow Diagram within the fixed plane 
+
+The RG flow within the $\sigma-\gamma$ plane is depicted in Fig. 5.7. The green vertical fixed line at $\gamma=-1$ corresponds to the case of two decoupled surfaces (recall $\gamma_{12}=-1-\gamma$ ), and reproduces the result of Ref. [205] for a single surface of 3D TI. In this limit the total correction to the conductivity is negative and obeys the universal law
+
+$$
+\delta \sigma_{\gamma=-1}=2 \times \frac{2}{\pi}\left(\underbrace{1 / 2}_{\text {WAL }}-\underbrace{1}_{\text {AA }}\right) \ln L / l=-\frac{2}{\pi} \ln L / l
+$$
+
+The line of decoupled surfaces is repulsive, as can be seen from Eq. (5.93b). Flowing towards the infrared, the conductivity first decreases before turning up again while the system approaches the second fixed line at $\gamma=0$. Note that on this line $\gamma_{12}=-1$ : the intrasurface interaction has died out, but the intersurface interaction is maximal. Here the conductivity correction is positive indicating the flow into a metallic state:
+
+$$
+\delta \sigma_{\gamma=0}=2 \times \frac{2}{\pi}\left(\underbrace{1 / 2}_{\text {WAL }}-\underbrace{[1-\ln 2]}_{\text {interaction }}\right) \ln L / l
+$$
+
+The flow on this fixed line is towards the perfect-metal point
+
+$$
+\left(1 / \sigma^{*}, t^{*}, \gamma_{11}^{*}, \gamma_{22}^{*}\right)=(0,1,0,0)
+$$
+
+As discussed below, see Sec. 5.5.2, this is the only attractive fixed point even in the case of the general four dimensional RG flow. On the $\gamma=0$ fixed line the intersurface interaction reduces the strength of the WAL effect but it is not strong enough to reverse the behavior. The region $\gamma>0$ corresponds to attractive interaction in the singlet channel and is shown on the flow diagram for the sake of completeness.
+
+# Typical bare values and crossover scale 
+
+Typically, before renormalization the intersurface interaction $\gamma_{12}$ is weaker than or equal to the intrasurface interaction $\gamma$. This implies that its bare value $\gamma_{0}$ takes values in the range between $\gamma_{0}=-1$ (decoupled surfaces, i.e., $\gamma_{12,0}=0$ ) and $\gamma_{0}=-1 / 2=\gamma_{12,0}$. For small $\alpha_{T I}$ I can approximate $\gamma_{0}$ by its RPA value:
+
+$$
+\gamma_{0}=-\frac{1}{2}-\frac{1}{2} \frac{\kappa d}{1+\kappa d}
+$$
+
+Here $d$ is the system thickness and $\kappa=2 \pi \frac{e^{2}}{\epsilon_{2}} \nu$ the inverse single surface screening length obtained for the general symmetric situation: $\epsilon_{1}=\epsilon_{3} \neq \epsilon_{2}$, see App. C.2. Note that at $\kappa d=0$ the conductivity corrections due to WAL and AA exactly compensate each other:
+
+$$
+\delta \sigma_{\gamma=-1 / 2}=\frac{2}{\pi}\left(2 \times \underbrace{1 / 2}_{\text {WAL }}-\underbrace{1}_{\text {AA }}\right) \ln L / l=0
+$$
+
+as was already discussed in Sec. 5.2 and can also be seen in Fig. 5.7.
+Typically $\kappa d>0$ or, as already explained on general grounds, $-1<\gamma_{0}<-1 / 2$. Then the most drastic consequence of intersurface interaction is the non-monotonic temperature (or length) dependence: the conductivity first decreases with lowering $T$ but eventually the sign of $d \sigma / d T$ changes and the system is ultimately driven into the metallic phase. It is natural to ask for the temperature scale, which is associated with this sign change. The scale $y_{*}$ at which the conductivity reaches its minimum can be extracted from Eqs. (5.93) and is expressed by the integral
+
+$$
+y_{*}=-\frac{\pi \sigma_{0}}{2} \int_{\gamma_{0}}^{\gamma_{*}} \frac{d \gamma^{\prime}}{\gamma^{\prime}} \frac{1+\gamma_{0}}{\left(1+\gamma^{\prime}\right)^{2}}\left[\frac{\gamma^{\prime}}{\gamma_{0}}\right]^{1-2 \ln 2} e^{2\left[f\left(\gamma^{\prime}\right)-f\left(\gamma_{0}\right)\right]}
+$$
+
+where $f(x)=\operatorname{Li}_{2}(-x)-\operatorname{Li}_{2}(-(1+2 x)), \operatorname{Li}_{2}$ is the dilogarithm, and $\gamma_{*}=-1 / 2$.
+Numerical integration of (5.98) yields the crossover length scale or temperature $y_{*}=\ln L_{*} / l=$ $1 / 2 \ln T_{0} / T_{*}$. Its dependence on the bare values $\sigma_{0}$ and $\gamma_{0}$ is plotted in Fig. 5.8. Using Eq. (5.96) one can also investigate the dependence of $y_{*}$ on $\kappa d$ instead of $\gamma_{0}$ (see inset in Fig. 5.8).
+
+![img-32.jpeg](img-32.jpeg)
+
+Figure 5.8: Temperature scale $T_{*}$ associated with the minimum of $\sigma$ as a function of the bare quantities $\sigma_{0}$ and $\gamma_{0}$ evaluated at temperature $T_{0}$. Inset: the same quantity as a function of $\sigma_{0}$ and $\kappa d$. As can be easily extracted from Fig. 5.7 the temperature scale $T_{*}$ coincides with $T_{0}$ when $\gamma_{0}=-1 / 2(\kappa d=0)$.
+
+# Role of topology: Dirac electrons vs. electrons with quadratic dispersion in the presence of spin-orbit interaction 
+
+The perturbative RG equations (5.90) and (5.93) are valid for $\sigma \gg 1$. Instanton effects are suppressed by $\exp (-2 \pi \sigma)$ in this region and were therefore neglected. As has been discussed in Sec. 5.3.5, in the diffusive NL $\sigma \mathrm{M}$ of Dirac electrons, the $\mathbb{Z}_{2}$ theta term reflects the topological protection from Anderson localization. This term is absent in the case of non-topological symplectic metals (NTSM) such as electrons with quadratic dispersion subjected to strong spin-orbit coupling. ${ }^{8}$ The presence (respectively, absence) of the topological term results in the opposite signs of the instanton contribution in the two cases. However, as instantons are suppressed, the perturbative result is equally applicable to the surfaces of a 3D TI and, for example, to a double-quantum-well structure in a material with strong spin-orbit coupling. Here I discuss non-perturbative differences between the two problems.
+
+It is instructive to start from the case of decoupled surfaces (green line, i.e., $\gamma=-1$, in Fig. 5.9). This limiting case has been analyzed before [205]. For NTSM localizing AA corrections overcome the WAL effect and the system always flows towards localization (Fig. 5.9, left). In contrast, for TI the topological protection implies $d \sigma / d y>0$ for small $\sigma$ and hence an attractive fixed point at $\sigma \sim 1$ (Fig. 5.9, right).
+
+As has been explained, the $\gamma=-1$ line is unstable with respect to the intersurface interaction and the system eventually flows towards the antilocalizing red line at $\gamma=0$. I now present the analysis of this fixed line. The fact that conductivity corrections (5.95) are positive stems back to the (non-interacting) WAL effect. Its contribution $2 \times(1 / \pi) \ln L / l$ is independent of $\sigma$ only for $\sigma \gg 1$. For NTSM it decreases with decreasing $\sigma$ and eventually becomes negative at the MIT point $\sigma_{\text {MIT }} \approx 2 \times 1.42 \mathrm{e}^{2} / h[77,232,233]$. (As explained above, Sec. 4.2.5, in a recent investigation [192] the crucial role of $\mathbb{Z}_{2}$ vortices for this MIT was pointed out.) Qualitatively, the picture of the MIT survives the presence of interactions,
+
+[^0]
+[^0]:    ${ }^{8}$ The $\mathbb{Z}_{2}$ theta term is also absent for the critical state separating 2D trivial and topological insulator. Such a state can be realized, in particular, on a surface of a weak 3D topological insulator. Despite the absence of theta term it is protected from Anderson localization due to topological reasons [192, 196, 231] (see Sec. 5.3.5) and hence do not fall into the definition of non-topological symplectic metals.
+
+which even enhance the tendency to localization. Therefore, for the double layer system of NTSM one expects the antilocalizing RG flow on the $\gamma=0$ line to turn localizing below some $\sigma_{\text {MIT }} \sim 1$. This MIT point is indicated by a dot in the left panel of Fig. 5.9.
+
+In contrast, for the surfaces of a topological insulator the system is topologically protected from Anderson localization [138], i.e., the beta function $d \sigma / d y$ bends up when $\sigma \rightarrow 0$. There is a numerical evidence [234, 235] that in a non-interacting case this happens without any intermediate fixed points. Again, the arguments are qualitatively unchanged by the presence of (pure intersurface) interaction and this scenario is expected to hold also on the red $\gamma=0$ line of the thin 3D TI film, see Fig. 5.9, right. (Strictly speaking, one cannot rule out a possibility that in the presence of interaction there emerge intermediate fixed points but I assume the simplest possible flow diagram consistent with largeand small-conductivity behavior.)
+
+The interpolation between the limiting cases of decoupled surfaces and maximally interacting surfaces produces the two phase diagrams shown in Fig. 5.9. For a double layer of NTSM, there is a separatrix connecting the weak-coupling, decoupled layers fixed point $(\gamma, 1 / \sigma)=(-1,0)$ with the critical MIT point $(\gamma, 1 / \sigma) \sim(0,1)$ that was introduced above. (Strictly speaking, one cannot exclude the possibility that this fixed point might lie slightly off the $\gamma=0$ line.) Below the separatrix the conductivity renormalizes down to $\sigma=0$, i.e., the system is in the Anderson-localized phase. In contrast, above the separatrix the characteristic non-monotonic conductivity behavior leads to the metallic state. As the horizontal position in the phase diagram is controlled by the parameter $\kappa d$, a quantum phase transition between metal and insulator as a function of the interlayer distance is predicted. On the other hand, in the case of the coupled top and bottom surfaces of a thin 3D TI film the flow is always towards the metallic phase. The critical point of decoupled surfaces at $\gamma=-1$ with $\sigma \sim 1$ is unstable in the direction of $\gamma$.
+
+It is worth recalling that in this chapter I neglected the tunneling between the opposite surfaces of the 3D TI. If such a tunneling is included, it introduces a corresponding exponentially small temperature scale below which the two surfaces behave as a single-layer NTSM, see Sec. 5.6.1. This would imply a crossover to localizing behavior at such low temperatures.
+
+# 5.5.2 General RG flow 
+
+Now the attention is turned to the complete analysis of RG equations (5.90) which, in general, describe the case of different carrier density, disorder and interaction strength on the top and bottom surfaces of a 3D TI film. The renormalization of interaction parameters $\gamma_{11}$ and $\gamma_{22}$, Eqs. (5.92c) and (5.92d), determines four fixed planes of the RG flow:
+
+- $\gamma_{11}=-1=\gamma_{22}$. Repulsive fixed plane of two decoupled surfaces with only intrasurface Coulomb interaction. This problem has been studied in Ref. [205].
+- $\gamma_{11}=0, \gamma_{22}=-1$ or vice versa. Fixed planes describing a 3D TI film with strongly different surface population. In the $\gamma_{11}-\gamma_{22}$-space, these planes are saddlepoints of the flow: they are attractive in one direction and repulsive in the other.
+- $\gamma_{11}=0=\gamma_{22}$. Attractive fixed plane. Intrasurface interactions have died out and only intersurface interaction survived.
+
+The second and third case will be analyzed in the remainder of this section.
+Concerning the repulsive fixed planes, one should keep in mind that the renormalization of interaction amplitudes is suppressed by the small factor $1 / \sigma$. Therefore even if the conditions on $\gamma_{11}$ and
+
+![img-33.jpeg](img-33.jpeg)
+
+Figure 5.9: Comparison between expected RG-flow for a double layer system of NTSM (left) and the coupled surfaces of a thin 3D TI film (right). The double layer NTSM is expected to undergo a MIT when the bare interaction strength $\gamma_{0}$ (which is a function of slab thickness d) is tuned across the blue separatrix. In contrast, the RG flow describing the thin 3D TI film is always directed towards a supermetallic fixed point.
+$\gamma_{22}$ are only approximately fulfilled the behavior in the fixed plane dictates the RG flow in a large temperature/frequency window. RPA-estimates of the bare values of interaction amplitudes can be found in App. C.3.6.
+
+I also remind the reader that the RG equations describing the model with finite-range interaction (and thus the whole crossover between the problem with Coulomb interaction and the non-interacting system) is discussed in App. C.6.
+
+# Strongly different surface population 
+
+Here the fixed plane of Eqs. (5.90) in which $\gamma_{11}=0$ and $\gamma_{22}=-1$ is investigated. (Clearly, the reversed situation $\gamma_{11}=-1$ and $\gamma_{22}=0$ is completely analogous.) Both fixed planes are "saddle-planes" of the RG flow, i.e., they are attractive in one of the $\gamma$-directions and repulsive in the other.
+
+Before analyzing this fixed plane, it is worth explaining why this limit is of significant interest for gate-controlled transport experiments, in particular, those on $\mathrm{Bi}_{2} \mathrm{Se}_{3}$. As for this material the Fermi energy is normally located in the bulk conduction band, an electrostatic gate is conventionally used to tune the chemical potential into the bulk gap and hence to bring the system into a topologically non-trivial regime. A situation as depicted in Fig. 5.10 is then believed to arise in a certain range of gate voltages: [46, 236] one of the two surfaces (here surface 1) is separated by a depletion region from a relatively thick bulk-surface layer.
+
+Recently [231, 237, 238], disorder-induced interference corrections for 3D TI bulk electrons have been
+
+![img-34.jpeg](img-34.jpeg)
+
+Figure 5.10: Typical scenario for gate-controlled transport experiments: A topologically protected surface separated from a thick bulk-surface layer. (This is in contrast to Fig. 5.2, where bulk states were assumed to be fully gapped.)
+investigated theoretically. ${ }^{9}$ While at small length scales additional symmetries of the Hamiltonian provide non-trivial localization behavior, at sufficiently large scales the usual WAL effect sets in. The strong coupling between electron states in the conducting part of the bulk and at surface 2 does not alter this universal low-energy property. In conclusion, at sufficiently large length scales the symplectic class NL $\sigma \mathrm{M}$, Eq. (5.55), is the adequate description of such a system (under the assumption of negligible tunneling between surface 1 and the conducting part of the bulk).
+
+Since the bulk-surface layer has a much higher carrier density than the carrier density on the spatially separated surface 1 one can expect that $\kappa_{2} \gg \kappa_{1}$. Provided $\kappa_{1} d \ll 1$ the electron-electron interaction on the spatially separated surface 1 is effectively screened out such that $\left|\gamma_{11}\right| \approx\left(\kappa_{1} / \kappa_{2}\right)\left(1+2 \kappa_{2} d\right) \ll 1$ (see Eq. (5.7)). Conversely, the effect of screening by electrons on the surface 1 is negligible for Coulomb interaction of the bulk states: $1+\gamma_{22} \approx \kappa_{1} / \kappa_{2} \ll 1$.
+
+Substituting $\gamma_{11}=0$ and $\gamma_{22}=-1$ into Eqs. (5.92) leads to the following RG equations in this fixed plane
+
+$$
+\begin{aligned}
+& \frac{d \sigma}{d y}=-\frac{2}{\pi}\left\{1-\frac{1}{t} \ln (1+t)\right\} \\
+& \frac{d t}{d y}=-\frac{2}{\pi} \frac{1+t}{\sigma}\left\{\frac{1-t}{2}-\frac{1}{t} \ln (1+t)\right\}
+\end{aligned}
+$$
+
+They can equivalently be written in terms of conductivities $\sigma_{1}$ and $\sigma_{2}$ :
+
+$$
+\begin{aligned}
+\frac{d \sigma_{1}}{d y} & =-\frac{2}{\pi}\left\{\frac{1}{2}-\frac{\sigma_{2}}{\sigma_{1}} \ln \left[1+\frac{\sigma_{1}}{\sigma_{2}}\right]\right\} \\
+\frac{d \sigma_{2}}{d y} & =-\frac{1}{\pi}
+\end{aligned}
+$$
+
+I emphasize that the limit $\gamma_{11}=0$ and $\gamma_{22}=-1$ is very peculiar. Indeed, due to the relation (5.66), this limit implies that the condition $z_{1} / z_{2}=0$ holds. Equations (5.99) and (5.100) are written under
+
+[^0]
+[^0]:    ${ }^{9}$ It is worthwhile to repeat that in the diffusive regime of typical experiments on thin films the 3D TI bulk electrons are subjected to 2D diffusive motion.
+
+![img-35.jpeg](img-35.jpeg)
+
+Figure 5.11: Perturbative $R G$ flow in the fixed plane $\gamma_{11}=0, \gamma_{22}=-1$. In the experimentally motivated scenario (Fig. 5.10), the flow starts at $t=\sigma_{1} / \sigma_{2} \ll 1$. The green line in the right panel is a line of zeros of the RHS of Eq. (5.100a); it determines the maximum in the $R G$ flow of $\sigma_{1}$.
+assumption that the ratio $t=\sigma_{1} / \sigma_{2}$ is finite in spite of the fact that $z_{1} / z_{2}=0$. In the experiment it corresponds to the case in which $\kappa_{1} / \kappa_{2} \ll 1$ but the ratio $D_{1} / D_{2} \gg 1$ where $D_{s}=\sigma_{s} / 4 z_{s}$ is the diffusion coefficient.
+
+Equations (5.100) become decoupled for $\sigma_{1} / \sigma_{2}=0$. Then, as expected, $\delta \sigma_{1}=\frac{1}{\pi} \ln L / l$ (WAL, no interaction on the surface 1) and $\delta \sigma_{2}=-\frac{1}{\pi} \ln L / l$ (WAL and AA due to Coulomb interaction on the surface 2). However, the line $t=0$ is unstable. As one can see from Eq. (5.99b), due to the very same quantum corrections the initially small parameter $t=\sigma_{1} / \sigma_{2}$ increases under RG. The ultimate limit of the perturbative RG flow is $\sigma \rightarrow 0$ and $t \rightarrow \infty$, see Fig. 5.11. The scale dependence of $\sigma_{1}$ is non-monotonic; the position of the corresponding maximum is determined by zeros of the RHS of Eq. (5.100a) shown by a green line in the right panel of Fig. 5.11.
+
+As has been already emphasized, the perturbative RG equations are sufficient only in the regime of large $\sigma_{s}$. I now discuss the topological effects at small values of conductivities. In the limit $\gamma_{11}=0$, $\gamma_{22}=-1$ the renormalization of $\sigma_{2}$ is exactly independent of the surface 1 . Indeed, in the conductivity corrections, the two surfaces influence each other only via mutual RPA screening. In the NL $\sigma \mathrm{M}$ description the interaction amplitudes in the full action (5.55) and hence in the propagators (5.77) (diffusons and Cooperons) fully account for this effect. Since the layer 2 includes a single TI surface it follows that $\sigma_{2}$ is topologically protected and flows towards $\sigma_{2}^{*}$ of the order of the quantum of conductance ("interaction-induced criticality" [205]). Before this happens, the flow of $\sigma_{1}$ becomes reversed from antilocalizing to localizing, see Eq. (5.100a). However, since the surface 1 is also topologically protected, its states can not be strongly localized and $\sigma \rightarrow \sigma_{1}^{*}>0 .{ }^{10}$ Thus, both surfaces are at the quantum critical points with conductivities of order $e^{2} / h$. The conclusion concerning the surface 1 is particularly remarkable: even though $\gamma_{11}=0$, there is "intersurface-interaction-induced criticality" on the surface 1 .
+
+# Attractive fixed plane 
+
+According to Eqs. (5.92c) and (5.92d), any $\gamma_{s s} \notin\{0,-1\}$ is renormalized to zero. The plane where $\gamma_{11}=\gamma_{22}=0$ is thus an attractive fixed plane of the general RG flow. The flow within this plane has
+
+[^0]
+[^0]:    ${ }^{10} \mathrm{~A}$ priori $\sigma_{1}^{*}$ and $\sigma_{2}^{*}$ are different although one cannot exclude the possibility that they might be equal.
+
+![img-36.jpeg](img-36.jpeg)
+
+Figure 5.12: The $R G$ flow in the attractive fixed plane $\gamma_{11}=0=\gamma_{22}$. The zero of Eq. (5.101b) is displayed by the red line.
+the form determined by the following RG equations
+
+$$
+\begin{aligned}
+& \frac{d \sigma}{d y}=-\frac{2}{\pi}\left\{1-\frac{1}{t} \ln [1+t]-t \ln \left[1+\frac{1}{t}\right]\right\} \\
+& \frac{d t}{d y}=-\frac{2}{\pi} \frac{1+t}{\sigma}\left\{\frac{1-t}{2}-\frac{1}{t} \ln [1+t]+t^{2} \ln \left[1+\frac{1}{t}\right]\right\}
+\end{aligned}
+$$
+
+or, equivalently,
+
+$$
+\begin{aligned}
+& \frac{d \sigma_{1}}{d y}=-\frac{2}{\pi}\left\{\frac{1}{2}-\frac{\sigma_{2}}{\sigma_{1}} \ln \left[1+\frac{\sigma_{1}}{\sigma_{2}}\right]\right\} \\
+& \frac{d \sigma_{2}}{d y}=-\frac{2}{\pi}\left\{\frac{1}{2}-\frac{\sigma_{1}}{\sigma_{2}} \ln \left[1+\frac{\sigma_{2}}{\sigma_{1}}\right]\right\}
+\end{aligned}
+$$
+
+Even though the single-surface conductivities $\sigma_{s}$ display non-monotonic behavior within this plane, eventually all quantum corrections are antilocalizing, see Fig. 5.12. The ratio of conductivities flows to the symmetric situation $t=\frac{\sigma_{1}}{\sigma_{2}}=1$, as has been discussed in Sec. 5.5.1. As mentioned, at the corresponding fixed line the WAL effect is competing with a contribution of the opposite sign due to intersurface interaction. While the WAL wins, the antilocalizing flow is slower than for free electrons, see Eq. (5.95).
+
+# General RG flow 
+
+After having analyzed the RG flow in various fixed planes, I briefly discuss the general RG flow. According to Eqs. (5.90c) and (5.90d), there is a single attractive fixed point of the overall RG flow the (super-)metallic fixed point with zero intrasurface interaction, $\sigma_{1}=\sigma_{2} \rightarrow \infty$ and $\gamma_{11}=\gamma_{22}=0$. On the other hand, for the values of $\gamma_{s s}$ close to -1 the corresponding conductivity $\sigma_{s}$ is first subjected to localizing quantum corrections and will thus show a non-monotonic behavior towards antilocalization. There also exists a range of initial parameters for the RG flow for which the conductivity at one surface demonstrates monotonic antilocalizing behavior, while the conductivity in the other surface flows in the described non-monotonic manner.
+
+It is worthwhile emphasizing the following remarkable feature: The ultimate IR behavior of the system of coupled 3D TI surfaces corresponds to a (super-)metal. This is peculiar, inasmuch the surface degree of freedom of the Dirac fermions resembles a spin quantum number. In contrast to the case of TIs, a diffusive spinful 2DES flows towards a ferromagnetic instability (the triplet coupling $\gamma_{t}$ entering Eqs. (1.28) on p. 17 diverges). The fundamental difference between the situation under investigation here and the spinful 2DES, is that intersurface diffusons and Cooperons are negligible for 3D TIs, while triplet diffusons are the most important ingredient for the ferromagnetic instability.
+
+# 5.6 Discussion and experimental predictions 
+
+In the preceding Section I have presented a general analysis of the RG flow determined by Eqs. (5.90). The purpose of the present section is to apply these results to specific experimentally relevant materials.
+
+### 5.6.1 Parameters
+
+As explained in Sec. 5.1.1, the RG equations (5.90) apply in the case of the following hierarchy of length scales:
+
+$$
+\begin{aligned}
+& l \ll L_{E} \\
+& d \ll l
+\end{aligned}
+$$
+
+In order to deal with $q$-independent interaction amplitudes, an additional requirement occurs in the case $\kappa_{s} d \ll 1$ for both $s=1$ and $s=2$ :
+
+$$
+l_{\mathrm{scr}} \ll L_{E}
+$$
+
+In view of condition (5.103a), the constraint (5.103c) is fulfilled in the entire diffusive regime if $l_{\mathrm{scr}} \ll l$.
+Further, I have assumed that the intersurface tunneling is negligible; the corresponding condition reads
+
+$$
+a \ll d
+$$
+
+More specifically, one has to require the probing energy scale to be larger than the tunneling rate
+
+$$
+1 \ll E \tau_{t \text { un }} .
+$$
+
+In this section, I will concentrate on the case when the RG scale is set by temperature, $L_{E}=l_{T}$. I recall the definition of the length scales entering the above conditions: $l=\max _{s=1,2} l_{s}$ is the larger mean free path, $l_{T}=\min _{s=1,2} \sqrt{D_{s} / k_{B} T}$ the smaller thermal length, $d$ the sample thickness, $a$ the penetration depth, $\kappa_{s}$ the inverse Thomas-Fermi screening length for the surface $s$ and $l_{\text {scr }}$ the total screening length for the 3D TI film. The situation in which only one of the two surfaces is in the diffusive regime, while the other one is in the ballistic regime (i.e., $T \tau_{1} \ll 1$ and $T \tau_{2} \gg 2$ or vice versa) is also a conceivable and interesting scenario. However, I do not address it in the present thesis.
+
+The effect of intersurface interaction becomes prominent if the sample thickness does not exceed too much at least one of the single surface screening lengths $\kappa_{s}^{-1}$. As discussed above (Sec. 5.5), this condition implies that the bare values of interaction $\gamma_{11}$ and $\gamma_{22}$ are not too close to -1 .
+
+It is useful to present expressions for the length scales appearing in the conditions (5.103a)-(5.103d) in terms of standard parameters characterizing samples in an experiment. For simplicity, I assume $v_{0}^{(1)}=v_{0}^{(2)}$ and $\tau_{1}=\tau_{2}$ in these formulas.
+
+The densities of states and inverse screening lengths for the top and bottom surfaces are (see Tab. 2.2)
+
+$$
+\nu_{s}=\sqrt{\frac{n_{s}}{\pi v_{0}^{2}}}, \quad \kappa_{s} \equiv \frac{2 \pi e^{2}}{\epsilon_{2}} \nu_{s}=2 \pi \alpha_{T I} \sqrt{\frac{n_{s}}{\pi}}
+$$
+
+where $n_{s}$ are the corresponding electron densities. If the electron densities for each surface separately are not known but the total density $n_{\text {tot }}=n_{1}+n_{2}$ is accessible, the latter can be used instead to estimate the DOS and the screening lengths:
+
+$$
+\nu_{1}^{2}+\nu_{2}^{2}=\frac{n_{\mathrm{tot}}}{\pi v_{0}^{2}}, \quad \kappa_{1}^{2}+\kappa_{2}^{2}=\left(2 \pi \alpha_{T I}\right)^{2} \frac{n_{\mathrm{tot}}}{\pi}
+$$
+
+The mean free path can be expressed as
+
+$$
+l=v_{0} \tau_{t r}=\frac{\sigma}{\pi v_{0}\left(\nu_{1}+\nu_{2}\right)}
+$$
+
+The thermal length in the diffusive regime is given by
+
+$$
+l_{T}=\sqrt{\frac{D}{k_{B} T}}=\sqrt{\frac{v_{0} l}{2 k_{B} T}}=\sqrt{\frac{\sigma}{k_{B} T 2 \pi\left(\nu_{1}+\nu_{2}\right)}}
+$$
+
+Hence, the condition (5.103a) is fulfilled for temperatures
+
+$$
+k_{B} T \ll k_{B} T_{\text {Diff }}
+$$
+
+where
+
+$$
+k_{B} T_{\text {Diff }}=\frac{v_{0}}{2 l}=\frac{1}{\sigma\left[e^{2} / h\right]}\left(\frac{v_{0}^{2}}{2}\right) 2 \pi\left(\nu_{1}+\nu_{2}\right)
+$$
+
+is the temperature scale at which the diffusion sets in.
+In order to obtain $l_{\text {scr }}$ entering Eq. (5.103c), one has to consider the full (inter- and intrasurface) Coulomb interaction, see App. C.2. As explained in Sec. 5.1.2 it is only a meaningful quantity provided $\kappa_{s} d \ll 1$. The influence of the surrounding dielectrics leads to
+
+$$
+l_{\mathrm{scr}}=\frac{\epsilon_{1}+\epsilon_{3}}{2 \epsilon_{2}} \frac{1}{\kappa_{1}+\kappa_{2}}
+$$
+
+When deriving Eq. (5.110), I assumed for simplicity that $\epsilon_{2} \lesssim \epsilon_{1}+\epsilon_{3}$. Regarding the experimental setups discussed in Sec. 5.6.2, this condition is well fulfilled for $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ but only marginally for HgTe . Thus in the latter case Eq. (5.110) should be considered as a rough estimate.
+
+Next, to check the validity of the condition (5.103d), one needs to know the value of the penetration depth $a$. It can be estimated from the condition
+
+$$
+\frac{v_{0, \perp} p_{\perp}}{M_{\infty}} \sim 1
+$$
+
+where $p_{\perp} \sim 1 / a$ denotes typical momenta perpendicular to the surface. Provided $v_{0, \perp} \sim v_{0}$, it yields
+
+$$
+a \sim \frac{v_{0}}{M_{\infty}}
+$$
+
+Eventually, in view of Eq. (5.103c), one needs to estimate the tunneling rate. the overlap of states from opposite surfaces is given by
+
+$$
+\langle\text { top } \mid \text { bottom }\rangle \sim \int_{0}^{d} d z \frac{e^{-z / a}}{\sqrt{a}} \frac{e^{-(d-z) / a}}{\sqrt{a}}=\frac{d}{a} e^{-\frac{d}{a}}
+$$
+
+The tunneling rate is thus
+
+$$
+\frac{1}{\tau_{\text {tun. }}} \sim\left|\langle\text { top } \mid \text { bottom }\rangle\right|^{2} M_{\infty}
+$$
+
+I am now going to consider two exemplary materials for 3D TIs: $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ and strained HgTe . I shall estimate numerically all the relevant parameters and present characteristic plots for temperature dependence of conductivities.
+
+# 5.6.2 Exemplary 3D topological insulator materials 
+
+## $\mathrm{Bi}_{2} \mathrm{Se}_{3}$
+
+$\mathrm{Bi}_{2} \mathrm{Se}_{3}$ is currently the most conventional material for experimental realization of the 3D TI phase. Typical experimental data (extracted from the point of the minimal conductance in Refs. [48, 239]) is summarized in the upper part of Tab. 5.1. Using Eqs. (5.104) -(5.112) one can estimate the hierarchy of length scales (lower part of the same table). All of the requirements of validity for the theory are fulfilled for length scales above $l_{\text {scr }}$ [temperatures below $T_{\max }=2.6 \ldots 1.9 \mathrm{~K}$, see condition (5.103c).] The condition (5.103c) is irrelevant, since it fixes a minimal temperature scale $T_{\min } \sim 1 / \tau_{\text {tun. }}$ which is way below the base temperature of typical cryostats. ${ }^{11}$
+
+From the experimental data, the ratio of carrier densities is not known. Therefore, in Fig. 5.13 the expected temperature dependence of total conductivity is shown for various values of this ratio. Clearly, the behavior strongly differs from the case of decoupled surfaces (dashed line). First, the slope of $d \sigma / d \ln T$ is considerably smaller. Second, one observes a clear curvature of the dependence $\sigma(\ln T)$ which is a manifestation of the non-monotonicity. (For the parameters used in the plot the minimum of $\sigma$ occurs at still lower temperatures.) This curvature is especially pronounced for strongly different surfaces.
+
+It should be mentioned that the substrate used in Ref. [48] has a strongly temperature-dependent dielectric function $\epsilon_{3}$ since $\mathrm{SrTiO}_{3}$ approaches a ferroelectric transition at low temperatures. This could result in a temperature dependence of effective gate voltage and consequently of carrier density. The resulting classical temperature dependence of conductivity (and interaction constants) would mask the quantum effects described in this analysis. However, in the presence of the gating field, the temperature dependence of $\epsilon_{3}$ saturates at low temperatures. This motivates the presentation in Fig. 5.13 where I assumed, independent of temperature, $\epsilon_{3}=1000$.
+
+## Strained HgTe
+
+Another very promising 3D TI material is strained HgTe . The presence of Dirac-like surface states was experimentally confirmed by the odd series of QHE plateaux, as well as by ARPES [42]. While the
+
+[^0]
+[^0]:    ${ }^{11}$ The only assumption that can not be directly verified on the basis of the quoted experimental data is the absence of complete intersurface correlations of disorder. Recall that in the case of $\mu_{1}=\mu_{2}$ a completely correlated disorder implies extra soft modes [209]. I see however no reason for such perfect correlations between impurities at opposite surfaces of a 3D TI film.
+
+| Fermi velocity | $v_{0} \sim 5 \times 10^{5} \mathrm{~m} / \mathrm{s}$ |
+| :-- | :--: |
+| Bulk gap | $M_{\infty} \sim 0.3 \mathrm{eV}$ |
+| Sample thickness | $d \sim 10 \mathrm{~nm}$ |
+|  | Coat: $\epsilon_{1} \sim 1$ |
+| Dielectric properties | $3 \mathrm{D} \mathrm{TI}\left(\mathrm{Bi}_{2} \mathrm{Se}_{3}\right): \epsilon_{2} \sim 100$ |
+|  | Substrate $\left(\mathrm{SrTiO}_{3}\right): \epsilon_{3} \sim 10^{3}-10^{4}$ |
+| Carrier density | $n_{\text {tot }} \sim 3 \times 10^{12} \mathrm{~cm}^{-2}$ |
+| Mobility | $\mu_{e l} \sim 100 \ldots 1000 \mathrm{~cm}^{2} / \mathrm{V} \cdot \mathrm{s}$ |
+| Sheet resistance | $1 / \sigma \sim 0.097 \mathrm{~h} / \mathrm{e}^{2}$ at $T \sim 50 \mathrm{mK}$ |
+| Effective coupling | $\alpha_{T I} \sim 4 \times 10^{-2}$ |
+| Chemical potential | $\mu_{1}^{2}+\mu_{2}^{2}=(0.2 \mathrm{eV})^{2}$ |
+| Penetration depth | $a \sim 1 \mathrm{~nm}$ |
+| Mean free path | $l \sim 24 \ldots 34 \mathrm{~nm}$ |
+| Diff. temperature | $T_{\text {Diff }} \sim 80 \ldots 57 \mathrm{~K}$ |
+| Tunneling rate | $1 / \tau_{\text {tun. }} \sim 0.7 \mathrm{mK}$ |
+| Screening length | $\kappa_{1}^{2}+\kappa_{2}^{2} \sim(37 \mathrm{~nm})^{-2}$ |
+| Scr. length (total) | $l_{\text {scr }} \sim 132 \ldots 186 \mathrm{~nm}$, for $\epsilon_{3}=10^{3}$ |
+| Bare interaction (RPA) | top surface: $\gamma_{11} \sim-0.6 \cdots-1$ |
+|  | bottom surface: $\gamma_{22} \sim-0.6 \ldots 0$ |
+
+Table 5.1: Experimental values of sample parameters at the point of the minimal carrier density and associated length scales for transport experiments on $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ films of Refs. [48, 239]. The dots "..." separate values for the symmetric ( $n_{1}=n_{2}$ ) and totally asymmetric ( $n_{1}=n_{\text {tot }}, n_{2}=0$ ) cases. The bare interaction amplitudes are estimated in the random phase approximation (RPA).
+![img-37.jpeg](img-37.jpeg)
+
+Figure 5.13: Theoretical prediction for the temperature dependence of the total conductivity in thin $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ films.
+
+| Fermi velocity | $v_{0} \sim 5 \times 10^{5} \mathrm{~m} / \mathrm{s}$ |
+| :--: | :--: |
+| Bulk gap | $M_{\infty} \sim 0.022 \mathrm{eV}$ |
+| Sample thickness | $d \sim 70 \mathrm{~nm}$ |
+| Dielectric properties | Coat: $\epsilon_{1} \sim 1$ |
+|  | 3D TI (HgTe): $\epsilon_{2} \sim 21$ |
+|  | Substrate (CdTe): $\epsilon_{3} \sim 10$ |
+| Carrier density | top surface: $n \sim 4.8 \times 10^{11} \mathrm{~cm}^{-2}$ |
+|  | bottom surface: $n \sim 3.7 \times 10^{11} \mathrm{~cm}^{-2}$ |
+| Mobility | $\mu_{e l} \sim 34000 \mathrm{~cm}^{2} / \mathrm{V} \cdot \mathrm{s}$ |
+| Sheet resistance | $1 / \sigma \sim 0.04 h / e^{2}$ at $T=50 \mathrm{mK}$ |
+| Effective coupling | $\alpha_{T I} \sim 0.21$ |
+| Chemical potential | top surface: $\mu_{1} \sim 0.08 \mathrm{eV}$ |
+|  | bottom surface: $\mu_{2} \sim 0.07 \mathrm{eV}$ |
+| Penetration depth | $a \sim 15 \mathrm{~nm}$ |
+| Mean free path | $l \sim 108 \mathrm{~nm}$ |
+| Diff. temperature | $T_{\text {Diff }} \sim 18 \mathrm{~K}$ |
+| Tunneling rate | $1 / \tau_{\text {ton. }} \sim 0.5 \mathrm{~K}$ |
+| Screening length | top surface: $\kappa_{1}^{-1} \sim 19.53 \mathrm{~nm}$ |
+|  | bottom surface: $\kappa_{2}^{-1} \sim 22.24 \mathrm{~nm}$ |
+| Bare interaction (RPA) | top surface: $\gamma_{11} \sim-0.893$ |
+|  | bottom surface: $\gamma_{22} \sim-0.878$ |
+
+Table 5.2: Typical experimental values for transport experiments on HgTe films of Refs. [42, 240].
+
+![img-38.jpeg](img-38.jpeg)
+
+Figure 5.14: Theoretical prediction for the temperature dependence of the total conductivity in thin films of strained HgTe .
+transport experiment indicates dominant surface conduction, the extracted carrier density appears to be too large for a pure surface theory with linear spectrum, yielding the value of the chemical potential $\mu$ larger than the gap $M_{\infty}$, see Tab. 5.2. (The role of the bulk conduction band as well as the parabolic bending of the dispersion was also discussed within an independent magneto-optical study by the same experimental group [241].) Thus, it remains to be clarified under what experimental conditions the strained HgTe sample is in the true TI regime (i.e., the bulk contribution to transport is negligible). Notwithstanding this point and motivated by the excellent surface transport data, I apply the theory to the HgTe experiment, see Fig. 5.14. In spite of the considerable thickness of the probe, the effect of intersurface interaction is clearly visible: the slope of $d \sigma / d \ln T$ is considerably smaller than it is expected for decoupled surfaces.
+
+# 5.7 Summary of chapter 5 
+
+The present chapter contains a detailed analysis of the quantum transport properties in thin TR invariant 3D TIs. The effect of electron-electron interactions on the surface state transport in the diffusive regime was investigated. Coulomb interaction within and in between the two major surfaces of a slab was taken into account.
+
+In the first section 5.1 of this chapter, the setup under investigation, Fig. 5.2, and the associated hierarchy of length scales was discussed. It was explicitly shown, that long-range Coulomb interaction between electrons of opposite surfaces is important, since the Thomas-Fermi screening length can by far exceed the thickness of the slab, see Fig. 5.4.
+
+Before turning to the field theoretical analysis on the basis of interacting NLoM, I presented a perturbative, Altshuler-Aronov-like calculation [73] of conductivity corrections in Sec. 5.2. It turns out that corrections due to interference [Eq. (5.16)] and interaction [Eq. (5.18)] effects are opposite and even cancel up in the limit of vanishing slab thickness. The presence of two competing mechanisms evokes the question on the ultimate long-wavelength behavior of the system.
+
+To answer this question, the effective interacting field theory was derived in Sec. 5.3. In this context, non-Abelian bosonization technique was employed. A local expression for the $\mathbb{Z}_{2}$ topological term was presented and gauge potentials were included as well. It is worth emphasizing that the employed field theory treats the general situation of potentially strong interactions and thus goes beyond perturbation theory. Hence the Fermi liquid theory of the strongly correlated double layer system in the ballistic and diffusive regime was developed.
+
+The renormalization of the interacting NLoM in the one-loop approximation can be found in Sec. 5.4. The associated RG equations (5.90) determine the temperature (or frequency) dependence of the conductivities of both surfaces. The RG is controlled by a large conductivity, $k_{F} l \gg 1$, but the calculations are exact in the singlet interaction amplitudes, while contributions due to a repulsive Cooper interaction are parametrically small and can be neglected.
+
+In Sec. 5.5 a detailed analysis of the RG flow was performed. For fully decoupled surfaces the system flows into an intermediate-coupling fixed point ("interaction-induced criticality") [205]. This point is, however, unstable with respect to intersurface interaction, see Fig. 5.9, right. The flow is then towards a single attractive fixed point which is "supermetallic" and at which even originally different surfaces have the same transport properties, see Fig. 5.12. Typically, this fixed point is reached via a characteristic non-monotonic scale dependence of conductivity.
+
+The perturbative results presented in this chapter are equally applicable to weak topological insulator [196, 242] thin films and to non-topological double layer systems with spin-orbit interaction. An extensive discussion of non-perturbative differences was presented in the end of Sec. 5.5.1. The final section of the chapter, Sec. 5.6, was devoted to the comparison to realistic experimental setups. It contained an estimate of parameters and explicit predictions for the temperature dependence of the conductivity for typical experimental setups based on $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ and strained HgTe materials, see Figs. 5.13 and 5.14 respectively.
+
+## Hallmarks of surface transport and interactions
+
+I conclude this chapter summarizing the most salient predictions for experimental signatures of surface transport in 3D TI with intersurface interactions.
+
+- The characteristic effect of intersurface interaction is the non-monotonic temperature dependence of conductivity (see Fig. 5.15, top). It may happen that in the experimentally accessible temper-
+
+ature window this effect manifests itself only as a deviation of the conductance slope
+
+$$
+\delta \sigma(T)=\frac{e^{2}}{h} c \ln T
+$$
+
+from the value $c=1 / \pi$ characteristic for two decoupled surfaces accompanied by some bending of the curve $\sigma(\ln T)$, see Figs. 5.13 and 5.14. The ultimate low- $T$ behavior of the coupled system is always antilocalizing and following the universal law
+
+$$
+\delta \sigma(T)=\frac{e^{2}}{\pi h}(1-2 \ln 2) \ln T
+$$
+
+However, depending on the parameters, this asymptotics may become valid at very low temperatures only.
+
+- The strength of intersurface interaction is governed by the parameters $\kappa_{1} d$ and $\kappa_{2} d$, where $\kappa$ is the screening length. Therefore, in contrast to usual, single surface conductivity corrections, the predicted effect strongly depends on the carrier density (see Fig. 5.15, right).
+- As presented in Sec. 1.2.3 and already exploited in 3D TI experiments [48], the magnetoconductance formula [70] for the total conductivity is
+
+$$
+\delta \sigma(B)=-\frac{e^{2}}{2 \pi h} \sum_{s=1,2}\left[\psi\left(\frac{1}{2}+\frac{B_{\phi}^{(s)}}{B}\right)-\ln \left(\frac{B_{\phi}^{(s)}}{B}\right)\right]
+$$
+
+where the characteristic magnetic field $B_{\phi}^{(s)}=\hbar /\left(4 e D_{s}^{(s)} \tau_{\phi}^{(s)}\right)$ is determined by the diffusion coefficient $D_{s}^{(s)}$ and the phase breaking time $\tau_{\phi}^{(s)}$ for the surface $s$. The function $\psi$ denotes the digamma function here. Within the accuracy of the presented calculation, the behavior described by Eq. (5.117) remains unchanged even in the presence of (intersurface) interaction.
+
+It is also possible to access the intersurface induced quantum corrections in the frequency dependence of the AC conductivity (by the simple replacement $T \rightarrow \omega$ in $\delta \sigma(T)$ if $\omega \gg T$ ).
+
+![img-39.jpeg](img-39.jpeg)
+
+Figure 5.15: Left: Conductivity corrections for low carrier concentration. The total electron concentration in units of $10^{12} \mathrm{~cm}^{-2}$ is equal to $0.55,0.48,0.41,0.34,0.27$ from bottom to top. The characteristic non-monotonic behavior is clearly seen; deviations from the behavior of decoupled surfaces (dashed line with steep slope) are very strong. Right: Carrier-density dependence of conductivity corrections. The non-trivial dependence is entirely due to the intersurface interaction: in the case of the decoupled surfaces, the conductivity correction would be constant as a function of density, $\sigma(0.02 K)-\sigma(50 K) \approx-2.49 e^{2} / h$. I used the values of the parameters $d, v_{0}$ and $\alpha_{T I}$ as in Tab. 5.1 for $B \ell_{2} S e_{3}$. Further, the case of equal surfaces $\left(n_{t o t}=2 n\right)$ and $T_{D g f}=1 / 2 \tau=50 \mathrm{~K}$ was assumed.
+
+
+
+
+# 6 <br> Half-integer quantum Hall effect 
+
+In this chapter, I will address the situation when TR symmetry is broken locally ${ }^{1}$ on the surface of a 3D TI, or more generally, the QHE of a single Dirac fermion [243]. Thus, this chapter is dedicated to question (v) of the introduction.
+
+The QHE of Dirac fermions in the context of graphene [89, 244-249] and 3D TI surface states [42, 250262] has been studied both theoretically and experimentally. The QH state is characterized by vanishing longitudinal conductance $\sigma_{x x}=0$ and quantized transverse conductance taking values
+
+$$
+\sigma_{x y}=g_{D}\left(\nu+\frac{1}{2}\right) \frac{e^{2}}{h}, \quad \nu \in \mathbb{Z}
+$$
+
+In this equation, $g_{D}$ denotes the number of degenerate Dirac cones, i.e. $g_{D}=4$ for graphene and $g_{D}=2$ for thin 3D TI slabs. In particular the $\sigma_{x y}= \pm g_{D} e^{2} / 2 h$ states turn out to be extremely robust [263], they can be observed up to room temperature [264] and can also be induced by pure exchange coupling (quantum anomalous Hall effect [52, 138, 265-268]).
+
+It is important to point out, that the half-integer QHE is masked in graphene in view of the fourfold degeneracy in the system. Therefore, in graphene, the series of QH plateaux is a (non-trivial) series of integers. Ultimately, the even prefactor $g_{D}$ in Eq. (6.1) is a consequence of the fermion doubling theorem [269]. In contrast, 3D TI surface states provide a unique opportunity to study the truly half-integer quantization of $g_{x y}$ inasmuch the fermion doubling theorem is locally avoided. ${ }^{2}$
+
+Notwithstanding the immense general interest towards the subject, the single Dirac fermion QHE [ $g_{D}=$ 1 in Eq. (6.1)] did not enjoy the deserved and required attention. The following important questions were not or only partly answered to present date:
+(A) How can half-integer $g_{x y} \equiv h \sigma_{x y} / e^{2}$ be measured experimentally?
+(B) Doesn't Laughlin's flux insertion argument [119, 270] forbid $\sigma_{x y}=\left(\nu+\frac{1}{2}\right) \frac{e^{2}}{h}$ ?
+(C) What is the field theory describing the localization physics of the single Dirac fermion QHE?
+
+In this chapter, which is based on Ref. [168], I present comprehensive analysis of these questions and detailed answers to them.
+
+[^0]
+[^0]:    ${ }^{1}$ For the notion of "local TR symmetry breaking", see Eq. (6.3).
+    ${ }^{2}$ More precisely, a finite external flux penetrating a 3D TI sample cuts its closed boundary into (at least) two spatially separated regions: in one area the magnetic field points towards the bulk of the sample, in the other it points outwards. In the simplest case, these two regions are the top and bottom surface of a thin 3D TI slab, each containing a species of Dirac fermion. In this sense, one can speak of global fermion doubling, which is, however, locally avoided.
+
+# 6.1 Quantum Hall effect and topological magnetoelectric effect 
+
+This section and section 6.5 are devoted to question (A) posed in the beginning of this chapter. To make the thesis self-contained and fix notations, I briefly review and clarify the current state of the literature going beyond the introductory chapter 2.
+
+### 6.1.1 The QHE on the surface of 3D topological insulators
+
+The appearance of the single Dirac fermion on the 3D TI surface crucially relies on TR symmetry. Therefore, two questions arise concerning the realization of the single Dirac fermion QHE on the 3D TI surface.
+a) Up to which magnetic field strength do surface states exist?
+b) If surface states are present, does the half-integer quantization of $g_{x y}$ immediately follow?
+
+Regarding question a), recall that a 3D TI is characterized by the inverted structure of the energy bands which can be captured [4] by the momentum-dependent mass term $\mathcal{M}(\mathbf{p})$ entering Eq. (2.54) on p. 41 (effective 3D Dirac-like bulk Hamiltonian)
+
+$$
+\mathcal{M}(\mathbf{p})=M_{\infty}-B_{1} p_{z}^{2}-B_{2} \mathbf{p}^{2}
+$$
+
+In the bulk of the TI, all parameters $M_{\infty}, B_{1}$ and $B_{2}$ are positive.
+As explained in Sec. 2.2.3, the 2D interface (which is assumed for concreteness to occupy the $z=0$ plane) between a 3D TI and a topologically trivial insulator (e.g. vacuum) can be modeled by a spatially dependent Dirac mass $M=M(z)$ which interpolates between positive (topological phase) and negative (trivial phase) values changing its sign at $z=0$. As a consequence of the band inversion in the topological insulator the interface supports massless Dirac fermions in the vicinity of $\mathbf{p}=0[14,15]$.
+
+The magnetic field $\mathbf{B}=(0,0, B)$ applied to the interface can not destroy the surface states provided the bulk gap $M_{\infty}$ is sufficiently large. More precisely, for
+
+$$
+M_{\infty}>B_{2} / l_{B}^{2}
+$$
+
+the massless surface excitations give rise to zero energy Landau level (LL) localized at the interface $M(z)-B_{2} / l_{B}^{2}=0$. Recall that $l_{B}$ denotes the magnetic length. In the exemplary case of $\mathrm{Bi}_{2} \mathrm{Se}_{3}$, the estimated value of parameters is [4] $B_{2} / l_{B}^{2} \sim 0.6 \mathrm{meV} \times B[T]$, while $M_{\infty} \sim 0.3 \mathrm{eV}$.
+
+In the rest of the chapter (and consistently with the previous works) the term "local breaking of TR symmetry on the 3D TI surface" will be used if the magnetic field does not destroy the surface states. As was just explained, this does not necessarily require spatially inhomogeneous magnetic field configurations.
+
+Now I would like to turn to question b). To avoid confusion, it is worth to stress that the physics of the half-integer QHE , which is discussed in this chapter, can be described in a single particle picture and has no direct relation to the physics of the fractional QHE (in the sense of Störmer's and Tsui's discovery [271]) which is a many-body phenomenon.
+
+The half-integer QHE is expected as soon as surface states are present. It does not rely on a precise dispersion but rather on the low-energy spin-texture and on the fact that there is an odd number of Dirac fermions on the surface. As already remarked in the second chapter of this thesis the half-integer QHE is a manifestation of fermion-number fractionalization in the sense of Jackiw and Rebbi [124, 272].
+
+In Sec. 2.2.3, I reviewed that 3D TI surface states are topologically protected fermionic zero modes associated with a spatial kink in a background bosonic field (the mass "field" in the present context). The general statement, according to which the fermion number in the presence of a bosonic kink is shifted by one half as compared to the situation without a kink was explicitly demonstrated in the mentioned section, too. Specifically, if the zero mode is filled (empty), the fermion number is $1 / 2$ $(-1 / 2)$. In the presence of the magnetic field, the zero-energy state has additional LL degeneracy $\frac{B A}{\Phi_{0}}$, where $A$ is the area penetrated by the flux and $\Phi_{0}=h / e$ is the flux quantum. Consequently, the fermion density at chemical potential $\mu=0^{+}$is $n=N / A=\frac{B / \Phi_{0}}{2}$. The very same result was independently obtained by the direct, point-split regularized quantum mechanical calculation valid for the clean case (Sec. 2.5.3). In view of the relationship $\sigma_{y x}^{I I}=e \partial n / \partial B$ between fermion density and the quantum part of the transverse conductivity [127], this unveils the fundamental topological reason for the half-integer QHE. The result of this argument remains unchanged even in the presence of finite but small Zeeman energy $E_{Z} \ll M_{\infty}$ (gapped 3D TI surface states).
+
+# 6.1.2 Can one measure a half-integer $g_{x y}$ in a transport experiment? 
+
+In the previous Chap. 5, I already noted that typical transport experiments are carried out on 3D TI films, which have two major surfaces (called "top" and "bottom" here) with a single valley Dirac fermion each. In most experimental situations, contacts are attached at or near the side walls of the slabs, and thus both major surfaces are probed simultaneously. Therefore, quantum Hall data [42] of 3D TIs displays the odd-integer series described by Eq. (6.1) for $g_{D}=2$.
+
+One could expect that it is sufficient to attach all measuring contacts on a single surface of the 3D TI slab to measure the QHE of a single Dirac fermion [258]. If the contacts are sufficiently far away from the sample boundaries, one might then hope to measure a half-integer Hall response. To be specific, assume that a bias voltage is applied between two electrodes attached to a TI surface, as depicted in Fig. 6.1. One measures the Hall current passing through an amperemeter connecting two perpendicular probing contacts and hopes to extract a half-integer $\sigma_{x y}^{\text {top }}$ from $I_{\text {Hall }} / V_{\text {bias }}$. However, this attempt will fail. Indeed, recall that the defining characteristic of a TI surface in the QH state is a half-integer quantized Hall conductivity and zero longitudinal conductivity. In order to find the total current between the current probes one should take into account not only the current flowing in the part of the TI surface between the contacts but also the current distribution in the rest of the surface. The total current can be found by integrating the transverse current density $\int d \mathbf{l} \times \mathbf{j}$ along a contour shown by dashed line in Fig. 6.1. This integral is, however, proportional to $\int d \mathbf{l} \cdot \mathbf{E}$ and is equal to zero, since the surface is terminated by a metallic edge which represents an equipotential line. Thus, such an experiment would yield $I_{\text {Hall }}=0$.
+
+The above discussion assumed applying bias voltage and measuring current. One can equally analyze the reverse situation when a current is injected and the Hall voltage is probed. To this end, two metallic contacts are supposed to be attached in the central region of the TI surface. They serve as source and drain for the current. However, as in the $\sigma_{x x}=0$ limit current always flows along equipotential lines, it is actually not possible to inject current in the middle of a QH system. Instead, "edge states" circulating around the contact will be formed. Therefore, this measurement will yield a null result as well.
+
+In conclusion, an attempt to measure a half-integer $g_{x y}$ in a transport experiment fails. The reason for this is as follows. To measure directly a half-integer $g_{x y}$, one should explore local characteristics of a single TI surface. Transport experiments, where contacts are applied close to the sample's edge, do not satisfy this requirement. In contrast, transport experiments where all contacts are on a single surface and far from the boundary yield null results.
+
+![img-40.jpeg](img-40.jpeg)
+
+Figure 6.1: Failure of transport measurement of half-integer Hall response. A thin 3D TI slab in a $Q H$ state $\sigma_{x y}^{\text {top }}=\sigma_{x y}^{\text {bottom }}=\frac{e^{2}}{2 h}$ (one shared green edge channel) is probed by a local four contact measurement consisting of two opposite bias gates (orange) and, perpendicularly, two probing gates connected by an amperemeter (blue). For further explanation, see main text.
+
+The case of transport experiments in non-ideal situations $\left(\sigma_{x x} \neq 0\right)$ and with a more complex arrangement of contacts will be an interesting task for future investigation.
+
+One can, however, devise an alternative approach by measuring an electromagnetic response of the system to a local perturbation. As discussed below, this kind of measurement does probe local properties of the system and, therefore, is able to yield directly a half-integer Hall conductivity.
+
+# 6.1.3 Topological magnetoelectric effect 
+
+One major aim of the introductory chapter 2 was to point out various different theoretical approaches to topological phases of matter. Notably, Sec. 2.4.3 was dedicated to the description by means of TFT of electromagnetic gauge potentials. The exemplary case of TR invariant 3D TI was discussed, its electrodynamic bulk theory was shown [156] to contain the theta term (see also Eq. (2.50)):
+
+$$
+S_{\vartheta}=\frac{\vartheta}{2 \pi} \frac{\alpha}{4 \pi} \int d^{3} x d t \epsilon^{\mu \nu \rho \tau} \partial_{\mu}\left(A_{\nu} \partial_{\rho} A_{\tau}\right)
+$$
+
+where the theta angle takes the value $\vartheta=\pi(\bmod 2 \pi)$ in the bulk of a TI.
+In the presence of a boundary, the naive termination of Eq. (6.4) would lead to the surface CS theory represented by
+
+$$
+S_{C S}=\frac{\vartheta}{2 \pi} \frac{\alpha}{4 \pi} \int d^{2} x d t \epsilon^{\nu \rho \tau} A_{\nu} \partial_{\rho} A_{\tau}
+$$
+
+In this chapter Greek indices are reserved for space-time coordinates and Latin indices for space coordinates. For definiteness, here a 3D TI in the half space $z<0$ is considered. The value $\vartheta=\pi(\bmod$ $2 \pi)$ corresponds to the surface Hall conductivity $\sigma_{x y}=\left[\frac{1}{2}(\bmod 1)\right] e^{2} / h$, with uncertainty in an integer multiple of $e^{2} / h$. Here, the following questions arise. First, the Hall conductivity is a measurable quantity and should be defined unambiguously. Second, any non-zero Hall conductivity is in conflict with TR invariance of the system.
+
+In a number of recent works $[139,154,160,162]$ it was shown that the CS term is in fact absent on the surface of a TR invariant 3D TI unless the TR symmetry is explicitly broken on the surface. One
+
+particular example [154] is provided by the $\mathbf{U}(1)$ gauged NLeM of diffusive Dirac fermions introduced in Sec. 5.3.7. Closely related to the possible presence of the CS term is the question of parity anomaly [133136] which will be discussed in Sec. 6.3.1.
+
+While the electromagnetic theory describing a surface of a TR invariant 3D TI does not contain a CS term, an elegant topological magnetoelectric effect (TME) description is recovered once TR invariance is locally broken. It is worth to emphasize that TME response associated with the $\mathbf{E} \cdot \mathbf{B}$ term is a general property of QH systems. The special feature of 3D TI surfaces (with locally broken TR invariance) is in a half-integer value of the associated Hall conductance.
+
+The most prominent physical manifestations of TME include topological Faraday and Kerr rotations [157, 273, 274] and the image magnetic monopole effect [274-277] (see also Sec. 6.5). In this thesis the focus is on the latter. The essence of the effect is that an electric charge $Q$ placed above a QH system (posed in the plane $z=0$ ) induces an inhomogeneous magnetic field configuration which can be described by a mirror magnetic monopole.
+
+# Continuity conditions for electromagnetic fields 
+
+To obtain the electromagnetic field developed in the system in response to the charge $Q$ consider the electric and magnetic field strengths $\mathbf{E}_{a}$ and $\mathbf{H}_{a}$ together with electric and magnetic inductions $\mathbf{D}_{a}$ and $\mathbf{B}_{a}$. The index $a=1(a=2)$ refers to the half-space $z>0(z<0)$ separated by the QH system. They satisfy the standard boundary conditions at the $z=0$ plane
+
+$$
+\begin{aligned}
+& \left(\mathbf{D}_{1}-\mathbf{D}_{2}\right)_{z}=4 \pi J_{0}, \quad \epsilon_{i j}\left(\mathbf{E}_{2}-\mathbf{E}_{1}\right)_{j}=0 \\
+& \left(\mathbf{B}_{1}-\mathbf{B}_{2}\right)_{z}=0, \quad \epsilon_{i j}\left(\mathbf{H}_{2}-\mathbf{H}_{1}\right)_{j}=4 \pi J_{i}
+\end{aligned}
+$$
+
+In these equations, $J_{0}$ and $\mathbf{J}$ in Eq. (6.6) represent the charge density $\rho=J_{0} \delta(z)$ and current density $\mathbf{J}^{(3 D)}=\mathbf{J} \delta(z)$ in the QH system.
+
+The image magnetic monopole effect can be understood from two equivalent perspectives. One approach (which shall be called the "orthodox" theory) utilizes the linear response theory [256] of the QH state, while the other views the QH plane as a domain wall of $\mathbf{E} \cdot \mathbf{B}$ term. Both approaches are reviewed below.
+
+## Orthodox description of TME: surface currents.
+
+In the "orthodox" approach the inductions $D_{a}$ and $B_{a}$ are related to $E_{a}$ and $H_{a}$ via the permittivity ${ }^{3}$ $\epsilon_{a}$ and permeability $\mu_{a}$ of the media surrounding the QH plane in half-spaces $a=1,2$
+
+$$
+\mathbf{D}_{a}^{\text {orth. }}=\epsilon_{a} \mathbf{E}_{a}, \quad \mathbf{H}_{a}^{\text {orth. }}=\frac{\mathbf{B}_{a}}{\mu_{a}}
+$$
+
+Here the superscript ${ }^{\text {orth. }}$ refers to the orthodox treatment.
+On the other hand the linear response theory of the QH state gives
+
+$$
+\begin{aligned}
+J_{0} & =\sigma_{x y} B_{z} \\
+J_{i} & =\sigma_{x y} \epsilon_{i j} E_{j}
+\end{aligned}
+$$
+
+Since $B_{z}$ and $\mathbf{E}_{\|}$are continuous, it does not matter whether the terms proportional to $\sigma_{x y}$ are associated to fields stemming from region $z>0$ or $z<0$.
+
+[^0]
+[^0]:    ${ }^{3}$ For simplicity isotropy is assumed.
+
+The non-trivial continuity conditions can now be presented as follows
+
+$$
+\begin{aligned}
+& {\left[\mathbf{D}_{1}^{\text {orth. }}-\left(\mathbf{D}_{2}^{\text {orth. }}+4 \pi \sigma_{x y} \mathbf{B}\right)\right]_{z}=0} \\
+& \epsilon_{i j}\left(\mathbf{H}_{2}^{\text {orth. }}-4 \pi \sigma_{x y} \mathbf{E}-\mathbf{H}_{1}^{\text {orth. }}\right)_{j}=0
+\end{aligned}
+$$
+
+As will be explained in the following, these conditions imply an image monopole effect. The strength of the image charge is controlled by the Hall conductivity of the QH system.
+
+# The $\mathbf{E} \cdot \mathbf{B}$ term recovered. 
+
+Instead of considering currents $J_{\mu}$ the QH system can be described by a CS term [see Eq. (2.49) on p. 38] with prefactor $\vartheta \alpha /(2 \pi)^{2}=\sigma_{y x}$ or, again, as a domain wall [275] of $\mathbf{E} \cdot \mathbf{B}$ terms with theta angles sufficing $\vartheta_{2}-\vartheta_{1}=\vartheta$ accounting for the interface currents. In the bulk regions $a=1,2$ this implies the following constituent relations $[274,276]$
+
+$$
+\mathbf{D}_{a}=\epsilon_{a} \mathbf{E}_{a}-\frac{\vartheta_{a}}{2 \pi} 2 \alpha \mathbf{B}_{a}, \quad \mathbf{H}_{a}=\frac{\mathbf{B}_{a}}{\mu_{a}}+\frac{\vartheta_{a}}{2 \pi} 2 \alpha \mathbf{E}_{a}
+$$
+
+leading to the same continuity conditions as Eqs. (6.9).
+As was first discovered in the eighties [275], these continuity conditions imply the mirror magnetic monopole effect. Assuming for simplicity $\epsilon_{1}=\epsilon_{2}$ and $\mu_{1}=\mu_{2}$, one finds the magnetic $(g)$ and electric $(q)$ mirror charges
+
+$$
+g=Q \frac{\left(\frac{\vartheta \alpha}{2 \pi}\right)}{1+\left(\frac{\vartheta \alpha}{2 \pi}\right)^{2}}, q=-Q \frac{\left(\frac{\vartheta \alpha}{2 \pi}\right)^{2}}{1+\left(\frac{\vartheta \alpha}{2 \pi}\right)^{2}}
+$$
+
+Physically, the inhomogeneous magnetic field is created by the non-uniform, circular QH currents [276] emerging in response to the radial electric field in the QH-system. This B-field induces locally varying charge density [see Eq. (6.8a)] which again leads to a radial electric field. Summing up the corresponding geometric series one finds both $g$ (starting from linear order in $\vartheta$ ) and $q$ (starting from quadratic order in $\vartheta$ ).
+
+Contrary to transport experiments (see Sec. 6.1.2), the image charge experiment does probe directly the local value of $g_{x y}$. Therefore, the image magnetic monopole can be used to measure a half-integer $g_{x y}$, as was first proposed in Ref. [276]. Clearly, the monopole character of the magnetic field persists only in the 2D "bulk" of the QH system, in finite systems the magnetic field lines always close [276, 278]. In Sec. 6.5 the image monopole effect will be revisited: there a generalization to the problem of a double layer QH system, e.g. a thin 3D TI slab will be presented. Additionally, an alternative experiment which is based on the image electric charge $q\left(\sigma_{x y}\right)$ is discussed.
+
+### 6.2 Laughlin argument
+
+This section is devoted to question (B) posed in the beginning of this chapter: Is the half-integer Hall conductance of a single Dirac fermion compatible with Laughlin's flux-insertion argument [119, 270], according to which the integer QH conductance is a direct consequence of gauge invariance?
+
+![img-41.jpeg](img-41.jpeg)
+
+Figure 6.2: Since the surface of a 3D TI is itself boundaryless, the modified setup for the flux insertion argument involves a torus of 3D TI surface states. (Here, $\vec{j}$ is shown for the exemplary case of $\sigma_{x y}^{\text {top }}>0$.)
+
+# 6.2.1 Phenomenology 
+
+In its conventional form [270], the argument assumes a QH film in an annular geometry and a time dependent flux threading the ring's hole. However, as a consequence of Nielsen-Ninomiya theorem [269], a film of a single Dirac fermion cannot be realized in a condensed matter system. At best, one can have two spatially separated Dirac fermions or a single Dirac fermion on a closed surface as in a 3D TI slab. Therefore, it is inevitable to modify the setup of the gedanken experiment. The simplest and most direct modification is a doughnut shaped 3D TI [251, 255], see Fig. 6.2. The unavoidable change of the setup constitutes the crucial difference to the original argument.
+
+The setup in Fig. 6.2 depicts the 3D TI in a QH state determined by $\sigma_{x y}^{\text {top }}$ and $\sigma_{x y}^{\text {bottom }}$. If $\sigma_{x y}^{\text {top }}+$ $\sigma_{x y}^{\text {bottom }} \neq 0,{ }^{4}$ chiral boundary modes appear at inner and outer perimeters of the slab annulus (blurred blue lines). Most naturally, this occurs if the QH state is created by an orbital magnetic field in z-direction. (The 3D TI surface Dirac fermions are not gapped on the side walls.)
+
+In the process of the gedanken experiment the flux passing through the hole is slowly ramped up by one flux quantum in the period $T$, e.g. $\Phi(t)=\frac{2 \pi t}{T} \frac{b}{c}$. An azimuthal electric field and corresponding electromotive force $\mathcal{E}=-\frac{d \Phi}{d t}$ are created inducing a radial current $I=\sigma_{x y} \mathcal{E}$. Over the period $T$ an overall charge $\Delta Q=\left(\sigma_{x y}^{\text {top }}+\sigma_{x y}^{\text {bottom }}\right) \frac{b}{c}$ is transferred between the two perimeters.
+
+The 2D gauge potential associated to the flux piercing the hole is $A_{i}=-\frac{\Phi(t)}{2 a} \partial_{i} \phi$ ( $\phi$ is the azimuthal angle in 2D polar coordinates). At $t=T$ this is a pure gauge and can be removed by a (large) gauge transformation. ${ }^{5}$ Thus, the electronic states at $t=0$ and at $t=T$ are actually the states of the same system (with $\Phi=0$ ) and the charge $\Delta Q$ is the charge of its edge excitation. In a non-interacting system, all states have integer charge and thus $\Delta Q=$ integer $\times e$. As a consequence, $\left(\sigma_{x y}^{\text {top }}+\sigma_{x y}^{\text {bottom }}\right)$ is restricted to integer multiples of $e^{2} / h$, in full accordance with the half-integer QHE on a 3D TI surface.
+
+[^0]
+[^0]:    ${ }^{4}$ Due to opposite orientation, the major two 3D TI surfaces are in the same QH state if $\sigma_{x y}^{\text {top }}=-\sigma_{x y}^{\text {bottom }}$.
+    ${ }^{5}$ The role of large gauge transformations will also be discussed below, in the context of the parity anomaly, Sec. 6.3.1.
+
+![img-42.jpeg](img-42.jpeg)
+
+Figure 6.3: Cross-section in a plane perpendicular to the azimuthal unit vector for the 3D TI torus depicted in Fig. 6.2. Here, $r=\sqrt{x^{2}+y^{2}}$ is the $2 D$ radial coordinate. For the discussion of length scales and boundary conditions, see main text.
+
+# 6.2.2 Edge states, spectral flow, and microscopics 
+
+In the previous Sec. 6.2.1 the gedanken experiment associated to adiabatic flux insertion was analyzed from the macroscopic point of view. The reasoning lead to the conclusion that the sum $\left(g_{x y}^{t o p}+g_{x y}^{b o t t o m}\right)$ is quantized to integer values. Now I would like to turn to refinements, by means of which it is possible to understand half-integer quantization of $g_{x y}^{t o p}$ and $g_{x y}^{b o t t o m}$.
+
+To this end, it is necessary to specify the actual nature of the edge states (blurred blue regions in Fig. 6.2), between which the charge $\Delta Q$ is transferred. Recall that, due to the Klein tunneling phenomenon, Dirac electrons cannot be confined by application of scalar potential. A physical way to model a finite 3D TI slab is shown schematically in Fig. 6.3: In the vicinity of the perimeters of the torus $\left(r \approx R_{i, e}\right)$, the 3D TI slab gradually becomes thinner and top and bottom surfaces are strongly hybridized in the region $\left|r-R_{i, e}\right| \ll l_{t}$. This motivates the following Hamiltonian (a $4 \times 4$ matrix in the space of top/bottom and (pseudo-)spin space)
+
+$$
+H=H_{0}^{t o t}+H_{d i s}^{t o t}
+$$
+
+with
+
+$$
+H_{0}^{t o t}=\left(\begin{array}{cc}
+H_{0}^{t o p} & T(r) \\
+T(r)^{\dagger} & H_{0}^{b o t t o m}
+\end{array}\right)
+$$
+
+In the 2D "bulk", well defined gapless surface states with negligible penetration depth $a \ll d$ ( $d$ is the slab thickness) are assumed. Thus, the intersurface hopping falls off exponentially. In contrast, at the boundary $T(r)$ is expected to be the dominant energy scale, which is of the order of the bulk band gap $M_{\infty}$ :
+
+$$
+T(r) \sim M_{\infty} e^{-\frac{\left|r-R_{i, e}\right|}{l_{t}}}
+$$
+
+Microscopically, the tunneling matrix element $T(r)$ can be determined integrating out the side-wall states of the 3D TI. Here a real, scalar $T(r) \propto \mathbf{1}_{\sigma}$ is assumed for simplicity. The discussion of the more general case can be found below, it will turn out that the matrix structure of $T(r)$ is not essential for the conclusions of the present analysis.
+
+Following Halperin [270], the disorder ( $H_{d i s}^{t o t}$, represented by green, blurry dots in Fig. 6.3) is assumed to be confined to the inner part of the sample $R_{i}^{\prime}<r<R_{e}^{\prime}$. As in all other parts of this thesis, the disorder potential is assumed to be uncorrelated between the surfaces $(\xi \ll d)$. Qualitatively, all results of this chapter are independent of this assumption, in particular it is completely immaterial for the modified Halperin argument discussed in the present section.
+
+The clean Hamiltonian is determined by Eq. (2.22) on p. 28
+
+$$
+H_{0}^{t o p}=-H_{0}^{b o t t o m}=H_{0}=v_{0}\left(\Pi_{x} \sigma_{y}-\Pi_{y} \sigma_{x}\right)
+$$
+
+For definiteness, the magnetic field $B=\epsilon_{i j} \partial_{i} \mathcal{A}_{j}>0$ is assumed to point in positive $z$ direction. The eigenstates [125, 279], i.e. the LL-states of the Dirac Hamiltonian, were reported in Tab. 2.2 on p. 42 and are denoted by $|n, k\rangle_{D}$ ( $n$ labels the energy level $E_{n}$ and $k$ accounts for the LL degeneracy). For simplicity, I here focus on the massless case, thus $E_{n}=\operatorname{sgn}(n) \sqrt{|n|} \Omega_{c}$ for $n \neq 0$ and $E_{0}=0, \Omega_{c}$ is the (quantum) cyclotron frequency. In view of the cylindrical symmetry of the problem it will be convenient to chose symmetric gauge in this section. The quantum number $k$ thus determines the radius $r_{k}$ around which the LL wave functions are peaked [270, 280].
+
+The length scale $l_{t}$ of hybridization at the edges is assumed to fulfill
+
+$$
+l_{B} \ll l_{t} \ll\left(R_{i, e}^{\prime}-R_{i, e}\right)
+$$
+
+The mixing of LLs can be neglected to lowest order in the small parameter $l_{B} / l_{t}$. Consequently, the Hamiltonian $H_{0}^{\text {tot }}$ in Eq. (6.13) is approximated by its diagonal (in LL space) blocks
+
+$$
+H_{0, n}^{\text {tot }}=\left(\begin{array}{cc}
+E_{n} & T(r) \\
+T(r) & -E_{n}
+\end{array}\right)
+$$
+
+Each individual Hamiltonian $H_{0, n}^{\text {tot }}$ acts in the LL specific surface space spanned by $\left(|n, k\rangle_{D}, 0\right)^{T}$ and $\left(0,|n, k\rangle_{D}\right)^{T}$
+
+The Hamiltonian $H_{0, n}^{\text {tot }}$ has eigenstates
+
+$$
+|n, k, \pm\rangle=\frac{1}{\sqrt{2 \mathcal{E}_{n, \pm}\left(\mathcal{E}_{n, \pm}+E_{n}\right)}}\binom{\left(E_{n}+\mathcal{E}_{n, \pm}\right)|n, k\rangle_{D}}{T(r)|n, k\rangle_{D}}
+$$
+
+with energies $\mathcal{E}_{n, \pm}= \pm \sqrt{E_{n}^{2}+T(r)^{2}}$.
+Far away from the edge $\left(\left|r-R_{i, e}\right| \gg l_{t}\right),|n, k,+\rangle$ is a state living almost solely on top (bottom) surface if $E_{n}>0\left(E_{n}<0\right)$, while $|n, k,-\rangle$ has its weight on the opposite bottom (top) surface. It is a crucial observation, that in contrast to the $n \neq 0$ case, the zeroth LL wave functions $|0, k, \pm\rangle$ are symmetric and antisymmetric combinations of top and bottom states without any $r$-dependent envelop. [Note that $T(r)$ drops out of Eq. (6.18) for $n=0$ !].
+
+Figure 6.4, left, gives a schematic representation of the LL bending around the inner perimeter of the sample $r=R_{i}$. In the 2D "bulk" region $l_{t}+R_{i} \ll r$ states with $n \neq 0$ live on top (solid lines) or bottom surface (dashed lines). They become hybridized (fat lines) close to the boundary. In contrast, states of the zeroth LL always mix top and bottom surface.
+
+In addition to the LL structure, the chemical potential $\mu$ is shown in Fig. 6.4. The intersections of the bended LLs with the chemical potential define the edge states. For the case of Fig. 6.4, left, there are three of them: two originating from the filled first LL of the two surfaces and another from the surface-symmetrized combination of the zeroth LL. As shall be shortly explained, this arrangement of chemical potential and LLs corresponds to $\sigma_{x y}^{\text {top }}=\sigma_{x y}^{\text {bottom }}=3 e^{2} / 2 h$.
+
+When the flux threading the hole is increased by one flux quantum, the LL states contract and states right above (below) the chemical potential get filled (emptied) at the internal (external) perimeter ("spectral flow") [270]. In the present case (Fig. 6.4, left) the states $\left|1, k_{i}, \pm\right\rangle$ and $\left|0, k_{i},+\right\rangle$ (with $r_{k_{i}} \approx R_{i}$ ) were filled. Similarly, the states $\left|1, k_{e}, \pm\right\rangle$ and $\left|0, k_{e},+\right\rangle$ were emptied at the outer edge. As a consequence of energy conservation it follows that during the process of flux insertion, two electrons with energy $E=\Omega_{c}$ are injected into (ejected from) the disordered region of the top surface at $r=R_{e}^{\prime}$
+
+![img-43.jpeg](img-43.jpeg)
+
+Figure 6.4: Schematic representation of the spectrum at the inner boundary. Left (Right): the case when the predominant tunneling matrix element is a scalar $T(r) \propto \mathbf{1}_{\sigma}$ (is mixing LLs of the same energy and thus $T(r) \propto \sigma_{z}$ ). To illustrate the generality of the argument, the chemical potentials are located at different positions in the two figures.
+$\left(r=R_{i}^{\prime}\right)$. In addition, a third electron with $E=0$ enters (exits) the disordered region in a symmetric superposition of top- and bottom states at the same radial positions. By consequence, the associated current is driven through the upper and lower surface with equal weight. ${ }^{6}$ Altogether, it follows that $\sigma_{x y}^{\text {top }}=\sigma_{x y}^{\text {bottom }}=3 e^{2} / 2 h$.
+
+The above analysis can be straightforwardly extended to a generic situation with the chemical potential $\mu$ located in the mobility gaps of the two surfaces. In particular one finds half-integer values $\sigma_{x y}^{\text {top }}=(n+1 / 2) e^{2} / h$ for $\mu$ located between the $n$-th and the $(n+1)$-th bulk delocalized state of the top surface and an analogous expression for the bottom surface. ${ }^{7}$
+
+Finally, I would like to relax the assumption of real, scalar $T(r)$. As announced, the introduction of a general matrix-valued $T(r)$ can not alter the conclusion of this section even if it may drastically change the spectrum of the Hamiltonian close to the boundary.
+
+For concreteness, consider $T(r)=T_{z}(r) \sigma_{z}$ with $T_{z}(r) \in \mathbb{R}$. This is a physically particularly important situation since it corresponds to hybridization of top and bottom LLs with the same energy. The spectrum is $E_{n} \pm\left|T_{z}(r)\right|$ and is depicted in Fig. 6.4, right. In contrast to the case of scalar $T(r)$, each LL now splits, implying, in particular, an infinite number of counterpropagating edge states. However, only a finite number of them is topologically protected, while all others (represented by dashed and dotted curves in Fig. 6.4, right) pairwise localize. Following the same reasoning as exposed above, it again follows that the half-integer quantization of $g_{x y}$ originates from the zeroth LL.
+
+Eventually, a general complex tunneling matrix $T(r)$ can be brought to the form $T(r)=T_{0}(r)+$ $T_{z}(r) \sigma_{z}$ (with $T_{0}, T_{z} \in \mathbb{R}$ ) by a slow biunitary transformation. Thus, the asymptotic behavior at the boundary always falls into one of the two cases displayed in Fig. 6.4. ${ }^{8}$
+
+[^0]
+[^0]:    ${ }^{6} \mathrm{~A}$ similar argumentation for clean 3D TIs can be found in Refs. [251, 255].
+    ${ }^{7}$ The labelling of delocalized states is adiabatically connected to the labelling of LLs. In particular, the zeroth delocalized state resides per definition at zero energy. The order of all other delocalized states on the top-surface is prescribed by the associated energies.
+    ${ }^{8}$ The case $\left(T_{0}(r)-T_{z}(r)\right) \sim 0$ as $r \rightarrow R_{i, e}$ is pathologic. It does not correspond to suitable boundary conditions since in this case the zeroth LL states are not confined inside the sample.
+
+# 6.3 Field theory of localization 
+
+This section is devoted to the field theory describing the localization physics in the half-integer QH state. It is worth repeating that the QHE crucially depends on the presence of disorder. Specifically, it is the disorder-induced localization that provides mobility gaps with a finite DOS in the bulk of a 2D system, which in turn leads to plateaux with quantized values of $\sigma_{x y}$ as a function of carrier density. Thus, the analysis of half-integer QHE should contain a discussion of Anderson localization as one of key ingredients.
+
+On the basic level the 3D TI surface fermions are described by the Euclidean field theory
+
+$$
+\mathcal{Z}=\int \mathcal{D}[\bar{\psi}, \psi] e^{-S[\bar{\psi}, \psi]}
+$$
+
+with the Matsubara action
+
+$$
+S[\bar{\psi}, \psi]=\int_{\tau, \mathbf{x}} \bar{\psi}\left(D_{\tau}+H_{0}+V(\mathbf{x})-\mu\right) \psi+S_{\mathrm{int}}
+$$
+
+For energetic reasons, it is assumed that all quantum fields approach their vacuum configuration at infinity, thus the physical space is compactified. In consequence, the base manifold of the field theory is $\left(\mathbb{R}^{2} \cup\{\infty\}\right) \times \mathbb{S}^{1}$. The clean, free Hamiltonian $H_{0}$ was introduced in Eq. (2.22) on p. 28. The long derivatives $\Pi_{i}=-i \partial_{i}-e\left(\mathcal{A}_{i}+A_{i}\right)$ include both the vector potential $\mathcal{A}_{i}$ responsible for the quantizing magnetic field $B$ and a source field $A_{i}$ accounting for the measurement contacts. The long Matsubara derivative is $D_{\tau}=\partial_{\tau}-i e \Phi ; V(x)$ and $\mu$ represent Gaussian $\delta$-correlated disorder potential and chemical potential respectively. The fermionic fields $\bar{\psi}(\mathbf{x}, \tau)=\left(\bar{\psi}^{\dagger}, \bar{\psi}^{\downarrow}\right)$ and $\psi(\mathbf{x}, \tau)=\left(\psi^{\dagger}, \psi^{\downarrow}\right)^{T}$ describe the spinful $(\uparrow, \downarrow)$ surface excitations. Electron-electron interactions $\left(S_{\text {int }}\right)$ can also be included in this treatment (see Refs. [106, 154]). They can be strong $\left(\alpha_{T I}=e^{2} / \epsilon \hbar v_{0} \sim 1\right)$, with the only condition that they do not induce any SSB.
+
+The aim in this section is to determine the effective low-energy theory of gauge potentials $A_{\mu}=$ $\left(\Phi, A_{i}\right)$ in the 2D "bulk" of the general interacting, disordered system without resorting to QH edge states. I briefly outline the strategy that will be employed. First, note that there are two relevant energy scales in this problem: the elastic scattering rate $1 / \tau$ and the (inelastic) phase breaking rate $1 / \tau_{\phi}(T)$. At low temperatures, these scales form the hierarchy
+
+$$
+\frac{1}{\tau_{\phi}(T)} \ll \frac{1}{\tau}
+$$
+
+Consequently, to get the desired theory of for the gauge field, matter fields will be integrated out in a stepwise fashion: Since electrons with LL quantum numbers $n, k$ are good excitations only above $1 / \tau$, they are integrated out first. The resulting theory then involves gauge fields and diffusive soft modes (diffusive sigma model). To account for the interaction of the diffusive modes (i.e. for quantum interference effects), at energies lower than $1 / \tau$ an RG approach is employed. The RG flow stops at the energy scale $1 / \tau_{\phi}(T)$ where the phase breaking destroys quantum interference. The remaining modes of the matter field can then be integrated out in the saddle-point approximation resulting in the effective low-energy theory of the gauge potential, which was discussed on phenomenological grounds in Sec. 6.1.
+
+### 6.3.1 Parity anomaly
+
+First, I will return to the concept of parity anomaly which I reviewed in the introductory section 2.3.3. Specifically, the importance of the "intrinsic parity anomaly" for TI surface states is under scrutiny
+
+here. Recall, that for the present problem of $\mathrm{QED}_{3}$ on a space-time manifold $(\mathbf{x}, \tau) \in \mathbb{S}^{2} \times \mathbb{S}^{1}$ one has two options for field theoretic quantization: (i) One can chose a regularization scheme preserving parity, but then the partition function acquires a prefactor $(-)^{k}$ under large gauge transformations. (ii) Alternatively, on can employ a regularization scheme (e.g. Pauli-Villars) preserving gauge invariance, but implying an additional CS which breaks parity. For consistency, whenever $(-)^{k} \neq 1$ under some gauge transformation, the second option must be chosen. As explained previously, a common variant in this situation is to employ a regularization scheme as in (i) and to add the CS 3 -form by hand to the fermionic action [135] when the latter contributes an additional factor of $(-)^{k}$ under large gauge transformations.
+In this section, it will be shown that $(-)^{k}=1$ always holds in the case of 3D TI surface states. As a consequence, in this context there is no reason for including an additional CS term which would violate the parity of the theory.
+As explained in Sec. 2.3.3, the proof of assertion (i) relies on the fact that $k$ is determined by the analytical index of a four-dimensional Dirac operator $\left(k=\nu_{+}-\nu_{-}\right)$. The four-dimensional Hamiltonian operates in an enlarged space-time containing in particular the "homotopy coordinate" needed to unwind the gauge potentials $e A_{n}(\mathbf{x}, \tau)=-i U_{n}^{-1} \nabla U_{n}$ associated to large gauge transformations $U_{n} \in \mathbf{G}$. For non-Abelian Gauge groups $\mathbf{G}, k=n$ immediately follows ( $n \in \mathbb{Z}$ determines the homotopy class of $\left.U_{n}\right)$.
+Contrary, for the case of $\mathrm{QED}_{3}[\mathbf{G}=\mathbf{U}(1)]$ on $\mathbb{S}^{2} \times \mathbb{S}^{1}$ the topology is more complicated: as $\Pi_{1}(\mathbf{G})=\mathbb{Z}$, large gauge transformations act in the imaginary time sector. Further, topologically distinct instanton (monopole) configurations in the spatial $\mathbb{S}^{2} \simeq \mathbb{R}^{2} \cup\{\infty\}$ sector (i.e. field configurations with different magnetic flux $\Phi$ through the $\mathbb{R}^{2}$ plane) have to be treated with care. Recall that the gauge potential, which explicitly enters the CS term, can not be defined on the whole manifold. Nevertheless, $k$ can still be associated with the topological index of extended gauge fields. Specifically, it turns out that $k=n \Phi / \Phi_{0}$, where $n$ is the winding in time direction [140]. In the presence of TR symmetry it follows that $\Phi=0$ and thus $k=0$.
+More generally, one can consider the Dirac fermions on the entire surface wrapping the 3D TI sample. ${ }^{9}$ This field theory again lives on a manifold homotopical to $\mathbb{S}^{2} \times \mathbb{S}^{1}$. Then, since there are no physical monopoles, the total flux through the spatial sector vanishes even in the case of broken time reversal symmetry and hence the topological insulator surface states do not exhibit intrinsic parity anomaly. In conclusion, additional CS terms never need to be included. Such terms will therefore not appear in the effective electromagnetic actions to be derived in the following sections.
+Recently [139], similar topological arguments for 3D TIs avoiding the intrinsic parity anomaly were presented. While the topological peculiarities of $\mathbf{U}(1)$ gauge theories were disregarded by the authors of this work, their argument in favor of the absence of parity anomaly in the theory of 3D TI surface states is in agreement with the conclusions presented here. Another line of argumentation with the same outcome is based on the concept of cancellation of anomalies [162].
+
+[^0]
+[^0]:    ${ }^{9}$ As explained, any non-trivial $k$ is related to the AS index theorem in 4 dimensions. When the base manifold $M$ is not flat, as is the case for the 2 D surface wrapping the 3 D TI , the AS index theorem contains a contribution from a potentially non-trivial Dirac genus $\tilde{A}$, see Eq. (2.10) on p. 26. The latter reflects the properties of the base manifold and is constructed from Pontryagin indices of the curvature two-form. In the present case however $\tilde{A}$ is trivially unity: Any non-trivial contribution could only arise from the physical 2D surface. Since the Pontryagin indices are per definition an even function of the curvature 2 -form the leading order is one and the next order is already a four-form. As a consequence, all of the topological findings obtained for the compactified plane $\mathbb{R}^{2} \cup\{\infty\}$ can be applied to the actual, closed, curved 3D TI surface.
+
+# 6.3.2 Gauged NL $\sigma$ M of integer QHE 
+
+Before turning to Dirac fermions, it is worth to briefly review the field theoretic description of the conventional integer QHE. The $\mathbf{U}(1)$-gauged NL $\sigma \mathrm{M}[24,106]$ describing the interaction of diffusive modes and the gauge potential has the action
+
+$$
+S=\frac{1}{8} \int_{\mathbf{x}} \operatorname{tr}\left[g_{x x} D_{i} Q D_{i} Q+\epsilon_{i j} \frac{\vartheta}{2 \pi} Q D_{i} Q D_{j} Q\right]+S_{\eta+i n t .+B^{2}}
+$$
+
+Again, as in Chap. 5, the double cut-off regularization of Matsubara frequencies [106] is employed. The diffusive $\left(2 N_{M}^{\prime} \times N_{R}\right) \times\left(2 N_{M}^{\prime} \times N_{R}\right)$ matrix fields $Q(\mathbf{x})$ carry both Matsubara and replica indices and are typically represented as $(Q)_{l m}^{\alpha \beta}=\left(U^{-1} \Lambda U\right)_{l m}^{\alpha \beta}$. In consistence with other parts of this thesis, $\alpha, \beta=1, \ldots, N_{R}$ denote replicas and $l, m \in\left\{-N_{M}^{\prime}, \ldots, N_{M}^{\prime}-1\right\}$ Matsubara indices. The unitary matrices $U$ have non-trivial entries belonging to $\mathbf{U}\left(2 N_{M} \times N_{R}\right)$ in the central block $l, m \in\left\{-N_{M}, \ldots, N_{M}-1\right\}\left(N_{M} \ll N_{M}^{\prime}\right)$ and are unit matrices outside. Recall that the dimensionless conductances are denoted by $g_{i j}=\sigma_{i j} h / e^{2}$. The term $S_{\eta+i n t .+B^{2}}$ is less important for the present discussion, it is mentioned for completeness only. It contains frequency and interaction contributions, as well as a term quadratic in magnetic field which renormalizes the permeability. The kinetic term (proportional to $g_{x x}$ ) and the theta term (proportional to $\vartheta$ ) contain long derivatives acting as
+
+$$
+D_{i} Q=\partial_{i} Q-i e\left[\hat{A}_{i}, Q\right]
+$$
+
+Again, hatted objects are defined by $\hat{a} \equiv \sum_{m, \alpha} a_{m}^{\alpha} I_{m}^{\alpha}$ and the matrices $\Lambda$ and $I_{m}^{\alpha}$ were defined in Eq. (1.26) on p. 17. The limits $N_{M} \rightarrow \infty, N_{M}^{\prime} \rightarrow \infty\left(N_{M}^{\prime} / N_{M} \rightarrow \infty\right)$ as well as the final replica limit $N_{R} \rightarrow 0$ are implicitly assumed.
+
+Differentiation of Eq. (6.22) with respect to the vector potential and evaluation of the functional integral in the saddle-point approximation leads to the identification of the NL $\sigma \mathrm{M}$ coupling constants $g_{x x}$ and $\frac{\vartheta}{2 \pi}$ with the bare longitudinal and transversal (Hall) conductivities of the QH system (in units of $\left.e^{2} / h\right)[106]$. At the diffusive saddle point $Q=\Lambda$ the theta term becomes the CS-term [106].
+
+### 6.3.3 Gauged NL $\sigma$ M of half-integer QHE
+
+## Gauged NL $\sigma$ M of Dirac fermions at $B=0$
+
+Now the attention is turned towards the localization physics of a single Dirac fermion. For the moment, it is assumed assume that TR symmetry is present on average (i.e., there is no net magnetic field) but broken locally by a random magnetic field or random Zeeman coupling. In this case, the gauged NL $\sigma \mathrm{M}$ can be derived using the non-Abelian bosonization technique (see App. D.1.1)
+
+$$
+S=\frac{1}{8} \int_{\mathbf{x}} \operatorname{tr}\left[g_{x x} D_{i} Q D_{i} Q+\epsilon_{i j} \frac{\theta}{2 \pi} Q \partial_{i} Q \partial_{j} Q\right]+S_{\eta+i n t .}
+$$
+
+where $\theta=\pi(\bmod 2 \pi)$. It is worth emphasizing that the derivatives in the theta term are not covariant derivatives. Yet, the action (6.24) is gauge invariant. Indeed, local $\mathbf{U}(1)$ transformations of fermionic fields translate into the following operation on NL $\sigma \mathrm{M}$ matrices
+
+$$
+Q(\mathbf{x}) \rightarrow e^{i \tilde{\chi}(\mathbf{x})} Q(\mathbf{x}) e^{-i \tilde{\chi}(\mathbf{x})}
+$$
+
+![img-44.jpeg](img-44.jpeg)
+
+Figure 6.5: $R G$ flow diagram for Dirac fermions, based on the scaling proposed by KhmeInitskii. As compared to the case of fermions with parabolic dispersion, the diagram is shifted by half a conductance quantum.
+
+The theta term in Eq. (6.24), being quantized, is unchanged under smooth gauge transformations.
+Since the theta term does not include coupling to the electromagnetic field, the Hall conductance of the Dirac fermions is not related to $\theta$. Instead, $g_{x y}=0$, which is exactly what one should expect in the absence of a net $B$ field.
+
+# Gauged NL$\sigma$ M at $B \neq 0$ 
+
+The gauged NL $\sigma \mathrm{M}$ describing both electromagnetic response and localization physics of a single Dirac fermion is
+
+$$
+S=\frac{1}{8} \int_{\mathbf{x}} \operatorname{tr}\left[g_{x x} D_{i} Q D_{i} Q+\epsilon_{i j} \frac{\theta}{2 \pi} Q \partial_{i} Q \partial_{j} Q+\epsilon_{i j} \frac{\vartheta}{2 \pi} Q D_{i} Q D_{j} Q\right]+S_{\eta+i n t .+B^{2}}
+$$
+
+The derivation of this action can be found in App. D.1.2. It is crucial to observe that only $\vartheta$ couples to electromagnetic gauge potentials. Thus, the transverse conductivity is determined by $\vartheta$ alone, while the localization physics is governed by the sum $\vartheta+\theta=\vartheta \pm \pi$. In the renormalization group flow this will lead to an overall shift of $g_{x y}$ by $1 / 2$ in units of $e^{2} / h$.
+The Matsubara NL $\sigma \mathrm{M}$ description of the QHE also allows for the inclusion of electron-electron interactions [281, 282]. The shift of the RG flow by half a conductance quantum equally applies to this interacting case.
+
+### 6.3.4 RG analysis of the sigma model
+
+## RG flow and phase diagram
+
+Up to the important shift of the theta angle, the action (6.26) corresponds to the standard Pruisken NL $\sigma \mathrm{M}$ for spinless fermions. Therefore, its renormalization [24, 283] is analogous to the conventional
+
+case. The only modification is the connection between the theta angle and the Hall conductivity. This implies the following RG equations [281, 282, 284]
+
+$$
+\begin{aligned}
+& \frac{d g_{x x}}{d y}=-A-\frac{B}{g_{x x}}-C g_{x x}^{2} e^{-2 \pi g_{x x}} \cos \left[2 \pi\left[g_{x y} \pm \frac{1}{2}\right]\right] \\
+& \frac{d g_{x y}}{d y}=\quad-C g_{x x}^{2} e^{-2 \pi g_{x x}} \sin \left[2 \pi\left[g_{x y} \pm \frac{1}{2}\right]\right]
+\end{aligned}
+$$
+
+As before, in these equations $y=\ln L / l$, where $L$ is the running scale and $l$ the UV reference scale (mean free path). The equations are written with the two-loop perturbative accuracy and contain in addition the leading non-perturbative (instanton) contributions. The prefactors $A, B, C$ entering these RG-equations are non-negative numerical constants. Below their values are listed both for the case of non-interacting electrons [284] and for the Coulomb interaction [282]:
+
+$$
+\begin{aligned}
+& A= \begin{cases}0 & \text { No interaction } \\
+\frac{2}{\pi} & \text { Coulomb interaction }\end{cases} \\
+& B= \begin{cases}1 / 2 \pi^{2} & \text { No interaction } \\
+\approx 0.66 & \text { Coulomb interaction }\end{cases} \\
+& C= \begin{cases}4 \pi \exp (-1) & \text { No interaction } \\
+4 \pi \exp (1-4 \gamma) & \text { Coulomb interaction }\end{cases}
+\end{aligned}
+$$
+
+Here $\gamma \approx 0.577$ is the Euler-Mascheroni constant.
+Equations (6.27) lead to the RG-flow diagram for the half-integer QHE of Dirac fermions [253, 285, 286], see Fig. 6.5 [287]. The attractive fixed points are now $\left(g_{x x}^{*}, g_{x y}^{*}\right)=(0,(\nu+1 / 2) e^{2} / h)$ while the delocalized critical state (black dot) appears at integer valued $g_{x y}[198,288]$.
+Starting values of the RG flow at the scale of the mean free path $l$ are given by the Drude expression of the conductivity tensor which was derived in Secs. 3.1 and 3.2.
+
+# The $g_{x y}=0$ transition. 
+
+Generally, the universality class of the Dirac QH transition coincides with the QH transition in parabolic 2DES [77, 282, 289, 290]. However, if in the absence of magnetic impurities the QH transition from $\sigma_{x y}=-e^{2} / 2 h$ to $\sigma_{x y}=+e^{2} / 2 h$ is driven by the variation of the magnetic field from negative to positive, then additional soft modes (Cooperons) will modify the physics at length scales smaller than the magnetic length. This changes the nature of the transition and is represented in Fig. 6.6, left, by the blue upward arrows at $\sigma_{x y} \approx 0$ for the case without electron-electron interactions. At small length scales the systems follows the RG of the symplectic symmetry class (weak anti-localization). In the one-loop approximation the interference corrections can be understood as a renormalization of the elastic scattering rate [291], and the RG equations take the form
+
+$$
+\begin{aligned}
+\frac{d g_{x x}}{d y} & =\frac{1}{\pi} \\
+\frac{d g_{x y}}{d y} & =2 \frac{g_{x y}}{g_{x x}} \times \frac{d g_{x x}}{d y}=\frac{2}{\pi} \frac{g_{x y}}{g_{x x}}
+\end{aligned}
+$$
+
+![img-45.jpeg](img-45.jpeg)
+
+Figure 6.6: $R G$ flow diagram for non-interacting Dirac fermions for the case when the magnetic field is the only source of TR symmetry breaking (i.e., assuming no magnetic impurities and no Zeeman coupling). Left: The $Q H$ transition at $B=0\left(\sigma_{x y}=0\right)$ is qualitatively different from all others, see main text. The corresponding flow is depicted by black bold arrows. It follows the behavior of the symplectic class for $L<l_{B}$ and crosses over to the unitary class at $L \sim l_{B}$. Right: $R G$ flow describing the $B=0$ transition near the "supermetallic" fixed point $\left(1 / g_{x x}^{*}, g_{x y}^{*}\right)=(0,0)$, see Eqs. (6.31).
+
+The crossover to the unitary class occurs when the running scale $L$ hits $l_{B}$, and for larger length scales the flow follows Eqs. (6.27). Integrating the symplectic RG equations up to $l_{B}$ leads to
+
+$$
+g_{x y}\left(l_{B}\right) \sim \frac{1}{\left(k_{F} l_{B}\right)^{2}}\left(k_{F} l+\ln l_{B} / l\right)^{2} \ll 1
+$$
+
+Therefore, as long as the bare (Drude) value of the Hall conductivity is small, $g_{x y}^{(0)} \ll 1$, the renormalized value $g_{x y}\left(l_{B}\right)$ at the output of the symplectic stage of evolution remains small as well, and the system flows, in the infrared limit, into one of the lowest QH states $\sigma_{x y}= \pm e^{2} / 2 h$.
+
+With the notation $t=2 /\left(\pi g_{x x}\right)$ on can rewrite the RG equations (6.29) as follows:
+
+$$
+\begin{aligned}
+\frac{d t}{d y} & =-\frac{1}{2} t^{2} \\
+\frac{d g_{x y}}{d y} & =g_{x y} t
+\end{aligned}
+$$
+
+The RG flow dictated by Eqs. (6.31) is shown in Fig. 6.6, right.
+
+# 6.4 Starting values of RG: Levitation scenario and phase diagram 
+
+The RG flow represented in Fig. 6.5 allows to study the phase diagram of the Dirac QHE [292, 293] and discuss the levitation of extended states taking place at low magnetic field (or, equivalently, strong impurity scattering) [294].
+
+# 6.4.1 Phase Diagram 
+
+The phase diagram of the Dirac QHE can be built by equating the Drude value of transverse conductance (which determines the electromagnetic response of the system at length scale of the order of the mean free path and constitutes the initial conditions for the RG flow discussed in the previous section) to its values on the transition lines
+
+$$
+\frac{-\rho_{x y}^{(0)}}{\left[\rho_{x x}^{(0)}\right]^{2}+\left[\rho_{x y}^{(0)}\right]^{2}}=\sigma_{x y}^{(0)}=n \frac{e^{2}}{h}, n \in \mathbb{Z}
+$$
+
+Fig. 6.7, upper left (a), shows the resulting phase diagram of the system in terms of the Drude resistivities. The major quantitative difference to the situation of parabolic 2DES [292] is the absence of any usual insulating phase: the diagram is covered by QH states only. In addition, positions and radii of semicircular phase boundaries are modified.
+
+### 6.4.2 Levitation of critical states
+
+Next, one can aim to build the phase diagram of the Dirac QHE in terms of the magnetic field $B$ and chemical potential $\mu$ (which are the parameters controlled in experiment). In the context of the conventional, integer QHE, the phase diagram exhibits the levitation scenario [294], according to which the energy of all delocalized states floats up to infinity in the weak magnetic field limit (or equivalently: strong scattering limit).
+
+In order to investigate similar effects for the Dirac QHE one needs to return to the Drude conductivity tensor as a function of magnetic field and chemical potential. The latter was studied in Sec. 3.1 for the case of negligible Zeeman energy and in Sec. 3.2 for the situation when Zeeman coupling is important and leads to the AHE. The Hall conductance is reported in Eqs. (3.4) and (3.29b) in the respective cases.
+
+Furthermore, the energy dependence of the transport scattering rate plays an important role. For point like scatterers of strength $V_{0}$, it can be estimated by Golden rule as
+
+$$
+\frac{1}{\tau_{t r}} \propto V_{0}^{2} \nu(E) \propto \begin{cases}E & E \tau \gg 1 \\ \text { const. } & E \tau \ll 1\end{cases}
+$$
+
+while for Coulomb impurities on obtains
+
+$$
+\frac{1}{\tau_{t r}} \propto U_{\mathrm{scr}}^{2}(\mathbf{p}) \nu(E) \propto \begin{cases}\frac{1}{E} & E \tau \gg 1 \\ \text { const. } & E \tau \ll 1\end{cases}
+$$
+
+Here, $p=E / v_{0}$ is the electronic momentum. The RPA-screening of Coulomb interaction $U_{\text {scr }}^{2}(\mathbf{p})$ was taken into account in Eq. (6.34), see Eq. (5.6) on p. $72 .{ }^{10}$
+
+Again, the phase diagram is obtained by equating the Drude transverse conductivity with the transition lines of the RG flow (i.e. integer $g_{x y}$ ).
+
+First, I would like to concentrate on the simpler situation with negligible Zeeman energy. Furthermore, it will be assumed that the dominant source of disorder are Coulomb impurities and thus $\tau_{t r} \propto \mu$
+
+[^0]
+[^0]:    ${ }^{10}$ If the Coulomb interaction is suppressed by a large dielectric constant, the behavior $1 / \tau_{t r} \propto 1 / E^{2}$ is possible for $E \tau \ll 1$.
+
+![img-46.jpeg](img-46.jpeg)
+
+Figure 6.7: Phase diagram of $Q H$ phases. Upper left (a): Phase diagram for the QHE of Dirac fermions in the plane of longitudinal and Hall resistivities. Right (b) and lower left (c): Phase diagram in the $B-\mu$ plane ("levitation scenario"). (c): The case of gapless Dirac fermions subjected to Coulomb impurities. (b): The case of massive Dirac fermions subjected to short range impurities. Here the fermionic mass, i.e. the Zeeman energy $E_{Z}<0$, is assumed to be $B$-field independent. The floating up of delocalized states with odd (even) index is depicted by solid blue (red) curves. The dashed lines correspond to $\Omega_{c}^{d} \tau_{t r}=1$. The insets magnify the region of weak magnetic fields. The asymmetry under $B \rightarrow-B$ (dotted blue/red curves) is a consequence of the AHE. Disorder strength is determined by $|\mu| \tau_{s j}=100$.
+
+in the region of applicability of Eq. (3.4). Accordingly, the combination $\Omega_{c}^{c l} \tau_{t r} \propto B$ is independent of $\mu$, and the energies of critical states are given by
+
+$$
+\mu_{\text {deloc. }}= \pm \sqrt{\Omega_{c}^{2}|n| \frac{1+\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}}{\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}}+E_{Z}^{2}, n \in \mathbb{Z}}
+$$
+
+For non-zero $n$, Eq. (6.35) describes the "floating up" or, equivalently, "levitation" of delocalized critical states separating QH phases. In the limit $\Omega_{c}^{c l} \tau_{t r} \gg 1$ the usual LL spectrum of gapped Dirac fermions is recovered. (Recall, that this regime is accessible, since $\tau_{q} \ll \tau_{t r}$ for Coulomb impurities.) For $n=0$ the solutions to be retained are $\mu_{\text {deloc. }}=-\operatorname{sign}(B) E_{Z}$. This is a consequence of the AS index theorem, according to which the zeroth LL is fully spin-polarized. The definite spin polarization predicts the sign of the Zeeman energy and thus of the energy level. It is worth emphasizing that, according to this result, the zeroth LL is immune against strong scattering. As a result, in the limit of strong scattering, $\Omega_{c}^{c l} \tau_{t r} \ll 1$, the phases with $\sigma_{x y}= \pm e^{2} / 2 h$ extend all the way from $\mu=0$ up to large values of $\mu$, see Figs. 6.7,(b) and (c). The robustness of the $\sigma_{x y}= \pm e^{2} / 2 h$ state against disorder was indeed observed numerically [263, 295]. The above findings about the levitation of critical states in the absence of anomalous Hall effect are summarized in Fig. 6.7, lower left (c). In this plot it is assumed that $E_{Z}=0$. Recall that for Coulomb impurities $\sqrt{\mu \tau_{t r}} \propto \mu$.
+
+Eventually, I would like to return to the situation when Zeeman energy is important, $E_{Z} \gg 1 / \tau_{q}$. For this case and under the assumption of short-ranged impurities the levitation scenario is plotted in Fig. 6.7, right (b). The most important difference as compared to the case without Zeeman term is the asymmetry under $B \rightarrow-B$ of the phase diagram (dotted curves). This is a consequence of the AHE.
+
+# 6.5 Experimental realization 
+
+After having derived the effective electrodynamic theory via the two-step integration of matter fields, I return to the possibility of experimental observation of the half-integer Hall conductivity.
+
+### 6.5.1 Typical experimental scales
+
+In Table 6.1, typical energy scales of experimental setups are presented. In the exemplary 3D TI experiments the Zeeman contribution appears to be negligible [42, 48]. This observation is consistent with the calculated values of $\left|E_{Z}\right|=g \mu_{B} B$, see Tab. 6.1.
+
+In this section the possible $B$-independent Zeeman energy due to exchange coupling and proximity to a ferromagnet is neglected.
+
+### 6.5.2 Image magnetic monopole effect
+
+## Magnitude and decay of the effect
+
+It is useful to estimate the typical magnetic field strength associated with the mirror monopole effect. The charge $Q_{0}=U z_{0}$ at distance $z_{0}$ of the QH system with "filling factor" $\nu$ is bound by the scale of the "magnetic breakdown" $|e| U \lesssim \Omega_{c}\left(\eta_{\nu+1} \sqrt{|\nu+1|}-\eta_{\nu} \sqrt{|\nu|}\right)$. Using this condition and Eq. (6.11), the ratio of image magnetic field and quantizing external field can be estimated to be:
+
+$$
+\frac{B_{\text {image }}}{B}=\frac{g}{\left|\mathbf{r}+z_{0} \hat{e}_{z}\right|^{2} B} \lesssim \frac{\alpha \Omega_{c}}{z_{0}|e| B} \sim \alpha \frac{v_{0}}{c} \frac{l_{B}}{z_{0}}
+$$
+
+| Quantity | $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ | strained HgTe |
+| :-- | :--: | :--: |
+| Bulk band gap $M_{\infty} / k_{B}$ | 3480 K | 255 K |
+| Cyclotron freq. $\hbar \Omega_{c} / k_{B}$ | $210 \mathrm{~K} \times \sqrt{B[T]}$ | $210 \mathrm{~K} \times \sqrt{B[T]}$ |
+| Zeeman energy $\left|E_{Z}\right| / k_{B}$ | $21 \mathrm{~K} \times B[T]$ | $15 \mathrm{~K} \times B[T]$ |
+| Scattering rate $\hbar /\left(\tau_{t r} k_{B}\right)$ | 127 K | 10 K |
+
+Table 6.1: Typical experimental energy scales of 3D TI in Kelvin [42, 296, 297]: The bulk band gap $M_{\infty}$, the cyclotron frequency $\Omega_{c}=\sqrt{2|e| B v_{0}^{2} / \hbar}$, the Zeeman energy $\left|E_{Z}\right|=g \mu_{B} B$ and the inelastic scattering rate $1 / \tau_{t r}$. Note, that the velocity $v_{0}$ of 3D TI surface states happens to be the same in both materials, see Tabs. 5.1 and 5.2. The bulk g-factors [298, 299] entering $E_{Z}$ were typically determined outside the TI regime. The presented values of $E_{Z}$ correspond to the maximal Zeeman energy, with perfect alignment of pseudospin $\sigma$ and electron spin $\mathbf{s}$ (cf. Sec. 5.1.3). Here, Zeeman energy due to exchange coupling is disregarded.
+
+This ratio is of the order of $B_{\text {image }} / B \sim 10^{-7}$ for the typical magnetic field strength $B \sim 1 T$ and the distance $z_{0} \sim 1 \mu \mathrm{~m}$.
+
+While in an idealized system at the QH plateau the longitudinal conductivity $\sigma_{x x}$ is exactly zero, in a realistic situation it always takes a small but non-zero value due to a finite temperature. This allows a rearrangement of charges in the QH system, which leads to screening of the test charge and, as a result, destroys the driving force of ring currents and thus the image monopole effect. In Ref. [277] the decay rate of the image monopole effect after sudden appearance of a test charge was found to be
+
+$$
+\frac{1}{\tau}=\frac{2 \pi \sigma_{x x}}{z_{0}}=\frac{\alpha c g_{x x}}{z_{0}} \sim 10^{12} s^{-1} \times g_{x x}
+$$
+
+The decay of the magnetic monopole effect enforces one to perform finite frequency measurements (or optical measurements, see below). Note, however, that already in the early days of the QH effect the longitudinal conductance on the QH plateau was demonstrated [16] to be $g_{x x} \lesssim 10^{-6}$. Thus, the decay of the monopole effect does not seem to constitute an insuperable difficulty.
+
+# Topological Magnetoelectric effect beyond linear response 
+
+In Sec. 3.3 the semiclassical vortex state calculation of current density was performed on the assumption of a smooth external potential. Here, I would like to repeat the result presented there [Eqs. (3.40) and (3.41) on p. 55]
+
+$$
+J_{ \pm}(\mathbf{x})=\frac{ \pm i|e|}{2 \pi} \partial_{ \pm} V(\mathbf{x})\left[\sum_{n>0} n_{F}\left(E_{n}+V(\mathbf{x})\right)+\sum_{n \leq 0}\left[n_{F}\left(E_{n}+V(\mathbf{x})\right)-1\right]+\frac{1}{2}\right]
+$$
+
+and apply it to the image monopole effect.
+It is important to note that, in contrast to the usual linear response treatment, the results of the vortex state calculation are also valid in the case of a strong static electric field. In particular, they can be applied to study the magnetic image monopole effect in in the following situation:
+
+- The voltage between test charge $Q$ and the QH system exceeds $\Omega_{c} /|e|$.
+
+![img-47.jpeg](img-47.jpeg)
+
+Figure 6.8: Schematics of the image monopole effect beyond linear response. LHS of " $\hat{=}$ ": The electric test charge $Q$ (blue sphere) and the Coulomb impurities (blurry, green dots) create a puddle (orange) of QH liquid with Hall response $g_{x y}=g_{x y}^{\infty}+1$ within a $Q H$ system (yellow, infinite plane) characterized by $g_{x y}=g_{x y}^{\infty}, R H S$ of " $\hat{=}$ ": The associated magnetic field configuration can be decomposed in infinite-sample-TME with $g_{x y}=g_{x y}^{\infty}$ and finite-sample-TME with $g_{x y}=1$.
+
+- Disorder is semiclassical and can be modeled by a randomly distributed set of Coulomb impurities.
+
+Then, a situation as depicted in Fig. 6.8 on the LHS of " $\hat{=}$ " arises. The electric test charge $Q$ and the smooth disorder potential influence the local (electro-)chemical potential and create a region of QH liquid with Hall response $g_{x y}=g_{x y}^{\infty}+1$ within the larger, homogeneous QH system characterized by $g_{x y}=g_{x y}^{\infty} .{ }^{11}$ In Eq. (6.38), this effect is manifested in the terms involving the Fermi-Dirac distribution $n_{F}$.
+
+To access the TME one next has to return to the "orthodox" description exposed in Sec. 6.1.3. For the sake of a clearer presentation, I restrict myself to the solution to first order in $\alpha$. Then the electric field is fully determined by the test charge and the impurities. It can be written as a superposition
+
+$$
+\mathbf{E}=\mathbf{E}^{(Q)}+\sum_{\text {disorder }} \mathbf{E}^{(\text {disorder })}
+$$
+
+The symbol $\sum_{\text {disorder }}$ schematically denotes the sum over impurity positions and strengths. As a next step the current $\mathbf{J}=\sigma_{x y}(\mathbf{x}) \epsilon_{i j} \mathbf{E}$ as given in Eq. (6.38) is introduced as source field into Ampère's law. There are two differences as compared to the situation discussed previously in Sec. 6.1.3
+
+1. The electric field $\mathbf{E}$ is determined by the superposition in Eq. (6.39). This corresponds to the factor $\partial_{ \pm} V$ in Eq. (6.38).
+2. The Hall conductivity $\sigma_{x y}(\mathbf{x})$ is a stepwise constant function. This corresponds to the terms in square brackets in Eq. (6.38).
+I will first account for difference number 1. In view of the linearity of Maxwell's equations one can look for a response magnetic field of the form
+
+$$
+\mathbf{B}=\mathbf{B}^{(Q)}+\sum_{\text {disorder }} \mathbf{B}^{(\text {disorder })}
+$$
+
+[^0]
+[^0]:    ${ }^{11}$ Of course, a region with $g_{x y}=g_{x y}^{\infty}-1$ or a series of QH puddles within the $g_{x y}^{\infty} \pm 1$ regions are conceivable as well. For simplicity, here only the simplest situation is discussed.
+
+where the magnetic field created by test charge solves Ampère's law
+
+$$
+\nabla \times \mathbf{B}^{(Q)}=4 \pi \sigma_{x y}(\mathbf{x}) \epsilon_{i j} \mathbf{E}^{(Q)} \delta(z)
+$$
+
+separately from the magnetic field created by each impurity. The latter is subjected to an analogous equation. In order to handle difference number 2, the Hall conductivity is written as
+
+$$
+\sigma_{x y}(\mathbf{x})=\sigma_{x y}^{\infty}+\chi_{A} e^{2} / h
+$$
+
+Here $\chi_{A}$ is a characteristic function, in the exemplary case represented by Fig. 6.8 it takes values $\chi_{A}=1$ inside the interior QH puddle and zero outside. As a consequence, the response magnetic field can also be split into a part stemming from $\sigma_{x y}^{\infty}$ and a part stemming from the puddle leading to
+
+$$
+\begin{aligned}
+\nabla \times \mathbf{B}^{(Q, \infty)} & =4 \pi \sigma_{x y}^{\infty} \epsilon_{i j} \mathbf{E}^{(Q)} \delta(z) \\
+\nabla \times \mathbf{B}^{(Q, A)} & =4 \pi\left(e^{2} / h\right) \chi_{A} \epsilon_{i j} \mathbf{E}^{(Q)} \delta(z)
+\end{aligned}
+$$
+
+and analogously for impurity induced magnetic field contributions. Clearly, the contribution $\mathbf{B}^{(Q, A)}$ behaves analogously to the response magnetic field in a finite QH sample. Recall that in this situation all field lines close.
+
+Schematically, the magnetic field configuration for the TME beyond linear response is depicted in Fig. 6.8, RHS of " $\doteq$ ". In the first line, the infinite sample TME field $\mathbf{B}^{(Q, \infty)} \propto \sigma_{x y}^{\infty}$ and the finite sample TME field $\mathbf{B}^{(Q, A)}$ evoked by the test charge are sketched. In the second line, analogous field configurations evoked by Coulomb impurities are shown. The superposition of all magnetic field lines yields the TME beyond linear response.
+
+# Topological Magnetoelectric effect in thin 3D TI films 
+
+In this section the image magnetic monopole effect for a double QH structure is considered. Thus, the setup corresponds to a double domain-wall of theta angles multiplying $\mathbf{E} \cdot \mathbf{B}$ terms. This problem is relevant for realistic 3D TI experiments: As was stated above, the electric test charge should be placed at macroscopic distance from the QH systems. On the other hand, typical 3D TI samples are only a few hundred Ångström thick. Thus, the test charge simultaneously probes both TI surfaces, a double QH structure.
+
+A realistic experimental setup is shown in Fig. 6.9, where the electric test charge $Q_{0}$ (solid dot) is placed above a double QH structure at position $\left(0,0, z_{0}\right)$. The upper QH system, in the plane $z=0$, has Hall conductance $\sigma_{y x}^{\text {top }}=\left(\vartheta_{2}-\vartheta_{1}\right) e^{2} / 2 \pi h$, while the lower one is characterized by $\sigma_{y x}^{\text {bottom }}=$ $\left(\vartheta_{3}-\vartheta_{2}\right) e^{2} / 2 \pi h$. In addition, in the three bulk regions denoted by $a=1(0<z), a=2(-d<z<0)$ and $a=3(z<-d)$ localized charges might induce non-trivial electric permittivity $\epsilon_{a}$ and magnetic permeability $\mu_{a}=1 / \epsilon_{a} c_{a}^{2}$.
+
+Following Ref. [274], I will resort to the unified description in terms of the vector $\left(\mathbf{D}_{a}, 2 \alpha \mathbf{B}_{a}\right)^{T}$ which is connected to $\mathbf{E}_{a}$ and $\mathbf{H}_{a}$ via
+
+$$
+\binom{\mathbf{D}_{a}}{2 \alpha \mathbf{B}_{a}}=\mathcal{M}_{a}\binom{2 \alpha \mathbf{E}_{a}}{\mathbf{H}_{a}}
+$$
+
+with the matrix
+
+$$
+\mathcal{M}_{a}=\frac{2 \alpha}{c_{a}^{2} \epsilon_{a}}\left(\begin{array}{cc}
+\frac{\vartheta_{2}^{2}}{4 \pi^{2}}+\left(\frac{c_{a} \epsilon_{a}}{2 \alpha}\right)^{2} & -\frac{\vartheta_{a}}{2 \pi} \\
+-\frac{\vartheta_{a}}{2 \pi} & 1
+\end{array}\right)
+$$
+
+![img-48.jpeg](img-48.jpeg)
+
+Figure 6.9: Sketch of the setup discussed in the main text. An electric test charge (solid dot) is placed above a double QH structure (e.g. a thin 3D TI slab) and creates a series of magnetic and electric mirror charges (circles).
+
+The electromagnetic field above the plane $z=0$ can be expressed in terms of the two-component potential $\underline{\Phi}_{1}=\left(\Phi_{1, E}, 2 \alpha \Phi_{1, M}\right)^{T}$,
+
+$$
+\left(\mathbf{D}_{1}, 2 \alpha \mathbf{B}_{1}\right)^{T}=-\nabla \underline{\Phi}_{1}
+$$
+
+To present the potential $\underline{\Phi}_{1}$, it is convenient to perform the Fourier transformation with respect to coordinates in the plane, $(x, y) \rightarrow\left(q_{x}, q_{y}\right)$,
+
+$$
+\underline{\Phi}_{1}\left(x, y, z, z_{0}\right)=\int_{0}^{\infty} d q \frac{q}{2 \pi} \underline{\Phi}_{1}\left(q, z, z_{0}\right) J_{0}(q \rho)
+$$
+
+Here, $J_{0}(q \rho)$ is the zeroth Bessel function, $\rho=\sqrt{x^{2}+y^{2}}$ is the modulus of the 2 D component of the position vector, and $q=\sqrt{q_{x}^{2}+q_{y}^{2}}$ is the norm of the 2 D component of momentum. As shown in App. D.2, the Fourier transform of the two-component potential $\underline{\Phi}_{1}$ is given by
+
+$$
+\underline{\Phi}_{1}\left(q, z, z_{0}\right)=\frac{2 \pi}{q}\left\{e^{-\left|z-z_{0}\right| q}+e^{-\left(z+z_{0}\right) q} T_{\mathrm{eff}}\right\}\left(\begin{array}{c}
+Q_{0} \\
+0
+\end{array}\right)
+$$
+
+Here, the matrices
+
+$$
+\begin{aligned}
+T_{\text {eff }}= & \left(R_{32}^{+} R_{21}^{+} e^{d q}+R_{32}^{-} R_{21}^{-} e^{-d q}\right)^{-1} \\
+& \times\left(R_{32}^{+} R_{21}^{-} e^{d q}+R_{32}^{-} R_{21}^{+} e^{-d q}\right)
+\end{aligned}
+$$
+
+and $R_{a b}^{ \pm}=1 \pm \mathcal{M}_{a} \mathcal{M}_{b}^{-1}$ were introduced. Each of the limits $d \rightarrow \infty, d \rightarrow 0,\left(\epsilon_{2}, \mu_{2}, \vartheta_{2}\right)=\left(\epsilon_{3}, \mu_{3}, \vartheta_{3}\right)$ and $\left(\epsilon_{2}, \mu_{2}, \vartheta_{2}\right)=\left(\epsilon_{1}, \mu_{1}, \vartheta_{1}\right)$ reproduces the result for a single domain wall, see App. D.2.
+
+The two-component potential, Eq. (6.46), can also be represented as an infinite sum of mirror charges, see App. D.2. ${ }^{12}$ In the limit $z_{0} \ll d$ the dominant contribution arises from the mirror charge, which is located in $-d<z<0$ and is solely determined by $\sigma_{x y}^{\text {top }}$. In contrast, for $z_{0} \gg d$ the double QH system behaves effectively as a single QH system with the Hall conductivity $\sigma_{x y}^{\text {tot }}=\sigma_{x y}^{\text {top }}+\sigma_{x y}^{\text {bottom }}$. Again the field configuration displays the mirror monopole, but this time its strength is determined by $\sigma_{x y}^{\text {tot }}$. This is illustrated in Fig. 6.10 where the magnetic field corresponding to the potential, Eq. (6.46), is plotted
+
+[^0]
+[^0]:    ${ }^{12}$ Clearly, the first of these charges corresponds to Eq. (6.11).
+
+![img-49.jpeg](img-49.jpeg)
+
+Figure 6.10: The magnetic field configuration for 3D TI in the QH state in a setup as depicted in Fig. 6.9. Left: slab of thickness $10 \mu \mathrm{~m}$. Right: slab of thickness 20 nm . In both figures $z_{0}=2 \mu \mathrm{~m}, \sigma_{x y}^{\text {top }}=e^{2} / 2 h, \sigma_{x y}^{\text {bottom }}=-7 e^{2} / 2 h$ and, for simplicity, $\epsilon_{1}=\epsilon_{2}=\epsilon_{3}$ and $\mu_{1}=\mu_{2}=\mu_{3}$.
+for two otherwise identical 3D TI slabs of different thickness, $d=10 \mu \mathrm{~m}$ and $d=20 \mathrm{~nm} .{ }^{13}$ In these plots, it was assumed that the distance of a charge from the top surface is $z_{0}=2 \mu \mathrm{~m}$ and the Hall conductivities are $\sigma_{x y}^{\text {top }}=e^{2} / 2 h$ and $\sigma_{x y}^{\text {bottom }}=-7 e^{2} / 2 h$. Thus, for a thick slab the condition $z_{0} \ll d$ is well satisfied and the magnetic field is mainly determined by the mirror monopole corresponding to the upper surface with $\sigma_{x y}^{\text {top }}=e^{2} / 2 h$. On the other hand, the thickness $d$ of a thin slab is much smaller than $z_{0}$, so that the monopole corresponding to the total Hall conductivity $\sigma_{x y}^{\text {top }}=-3 e^{2} / h$ is observed.
+
+It is worth emphasizing that the magnetic field plotted in Fig. 6.10 only includes the field induced by the image monopole and not the magnetic field generating the QH state. As noted before, typical magnetic field strengths in 3D TI QH experiments are of the order of a few Tesla [42]. The induced monopole field per test charge $Q_{0}$ is of the order of $10 n T /|e|$. The voltage associated to magnetic breakdown can be estimated to be $U \sim 0.01 \ldots 0.1 \mathrm{~V}$, which at a distance of $2 \mu \mathrm{~m}$ corresponds to $Q_{0} \sim 14 \ldots 140|e|$. Therefore, the induced magnetic field is expected to be of the order of $0.1 \ldots 1 \mu T$. Measurement of such a variation of the magnetic field is quite challenging from the experimental point of view.
+
+# 6.5.3 AFM measurement of the electric mirror charge 
+
+As was just mentioned, one of the difficulties of the image monopole experiment is to discriminate the monopole field from the magnetic field creating the QH state. Therefore, the possibility of an alternative non-transport measurement of the Hall conductivity is discussed: It involves the electric mirror charge appearing in the magnetic image monopole effect [Eq. (6.11)] and leads to an attractive force which, for a single QH interface in vacuum is:
+
+$$
+|\mathbf{F}|=\frac{Q q}{\left(2 z_{0}\right)^{2}} \approx 3.07 \times 10^{-21} N\left(\frac{Q / e}{z_{0} / \mu m}\right)^{2} \frac{g_{x y}^{2}}{1+\alpha^{2} g_{x y}^{2}}
+$$
+
+[^0]
+[^0]:    ${ }^{13}$ For the actual plotting of Fig. 6.10, the series of mirror charges was truncated. For the left (right) plot corresponding to $d=10 \mu \mathrm{~m}(d=20 \mathrm{~nm})$ the first 21 (201) mirror charges were taken into account.
+
+![img-50.jpeg](img-50.jpeg)
+
+Figure 6.11: An alternative non-transport measurement of QH transitions [300]. The image monopole effect predicts an attracting force $\mathbf{F} \propto \sigma_{x y}^{2}$ for an AFM tip placed above a QH system.
+
+In principle, this force could be measured by an atomic force microscope (AFM) experiment (see schematic Fig. 6.11). For the estimated maximal number of carriers on the tip $Q / e \sim 10 \ldots 100$ the effect is beyond current experimental accessibility.
+
+# 6.5.4 Spectroscopic measurement: Topological Faraday and Kerr rotation 
+
+As discussed above, a measurement of the half-integer Hall conductivity should be local and contactless. The magnetic and electric monopole effects satisfy these requirements but their magnitude is very small and might pose a serious experimental obstacle. This motivates thoughts about possible alternatives.
+
+A possible experimental probe of the QH effect is based on the topological Faraday and Kerr rotation in spectroscopic setups [4, 256, 301, 302]. In these experiments the frequency of light $\omega$ is typically of the order of THz , with a wavelength $\lambda \sim 300 \mu \mathrm{~m}$. For a sufficiently disordered realistic system the condition
+
+$$
+\omega \tau \equiv \frac{c}{v_{0} \lambda} \lesssim 1
+$$
+
+can be well satisfied. The system is then in the diffusive regime, opening a possibility for approaching the regime of quantized Hall conductivity.
+
+Faraday and Kerr rotation induced by surface states of 3D TI were studied in recent spectroscopic experiments $[296,303]$ (see also earlier works Ref. [241, 304]), and magnetooscillations of conductivities were indeed observed. In these experiments, the systems were in the diffusive regime, $\omega \tau \sim 0.1 \ldots 1$. This implies that the RG flow of conductivities, Fig. 6.5, should be directly observable in the frequency dependence of optical conductivity $\sigma_{i j}(\omega)$ measured in THz spectroscopy.
+
+There exists, however, a problem related to a small thickness $d$ of realistic TI samples. Indeed, in order to probe separately each of the surfaces in a spectroscopic experiment, $d$ should be larger than the wavelength $\lambda$. On the other hand, for state-of-art structures the opposite condition is satisfied, $d \ll \lambda$. This appears to be a serious obstacle for a measurement of conductivities of individual surfaces by spectroscopic means.
+
+# 6.6 Summary of chapter 6 
+
+This chapter was devoted to the study of the half-integer QHE for a single species Dirac fermion, e.g., for the surface state of a 3D TI. In the beginning of this chapter I posed three questions to which I would like to return now.
+
+Question (A) concerned the experimental accessibility of the transverse conductivity in the halfinteger QHE. As explained in detail in Sec. 6.1.2, a naive attempt to measure the half-integer Hall response in a transport experiment on TIs fails. Instead, it was explained that half-integer Hall response can be measured by the local, non-invasive experiments associated to the topological magnetoelectric effect (TME), see Sec. 6.1.3.
+
+Section 6.2 was devoted to question (B). It was demonstrated, that the half-integer quantization of Hall response in 3D TI surfaces is a consequence of gauge invariance. A logic similar to the well-known Laughlin argument [119] was followed.
+
+The major results of this chapter concern question (C) and are contained in Sec. 6.3. There the field theory [gauged NLeM, Eq. (6.26)] describing the localization physics of a single Dirac electron was derived. As compared to the field theory of the integer QHE [24, 106], there are the following major differences.
+
+|  | usual integer QHE | half-integer QHE (3D TI) |
+| :--: | :--: | :--: |
+| action | The action contains a single theta term. | The action contains two theta terms. |
+| theta angle(s) | There is a single theta angle $\vartheta$, it is associated to the Hall conductivity. | There is a theta angle $\vartheta$ associated to Hall conductivity and a theta angle $\theta= \pm \pi$ reminiscent of chiral anomaly. |
+| RG-flow | The RG is governed by $\vartheta$. <br> The RG equations lead to the flow diagram proposed in Ref. [287]. | The RG is governed by $\vartheta+\theta$ leading to a shift of $e^{2} / 2 h$ in the flow diagram of conductivities, Fig. 6.5. |
+
+On the basis of the RG flow and the starting values of coupling constants (the classical conductivity tensor obtained in Chap. 3), the phase diagram for the half-integer QHE was derived in Sec. 6.4. In particular, it could be shown that the QH-phases characterized by $\sigma_{x y}= \pm e^{2} / 2 h$ are particularly robust against disorder, see Fig. 6.7.
+
+Eventually, in Sec. 6.5, I returned to question (A) and discussed conditions for experimental realization of TME experiments. In particular, I focused on the analysis of the following experimentally important extensions to the original proposal [4, 276]: thin 3D TI slabs and the TME beyond linear response were investigated.
+
+# Superconducting instability 
+
+This section is devoted to the superconducting instability of 3D TI surface states [305-312]. As I shall explain in what follows, it is also not fully understood for ordinary 2DESs. Therefore, in most of this chapter the theory of superconducting, disordered Dirac system and 2DES will be developed in parallel.
+
+It should be noticed from the outset that this project is not yet completed. Nevertheless, in this section I summarize first results and expose the strategy for further investigation.
+
+### 7.1 Outline of the problem
+
+In order to place the problem studied in this chapter into general context, I would briefly like to return to the theories exposed in Sec. 1.5.4. The general question is, how and whether at all disorder influences the thermodynamic transition from the normal to the superconducting state.
+
+In Fig. 7.1 the transition temperature $T_{c}$ as a function of dimensionless resistance is plotted for various theories. First, there is a horizontal dotted red line which corresponds to Anderson's theorem [313, 314]: Without any interparticle interaction in singlet or triplet channels the mean field transition temperature $T_{c}$ with and without disorder are equal: $T_{c}=T_{B C S}$. Note that, from the perspective of RG equations of the type of Eqs. (1.28) on p. 17, this "theorem" only holds to order $\mathcal{O}\left(t^{n} \gamma_{c}^{m}\right)$ with $n+m \leq 2$ [107]. Next, there is a black dashed curve corresponding to Finkel'stein's suppression of $T_{c}$ by the interplay of Coulomb interaction and disorder, see Eq. (1.34). Further, the enhancement of $T_{c}$ due to short range interactions and multifractality, Eq. (1.36), is depicted by a brown dot-dashed line. ${ }^{1}$ Recall that this mechanism only works for sufficiently strong disorder, namely $t \gg\left|\gamma_{c}\right|$, so for the chosen parameters the dot-dashed curve starts at $t \gtrsim 0.2$. The numerical solution of RG equations indicates soft suppression of $T_{c}$ at weaker disorder, in the figure this is schematically represented by the brown, sparsely dotted curve.
+
+All of these three lines correspond to mean-field transitions (fermionic mechanism). As explained in Sec. 1.5.4 the actual superconducting state also requires phase rigidity and in 2D the true transition is expected to be of the BKT type. The associated transition temperature $T_{*}$ in the semiclassical approximation [315] is depicted by the blue solid line. I review next how to obtain it.
+
+In the clean case the phase rigidity entering the BKT RG Eqs. (1.32) is given by
+
+$$
+\frac{K}{\pi}=\frac{n_{s}}{2 m^{*} T}
+$$
+
+[^0]
+[^0]:    ${ }^{1}$ In the plot it was assumed that $t^{(0)} / t\left(y_{c}\right)=0.9$. Note that $t\left(y_{c}\right)$ also depends on bare interaction amplitudes in density and triplet channels.
+
+for the exemplary case of 2DES with parabolic dispersion. The density of Cooper pairs of mass $m^{*}=2 m$ is denoted by $n_{s}$. The critical stiffness $K_{*}=1$ determines the BKT transition temperature $T_{*}$ which is parametrically close to $T_{B C S}:^{2}$
+
+$$
+T_{*}=T_{B C S}(1-4 G i)
+$$
+
+Here, $G i=T_{B C S} / \mu \ll 1$ is the Ginzburg-Levanyuk number ${ }^{3}$ for clean 2D superconductors [316]. In contrast, in the disordered case at "Drude" level [67]
+
+$$
+\frac{K}{\pi}=\frac{g_{D}}{8} \frac{\Delta}{2 T} \tanh \frac{\Delta}{2 T}
+$$
+
+As before, e.g. in Eq. (1.25), $g=2 /(\pi t)$ is the dimensionless conductance, in this case at Drude level. Note that $\Delta=\Delta(T)$ generally denotes the gap at non-zero temperature. Near $T_{B C S}$ it has the form
+
+$$
+\Delta(T) \stackrel{\Delta \ll T_{B C S}}{\Longleftrightarrow} \sqrt{\frac{8 \pi^{2}}{7 \zeta(3)}} T_{B C S} \sqrt{1-\frac{T}{T_{B C S}}}
+$$
+
+(The Riemann zeta function is $\zeta(s)$ and $\zeta(3) \approx 1.202$.) The BKT critical value of $K_{*}=1$ corresponds to a transition temperature
+
+$$
+T_{*}=T_{B C S}\left(1-\underbrace{\frac{14 \zeta(3)}{\pi^{4}}}_{\approx 0.173} \pi^{2} t\right)=T_{B C S}(1-4 G i)
+$$
+
+This behavior was first predicted by Beasley, Mooij and Orlando [315]. Note, that $\pi^{2} t=\frac{2 \pi}{g}=R \frac{e^{2}}{\hbar}$ stands for the dimensionless resistance in units $\hbar / e^{2}$, and in the disordered case $G i=\frac{7 \zeta(3)}{\pi^{3} g}$ [316].
+
+In this chapter, the aim is to investigate the situation when the transition takes place in the diffusive regime
+
+$$
+T_{*}<T_{c} \ll \frac{1}{\tau} \ll \mu
+$$
+
+In particular, the goal is to go beyond the semiclassical approximation. As explained, due to the interplay of disorder and interaction, the actual mean-field transition temperature is not the BCS temperature $T_{c} \neq T_{B C S}$. Additionally, the resistance is also renormalized $t \neq t_{D}$. Therefore, the goal is to develop a theory of the superconducting state in disordered systems, which incorporates both the renormalization of resistivity due to quantum diffusion and vortex excitations leading to the BKT transition. This theory should in particular provide the dependence of $T_{*}$ on disorder strength.
+
+# 7.2 Ginzburg Landau theory 
+
+To get a first feeling for the length scales of the problem, I would like to analyze the classical GinzburgLandau functional:
+
+$$
+\mathcal{F}=\int_{\mathbf{x}} \frac{c}{2 T}|\nabla \Delta(\mathbf{x})|^{2}+\frac{r}{2 T}|\Delta(\mathbf{x})|^{2}+\frac{u}{T}|\Delta(\mathbf{x})|^{4}
+$$
+
+[^0]
+[^0]:    ${ }^{2}$ The superconducting instability discussed in the present section is assumed to be of the Bardeen-Cooper-Schrieffer (BCS) rather than of Bose-Einstein condensation (BEC) type, thus $T_{c} \ll \mu$.
+    ${ }^{3}$ There exist different definitions for $G i$ in the literature. Here, it is defined via the temperature $T=T_{B C S}(1+G i)$ at which the fluctuation correction to heat capacity is comparable to the mean field jump in the same observable.
+
+![img-51.jpeg](img-51.jpeg)
+
+Figure 7.1: The superconducting transition temperature as a function of resistance $t$. The red dotted line corresponds to Anderson's theorem. The black dashed line displays suppression of $T_{c}$ due to Coulomb interaction, while the brown dot-dashed line displays enhancement of the transition temperature for short-range interactions, see Sec. 1.5.4. The blue solid line corresponds to the static BKT transition. The theory behind the blue line is purely classical. The unknown quantum corrections for stronger disorder are indicated by a question mark. This plot was produced for the exemplary case of usual 2DES with parabolic dispersion. The free parameter was chosen to be $T_{c} / \mu=0.01$.
+
+Again, $\Delta(\mathbf{x})$ is the complex order parameter field, the parameters $c$ and $u$ are positive while $r$ changes sign from positive to negative when $T_{c}$ is crossed from above. In the superconducting state the minimum free energy is given by the set of points
+
+$$
+|\Delta|=\sqrt{\frac{-r}{4 u}} \equiv \Delta(T)
+$$
+
+Fluctations around the minimum are parametrized as $\Delta(\mathbf{x})=[\Delta(T)+\delta \Delta(\mathbf{x})] e^{i \Theta(\mathbf{x})}$. Expansion of the Ginzburg-Landau functional to second order in real fields $\Theta$ and $\delta \Delta$ leads to
+
+$$
+\mathcal{F}=\int_{\mathbf{x}} \frac{c[\Delta(T)]^{2}}{2 T}[\nabla \Theta(\mathbf{x})]^{2}+\frac{c}{2 T}[\nabla \delta \Delta(\mathbf{x})]^{2}-\frac{r}{T}[\delta \Delta(\mathbf{x})]^{2}
+$$
+
+While the Goldstone mode $\Theta$ is massless, the longitudinal fluctations are massive with mass set by $r \sim-\nu\left(1-T / T_{c}\right)$. Comparison with the $\mathbf{U}(1) \mathrm{NL} \sigma \mathrm{M}$ identifies the parameter $c$ with the phase rigidity $c[\Delta(T)]^{2} / T \sim K$. The textbook result for the correlation length $\xi \sim \sqrt{c /|r|}$ on which $\delta \Delta$ decays is $\xi_{c l .} \sim v_{F} / \Delta(T)$ in the clean case. In the dirty situation one finds
+
+$$
+\xi \sim \frac{l}{L_{T_{c}}} \xi_{c l .} \ll \xi_{c l}
+$$
+
+For later convenience, I here introduced the thermal length $L_{T}=\sqrt{l v_{F} / T}$ associated to a temperature $T$ in the diffusive regime.
+
+# 7.3 Mean-field treatment on the basis of disordered, interacting fermions 
+
+### 7.3.1 Microscopic model
+
+The microscopic Matsubara action under consideration in this chapter is
+
+$$
+S=\int_{\mathbf{x}, \tau} \bar{\psi}\left(D_{\tau}+H\right) \psi-g \bar{\psi}_{\uparrow} \psi_{\downarrow} \psi_{\downarrow} \psi_{\uparrow}
+$$
+
+Here $g$ is the coupling constant in the Cooper channel with $g>0$ for attraction. Since the interest lies on the superconducting instability, other interaction channels are considered to be less important but will be added later on. The fields $\psi, \bar{\psi}$ describe spinful fermions, $H=H_{k i n}+V-\mu$ is some single particle Hamiltonian including kinetic part, disorder $V(\mathbf{x})$ and chemical potential $\mu$. Even though the kernel of this action contains long derivatives $\left(D_{\tau}=\partial_{\tau}-i e A_{0}\right.$ and $\Pi_{i}=p_{i}+e A_{i}$ ) I will concentrate on the TR invariant situation without orbital or Zeeman magnetic field. In Fourier transformed Matsubara space ${ }^{4}$ Nambu-bispinors are introduced analogously to Chap. 5 (in what follows $C=i \sigma_{y} \tau_{x}$ )
+
+$$
+\Phi_{n}=\frac{1}{\sqrt{2}}\binom{\bar{\psi}_{n}^{T}}{i \sigma_{y} \psi_{n}} \text { and } \bar{\Phi}=(C \Phi)^{T}
+$$
+
+Using the replica trick one can next average over Gaussian white noise disorder with correlator
+
+$$
+\left\langle V(\mathbf{x}) V\left(\mathbf{x}^{\prime}\right)\right\rangle=\frac{1}{2 \pi \nu \tau} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+$$
+
+and decouple the both disorder induced and Cooper interactions: ${ }^{5}$
+
+$$
+S=\int_{\mathbf{x}} \bar{\Phi} G_{M}^{-1} \Phi+\frac{\pi \nu}{8 \tau} \operatorname{tr} M^{2}+\frac{1}{g T} \sum_{\alpha n} \Delta_{\alpha n}^{*} \Delta_{\alpha n}
+$$
+
+where
+
+$$
+G_{M}^{-1}=\left[\left(\begin{array}{cc}
+-i \hat{\epsilon}-i q \hat{A}_{0}^{T}+H_{k i n}^{T}-\mu & -\hat{\Delta} \\
+\hat{\Delta}^{\dagger} & -i \hat{\epsilon}-i q \hat{A}_{0}+\sigma_{y} H_{k i n} \sigma_{y}-\mu
+\end{array}\right)-\frac{i}{2 \tau} M\right]
+$$
+
+The Hubbard-Stratonovich (HS) field $M$ is a matrix in spin, Nambu, Matsubara and replica spaces, and $\hat{\Delta}=\sum_{\alpha, m} \Delta_{\alpha,-m} \hat{J}_{\alpha, m}$ where ${ }^{6}\left(\hat{J}_{\alpha, m}\right)_{n, n^{\prime}}=\delta_{n+n^{\prime}+1, m} P_{\alpha}$ and $P_{\alpha}$ is the projector on replica $\alpha$. In the infinite dimensional Matsubara space, hatted matrices denote $\hat{a}=\sum_{\alpha m} a_{\alpha, m} \hat{I}_{\alpha, m}$ with $\left(\hat{I}_{\alpha, m}\right)_{n n^{\prime}}=$ $\delta_{n-n^{\prime}, m} P_{\alpha}$.
+
+[^0]
+[^0]:    ${ }^{4}$ I use the convention $\psi=\sqrt{T} \sum_{n} \psi_{n} e^{-i \omega_{n}}$ and conjugated for $\bar{\psi}$. As before by convention matrices $\sigma_{\nu}$ live in spin space and $\tau_{\nu}$ in Nambu space.
+    ${ }^{5}$ Note that the Matsubara transformed of bosons ( $\Delta$ and gauge fields) is defined according to $\Delta(\tau)=\sum_{m} \Delta_{m} e^{-i \omega_{m} \tau}$.
+    ${ }^{6}$ The fermionic Matsubara frequencies are defined as $\epsilon_{n}=\pi T(2 n+1)$ and thus the constraint $n+n^{\prime}+1=m$ corresponds to $\epsilon_{n}+\epsilon_{n^{\prime}}=\omega_{m}$.
+
+# 7.3.2 Saddle point equations and solution 
+
+As a next step fermions are integrated out from Eq. (7.14)
+
+$$
+S=-\frac{1}{2} \operatorname{Tr} \ln \left[-C^{T} G_{M}^{-1}\right]+\frac{\pi \nu}{8 \tau} \operatorname{tr} M^{2}+\frac{1}{g T} \sum_{\alpha n} \Delta_{\alpha n}^{*} \Delta_{\alpha n}
+$$
+
+The capital Tr symbol includes spatial integration. The aim is to find a mean-field solution which is static and homogenous; thus I only present saddle-point equations for static fields ${ }^{7}$
+
+$$
+\begin{aligned}
+i \pi \nu M & =G_{M}(\mathbf{x}, \mathbf{x}) \\
+\frac{\Delta_{\alpha, 0}}{g T} & =\frac{1}{2} \operatorname{tr}\left[G_{M}(\mathbf{x}, \mathbf{x}) \tau_{-} J_{\alpha, 0}\right] \stackrel{(7.17 \mathrm{a})}{=} \frac{i \pi \nu}{2} \operatorname{tr}\left[M \tau_{-} J_{\alpha, 0}\right] \\
+\frac{\Delta_{\alpha, 0}^{*}}{g T} & =-\frac{1}{2} \operatorname{tr}\left[G_{M}(\mathbf{x}, \mathbf{x}) \tau_{+} J_{\alpha, 0}\right] \stackrel{(7.17 \mathrm{a})}{=}-\frac{i \pi \nu}{2} \operatorname{tr}\left[M \tau_{+} J_{\alpha, 0}\right]
+\end{aligned}
+$$
+
+The matrices $\tau_{ \pm}=\left(\tau_{x} \pm i \tau_{y}\right) / 2$ were introduced. I will prove below the following mean-field solution of Eqs. (7.17)
+
+$$
+M_{M F}=\tilde{\alpha} \sum_{n \geq 0, \alpha} P_{|n|}^{\alpha} \frac{\left|\epsilon_{n}\right| \Lambda_{z}-i \Delta_{\alpha, 0} \tau_{+} \Lambda_{x}+i \Delta_{\alpha, 0}^{*} \tau_{-} \Lambda_{x}}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}
+$$
+
+Up to possibly different phases of $\Delta_{\alpha, 0}$ it is trivial in replica space. In particular the superconducting gap is the same $\left|\Delta_{\alpha, 0}\right|=\left|\Delta_{\beta, 0}\right| \equiv\left|\Delta_{0}\right|$ in different replicas $\alpha \neq \beta$. The parameter $\tilde{\alpha}$ takes values $\tilde{\alpha}=1$ for usual parabolic dispersion and $\tilde{\alpha}=1 / 2$ for 3D TI surface states. The projector $P_{|n|}^{\alpha}$ projects on a single replica $\alpha$ and onto a pair of Matsubara frequencies of opposite sign but same magnitude $\epsilon_{n}$ and $-\epsilon_{n}$. This two-dimensional space will be called $\Lambda$-space and $\Lambda_{x}\left(\Lambda_{z}\right)$ is the first (third) Pauli matrix in this space (it corresponds to $J_{\alpha, 0}=\sum_{n \geq 0, \alpha} P_{|n|}^{\alpha} \Lambda_{x}$ ).
+Here, I will only show that the mean field self-energy (7.18) solves the gap equation. The proof for the SCBA equation (7.17a) can be found in App. E.2. Insertion of $M_{M F}$ into Eq. (7.17b) yields
+
+$$
+\frac{\Delta_{\alpha, 0}}{g T}=\tilde{\alpha} \pi \nu \Delta_{\alpha, 0} \sum_{n=-\infty}^{\infty} \frac{1}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}} \doteq \tilde{\alpha} \nu \Delta_{\alpha, 0} \frac{1}{T} \int_{\left|\Delta_{\alpha, 0}\right|}^{\lambda} d \epsilon \frac{\tanh \frac{\epsilon}{2 T}}{\sqrt{\epsilon^{2}-\left|\Delta_{\alpha, 0}\right|^{2}}}
+$$
+
+The symbol " $\doteqdot$ " indicates equality of sum and integral upon appropriate UV regularization at the scale $\lambda$. This is the standard integral of BCS theory, $\lambda$ is set by the Debye frequency. Note the absence of $1 / \tau$ in view of Anderson's theorem [313, 314]. The textbook results for the transition temperature
+
+$$
+T_{c}=\lambda e^{-\frac{1}{g \nu g}}
+$$
+
+and related quantities, such as $\Delta_{\alpha, 0}(T)$, can now be readily obtained. For example the DOS in the superconducting state is determined by the following quantity $(n \geq 0)$
+
+$$
+\frac{\operatorname{tr}^{\sigma, \tau, \text { rep. }} G_{M_{M F}}\left(\mathbf{x}, \mathbf{x} ; \epsilon_{n}, \epsilon_{n}\right)}{2 N_{R}}=i 2 \pi \nu \tilde{\alpha} \frac{\epsilon_{n}}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{0}\right|^{2}}}
+$$
+
+[^0]
+[^0]:    ${ }^{7}$ Gauge potentials are omitted here.
+
+The analytic continuation $i \epsilon_{n} \rightarrow \epsilon+i 0$ employing the principal branch of the square root provides $\sqrt{\epsilon_{n}^{2}+\left|\Delta_{0}\right|^{2}} \rightarrow-i \sqrt{\epsilon^{2}-\left|\Delta_{0}\right|^{2}}$ for $\epsilon^{2}>\left|\Delta_{0}\right|^{2}$ [this was also used in Eq. (7.19)]. The standard superconducting DOS
+
+$$
+\rho(\epsilon)=\Im \mathfrak{m} \frac{\operatorname{tr}^{\sigma, \tau, \nu \varepsilon p} G_{M_{M F}}^{(R)}}{2 \pi N_{R}}=2 \nu \tilde{\alpha} \frac{\epsilon}{\sqrt{\epsilon^{2}-\left|\Delta_{0}\right|^{2}}} \theta\left(\epsilon^{2}-\left|\Delta_{0}\right|^{2}\right)
+$$
+
+consistently reproduces the $\left|\Delta_{0}\right| \rightarrow 0$ limit both for the 2DES with parabolic dispersion (recall $\nu$ does not include spin) and 3D TI surface states.
+
+In what follows I choose a gauge in which
+
+$$
+\Delta_{\alpha, 0} \equiv \Delta>0 \forall \alpha=1, \ldots, N_{R}
+$$
+
+then the self-energy has the form $M_{M F}=\tilde{\alpha} \tilde{\Lambda}$ with
+
+$$
+\tilde{\Lambda}=\sum_{n \geq 0, \alpha} P_{|n|}^{\alpha} \frac{\left|\epsilon_{n}\right| \Lambda_{z}+\Delta \tau_{y} \Lambda_{x}}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}}=\left(\begin{array}{cccccc}
+\cdot & 0 & 0 & 0 & 0 & \cdot \cdot \\
+0 & \frac{\epsilon_{2}}{\sqrt{\epsilon_{2}^{2}+\Delta^{2}}} & 0 & 0 & \frac{\Delta \tau_{y}}{\sqrt{\epsilon_{2}^{2}+\Delta^{2}}} & 0 \\
+0 & 0 & \frac{\epsilon_{1}}{\sqrt{\epsilon_{1}^{2}+\Delta^{2}}} & \frac{\Delta \tau_{y}}{\sqrt{\epsilon_{1}^{2}+\Delta^{2}}} & 0 & 0 \\
+0 & 0 & \frac{\Delta \tau_{y}}{\sqrt{\epsilon_{1}^{2}+\Delta^{2}}} & \frac{\epsilon_{1}}{\sqrt{\epsilon_{1}^{2}+\Delta^{2}}} & 0 & 0 \\
+0 & \frac{\Delta \tau_{y}}{\sqrt{\epsilon_{2}^{2}+\Delta^{2}}} & 0 & 0 & \frac{\epsilon_{2}}{\sqrt{\epsilon_{2}^{2}+\Delta^{2}}} & 0 \\
+\cdot \cdot & 0 & 0 & 0 & 0 & \cdot
+\end{array}\right)
+$$
+
+In the $\Delta \rightarrow 0$ limit the usual diffusive form is restored for $\tilde{\Lambda} \rightarrow \Lambda=\operatorname{diag}(\mathbf{1},-\mathbf{1})$.
+
+# 7.3.3 Derivation of symmetry broken sigma model 
+
+The derivation of the symmetry broken sigma model (SSB NL $\sigma \mathrm{M}$ in the remainder) can be obtained by standard gradient expansion technique, see App. E. 3 for the exemplary case of 2DES with parabolic dispersion. A natural, but physically important observation of this procedure follows: For $\Delta \neq 0$ the contributions of the diamagnetic term and retarded-retarded/advanced-advanced bubbles to the conductivity tensor do not cancel up. The non-interacting, gauged SSB NL $\sigma \mathrm{M}$ has the form [317-319]
+
+$$
+S=\frac{g}{32} \operatorname{Tr}\left[\tilde{D}_{i} \tilde{Q}\right]^{2}-2 z \operatorname{Tr}\left[\tilde{Q}\left(\hat{\epsilon}+e \tilde{A}_{0, \tau_{z}}+\Delta J_{0} \tau_{y}\right)\right]+\frac{4 z}{\pi T} \sum_{m, \alpha} \int_{\mathbf{x}}\left(e \tilde{A}_{0}\right)_{\alpha m}\left(e \tilde{A}_{0}\right)_{\alpha-m}
+$$
+
+From the direct calculation in the appendix and by comparison with Chap. 5 the bare values of the coupling constants are $g=g_{D}$ (the normal state Drude conductance in units $e^{2} / h$ ) and $z=\tilde{\alpha} \pi \nu / 4$. The gauge potentials entering the long derivatives $\tilde{D}_{i}=\partial_{i}+i \epsilon\left[\tilde{\mathbf{A}}_{\tau_{z}}, \bullet\right]$ contain the Goldstone-boson of SSB and have the following non-trivial structure in Nambu space:
+
+$$
+\begin{aligned}
+e \tilde{A}_{0, \tau_{z}} & =\left(\begin{array}{cc}
+\widetilde{e \tilde{A}_{0}} & 0 \\
+0 & \widetilde{e \tilde{A}_{0}}
+\end{array}\right)_{T} \text { with }\left(e \tilde{A}_{0}\right)_{\alpha, n}=\left(e A_{0}-i \omega \Theta\right)_{\alpha, n} \\
+e \tilde{\mathbf{A}}_{\tau_{z}} & =\left(\begin{array}{cc}
+-\widetilde{\mathbf{A}}^{T} & 0 \\
+0 & \widetilde{e \tilde{\mathbf{A}}}
+\end{array}\right)_{T} \text { with } e \tilde{\mathbf{A}}_{\alpha, n}=(e \mathbf{A}-\nabla \Theta)_{\alpha, n}
+\end{aligned}
+$$
+
+In contrast to the conventional case, the saddle-point is given by $\tilde{Q}=\tilde{\Lambda}$, fluctuations are parametrized by $\tilde{Q}=\tilde{S}^{-1} \tilde{\Lambda} \tilde{S}$. As usual, $\tilde{S}$ has the property $\tilde{S}^{T} C \tilde{S}=C$. Thus the set $\{\tilde{S}\}$ is isomorphic to the symplectic group $\mathbf{S p}\left(2_{\sigma} \times 2_{\tau} \times 2 N_{M} N_{R}\right)$ (orthogonal group $\left.\mathbf{O}\left(2_{\tau} \times 2 N_{M} N_{R}\right)\right)$ for a TR invariant theory of conventional 2DES (3D TI surface states). ${ }^{8}$ In Eq. (7.24) and in the following Eqs. (7.33) and (7.39a) the topological term present for 3D TI surface states is omitted for simplicity. Its effect will be discussed below, Sec. 7.4.4.
+
+# 7.3.4 Non-interacting diffusion 
+
+It will be convenient to diagonalize the SSB saddle point
+
+$$
+\tilde{\Lambda}=U_{\Delta}^{\dagger} \Lambda U_{\Delta}
+$$
+
+by the unitary rotation matrix $\left(\cos \phi_{n}=\frac{1}{\sqrt{2}} \sqrt{1+\frac{\varepsilon_{n}}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}}}\right)$
+
+$$
+U_{\Delta}=\sum_{n \geq 0, \alpha} P_{|n|}^{\alpha}\left(\begin{array}{cc}
+\cos \phi_{n} & \tau_{y} \sin \phi_{n} \\
+-\tau_{y} \sin \phi_{n} & \cos \phi_{n}
+\end{array}\right)_{\Lambda}
+$$
+
+This way the SSB NL $\sigma \mathrm{M}$ field can be expressed as
+
+$$
+\tilde{Q}=U_{\Delta}^{\dagger} q U_{\Delta}
+$$
+
+with $q=s^{-1} \Lambda s$ and $s=U_{\Delta} \tilde{S} U_{\Delta}^{\dagger}$ fulfills $s^{T} C s=C$. Thus the SSB NL $\sigma \mathrm{M}$ field $q$ field lives on the same manifold as in conventional NL $\sigma \mathrm{M}$ s.
+
+Employing this rotation to the NL $\sigma \mathrm{M}$ action Eq. (7.24) leads to
+
+$$
+S=\frac{g}{32} \operatorname{Tr}[\nabla q]^{2}-2 z \operatorname{Tr}[q \hat{\varepsilon}]
+$$
+
+(For simplicity I omitted gauge potentials and $\mathbf{U}(1)$-Goldstonebosons.) The notation $\varepsilon_{n}=\sqrt{\epsilon_{n}^{2}+\Delta^{2}}$ was introduced. Thus the non-interacting diffusive propagator for diffuson and Cooperon fields is
+
+$$
+D_{\mathbf{k}}\left(n_{1}, n_{2}\right)=\left[\mathbf{k}^{2}+\frac{16 z}{g}\left(\varepsilon_{n_{1}}+\varepsilon_{n_{2}}\right)\right]^{-1}
+$$
+
+Consequently, in a mean-field description the non-interacting diffusion terminates the latest on a scale $L_{\Delta} \sim \sqrt{l v_{F} / \Delta}$.
+
+### 7.3.5 Linear response and crossover to XY-model
+
+Evaluation of the NL $\sigma \mathrm{M}$, Eq. (7.24) at the level of the saddle-point $\tilde{Q}=\tilde{\Lambda}$ leads to the following action of extended gauge potentials ${ }^{9}$
+$S=\frac{4 K}{\pi} \sum_{\alpha} \int_{\mathbf{x}}(e \tilde{\mathbf{A}})_{\alpha m=0}(e \tilde{\mathbf{A}})_{\alpha m=0}+\sum_{m>0, \alpha} \sigma\left(i \omega_{m}\right) \frac{\omega_{m}}{T} \int_{\mathbf{x}}(\tilde{\mathbf{A}})_{\alpha m}(\tilde{\mathbf{A}})_{\alpha-m}+\frac{4 z}{\pi T} \sum_{m, \alpha} \int_{\mathbf{x}}\left(e \tilde{A}_{0}\right)_{\alpha m}\left(e \tilde{A}_{0}\right)_{\alpha-m}$.
+
+[^0]
+[^0]:    ${ }^{8}$ It is worth to note that the NL $\sigma \mathrm{M}$ field considered in the present chapter of the main text corresponds to the usual Wigner-Dyson class. One might rather expect a NL $\sigma \mathrm{M}$ of the corresponding Bogoliubov-deGennes class. However, it turns out that a diffusive NL $\sigma \mathrm{M}$ theory in a Bogoliubov-deGennes class can not be defined in the SSB state, see App. E.4.
+    ${ }^{9}$ For simplicity I omit tree level contributions here, they are not important for the present discussion.
+
+The relationship between the stiffness $K$ and the normal state conductance $g$, gap $\Delta$ and temperature $T$ reported in Eq. (7.3) is a direct consequence of this treatment. The fact that $K$ is local (i.e. momentum independent in Fourier space) is the defining property of the "London limit" and related to type-II superconductivity. The dissipative electronic contribution to conductance $\sigma\left(i \omega_{m}\right)$, coupled to non-zero Matsubara harmonics of the gauge potentials is not important in the present discussion and reported for completeness only. Its evaluation leads to the Mattis-Bardeen formula [320] for the optical conductivity in a superconductor.
+
+As noted above, the action of electromagnetic fields, Eq. (7.31), not only determines the optical conductivity, but also formalizes the crossover to the XY-model, i.e. the $\mathbf{U}(1)-\mathrm{NL} \sigma \mathrm{M}$ which is the theory underlying the BKT transition.
+
+$$
+S_{\mathbf{U}(1)}=\frac{K}{\pi} \int_{\mathbf{x}} \sum_{\alpha}\left(\nabla\left(2 \Theta_{\alpha}\right)\right)^{2}
+$$
+
+It is worth to repeat the present convention for the parametrization of the order parameter field: $\Delta_{\alpha}(\mathbf{x})=\Delta e^{2 i \Theta_{\alpha, n=0}} \equiv \Delta e^{2 i \Theta_{\alpha}}$. Note that because of the last term in Eq. (7.31) all but the zeroth harmonic of $\Theta_{\alpha, n}$ are gapped and live only on length scales shorter than $L_{T} \sqrt{(\Delta / 2 T) \tanh (\Delta / 2 T)}$.
+
+# 7.4 Beyond mean-field treatment on the basis of the normal state sigma model 
+
+In the previous section I presented the microscopic fermionic theory, the coupled SCBA and gap equations and the consequential SSB NL $\sigma$ M. Here I would like to rederive the SSB NL $\sigma$ M directly from the interacting NL $\sigma$ M, Eqs. (1.25).
+
+### 7.4.1 Saddle-point equations
+
+Upon decoupling of Cooper interaction the action becomes
+
+$$
+S=\frac{g}{32} \operatorname{Tr}\left[(\nabla Q)^{2}\right]-2 z \operatorname{Tr} Q\left[\hat{\epsilon}+i\left(\begin{array}{cc}
+0 & -\bar{\Delta} \\
+\bar{\Delta}^{\dagger} & 0
+\end{array}\right)\right]-\frac{4 z}{\pi \gamma_{c} T} \sum_{\alpha n} \int_{\mathbf{x}} \Delta_{\alpha n}^{*} \Delta_{\alpha n}+S_{i n t}^{(\rho)}+S_{i n t}^{(\sigma)}
+$$
+
+Variation with respect to $\Delta^{*}$ leads to the gap equation
+
+$$
+\frac{\Delta_{\alpha, 0}}{-\gamma_{c} T}=\frac{i \pi}{2} \operatorname{tr}\left[Q \tau_{-} J_{\alpha, 0}\right]
+$$
+
+which is analogous to Eq. (7.17b) with the sole replacement $\bar{\alpha} \nu g \rightarrow-\gamma_{c}$. As before a solution is $Q=\bar{\Lambda}$ and the transition temperature
+
+$$
+T_{c}=\lambda e^{\frac{1}{\bar{\alpha}}}
+$$
+
+follows. In the simplest case, the NL $\sigma \mathrm{M}$ is analyzed at bare level. The diffusive UV cut-off is $\lambda \sim 1 / \tau$ and $\gamma_{c}$ is replaced by $\gamma_{c}^{(0)}$ which already includes the ballistic renormalization from scales between $\omega_{D}$ and $1 / \tau$. All standard implications for this BCS-like superconductor immediately follow. Accordingly, the microscopic, fermionic treatment displayed in the previous section and the saddle-point treatment from the NL $\sigma \mathrm{M}$, Eq. (7.34) are equivalent. Still, the latter is more convenient, since it easily allows to
+
+perform the mean-field analysis at arbitrary scale $L \gg l$ and to take into account the renormalization of parameters. In this case $\gamma_{c}=\gamma_{c}(y)$ is the running coupling constant evaluated at scale $L(y=\ln L / l)$. But which energy scale should be employed for $\lambda$ ?
+In general, $\lambda$ is set by the running scale itself, i.e. by the new UV cut-off after RG. To understand why, consider Eq. (7.35) in the simplest case when $\gamma_{c}$ is renormalized only by the standard Cooper-term
+
+$$
+\frac{d \gamma_{c}}{d y}=-2 \gamma_{c}^{2} \leftrightarrow \gamma_{c}(y)=\frac{1}{\left[\gamma_{c}^{(0)}\right]^{-1}+2 y}
+$$
+
+Thus Eq. (7.35) becomes in the exemplary case $L=L_{T_{c}}$ simply
+
+$$
+T_{c}=\frac{1}{\tau} e^{\frac{1}{\gamma_{c}^{(0)}}}=T_{c} e^{\frac{1}{\gamma_{c}\left(y_{c}\right)}}
+$$
+
+Per definition, $T_{c}$ is the scale where $\gamma_{c}(y)$ diverges. This was already exploited in Sec. 1.5.4 .
+
+# 7.4.2 Analysis of length scales 
+
+Up to now I analyzed the SSB NL $\sigma$ M on the bare level. Ultimately, the aim will be to go beyond this mean-field analysis. To this end, I would like to recollect the hierarchy of length scales that was exposed up to now.
+On the superconducting saddle point the diffusive and HS-fields entering Eq. (7.33) have to be replaced by
+
+$$
+\begin{aligned}
+Q & \rightarrow \bar{Q} \equiv U_{\Delta}^{\dagger} q U_{\Delta} \\
+\Delta_{\alpha, n} & \rightarrow \Delta \delta_{n, 0}+\delta \Delta_{\alpha, n}
+\end{aligned}
+$$
+
+According to the Ginzburg-Landau analysis, Sec. 7.2, the correlation length $\xi$ determines the lengthscale beyond which the longitudinal part of the HS-field is frozen out. ${ }^{10}$ Below this length scale both phase fluctuations and longitudinal fluctuations of $\Delta_{\alpha, n}$ are effectively massless. Re-integration of the auxiliary HS-field $\delta \Delta_{\alpha, n}$ leads to the NL $\sigma \mathrm{M}$ which again takes the form exposed in Eq. (1.25a) on p. 16
+
+$$
+S=S_{\sigma}+S_{i n t}^{(\rho)}+S_{i n t}^{(\sigma)}+S_{i n t}^{(c)}
+$$
+
+with
+
+$$
+\begin{aligned}
+S_{\sigma} & =\frac{g}{32} \int_{\mathbf{x}} \operatorname{tr}\left[(\nabla \bar{Q})^{2}\right]-2 z \int_{\mathbf{x}} \operatorname{tr}\left[\bar{Q}\left(\dot{\epsilon}+\Delta J_{0} \tau_{y}\right)\right] \\
+S_{i n t}^{(\rho)} & =\frac{\pi T}{4} \Gamma_{\rho} \sum_{\alpha, n} \sum_{r=0,3} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r 0} \bar{Q}\right] \operatorname{tr}\left[I_{-n}^{\alpha} t_{r 0} \bar{Q}\right] \\
+S_{i n t}^{(\sigma)} & =\frac{\pi T}{4} \Gamma_{i} \sum_{\alpha, n} \sum_{r=0,3} \sum_{j=1,2,3} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r j} \bar{Q}\right] \operatorname{tr}\left[I_{-n}^{\alpha} t_{r j} \bar{Q}\right] \\
+S_{i n t}^{(c)} & =\frac{\pi T}{2} \Gamma_{c} \sum_{\alpha, n} \sum_{r=0,3}(-)^{r} \int_{\mathbf{x}} \operatorname{tr}\left[I_{n}^{\alpha} t_{r 0} \bar{Q}^{(n)} I_{n}^{\alpha} t_{r 0} \bar{Q}^{(n)}\right]
+\end{aligned}
+$$
+
+Apart from the noted replacement $Q \rightarrow \bar{Q}$ there are two further modifications as compared to the normal state NL $\sigma \mathrm{M}$ reported in Eq. (1.25):
+
+[^0]
+[^0]:    ${ }^{10}$ I reconfirmed the parametric dependence of this length scale by direct calculation of the $\left\langle\delta \Delta_{\alpha, n} \delta \Delta_{\alpha, n}\right\rangle$ correlator on the basis of Eqs. (7.33) and (7.38b).
+
+![img-52.jpeg](img-52.jpeg)
+
+Figure 7.2: Summary of length scales extracted from the mean-field theory. Between the Fermiwavelength $\lambda_{F}$ and the mean free path $l$ the interplay of electronic excitations and interaction in the Cooper channel ("Higgs"-field) lead to the conventional $R G$ determining the superconducting instability. The length scales $L_{T_{c}} \lesssim L_{T} \ll L_{\Delta}$ are the diffusive length scales associated via the bare Diffusion coefficient to the energies $T_{c} \gtrsim T \gg \Delta$ for temperatures near the transition. Beyond the coherence length $\xi$ only phase fluctuations of the order parameter field survive and $\xi_{B K T}$ is the BKT coherence length beyond which phase correlations decay exponentially in the normal phase.
+
+- The replacement $\hat{\epsilon} \rightarrow \hat{\epsilon}+\Delta J_{0} \tau_{y}$ in the frequency term.
+- The modified interaction in the Cooper channel. Here the following notation was introduced
+
+$$
+\hat{Q}^{(n)}= \begin{cases}\hat{Q}-\hat{\Lambda}, & \text { if } n=0 \\ \hat{Q}, & \text { else }\end{cases}
+$$
+
+The SSB NLøM action presented here differs from Eq. (7.24) in the following points:
+
+- I omitted gauge potentials for simplicity.
+- Since both transversal and longitudinal fluctuations of $\Delta_{\alpha, n}$ were taken into account, these omitted long derivatives do not contain the gradient of the superconducting phase.
+As I already exposed above, apart from $\xi$ there is a second length-scale $L_{\Delta}$ at which free diffusion stops. Also, interacting diffusion propagators in singlet and triplet channel are expected to be gapped the latest on this scale. Note that near the transition the thermal length, which provides a mass to diffusive modes even in the normal state, is much shorter: $L_{T} \ll L_{\Delta}$. The hierarchy of length scales extracted from the mean-field treatment is exposed in Fig. 7.2. ${ }^{11}$
+
+
+# 7.4.3 Strategy and preliminary results 
+
+To summarize, in the previous Secs. 7.3.1-7.4.2, a theory of disordered 2D systems at temperatures below the mean-field transition temperature $T_{c}$ was developed. The analysis of length scales of the mean-field theory, see Fig. 7.2, implies that there is a stepwise quantum to classical crossover in the following sense. At small length scales $L \in\left(l, L_{T_{c}}\right)$ the physics is governed by quantum diffusion and described by the NLøM, Eq. (7.39). Subsequently, at intermediate scales, the modes of the diffusive
+
+[^0]
+[^0]:    ${ }^{11}$ In Fig. 7.2 I omitted the dephasing length $L_{\phi}$ for convenience.
+
+quantum theory are gapped in a stepwise fashion (at different length scales). Ultimately, at length scales larger than the coherence length $\xi$, only the static $\mathbf{U}(1)$ Goldstone mode remains gapless. Thus, at these large length scales, the system is governed by the classical $\mathbf{U}(1)$ model.
+
+In the beginning of this chapter I posed the question, what the correct transition temperature $T_{*}$ was, when phase fluctuations, vortices and renormalization of both $T_{c}$ and resistance are taken into account. The theory, which was developed above, can capture all of these effects. It is worthwhile emphasizing, that within this theory the diffusive NL $\sigma \mathrm{M}$ and the NL $\sigma \mathrm{M}$ of $\mathbf{U}(1)$ Goldstone modes govern the physics on different length scales. In particular, the ultimate long-wavelength behavior is described by the usual $\mathbf{U}(1)$ model containing vortex excitations.
+
+The first major result in this project concerns the dependence of the transition temperature $T_{*}$ on the disorder strength. In view of the separation of length scales explained above, the form of Eq. (7.5) is generally preserved. However, $T_{B C S}$ should be replaced by the actual mean-field transition temperature $T_{c}$ and the resistance $t_{D}$ (or, more precisely, the stiffness $K$ ) by its value where all quantum corrections from length scales less the $\xi$ are incorporated.
+
+The question arises what these renormalized parameters $T_{c}$ and $K$ actually are. Since the gap $\Delta$ of diffusion modes is negligible as long as one is interested in the physics at length scales below $L_{\Delta}$ one is tempted to approximate the SSB NL $\sigma \mathrm{M}$, Eq. (7.39), by the conventional interacting NL $\sigma \mathrm{M}$, Eqs. (1.25) on p. 16. For example, near the transition temperature, this approximation is controlled in $\Delta / T \ll 1$. The conventional NL $\sigma \mathrm{M}$ can be renormalized in the interval $\left(l, L_{T_{c}}\right)$ leading to the RG Eqs. (1.28) for the case of conventional 2DES. The case of 3D TI surface states is captured by the modifications explained in the discussion below Eqs. (1.28).
+
+This scheme is appealing in the following sense: Since the same RG equations are applied to both regions $T \leq T_{c}$ and $T \geq T_{c}$ the properties (in particular the critical exponents and the $T_{c}(t)$ dependence, Fig. 7.1) of the mean field transition are independent from whether the transition is approached from below or from above.
+
+At $L_{T_{c}}$ the Cooper interaction diverges $\gamma_{c} \rightarrow \infty$. To be specific, I would like to analyze this divergence in the exemplary case of Coulomb interaction in the singlet channel and absent interaction in the triplet channel $\left(\gamma_{\rho}=-1, \gamma_{t}=0\right)$. Then the RG equations to leading order in $t$ and $t \gamma_{c}$ are [see Eqs. (1.28)]
+
+$$
+\begin{aligned}
+\frac{1}{t} \frac{d t}{d y} & =t\left[2-\gamma_{c}\right] \\
+\frac{d \gamma_{c}}{d y} & =\frac{t}{2}\left[1+\gamma_{c}\right]-2 \gamma_{c}^{2}
+\end{aligned}
+$$
+
+The associated RG flow is depicted in Fig. 7.3. Formally, it contains an attractive strong coupling fixed point $\left(t^{*}, \gamma_{c}^{*}\right) \rightarrow(\infty,-\infty){ }^{12}$
+
+As explained above, the value of the coupling constants at the scale $L_{T_{c}}$ determine the parameters of the theory at larger length scales [in particular of the $\mathbf{U}(1)$ model]. In particular, I want to discuss the consequences of a formally divergent resistance $t$ in the following.
+
+Divergent resistance $t$ raises the question about the correct superconducting coherence length. Determining $\xi$ as in Eq. (7.10) with renormalized conductance implies vanishing coherence length. This
+
+[^0]
+[^0]:    ${ }^{12}$ As I noted in the footnote 23 on on p. 17, the RG equations beyond leading order in $t \gamma_{c}$ were derived recently by I.S. Burmistrov, I.V. Gornyi and A.D. Mirlin. These new results indicate, that the attractive, superconducting fixed point resides at $\left(t^{*}, \gamma_{c}^{*}\right) \rightarrow(0,-\infty)$. This seems to be more intuitive from the physical point of view. Nevertheless, the questions about the stiffness $K$ at the lengthscale of the physical coherence length $\xi$ remain. I acknowledge my advisors for sharing their unpublished results with me.
+
+![img-53.jpeg](img-53.jpeg)
+
+Figure 7.3: The $R G$ flow associated to Eqs. (7.40) in the reduced plane of resistivity $t$ and Cooper channel coupling constant $\gamma_{c}$. There are three unstable fixed points (red dots). Further, there are two attractive (strong coupling) fixed points (green dots). They can be formally associated with the insulator ( $t \rightarrow \infty$ and $\gamma_{c}=0$ ) and the superconductor $(t \rightarrow \infty$ and $\gamma_{c} \rightarrow-\infty)$. Recall that Eqs. (7.40) are perturbative in $t$ and $t \gamma_{c}$ and thus controlled only in the gray region. When the flow follows the blue or similar curves, the renormalization of $t$ can be neglected: this was exploited by Finkelstein [98, 115, 116] and leads to the suppression of $T_{c}$ as given by Eq. (1.34) on p. 21.
+means that the $\mathbf{U}(1)$ model already occurs on the scale $L_{T_{c}}$, where $T_{c}$ is determined as in Sec. 1.5.4. In contrast to the semiclassical estimate reported in Fig. 7.2, this is a much shorter length scale.
+
+The fact that the $\mathbf{U}(1)$ model is the correct low-energy theory starting from the length scale $L_{T_{c}}$ seems to be reasonable from the physical point of view.
+
+On the other hand, the procedure evokes the following question: As mentioned above, a prominent input parameter of the BKT theory is the value of the stiffness $K$ at the scale of the coherence length. If one employed the semiclassical relation $K \propto \Delta^{2} / t_{D}$ and simply replaced $t_{D} \rightarrow t^{*}=\infty$ it would follow that the stiffness is always zero.
+
+Notwithstanding the important achievements of the theory developed in this chapter, it will be a question of major significance how to improve the incorporation of quantum corrections into the parameters of the BKT theory (stiffness and vortex fugacity). In particular, it can be expected that both stiffness and coherence length should be finite at the end of the RG governed by the diffusive NLeM.
+
+The following scenario is conceivable: From the present calculations it is apparent that the stiffness corresponds to a "current-current" correlator of $Q$ fields. However, here the "current" operator has a different tensor structure in Nambu-space than the usual electromagnetic current operator. Actually $K$ is determined by the diffusion constant in the singlet Cooper channel. It may be that, close to the superconducting fixed point, the quantum corrections to the stiffness are different from the conductivity corrections. Field theoretically speaking, the hypothesis relies on the fact that two different operators, which might have the same scaling behavior near one fixed point, can scale differently near another fixed point. Therefore, the conjectured behavior is that $K\left(L_{T_{c}}\right)$ is finite and independent of $t\left(L_{T_{c}}\right)$.
+
+These improvements of the theory are of direct relevance for the superconducting transition temperature $T_{*}$ and might have further implications on other physical observables, such as thermal transport coefficients.
+
+# 7.4.4 Kosterlitz-Thouless transition for topological insulator surface states 
+
+The BKT transition separates the phase of tightly bound vortex-antivortex pairs (superconductor) from the vortex plasma (normal phase). As explained in Sec. 1.5.4 the RG treatment of this transition is performed by means of perturbative inclusion of vortex effects into the effective stiffness. In particular, the leading correction stems from a single vortex dipole and thus $d K^{-1} / d y=z_{v}^{2}$.
+
+Recall that $z_{v}$ is the fugacity (Boltzmann weight) of a single vortex. It accounts for the regularized contribution of divergent phase gradient inside the vortex core and is thus determined by length scales much shorter than the coherence length $\xi$. Physically, this regularization relies on the vanishing order parameter $\Delta$ at the center of the vortex. In addition, the preceding sections show that fluctuations of the diffusive $Q$-matrix on length scales $\left(l, L_{\Delta}\right)$ will affect the fugacity. ${ }^{13}$ Beyond a circle of radius $L_{\Delta}$ the $Q$-matrix will be fixed to the saddle point configuration. Concentrating on class AII and the exposed boundary conditions, the diffusive fluctuations inside the disk $r \leq L_{\Delta}$ fall into two topologically distinct sectors containing an even respectively odd number of instantons. I will therefore associate an internal $\mathbb{Z}_{2}$ degree of freedom to each vortex core. Vortices with an even number of instantons in their core have a positive Boltzmann weight $z_{v,+}$ while those with an odd number of instantons are characterized by a fugacity $z_{v,-}$. The dominant contribution to $z_{v,-}$ stems from a single instanton and thus
+
+$$
+z_{v,-} \sim \pm e^{-2 \pi g} z_{v,+}
+$$
+
+Here the upper sign corresponds to a non-topological symplectic metal (NTSM) while the minus sign follows from the $\mathbb{Z}_{2} \theta$-term appearing in the NLeM of 3D TI surface states. Since the logarithmic interaction of vortices is independent of their internal degree of freedom the sole modification of RG equations stems from replacing $z_{v} \rightarrow z_{v}^{(l o t)}=z_{v,+}+z_{v,-}$ in the RG Eqs. (1.32). Therefore, for the case 3D TI surface states the bare total Boltzmann weight of vortices is reduced as compared to NTSMs. Consequently, the tendency to superconductivity is enhanced.
+
+It is conceivable that the weakening of vortex effects is even stronger and a complete cancellation occurs. In this context, recall the mechanism exposed in Sec. 4.2.4 in the context of the localization problem in chiral classes. Also recall 't Hoofts matching condition of anomalies, Sec. 2.3.5: In the SSB phase the Goldstone bosons are forced to produce the same anomaly as the original fermionic excitations at high energies. Therefore, one might expect $\Theta$-correlations to be long-ranged.
+
+### 7.4.5 Physical observables
+
+To conclude this chapter I would like to discuss the physical observable which will encode the findings of this project: the temperature and frequency dependence of conductivity. As exposed in Eq. (7.31) there are two contributions: the fermionic, dissipative contribution $\sigma(\omega)$ and the divergent contribution of the condensate $\sim K / \omega$.
+
+The dissipative electronic contribution encodes the quantum corrections from length scales where quantum effects are important. Since near the transition temperature the electronic contribution is dominant for $\omega \gtrsim \Delta^{2} / T$ (i.e. $L_{\omega} \lesssim \xi$ ) the high-frequency $\omega \gg T$ dependence of conductivity at fixed
+
+[^0]
+[^0]:    ${ }^{13}$ Here, the length scale $L_{\Delta}$ might not necessarily be determined by bare coupling constants of the NLeM.
+
+temperature directly probes its renormalization in the range $\left(l, L_{T}\right)$. Alternatively, the same effect can be measured in the temperature dependence of conductivity at fixed $\omega \gtrsim \Delta^{2} / T$.
+
+The effect of quantum corrections to the stiffness determine the dependence of $T_{*}$ on the disorder strength. The dissipative contribution to DC current due to the friction of vortices was calculated in Ref. [321] to be proportional to $g\left(\xi_{B K T} / \xi\right)^{2}$ in the regime $T_{*}<T<T_{c}\left(\xi_{B K T} \sim e^{\text {const. }} \sqrt{T-T^{*}}\right.$ is the BKT correlation length).
+
+# 7.5 Summary of chapter 7 
+
+This last chapter of the present thesis was devoted to the superconducting instability of disordered 2D systems, including in particular also 3D TI surface states. The main goal was to develop a theory which describes the superconducting transition taking into account the interplay of the following effects:
+
+- interference corrections to resistance,
+- renormalization of the interaction amplitude in the Cooper channel due to quantum diffusion and electron-electron interactions,
+- the influence of vortex excitations in the $\mathbf{U}(1)$ Goldstone modes.
+
+Such a theory was developed in Secs. 7.3 and 7.4. It takes the form of the NLoM [317-319] presented in Eq. (7.39). Excitations of this theory are gapped on different length scales. This hierarchy of length scales, see Fig. 7.2, dictates the crossover from the full quantum NLom to the $\mathbf{U}(1)$ model: At length scales longer than the superconducting coherence length $\xi$, the effective field theory contains only the field describing the phase fluctuations of the condensate.
+
+Therefore, ultimately, the nature of the superconducting transition is of the BKT type. The effect of quantum diffusion taking place at length scales shorter than $\xi$ enters the BKT theory as follows: The bare coupling constants of the $\mathbf{U}(1)$ model, the stiffness $K$ and the fugacity $z_{v}$, are renormalized by the diffusive RG of the NLom.
+
+The observables under investigation, the AC transport properties and the dependence of the transition temperature on disorder, were addressed in Secs. 7.3.5 and 7.4.5. I also explained in Sec. 7.4.4, why the superconducting instability is favored in 3D TI surface states as compared to a non-topological 2DES of the same universality class.
+
+
+
+
+# Conclusions 
+
+In the introduction to this thesis I posed a set of six questions to be addressed in the main part of the dissertation. I here would like to return to these questions and summarize the main results achieved in the present work.
+
+After the two reviewing chapters 1 and 2 I returned to question number (i) of the introduction. In Chap. 3 the semiclassical magnetotransport coefficients of 3D TI surface states were derived. First, I concentrated on the Drude approximation which is valid whenever the Zeeman energy is negligible and the quasiparticle picture holds (i.e. for sufficiently long mean free path). Next, I turned to the situation when the Zeeman term is important and leads to the anomalous Hall effect (AHE) [169, 170]. The main result of this chapter is the conductivity tensor as a function of Zeeman energy and orbital magnetic field. It represents a generalization to previous calculations [174] which assumed zero orbital magnetic field. This is particularly important, inasmuch AHE experiments probe the behavior of Hall conductance as a function of orbital magnetic field. It is not only applicable to 3D TI surface states but also to other 2D materials. Finally, the last part of Chap. 3 is devoted to the calculation of the local current density in the regime of well pronounced LLs and semiclassically smooth external potential. The solution to this problem, which describes the physics of guiding center motion, already foresees important aspects of the half-integer QHE discussed later, in Chap. 6.
+
+The following Chap. 4 gave answers to questions (ii) and (iii). It was dedicated to the localization problem of random two-dimensional systems with chiral symmetry. Those occur on the surface of exotic 3D TIs. Graphene with certain type of disorder potential, e.g. bond disorder, also falls into these symmetry classes. According to long-established general arguments [58, 59] quantum localization is avoided in chiral systems. As demonstrated in Chap. 4 these general arguments collapse when topological defects (vortices) are included in the effective field theoretical description of the problem. The interaction between vortex defects then drives the system into the insulating phase. I explained how TI surface states evade this mechanism. Furthermore, I presented recent results on the average DOS of random chiral metals with infinitely strong impurities. It was shown that in this case the divergence of the DOS at the symmetry point of the spectrum strongly differs from the case of weak impurities. These results are in good agreement with newest numerical simulations. Moreover, the effective theory in the presence of strong impurities suggests that vortices can affect the localization physics only in the case of weak impurities.
+
+The longest and possibly most important chapter 5 of this thesis is devoted to question number (iv) on the quantum transport in thin TR invariant 3D TIs. I have presented a thorough study of interference and interaction effects in the surface state conductivity of 3D TI slabs. The electron-electron interaction within and in between the two major surfaces of a slab was taken into account. These two surfaces were in general assumed to be characterized by different carrier densities and scattering rates, and by asymmetric dielectric environment.
+
+Before turning to the field theoretical analysis on the basis of interacting NL $\sigma \mathrm{M}$ I presented a perturbative, Altshuler-Aronov-like calculation [73] of conductivity. The perturbative result turned out to be instructive, but insufficient. To gain more insight, the effective interacting field theory was
+
+derived. In this context, non-Abelian bosonization technique was employed. It is worth emphasizing that the presented field theory treats the general situation of potentially strong interactions and thus goes beyond perturbation theory. Hence the Fermi liquid theory of the strongly correlated double layer system in the ballistic and diffusive regime was developed.
+
+The renormalization of the interacting NLeM in the one-loop approximation lead to the RG equations determining the temperature dependence of the conductivities of both surfaces. The RG is controlled by a large conductivity, $k_{F} l \gg 1$. The calculations are exact in the singlet interaction amplitudes, while contributions due to a repulsive Cooper interaction are parametrically small and can be neglected.
+
+Inspecting the RG equations, I showed that intersurface interaction is relevant in the RG sense and the limiting case of decoupled surfaces is therefore unstable. The rich flow diagram has been analyzed in detail. For fully decoupled surfaces the system flows into an intermediate-coupling fixed point ("interaction-induced criticality") [205]. This point is, however, unstable with respect to the intersurface coupling. The flow is then towards a single attractive fixed point which is "supermetallic" and at which even originally different surfaces have the same transport properties. Typically, this fixed point is reached via a characteristic non-monotonic temperature dependence of conductivity.
+
+The perturbative results of Chap. 5 are equally applicable to weak topological insulator [196, 242] thin films and to non-topological double layer systems with spin-orbit interaction. An extensive discussion of non-perturbative differences was presented. In the end of Chap. 5, I have estimated parameters and presented explicit predictions for the temperature dependence of the conductivity for typical experimental setups based on $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ and strained HgTe materials.
+
+The following Chap. 6 was dedicated to the anomalous QHE of Dirac fermions on the surface 3D TIs and thus to question number (v). I explained that the half-integer QHE is a manifestation of fermion number fractionalization [124] and also why the observation of half-integer QH response is not possible in 3D TI transport experiments. Subsequently, I presented a modification of Laughlin's [119, 270] flux insertion argument to the case of 3D TIs. Half-integer Hall conductivity is consistent with gauge invariance, because the contributions of the two major surfaces in the Corbino slab geometry are additive. As a major result of Chap. 6, the unified field theory treating both diffusive matter fields and electromagnetic gauge potentials was derived. In contrast to the case of the integer quantum Hall effect, two different theta angles appear: One of them is associated with the Hall conductance while the other one (it is reminiscent of chiral anomaly) provides a shift of the Khmelnitskii flow diagram [287]. The adjustment of Pruisken's RG-equations [24, 282-284] to the case of Dirac fermions was presented for the situations of non-interacting electrons and of Coulomb interaction. The flow and phase diagrams were discussed in great detail. To this end, the semiclassical conductivity tensor of gapped Dirac fermions in magnetic field derived previously in Chap. 3 was used as starting values of RG. The altered LaughlinKhmel'nitskii levitation scenario [294] of Dirac fermions was presented. I concluded Chap. 6 with an extensive discussion of conditions for experiment and finite size effects.
+
+The last chapter in this thesis was devoted to the superconducting instability of disordered 3D TI surface states and of 2DESs in general. Even though the work presented in this chapter is not yet fully completed, I gave some first answers to question number (vi). In particular, a theory describing the superconducting state in disordered 2D systems was developed. It incorporates both the renormalization of resistivity due to quantum diffusion and vortex excitations leading to the BKT transition. More precisely, the conventional theory of $\mathbf{U}(1)$ Goldstone modes is recovered at length scales larger than the superconducting coherence length. Thus, the superconducting transition is of the standard BKT type [112, 113], while quantum diffusion leads to a renormalization of bare parameters. As I explicitly showed, 3D TI surface states have a stronger tendency to superconductivity than non-topological 2DESs of the same universality class.
+
+For future investigation, all directions of research presented in the main part of this thesis deserve further attention. Concerning the semiclassical chapter 3, it would be extremely interesting to include quantum effects into the vortex state calculation. While the conventional approach to quantum localization is perturbative in large conductance, the calculation presented in Chap. 3 relies on smooth scalar potentials and might thus shed light on localization physics from a totally different perspective.
+
+In regard to the localization problem in chiral symmetry classes, it would be of major interest to numerically analyze the analytical predictions made for the metal-insulator transition. A particularly counterintuitive feature is that strong, point-like impurities protect those systems from localization, where it is expected for weak impurities. Therefore, numerical experiments where strong impurities can be gradually introduced on top of weak impurities could illuminate the localization mechanism.
+
+The predicted quantum transport behavior in thin 3D TI films should be scrutinized in experiment. Expected, characteristic features of the conductivity include the non-monotonic temperature behavior and its sensitivity with respect to the carrier density. A comparison of such experimental data with our theoretical predictions would allow one to judge whether the system is in the truly topological phase. From the theoretical side, more efforts are needed to better understand quantum transport in doublelayer systems. For example, the metal-insulator transition in double-layer graphene structures [322] is not fully understood yet. In addition, measurements of the transconductance [323] ("Coulomb-drag") are performed on similar setups. Here finite size effects are important at temperatures below 50 Kelvin while theoretical investigations in this mesoscopic regime are still elusive.
+
+In what concerns the unconventional QHE, more experimental advances are desirable. In particular, the suggested measurement techniques based on the topological magnetoelectric effect could also be investigated on other QH systems than TIs.
+
+Eventually, in the immediate future, the superconducting problem exposed in Chap. 7 deserves the largest attention. Once a coherent picture for the superconducting transition in disordered 2DESs and 3D TI surface states will be available, it will be interesting to include the effect of a finite magnetic field into the investigation. In addition, it is of prominent relevance to understand how long range inhomogeneities of the superconducting gap will alter the transition.
+
+In conclusion, I can not hide my personal fascination for the research field of quantum transport in topological insulators and for topological states of matter in general. The interplay of disorder, topological protection and electron-electron interaction evokes an extremely diverse multitude of physical effects and phenomena. The realization of abstract concepts from quantum field theory and differential geometry as well as the rapid experimental development and the promising technological applications provide a challenging and appealing scientific arena for ever more physicists all around the world. Topological states of matter, going beyond the old paradigm of spontaneous symmetry breaking, provide yet another, enchanting example of emergent, collective phenomena in many body physics.
+
+Intriguingly, the unique properties of topological insulators are to great extend holographically encoded in the boundary excitations, the bulk states being energetically inaccessible. In this thesis, I took advantage of this fact and concentrated exclusively on the fascinating physics of surface Dirac-fermions, as if the bulk never existed. Alluding to the first sentence of the thesis, I would like to summarize my work using again Wolfgang Pauli's words.
+"Es gibt keinen Gott und Dirac ist Sein Prophet." "There is no God and Dirac is His Prophet."
+
+W. Pauli as reported in Ref. [324].
+
+
+
+
+# Acknowledgements 
+
+Surely, I would like to express the biggest gratitude to Professor Alexander D. Mirlin for supervising my doctorate and diploma works. During the last four years I learned a lot: I very much enjoyed the opportunity to work in his group and to benefit from his experience, sharp mind and vast knowledge. To me, Professor Mirlin is not only a role model on the scientific, but also on the personal level, just as anybody would like his "Doktorvater" to be.
+
+Particularly important responsibility was taken over by Professor Alexander Shnirman who is the co-referee of the present thesis. I would like to express my profound gratitude for this and also for his contributions to the pleasant and inspiring ambiance in the institute, concerning both physics (in particular during seminars) and beyond.
+
+Additionally, I would like to thank Professor Jörg Schmalian, who was also willing to co-referee the thesis. I can not imagine any better institute's head than Jörg, both from his personal, social abilities and from his scientific sharpness.
+
+Special gratefulness is devoted to my four direct scientific advisors. Igor Burmistrov taught me how to handle the interacting sigma model and in view of his well-organized working style is a particularly reliable reference point for my work. Thanks to Igor, not only for this, but also for the kind hospitality during my visits in Moscow.
+
+Igor Gornyi impressed me regularly with his deep physical intuition. No matter how abstract a problem is, Igor will "feel" the correct answer from the outset. I very much appreciate working with and learning from Igor.
+
+Being extraordinarily well educated in differential geometry and geometrical aspects of quantum field theories, Ivan Prototopov was my personal guide when I learned the theory of fiber bundles and anomalies. I would like to express my deep gratitude to Vanya for his explanations in this and other regards and our fruitful collaboration.
+
+One last major "Thank You" goes to Pavel Ostrovsky who advised me since the first day of my diploma thesis. Whichever question I had in the last four years, Pasha could always solve it and I enormously benefited from his patient explanations on topics within and beyond our research field.
+In conclusion, I would also like to thank all of my advisors for our friendship on personal level which is of great value for me.
+
+During the past years I enjoyed numerous scientific discussions which directly influenced and supported my research.
+First of all, I am grateful to my officemates Sam Carr, Stéphane Ngo Dinh, Patrik Hlobil, Nikolaos Kainaris, Mathias Scheurer, and Michael Schütt. I believe, the atmosphere was not always quiet, but definitely always stimulating in our office. Thanks for helping me with all the questions I had!
+
+I would next like to thank the KIT collegues with whom I enjoyed fruitful discussions on my work: Ulf Briskot, Ferdinand Evers, Victor Haefner, Panagiotis Kotetes, Yang Lu, Daniel Mendler, Peter Orth, Dmitry Polyakov, Johannes Schindler, Christian Seiler, Norman Weik, and Peter Woelfle.
+
+Beyond permanent KIT members, discussions with the following scientists were directly helpful for the projects presented in the present thesis: Dmitry Bagrets, Denis Basko, Christoph Bruene, John Chalker, Thierry Champel, François Crépin, Alexander Finkel'stein, Serge Florens, Yuval Gefen, Thierry Giamarchi, Leonid Glazman, Dmitry Gutman, Daniel Hernangomez-Perez, Manuel Houzet, Pavel Ioselevich, Alex Levchenko, Yongqing Li, Julia Meyer, Yuli Nazarov, Gil Refael, Georg Schwiete, Jurgen Smet, Konstantin Tikhonov, Björn Trauzettel, Liang Wu, Ding Zhang, and Wei Zhao. Thanks to all of them!
+
+I am indebted to those, who proof read the manuscript of this thesis: Ulf Briskot, Patrik Hlobil, Nikolaos Kainaris, Peter Orth, and Mathias Scheurer.
+
+Apart from discussions which directly influenced my research, I enjoyed scientific exchange in various other occasions.
+
+Most prominently, this includes the series of "book-seminars" among the TKM students. I am grateful to Christian Seiler, Stéphane Ngo Dinh and Michael Schütt (Altland-Simons, Itzykson-Drouffe and Kamenev), Ulf Briskot, Bhilahari Jeevanesan, Pablo Schad, Peter Orth and Philip Wollfahrt (Hewson) as well as Nikolaos Kainaris and Mathias Scheurer (Zinn-Justin).
+
+In addition, we had fruitful interdisciplinary seminars with the students from the high-energy department. I would like to thank the members of the first series of meetings: Otto Eberhardt, Guillaume Chalons, Stéphane Ngo Dinh, Ramona Gröber, Christian Seiler, Michael Schütt, and Nicolas Vogt. Further, I very much enjoy our present second series of seminars with Kumar Ghosh, Yang Lu, Daniel Mendler, Pascal Nagel, and Mathias Scheurer. Thank You!
+
+Eventually, I appreciated numerous interesting physics discussions with the following scientists who did not appear in one of the above lists: Sven Aeschlimann, Janos Asboth, Paul Baireuther, Soumya Bera, Nicholas Breznay, Tianran Chen, Mathias Diez, Tim Dubois, Jonathan Edge, Pia Gagel, Scott Geraedts, Andreas Heimes, Thomas Hellmuth, Mareike Hoyer, Tim Hsieh, Jan Jeske, Alexandra Junck, Valentin Kachorovskii, Torsten Karzig, Janina Klier, Maciej Koch-Janusz, Julia Link, Tim Ludwig, Maria Medvedeva, Andrey Mostovov, David Mross, Sveta Postolova, Maria-Theresa Rieder, Martin \& Michael Schneider, Justin Song, Inti Sodemann, Brian Skinner, Evelyn Tang, Jukka Vayrynen, Justin Wilson, Norman Yao, and Oded Zilberberg.
+
+Finally, I would like to turn to personal acknowledgements. A factor of particular importance for my work was the extremely enjoyable working atmosphere at the TKM. I would like to thank all present and past collegues, in particular our fantastic secretaries Rose Schrempp and Fabienne Flatter and our system administrators Andreas Poenicke and Christian Seiler. I wish to thank all participants of the Meso 2012 and Boulder 2013 summer schools, too.
+
+Before closing, I would like to thank people from outside physics. In particular, I am deeply grateful to my family for all their support: My father Andrea, my mother Claudia and my sister Lea, as well as my grandmothers Agnes and Lucia. I would also like to include my uncle Gianni and my cousin Nike with respective partners as well as the family of my fiancée Taya. To conclude, I wish to express my greatest appreciation to Taya, for her love, patience and tolerance.
+
+and the other two are the same. The first one is the case of the first two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the second two. The third one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the third two. The second one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third two. The third one is the case of the second two. The second one is the case of the third one. The second one is the case of the second two. The third one is the case of the second two. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the second one. The second one is the case of the third one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The second one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one. The third one is the case of the second one is the case
+
+
+
+
+# References 
+
+Further details on the content of this thesis can be found in the following references, which also appear within the bibliography.
+
+Ref. [60] E. J. König, "Metal-insulator transition in 2D Disordered Bipartite Systems", Diploma thesis, 2011.
+
+Ref. [152] E.J. König, P.M. Ostrovsky, I.V. Protopopov and A.D. Mirlin, "Metal-insulator transition in twodimensional random fermion systems of chiral symmetry classes", Phys. Rev. B, 85, 19, pp. 195130, 2012.
+
+Ref. [154] E.J. König, P.M. Ostrovsky, I.V. Protopopov, I.V. Gornyi, I.S. Burmistrov and A.D. Mirlin, "Interaction and disorder effects in three-dimensional topological insulator thin films", Phys. Rev. B 88, 3, pp. 035106, 2013.
+
+Ref. [180] P.M. Ostrovsky, I.V. Protopopov, E.J. König, I.V. Gornyi, A.D. Mirlin and M.A. Skvortsov, "Density of states in a two dimensional chiral metal with vacancies", arXiv:1404.6139 (submitted to Phys. Rev. Lett.), 2014.
+
+Ref. [168] E.J. König, P.M. Ostrovsky, I.V. Protopopov, I.V. Gornyi, I.S. Burmistrov and A.D. Mirlin, "Half-integer quantum Hall effect of disordered Dirac fermions at a topological insulator surface", arXiv:1406.5008 (submitted to Phys. Rev. B), 2014.
+
+
+
+
+# Bibliography 
+
+[1] M. Henzler and W. Göpel. Oberflächenphysik des Festkörpers. Teubner-Studienbücher : Physik. Vieweg+Teubner Verlag, 1994.
+(Cited on page v.)
+[2] B. Jamtveit and P. Meakin. Growth, Dissolution and Pattern Formation in Geosystems. Springer, 1999 .
+(Cited on page v.)
+[3] M. Z. Hasan and C. L. Kane. Colloquium : Topological insulators. Rev. Mod. Phys., 82:30453067, Nov 2010.
+(Cited on pages v, vii, 40, and 41.)
+[4] Xiao-Liang Qi and Shou-Cheng Zhang. Topological insulators and superconductors. Rev. Mod. Phys., 83:1057-1110, Oct 2011.
+(Cited on pages vi, 24, 38, 41, 116, 139, and 140.)
+[5] Andreas P. Schnyder, Shinsei Ryu, Akira Furusaki, and Andreas W. W. Ludwig. Classification of topological insulators and superconductors in three spatial dimensions. Phys. Rev. B, 78(19): 195125, Nov 2008.
+(Cited on pages 8, 34, 35, and 270.)
+[6] Alexei Kitaev. Periodic table for topological insulators and superconductors. AIP Conference Proceedings, 1134(1):22-30, 2009.
+(Cited on pages v and 35.)
+[7] Felix Bloch. Über die Quantenmechanik der Elektronen in Kristallgittern. Zeitschrift für Physik, $52(7-8): 555-600,1929$.
+(Cited on page v.)
+[8] A. M. Lyapunov. The general problem of the stability of motion, 1882. PhD thesis, Moscow university.
+(Not cited.)
+[9] G.W. Hill. On the part of the motion of the lunar perigee which is a function of the mean motions of the sun and moon. Acta Mathematica, 8(1):1-36, 1886.
+(Not cited.)
+[10] G. Floquet. Sur les équations différentielles linéaires à coefficients périodiques. Annales de l'École Normale Supérieure, 12:47-88, 1883.
+(Cited on page v.)
+
+[11] O.A. Pankratov, S.V. Pakhomov, and B.A. Volkov. Supersymmetry in heterojunctions: Bandinverting contact on the basis of pbsnte and hgcdte. Solid State Communications, 61(2):93-96, 1987.
+(Cited on pages vi and 28.)
+[12] V. Gurarie. Single-particle Green's functions and interacting topological insulators. Phys. Rev. B, 83:085426, Feb 2011.
+(Not cited.)
+[13] Andrew M. Essin and Victor Gurarie. Bulk-boundary correspondence of topological insulators from their respective green's functions. Phys. Rev. B, 84:125132, Sep 2011.
+(Cited on pages vi and 28.)
+[14] Constantine Callias. Axial anomalies and index theorems on open spaces. Communications in Mathematical Physics, 62(3):213-234, 1978.
+(Cited on pages vi, 26, and 116.)
+[15] R. Bott and R. Seeley. Some remarks on the paper of callias: "axial anomalies and index theorems on open spaces". Communications in Mathematical Physics, 62(3):235-245, 1978.
+(Cited on pages vi, 26, and 116.)
+[16] K. v. Klitzing, G. Dorda, and M. Pepper. New method for high-accuracy determination of the fine-structure constant based on quantized Hall resistance. Phys. Rev. Lett., 45(6):494-497, Aug 1980.
+(Cited on pages vi, 23, and 134.)
+[17] D. J. Thouless, M. Kohmoto, M. P. Nightingale, and M. den Nijs. Quantized Hall conductance in a two-dimensional periodic potential. Phys. Rev. Lett., 49(6):405-408, Aug 1982.
+(Cited on pages vi and 24.)
+[18] V.L. Ginzburg and L.D. Landau. Zh. Eksp. Teor. Fiz., 20, 1950.
+(Cited on page vi.)
+[19] P. W. Anderson. Absence of diffusion in certain random lattices. Phys. Rev., 109(5):1492-1505, Mar 1958.
+(Cited on pages vi and 1.)
+[20] Reinhold A. Bertlmann. Anomalies in quantum field theory. International series of monographs on physics ; 91. Clarendon Pr., Oxford, 1996.
+(Cited on pages vi, 31, and 33.)
+[21] Shinsei Ryu, Joel E. Moore, and Andreas W. W. Ludwig. Electromagnetic and gravitational responses and anomalies in topological insulators and superconductors. Phys. Rev. B, 85:045104, Jan 2012.
+(Cited on pages vi and 39.)
+[22] G. 't Hooft. Symmetry breaking through bell-jackiw anomalies. Phys. Rev. Lett., 37:8-11, Jul 1976.
+(Cited on page vi.)
+
+[23] G.'t Hooft. Topology of the gauge condition and new confinement phases in non-abelian gauge theories. Nuclear Physics B, 190(3):455-478, 1981.
+(Not cited.)
+[24] Herbert Levine, Stephen B. Libby, and Adrianus M. M. Pruisken. Electron delocalization by a magnetic field in two dimensions. Phys. Rev. Lett., 51:1915-1918, Nov 1983.
+(Cited on pages vi, 24, 127, 128, 140, and 158.)
+[25] R. D. Peccei and Helen R. Quinn. Cp conservation in the presence of pseudoparticles. Phys. Rev. Lett., 38:1440-1443, Jun 1977.
+(Cited on page vi.)
+[26] Frank Wilczek. Two applications of axion electrodynamics. Phys. Rev. Lett., 58:1799-1802, May 1987.
+(Cited on page vi.)
+[27] Jason Alicea. New directions in the pursuit of majorana fermions in solid state systems. Reports on Progress in Physics, 75(7):076501, 2012.
+(Cited on page vi.)
+[28] Markus König, Steffen Wiedmann, Christoph Brüne, Andreas Roth, Hartmut Buhmann, Laurens W. Molenkamp, Xiao-Liang Qi, and Shou-Cheng Zhang. Quantum spin Hall insulator state in hgte quantum wells. Science, 318(5851):766-770, 2007.
+(Cited on page vii.)
+[29] D. Hsieh, D. Qian, L. Wray, Y. Xia, Y. S. Hor, and M. Z. Cava, R. J. Hasan. A topological Dirac insulator in a quantum spin Hall phase. Nature, 452:970-974, Apr 2008.
+(Cited on pages vii, 40, and 41.)
+[30] B. Andrei Bernevig, Taylor L. Hughes, and Shou-Cheng Zhang. Quantum spin hall effect and topological phase transition in hgte quantum wells. Science, 314(5806):1757-1761, 2006.
+(Cited on pages vii and 34.)
+[31] B. Andrei Bernevig and Shou-Cheng Zhang. Quantum spin hall effect. Phys. Rev. Lett., 96: 106802, Mar 2006.
+(Cited on pages vii and 34.)
+[32] Katja C Nowack, Eric M Spanton, Matthias Baenninger, Markus König, John R Kirtley, Beena Kalisky, Christopher Ames, Philipp Leubner, Christoph Brüne, Hartmut Buhmann, et al. Imaging currents in hgte quantum wells in the quantum spin Hall regime. Nature materials, 12(9):787-791, 2013.
+(Cited on page vii.)
+[33] Dimitrie Culcer. Transport in three-dimensional topological insulators: Theory and experiment. Physica E: Low-dimensional Systems and Nanostructures, 44(5):860 - 884, 2012.
+(Cited on pages vii and 41.)
+[34] Hadar Steinberg, Dillon R. Gardner, Young S. Lee, and Pablo Jarillo-Herrero. Surface state transport and ambipolar electric field effect in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ nanodevices. Nano Letters, 10(12):50325036, 2010.
+(Cited on pages vii, 41, and 74.)
+
+[35] J. G. Checkelsky, Y. S. Hor, R. J. Cava, and N. P. Ong. Bulk band gap and surface state conduction observed in voltage-tuned crystals of the topological insulator $\mathrm{Bi}_{2} \mathrm{Se}_{3}$. Phys. Rev. Lett., 106:196801, May 2011.
+(Not cited.)
+[36] Dohun Kim, Qiuzi Li, Paul Syers, Nicholas P. Butch, Johnpierre Paglione, S. Das Sarma, and Michael S. Fuhrer. Intrinsic electron-phonon resistivity of $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ in the topological regime. Phys. Rev. Lett., 109:166801, Oct 2012.
+(Not cited.)
+[37] Seung Sae Hong, Judy J. Cha, Desheng Kong, and Yi Cui. Ultra-low carrier concentration and surface-dominant transport in antimony-doped $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ topological insulator nanoribbons. Nat. Commun., 3, 2012.
+(Cited on pages vii and 41.)
+[38] Peng Cheng, Canli Song, Tong Zhang, Yanyi Zhang, Yilin Wang, Jin-Feng Jia, Jing Wang, Yayu Wang, Bang-Fen Zhu, Xi Chen, Xucun Ma, Ke He, Lili Wang, Xi Dai, Zhong Fang, Xincheng Xie, Xiao-Liang Qi, Chao-Xing Liu, Shou-Cheng Zhang, and Qi-Kun Xue. Landau quantization of topological surface states in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$. Phys. Rev. Lett., 105:076801, Aug 2010.
+(Cited on pages vii and 41.)
+[39] T. Hanaguri, K. Igarashi, M. Kawamura, H. Takagi, and T. Sasagawa. Momentum-resolved landau-level spectroscopy of Dirac surface state in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$. Phys. Rev. B, 82:081305, Aug 2010. (Not cited.)
+[40] James G Analytis, Ross D McDonald, Scott C Riggs, Jiun-Haw Chu, GS Boebinger, and Ian R Fisher. Two-dimensional surface state in the quantum limit of a topological insulator. Nature Physics, 6(12):960-964, 2010.
+(Not cited.)
+[41] Benjamin Sacépé, Jeroen B. Oostinga, Jian Li, Alberto Ubaldini, Nuno J.G. Couto, Enrico Giannini, and Alberto F. Morpurgo. Gate-tuned normal and superconducting transport at the surface of a topological insulator. Nat. Commun., 2011.
+(Not cited.)
+[42] C. Brüne, C. X. Liu, E. G. Novik, E. M. Hankiewicz, H. Buhmann, Y. L. Chen, X. L. Qi, Z. X. Shen, S. C. Zhang, and L. W. Molenkamp. Quantum hall effect from the topological surface states of strained bulk hgte. Phys. Rev. Lett., 106:126803, Mar 2011.
+(Cited on pages vii, $40,41,107,109,115,117,133,134$, and 138.)
+[43] Hailin Peng, Keji Lai, Desheng Kong, Stefan Meister, Yulin Chen, Xiao-Liang Qi, Shou-Cheng Zhang, Zhi-Xun Shen, and Yi Cui. Aharonov-bohm interference in topological insulator nanoribbons. Nature materials, 9(3):225-229, 2010.
+(Cited on pages vii and 41.)
+[44] Faxian Xiu, Liang He, Yong Wang, Lina Cheng, Li-Te Chang, Murong Lang, Guan Huang, Xufeng Kou, Yi Zhou, Xiaowei Jiang, et al. Manipulating surface states in topological insulator nanoribbons. Nature nanotechnology, 6(4):216-221, 2011.
+(Not cited.)
+
+[45] J Dufouleur, L Veyrat, A Teichgräber, S Neuhaus, C Nowka, S Hampel, Jérôme Cayssol, J Schumann, B Eichler, OG Schmidt, et al. Quasiballistic transport of Dirac fermions in a bi 2 se 3 nanowire. Physical review letters, 110(18):186806, 2013.
+(Cited on pages vii and 41.)
+[46] H. Steinberg, J.-B. Laloë, V. Fatemi, J. S. Moodera, and P. Jarillo-Herrero. Electrically tunable surface-to-bulk coherent coupling in topological insulator thin films. Phys. Rev. B, 84:233101, Dec 2011.
+(Cited on pages vii and 101.)
+[47] Guanhua Zhang, Huajun Qin, Jun Chen, Xiaoyue He, Li Lu, Yongqing Li, and Kehui Wu. Growth of Topological Insulator $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ Thin Films on SrTiO3 with Large Tunability in Chemical Potential. Advanced Functional Materials, 21(12):2351-2355, 2011.
+(Not cited.)
+[48] J. Chen, X. Y. He, K. H. Wu, Z. Q. Ji, L. Lu, J. R. Shi, J. H. Smet, and Y. Q. Li. Tunable surface conductivity in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ revealed in diffusive electron transport. Phys. Rev. B, 83:241304, Jun 2011.
+(Cited on pages vii, $6,7,41,69,74,107,108,112$, and 133.)
+[49] V. Mourik, K. Zuo, S. M. Frolov, S. R. Plissard, E. P. A. M. Bakkers, and L. P. Kouwenhoven. Signatures of majorana fermions in hybrid superconductor-semiconductor nanowire devices. Science, $336(6084): 1003-1007,2012$.
+(Cited on page vii.)
+[50] Anindya Das, Yuval Ronen, Yonatan Most, Yuval Oreg, Moty Heiblum, and Hadas Shtrikman. Zero-bias peaks and splitting in an al-inas nanowire topological superconductor as a signature of majorana fermions. Nat. Phys., 8:887 - 895, 2012.
+(Not cited.)
+[51] M. T. Deng, C. L. Yu, G. Y. Huang, M. Larsson, P. Caroff, and H. Q. Xu. Anomalous Zero-Bias Conductance Peak in a Nb-InSb Nanowire-Nb Hybrid Device. Nano Letters, 12(12):6414-6419, 2012.
+(Cited on page vii.)
+[52] Cui-Zu Chang, Jinsong Zhang, Xiao Feng, Jie Shen, Zuocheng Zhang, Minghua Guo, Kang Li, Yunbo Ou, Pang Wei, Li-Li Wang, Zhong-Qing Ji, Yang Feng, Shuaihua Ji, Xi Chen, Jinfeng Jia, Xi Dai, Zhong Fang, Shou-Cheng Zhang, Ke He, Yayu Wang, Li Lu, Xu-Cun Ma, and Qi-Kun Xue. Experimental observation of the quantum anomalous hall effect in a magnetic topological insulator. Science, 340(6129):167-170, 2013.
+(Cited on pages vii and 115.)
+[53] M. N. Baibich, J. M. Broto, A. Fert, F. Nguyen Van Dau, F. Petroff, P. Etienne, G. Creuzet, A. Friederich, and J. Chazelas. Giant magnetoresistance of (001)fe/(001)cr magnetic superlattices. Phys. Rev. Lett., 61:2472-2475, Nov 1988.
+(Cited on page vii.)
+[54] G. Binasch, P. Grünberg, F. Saurenbach, and W. Zinn. Enhanced magnetoresistance in layered magnetic structures with antiferromagnetic interlayer exchange. Phys. Rev. B, 39:4828-4830,
+
+Mar 1989.
+(Cited on page vii.)
+[55] M. I. D'yakonov and V. I. Perel. Possibility of orienting electron spins with current. Soviet Journal of Experimental and Theoretical Physics Letters, 13:467, 1971.
+(Cited on page vii.)
+[56] MI Dyakonov and VI Perel. Current-induced spin orientation of electrons in semiconductors. Physics Letters A, 35(6):459-460, 1971.
+(Cited on page vii.)
+[57] Chetan Nayak, Steven H. Simon, Ady Stern, Michael Freedman, and Sankar Das Sarma. Nonabelian anyons and topological quantum computation. Rev. Mod. Phys., 80:1083-1159, Sep 2008. (Cited on page vii.)
+[58] Renate Gade and Franz Wegner. The $\mathrm{n}=0$ replica limit of $\mathrm{u}(\mathrm{n})$ and models. Nuclear Physics B, $360(2-3): 213-218,1991$.
+(Cited on pages viii, $57,58,61,64,68$, and 157.)
+[59] Renate Gade. Anderson localization for sublattice models. Nuclear Physics B, 398(3):499 - 515, 1993.
+(Cited on pages viii, $57,58,61,68$, and 157.)
+[60] Elio J. König. Metal-insulator transition in 2d disordered bipartite systems, 2011. Diploma thesis at Karlsruhe Institute of Technology.
+(Cited on pages 1, 37, 57, 60, 62, 63, 82, and 165.)
+[61] Chetan Nayak. Quantum condensed matter physics, lecture notes, 2004. URL http://www. physics.ucla.edu/ nayak/many_body.pdf.
+(Cited on pages 1 and 4.)
+[62] Alexander Altland and Benjamin S. Simons. Condensed Matter Field Theory. Cambridge University Press, 2 edition, 2010.
+(Cited on pages 1 and 4.)
+[63] E. Abrahams, P. W. Anderson, D. C. Licciardello, and T. V. Ramakrishnan. Scaling theory of localization: Absence of quantum diffusion in two dimensions. Phys. Rev. Lett., 42(10):673-676, Mar 1979.
+(Cited on page 2.)
+[64] A. I. Larkin and D. E. Khmel'nitskii. Andersonovskaya lokalizatsiya i anomal'noe magnetosoprotivlenie pri nizkikh temperaturakh. Uspekhi Fizicheskikh Nauk, 136(3):536-538, 1982. (Cited on page 3.)
+[65] Alexey A. Abrikosov. Fundamentals of the Theory of Metals. North-Holland, 1988. (Not cited.)
+[66] Konstantin Efetov. Supersymmetry in disorder and chaos. Cambridge University Press, 1997. (Cited on pages 3 and 12.)
+
+[67] Aleksej A. Abrikosov, Lev P. Gorkov, and I. E. Dzyaloshinskij. Methods of quantum field theory in statistical physics. Prentice-Hall, Englewood Cliffs, NJ, 1963.
+(Cited on pages 4, 6, 14, 86, 142, and 233.)
+[68] T. Giamarchi. Quantum Physics in One Dimension. International Series of Monographs on Physics. Clarendon Press, 2004.
+(Cited on page 4.)
+[69] A.C. Hewson. The Kondo Problem to Heavy Fermions. Cambridge Studies in Magnetism. Cambridge University Press, 1997.
+(Cited on page 4.)
+[70] Shinobu Hikami, Anatoly I. Larkin, and Yosuke Nagaoka. Spin-orbit interaction and magnetoresistance in the two dimensional random system. Progress of Theoretical Physics, 63(2):707-710, 1980 .
+(Cited on pages 5, 93, and 112.)
+[71] Patrick A. Lee and T. V. Ramakrishnan. Disordered electronic systems. Rev. Mod. Phys., 57: 287-337, Apr 1985.
+(Cited on pages 5 and 6.)
+[72] L.D. Landau, E.M. Lifshits, and L.P. Pitaevskii. Statistical Physics. Number part 2 in Course of theoretical physics. Butterworth-Heinemann, 1980.
+(Cited on pages 6, 14, 86, and 233.)
+[73] B.L. Altshuler and A.G. Aronov. Electron-electron interactions in disordered conductors. In Electron-electron interactions in disordered systems, page 1. Elsevier Science Publishers B.V., 1985.
+(Cited on pages 6, 72, 77, 111, and 157.)
+[74] Eugene P. Wigner. On the statistical distribution of the widths and spacings of nuclear resonance levels. Mathematical Proceedings of the Cambridge Philosophical Society, 47:790-798, 1951.
+(Cited on page 7.)
+[75] Freeman J. Dyson. Statistical theory of the energy levels of complex systems. i. Journal of Mathematical Physics, 3(1):140-156, 1962.
+(Cited on page 7.)
+[76] Alexander Altland and Martin R. Zirnbauer. Nonstandard symmetry classes in mesoscopic normal-superconducting hybrid structures. Phys. Rev. B, 55(2):1142-1161, Jan 1997.
+(Cited on page 8.)
+[77] Ferdinand Evers and Alexander D. Mirlin. Anderson transitions. Rev. Mod. Phys., 80:1355-1417, Oct 2008.
+(Cited on pages 8, 13, 99, 129, and 270.)
+[78] Martin R Zirnbauer. Riemannian symmetric superspaces and their origin in random-matrix theory. Journal of Mathematical Physics, 37(10):4986-5018, 1996.
+(Cited on page 8.)
+
+[79] Enrico Leuzinger. Homogeneous and symmetric spaces, lecture notes at karlsruhe institute of technology, 2010.
+(Cited on page 9.)
+[80] Sigurdur Helgason. Differential Geometry, Lie Groups, and Symmetric Spaces. American Mathematical Society, 1978.
+(Cited on page 9.)
+[81] P. Heinzner, A. Huckleberry, and M.R. Zirnbauer. Symmetry classes of disordered fermions. Communications in Mathematical Physics, 257:725-771, 2005.
+(Cited on page 10.)
+[82] Franz J. Wegner. Disordered system with n orbitals per site: $n \rightarrow 0$ limit. Phys. Rev. B, 19: 783-792, Jan 1979.
+(Cited on page 10.)
+[83] D.E. Khmel'nitskii K.B. Efetov, A.I. Larkin. Sov. Phys. JETP, 52(3):568-574, 1980.
+(Cited on page 79.)
+[84] Lothar Schäfer and Franz Wegner. Disordered system within orbitals per site: Lagrange formulation, hyperbolic symmetry, and goldstone modes. Zeitschrift für Physik B Condensed Matter, 38(2):113-126, 1980.
+(Not cited.)
+[85] Shinobu Hikami. Anderson localization in a nonlinear- $\sigma$-model representation. Phys. Rev. B, 24 (5):2671-2679, Sep 1981.
+(Cited on page 10.)
+[86] Edward Witten. Non-abelian bosonization in two dimensions. Communications in Mathematical Physics, 92:455-472, 1984. ISSN 0010-3616.
+(Cited on pages 11, 37, 38, 80, and 244.)
+[87] A. A. Nersesyan, A. M. Tsvelik, and F. Wenger. Disorder effects in two-dimensional $d$-wave superconductors. Phys. Rev. Lett., 72:2628-2631, Apr 1994.
+(Cited on pages 40 and 80 .)
+[88] M. Bocquet, D. Serban, and M.R. Zirnbauer. Disordered 2d quasiparticles in class d: Dirac fermions with random mass, and dirty superconductors. Nuclear Physics B, 578(3):628 - 680, 2000.
+(Cited on page 246.)
+[89] Alexander Altland. Low-energy theory of disordered graphene. Phys. Rev. Lett., 97:236802, Dec 2006.
+(Cited on pages 11, 80, 115, and 246.)
+[90] A. Kamenev. Field Theory of Non-Equilibrium Systems. Cambridge University Press, 2011. (Cited on page 12.)
+[91] M. Mézard, G. Parisi, and M.Á. Virasoro. Spin Glass Theory and Beyond. Lecture Notes in Physics Series. World Scientific Publishing Company, Incorporated, 1987.
+(Cited on page 12.)
+
+[92] John W. Negele and Henri Orland. Quantum many-particle systems. Advanced book classics. Westview Press, a member of the Perseus Books Group, Boulder, Colo. [u.a.], 5. [repr.] edition, 1998.
+(Cited on page 12.)
+[93] Kenneth G. Wilson. The renormalization group: Critical phenomena and the kondo problem. Rev. Mod. Phys., 47:773-840, Oct 1975.
+(Cited on page 12.)
+[94] A. M. Polyakov. Interaction of goldstone particles in two dimensions. applications to ferromagnets and massive yang-mills fields. Physics Letters B, 59(1):79 - 81, 1975.
+(Cited on pages 12 and 60.)
+[95] J. Zinn-Justin. Quantum Field Theory and Critical Phenomena. The International Series of Monographs on Physics Series. Clarendon Press, 2002.
+(Cited on page 13.)
+[96] N. D. Mermin and H. Wagner. Absence of ferromagnetism or antiferromagnetism in one- or two-dimensional isotropic heisenberg models. Phys. Rev. Lett., 17(22):1133-1136, Nov 1966.
+(Cited on page 13.)
+[97] E. Seiler, 2009. Talk given at the International Conference "Mathematical Quantum Field Theory and Renormalization Theory", Nov. 26 to Nov. 29, 2009, Kyushu University, Fukuoka, Japan. (Cited on page 13.)
+[98] A. M. Finkelstein. In I. M. Khalatnikov, editor, Soviet scientific reviews: Physics reviews, volume Bd. 14. Harwood Academic Publishers, 1990.
+(Cited on pages $14,15,17,20,85,86,93,95,152$, and 235.)
+[99] D. Belitz and T. R. Kirkpatrick. The anderson-mott transition. Rev. Mod. Phys., 66(2):261-380, Apr 1994.
+(Cited on pages 17 and 79.)
+[100] A. M. Finkel'stein. Disordered electron liquid with interactions. In Elihu Abrahams, editor, 50 years of Anderson Localization. World scientific, 2010.
+(Cited on pages $14,15,85$, and 86 .)
+[101] P Nozieres and J Luttinger. Derivation of the landau theory of fermi liquids. i. formal preliminaries. Physical Review, 127(5):1423, 1962.
+(Cited on pages $14,15,86$, and 233 .)
+[102] J. M. Luttinger. Analytic properties of single-particle propagators for many-fermion systems. Phys. Rev., 121:942-949, Feb 1961.
+(Cited on page 14.)
+[103] A.M.Finkel'stein. The influence of coulomb interaction on the properties of disordered metals. Zh. Eksp. Teor. Fiz., 84:168, 1983.
+(Cited on page 16 .)
+
+[104] A.M.Finkel'stein. Weak-localization and coulomb interactions in disordered systems. Z. Phys. B: Condensed Matter, 56:189, 1984.
+(Cited on page 16.)
+[105] I. S. Burmistrov, I. V. Gornyi, and A. D. Mirlin. Enhancement of the critical temperature of superconductors by anderson localization. Phys. Rev. Lett., 108:017002, Jan 2012.
+(Cited on pages 16, 17, and 21.)
+[106] A. M. M. Pruisken, M. A. Baranov, and B. Skoric. (Mis-)handling gauge invariance in the theory of the quantum Hall effect. I. Unifying action and the $\nu=\frac{1}{2}$ state. Phys. Rev. B, 60:16807-16820, Dec 1999.
+(Cited on pages $17,79,89,125,127,140,244,246,250$, and 262.)
+[107] Luca Dell'Anna. Enhancement of critical temperatures in disordered bipartite lattices. Phys. Rev. B, 88:195139, Nov 2013.
+(Cited on pages 17 and 141.)
+[108] R. Shankar. Renormalization-group approach to interacting fermions. Rev. Mod. Phys., 66:129192, Jan 1994.
+(Cited on page 18.)
+[109] S. V. Kravchenko, G. V. Kravchenko, J. E. Furneaux, V. M. Pudalov, and M. D’Iorio. Possible metal-insulator transition at $b=0$ in two dimensions. Phys. Rev. B, 50:8039-8042, Sep 1994.
+(Cited on page 18.)
+[110] Alexander Punnoose and Alexander M. Finkel'stein. Metal-insulator transition in disordered twodimensional electron systems. Science, 310(5746):289-291, 2005.
+(Cited on pages 18 and 19.)
+[111] Vsevolod F Gantmakher and Valery T Dolgopolov. Superconductor-insulator quantum phase transition. Physics-Uspekhi, 53(1):1, 2010.
+(Cited on page 19.)
+[112] V L Berezinksii. Sov.Phys.-JETP, 32:493-500, 1970.
+(Cited on pages 20, 60, and 158.)
+[113] J M Kosterlitz and D J Thouless. Ordering, metastability and phase transitions in twodimensional systems. Journal of Physics C: Solid State Physics, 6(7):1181, 1973.
+(Cited on pages 20, 60, and 158.)
+[114] Jorge V. José, Leo P. Kadanoff, Scott Kirkpatrick, and David R. Nelson. Renormalization, vortices, and symmetry-breaking perturbations in the two-dimensional planar model. Phys. Rev. B, 16(3):1217-1241, Aug 1977.
+(Cited on pages 20 and 61.)
+[115] A.M. Finkel'stein. O temperature sverkhprovodyashchego perekhoda v amorfnykh plenkakh. Pis'ma v ZhETF, 45 (1):37-40, 1987. [A.M. Finkel'stein, Superconducting transition temperature in amorphous films, JETP Lett., 45 (1), 46-49 (1987)].
+(Cited on pages 20, 21, and 152.)
+
+[116] A.M. Finkel'stein. Suppression of superconductivity in homogeneously disordered systems. Physica B: Condensed Matter, 197(1-4):636 - 648, 1994.
+(Cited on pages 20 and 152.)
+[117] Qian Niu, D. J. Thouless, and Yong-Shi Wu. Quantized Hall conductance as a topological invariant. Phys. Rev. B, 31:3372-3377, Mar 1985.
+(Cited on page 24.)
+[118] E. Fradkin. Field Theories of Condensed Matter Physics. Field Theories of Condensed Matter Physics. Cambridge University Press, 2013.
+(Cited on page 24.)
+[119] R. B. Laughlin. Quantized Hall conductivity in two dimensions. Phys. Rev. B, 23:5632-5633, May 1981.
+(Cited on pages $24,115,120,140$, and 158.)
+[120] M. F. Atiyah and I. M. Singer. Bull. Amer. Math. Soc. 69, pages 422-433, 1963.
+(Cited on pages $25,43,54$, and 55 .)
+[121] M. F. Atiyah and I. M. Singer. The index of elliptic operators: I. Annals of Mathematics, 87(3): pp. 484-530, 1968.
+(Cited on pages $25,43,54$, and 55 .)
+[122] Mikio Nakahara. Geometry, topology and physics. Graduate student series in physics. Hilger, Bristol [u.a.], 1990.
+(Cited on pages 25,31 , and 35 .)
+[123] C. Nash and S. Sen. Topology and Geometry for Physicists. Dover Books on Mathematics. Dover Publications, 2013.
+(Cited on page 25.)
+[124] R. Jackiw and C. Rebbi. Solitons with fermion number $\frac{1}{2}$. Phys. Rev. D, 13:3398-3409, Jun 1976.
+(Cited on pages 29, 116, and 158.)
+[125] R. Jackiw. Fractional charge and zero modes for planar systems in a magnetic field. Phys. Rev. D, 29:2375-2377, May 1984.
+(Cited on pages 29 and 123.)
+[126] Minoru Hirayama and Tatsuo Torii. Fermion fractionization and index theorem. Progress of Theoretical Physics, 68(4):1354-1364, 1982.
+(Cited on page 29.)
+[127] I. Smrcka and P Streda. Transport coefficients in strong magnetic fields. Journal of Physics C: Solid State Physics, 10(12):2153, 1977.
+(Cited on pages 29, 117, and 249.)
+[128] Julian Schwinger. Gauge invariance and mass. II. Phys. Rev., 128:2425-2429, Dec 1962.
+(Cited on page 29.)
+
+[129] Stephen L. Adler. Axial-vector vertex in spinor electrodynamics. Phys. Rev., 177:2426-2438, Jan 1969 .
+(Cited on page 29.)
+[130] J.S. Bell and R. Jackiw. Il Nuovo Cimento A, 60(1):47-61, 1969.
+(Cited on page 29.)
+[131] S. Weinberg. The Quantum Theory of Fields: Volume 2, Modern Applications. Cambridge University Press, 1996.
+(Cited on pages 31 and 33.)
+[132] K. Fujikawa and H. Suzuki. Path Integrals and Quantum Anomalies. International Series of Monographs on Physics. OUP Oxford, 2013.
+(Cited on pages 31 and 33.)
+[133] A. J. Niemi and G. W. Semenoff. Axial-anomaly-induced fermion fractionization and effective gauge-theory actions in odd-dimensional space-times. Phys. Rev. Lett., 51:2077-2080, Dec 1983. (Cited on pages 31, 43, and 119.)
+[134] A. N. Redlich. Gauge noninvariance and parity nonconservation of three-dimensional fermions. Phys. Rev. Lett., 52:18-21, Jan 1984.
+(Cited on page 32.)
+[135] A. N. Redlich. Parity violation and gauge noninvariance of the effective gauge field action in three dimensions. Phys. Rev. D, 29:2366-2374, May 1984.
+(Cited on pages 32 and 126.)
+[136] Luis Alvarez-Gaumé and Edward Witten. Gravitational anomalies. Nuclear Physics B, 234(2): $269-330,1984$.
+(Cited on pages 31 and 119.)
+[137] S. Deser, L. Griguolo, and D. Seminara. Effective QED actions: Representations, gauge invariance, anomalies, and mass expansions. Phys. Rev. D, 57:7444-7459, Jun 1998.
+(Cited on pages 31 and 32.)
+[138] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Quantum criticality and minimal conductivity in graphene with long-range disorder. Phys. Rev. Lett., 98:256801, Jun 2007.
+(Cited on pages 32, 37, 83, 100, and 115.)
+[139] Michael Mulligan and F. J. Burnell. Topological insulators avoid the parity anomaly. Phys. Rev. B, 88:085104, Aug 2013.
+(Cited on pages 32, 118, and 126.)
+[140] Alexios P. Polychronakos. Topological mass quantization and parity violation in $2+1$ dimensional QED. Nuclear Physics B, 281(1-2):241-252, 1987.
+(Cited on pages 32 and 126.)
+[141] L.D. Faddeev. Some comments on the many-dimensional solitons. Letters in Mathematical Physics, 1:289-293, 1976.
+(Cited on pages 33, 89, 229, and 244.)
+
+[142] A. Losev, G. Moore, N. Nekrasov, and S. Shatashvili. 1995. arXiv:hep-th/9511185v2. (Not cited.)
+[143] A. V. Smilga. Two-dimensional instantons with bosonization and physics of adjoint twodimensional QCD. Phys. Rev. D. 54:7757-7773, Dec 1996.
+(Cited on page 230.)
+[144] A. Gerasimov. Localization in GWZW and Verlinde formula. 1993.
+(Cited on pages 33, 89, 229, and 244.)
+[145] G. 't Hooft. Naturalness, chiral symmetry, and spontaneous chiral symmetry breaking, 1979. (Cited on page 33.)
+[146] Liang Fu, C. L. Kane, and E. J. Mele. Topological insulators in three dimensions. Phys. Rev. Lett., 98:106803, Mar 2007.
+(Cited on page 34.)
+[147] J. E. Moore and L. Balents. Topological invariants of time-reversal-invariant band structures. Phys. Rev. B, 75:121306, Mar 2007.
+(Not cited.)
+[148] Rahul Roy. Topological phases and the quantum spin Hall effect in three dimensions. Phys. Rev. B, 79:195322, May 2009.
+(Cited on page 34.)
+[149] Jan Carl Budich and Björn Trauzettel. From the adiabatic theorem of quantum mechanics to topological states of matter. physica status solidi (RRL) - Rapid Research Letters, 7(1-2):109129, 2013.
+(Cited on page 35.)
+[150] M. Karoubi. K-Theory: An Introduction. Classics in mathematics. Springer, 2009. (Cited on page 35.)
+[151] Shinsei Ryu, Christopher Mudry, Hideaki Obuse, and Akira Furusaki. $\mathbf{Z}_{2}$ topological term, the global anomaly, and the two-dimensional symplectic symmetry class of anderson localization. Phys. Rev. Lett., 99:116601, Sep 2007.
+(Cited on pages 37 and 83.)
+[152] E. J. König, P. M. Ostrovsky, I. V. Protopopov, and A. D. Mirlin. Metal-insulator transition in two-dimensional random fermion systems of chiral symmetry classes. Phys. Rev. B, 85:195130, May 2012.
+(Cited on pages $37,57,60,62,63,82,83$, and 165 .)
+[153] P. A. Ioselevich, P. M. Ostrovsky, and M. V. Feigel'man. Majorana state on the surface of a disordered three-dimensional topological insulator. Phys. Rev. B, 86:035441, Jul 2012.
+(Cited on page 82.)
+[154] E. J. König, P. M. Ostrovsky, I. V. Protopopov, I. V. Gornyi, I. S. Burmistrov, and A. D. Mirlin. Interaction and disorder effects in three-dimensional topological insulator thin films. Phys. Rev. B, 88:035106, Jul 2013.
+(Cited on pages $37,63,69,82,90,118,119,125,165,238$, and 246 .)
+
+[155] Denis Bernard and André LeClair. A classification of 2d random Dirac fermions. Journal of Physics A: Mathematical and General, 35(11):2555, 2002.
+(Cited on page 38.)
+[156] Zhong Wang, Xiao-Liang Qi, and Shou-Cheng Zhang. New Journal of Physics, 12(6):065007, 2010.
+(Cited on pages 38 and 118.)
+[157] Xiao-Liang Qi, Taylor L. Hughes, and Shou-Cheng Zhang. Topological field theory of timereversal invariant insulators. Phys. Rev. B, 78:195424, Nov 2008.
+(Cited on pages 38 and 119.)
+[158] Matthias Blau and George Thompson. A new class of topological field theories and the RaySinger torsion. Physics Letters B, 228(1):64-68, 1989.
+(Cited on page 39.)
+[159] GaryT. Horowitz. Exactly soluble diffeomorphism invariant theories. Communications in Mathematical Physics, 125(3):417-437, 1989.
+(Cited on page 39.)
+[160] Gil Young Cho and Joel E. Moore. Topological BF field theory description of topological insulators. Annals of Physics, 326(6):1515-1535, 2011.
+(Cited on pages 39 and 118.)
+[161] AtMa Chan, Taylor L. Hughes, Shinsei Ryu, and Eduardo Fradkin. Effective field theories for topological insulators by functional bosonization. Phys. Rev. B, 87:085132, Feb 2013.
+(Cited on page 40.)
+[162] Heinrich-Gregor Zirnstein and Bernd Rosenow. Cancellation of quantum anomalies and bosonization of three-dimensional time-reversal symmetric topological insulators. Phys. Rev. B, 88:085105, Aug 2013.
+(Cited on pages 39, 40, 118, and 126.)
+[163] Andreas W. W. Ludwig, Matthew P. A. Fisher, R. Shankar, and G. Grinstein. Integer quantum Hall transition: An alternative approach and exact results. Phys. Rev. B, 50:7526-7552, Sep 1994.
+(Cited on pages 40 and 221.)
+[164] Alexander Altland, B.D. Simons, and M.R. Zirnbauer. Theories of low-energy quasi-particle states in disordered d-wave superconductors. Physics Reports, 359(4):283 - 354, 2002.
+(Cited on pages 62 and 80.)
+[165] Matthew S. Foster and Emil A. Yuzbashyan. Interaction-mediated surface-state instability in disordered three-dimensional topological superconductors with spin su (2) symmetry. Phys. Rev. Lett., 109:246801, Dec 2012.
+(Cited on page 40.)
+[166] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Electron transport in disordered graphene. Phys. Rev. B, 74(23):235443, Dec 2006.
+(Cited on pages 40,58 , and 76 .)
+
+[167] Daniel Hernangómez-Pérez, Serge Florens, and Thierry Champel. Signatures of rashba spin-orbit interaction in charge and spin properties of quantum Hall systems. Phys. Rev. B, 89:155314, Apr 2014.
+(Cited on pages 46 and 54.)
+[168] E. J. König, P. M. Ostrovsky, I. V. Protopopov, I. V. Gornyi, I. S. Burmistrov, and A. D. Mirlin. Half-integer quantum hall effect of disordered dirac fermions at a topological insulator surface. 2014. arXiv:1406.5008.
+(Cited on pages 46, 115, and 165.)
+[169] Naoto Nagaosa, Jairo Sinova, Shigeki Onoda, A. H. MacDonald, and N. P. Ong. Anomalous Hall effect. Rev. Mod. Phys., 82:1539-1592, May 2010.
+(Cited on pages 47, 50, 157, 205, and 216.)
+[170] N A Sinitsyn. Semiclassical theories of the anomalous Hall effect. Journal of Physics: Condensed Matter, 20(2):023201, 2008.
+(Cited on pages 47, 50, 157, and 216.)
+[171] Ming-Che Chang and Qian Niu. Berry phase, hyperorbits, and the hofstadter spectrum: Semiclassical dynamics in magnetic bloch bands. Phys. Rev. B, 53:7010-7023, Mar 1996.
+(Cited on pages 48, 212, and 213.)
+[172] Ganesh Sundaram and Qian Niu. Wave-packet dynamics in slowly perturbed crystals: Gradient corrections and berry-phase effects. Phys. Rev. B, 59:14915-14925, Jun 1999.
+(Cited on pages 48 and 212.)
+[173] N. A. Sinitsyn, Q. Niu, and A. H. MacDonald. Coordinate shift in the semiclassical boltzmann equation and the anomalous Hall effect. Phys. Rev. B, 73:075318, Feb 2006.
+(Cited on pages 48, 213, and 214.)
+[174] N. A. Sinitsyn, A. H. MacDonald, T. Jungwirth, V. K. Dugaev, and Jairo Sinova. Anomalous Hall effect in a two-dimensional Dirac band: The link between the kubo-streda formula and the semiclassical boltzmann equation approach. Phys. Rev. B, 75:045315, Jan 2007.
+(Cited on pages 48, 52, 56, 157, 221, and 223.)
+[175] Di Xiao, Junren Shi, and Qian Niu. Berry phase correction to electron density of states in solids. Phys. Rev. Lett., 95:137204, Sep 2005.
+(Cited on pages 49 and 216.)
+[176] C. Duval, Z. Horvath, P. A. Horvathy, L. Martina, and P.C. Stichel. Berry phase correction to electron density in solids and 'exotic' dynamics. Modern Physics Letters B, 20(07):373-378, 2006.
+(Cited on pages 49 and 216.)
+[177] D. T. Son and B. Z. Spivak. Chiral anomaly and classical negative magnetoresistance of weyl metals. Phys. Rev. B, 88:104412, Sep 2013.
+(Cited on page 49.)
+[178] Thierry Champel and Serge Florens. Quantum transport properties of two-dimensional electron gases under high magnetic fields. Phys. Rev. B, 75:245326, Jun 2007.
+(Cited on pages 53, 223, and 225.)
+
+[179] Thierry Champel and Serge Florens. High magnetic field theory for the local density of states in graphene with smooth arbitrary potential landscapes. Phys. Rev. B, 82:045421, Jul 2010. (Cited on pages 53 and 223.)
+[180] P. M. Ostrovsky, I.V. Protopopov, E.J. König, I. V. Gornyi, A. D. Mirlin, and M.A. Skvortsov. Density of states in a two dimensional chiral metal with vacancies. 2014. arXiv:1404.6139. (Cited on pages 57, 63, and 165.)
+[181] J. J. M. Verbaarschot and I. Zahed. Spectral density of the QCD Dirac operator near zero virtuality. Phys. Rev. Lett., 70(25):3852-3855, Jun 1993.
+(Cited on page 57.)
+[182] K. S. Novoselov, A. K. Geim, S. V. Morozov, D. Jiang, Y. Zhang, S. V. Dubonos, I. V. Grigorieva, and A. A. Firsov. Electric field effect in atomically thin carbon films. Science, 306(5696):666-669, 2004.
+(Cited on page 57.)
+[183] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Conductivity of disordered graphene at half filling. The European Physical Journal - Special Topics, 148:63-72, 2007.
+(Cited on page 58.)
+[184] A. D. Mirlin, F. Evers, I. V. Gornyi, and P. M. Ostrovsky. Anderson transitions: Criticality, symmetries and topologies. In Elihu Abrahams, editor, 50 years of Anderson Localization. World scientific, 2010.
+(Cited on pages 58, 59, and 270.)
+[185] Z V Djordjevic, H E Stanley, and A Margolina. Site percolation threshold for honeycomb and square lattices. Journal of Physics A: Mathematical and General, 15(8):L405, 1982.
+(Cited on page 58.)
+[186] Olexei Motrunich, Kedar Damle, and David A. Huse. Particle-hole symmetric localization in two dimensions. Phys. Rev. B, 65(6):064206, Jan 2002.
+(Cited on pages 59, 66, and 68.)
+[187] Marc Bocquet and J. T. Chalker. Network models for localization problems belonging to the chiral symmetry classes. Phys. Rev. B, 67(5):054204, Feb 2003.
+(Cited on pages 59, 66, and 68.)
+[188] Henri Bacry. Leçons sur la théorie des groupes et les symétries des particules élémentaires. Cours et documents de mathématiques et de physique. Gordon and Breach, 1967.
+(Cited on page 60.)
+[189] I.M. Isaacs. Finite group theory. Graduate studies in mathematics. American Mathematical Society, 2008.
+(Cited on page 60.)
+[190] Adrianus M. M. Pruisken. Quasiparticles in the theory of the integral quantum Hall effect (i). Nuclear Physics B, 285:719 - 759, 1987. ISSN 0550-3213.
+(Cited on page 61.)
+
+[191] Adrianus M. M. Pruisken. Quasi particles in the theory of the integral quantum Hall effect : (ii). renormalization of the Hall conductance or instanton angle theta. Nuclear Physics B, 290:61 86, 1987. ISSN 0550-3213.
+(Cited on page 61.)
+[192] Liang Fu and C. L. Kane. Topology, delocalization via average symmetry and the symplectic anderson transition. Phys. Rev. Lett., 109:246605, Dec 2012.
+(Cited on pages 63, 83, and 99.)
+[193] Hideaki Obuse, Akira Furusaki, Shinsei Ryu, and Christopher Mudry. Boundary criticality at the anderson transition between a metal and a quantum spin Hall insulator in two dimensions. Phys. Rev. B, 78:115301, Sep 2008.
+(Cited on page 63.)
+[194] K. Kobayashi, T. Ohtsuki, and K. Slevin. Critical exponent for the quantum spin Hall transition in $\mathbb{Z} 2$ network model. International Journal of Modern Physics: Conference Series, 11:114-119, 2012.
+(Not cited.)
+[195] Ai Yamakage, Kentaro Nomura, Ken-Ichiro Imura, and Yoshio Kuramoto. Criticality of the metal-topological insulator transition driven by disorder. Phys. Rev. B, 87:205141, May 2013. (Cited on page 63.)
+[196] Zohar Ringel, Yaacov E. Kraus, and Ady Stern. Strong side of weak topological insulators. Phys. Rev. B, 86:045102, Jul 2012.
+(Cited on pages 63, 99, 111, and 158.)
+[197] D. A. Ivanov. The supersymmetric technique for random-matrix ensembles with zero eigenvalues. Journal of Mathematical Physics, 43(1):126-153, 2002.
+(Cited on page 64.)
+[198] S. Gattenlöhner, W.-R. Hannes, M. Ostrovsky, P. V. Gornyi, I. D. Mirlin, A. and M. Titov. Quantum Hall criticality and localization in graphene with short-range impurities at the Dirac point. Phys. Rev. Lett., 112:026802, Jan 2014.
+(Cited on pages 66, 68, and 129.)
+[199] V. Haefner. Large scale simulation of wave-packet propagation via krylov subspace methods and application to graphene, 2011. Diploma thesis at Karlsruhe Institute of Technology.
+(Cited on pages 66 and 67.)
+[200] J. Schindler. Wave packet dynamics in disordered fermion systems, 2012. Diploma thesis at Karlsruhe Institute of Technology.
+(Not cited.)
+[201] N. Weik. Graphene at large vacancy concentrations - small clusters and their signature in the density of states, 2013. Diploma thesis at Karlsruhe Institute of Technology.
+(Cited on pages 66 and 67.)
+[202] V. Haefner, J. Schindler, N. Weik, T. Mayer, S. Balakrishnan, R. Narayanan, S. Bera, and Evers F. Density of states in graphene with vacancies: midgap power law and frozen multifractality,
+
+2011. 
+
+(Cited on pages 66, 67, and 68.)
+[203] Jian Wang, Ashley M. DaSilva, Cui-Zu Chang, Ke He, J. K. Jain, Nitin Samarth, Xu-Cun Ma, Qi-Kun Xue, and Moses H. W. Chan. Evidence for electron-electron interaction in topological insulator thin films. Phys. Rev. B, 83:245438, Jun 2011.
+(Cited on pages 69 and 74.)
+[204] Minhao Liu, Cui-Zu Chang, Zuocheng Zhang, Yi Zhang, Wei Ruan, Ke He, Li-li Wang, Xi Chen, Jin-Feng Jia, Shou-Cheng Zhang, Qi-Kun Xue, Xucun Ma, and Yayu Wang. Electron interactiondriven insulating ground state in $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ topological insulators in the two-dimensional limit. Phys. Rev. B, 83:165440, Apr 2011.
+(Cited on pages 69 and 74.)
+[205] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Interaction-induced criticality in $\mathrm{Z}_{2}$ topological insulators. Phys. Rev. Lett., 105:036803, Jul 2010.
+(Cited on pages 69, 72, 73, 97, 99, 100, 103, 111, and 158.)
+[206] Lian Zheng and A. H. MacDonald. Coulomb drag between disordered two-dimensional electrongas layers. Phys. Rev. B, 48:8203-8209, Sep 1993.
+(Cited on page 72.)
+[207] Alex Kamenev and Yuval Oreg. Coulomb drag in normal metals and superconductors: Diagrammatic approach. Phys. Rev. B, 52:7516-7527, Sep 1995.
+(Not cited.)
+[208] Karsten Flensberg, Ben Yu-Kuang Hu, Antti-Pekka Jauho, and Jari M. Kinaret. Linear-response theory of coulomb drag in coupled electron systems. Phys. Rev. B, 52:14761-14774, Nov 1995. (Not cited.)
+[209] I. S. Burmistrov, I. V. Gornyi, and K. S. Tikhonov. Disordered electron liquid in double quantum well heterostructures: Renormalization group analysis and dephasing rate. Phys. Rev. B, 84: 075338, Aug 2011.
+(Cited on pages 72 and 107.)
+[210] Jacob Linder, Takehito Yokoyama, and Asle Sudbø. Anomalous finite size effects on surface states in the topological insulator bi2se ${ }_{3}$. Phys. Rev. B, 80:205401, Nov 2009.
+(Cited on pages 74 and 233.)
+[211] A. A. Taskin, Satoshi Sasaki, Kouji Segawa, and Yoichi Ando. Manifestation of topological protection in transport properties of epitaxial bi2se ${ }_{3}$ thin films. Phys. Rev. Lett., 109:066803, Aug 2012.
+(Cited on page 74.)
+[212] Rosario E. V. Profumo, Marco Polini, Reza Asgari, Rosario Fazio, and A. H. MacDonald. Electron-electron interactions in decoupled graphene layers. Phys. Rev. B, 82:085443, Aug 2010. (Cited on pages 75 and 231.)
+[213] M. I. Katsnelson. Coulomb drag in graphene single layers separated by a thin spacer. Phys. Rev. B, 84:041407, Jul 2011.
+(Not cited.)
+
+[214] M Carrega, T Tudorovskiy, A Principi, M I Katsnelson, and M Polini. Theory of coulomb drag for massless Dirac fermions. New Journal of Physics, 14(6):063033, 2012.
+(Cited on pages 75 and 231.)
+[215] Fan Zhang, C. L. Kane, and E. J. Mele. Surface states of topological insulators. Phys. Rev. B, 86:081303, Aug 2012.
+(Cited on page 76.)
+[216] J. González, F. Guinea, and M. A. H. Vozmediano. Electron-electron interactions in graphene sheets. Phys. Rev. B, 63:134421, Mar 2001.
+(Cited on page 76.)
+[217] Matthew S. Foster and Igor L. Aleiner. Graphene via large $n$ : A renormalization group study. Phys. Rev. B, 77:195413, May 2008.
+(Cited on page 76.)
+[218] Daniel E. Sheehy and Jörg Schmalian. Quantum critical scaling in graphene. Phys. Rev. Lett., 99:226803, Nov 2007.
+(Cited on page 76.)
+[219] I. L. Aleiner and K. B. Efetov. Effect of disorder on transport in graphene. Phys. Rev. Lett., 97: 236801, Dec 2006.
+(Cited on page 76.)
+[220] A. Schuessler, P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Analytic theory of ballistic transport in disordered graphene. Phys. Rev. B, 79:075405, Feb 2009.
+(Cited on page 76.)
+[221] Pierre Adroguer, David Carpentier, Jérôme Cayssol, and Edmond Orignac. Diffusion at the surface of topological insulators. New Journal of Physics, 14(10):103027, 2012.
+(Cited on page 76.)
+[222] Yuval Baum and Ady Stern. Magnetic instability on the surface of topological insulators. Phys. Rev. B, 85:121105, Mar 2012.
+(Cited on page 77.)
+[223] Matthias Sitte, Achim Rosch, and Lars Fritz. Interaction effects on almost flat surface bands in topological insulators. Phys. Rev. B, 88:205107, Nov 2013.
+(Cited on page 77.)
+[224] N. M. R. Peres, F. Guinea, and A. H. Castro Neto. Coulomb interactions and ferromagnetism in pure and doped graphene. Phys. Rev. B, 72:174406, Nov 2005.
+(Cited on page 77.)
+[225] B. Seradjeh, J. E. Moore, and M. Franz. Exciton condensation and charge fractionalization in a topological insulator film. Phys. Rev. Lett., 103:066402, Aug 2009.
+(Cited on pages 77 and 85.)
+[226] A.A. Nersesyan, A.M. Tsvelik, and F. Wenger. Disorder effects in two-dimensional fermi systems with conical spectrum: exact results for the density of states. Nuclear Physics B, 438(3):561 -
+
+588, 1995.
+(Cited on page 80 .)
+[227] A. Polyakov and P.B. Wiegmann. Theory of nonabelian goldstone bosons in two dimensions. Physics Letters B, 131(1-3):121 - 126, 1983.
+(Cited on pages 89 and 229.)
+[228] P. Di Vecchia, B. Durhuus, and J.L. Petersen. The wess-zumino action in two dimensions and non-abelian bosonization. Physics Letters B, 144(3-4):245 - 249, 1984.
+(Cited on page 89.)
+[229] M. A. Baranov, A. M. M. Pruisken, and B. Skoric. (Mis-)handling gauge invariance in the theory of the quantum Hall effect. II. Perturbative results. Phys. Rev. B, 60:16821-16837, Dec 1999. (Cited on pages 91, 94, and 96.)
+[230] C. Castellani and C. Di Castro. Effective landau theory for disordered interacting electron systems: Specific-heat behavior. Phys. Rev. B, 34:5935-5938, Oct 1986.
+(Cited on page 94.)
+[231] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Symmetries and weak localization and antilocalization of Dirac fermions in hgte quantum wells. Phys. Rev. B, 86:125323, Sep 2012.
+(Cited on pages 99 and 101.)
+[232] Tomi Ohtsuki, Keith Slevin, and Bernhard Kramer. Conductance distribution at two-dimensional Anderson transitions. Physica E: Low-dimensional Systems and Nanostructures, 22(1-3):248251, 2004. 15th International Conference on Electronic Properties of Two-Dimensional Systems (EP2DS-15).
+(Cited on page 99.)
+[233] P Markos and L Schweitzer. Critical regime of two-dimensional ando model: relation between critical conductance and fractal dimension of electronic eigenstates. Journal of Physics A: Mathematical and General, 39(13):3221, 2006.
+(Cited on page 99.)
+[234] J. H. Bardarson, J. Tworzydło, P. W. Brouwer, and C. W. J. Beenakker. One-parameter scaling at the Dirac point in graphene. Phys. Rev. Lett., 99:106801, Sep 2007.
+(Cited on page 100.)
+[235] Kentaro Nomura, Mikito Koshino, and Shinsei Ryu. Topological delocalization of two-dimensional massless Dirac fermions. Phys. Rev. Lett., 99:146806, Oct 2007.
+(Cited on page 100.)
+[236] Y Baum, J. Böttcher, C. Brüne, C. Thienel, L. W. Molenkamp, A. Stern, and E. M. Hankiewicz. Self-consistent $k \cdot p$ calculations for gated thin layers of 3d topological insulators. 2014.
+(Cited on page 101.)
+[237] Ion Garate and Leonid Glazman. Weak localization and antilocalization in topological insulator thin films with coherent bulk-surface coupling. Phys. Rev. B, 86:035422, Jul 2012.
+(Cited on page 101.)
+
+[238] Viktor Krueckl and Klaus Richter. Probing the band topology of mercury telluride through weak localization and antilocalization. Semiconductor Science and Technology, 27(12):124006, 2012. (Cited on page 101.)
+[239] Yongqing Li, 2012. private communication.
+(Cited on pages 107 and 108.)
+[240] J. Baars and F. Sorger. Reststrahlen spectra of HgTe and $\mathrm{Cd}_{x} \mathrm{Hg}_{1-x} \mathrm{Te}$. Solid State Communications, 10(9):875-878, 1972.
+(Cited on page 109.)
+[241] Jason N. Hancock, J. L. M. van Mechelen, Alexey B. Kuzmenko, Dirk van der Marel, Christoph Brüne, Elena G. Novik, Georgy V. Astakhov, Hartmut Buhmann, and Laurens W. Molenkamp. Surface state charge dynamics of a high-mobility three-dimensional topological insulator. Phys. Rev. Lett., 107:136803, Sep 2011.
+(Cited on pages 110 and 139.)
+[242] Koji Kobayashi, Tomi Ohtsuki, and Ken-Ichiro Imura. Disordered weak and strong topological insulators. Phys. Rev. Lett., 110:236803, Jun 2013.
+(Cited on pages 111 and 158.)
+[243] Adriaan M. J. Schakel. Phys. Rev. D, 43:1428-1431, Feb 1991.
+(Cited on page 115.)
+[244] K. S. Novoselov, A. K. Geim, S. V. Morozov, D. Jiang, M. I. Katsnelson, I. V. Grigorieva, S. V. Dubonos, and A. A. Firsov. Two-dimensional gas of massless Dirac fermions in graphene. Nature, 438:197-200, 2005.
+(Cited on page 115.)
+[245] Yuanbo Zhang, Yan-Wen Tan, Horst L. Stormer, and Philip Kim. Nature, 438:201-204, 2005. (Not cited.)
+[246] V. P. Gusynin and S. G. Sharapov. Phys. Rev. Lett., 95:146801, Sep 2005. (Not cited.)
+[247] P. M. Ostrovsky, I. V. Gornyi, and A. D. Mirlin. Theory of anomalous quantum Hall effects in graphene. Phys. Rev. B, 77:195430, May 2008.
+(Cited on page 246.)
+[248] A. H. Castro Neto, F. Guinea, N. M. R. Peres, K. S. Novoselov, and A. K. Geim. Rev. Mod. Phys., 81:109-162, Jan 2009.
+(Not cited.)
+[249] M. O. Goerbig. Rev. Mod. Phys., 83:1193-1243, Nov 2011.
+(Cited on page 115.)
+[250] Liang Fu and C. L. Kane. Topological insulators with inversion symmetry. Phys. Rev. B, 76: 045302, Jul 2007.
+(Cited on page 115.)
+
+[251] Dung-Hai Lee. Surface states of topological insulators: The Dirac fermion in curved twodimensional spaces. Phys. Rev. Lett., 103:196804, Nov 2009.
+(Cited on pages 121 and 124.)
+[252] Chao-Xing Liu, Xiao-Liang Qi, HaiJun Zhang, Xi Dai, Zhong Fang, and Shou-Cheng Zhang. Model hamiltonian for topological insulators. Phys. Rev. B, 82:045122, Jul 2010. (Not cited.)
+[253] Kentaro Nomura and Naoto Nagaosa. Surface-quantized anomalous Hall current and the magnetoelectric effect in magnetically disordered topological insulators. Phys. Rev. Lett., 106:166802, Apr 2011.
+(Cited on page 129.)
+[254] A. A. Zyuzin and A. A. Burkov. Thin topological insulator film in a perpendicular magnetic field. Phys. Rev. B, 83:195413, May 2011.
+(Not cited.)
+[255] Oskar Vafek. Quantum Hall effect in a singly and doubly connected three-dimensional topological insulator. Phys. Rev. B, 84:245417, Dec 2011.
+(Cited on pages 121 and 124.)
+[256] Wang-Kong Tse and A. H. MacDonald. Magneto-optical faraday and kerr effects in topological insulator films and in other layered quantized Hall systems. Phys. Rev. B, 84:205327, Nov 2011. (Cited on pages 119 and 139.)
+[257] Huichao Li, L. Sheng, and D. Y. Xing. Quantum Hall effect in thin films of three-dimensional topological insulators. Phys. Rev. B, 84:035310, Jul 2011.
+(Not cited.)
+[258] Rui-Lin Chu, Junren Shi, and Shun-Qing Shen. Phys. Rev. B, 84:085312, Aug 2011. (Cited on page 117.)
+[259] Zhihua Yang and Jung Hoon Han. Phys. Rev. B, 83:045415, Jan 2011. (Not cited.)
+[260] M. Sitte, A. Rosch, E. Altman, and L. Fritz. Topological insulators in magnetic fields: Quantum Hall effect and edge channels with a nonquantized $\theta$ term. Phys. Rev. Lett., 108:126807, Mar 2012.
+(Not cited.)
+[261] Yan-Yang Zhang, Xiang-Rong Wang, and X C Xie. Three-dimensional topological insulator in a magnetic field: chiral side surface states and quantized Hall conductance. Journal of Physics: Condensed Matter, 24(1):015004, 2012.
+(Not cited.)
+[262] Dashdeleg Baasanjav, Oleg A. Tretiakov, and Kentaro Nomura. 2013. (Cited on page 115.)
+[263] Kentaro Nomura, Shinsei Ryu, Mikito Koshino, Christopher Mudry, and Akira Furusaki. Quantum Hall effect of massless Dirac fermions in a vanishing magnetic field. Phys. Rev. Lett., 100:
+
+246806, Jun 2008.
+(Cited on pages 115 and 133.)
+[264] K. S. Novoselov, Z. Jiang, Y. Zhang, S. V. Morozov, H. L. Stormer, U. Zeitler, J. C. Maan, G. S. Boebinger, P. Kim, and A. K. Geim. Room-temperature quantum Hall effect in graphene. Science, 315(5817):1379, 2007.
+(Cited on page 115.)
+[265] F. D. M. Haldane. Phys. Rev. Lett., 61:2015-2018, Oct 1988.
+(Cited on page 115.)
+[266] Masaru Onoda and Naoto Nagaosa. Phys. Rev. Lett., 90:206601, May 2003.
+(Not cited.)
+[267] Chao-Xing Liu, Xiao-Liang Qi, Xi Dai, Zhong Fang, and Shou-Cheng Zhang. Phys. Rev. Lett., 101:146802, Oct 2008.
+(Not cited.)
+[268] Rui Yu, Wei Zhang, Hai-Jun Zhang, Shou-Cheng Zhang, Xi Dai, and Zhong Fang. Science, 329 (5987):61-64, 2010.
+(Cited on page 115.)
+[269] H.B. Nielsen and M. Ninomiya. A no-go theorem for regularizing chiral fermions. Physics Letters B, 105(2-3):219 - 223, 1981.
+(Cited on pages 115 and 121.)
+[270] B. I. Halperin. Quantized Hall conductance, current-carrying edge states, and the existence of extended states in a two-dimensional disordered potential. Phys. Rev. B, 25:2185-2190, Feb 1982. (Cited on pages 115, 120, 121, 122, 123, and 158.)
+[271] D. C. Tsui, H. L. Stormer, and A. C. Gossard. Two-dimensional magnetotransport in the extreme quantum limit. Phys. Rev. Lett., 48:1559-1562, May 1982.
+(Cited on page 116.)
+[272] R. Jackiw. Effects of Dirac's negative energy sea on quantum numbers. Helv.Phys.Acta, 59: 835-843, 1986. MIT-CTP-1306.
+(Cited on page 116.)
+[273] M. C. Huang and P. Sikivie. Structure of axionic domain walls. Phys. Rev. D, 32:1560-1568, Sep 1985 .
+(Cited on page 119.)
+[274] A. Karch. Electric-magnetic duality and topological insulators. Phys. Rev. Lett., 103:171601, Oct 2009.
+(Cited on pages 119, 120, 136, 252, and 254.)
+[275] P. Sikivie. On the interaction of magnetic monopoles with axionic domain walls. Physics Letters B, 137(5):353 - 356, 1984.
+(Cited on page 120.)
+
+[276] Xiao-Liang Qi, Rundong Li, Jiadong Zang, and Shou-Cheng Zhang. Inducing a magnetic monopole with topological surface states. Science, 323(5918):1184-1187, 2009.
+(Cited on pages 120 and 140.)
+[277] D. A. Pesin and A. H. MacDonald. Topological magnetoelectric effect decay. Phys. Rev. Lett., 111:016801, Jul 2013.
+(Cited on pages 119 and 134.)
+[278] Sichun Sun and Andreas Karch. Finite-size effects on the statistical angle of an electron induced dyon in proximity to a topological insulator. Phys. Rev. B, 84:195115, Nov 2011.
+(Cited on page 120.)
+[279] Y. Aharonov and A. Casher. Ground state of a spin- $\frac{1}{2}$ charged particle in a two-dimensional magnetic field. Phys. Rev. A, 19:2461-2462, Jun 1979.
+(Cited on page 123.)
+[280] L. Landau. Diamagnetismus der metalle. Zeitschrift für Physik, 64(9-10):629-637, 1930. (Cited on page 123.)
+[281] A. M. M. Pruisken and M. A. Baranov. EPL (Europhysics Letters), 31(9):543, 1995. (Cited on pages 128 and 129.)
+[282] A.M.M. Pruisken and I.S. Burmistrov. $\theta$ renormalization, electron-electron interactions and super universality in the quantum Hall regime. Annals of Physics, 322(6):1265 - 1334, 2007. ISSN 00034916.
+(Cited on pages 128, 129, and 158.)
+[283] A.M.M. Pruisken. Field theory, scaling and localization. In Richard E. Prange and Steven M. Girvin, editors, The quantum Hall effect, Graduate texts in contemporary physics : Maryland subseries. Springer, New York, 1990.
+(Cited on page 128.)
+[284] A.M.M. Pruisken and I.S. Burmistrov. The instanton vacuum of generalized cpn models. Annals of Physics, 316(2):285-356, 2005.
+(Cited on pages 129 and 158.)
+[285] Takahiro Morimoto, Yshai Avishai, and Hideo Aoki. Dynamical scaling analysis of the optical Hall conductivity in the quantum Hall regime. Phys. Rev. B, 82:081404, Aug 2010.
+(Cited on page 129.)
+[286] Takahiro Morimoto and Hideo Aoki. Two-parameter flow of $\sigma_{x x}(\omega)-\sigma_{x y}(\omega)$ for the graphene quantum Hall system in the ac regime. Phys. Rev. B, 85:165445, Apr 2012.
+(Cited on page 129.)
+[287] D.E. Khmel'nitskii. Pis'ma Zh. Eksp. Teor. Fiz., 38:454, 1983. JETP Lett. 38, 552 (1983). (Cited on pages 129, 140, and 158.)
+[288] J. H. Bardarson, M. V. Medvedyeva, J. Tworzydło, A. R. Akhmerov, and C. W. J. Beenakker. Absence of a metallic phase in charge-neutral graphene with a random gap. Phys. Rev. B, 81: 121414, Mar 2010.
+(Cited on page 129.)
+
+[289] J.T. Chalker and P.D. Coddington. Percolation, quantum tunnelling and the integer hall effect. Journal of Physics C: Solid State Physics, 21(14):2665, 1988.
+(Cited on page 129.)
+[290] Bodo Huckestein. Scaling theory of the integer quantum Hall effect. Rev. Mod. Phys., 67:357-396, Apr 1995 .
+(Cited on page 129.)
+[291] H. Fukuyama. Effects of strong spin-orbit scattering on Hall effect in weakly localized regime. J. Phys. Soc. Jpn., pages 18-19, 1983.
+(Cited on page 129.)
+[292] Steven Kivelson, Dung-Hai Lee, and Shou-Cheng Zhang. Global phase diagram in the quantum Hall effect. Phys. Rev. B, 46:2223-2238, Jul 1992.
+(Cited on pages 130 and 131.)
+[293] E. V. Gorbar, V. P. Gusynin, V. A. Miransky, and I. A. Shovkovy. Dynamics in the quantum Hall effect and the phase diagram of graphene. Phys. Rev. B, 78:085437, Aug 2008.
+(Cited on page 130.)
+[294] R. B. Laughlin. Levitation of extended-state bands in a strong magnetic field. Phys. Rev. Lett., 52:2304-2304, Jun 1984.
+(Cited on pages 130, 131, and 158.)
+[295] Takahiro Morimoto, Yasuhiro Hatsugai, and Hideo Aoki. Optical Hall conductivity in ordinary and graphene quantum Hall systems. Phys. Rev. Lett., 103:116803, Sep 2009.
+(Cited on page 133.)
+[296] A. M. Shuvaev, G. V. Astakhov, G. Tkachov, C. Brüne, H. Buhmann, L. W. Molenkamp, and A. Pimenov. Terahertz quantum Hall effect of Dirac fermions in a topological insulator. Phys. Rev. B, 87:121104, Mar 2013.
+(Cited on pages 134 and 139.)
+[297] C. J. Lin, X. Y. He, J. Liao, X. X. Wang, V. Sacksteder IV, W. M. Yang, T. Guan, Q. M. Zhang, L. Gu, G. Y. Zhang, C. G. Zeng, X. Dai, K. H. Wu, and Y. Q. Li. Phys. Rev. B, 88:041307, Jul 2013.
+(Cited on page 134.)
+[298] H. Köhler and E. Wüchner. physica status solidi (b), 67, 1975.
+(Cited on page 134.)
+[299] Y. Guldner, C. Rigaux, M. Grynberg, and A. Mycielski. Interband $\Gamma_{6} \rightarrow \Gamma_{8}$ magnetoabsorption in hgte. Phys. Rev. B, 8:3875-3883, Oct 1973.
+(Cited on page 134.)
+[300] M. Schütt, 2013. private communication.
+(Cited on page 139.)
+[301] Joseph Maciejko, Xiao-Liang Qi, H. Dennis Drew, and Shou-Cheng Zhang. Topological quantization in units of the fine structure constant. Phys. Rev. Lett., 105:166803, Oct 2010.
+(Cited on page 139.)
+
+[302] G. Tkachov and E. M. Hankiewicz. Anomalous galvanomagnetism, cyclotron resonance, and microwave spectroscopy of topological insulators. Phys. Rev. B, 84:035405, Jul 2011. (Cited on page 139.)
+[303] R. Valdés Aguilar, A. V. Stier, W. Liu, L. S. Bilbro, D. K. George, N. Bansal, L. Wu, J. Cerne, A. G. Markelz, S. Oh, and N. P. Armitage. Phys. Rev. Lett., 108:087403, Feb 2012. (Cited on page 139.)
+[304] G. S. Jenkins, A. B. Sushkov, D. C. Schmadel, N. P. Butch, P. Syers, J. Paglione, and H. D. Drew. Terahertz kerr and reflectivity measurements on the topological insulator bi ${ }_{2} \mathrm{se}_{3}$. Phys. Rev. B, 82:125120, Sep 2010.
+(Cited on page 139.)
+[305] Erhai Zhao and Arun Paramekanti. Bcs-bec crossover on the two-dimensional honeycomb lattice. Phys. Rev. Lett., 97:230404, Dec 2006.
+(Cited on page 141.)
+[306] N. B. Kopnin and E. B. Sonin. Bcs superconductivity of Dirac electrons in graphene layers. Phys. Rev. Lett., 100:246808, Jun 2008.
+(Not cited.)
+[307] Bruno Uchoa and A. H. Castro Neto. Comment on "bcs superconductivity of Dirac electrons in graphene layers". Phys. Rev. Lett., 102:109701, Mar 2009.
+(Not cited.)
+[308] Yuto Ito, Youhei Yamaji, and Masatoshi Imada. Impurity Effects on Superconductivity on Surfaces of Topological Insulators. Journal of the Physical Society of Japan, 81(8):084707, 2012. (Not cited.)
+[309] Bitan Roy, Vladimir Juric, and Igor F. Herbut. Quantum superconducting criticality in graphene and topological insulators. Phys. Rev. B, 87:041401, Jan 2013.
+(Not cited.)
+[310] Rahul Nandkishore, Joseph Maciejko, David A. Huse, and S. L. Sondhi. Superconductivity of disordered Dirac fermions. Phys. Rev. B, 87:174511, May 2013.
+(Not cited.)
+[311] S. Das Sarma and Qiuzi Li. Many-body effects and possible superconductivity in the twodimensional metallic surface states of three-dimensional topological insulators. Phys. Rev. B, 88:081404, Aug 2013.
+(Not cited.)
+[312] Dingping Li, B. Rosenstein, I. Shapiro, and B.Ya. Shapiro. Quantum critical point in the superconducting transition on the surface of topological insulator. 2014. arXiv:1405.5943.
+(Cited on page 141.)
+[313] A. A. Abrikosov and L. P. Gor'kov. Zh. Eksp. Teor. Fiz., 35, 1958. [Sov. Phys. JETP 8, 1090 (1959)].
+(Cited on pages 141 and 145.)
+
+[314] P. W. Anderson. J. Phys. Chem. Solids, 11, 1959.
+(Cited on pages 141 and 145.)
+[315] M. R. Beasley, J. E. Mooij, and T. P. Orlando. Possibility of vortex-antivortex pair dissociation in two-dimensional superconductors. Phys. Rev. Lett., 42:1165-1168, Apr 1979.
+(Cited on pages 141 and 142.)
+[316] Anatoly Larkin and Andrej A. Varlamov. Theory of fluctuations in superconductors. International series of monographs on physics. Clarendon Press, Oxford, 2005.
+(Cited on page 142.)
+[317] I. V. Yurkevich and Igor V. Lerner. Nonlinear $\sigma$ model for disordered superconductors. Phys. Rev. B, 63:064522, Jan 2001.
+(Cited on pages 146 and 155.)
+[318] I. V. Yurkevich and Igor V. Lerner. Granular superconductors: from the nonlinear $\sigma$ model to the bose-hubbard description. Phys. Rev. B, 64:054515, Jul 2001.
+(Not cited.)
+[319] Alex Levchenko and Alex Kamenev. Keldysh ginzburg-landau action of fluctuating superconductors. Phys. Rev. B, 76:094518, Sep 2007.
+(Cited on pages 146 and 155.)
+[320] D. C. Mattis and J. Bardeen. Theory of the anomalous skin effect in normal and superconducting metals. Phys. Rev., 111:412-417, Jul 1958.
+(Cited on page 148.)
+[321] B.I. Halperin and DavidR. Nelson. Resistive transition in superconducting films. Journal of Low Temperature Physics, 36(5-6):599-616, 1979.
+(Cited on page 154.)
+[322] LA Ponomarenko, AK Geim, AA Zhukov, R Jalil, SV Morozov, KS Novoselov, IV Grigorieva, EH Hill, VV Cheianov, VI Fal'Ko, et al. Tunable metal-insulator transition in double-layer graphene heterostructures. Nature physics, 7(12):958-961, 2011.
+(Cited on page 159.)
+[323] RV Gorbachev, AK Geim, MI Katsnelson, KS Novoselov, T Tudorovskiy, IV Grigorieva, AH MacDonald, SV Morozov, K Watanabe, T Taniguchi, et al. Strong coulomb drag and broken symmetry in double-layer graphene. Nature physics, 8(12):896-901, 2012.
+(Cited on page 159.)
+[324] W. Heisenberg. Der Teil und das Ganze: Gespräche im Umkreis der Atomphysik. Piper, 1973. (Cited on page 159.)
+[325] B.A. Bernevig and T.L. Hughes. Topological Insulators and Topological Superconductors. Princeton University Press, 2013.
+(Cited on page 205.)
+[326] L.D. Landau and E.M. Lifshits. The Classical Theory of Fields. Number Bd. 2 in Course of theoretical physics. Butterworth Heinemann, 1975.
+(Cited on page 209.)
+
+[327] J.D. Jackson. Classical Electrodynamics. Wiley, 1998. (Cited on page 209.)
+[328] N.W. Ashcroft and N.D. Mermin. Solid state physics. Science: Physics. Saunders College, 1976. (Cited on page 212.)
+[329] V.I. Arnol'd. Mathematical Methods of Classical Mechanics. Graduate Texts in Mathematics. Springer, 1989.
+(Cited on page 214.)
+[330] Wei Zhang, Rui Yu, Hai-Jun Zhang, Xi Dai, and Zhong Fang. First-principles studies of the threedimensional strong topological insulators $\mathrm{Bi}_{2} \mathrm{Te}_{3}, \mathrm{Bi}_{2} \mathrm{Se}_{3}$ and $\mathrm{Sb}_{2} \mathrm{Te}_{3}$. New Journal of Physics, 2010.
+(Cited on page 233.)
+[331] V.G. Knizhnik and A.B. Zamolodchikov. Current algebra and wess-zumino model in two dimensions. Nuclear Physics B, 247(1):83 - 103, 1984.
+(Cited on page 244.)
+[332] A.M. Tsvelik. Quantum Field Theory in Condensed Matter Physics. Cambridge University Press, 2007.
+(Cited on page 244.)
+[333] A.M.M. Pruisken. On localization in the theory of the quantized Hall effect: A two-dimensional realization of the $\theta$-vacuum. Nuclear Physics B, 235(2):277 - 298, 1984.
+(Cited on page 249.)
+
+# Bibliography
+
+
+
+
+# Acronyms 
+
+2D two dimensions, two dimensional. 31
+2DES two dimensional electron system. v, ix, 18, 23, 24, 41, 42, 55, 77, 105, 129, 131, 141-143, 146, $147,151,155,158,159,202,203,206,207,261$
+
+AA Altshuler-Aronov. 6, 7, 18, 69, 77, 78, 96, 99, 103
+AC Alternating current. ix, 112, 155
+AHE anomalous Hall effect. viii, $34,45,47,48,51,52,56,131-133,157,220,221$
+AS Atiyah-Singer. 24-26, 30, 32, 43, 54, 55, 126, 133
+BCS Bardeen-Cooper-Schrieffer. 142, 145, 148, 261
+BEC Bose-Einstein condensation. 142
+$\mathbf{B i}_{2} \mathbf{S e}_{3}$ Bismuth Selenide. vii, $74,76,111,116,134,158$
+BKT Berezinskii-Kosterlitz-Thouless. 20, 60, 61, 141-143, 148, 150, 152-155, 158
+cf. confer. $12,53,58$
+CS Chern-Simons. 24, 32, 33, 38, 39, 118-120, 126
+DC Direct current. 80, 82, 91, 154
+DOS density of states. viii, $4,6,41,42,58,63-68,73,81,106,125,145,146,157,202,203,267$
+FL Fermi liquid. 14-17, 75, 76, 84, 86, 87, 92, 234, 237, 238
+HgTe Mercury Telluride. vii, 40, 111, 134, 158
+HS Hubbard-Stratonovich. 144, 149, 257, 258, 260, 262
+IR infrared. $5,6,12,34,92,105,232$
+LHS left hand side. 51, 93, 135, 218
+LL Landau level. vi, 24, 26, 42, 43, 53-56, 117, 123-125, 133, 157, 206, 207, 227
+MIT metal-insulator transition. 13, 18, 19, 63, 66, 68, 99-101
+
+$\mathbf{N L} \sigma \mathbf{M}$ non-linear sigma model. 9-13, 16-20, 24, 32, 34-36, 40, 58-60, 62-64, 66, 68, 77-80, 82, 83, $86-93,99,102,103,111,119,127,128,140,143,146-153,155,157,158,201,237,238,243,244$, $246,267,270$
+p. page. $73,84,85$
+
+PH particle-hole. 8, 259, 270
+QED quantum electrodynamics. 23, 38, 74, 126
+QFT quantum field theory. vi, $2,10,12,14,16,30-32,38,40,78$
+QH quantum Hall. vii, 39, 115, 117-121, 125, 127, 129-140, 158, 159, 243, 251
+QHE quantum Hall effect. vi-viii, 23, 24, 29, 34, 38-41, 56, 61, 82, 83, 107, 115-117, 121, 125, $127-132,140,157-159$
+
+QSH quantum Spin Hall effect. vii, 63
+RG renormalization group. $2,12,13,17,18,20,21,60-66,68-70,73,76,78,86,87,89,93,95-105$, $111,125,128-131,140,141,149-153,155,158,201,232,233,235,241,242$
+
+RHS right hand side. $17,31,40,50,51,54,93,103,135,136,218$
+RPA random phase approximation. $6,15,72,86,90,98,101,103,108,109,131,236-238$
+s.th. such that. 36
+
+SCBA self-consistent Born approximation. 5, 11, 13, 80, 81, 93, 145, 148, 243, 245-247, 261
+SSB spontaneous symmetry breaking. 11-13, 20, 32-34, 125, 146-151, 153, 258, 267
+TFT topological field theory. $24,38,118$
+TI topological insulator. v-ix, $6,18,24,26-28,32-35,38-43,45,46,52,56,57,60,63,68,69,71$, $76-78,83-85,87,88,99-103,105,107-112,115-122,124-126,133,134,136-141,145-147,151$, $153,155,157-159,201-203,206,222,229,232,261$
+
+TKNN Thouless-Kohmoto-Nightingale-den-Nijs. vi, vii, 24
+TME topological magnetoelectric effect. 119, 135, 136, 140
+TR time reversal. vi-viii, $5,7,8,11,27,39,111,115,116,118,119,126,127,130,144,147,157,259$, $260,262,267,270$
+
+UV ultraviolet. $12,21,34,40,54,80,81,87,91,93,129,145,148,149,232$
+w/o without. 42
+WAL weak antilocalization. vii, $5-7,13,18,41,69,77,78,96,98,99,102,104,270$
+
+WL weak localization. 5, 18, 45, 270
+WZ Wess-Zumino. 32, 35-38, 40, 58, 61, 62, 80-83, 89, 231
+WZNW Wess-Zumino-Novikov-Witten. 33, 37, 59, 62, 80, 229, 230
+
+
+
+
+# Notation 
+
+Throughout this thesis the following conventions are used:
+
+- If not specified otherwise, Gaussian units are used in electrodynamic formulae. However, to express final numerical results the SI units (e.g. Newton, Tesla etc.) are chosen.
+- Equally, unless stated differently, the reduced Planck constant, the speed of light and Boltzmann's constant are set to unity $\hbar=c=k_{B}=1$. In these units, the electron charge squares to the fine structure constant $\alpha$.
+- Vectors are denoted as bold symbols or by an arrow. Coordinate vectors in real space are typically denoted by $\mathbf{x}$ or $\mathbf{r}$, while momenta are usually labeled by $\mathbf{k}, \mathbf{p}$ or $\mathbf{q}$. The norm of a vector $\mathbf{a}$ is written as $|\mathbf{a}|=a$.
+- Path integrals (in Matsubara formalism) are computed with the convention $\mathcal{Z}=\int \mathcal{D}[\bar{\phi}, \phi] \exp (-S[\bar{\phi}, \phi])$, where $S[\bar{\phi}, \phi]$ is the action.
+- The notation $\int_{\tau, \mathbf{x}}=\int d^{2} x \int_{0}^{\beta} d \tau$ is sometimes used in this thesis, where, as usual, $\beta=1 / T$ is the inverse temperature.
+- In the Chaps. 1.5.2 and 5-7 involving the interacting NL $\sigma$ M I use a convention that $\alpha, \beta \in\left\{0, N_{R}\right\}$ denote replicas and $m, n \in\left\{-N_{M}^{\prime}, \ldots, N_{M}^{\prime}-1\right\}$ Matsubara indices.
+- Pauli matrices $\sigma_{i}=\left[\left(\begin{array}{ll}0 & 1 \\ 1 & 0\end{array}\right),\left(\begin{array}{cc}0 & -i \\ i & 0\end{array}\right),\left(\begin{array}{cc}1 & 0 \\ 0 & -1\end{array}\right)\right]_{i}$ denote the (pseudo-)spin of the particles. Note the comments in footnote 19 on p. 41 and in the discussion after Eq. (5.12) on p. 75 according to which the spin $\sigma$ of 3D TI surface states is only approximately equal to physical spin. Pauli matrices in Nambu space are denoted by $\tau_{i}$ in Chaps. 5 and 7.
+- The Levi-Civita symbol in any dimension is denoted by $\epsilon_{i_{1} \ldots i_{d}}$ where $i_{j} \in\left\{x_{1} \ldots x_{d}\right\}$. Per definition $\epsilon_{x_{1} \ldots x_{d}}=1$. In two dimensions, I also introduce the matrix notation $(\epsilon)_{i j}=\epsilon_{i j}$ to express the projection of the cross product on the $z$-component. The latter is also occasionally denoted by a wedge:
+
+$$
+\epsilon_{i j} a_{i} b_{j}=\mathbf{a}_{\xi} \mathbf{b}=\mathbf{a} \wedge \mathbf{b}
+$$
+
+- In all figures representing RG flow, arrows indicate the flow towards the infrared.
+- Spatial dimensionality is denoted by $d$ while space-time dimensionality is denoted by $D$. The distinction between space-time dimensionality and the diffusion coefficient $D$ should be clear from the context.
+
+In what follows a list summarizing the notation employed in this thesis is presented.
+
+$\alpha$ fine structure constant of QED: $\alpha^{-1}=137,035 \ldots$ at the scale of the electron mass (and also at all condensed matter scales). $6,23,38,74,135,201$
+$\Phi_{0}$ flux quantum $\Phi_{0}=\frac{\hbar}{e} .42,206$
+$\nu$ single particle DOS. $4,6,64,65,68,73$
+$\tau$ The symbol $\tau$ (with corresponding indices) denote elastic mean scattering times. 3-5, 202
+$\Omega_{\xi}$ Berry curvature for massive TI surface states: $\Omega_{\xi}=-\frac{m v_{0}^{4}}{2 \epsilon_{\xi}^{2}} \cdot 42,47,205$
+$\omega_{c}$ cyclotron frequency of 2DES with parabolic disperision: $\omega_{c}=\left|\frac{e B}{m c}\right| \cdot 42,46,206,212$
+$\Omega_{c}^{\text {cf. }}$ classical cyclotron frequency of TI surface states: $\Omega_{c}^{\text {cf. }}=\left|\frac{e B v_{0}^{2}}{\epsilon c}\right| \cdot 42,45,46,132,133,211,212$
+$\Omega_{c}$ quantum cyclotron frequency of TI surface states: $\Omega_{c}=\sqrt{2|e B| v_{0}^{2} / c} .42,123,134$
+$\mathcal{A}_{\xi}$ Berry connection for massive TI surface states: $\mathcal{A}_{\xi}=\left\langle u_{\xi, \mathbf{k}}\right| i \partial_{\mathbf{k}} u_{\xi, \mathbf{k}}\rangle .48,205$
+$D$ Diffusion coefficient, in $d$ spatial dimension $D=v_{F}{ }^{2} \tau / d .3,46,201$
+$\frac{\partial n}{\partial \mu}$ thermodynamic DOS. 6
+$e$ charge $q=-|e|$ of an electron. 42, 202
+$k_{F}$ Fermi momentum, occasionally also $p_{F} .2,15,74$
+$l$ mean free path $l=v_{F} \tau .2,3,5,15,60,71,85,93,129,150$
+$l_{B}$ magnetic length $l_{B}=\sqrt{\frac{\hbar}{|e B|}} \approx 26 \mathrm{~nm} / \sqrt{B[T]} .5,45,116,123,130$
+$M_{\infty}$ The bulk band gap of topological insulators is $2 M_{\infty} .27,28,32,70,110,116,122,134$
+$q$ charge of a particle, for electrons $q=e=-|e|$. As usual $\Pi=\mathbf{p}-q \mathbf{A}$ denotes the kinetic momentum, and $\mathbf{p}=-i \nabla$ denotes the operator of canonical momentum. 25, 42, 202
+$v_{F}$ Fermi velocity. 5, 202
+
+# Appendix A 
+
+## Basic calculations
+
+In this appendix I present some basic calculations which are useful for the entire thesis.
+
+## A. 1 Basic calculations in the absence of orbital magnetic field
+
+## A.1.1 Eigenvalue problem of clean Hamiltonian
+
+## 2DES with parabolic dispersion
+
+A conventional 2DES has parabolic dispersion $\epsilon(\mathbf{p})=\frac{\mathbf{p}^{2}}{2 m}$ and eigenfunctions which are plane waves. The DOS per area and spin is $\nu(E)=\frac{m}{2 \pi} \theta(E)$ and the particle density at $T=0$ and chemical potential $\mu$ is $n(\mu)=\frac{m \mu}{2 \pi}$.
+
+## 3D TI surface states
+
+The Hamiltonian under consideration is
+
+$$
+H=v_{0} \epsilon_{i j} p_{i} \sigma_{j}+m v_{0}^{2} \sigma_{z}
+$$
+
+It has energy spectrum $\epsilon_{\xi}(\mathbf{p})=\xi \epsilon(\mathbf{p})= \pm \sqrt{m^{2} v_{0}^{4}+v_{0}^{2} \mathbf{p}^{2}}, \xi= \pm 1$ denotes the band index. Sometimes the argument $(\mathbf{p})$ is dropped from the energies $\epsilon_{\xi}$ and $\epsilon$.
+
+Density of states and particle density The DOS per area is
+
+$$
+\nu(E) \equiv \sum_{\xi} \int(d p) \delta\left(E-\epsilon_{\xi}(\mathbf{p})\right)=\frac{|E|}{2 \pi v_{0}^{2}} \theta(|E|-|m| v_{0}^{2})
+$$
+
+By consequence the particle density at $T=0$ and chemical potential $\mu$ is
+
+$$
+n(\mu)=n_{0}+\int_{0}^{\mu} \nu(E) d E=n_{0}+\operatorname{sign}(\mu) \frac{\mu^{2}-\left(m v_{0}^{2}\right)^{2}}{4 \pi v_{0}^{2}} \theta\left(\mu^{2}-\left(m v_{0}^{2}\right)^{2}\right)
+$$
+
+$n_{0}$ is the divergent contribution of the filled hole ("positron") band. Employing a proper regularization scheme it vanishes as discussed below. (Note that the above formula is valid for arbitrary sign of $\mu$.)
+
+Eigenstates I switch to momentum representation. At any finite $\mathbf{p}$ one can parametrize $\mathbf{p}=$ $p(\sin \phi, \cos \phi)$ and then
+
+$$
+\langle\mathbf{p}| H\left|\mathbf{p}^{\prime}\right\rangle=\left(\begin{array}{cc}
+m v_{0}^{2} & -v_{0} p e^{i \phi} \\
+-v_{0} p e^{-i \phi} & -m v_{0}^{2}
+\end{array}\right)\left\langle\mathbf{p} \mid \mathbf{p}^{\prime}\right\rangle
+$$
+
+The eigenfunctions are thus
+
+$$
+\psi_{\xi, \mathbf{p}}(\mathbf{x}) \equiv\langle\mathbf{x} \mid \mathbf{p}, \xi\rangle_{D}=e^{i \mathbf{p r}}\left|u_{\xi, \mathbf{p}}\right\rangle
+$$
+
+where
+
+$$
+\left|u_{\xi, \mathbf{p}}\right\rangle \equiv \frac{1}{\sqrt{2}}\binom{\xi \sqrt{1+\frac{m v_{0}^{2}}{\xi \epsilon_{p}}} e^{i \phi / 2}}{-\sqrt{1-\frac{m v_{0}^{2}}{\xi \epsilon_{p}}} e^{-i \phi / 2}}
+$$
+
+Another representation involves the angle $\theta_{\mathbf{p}}$ defined by $\cos \theta_{\mathbf{p}}=m v_{0}^{2} / \epsilon_{\mathbf{p}}$. Then the spinors are
+
+$$
+\begin{aligned}
+& \left|u_{+, \mathbf{p}}\right\rangle=\left(\cos \left(\theta_{\mathbf{p}} / 2\right) e^{i \phi / 2},-\sin \left(\theta_{\mathbf{p}} / 2\right) e^{-i \phi / 2}\right)^{T} \\
+& \left|u_{-, \mathbf{p}}\right\rangle=\left(-\sin \left(\theta_{\mathbf{p}} / 2\right) e^{i \phi / 2},-\cos \left(\theta_{\mathbf{p}} / 2\right) e^{-i \phi / 2}\right)^{T}
+\end{aligned}
+$$
+
+The overlap of two spinors $\left|u_{\xi, \mathbf{p}}\right\rangle$ is
+
+$$
+\left\langle u_{\xi^{\prime}, \mathbf{p}^{\prime}} \mid u_{\xi, \mathbf{p}}\right\rangle=\frac{1}{2}\left[\xi \xi^{\prime} \sqrt{\left(1+\frac{m v_{0}^{2}}{\xi \epsilon_{p}}\right)\left(1+\frac{m v_{0}^{2}}{\xi^{\prime} \epsilon_{p^{\prime}}}\right)} e^{i\left(\phi-\phi^{\prime}\right) / 2}+\sqrt{\left(1-\frac{m v_{0}^{2}}{\xi \epsilon_{p}}\right)\left(1-\frac{m v_{0}^{2}}{\xi^{\prime} \epsilon_{p^{\prime}}}\right)} e^{-i\left(\phi-\phi^{\prime}\right) / 2}\right]
+$$
+
+# Orthonormality 
+
+$$
+\int d^{2} x_{D}\left\langle\mathbf{p}^{\prime}, \xi^{\prime} \mid \mathbf{x}\right\rangle\langle\mathbf{x}| \mathbf{p}^{\prime \prime}, \xi\rangle_{D}=\delta_{\xi, \xi^{\prime}} \delta\left(\mathbf{p}^{\prime}-\mathbf{p}^{\prime \prime}\right)
+$$
+
+Partition of unity First, I consider each band separately
+
+$$
+\int(d p)\left\langle\mathbf{x}^{\prime} \mid \mathbf{p}, \xi\right\rangle_{D D}\langle\mathbf{p}, \xi \mid \mathbf{x}\rangle=\int(d p) e^{i \mathbf{p}\left(\mathbf{x}^{\prime}-\mathbf{x}\right)}\left(\begin{array}{cc}
+\frac{\xi \epsilon_{\mathbf{p}}+m v_{0}^{2}}{2 \xi \epsilon_{\mathbf{p}}} & -\frac{m p}{2 \xi \epsilon_{\mathbf{p}}} e^{i \phi} \\
+-\frac{m p}{2 \xi \epsilon_{\mathbf{p}}} e^{-i \phi} & \frac{\xi \epsilon_{\mathbf{p}}-m v_{0}^{2}}{2 \xi \epsilon_{\mathbf{p}}}
+\end{array}\right)
+$$
+
+Clearly, upon summation over $\xi= \pm$ the off diagonal elements drop out, while the diagonal elements provide unity in spin space times delta function in real space.
+
+## A.1.2 The zero chemical potential density $n_{0}$ for topological insulators
+
+Now one can calculate the contribution to the particle density by the filled hole band $n_{0}$ in the clean case. It is
+
+$$
+n_{0}(\mathbf{x})=\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int(d p) \operatorname{tr}\langle\mathbf{x}| \mathbf{p}, \xi=-1\rangle_{D D}\langle\mathbf{p}, \xi=-1 \mid \mathbf{x}^{\prime}\rangle=\lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right) \equiv 0
+$$
+
+In contrast to the case, when an orbital magnetic field is present (see below, App. A.3.1), there is no anomalous contribution in the thermodynamic limit.
+
+# A. 2 Berry connection and Berry curvature. 
+
+The eigenstates of any hermitian two by two matrix $H=\vec{d} \cdot \vec{\sigma}$ to eigenvalues $\epsilon_{\xi}=\xi|\vec{d}|= \pm d$ are [325]
+
+$$
+|\xi\rangle=\frac{1}{\sqrt{2 d\left(d+\xi d_{3}\right)}}\binom{d_{3}+\xi d}{d_{+}}
+$$
+
+$\left(d_{ \pm}=d_{1} \pm i d_{2}\right)$. For the 2D Dirac Hamiltonian given above $\vec{d}=\left(-v_{0} k_{y}, v_{0} k_{x}, m v_{0}^{2}\right)$.
+Assume $\vec{d}=\vec{d}\left(p_{x}, p_{y}\right)$. The Berry connection $\mathcal{A}_{\xi}$ is
+
+$$
+\begin{aligned}
+\mathcal{A}_{\xi, i}(\mathbf{p}) & =i\left\langle\xi \mid \partial_{p_{i}} \mid \xi\right\rangle \\
+& =i\left\{\frac{-\partial_{i}\left[d\left(d+\xi d_{3}\right)\right]+\left(d_{3}+\xi d\right) \partial_{i}\left(d_{3}+\xi d\right)+d_{-} \partial_{i} d_{+}}{2 d\left(d+\xi d_{3}\right)}\right\} \\
+& =-\frac{\epsilon_{a b} d_{a} \partial_{i} d_{b}}{2 d\left(d+\xi d_{3}\right)}
+\end{aligned}
+$$
+
+$(a, b=1,2)$.
+The Berry curvature $\Omega_{\xi}$ is
+
+$$
+\begin{aligned}
+\Omega_{\xi}= & \epsilon_{i j} \partial_{i} \mathcal{A}_{\xi, j} \\
+= & -\epsilon_{i j} \frac{\epsilon_{a b} d^{2} \partial_{i} d_{a} \partial_{j} d_{b}-\left(d^{2}-d_{3}^{2}\right) \partial_{i} d_{1} \partial_{j} d_{2}-\epsilon_{a b} d_{3} \partial_{i} d_{3} d_{a} \partial_{j} d_{b}}{2 d^{3}\left(d+\xi d_{3}\right)} \\
++ & \epsilon_{i j} \frac{\left(d^{2}-d_{3}^{2}\right) \partial_{i} d_{1} \partial_{j} d_{2}+\epsilon_{a b} d_{3} \partial_{i} d_{3}\left(d_{a} \partial_{j} d_{b}\right)+\epsilon_{a b} \xi d \partial_{i} d_{3}\left(d_{a} \partial_{j} d_{b}\right)}{2 d^{2}\left(d+\xi d_{3}\right)^{2}} \\
+= & -\epsilon_{i j} \frac{\partial_{i} d_{1} \partial_{j} d_{2}\left[\xi d_{3}\left(d+\xi d_{3}\right)^{2}\right]}{2 d^{3}\left(d+\xi d_{3}\right)^{2}} \\
+- & \epsilon_{i j} \epsilon_{a b} \xi \frac{d_{a} \partial_{i} d_{b} \partial_{j} d_{3}\left[\left(d+\xi d_{3}\right)^{2}\right]}{2 d^{3}\left(d+\xi d_{3}\right)^{2}} \\
+= & -\frac{\xi}{2 d^{3}} \epsilon_{\alpha \beta \gamma} d_{\alpha} \partial_{p_{x}} d_{\beta} \partial_{p_{y}} d_{\gamma}
+\end{aligned}
+$$
+
+For the Dirac Hamiltonian, where $\vec{d}=\left(-v_{0} k_{y}, v_{0} k_{x}, m v_{0}^{2}\right)$, the expressions are
+
+$$
+\mathcal{A}_{\xi, i}(\mathbf{p})=\epsilon_{i j} v_{0}^{2} \frac{k_{j}}{2\left(\epsilon_{\xi}^{2}+\epsilon_{\xi} m v_{0}^{2}\right)} \text { and } \Omega_{\xi}=-\frac{m v_{0}^{4}}{2 \epsilon_{\xi}^{3}}
+$$
+
+as above $\epsilon_{\xi}=\xi \sqrt{v_{0}^{2} p^{2}+\left(m v_{0}^{2}\right)^{2}}=\xi \epsilon$. This result coincides with what is reported in Refs. [169] and [325]. Note that $\Omega_{\xi}=0$ if it holds that $m=0$, as a non-zero prefactor of all three Pauli matrices in the Hamiltonian is needed.
+
+# A. 3 Landau levels in the presence of orbital magnetic field $\vec{B}=B \hat{e}_{z}$ 
+
+As usual $\Pi_{x, y}=\mathbf{p}_{x, y}-q \mathbf{A}_{x, y}$ denotes the operator of kinetic momentum. It is useful to consider
+
+$$
+\Pi_{ \pm}=\left(\Pi_{x} \pm i \Pi_{y}\right)
+$$
+
+which have the following commutation relation
+
+$$
+\left[-i \Pi_{-}, i \Pi_{+}\right]=2 i\left[\Pi_{x}, \Pi_{y}\right]=-2 q\left[\partial_{x}, A_{y}\right]+\left[A_{x}, \partial_{y}\right]=-2 q B
+$$
+
+This way creator and annihilator of the harmonic oscillator can be defined:
+
+- If $q B<0$ then
+
+$$
+b=-\frac{1}{\sqrt{2|q B|}}\left(-i \Pi_{-}\right) \text {and } b^{+}=-\frac{1}{\sqrt{2|q B|}} i \Pi_{+}
+$$
+
+- In contrast, if $q B>0$
+
+$$
+b^{+}=-\frac{1}{\sqrt{2|q B|}}\left(-i \Pi_{-}\right) \text {and } b=-\frac{1}{\sqrt{2|q B|}} i \Pi_{+}
+$$
+
+In any case:
+
+$$
+\left[b, b^{+}\right]=1
+$$
+
+## Eigenvalue problem of clean 2DES Hamiltonian
+
+Written by means of creation and annihilation operators the Hamiltonian is
+
+$$
+H=\omega_{c}\left(b^{\dagger} b+\frac{1}{2}\right)
+$$
+
+The spectrum is $E_{n}=\omega_{c}\left(n+\frac{1}{2}\right)$ where $n \in \mathbb{N}_{0}$. The usual LL eigenstates are denoted as $|n, k\rangle$, here $k=1 \ldots B A / \Phi_{0}$ ( $A$ is the area penetrated by the flux). They fulfill $b|n, k\rangle=\sqrt{n}|n-1, k\rangle$ and $b^{+}|n, k\rangle=\sqrt{n+1}|n+1, k\rangle$.
+
+## Eigenvalue problem of clean TI Hamiltonian
+
+The energy spectrum is
+
+$$
+E_{n}=\operatorname{sgn}(n) \sqrt{\left(m v_{0}^{2}\right)^{2}+\Omega_{c}^{2}|n|} \text { for } n \neq 0 \text { and } E_{0}=\operatorname{sign}(q B) m v_{0}^{2}
+$$
+
+1. Case: $q B<0$.
+
+Using the ladder operators of the harmonic oscillator the Hamiltonian becomes
+
+$$
+H=\left(\begin{array}{cc}
+m v_{0}^{2} & -\Omega_{c} b \\
+-\Omega_{c} b^{+} & -m v_{0}^{2}
+\end{array}\right)
+$$
+
+The eigenvalue problem can be solved using the eigenfunctions $|n, k\rangle$ of the 2DES . The eigenspinors are for $n \neq 0$
+
+$$
+|n, k\rangle_{D}=\frac{1}{\sqrt{2 E_{n}^{2}+2 m v_{0}^{2} E_{n}}}\binom{\binom{-m v_{0}^{2}-E_{n}}{\Omega_{c} \sqrt{|n|}}|n|, k\rangle}{\binom{-m v_{0}^{2}-E_{n}}{|n|, k\rangle}}
+$$
+
+while $|0, k\rangle_{D}=(0,|0, k\rangle)^{T}$.
+
+# 2. Case: $q B>0$. 
+
+Analogous treatment leads to
+
+$$
+H=\left(\begin{array}{cc}
+m v_{0}^{2} & -\Omega_{c} b^{+} \\
+-\Omega_{c} b & -m v_{0}^{2}
+\end{array}\right)
+$$
+
+In this case the eigenfunctions are for non-zero LL
+
+$$
+|n, k\rangle_{D}=\frac{1}{\sqrt{2 E_{n}^{2}-2 m v_{0}^{2} E_{n}}}\binom{\Omega_{c} \sqrt{|n|}}{\binom{m v_{0}^{2}-E_{n}}{m v_{0}^{2}-E_{n}}}|| n|, k\rangle\binom{|n|, k\rangle}{\left||n|-1, k\rangle\right.}
+$$
+
+and $|0, k\rangle_{D}=(|0, k\rangle, 0)^{T}$.
+Orthonormality and partition of unity. The orthonormality and the partition of unity for Dirac fermions follow from the partition of unity and orthonormality of $\{|n, k\rangle\}$.
+
+## A.3.1 The particle density at zero chemical potential
+
+Analogously to App. A.1.2, I point split regularize the sum over LL with negative index $n<0$ [the lower (upper) sign corresponds to the case $q B<0(q B>0)]$.
+
+$$
+\begin{aligned}
+\lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \sum_{k, n<0} \operatorname{tr}\langle\mathbf{x} \mid n, k\rangle_{D D}\left\langle n, k \mid \mathbf{x}^{\prime}\right\rangle= & \lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \sum_{k, n<0}\left\{\frac{\langle\mathbf{x}||n|, k\rangle\langle|n|, k|\mathbf{x}^{\prime}\rangle+\langle\mathbf{x}||n|-1, k\rangle\langle|n|-1, k\left|\mathbf{x}^{\prime}\right\rangle}{2}\right. \\
+& \left.\mp m v_{0}^{2} \frac{\langle\mathbf{x}||n|, k\rangle\langle|n|, k\left|\mathbf{x}^{\prime}\right\rangle-\langle\mathbf{x}||n|-1, k\rangle\langle|n|-1, k\left|\mathbf{x}^{\prime}\right\rangle}{2 E_{n}}\right\} \\
+\doteq & -\frac{1}{2} \frac{B}{\Phi_{0}}+\lim _{\mathbf{x} \rightarrow \mathbf{x}^{\prime}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+\end{aligned}
+$$
+
+The first contribution is a direct consequence of the fully spin polarized zeroth LL . The symbol $\doteq$ denotes the fact that the term proportional to $m v_{0}^{2}$ vanishes under spatial average. Taking into account the value of the zeroth LL energy the average density at zero temperature and chemical potential turns out to be
+
+$$
+\bar{n}_{0}=-\operatorname{sign}(q B m) \frac{1}{2} \frac{B}{\Phi_{0}}
+$$
+
+
+
+
+# 5 
+
+## Semiclassical transport calculations
+
+## B. 1 Drude transport theory
+
+In this appendix more details are provided for section 3.1 of the main text.
+
+## B.1.1 Classical special relativity
+
+The action describing a classical, relativistic particle in $(2 \div 1)$ space-time dimensions is [326, 327]
+
+$$
+\begin{aligned}
+S & =\int_{a}^{b}-m v_{0} d s+\frac{q}{c} \mathbf{A} \cdot d \mathbf{x}-q \phi d t \\
+& =\int_{a}^{b}-m v_{0} d s-\frac{q}{c} A^{\mu} d s_{\mu}
+\end{aligned}
+$$
+
+I introduced the relativistic line element $d s^{2}=v_{0}^{2} d t^{2}-d x^{2}-d y^{2}$ and $m$, which is the rest mass of the particle. The vector potential transforms like a contravariant vector (indicated by superscripts) and is
+
+$$
+A^{\mu}=(\underline{A})^{\mu}=\left(\frac{c}{v_{0}} \phi, A_{x}, A_{y}\right)^{\mu}
+$$
+
+Other contravariant vectors are $\underline{x}=\left(v_{0} t, x, y\right)$ and the energy momentum vector $\underline{p}=\left(E / v_{0}, p_{x}, p_{y}\right)$. All of these vectors are defined by the transformations of the Lorentz group $L_{v_{0}}$ with limiting speed $v_{0}$
+
+$$
+\underline{a}=\Lambda \underline{a}^{\prime}
+$$
+
+where $\underline{a}$ and $\underline{a}^{\prime}$ denote the same quantity, but in different reference frames $K$ and $K^{\prime}$. $\Lambda$ are the elements of the Lorentz group and leave the metric $\eta=\operatorname{diag}(1,-1,-1)$ invariant. Thus the action (B.1) is invariant under $L_{v_{0}}$. Note that the inclusion of a Maxwell term would break the symmetry.
+
+## Transformation of velocity under boosts
+
+A special importance in special relativity theory is played by boosts. A boost in arbitrary direction is given by
+
+$$
+\Lambda_{\text {boost }}(\boldsymbol{\beta})=\left(\begin{array}{cc}
+\gamma & \gamma \boldsymbol{\beta}^{T} \\
+\gamma \boldsymbol{\beta} & \mathbf{1}+\frac{\gamma-1}{\boldsymbol{\beta}^{2}} \boldsymbol{\beta} \otimes \boldsymbol{\beta}^{T}
+\end{array}\right)
+$$
+
+$\boldsymbol{\beta}=\left(\beta_{x}, \beta_{y}\right)$ is the speed of the boost (in units of $v_{0}$ ) and $\gamma=\frac{1}{\sqrt{1-\beta^{2}}}$ as usual. By consequence, if coordinate systems $K$ and $K^{\prime}$ are related by a boost, Eq. (B.3) implies for the respective velocities $\mathbf{v}$ and $\mathbf{v}^{\prime}$ the relation
+
+$$
+\mathbf{v}=\frac{d \mathbf{x}}{d t}=\frac{\mathbf{v}^{\prime}+\frac{\gamma-1}{\beta^{2}} \boldsymbol{\beta}\left(\boldsymbol{\beta} \cdot \mathbf{v}^{\prime}\right)+v_{0} \gamma \boldsymbol{\beta}}{\gamma\left(1+\boldsymbol{\beta} \frac{\mathbf{v}^{\prime}}{v_{0}}\right)}
+$$
+
+# Transformation of electromagnetic fields under boosts 
+
+The electromagnetic field strength tensor is
+
+$$
+F^{\mu \nu} \equiv \partial^{\mu} A^{\nu}-\partial^{\nu} A^{\mu}=\left(\begin{array}{ccc}
+0 & \frac{c}{v_{0}} E_{x} & \frac{c}{v_{0}} E_{y} \\
+-\frac{c}{v_{0}} E_{x} & 0 & B \\
+-\frac{c}{v_{0}} E_{y} & -B & 0
+\end{array}\right)
+$$
+
+As it is defined by means of contravariant $(1+2)$ vectors $\underline{x}$ and $\underline{A}$ the additional (large) factors of $c / v_{0}$ appear as compared to the usual situation. Hence, the transformation laws under boosts contain this additional factor and are
+
+$$
+\begin{aligned}
+\frac{c}{v_{0}} E_{i} & =\gamma\left[\frac{c}{v_{0}} E_{i}^{\prime}-\epsilon_{i j} B^{\prime} \beta_{j}\right]-\frac{\gamma^{2}}{1+\gamma} \beta_{i}\left(\boldsymbol{\beta} \cdot \frac{c}{v_{0}} \mathbf{E}^{\prime}\right) \\
+B & =\gamma\left[B^{\prime}+\frac{c}{v_{0}} \epsilon_{i j} \beta_{i} E_{j}^{\prime}\right]
+\end{aligned}
+$$
+
+Assume the fields $B^{\prime}$ and $\mathbf{E}^{\prime}=\left(0, E_{y}^{\prime}\right)$ are given in a certain frame $K^{\prime}$, e.g. the lab frame. Then
+a) if $B^{\prime}<\frac{c}{v_{0}} E_{y}^{\prime}$ there is a frame $K$ which is related by a boost defined by $\boldsymbol{\beta}=-\frac{v_{0} B^{\prime}}{c E_{y}^{\prime}} \hat{e}_{x}$ in which $B=0$ and $\mathbf{E}=\left(0, \gamma E_{y}^{\prime}\left[1-\left(\frac{v_{0} B}{c E_{y}^{\prime}}\right)^{2}\right]\right)$
+b) if $B^{\prime}>\frac{c}{v_{0}} E_{y}^{\prime}$ there is a frame $K$ which is related by a boost defined by $\boldsymbol{\beta}=-\frac{c E_{y}^{\prime}}{v_{0} B^{\prime}} \hat{e}_{x}$ in which $\mathbf{E}=0$ and $B=\gamma B^{\prime}\left[1-\left(\frac{c E_{y}^{\prime}}{v_{0} B}\right)^{2}\right]$.
+
+## Motion of a relativistic particle in EM fields without and with damping
+
+The equations of motion for the action (B.1) defined above and upon inclusion of friction are
+
+$$
+\dot{\mathbf{p}}_{i}=q\left(\mathbf{E}_{i}+\epsilon_{i j} \mathbf{v}_{j} \frac{B}{c}\right)-\frac{1}{\tau_{t r}} \mathbf{p}
+$$
+
+The phenomenological momentum relaxation term is non-Hamiltonian and breaks the Lorentz invariance.
+
+Throughout this appendix the following relation will be useful
+
+$$
+\mathbf{p}=\frac{m \mathbf{v}}{\sqrt{1-\frac{\mathbf{v}^{2}}{v_{0}^{2}}}}=\frac{E}{v_{0}^{2}} \mathbf{v}
+$$
+
+Keeping in mind the condensed matter background, the energy is given by the dispersion relation $E=\epsilon_{\xi}(\mathbf{p})=\xi \sqrt{m^{2} v_{0}^{4}+\mathbf{p}^{2} v_{0}^{2}}$ and can also be negative (see Tab. 2.2).
+
+In view of the equation of motion for the energy, the set of differential equations of $p$ now becomes non-linear. I will restrict myself to several limiting cases. The first two consider the clean situation, the last the steady state solution.
+a) No friction and $B^{\prime}<\frac{c}{v_{0}} E_{y}^{\prime}$. The problem can be solved in the frame $K$ where there is no $B$-field (see transformations above). Then
+
+$$
+\mathbf{v}(t)=\frac{\mathbf{p}(t)}{E((\mathbf{p}(t))} v_{0}^{2} \text { with } \mathbf{p}(t)=q \mathbf{E} t+\mathbf{p}_{0}
+$$
+
+Boosting back to $K^{\prime}$ by means of the inverse of transformation (B.5) leads to
+
+$$
+\mathbf{v}^{\prime}(t)=\frac{\mathbf{v}(t)+(\gamma-1) v_{x}(t)-v_{0} \gamma \beta_{x}}{\gamma\left[1-\beta_{x} v_{x}(t) / v_{0}\right]}
+$$
+
+where $\beta_{x}=-\frac{v_{0} B^{\prime}}{c E_{y}^{\prime}}$. The classical limit $v(t) / v_{0} \rightarrow 0$ and $\gamma \rightarrow 1$ is
+
+$$
+\mathbf{v}^{\prime}(t)=\frac{\mathbf{p}(t)}{m}+\mathbf{p}_{0}^{\prime}
+$$
+
+which corresponds to the classical limit without $B$-field. (The regime where there is no cyclotron motion, is the point $B=0$ in the classical case and a larger interval $0<B^{\prime}<\frac{c}{v_{0}} E_{y}^{\prime}$ in the relativistic situation.)
+b) No friction and $B^{\prime}>\frac{c}{v_{0}} E_{y}^{\prime}$. In this case one can transform into a different frame $K$ in which there is no E-field. In this frame the solution is
+
+$$
+\mathbf{v}(t)=v_{0}\binom{\zeta \sin \left[\Omega_{c}\left(t-t_{0}\right)\right]}{\cos \left[\Omega_{c}\left(t-t_{0}\right)\right]}
+$$
+
+I introduced $\zeta=\operatorname{sgn}(B q E)$ and $\Omega_{c}^{c l}=\left|\frac{q v_{0}^{2} B}{c E}\right|$. Transforming back into the lab frame $K^{\prime}$ the solution is
+
+$$
+\mathbf{v}^{\prime}(t)=\frac{\mathbf{v}(t)+(\gamma-1) v_{x}(t)-v_{0} \gamma \beta_{x}}{\gamma\left[1-\beta_{x} v_{x}(t) / v_{0}\right]}
+$$
+
+where $\beta_{x}=-\frac{c E_{y}^{\prime}}{v_{0} B^{\prime}}$. In the limit $v_{x} / v_{0} \rightarrow 0$ and $\gamma \rightarrow 1$ the classical cyclotron motion is recovered.
+
+c) With friction, steady state solution. At time scales larger than $\tau_{t r}$ the steady state solution $\dot{\mathbf{p}}=0$ governs the dynamics. It is given by
+
+$$
+\mathbf{p}=\frac{q \tau_{t r}}{1+\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}}\left(\begin{array}{cc}
+1 & \zeta \Omega_{c}^{c l} \cdot \tau_{t r} \\
+-\zeta \Omega_{c}^{c l} \cdot \tau_{t r} & 1
+\end{array}\right) \mathbf{E}
+$$
+
+This leads to Eq. (3.4) of the main text. Note the relation $\Omega_{c}^{c l} / \omega_{c}=1 / \sqrt{1+\frac{\left(\epsilon_{0} \mathbf{p}\right)^{2}}{\left(m v_{0}^{2}\right)^{2}}}$, which makes the classical limit apparent (see e.g. Ref. [328] for comparison).
+
+# B. 2 Boltzmann treatment of the problem and anomalous Hall effect 
+
+In this appendix further details are presented to the calculations presented in Chap. 3.2.
+
+## B.2.1 Derivation of clean equations of motion
+
+I briefly review the derivation of equations of motion (3.7), following Refs. [171] and [172]. Consider a general Hamiltonian
+
+$$
+H=H(\mathbf{p}-q \mathbf{A}(\mathbf{r}, t))
+$$
+
+with slow electromagnetic fields (compared to the width of wavepackets, see below) and a gauge in which $A_{0}=0$. The eigenstates of $H_{0}=\left.H\right|_{q=0}$ with eigenenergy $\epsilon_{\xi}(\mathbf{k})$ are denoted by
+
+$$
+\psi_{\xi, \mathbf{k}}(\mathbf{r})=e^{i \mathbf{r} \cdot \mathbf{k}}\left|u_{\xi, \mathbf{k}}\right\rangle
+$$
+
+As an example see the Dirac Hamiltonian presented in Tab. 2.2. Next define a time dependent wave packet in the presence of external field $\mathbf{A}$,
+
+$$
+\langle\mathbf{r}| \Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\rangle \equiv \Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(\mathbf{r}, t)=e^{i q \mathbf{A}\left(\mathbf{r}_{c}, t\right) \cdot \mathbf{r}} \int(d k) w(\mathbf{k}, t) e^{-i \epsilon_{\xi}(\mathbf{k}) t} \psi_{\xi, \mathbf{k}}(\mathbf{r})
+$$
+
+It will be useful to write $w(\mathbf{k}, t) e^{-i \epsilon_{\xi}(\mathbf{k}) t}=|w(\mathbf{k}, t)| e^{-i \gamma_{\xi}(\mathbf{k}, t)}$.
+The wave packet is assumed to be strongly peaked in phase space (as compared to the momentum scale associated with the involved energies and spatial scales of external fields). The center coordinates of the wave packet are given by
+
+$$
+\mathbf{k}_{c}=\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| \mathbf{p}-q \mathbf{A}\left(\mathbf{r}_{c}, t\right)\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle=\int(d k)|w(\mathbf{k}, t)|^{2} \mathbf{k}
+$$
+
+and
+
+$$
+\mathbf{r}_{c}=\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| \mathbf{r}\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle=\partial_{\mathbf{k}_{c}} \gamma_{\xi}\left(\mathbf{k}_{c}, t\right)+\mathcal{A}_{\xi}\left(\mathbf{k}_{c}\right)
+$$
+
+where $\mathcal{A}_{\xi}(\mathbf{k})=\left\langle u_{\xi}(\mathbf{k})\right| i \partial_{\mathbf{k}} u_{\xi}(\mathbf{k})\rangle$ represents the Berry connection.
+Following Ref. [171], I consider the following Lagrangian
+
+$$
+L\left(\mathbf{r}_{c}, \dot{\mathbf{r}_{c}}, \mathbf{k}_{c}, \dot{\mathbf{k}}_{c}, t\right)=\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| i d_{t}-H\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle
+$$
+
+I first evaluate
+
+$$
+\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| H(\mathbf{p}-q \mathbf{A}(\mathbf{r}))\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle=\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{(0)}(t)\right| H\left[\mathbf{p}-q\left(\mathbf{A}(\mathbf{r})-\mathbf{A}\left(\mathbf{r}_{c}\right)\right]\right)\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{(0)}(t)\right\rangle
+$$
+
+The wavepackets at absent external fields are denoted by $\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{(0)}(t)\right\rangle$. For the linear Dirac operator the result is
+
+$$
+\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| H(\mathbf{p}-q \mathbf{A}(\mathbf{r}))\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle=\epsilon_{\xi}\left(\mathbf{k}_{c}\right)+\mathcal{O}\left(\left|\frac{\partial^{2} \mathbf{A}\left(\mathbf{r}_{c}\right)}{\partial\left(\mathbf{r}_{c}\right)_{i} \partial\left(\mathbf{r}_{c}\right)_{j}}\left(\left\langle\mathbf{r}_{i} \mathbf{r}_{j}\right\rangle_{\Psi^{(0)}}-\left(\mathbf{r}_{c}\right)_{i}\left(\mathbf{r}_{c}\right)_{j}\right)\right|\right)
+$$
+
+Next, I calculate
+
+$$
+\begin{aligned}
+\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right| i d_{t}\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}(t)\right\rangle & =\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{(0)}(t)\right|-q \dot{\mathbf{A}}\left(\mathbf{r}_{c}, t\right) \mathbf{r}\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{(0)}(t)\right\rangle+\partial_{t} \gamma\left(\mathbf{k}_{c}, t\right) \\
+& =-q \dot{\mathbf{A}}\left(\mathbf{r}_{c}, t\right) \mathbf{r}_{c}+\left(d_{t} \gamma\left(\mathbf{k}_{c}, t\right)-\dot{\mathbf{k}_{c}} \partial_{\mathbf{k}_{c}} \gamma\left(\mathbf{k}_{c}, t\right)\right) \\
+& =-q \dot{\mathbf{A}}\left(\mathbf{r}_{c}, t\right) \mathbf{r}_{c}-\dot{\mathbf{k}}_{c}\left(\mathbf{r}_{c}-\mathcal{A}_{\xi}\left(\mathbf{k}_{c}\right)\right)+\text { total derivatives }
+\end{aligned}
+$$
+
+Combining the previous results, it is possible to evaluate the full Lagrangian
+
+$$
+L\left(\mathbf{r}_{c}, \dot{\mathbf{r}}_{c}, \mathbf{k}_{c}, \dot{\mathbf{k}}_{c}, t\right)=\dot{\mathbf{r}}_{c}\left(\mathbf{k}_{c}+q \mathbf{A}\right)+\dot{\mathbf{k}}_{c} \mathcal{A}_{\xi}-\epsilon_{\xi}\left(\mathbf{k}_{c}\right)+\text { total derivatives. }
+$$
+
+This is exactly the same as reported in Eq. (2.17) of Ref. [171]. Thus, I derived Eq. (3.12) of the main text, which leads to the equations of motion discussed in Sec. 3.2.
+
+# B.2.2 Derivation of side jump contributions 
+
+Following the original paper [173] I focus on the conduction band for simplicity. The same wave packets, Eq. (B.18), as in the previous section are employed. Consider a scattering event in the presence of slow external field occuring at time $t=0$ and position $\mathbf{r}=0$. The asymptotic form of the center coordinate of the incoming quasiparticle is given by Eq. (B.20), which can be rewritten as
+
+$$
+\left.\mathbf{r}_{c}(t)\right|_{t \rightarrow-\infty}=\partial_{\mathbf{k}_{c}} \epsilon\left(\mathbf{k}_{c}\right) t+\partial_{\mathbf{k}_{c}} \gamma^{\prime}\left(\mathbf{k}_{c}, t\right)+\mathcal{A}\left(\mathbf{k}_{c}\right)
+$$
+
+where $\gamma^{\prime}\left(\mathbf{k}_{c}, t\right)=\gamma\left(\mathbf{k}_{c}, t\right)-\epsilon\left(\mathbf{k}_{c}\right) t$.
+For a particle which is not subjected to Berry curvature effects, $\partial_{\mathbf{k}_{c}} \gamma^{\prime}\left(\mathbf{k}_{c}, t\right)$ encodes the effect of electromagnetic potentials and provides the starting value $\mathbf{r}_{c}(t=0)$.
+
+In the absence of external fields, we can represent the scattering states in an event $\mathbf{k}^{\prime} \rightarrow \mathbf{k}$ by
+
+$$
+\psi_{\xi, \mathbf{k}}^{o u t}(\mathbf{r}, t)=\int\left(d k^{\prime}\right) C\left(\mathbf{k}^{\prime}, t\right) e^{-i \epsilon_{\xi}\left(\mathbf{k}^{\prime}\right) t} \psi_{\xi, \mathbf{k}^{\prime}}(\mathbf{r})
+$$
+
+and to leading order in Born approximation
+
+$$
+C\left(\mathbf{k}^{\prime}, t\right)=-i V_{\mathbf{k}, \mathbf{k}^{\prime}} \int_{-\infty}^{t} e^{i\left[\epsilon\left(\mathbf{k}^{\prime}\right)-\epsilon(\mathbf{k})\right] t} d t^{\prime}+\delta\left(\mathbf{k}-\mathbf{k}^{\prime}\right)
+$$
+
+Following the general logic exposed above, one can expand the outgoing wave packet also by its outgoing scattering states at absent external fields
+
+$$
+\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{o u t}(\mathbf{r}, t)=e^{i q \mathbf{A}\left(\mathbf{r}_{c}, t\right) \cdot \mathbf{r}} \int(d k) w(\mathbf{k}, t) \psi_{\xi, \mathbf{k}}^{o u t}(\mathbf{r}, t)
+$$
+
+Clearly, the gauge potential drops out from the calculation of
+
+$$
+\begin{aligned}
+\left.\mathbf{r}_{c}(t)\right|_{t \rightarrow-\infty} & =\left\langle\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{o u t}(t)\right| \mathbf{r}\left|\Psi_{\xi, \mathbf{k}_{c}, \mathbf{r}_{c}}^{o u t}(t)\right\rangle \\
+& =\int\left(d k^{\prime}\right)\left|C\left(\mathbf{k}^{\prime}, t\right)\right|^{2}\left(\partial_{\mathbf{k}^{\prime}} \epsilon\left(\mathbf{k}^{\prime}\right) t+\partial_{\mathbf{k}^{\prime}} \gamma^{\prime}\left(\mathbf{k}^{\prime}, t\right)+\mathcal{A}\left(\mathbf{k}^{\prime}\right)-\left(\partial_{\mathbf{k}}+\partial_{\mathbf{k}^{\prime}}\right) \arg \left(V_{\mathbf{k}^{\prime}, \mathbf{k}}\right)\right)
+\end{aligned}
+$$
+
+Tracing back the asymptotes to $t=0$, and interpreting $\left|C\left(\mathbf{k}^{\prime}, t\right)\right|^{2}$ as a scattering probability for a scattering event $l_{1} \rightarrow l_{2}$ leads to the conclusion, that the asymptotic final state trajectory, and the asymptotic initial state trajectory don't cross at the scattering center, but a position shifted by
+
+$$
+\delta \mathbf{r}_{l_{2} l_{1}}=\text { " } \mathbf{r}_{l_{2}}(t=0)-\mathbf{r}_{l_{1}}(t=0) \text { ". }
+$$
+
+From this calculation which is based on Ref. [173], it follows that the side jump is
+
+$$
+\delta \mathbf{r}_{l_{2} l_{1}}=\left\langle u_{\xi_{2}, \mathbf{k}_{2}}\right| i \partial_{\mathbf{k}_{2}} u_{\xi_{2}, \mathbf{k}_{2}}\rangle-\left\langle u_{\xi_{1}, \mathbf{k}_{1}}\right| i \partial_{\mathbf{k}_{1}} u_{\xi_{1}, \mathbf{k}_{1}}\rangle-\left(\partial_{\mathbf{k}_{1}}+\partial_{\mathbf{k}_{2}}\right) \arg \left(V_{l_{2}, l_{1}}\right)
+$$
+
+even in the presence of smooth, external electromagnetic fields (in Ref. [173] only the E-field and not the B-field was considered). This concludes the derivation of Eq. (3.14) of the main text.
+
+# B.2.3 Geometrical foundations of Hamiltonian mechanics 
+
+In view of the exotic equations of motion (3.7) and (3.18), I briefly review the geometrical foundations of Hamiltonian mechanics (see e.g. Ref. [329]).
+
+Basic definitions and Poisson bracket. The basic constituents are a differentiable 2d dimensional manifold $M$, typically the phase space, and a non-degenerate, closed 2 -form $\omega$. The latter is used to define a vector field $\Omega_{a}$ to each 1 -form $a$ by means of the interior product $i_{\Omega_{a}}(\cdot) \equiv \omega\left(\Omega_{a}, \cdot\right)=a(\cdot)$ (in particular, one can define a Hamiltonian vector field $X_{f}=\Omega_{d f}$ for each function $f: M \rightarrow \mathbb{R}$ by setting $a=d f$ ).
+Next define the Poisson brackets
+
+$$
+\{f, g\}:=\omega\left(X_{f}, X_{g}\right) \equiv d f\left(X_{g}\right)=X_{g}(f)
+$$
+
+Their antisymmetry is apparent. Using a chart defined by its coordinates $\left\{\xi_{\beta}\right\}_{\beta=1}^{2 d}$, the Poisson bracket can be locally represented as follows
+
+$$
+\{f, g\}=\Omega_{d g}\left(\xi^{\beta}\right) \partial_{\beta} f=\partial_{\gamma} g\left(\omega^{-1}\right)^{\gamma \beta} \partial_{\beta} f
+$$
+
+I used the reverse of $\omega$ defined locally by
+
+$$
+\omega\left(\Omega_{a}, v\right)=\omega_{\gamma \delta} \Omega_{a}\left(\xi^{\gamma}\right) v\left(\xi^{\delta}\right) \stackrel{\text { def }}{=} a\left(\partial_{\gamma}\right) v\left(\xi^{\gamma}\right)
+$$
+
+The following identification holds
+
+$$
+\Omega_{a}\left(\xi^{\beta}\right)=a\left(\partial_{\gamma}\right)\left(\omega^{-1}\right)^{\gamma \beta}
+$$
+
+In what follows, the notation $\left(\omega^{-1}\right)^{\gamma \beta}=\Omega_{P}^{\gamma \beta}$ will be used.
+
+Symplectic and Hamiltonian vector fields. Note that, because $\omega$ is closed, the Lie derivative along a Hamiltonian vector field on $\omega$ vanishes
+
+$$
+\mathcal{L}_{X_{f}} \omega \equiv\left(d i_{X_{f}}+i_{X_{f}} d\right) \omega=d^{2} f=0
+$$
+
+A vector field $X$ sufficing $\mathcal{L}_{X} \omega=0$ is called symplectic vector field. Thus every $X_{f}$ is symplectic. Reversely, given a symplectic vector field $X$, it follows that $d i_{X} \omega=0$, i.e. $i_{X} \omega$ is a closed form. Provided the 1st cohomology group vanishes $\left(H_{1}(M, \mathbb{R})=0\right.$, this is the case for $M=\mathbb{R}^{2 d}$ ) every closed 1-form is also exact and it is possible to find a (Hamiltonian) function $f$ for any symplectic $X$.
+
+Symplectic flow and equations of motion. The equations of motion are mathematically describing a flow (one parameter group of diffeomorphisms)
+
+$$
+\Phi: \mathbb{R} \times M \rightarrow M ;(t, p) \mapsto \Phi_{p}(t)
+$$
+
+along the Hamiltonian vector field $X_{H}$ of the (physical) Hamilton function $H$
+
+$$
+\left.\frac{d \Phi(t)}{d t}(p)=X_{H}\right|_{p}
+$$
+
+The boundary condition is $\Phi_{p}(t=0)=p$. Recall the definition of how the tangent vector along a curve acts on a function $f: M \rightarrow \mathbb{R}$
+
+$$
+\left.\frac{d(f \circ \Phi)}{d t}(p) \equiv X_{H}\right|_{p}(f)
+$$
+
+Using the definition of Poisson bracket the textbook representation of the equations of motion is recovered
+
+$$
+\frac{d(f \circ \Phi)}{d t}=\{f, H\}
+$$
+
+Applications to the Anomalous Hall effect. I now apply the abstract Poisson brackets defined by the $(0,2)$ tensor introduced in Eq. (B.34)
+
+$$
+\{f, g\}=\Omega_{P}(f, g)=\Omega_{P}^{\alpha, \beta} \partial_{\alpha} f \partial_{\beta} g
+$$
+
+to the exemplary case of the equations of motion implied by the Berry phase term and side jump contributions, see Eqs. (3.18).
+
+I here use the shorthand notation $G\left(\epsilon_{\xi}\right)=\left(1-\frac{q B \Omega_{\xi}}{c}\right) \frac{\Omega_{\xi} \kappa_{0}^{2}}{\pi^{2} \epsilon_{\xi}}$ to reexpress Eqs. (3.18)
+
+$$
+\binom{\dot{\mathbf{r}}}{\dot{\mathbf{p}}}=\frac{1}{1-\Omega_{\xi} q B / c}\left(\begin{array}{cc}
+\underline{\epsilon} \Omega_{\xi} & \mathbf{1}+G\left(\epsilon_{\xi}\right)_{\xi} \\
+-\mathbf{1} & \underline{\epsilon}\left(\mathbf{1}+G\left(\epsilon_{\xi}\right)_{\xi}\right) \frac{q B}{c}
+\end{array}\right)\binom{-q \mathbf{E}}{\mathbf{v}}
+$$
+
+On the other hand, using the definition of Poisson bracket and the equations of motion $\dot{\xi}_{\alpha}=\left\{\xi_{\alpha}, H\right\}$ for a Hamiltonian $H=\epsilon_{\xi}(\mathbf{p})+q \Phi(\mathbf{r})$ leads to
+
+$$
+\binom{\dot{\mathbf{r}}}{\dot{\mathbf{p}}}_{\alpha}=\Omega_{P}^{\alpha, \beta} \partial_{\beta} H=\left(\underline{\Omega}_{P}\binom{-q \mathbf{E}}{\mathbf{v}}\right)_{\alpha}
+$$
+
+Here, the matrix notation of the tensor field $\left(\Omega_{P}\right)^{\alpha, \beta}=\Omega_{P}^{\alpha, \beta}$ was used.
+One might be tempted to identify
+
+$$
+\underline{\Omega_{P}}=\frac{1}{1-\Omega_{\xi} q B / c}\left(\begin{array}{cc}
+\xi \Omega_{\xi} & \mathbf{1}+G\left(\epsilon_{\xi}\right)_{\xi} \\
+-\mathbf{1} & \xi\left(\mathbf{1}+G\left(\epsilon_{\xi}\right)_{\xi}\right) \frac{q B}{c}
+\end{array}\right)
+$$
+
+However, this is not a symplectic form and the system is not Hamiltonian with these Poisson brackets (note that $\left\{x_{i}, p_{j}\right\} \neq-\left\{p_{j}, x_{i}\right\}$ ). It is Hamiltonian if the side jump contribution is dropped, i.e., $G(\epsilon)=0$, notwithstanding the chosen coordinates $\mathbf{r}, \mathbf{p}$ being non-canonical [176]. Therefore, the invariant phase space volume element acquires an additional term [175]
+
+$$
+d V=\sqrt{\operatorname{det} \omega_{\alpha \beta}} \prod_{\alpha} d \xi_{\alpha}=\left(1-\frac{q \Omega_{\xi} B}{c}\right) d^{2} p d^{2} x
+$$
+
+By consequence, in the Boltzmann equation and the equations determining current the following replacement is to be undertaken:
+
+$$
+\sum_{P} \doteq \int\left(d p^{\prime}\right)\left(1-\frac{q B \Omega_{\xi^{\prime}}}{c}\right)
+$$
+
+In the following I employ polar coordinates determining each momentum $\mathbf{p}$ by modulus of kinetic energy and angle $(\epsilon, \phi)$, with $\epsilon=\sqrt{c_{0}^{2} p^{2}+\left(m v_{0}^{2}\right)^{2}}$. In this notation
+
+$$
+\dot{p}=(\cos \phi, \sin \phi), \dot{e}_{\phi}=(-\sin \phi, \cos \phi)=-\underline{e} \hat{p}
+$$
+
+and
+
+$$
+\nabla_{\mathbf{p}} f_{l}=\hat{p} \frac{\partial \epsilon}{\partial p} \partial_{\epsilon} f_{l}+\frac{\dot{e}_{\phi}}{p} \partial_{\phi} f_{l}=\mathbf{v}^{(\xi)} \partial_{\epsilon_{\xi}} f_{l}+\frac{\dot{e}_{\phi}}{p} \partial_{\phi} f_{l}
+$$
+
+# B.2.4 The collision kernel and side step contributions 
+
+As explained above, upon a scattering event $l_{1} \rightarrow l_{2}$ the final state obtains a trajectory, which is shifted as compared to the initial state by
+
+$$
+\delta \mathbf{r}_{l_{2} l_{1}}=\left" \mathbf{r}_{l_{2}}(t=0)-\mathbf{r}_{l_{1}}(t=0)\right"
+$$
+
+If the scattering takes place in an external electric field but no magnetic field, the kinetic energy is no longer conserved, as the potential energy changes at the scattering event $[169,170]$ by the amount
+
+$$
+\Delta \epsilon^{\delta \mathbf{r}_{l_{2} l_{1}}}=\left" U\left(\mathbf{r}_{l_{2}}\right)-U\left(\mathbf{r}_{l_{1}}\right)\right"=\nabla U \delta \mathbf{r}_{l_{2} l_{1}}=-q \mathbf{E} \delta \mathbf{r}_{l_{2} l_{1}}
+$$
+
+More generally, in the presence of both $\mathbf{E}$ and $B$ fields, one can say that there is a work to be performed at a scattering event $l_{1} \rightarrow l_{2}$ with side jump. Energy conservation $\epsilon_{\text {initial }}=\epsilon_{\text {final }}$ implies
+
+$$
+\xi_{1} \epsilon\left(\mathbf{p}_{1}\right)=\xi_{2} \epsilon\left(\mathbf{p}_{2}\right)-W_{1 \rightarrow 2}
+$$
+
+where $W_{1 \rightarrow 2}=\mathbf{F} \delta \mathbf{r}_{l_{2} l_{1}}$. A priori it is not clear, whether to use $\mathbf{F}=\dot{\mathbf{p}}_{1}$ or $\mathbf{F}=\dot{\mathbf{p}}_{2}$. I will give a definite answer to this question below, in App. B.2.6.
+
+The contribution of out processes $\left(l \rightarrow l^{\prime}\right)$ to the collision integral is not altered by $W_{l \rightarrow l^{\prime}}$.
+
+Contrary, for in processes $\left(l^{\prime} \rightarrow l\right)$ energy conservation implies
+
+$$
+f_{l^{\prime}}=f\left(\xi, \epsilon-\xi W_{l^{\prime} \rightarrow l}, \phi^{\prime}\right) \approx f_{l^{\prime}}-\partial_{\epsilon_{\xi}} f_{l^{\prime}} W_{l^{\prime} \rightarrow l}
+$$
+
+I expanded the distribution function under the assumption of small work $W_{l^{\prime} \rightarrow l}=\mathbf{F} \delta \mathbf{r}_{l l^{\prime}}$ as compared to the chemical potential. As will be found below this assumption is justified, see Eq. (B.86).
+
+# B.2.5 Full Boltzmann equation 
+
+The full Boltzmann equation was presented in Sec. 3.2.4 of the main text. Here, I would like to provide further details on the term stemming from the work performed by the magnetic field. It is given by
+
+$$
+\begin{aligned}
+\left.S t[f]\right|_{W_{B}} & =-\sum_{l^{\prime}} \omega_{l l^{\prime}} \partial_{\epsilon_{\xi}} f_{l^{\prime}} \delta \mathbf{r}_{l l^{\prime}} \frac{\epsilon \tilde{v} \frac{q B}{c}}{1-\frac{q B \Omega}{c}}-\dot{\mathbf{p}}_{x j} \partial_{\mathbf{p}} f \\
+& =-\sum_{l^{\prime}} \omega_{l l^{\prime}} \partial_{\epsilon_{\xi}} f_{l^{\prime}} \delta \mathbf{r}_{l l^{\prime}} \frac{\epsilon \tilde{\mathbf{v}} \frac{q B}{c}}{1-\frac{q B \Omega}{c}}-\sum_{l^{\prime}} \omega_{l^{\prime} l} \partial_{\epsilon_{\xi}} f_{l} \delta \mathbf{r}_{l^{\prime} l} \frac{\epsilon^{T} \mathbf{v}^{(\xi)} \frac{q B}{c}}{1-\frac{q B \Omega}{c}}
+\end{aligned}
+$$
+
+I introduced the notation $\mathbf{p}_{x j}$ to denote the side jump contribution to $\mathbf{p}$, see the term involving the Levi-Civita symbol in Eq. (3.24). In the last line $\sum_{l^{\prime}} \omega_{l^{\prime} l} \delta r_{l^{\prime} l} \propto \underline{\epsilon} \mathbf{v}$ was used and terms $\mathcal{O}\left(\omega_{l l^{\prime}}^{2}\right)$ were dropped.
+
+The velocity $\tilde{\mathbf{v}}$ is a placeholder for $\mathbf{v}^{(\xi)}$ or $\mathbf{v}^{(\xi)^{\prime}}$, because at this point, it is unclear whether $W_{l^{\prime} \rightarrow l}=$ $\dot{\mathbf{p}} \delta \mathbf{r}_{l l^{\prime}}$ or $W_{l^{\prime} \rightarrow l}=\dot{\mathbf{p}}^{\prime} \delta \mathbf{r}_{l l^{\prime}}$ should be chosen.
+
+Since side jump and skew scattering effects are not accumulated $\omega_{l l^{\prime}}=\omega_{l^{\prime} l}$ can be assumed in $\left.S t[f]\right|_{W_{B}}$.
+
+## B.2.6 Conservation laws at $\mathbf{E}=0$.
+
+Clearly, at $\mathbf{E}=0$ the following statements hold:
+
+$$
+\sum_{l}\left.S t[f]\right|_{f u l l}=0 \text { and }\left.\sum_{l} \epsilon(\mathbf{p}) \left.S t[f]\right|_{f u l l}=0\right.
+$$
+
+provided
+
+$$
+\delta \mathbf{r}_{l l^{\prime}} \underline{\epsilon}\left(\tilde{\mathbf{v}}-\mathbf{v}^{(\xi)^{\prime}}\right)=0
+$$
+
+Under the assumption that the side jump $\mathbf{r}_{l l^{\prime}}$ contains only terms proportional to $\mathbf{p}-\mathbf{p}^{\prime}$ and $(\mathbf{p}+$ $\left.\mathbf{p}^{\prime}\right) \mathbf{p} \underline{\epsilon} \mathbf{p}^{\prime}$ [see Eqs. (3.14) and (3.15)] it follows that the two solutions $\tilde{\mathbf{v}}=-\mathbf{v}^{(\xi)}$ and $\tilde{\mathbf{v}}=\mathbf{v}^{(\xi)^{\prime}}$ are legitimate. Both possible solutions lead to the same collision integral $\left.S t[f]\right|_{f u l l}$ [see again Eq. (B.56) for the solution $\tilde{\mathbf{v}}=-\mathbf{v}^{(\xi)}$ ]. I will use $\tilde{\mathbf{v}}=-\mathbf{v}^{(\xi)}$, then
+
+$$
+\left.S t[f]\right|_{W_{B}}=-\sum_{l^{\prime}} \omega_{l l^{\prime}}^{(x)} \delta \mathbf{r}_{l l^{\prime}} \frac{\epsilon \mathbf{v}^{(\xi)} \frac{q B}{c}}{1-\frac{q B \Omega_{\xi}}{c}}\left(\partial_{\epsilon_{\xi}} f_{l}-\partial_{\epsilon_{\xi}} f_{l^{\prime}}\right)
+$$
+
+This concludes the derivation of the full Boltzmann equation discussed in Sec. 3.2.4 of the main text.
+
+# B.2.7 Back to the Boltzmann equation 
+
+The Boltzmann equation (3.25) at zero $\mathbf{E}$ field is solved by any isotropic function $f_{l}=f_{0}$. The physical solution is the Fermi-Dirac distribution function. To access the static, homogeneous nonequilibrium distribution function the linear response approximation and the expansion in harmonics will be employed:
+
+$$
+f_{l}=\sum_{n} f_{n} e^{i n \phi} \leftrightarrow f_{n}=\int \frac{d \phi}{2 \pi} f_{l} e^{-i n \phi}
+$$
+
+LHS of the kinetic equation. The LHS of Eq. (3.25) becomes (using $E_{ \pm}=E_{x} \pm i E_{y}$.)
+
+$$
+\begin{aligned}
+\dot{\mathbf{p}}_{\text {clean }} \partial_{\mathbf{p}} f=\sum_{n}\{ & e^{i(n+1) \phi}\left[\frac{\xi v \partial_{e_{2}} f_{n}-n f_{n} / p}{1-\frac{q B \Omega_{\xi}}{c}} \frac{q E_{-}}{2}\right] \\
+& +e^{i(n-1) \phi}\left[\frac{\xi v \partial_{e_{2}} f_{n}+n f_{n} / p}{1-\frac{q B \Omega_{\xi}}{c}} \frac{q E_{+}}{2}\right] \\
+& +e^{i n \phi} \frac{-\zeta \Omega_{c}^{d} i n f_{n}}{1-\frac{q B \Omega_{\xi}}{c}}\}
+\end{aligned}
+$$
+
+RHS of kinetic equation: scattering rates. The RHS contains the contribution of symmetric scattering
+
+$$
+\left.S t|f|\right|_{(s)}=-\left(1-\frac{q B \Omega_{\xi}}{c}\right) \sum_{n} \frac{f_{n}}{\tau_{n}^{(s)}} e^{i n \phi}
+$$
+
+with
+
+$$
+\frac{1}{\tau_{n}^{(s)}}=\int\left(d p^{\prime}\right) \omega_{l^{\prime} l}^{(s)}\left(1-e^{i n\left(\phi^{\prime}-\phi\right)}\right)
+$$
+
+The first symmetric scattering rate $\frac{1}{\tau_{1}^{(s)}}$ is the transport rate $\frac{1}{\tau_{1}^{(s)}}=\frac{1}{\tau_{l^{\prime}}}$.
+The skew scattering contribution to the collision term is
+
+$$
+\left.S t|f|\right|_{(a)}=-\left(1-\frac{q B \Omega_{\xi}}{c}\right) \sum_{n} i \frac{f_{n}}{\tau_{n}^{(a)}} e^{i n \phi}
+$$
+
+It contains the skew-scattering rates
+
+$$
+\frac{1}{\tau_{n}^{(a)}}=-i \int\left(d p^{\prime}\right) \omega_{l^{\prime} l}^{(a)} e^{i n\left(\phi^{\prime}-\phi\right)}
+$$
+
+The contribution of work by electrical field without accumulation of skew scattering and side jump is given by
+
+$$
+\left.\operatorname{St}[f]\right|_{W_{E}}=-\sum_{n} \partial_{\epsilon_{£}} f_{n} \frac{\Omega_{\xi} k}{x_{s j}^{(n)}} \frac{i q}{2}\left(e^{i(n+1) \phi} E_{-}-e^{i(n-1) \phi} E_{+}\right)
+$$
+
+with $\tau_{s j}^{(0)}=\tau_{s j}$ as defined in Eq. (3.17).
+The last contribution is the work by B-field. It reads
+
+$$
+\left.\operatorname{St}[f]\right|_{W_{B}}=\sum_{n} \partial_{\epsilon_{£}} f_{n} e^{i n \phi}\left(1-\frac{q B \Omega_{\xi}}{c}\right) \frac{\left\langle W_{l^{\prime}-l}^{(B)}\right\rangle}{\tau_{n}^{(W)}}
+$$
+
+I introduced the average power
+
+$$
+\frac{\left\langle W_{l^{\prime}-l}^{(B)}\right\rangle}{\tau_{n}^{(W)}}=\int\left(d \mathbf{p}^{\prime}\right) \omega_{l l^{\prime}} \delta \mathbf{r}_{l l^{\prime}} \frac{\epsilon\left(-\mathbf{v}^{(\xi)}\right) \frac{q B}{c}}{1-\frac{q B \Omega_{\xi}}{c}}\left(1-e^{i n\left(\phi^{\prime}-\phi\right)}\right)
+$$
+
+The subscript ${ }_{l^{\prime}-l}$ will be mostly omitted in the following.
+The Boltzmann equation in linear response. In the linear response approximation, the Boltzmann equation involves only the 0 th and $( \pm 1)$ st harmonics:
+
+$$
+\frac{\tau_{t r} \xi v m_{1}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}}\left(-\partial_{\epsilon_{\xi}} f_{0}\right) \frac{q E_{-}}{2}=m_{2}^{-1} f_{1}-\partial_{\epsilon_{\xi}} f_{1} \frac{\left\langle W^{(B)}\right\rangle \tau_{t r}}{\tau^{(W)}}
+$$
+
+In this equation, I introduced the complex functions $m_{1,2}=m_{1,2}\left(\epsilon_{\xi}\right)$ with
+
+$$
+\begin{aligned}
+m_{1} & =\left[1+i\left(1-\frac{q B \Omega_{\xi}}{c}\right) \frac{\Omega_{\xi} k}{\tau_{s j} v \xi}\right] \\
+m_{2} & =\left[1+i\left[\frac{\tau_{t r}}{\tau_{a}}-\frac{\zeta \Omega_{c}^{c l} \tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}}\right]\right]^{-1}
+\end{aligned}
+$$
+
+For simplicity, the lighter notation $\tau_{1}^{(W)}=\tau^{(W)}, \tau_{1}^{(a)}=\tau_{a}$ is used here. The transport time is $\tau_{s}^{(1)}=\tau_{t r}$.
+
+# B.2.8 Solution of the Boltzmann equation 
+
+A representation of the delta function. For the solution of the kinetic equation, the following broadened delta function will be needed.
+
+$$
+\bar{\delta}\left(\epsilon_{\xi}, \epsilon^{\prime \prime}\right)=\operatorname{sign}\left(\mathfrak{R} \boldsymbol{\varepsilon}\left[\frac{\left\langle W^{(B)}\right\rangle}{\tau^{(W)}}\right]\right) \frac{e^{-\int_{\epsilon_{\xi}}^{\epsilon^{\prime \prime}} \frac{d \epsilon^{\prime}}{\left[\left\langle W^{(B)}\right\rangle m_{2} \tau_{t r} / \tau^{(W)}\right]_{\epsilon^{\prime}}}}}{\left.\left[\left\langle W^{(B)}\right\rangle m_{2} \tau_{t r} / \tau^{(W)}\right]\right]_{\epsilon^{\prime \prime}}} \theta\left(\operatorname{sign}\left(\mathfrak{R} \boldsymbol{\varepsilon}\left[\frac{\left\langle W^{(B)}\right\rangle}{\tau^{(W)}}\right]\right)\left(\epsilon^{\prime \prime}-\epsilon_{\xi}\right)\right)
+$$
+
+As a function of $\epsilon_{\xi}$ it is peaked at $\epsilon^{\prime \prime}$ and asymmetrically exponentially decaying into the direction prescribed by $\operatorname{sign}\left(\mathfrak{R} \boldsymbol{\varepsilon}\left[\left\langle W^{(B)}\right\rangle / \tau^{(W)}\right]\right)$ (it is assumed, that this quantity is energy independent within a
+
+![img-54.jpeg](img-54.jpeg)
+
+Figure B.1: The broadened delta function entering the general solution of the kinetic equation. In the inset, the same function is shown in the vicinity of the chemical potential, where it takes the value $\left|\tau_{t r}\left\langle W^{(B)}\right\rangle / \tau^{(W)}\right|^{-1}$.
+given band $\xi$, see Eq. (B.86) below for the case of Dirac electrons). Below, the Eq. (B.69) is employed to study the AHE, in the regime of applicability $\left\langle W^{(B)}\right\rangle / \tau^{(W)}$ is smooth on the scale on which $\bar{\delta}$ decays, see Fig. B.1.
+
+The broadened delta function leads to the following approximate convolutions for functions $f(\epsilon)$ which are smooth on the scale of $\left\langle W^{(B)}\right\rangle$ :
+
+$$
+\begin{aligned}
+\int d \epsilon_{\xi} f\left(\epsilon_{\xi}\right) \bar{\delta}\left(\epsilon_{\xi}, \epsilon^{\prime \prime}\right) & \approx f\left(\epsilon^{\prime \prime}\right)-\left(f\left\langle W^{(B)}\right\rangle m_{2} \tau_{t r} / \tau^{(W)}\right)_{\epsilon^{\prime \prime}}^{\prime} \\
+\int d \epsilon^{\prime \prime} f\left(\epsilon^{\prime \prime}\right) \bar{\delta}\left(\epsilon_{\xi}, \epsilon^{\prime \prime}\right) & \approx f\left(\epsilon_{\xi}\right)+\left(f\left\langle W^{(B)}\right\rangle m_{2} \tau_{t r} / \tau^{(W)}\right)_{\epsilon_{\xi}}^{\prime}
+\end{aligned}
+$$
+
+General linear response solution The general linear response solution for Eq. (B.67) is
+
+$$
+f_{1}\left(\epsilon_{\xi}\right)=\int_{-\infty}^{\infty} d \epsilon^{\prime \prime}\left\{\left[\frac{\tau_{t r}}{\left(1-q B \Omega_{\xi} / c\right)^{2}} \xi v m_{1} m_{2}\left(-\partial_{\epsilon^{\prime \prime}} f_{0}\right)\right]_{\epsilon^{\prime \prime}} \bar{\delta}\left(\epsilon_{\xi}, \epsilon^{\prime \prime}\right)\right\} \frac{q E_{-}}{2}
+$$
+
+Formally, there is also an exponentially growing solution which has been dropped for obvious physical reasons. In the limit $T \gg\left|\left\langle W^{(B)}\right\rangle\right|$ the approximate solution is
+
+$$
+\begin{aligned}
+f_{1}\left(\epsilon_{\xi}\right) & =\left[\frac{\tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}} \xi v m_{1} m_{2}\left(-\partial_{\epsilon_{\xi}} f_{0}\right)\right]_{\epsilon_{\xi}} \frac{q E_{-}}{2} \\
+& +\left[\left\langle W^{(B)}\right\rangle m_{2} \tau_{t r} / \tau^{(W)}\right]_{\epsilon_{\xi}} \partial_{\epsilon_{\xi}}\left[\frac{\tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}} \xi v m_{1} m_{2}\left(-\partial_{\epsilon_{\xi}} f_{0}\right)\right]_{\epsilon_{\xi}} \frac{q E_{-}}{2}
+\end{aligned}
+$$
+
+This solution could have also been obtained by iteratively solving Eq. (B.67). In the limit when temperature $T$ is smaller than all other scales we can use the zero temperature solution
+
+$$
+f_{1}\left(\epsilon_{\xi}\right)=\bar{\delta}\left(\epsilon_{\xi}, \mu\right)\left[\frac{\tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}} \xi v m_{1} m_{2}\right]_{\mu} \frac{q E_{-}}{2}
+$$
+
+When a convolution is performed with a function $f\left(\epsilon_{\xi}\right)$, and $f\left(\epsilon_{\xi}\right)$ is smooth on the scale of the magnetic work (for example the current), then $f_{1}\left(\epsilon_{\xi}\right)$ will be approximated according to Eq. (B.70). By comparison with Eq. (B.73) we see, that the results for the current in the limits $\left|\left\langle W^{(B)}\right\rangle\right| \ll T \ll \mu$ and $T \ll\left|\left\langle W^{(B)}\right\rangle\right| \ll \mu$ coincide.
+
+# B.2.9 Conductivity tensor 
+
+Here the transport coefficients in the two limits $T=0$ and $\mu \gg T \gg\left|\left\langle W^{(B)}\right\rangle\right|$ will be calculated. As explained, they take the same value in both limits.
+
+Intrinsic contribution. As explained, the total current density also has a contribution of the filled bands (intrinsic AHE),
+
+$$
+\mathbf{J}^{\text {intr. }}=\sum_{l} \frac{-\Omega_{\xi} q^{2} \varepsilon \mathbf{E}}{1-\frac{\Omega_{\xi} q B}{c}} f_{0, l}=\sigma_{x y}^{\text {intr. }} \varepsilon \mathbf{E}
+$$
+
+where, as in Refs. $[163,174]$
+
+$$
+\sigma_{x y}^{\text {intr. }}=-\frac{q^{2}}{4 \pi}\left[\operatorname{sign}(m) \theta\left(m^{2} v_{0}^{4}-\mu^{2}\right)+\frac{m v_{0}^{2}}{|\mu|} \theta\left(\mu^{2}-m^{2} v_{0}^{4}\right)\right]
+$$
+
+Non-equilibrium contribution. The longitudinal and transverse conductivity are
+
+$$
+\sigma_{x x}=\Re \epsilon \sigma(\mu) \text { and } \sigma_{x y}=\Im \mathfrak{m} \sigma(\mu)
+$$
+
+where the complex function $\sigma(\mu)$ is
+
+$$
+\sigma(\mu)=\left[\sigma_{x x}^{(0)} \frac{m_{1}^{2} m_{2}}{\left(1-\frac{q B \Omega_{b}}{c}\right)^{2}}-\partial_{\mu}\left(\sigma_{x x}^{(0)} \frac{\left\langle W^{(B)}\right\rangle}{\tau^{\langle W\rangle} \xi v} m_{1} m_{2}\right) \frac{v \xi \tau_{\mathrm{tr}} m_{1} m_{2}}{\left(1-\frac{q B \Omega_{b}}{c}\right)^{2}}\right]
+$$
+
+As in Eq. (3.5), $\sigma_{x x}^{(0)}(\mu)$ denotes the zero field classical longitudinal conductivity.
+
+# B.2.10 Evaluation for Dirac fermions 
+
+While the solution given in Eqs. (B.76) - (B.78) is a priori general (not restricted to the situation of Dirac fermions) I now return to the case of 3D TI surface states. The various Fermi surface contributions are
+
+$$
+\begin{aligned}
+m_{1} & =\left[1+i\left(1-\frac{q B \Omega_{\xi}}{c}\right) \frac{\Omega_{\xi} k}{\tau_{s j} v \xi}\right] \\
+& =1-i\left(1+\frac{1}{2} \frac{m v_{0}^{2}}{\mu} \frac{\zeta \Omega_{c}^{c l}}{\mu}\right) \frac{1}{2} \frac{m v_{0}^{2}}{\mu} \frac{1}{\mu \tau_{s j}} \\
+& \approx 1-i \frac{1}{2} \frac{m v_{0}^{2}}{\mu} \frac{1}{\mu \tau_{s j}}
+\end{aligned}
+$$
+
+The symbol " $\approx$ " denotes that only the leading order terms $\mathcal{O}\left(\frac{m v_{0}^{2}}{\mu}, \frac{\Omega_{c}^{c l}}{\mu}\right)$ are kept. Note that the imaginary part (the side jump contribution) is small in $1 / k_{F} l$. Next,
+
+$$
+\begin{aligned}
+m_{2} & =\left[1+i\left[\frac{\tau_{t r}}{\tau_{a}}-\frac{\zeta \Omega_{c}^{c l} \cdot \tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}}\right]\right]^{-1} \\
+& =\frac{1-i\left[\frac{\tau_{t r}}{\tau_{a}}-\frac{\zeta \Omega_{c}^{c l} \cdot \tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}}\right]}{1+\left[\frac{\tau_{t r}}{\tau_{a}}-\frac{\zeta \Omega_{c}^{c l} \cdot \tau_{t r}}{\left(1-\frac{q B \Omega_{\xi}}{c}\right)^{2}}\right]^{2}} \\
+& \approx \frac{1+i \zeta \Omega_{c}^{c l} \cdot \tau_{t r}}{1+\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}}\left[1+2 \frac{\zeta \Omega_{c}^{c l} \cdot \tau_{t r}}{1+\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}} \frac{\tau_{t r}}{\tau_{a}}\right]-i \frac{\frac{\tau_{t r}}{\tau_{a}}}{1+\left(\Omega_{c}^{c l} \cdot \tau_{t r}\right)^{2}}
+\end{aligned}
+$$
+
+Scattering rates in leading approximation: Short range impurities. The symmetric scattering matrix element is
+
+$$
+\omega_{l l^{\prime}}^{(s)}=2 \pi n_{i} V_{0}^{2} \delta\left(\epsilon_{\xi}(\mathbf{p})-\epsilon_{\xi}\left(\mathbf{p}^{\prime}\right)\right)\left[\cos ^{2}\left(\frac{\phi-\phi^{\prime}}{2}\right)+\left(\frac{m v_{0}^{2}}{\epsilon_{\xi}}\right)^{2} \sin ^{2}\left(\frac{\phi-\phi^{\prime}}{2}\right)\right]
+$$
+
+where $n_{i}$ and $V_{0}$ are concentration respectively strength of short ranged impurities.
+The transport rate evaluated at the chemical potential is given by,
+
+$$
+\frac{1}{\tau_{t r}}=\int\left(d p^{\prime}\right) \omega_{l l^{\prime}}^{(s)}\left[1-\cos \left(\phi^{\prime}-\phi\right)\right]=2 \pi n_{i} V_{0}^{2} \nu \frac{1+3\left(\frac{m v_{0}^{2}}{\mu}\right)^{2}}{4}
+$$
+
+According to Ref. [174] the side jump is
+
+$$
+\delta \mathbf{r}_{l^{\prime} l}=\frac{\Omega_{\xi \xi}\left(\mathbf{p}-\mathbf{p}^{\prime}\right)}{\left|\left\langle u_{\xi, \mathbf{p}} \mid u_{\xi, \mathbf{p}^{\prime}}\right\rangle\right|^{2}}
+$$
+
+and thus the side jump rate follows to be
+
+$$
+\frac{1}{\tau^{s j}}=2 \pi n_{i} V_{0}^{2} \nu
+$$
+
+This is the same as the quantum rate in a normal material (the quantum rate is different for the Dirac problem).
+
+I also refer to Ref. [174] for the skew scattering rate, which is
+
+$$
+\frac{1}{\tau_{a}}=\frac{\pi \nu(\mu)}{2}\left[\frac{n_{i} V_{1}^{3} m\left(\mu^{2}-m^{2} v_{0}^{4}\right)}{2 \mu^{2}}+\frac{\left(n_{i} V_{0}^{2}\right)^{2}\left(3 m\left(\mu^{2}-m^{2} v_{0}^{4}\right)\right)}{4 \mu^{3}}\right]
+$$
+
+Both terms in the square bracket are manifestly beyond Born approximation (the first term involves the third moment of the disorder potential $V_{1}^{3}$.)
+
+The power provided by the B-field is
+
+$$
+\frac{\left\langle W^{(B)}\right\rangle}{\tau^{(W)}}=2 \pi n_{i} V_{0}^{2} \nu \frac{\frac{q B \Omega_{\xi}}{c}}{1-\frac{q B \Omega_{\xi}}{c}} \xi v k \frac{3}{2}=\frac{3 v_{0}^{2} p^{2}}{2 \mu \tau_{s j}}\left(-\frac{\frac{1}{2} \frac{m v_{0}^{2}}{\mu} \frac{\Omega \Omega_{c}^{c l}}{\mu}}{1+\frac{1}{2} \frac{m v_{0}^{2}}{\mu} \frac{\Omega \Omega_{c}^{c l}}{\mu}}\right)
+$$
+
+In the case of short range impurities the contribution of $\left\langle W^{(B)}\right\rangle$ to the conductivity can be omitted, since
+
+$$
+\frac{\left\langle W^{(B)}\right\rangle}{\tau^{(W)}} \frac{\tau_{t r}}{\mu} \sim \frac{v_{0}^{2} p^{2}}{\mu^{2}} \frac{\tau_{t r}}{\tau_{s j}} \frac{m v_{0}^{2}}{\mu} \frac{\Omega_{c}^{c l}}{\mu} \approx 0
+$$
+
+is beyond leading order in $\left(\frac{m v_{0}^{2}}{\mu}, \frac{\Omega_{c}^{c l}}{\mu}\right)$.
+This concludes the derivation of the semiclassical conductivity tensor reported in Eqs. (3.29) of the main text.
+
+# B. 3 Vortex states 
+
+This semiclassical calculation relies on the "vortex states" introduced in Refs. [178, 179] and reviewed in the main text, Chap. 3.3.
+
+# B.3.1 Current operators 
+
+The current operators are splitted in the combinations $j_{ \pm}=j_{x} \pm i j_{y}$ with $\mathbf{j}=i e\left[H_{0}, \mathbf{r}\right]$ so that
+
+$$
+\begin{aligned}
+& j_{+}=-2 i e v_{F}\left(\begin{array}{ll}
+0 & 1 \\
+0 & 0
+\end{array}\right) \\
+& j_{-}=2 i e v_{F}\left(\begin{array}{ll}
+0 & 0 \\
+1 & 0
+\end{array}\right)
+\end{aligned}
+$$
+
+By consequence their matrix elements can be expressed by spinor components of $|n, \mathbf{R}\rangle_{D}$ in the following way
+
+$$
+\begin{aligned}
+\left(j_{+}\right)_{12} & =-2 i e v_{F}\left\langle n_{1}, \mathbf{R}_{1}, \uparrow\right| n_{2}, \mathbf{R}_{2}, \downarrow\rangle \\
+\left(j_{-}\right)_{12} & =2 i e v_{F}\left\langle n_{1}, \mathbf{R}_{1}, \downarrow \mid n_{2}, \mathbf{R}_{2}, \uparrow\right\rangle
+\end{aligned}
+$$
+
+For any operator $O$ the short hand notation $(O)_{12} \equiv\langle 1| O|2\rangle$ and $|1\rangle=\left|n_{1}, \mathbf{R}_{1}\right\rangle_{D}$ will be employed in the following.
+
+## B.3.2 Gradient expansion
+
+The central assumption for the semiclassical calculation is that $V(\mathbf{r})$ is smooth on the scale of the magnetic length. In the vortex state basis we expand its matrix elements in gradients:
+
+$$
+(V)_{12}=(V)_{12}^{(0)}+(V)_{12}^{(1)}+\mathcal{O}\left(l_{B}^{2} \partial^{2} V\right)
+$$
+
+The zeroth order is $\left(\mathbf{c}_{12}=\frac{\mathbf{R}_{2}+\mathbf{R}_{1}}{2}\right)$
+
+$$
+(V)_{12}^{(0)}=V\left(\mathbf{c}_{12}\right)\langle 1 \mid 2\rangle
+$$
+
+The first order is $\left(\mathbf{d}_{12}=\frac{\mathbf{R}_{2}-\mathbf{R}_{1}}{2}\right)$
+
+$$
+(V)_{12}^{(1)}=(V)_{12}^{(1,0)}+(V)_{12}^{(1,+)}+(V)_{12}^{(1,-)}
+$$
+
+with
+
+$$
+\begin{aligned}
+(V)_{12}^{(1,0)} & =i \hat{\mathbf{z}} \cdot\left[\nabla V\left(\mathbf{c}_{12}\right) \times \mathbf{d}_{12}\right]\langle 1 \mid 2\rangle \\
+(V)_{12}^{(1,+)} & =-i \frac{E_{n_{1}}+E_{n_{2}}}{2|e| \Omega_{\mathrm{c}}^{2}}\left(j_{+}\right)_{12} \partial_{-} V\left(\mathbf{c}_{12}\right) \\
+(V)_{12}^{(1,-)} & =i \frac{E_{n_{1}}+E_{n_{2}}}{2|e| \Omega_{\mathrm{c}}^{2}}\left(j_{-}\right)_{12} \partial_{+} V\left(\mathbf{c}_{12}\right)
+\end{aligned}
+$$
+
+In the same approximation the Dyson equation for the retarded/advanced single-electron Green's function is solved and the result in frequency space is
+
+$$
+G_{12}^{R / A}(\omega) \approx G_{12}^{(0), R / A}(\omega)+G_{12}^{(1), R / A}(\omega)
+$$
+
+where, using $\omega^{ \pm}=\omega \pm i 0$, I defined:
+
+$$
+\begin{aligned}
+G_{12}^{(0), R / A}(\omega) & =\frac{\langle 1 \mid 2\rangle}{\omega^{ \pm}-E_{n_{2}}-V\left(\mathbf{R}_{2}\right)} \\
+G_{12}^{(1), R / A}(\omega) & =\frac{(V)_{2}^{(1)}}{\left[\omega^{ \pm}-E_{n_{1}}-V\left(\mathbf{R}_{1}\right)\right]\left[\omega^{ \pm}-E_{n_{2}}-V\left(\mathbf{R}_{2}\right)\right]}
+\end{aligned}
+$$
+
+# B.3.3 Current density 
+
+The basis for the calculation of the current density in arbitrary potential configuration are the general results on vortex states and the semiclassical expansion reported in Ref. [178]. There it was shown, that the fluctuation-dissipation theorem between Keldysh, retarded and advanced Green's function
+
+$$
+G^{K}=\tanh (\omega / 2 T)\left(G^{R}-G^{A}\right)
+$$
+
+holds order by order in gradient expansion even "outside" thermodynamic equilibrium, but assuming stationarity. The proof only relies on the general structure of the Dyson equation. Specifically, a static potential is switched on adiabatically with an equilibrium initial condition. Physically, this corresponds to the situation when the inelastic mean free path is shorter than all other length scales. The non-trivial proof in Ref. [178] in this limit leads to the expected local thermodynamic equilibrium.
+
+Using this result, the current density [see Eq. (3.36)] is the $\mathbf{x}_{1} \rightarrow \mathbf{x}_{2}$ limit of
+
+$$
+\left\langle\hat{j}_{ \pm}\left(\mathbf{x}_{1}, \mathbf{x}_{2}\right)\right\rangle=\sum_{1,2} \int \frac{d \omega}{2 \pi} i n_{F}(\omega)\left[G_{21}^{R}(\omega)-G_{21}^{A}(\omega)\right]_{D}\left\langle n_{1}, \mathbf{R}_{1} \mid \mathbf{x}_{1}\right\rangle j_{ \pm}\left\langle\mathbf{x}_{2} \mid n_{2}, \mathbf{R}_{2}\right\rangle_{D}
+$$
+
+(Here I introduced shorthand notation
+
+$$
+\sum_{1}=\int \frac{d^{2} R_{1}}{2 \pi l_{B}^{2}} \sum_{\left|n_{1}\right|=0}^{\infty} \sum_{\eta_{n_{1}}}
+$$
+
+I now want quantify the consequences of assumption (ii) exposed in the main text, Sec. 3.3, according to which I restrict myself to the slow current density. As will become clear below, the Fourier transform of the vortex state wave function, Eq. (3.31), is needed:
+
+$$
+\langle\mathbf{p} \mid n, \mathbf{R}\rangle=\frac{4 l_{B} \pi e^{-i \mathbf{p R}}}{\sqrt{2 \pi n!}}\left(i \sqrt{2} l_{B}\left(p_{+}+\frac{i R_{+}}{2 l_{B}^{2}}\right)\right)^{n} \exp \left[\left[p_{-}-\frac{i R_{-}}{2 l_{B}^{2}}\right]\left[p_{+}+\frac{i R_{+}}{2 l_{B}^{2}}\right] l_{B}^{2}\right]
+$$
+
+(Here, $p_{ \pm}=p_{x} \pm i p_{y}$ and analogously for $R_{ \pm}$.)
+
+## Contributions of $V_{12}^{(0)}$ and $V_{12}^{(1,0)}$
+
+These contributions vanish in view of assumption (ii). Indeed, in the Fourier transformed current density $J_{ \pm}(\mathbf{q})$ [see Eq. (3.36) and the $\mathbf{x}_{1} \rightarrow \mathbf{x}_{2}$ limit of Eq. (B.98)], $V_{12}^{(0)}$ and $V_{12}^{(1,0)}$ induce terms of
+
+the sort
+
+$$
+\begin{aligned}
+\left.J_{ \pm}(\mathbf{q})\right|_{V_{12}^{(0)}, V_{12}^{(1,0)}} & \propto \int(d \mathbf{p})\langle 2 \mid 1\rangle\langle 1 \mid \mathbf{p}-\mathbf{q}\rangle j_{ \pm}\langle\mathbf{p} \mid 2\rangle \\
+& \approx e^{-i \mathbf{q} \mathbf{R}_{1}} \int(d \mathbf{p})\langle 2 \mid 1\rangle\langle 1 \mid \mathbf{p}\rangle j_{ \pm}\langle\mathbf{p} \mid 2\rangle \\
+& =e^{-i \mathbf{q} \mathbf{R}_{1}}\langle 2 \mid 1\rangle\left(j_{ \pm}\right)_{12}=0
+\end{aligned}
+$$
+
+In this expression $\mathbf{q}$ is the slow momentum associated with the macroscopic vector potential $A_{ \mp}(-\mathbf{q})$ and assumption (ii) implies $\langle 1 \mid \mathbf{p}-\mathbf{q}\rangle \approx e^{-i \mathbf{q} \mathbf{R}_{1}}\langle 1 \mid \mathbf{p}\rangle$ to zeroth order in $q l_{B} \ll 1$ [see Eq. (B.100)].
+
+For the same reason only $V_{12}^{(1, \mp)}$ and not $V_{12}^{(1, \pm)}$ contribute to $J_{ \pm}$.
+
+# Leading contribution 
+
+The leading contribution to the current density is thus
+
+$$
+\begin{aligned}
+\left\langle\check{j}_{ \pm}\left(\mathbf{x}_{1}, \mathbf{x}_{2}\right)\right\rangle & =\sum_{1,2} \frac{ \pm i n_{F}\left(E_{n_{1}}+V\left(\mathbf{R}_{1}\right)\right)}{2|e| \Omega_{c}^{2}} \frac{E_{n_{1}}+E_{n_{2}}}{E_{n_{1}}-E_{n_{2}}} \\
+& \times\left[\partial_{ \pm} V\left(\mathbf{c}_{12}\right)\left(j_{ \mp}\right)_{21}\langle 1 \mid \mathbf{x}_{1}\rangle j_{ \pm}\left\langle\mathbf{x}_{2} \mid 2\right\rangle+\partial_{ \pm} V\left(\mathbf{c}_{12}\right)\left(j_{ \mp}\right)_{12}\langle 2 \mid \mathbf{x}_{1}\rangle j_{ \pm}\left\langle\mathbf{x}_{2} \mid 1\right\rangle\right]
+\end{aligned}
+$$
+
+To further simplify the expression I use relations of the type
+
+$$
+\sum_{2} \frac{E_{n_{1}}+E_{n_{2}}}{E_{n_{1}}-E_{n_{2}}}\left\langle\mathbf{x}_{2} \mid 2\right\rangle\left(j_{+}\right)_{21}=-\left(2\left|n_{1}\right|+1\right) j_{+}\left\langle\mathbf{x}_{2} \mid 1\right\rangle
+$$
+
+This leads to
+
+$$
+\left\langle\check{j}_{ \pm}\left(\mathbf{x}_{1}, \mathbf{x}_{2}\right)\right\rangle= \pm i|e| l_{B}^{2} \sum_{1} n_{F}\left(E_{n_{1}}+V\left(\mathbf{R}_{1}\right)\right) \partial_{ \pm} V\left(\mathbf{R}_{1}\right)\left[\left\langle 1 \mid \mathbf{x}_{1}\right\rangle\left\langle\mathbf{x}_{2} \mid 1\right\rangle-2\left|n_{1}\right|\left\langle 1 \mid \mathbf{x}_{1}\right\rangle \sigma_{z}\left\langle\mathbf{x}_{2} \mid 1\right\rangle\right]
+$$
+
+The term proportional to $\left|n_{1}\right|$ again vanishes because of assumption (ii). As for Eq. (B.101), I consider its contribution to the Fourier transformed equal points current density which vanishes in view of
+
+$$
+\int(d \mathbf{p})\left|n_{1}\right|\langle 1 \mid \mathbf{p}-\mathbf{q}\rangle \sigma_{z}\langle\mathbf{p} \mid 1\rangle \stackrel{q l_{B} \ll 1}{\approx}\left|n_{1}\right|\left\langle 1 \mid \sigma_{z} \mid 1\right\rangle=0
+$$
+
+Eventually, this leads to Eq. (3.38) of the main text.
+
+# Regularizing the divergence 
+
+As explained in the main text, the divergence is manifest in the local current density, in the clean limit at zero temperature and at chemical potential just above zero:
+
+$$
+\begin{aligned}
+X_{ \pm}(\mathbf{x}) & =\frac{ \pm i|e| \partial_{ \pm} V(\mathbf{x})}{2 \pi} \lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int d^{2} R \sum_{n \leq 0} D\langle n, \mathbf{R} \mid \mathbf{x}\rangle\left\langle\mathbf{x}^{\prime} \mid n, \mathbf{R}\right\rangle_{D} \\
+& =\frac{ \pm i|e| \partial_{ \pm} V(\mathbf{x})}{2 \pi} \lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}} \int d^{2} R \sum_{n \leq 0}\left\{\frac{\left\langle\mathbf{x}^{\prime}\right||n|, \mathbf{R}\rangle\langle | n|, \mathbf{R}|\mathbf{x}\rangle}{1+\left|\eta_{n}\right|}+\frac{\eta_{n}^{2}\left\langle\mathbf{x}^{\prime}\right||n|-1, \mathbf{R}\rangle\langle | n|-1, \mathbf{R}|\mathbf{x}\rangle}{1+\left|\eta_{n}\right|}\right\} \\
+& = \pm i|e| \partial_{ \pm} V(\mathbf{x}) \lim _{\mathbf{x}^{\prime} \rightarrow \mathbf{x}}\left[l_{B}^{2} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)+\frac{\left\langle 0 \mathbf{x}^{\prime} \mid 0, \mathbf{x}\right\rangle}{4 \pi}\right]
+\end{aligned}
+$$
+
+In the last step I used the resolution of identity Eq. (3.32) for spin up and spin down components separately: This leads to the delta-function. However, the double weight of spin down component of the zeroth LL generates the second contribution in the angular bracket: This is where half-integer $\sigma_{x y}$ comes from.
+
+In conclusion, I here presented the details to the calculation of Eqs. (3.40) and (3.41) of the main text.
+
+
+
+
+# Interaction effects in 3D topological insulators slabs 
+
+This appendix contains details of calculations which, in particular, supplement Chap. 5.
+
+## C. 1 Non-Abelian bosonization and the topological term
+
+This section is devoted to more detailed calculations concerning non-Abelian bosonization, the gauged WZNW model and the topological term $S^{(\theta)}$. For brevity, I omit the surface index $s$ in this appendix.
+
+## C.1.1 Gauged WZNW model
+
+The Wiegmann-Polyakov formula [227] allows the inclusion of smooth $\mathfrak{o}\left(2_{\tau} \times 2 N_{M} \times N_{R}\right)$ gauge fields $A_{\mu}$. A generalization to potentially topological gauge potentials can be found in Refs. [141-144]. The gauged WZNW model is given analogously to the unitary case in Eq. (2.40)
+
+$$
+\begin{aligned}
+& S\left[O, A_{\mu}\right]=-\frac{1}{16 \pi} \int_{\mathbf{x}} \operatorname{tr}\left(O^{T} D_{\mu} O\right)\left(O^{T} D_{\mu} O\right) \\
+& +\frac{i \epsilon_{\mu \nu \rho}}{24 \pi} \int_{\mathbf{x}, w} \operatorname{tr}\left[\left(O^{T} D_{\mu} O\right)\left(O^{T} D_{\nu} O\right)\left(O^{T} D_{\rho} O\right)\right] \\
+& -\frac{i \epsilon_{\mu \nu \rho}}{16 \pi} \int_{\mathbf{x}, w} \operatorname{tr}\left[F_{\mu \nu}\left(O^{T} D_{\rho} O+D_{\rho} O O^{T}\right)\right]
+\end{aligned}
+$$
+
+As in the main text, $D_{\mu}=\partial_{\mu}+\left[A_{\mu}, \cdot\right]$ are long derivatives and $F_{\mu \nu}=\left[D_{\mu}, D_{\nu}\right]$ is the field strength. For the purpose of disordered 3D TI one is mostly interested in $\mathbf{U}(1)$ gauge fields $A_{\mu}=i \tilde{A}^{T} \frac{1+\tau_{y}}{2}-i \tilde{A} \frac{1-\tau_{y}}{2}$. (In this appendix, the electron charge is absorbed into the vector potential.)
+
+To obtain the Wiegmann-Polyakov formula, one can use the following identity [143]
+
+$$
+\begin{aligned}
+(\mathrm{C} .1 \mathrm{~b}) & =\frac{i}{24 \pi} \Gamma[O] \\
+& -\frac{i}{8 \pi} \int_{\mathbf{x}, w} \epsilon_{\mu \nu \rho} \partial_{\mu} \operatorname{tr}\left[O A_{\nu} O^{T} A_{\rho}+A_{\nu}\left(O^{T} \partial_{\rho} O+\partial_{\rho} O O^{T}\right)\right] \\
+& +\frac{i \epsilon_{\mu \nu \rho}}{16 \pi} \int_{\mathbf{x}, w} \operatorname{tr}\left[F_{\mu \nu}\left(O^{T} D_{\rho} O+D_{\rho} O O^{T}\right)\right]
+\end{aligned}
+$$
+
+While the last integral in Eq. (C.2) compensates the term (C.1c), the total derivative term yields the Wiegmann-Polyakov formula provided $A_{\mu}$ is not singular:
+
+$$
+\begin{aligned}
+S\left[O, A_{\mu}\right] & =S[O]+\frac{1}{8 \pi} \int_{\mathbf{x}} \operatorname{tr}\left[A_{\mu}\left(O \partial_{\mu} O^{T}+O^{T} \partial_{\mu} O\right)\right. \\
+& \left.+A_{\mu} O^{T} A_{\mu} O-A_{\mu}^{2}-i \epsilon_{\nu \rho} O A_{\nu} O^{T} A_{\rho}-i \epsilon_{\nu \rho} A_{\nu}\left(O^{T} \partial_{\rho} O+\partial_{\rho} O O^{T}\right)\right] \\
+& =S[O]+\frac{1}{8 \pi} \int_{\mathbf{x}} \operatorname{tr}\left[A_{-}\left(O \partial_{+} O^{T}\right)+A_{+}\left(O^{T} \partial_{-} O\right)+A_{+} O^{T} A_{-} O-A_{+} A_{-}\right]
+\end{aligned}
+$$
+
+Here I have introduced the (anti-)holomorphic combination of gauge potentials $A_{ \pm}=A_{x} \pm i A_{y}$. In the case of topological gauge potentials, the integral over the total derivative yields also a contribution from the Dirac string.
+
+Equation (C.4) is a very powerful result. In particular, it justifies a posteriori the bosonization rules (5.29a) and (5.29b). Also, it follows immediately from expression (C.3) that after disorder-induced symmetry breaking $\left(O \rightarrow Q=Q^{T}\right)$ the gauge-field-dependent contributions from the topological term vanish.
+
+Further, one can use Eq. (C.4) to determine the prefactor of the kinetic term in the AII NL $\sigma \mathrm{M}$, Eq. (5.39). As explained in the main text, soft rotations $O_{\text {soft }}^{T} O O_{\text {soft }}$ of the WZNW fields $O$ are not affected by disorder induced masses, Eq. (5.33). The effective action for topologically trivial Goldstone modes contains
+
+$$
+S_{\text {eff,kin }}\left[\Phi_{\mu}\right]=\frac{1}{8 \pi} \int_{\mathbf{x}}\left\langle\operatorname{tr}\left[\Phi_{+} O^{T} \Phi_{-} O-\Phi_{+} \Phi_{-}\right]\right\rangle-\frac{1}{2}\left\langle\left(\int_{\mathbf{x}} \operatorname{tr}\left[\Phi_{+} j_{-}+\Phi_{-} j_{+}\right]\right)^{2}\right\rangle
+$$
+
+where $j_{ \pm}$are the (bosonic) currents, $\langle\ldots\rangle$ denotes average with respect to the full bosonic theory (including the mass terms) and $\Phi_{ \pm}=O_{\text {soft }} \partial_{ \pm} O_{\text {soft }}^{T}$. To the leading order, the average can be calculated close to the saddle point. Exploiting the equivalence of bosonic and fermionic theories one can equally evaluate $\langle\ldots\rangle$ using the fermionic fields at SCBA level. At $|\mu| \tau \gg 1$ the major contribution comes from the second line of Eq.(C.5), which, taking the vertex corrections into account, yields the correct prefactor (i.e. the conductivity) of the kinetic term in Eq. (5.39).
+
+# C.1.2 Instanton configuration 
+
+I consider the following four dimensional unit vector
+
+$$
+\underline{a} \equiv\left(a_{0}, a_{1}, a_{2}, a_{3}\right) \equiv \frac{1}{\left|\vec{x}-\vec{x}^{\prime}\right|^{2}+\lambda^{2}}\left(2 \lambda\left(\vec{x}-\vec{x}^{\prime}\right),\left|\vec{x}-\vec{x}^{\prime}\right|^{2}-\lambda^{2}\right)
+$$
+
+where the $1+2$ vector $\vec{x}-\vec{x}^{\prime} \equiv\left((1-w) / w, \mathbf{x}-\mathbf{x}^{\prime}\right)$ contains the extension parameter and the real-space coordinates. It describes a topological excitation at position $\left(1, \mathbf{x}^{\prime}\right)$ in a three-dimensional base space. With the help of the vector $\underline{a}$ one can define the following extended field configuration
+
+$$
+\tilde{O}_{\text {inst }}=\left(\begin{array}{cccc}
+-a_{0} i \tau_{y}+a_{3} & 0 & a_{1}+a_{2} i \tau_{y} & 0 \\
+0 & \mathbf{1} & 0 & 0 \\
+a_{1}-a_{2} i \tau_{y} & 0 & -a_{0} i \tau_{y}-a_{3} & 0 \\
+0 & 0 & 0 & -\mathbf{1}
+\end{array}\right)
+$$
+
+For $a_{0}=0$, i.e. on the physical space $w=1, \tilde{O}_{\text {inst }}$ is a symmetric matrix and characterizes the twodimensional instanton. The choice of the extension is arbitrary, but, as has been stressed in the main text, the $\tilde{O}_{\text {inst }}$ field has to leave the diffusive saddle-point manifold for some subinterval $w \in I \subseteq(0,1)$. For $w \rightarrow 0$ the extended field $\tilde{O}_{\text {inst }}$ satisfies the boundary condition $\tilde{O}(\mathbf{x}, w=0)=\Lambda=$ const.
+
+Now one can insert the instanton configuration into the WZ term. After tracing out the matrix degrees of freedom this leads to
+
+$$
+\begin{aligned}
+i S^{(\theta)} & =\frac{-i}{6 \pi} \int_{\vec{x}, w} \epsilon_{\mu \nu \lambda}\left(\epsilon_{a b c} a_{a} \partial_{\mu} a_{b} \partial_{\nu} a_{c} \partial_{\lambda} a_{0}-\epsilon_{a b d} a_{a} \partial_{\mu} a_{b} \partial_{\nu} a_{0} \partial_{\lambda} a_{d}\right. \\
+& \left.+\epsilon_{c d a} a_{a} \partial_{\mu} a_{0} \partial_{\nu} a_{c} \partial_{\lambda} a_{d}-\epsilon_{c d b} a_{0} \partial_{\mu} a_{b} \partial_{\nu} a_{c} \partial_{\lambda} a_{d}\right) \\
+& =i \pi
+\end{aligned}
+$$
+
+Here the last line is obtained by a straightforward calculation. This completes the proof, that the topological term distinguishes between the trivial and the non-trivial sectors as it acquires the values 0 and $i \pi(\bmod 2 \pi i)$, respectively.
+
+# C. 2 Effect of dielectric environment on Coulomb interaction 
+
+## C.2.1 Electrostatic potential and single particle effects
+
+As has been stated above the experimental setup consists of a sandwich of (at least) three different dielectrics (see Fig. 5.2). I define the $z$-axis to be perpendicular to the two surfaces. The sandwich consists of the coating material with a dielectric constant $\epsilon_{1}$ (for $d / 2<z$ ), the topological insulator film with a dielectric constant $\epsilon_{2}$ (for $-d / 2 \leqslant z \leqslant d / 2$ ), and the substrate with a dielectric constant $\epsilon_{3}$ (for $z<-d / 2$ ). Taking these different dielectric properties into account, I here present the expression for the Coulomb potential which generalizes Eq. (5.4).
+
+By the method of mirror charges, one can derive [212-214] the electrostatic potential induced by a single point charge $e$ located at $\left(\mathbf{x}_{0}, z_{0}\right)=\left(0,0, z_{0}\right)$ inside the middle region of the sandwich $\left(z, z_{0} \in\right.$ $\left.\left[-\frac{d}{2}, \frac{d}{2}\right)\right)$ :
+
+$$
+\begin{aligned}
+\Phi\left(\mathbf{x}, z, z_{0}\right) & =\frac{e}{\epsilon_{2}}\left[\frac{1}{\sqrt{\mathbf{x}^{2}+\left(z-z_{0}\right)^{2}}}+r_{23}^{-1} \mathcal{F}\left(\mathbf{x}, d+\left(z+z_{0}\right)\right)\right. \\
+& \left.+r_{21}^{-1} \mathcal{F}\left(\mathbf{x}, d-\left(z+z_{0}\right)\right)+\mathcal{F}\left(\mathbf{x}, z-z_{0}\right)+\mathcal{F}\left(\mathbf{x},-\left(z-z_{0}\right)\right)\right]
+\end{aligned}
+$$
+
+where
+
+$$
+\mathcal{F}(\mathbf{x}, z)=\sum_{k=1}^{\infty} \frac{\left(r_{21} r_{23}\right)^{k}}{\sqrt{\mathbf{x}^{2}+(z-2 d k)^{2}}}
+$$
+
+and the ratios
+
+$$
+r_{21} \equiv \frac{\epsilon_{2}-\epsilon_{1}}{\epsilon_{2}+\epsilon_{1}} ; \quad r_{23} \equiv \frac{\epsilon_{2}-\epsilon_{3}}{\epsilon_{2}+\epsilon_{3}}
+$$
+
+were introduced. If one of these ratios vanishes, the textbook limit of two dielectric half-planes follows. Fourier transformation of the $\mathbf{x}$ coordinates yields
+
+$$
+\begin{aligned}
+\Phi\left(\mathbf{q}, z, z_{0}\right) & =\frac{2 \pi e}{q \epsilon_{2}}\left[e^{-\left|z-z_{0}\right| q}\right. \\
+& \left.+\frac{e^{-2 d q}}{1-r_{21} r_{23} e^{-2 d q}}\left(r_{21} e^{\left(d+z+z_{0}\right) q}+r_{23} e^{\left(d-z-z_{0}\right) q}+2 r_{21} r_{23} \cosh \left(\left(z-z_{0}\right) q\right)\right)\right]
+\end{aligned}
+$$
+
+Now the attention is shifted towards 3D TI surface states: the charges are located at a typical distance $a \sim v_{F} / M_{\infty}$ (the penetration depth) from the boundaries $z= \pm \frac{d}{2}$. The consequences of the general expression (C.10) on the 3D TI surface states are twofold.
+
+First, there is a single particle effect, stemming from the interaction of the charged particles with their own mirror charges. The associated electrostatic energy is incorporated in the chemical potential in the main text and can be expressed as
+
+$$
+\begin{aligned}
+\Delta \mu_{1} & =\frac{e}{2} \Phi^{\mathrm{reg}}\left(0, \frac{d}{2}-a, \frac{d}{2}-a\right) \\
+& =\frac{e^{2}}{4 \epsilon_{2}}\left[\frac{r_{21}}{a}-\frac{r_{21}+r_{21}^{-1}+2}{d} \ln \left(1-r_{21} r_{23}\right)\right]
+\end{aligned}
+$$
+
+The analogous shift of the chemical potential at the second surface $\Delta \mu_{2}$ is easily obtained by interchanging $r_{21} \leftrightarrow r_{23}$. The superscript ${ }^{\text {reg }}$ indicates that self interaction of the charges is subtracted. In the second term the approximation $a \ll d$ was exploited. The first term, i.e. the interaction with the nearest mirror charge, is typically the dominating contribution $\Delta \mu_{1} \approx \alpha_{T I} r_{21} / 4 M_{\infty}$.
+
+Second, the electrostatic energy associated with two-particle interaction is the quantity $\underline{U}_{0}$ entering $S_{\text {int }}$ in Eq. (5.14). This leads to the interaction parameters analyzed below.
+
+# C.2.2 Interaction parameters 
+
+The interaction parameters are obtained by placing a test charge into Eq. (C.10). I will present this effective Coulomb interaction in the surface space. The terms induced by intersurface interaction contain a factor $\exp (-q d)(q$ takes values between the IR and UV cutoffs, $q \in\left[L_{E}^{-1}, l^{-1}\right]$ ). As a result one has to distinguish between the following two cases.
+
+In the first case the momenta are large $(q d \gg 1)$ throughout the RC-procedure if $d L^{-1}>1$ or for part of it if $d \in[l, L]$. Then the two surfaces become decoupled and
+
+$$
+\underline{U}_{0}=\frac{2 \pi}{q}\left(\begin{array}{cc}
+\frac{2}{\epsilon_{2}+\epsilon_{1}} & 0 \\
+0 & \frac{2}{\epsilon_{2}+\epsilon_{3}}
+\end{array}\right)
+$$
+
+(Here and in all subsequent sections of the present appendix I drop the electron charge, it is formally included into a redefinition of $\epsilon_{1}, \epsilon_{2}, \epsilon_{3}$.)
+
+In the second case the momenta are small $q d \ll 1$. As the interest is in the low-energy theory, only the Fourier transformed terms which are not vanishing in the limit of small transfered momentum $q d \rightarrow 0$ are kept. All others are irrelevant in the RG-sense. This way obtain the true long-range Coulomb part is obtained
+
+$$
+\underline{U}_{C}=\frac{2}{\epsilon_{1}+\epsilon_{3}} \frac{2 \pi}{q}\left(\begin{array}{ll}
+1 & 1 \\
+1 & 1
+\end{array}\right)
+$$
+
+As expected, it does no longer depend on $\epsilon_{2}$. The limit under consideration reflects the large-distance behavior in which the dominant part of the electric field lines live in the dielectrics surrounding the film.
+
+There are other contributions which do not vanish in the $q d \rightarrow 0$ limit. These are short range interaction amplitudes introduced by the finite thickness of the film:
+
+$$
+\underline{F}^{(d)}=-\frac{2 \pi}{\epsilon_{2}} d\left(\begin{array}{ll}
+0 & 1 \\
+1 & 0
+\end{array}\right)-\frac{4 \pi}{\epsilon_{1}+\epsilon_{3}} d\left[F_{\text {symm }}\left(\begin{array}{ll}
+1 & 1 \\
+1 & 1
+\end{array}\right)+\underline{F}_{M}\right]
+$$
+
+Here I have defined the scalar
+
+$$
+F_{\text {symm }}=\left(\epsilon_{2}-\epsilon_{1}\right)\left(\epsilon_{2}-\epsilon_{3}\right)\left\{\frac{1}{2 \epsilon_{2}^{2}}+\frac{1}{\epsilon_{2}\left(\epsilon_{1}+\epsilon_{3}\right)}\right\}
+$$
+
+and the matrix
+
+$$
+\underline{F}_{M}=\frac{1}{2 \epsilon_{2}^{2}}\left(\begin{array}{cc}
+\left(\epsilon_{2}+\epsilon_{1}\right)\left(\epsilon_{2}-\epsilon_{3}\right) & \epsilon_{2}^{2}-\epsilon_{1} \epsilon_{3} \\
+\epsilon_{2}^{2}-\epsilon_{1} \epsilon_{3} & \left(\epsilon_{2}-\epsilon_{1}\right)\left(\epsilon_{2}+\epsilon_{3}\right)
+\end{array}\right)
+$$
+
+which both vanish in the limit of $\epsilon_{1}=\epsilon_{2}=\epsilon_{3}$. In summary, for coupled surface one can write $\underline{U}_{0}=\underline{U}_{C}+\underline{F}^{(d)}$.
+
+The derivation of the above equations includes some subtleties. First, the electric field configuration for a single point charge was derived. Thus, in particular, the metallic surfaces between the dielectrics were disregarded. As in the theory of conventional metals, their effect will be incorporated in the field theoretical description of the model (App. C.3). Second, I used the potential (C.10) derived for charged particles at position $z, z_{0}$ and then moved them on the surface between the dielectrics from inside of the TI film ( $z_{0}= \pm d / 2 \mp a \approx \pm d / 2$ and equally for $z$ ). This requires that the (macroscopic) electrostatic theory of continuous, homogeneous dielectrics can be applied to electrons located at a distance $a$ from the boundary. This is justified, as the interest is in the long-range behavior of the electric field. Furthermore, for $\mathrm{Bi}_{2} \mathrm{Se}_{3}$ it is known that $a$ is of the order of a few nanometers [210, 330], hence one order of magnitude larger than the atomic scale. The estimate presented in Tab. 5.2 indicates even longer penetration depth for for HgTe .
+
+# C. 3 Clean Fermi liquid 
+
+In this appendix I present the formal resummation of scattering amplitudes following references [67, $72,101]$. First the short range (one-Coulomb-line-irreducible) part of the singlet channel (see also Eq. (5.46)) is considered
+
+$$
+\Gamma_{s s^{\prime}}^{1-2}=\Gamma_{s s^{\prime}}^{1}-\Gamma_{s s}^{2} \delta_{s s^{\prime}}
+$$
+
+I include the long-range, one-Coulomb-line-reducible, diagrams $\left(\Gamma^{0}\right)$ later on.
+
+# C.3.1 Resummation of interaction amplitudes 
+
+The first step is to single out the subset of particle-hole-section irreducible diagrams $I^{1-2}$. The total interaction amplitude as a matrix in the surface space and in $(2+1)$-momentum space is given by the Dyson equation
+
+$$
+\underline{I}^{1-2}(K)=\underline{I}^{1-2}-\underline{I}^{1-2} \underline{R}(K) \underline{I}^{1-2}(K)
+$$
+
+(Matrix multiplication includes momentum integral $\int_{\mathbf{p}}$ and a Matsubara sum $T \sum_{n}$.)
+The matrix
+
+$$
+\begin{aligned}
+{[\underline{R}(K)]_{P P^{\prime}, s s^{\prime}} } & =\delta_{s s^{\prime}} \delta_{P P^{\prime}} R_{s, P}(K) \\
+R_{s, P}(K) & \equiv G_{s}(P) G_{s}(P+K)
+\end{aligned}
+$$
+
+describes particle-hole bubbles and in the singlet channel. This matrix is diagonal in both $2+1$ momentum and surface space: As explained in the main text, it is sufficient to keep only intrasurface bubbles in the assumed case of uncorrelated disorder. In the presence of generic interaction, the quantity $\underline{R}_{s, P}(K)$ can be represented as
+
+$$
+\begin{aligned}
+R_{s, P}(K) & =R_{s, P}^{\omega}+\Delta_{s, P}(K) \\
+& =R_{s, P}^{q}+\tilde{\Delta}_{s, P}(K)
+\end{aligned}
+$$
+
+Here $R_{s, P}^{\omega}\left(R_{s, P}^{q}\right)$ are called regular (static) part of the bubble. The $\omega$ - and q-limits are defined in the main text (see Eqs. (5.49) and (5.50)). The singular (dynamic) part of the particle-hole bubble is
+
+$$
+\begin{aligned}
+& \Delta_{s, P}(K)=\beta \frac{-i \mathbf{v}_{s}^{F} \cdot \mathbf{q}}{\omega_{m}+i \mathbf{v}_{s}^{F} \cdot \mathbf{q}} \delta_{P}^{(s)} \\
+& \tilde{\Delta}_{s, P}(K)=\beta \frac{\omega_{m}}{\omega_{m}+i \mathbf{v}_{s}^{F} \cdot \mathbf{q}} \delta_{P}^{(s)}
+\end{aligned}
+$$
+
+(As mentioned in Sec. 1.5.1 the FL residues are reabsorbed into a redefinition of the scattering amplitudes.) From these definitions and Eq. (C.18) one obtains the relations
+
+$$
+\underline{\Gamma}^{1-2}(K)=\underline{\Gamma}^{1-2, \omega}-\underline{\Gamma}^{1-2}(K) \underline{\Delta}(K) \underline{\Gamma}^{1-2, \omega}
+$$
+
+and
+
+$$
+\underline{\Gamma}^{1-2}(K)=\underline{\Gamma}^{1-2, q}-\underline{\Gamma}^{1-2}(K) \underline{\tilde{\Delta}}(K) \underline{\Gamma}^{1-2, q}
+$$
+
+This formal (re-)expression of the general scattering amplitude will be used to calculate the polarization operator in the next subsection.
+
+## C.3.2 Definitions
+
+In order to introduce the long-range Coulomb interaction and to describe its screening I define the following quantities. The bare triangular vertices are obtained in response to an external scalar potential $\phi^{(s)}\left(\omega_{m}, \mathbf{q}\right)$ :
+
+$$
+\underline{\mathbf{v}}_{0}^{(1)}=(1,0) \text { and } \underline{\mathbf{v}}_{0}^{(2)}=(0,1)
+$$
+
+The approximation $\left\langle\mu_{s}, \mathbf{p} \mid \mu_{s}, \mathbf{p}+\mathbf{q}\right\rangle \approx 1$ is used. In the present notation, bold, underlined quantities are vectors in surface space.
+
+The triangular vertex $\underline{\mathbf{T}}^{(s)}$ renormalized by interaction satisfies
+
+$$
+\underline{\mathbf{T}}^{(s)}(K)=\underline{\mathbf{v}}_{0}^{(s)}-\underline{\mathbf{v}}_{0}^{(s)} \underline{R}(K) \underline{\Gamma}^{1-2}(K)
+$$
+
+The polarization operator is a matrix in the surface space and can be written as
+
+$$
+\Pi^{s s^{\prime}}(K)=\underline{\mathbf{v}}_{0}^{(s)} \underline{R}(K)\left[\underline{\mathbf{v}}_{0}^{\left(s^{\prime}\right)}\right]^{T}-\underline{\mathbf{v}}_{0}^{(s)} \underline{R}(K) \underline{\Gamma}^{1-2}(K) \underline{R}(K)\left[\underline{\mathbf{v}}_{0}^{\left(s^{\prime}\right)}\right]^{T}
+$$
+
+which transforms into
+
+$$
+\begin{aligned}
+\Pi^{s s^{\prime}}(K) & =\Pi^{s s^{\prime}, q}+\underline{\mathbf{T}}^{(s), q} \underline{\Delta}(K)\left[\underline{\mathbf{T}}^{\left(s^{\prime}\right), q}\right]^{T}-\underline{\mathbf{T}}^{(s), q} \underline{\Delta}(K) \underline{\Gamma}^{1-2}(K) \underline{\Delta}(K)\left[\underline{\mathbf{T}}^{\left(s^{\prime}\right), q}\right]^{T} \\
+& =\Pi^{s s^{\prime}, \omega}+\underline{\mathbf{T}}^{(s), \omega} \underline{\Delta}(K)\left[\underline{\mathbf{T}}^{\left(s^{\prime}\right), \omega}\right]^{T}-\underline{\mathbf{T}}^{(s), \omega} \underline{\Delta}(K) \underline{\Gamma}^{1-2}(K) \underline{\Delta}(K)\left[\underline{\mathbf{T}}^{\left(s^{\prime}\right), \omega}\right]^{T}
+\end{aligned}
+$$
+
+Below it will be shown that these equations combined with Ward identities can be used to derive the $\omega$ and $q$ limits of the polarization operator.
+
+# C.3.3 Ward identities 
+
+First the Ward identities which are due to invariance under separate $\mathbf{U}(1)$ rotation of the fermionic fields are investigated. Following the standard procedure one obtains
+
+$$
+\left(\frac{\partial G_{1}^{-1}}{\partial p_{0}}, 0\right)=\underline{\mathbf{T}}^{(1), \omega} \text { and }\left(0, \frac{\partial G_{2}^{-1}}{\partial p_{0}}\right)=\underline{\mathbf{T}}^{(2), \omega}
+$$
+
+Next, it is exploited that constant external fields can be reabsorbed into a redefinition of the chemical potentials. This leads to
+
+$$
+\left(\frac{\partial G_{1}^{-1}}{\partial \mu_{s}}, \frac{\partial G_{2}^{-1}}{\partial \mu_{s}}\right)=\underline{\mathbf{T}}^{(s), q}
+$$
+
+This can be inserted into the $\omega$ - and $q$ - limits of the polarization operator in order to obtain
+
+$$
+\Pi^{s s^{\prime}, \omega}=0 \quad \text { and } \quad \Pi^{s s^{\prime}, q}=-\frac{\partial n_{s}}{\partial \mu_{s^{\prime}}}=-\frac{\partial n_{s^{\prime}}}{\partial \mu_{s}}
+$$
+
+The Ward identities (C.29) and (C.30) have very profound consequences. They relate the static triangular vertex and the static polarization operator to derivatives of physical observables with respect to the chemical potential. It is explained in the main text, that for this reason they are not renormalized in the diffusive RG [98].
+
+## C.3.4 Screening of the Coulomb interaction
+
+Consider the singular part of the Coulomb interaction [see Eq. (C.13)], i.e.
+
+$$
+\underline{U}_{0}=\frac{2 \pi}{\epsilon_{\mathrm{eff}} q}\left(\begin{array}{ll}
+1 & 1 \\
+1 & 1
+\end{array}\right)
+$$
+
+where $\epsilon_{\text {eff }}=\left(\epsilon_{1}+\epsilon_{3}\right) / 2$ for the most general situation of a dielectric sandwich structure. This matrix has zero determinant, $\operatorname{det} \underline{U}_{0}=0$.
+
+The RPA-screened Coulomb interaction is defined as
+
+$$
+\underline{U}_{\mathrm{scr}}\left(\omega_{m}, \mathbf{q}\right)=\left(1-\underline{U}_{0} \underline{\Pi}\right)^{-1} \underline{U}_{0}
+$$
+
+The static one-Coulomb-line-reducible singlet interaction amplitude is obtained by attaching the (qlimit) triangular vertices to $\underline{U}_{\text {scr }}\left(\omega_{m}=0, \mathbf{q}\right)$ from both sides (see Fig. 5.6 in the main text). From the definition in Sec. C.3.2 it follows that $\Pi^{s s^{\prime}, q}=T^{s, q} \nu_{s^{\prime}}$. (Note that none of these three quantities is renormalized during RG.) Therefore, one obtains
+
+$$
+\underline{\Gamma}^{0}=-\left(\frac{1}{\nu}\right) \underline{\Pi}^{q} \underline{U}_{\mathrm{scr}}\left(\omega_{m}=0, \mathbf{q}\right) \underline{\Pi}^{q}\left(\frac{1}{\nu}\right)
+$$
+
+By means of the orthogonal matrix
+
+$$
+O=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & -1 \\
+1 & 1
+\end{array}\right)
+$$
+
+one can rotate $\underline{U}_{\text {scr }}\left(\omega_{m}=0, \mathbf{q}\right)$ into the basis where $\underline{U}_{0}$ is diagonal:
+
+$$
+\begin{aligned}
+O^{T} \underline{U}_{\mathrm{scr}}\left(\omega_{m}=0, \mathbf{q}\right) O & =\left(1-\left(\begin{array}{cc}
+\frac{4 \pi}{\epsilon_{\mathrm{eff}} q} & 0 \\
+0 & 0
+\end{array}\right) O^{T} \underline{\Pi}^{q} O\right)^{-1}\left(\begin{array}{cc}
+\frac{4 \pi}{\epsilon_{\mathrm{eff}} q} & 0 \\
+0 & 0
+\end{array}\right) \\
+& =\frac{\frac{4 \pi}{\epsilon_{\mathrm{eff}}}}{q-\frac{2 \pi}{\epsilon_{\mathrm{eff}}}}\left(\Pi_{11}^{q}+\Pi_{22}^{q}+2 \Pi_{12}^{q}\right)\left(\begin{array}{ll}
+1 & 0 \\
+0 & 0
+\end{array}\right) .
+\end{aligned}
+$$
+
+The denominator in the last line of Eq. (C.34) defines the coupled surface screening length [analogously to Eqs. (5.7), (5.8)].
+In the considered parameter range it is legitimate to take the $q$-limit under the following condition: $\left|\frac{2 \pi}{\epsilon_{\text {eff }}}\left(\Pi_{11}^{q}+\Pi_{22}^{q}+2 \Pi_{12}^{q}\right)\right| \gg q$. This leads to
+
+$$
+\underline{U}_{\mathrm{scr}}^{q}=-O\left(\begin{array}{cc}
+{\left[\hat{e}_{1}^{T} O^{T} \underline{\Pi}^{q} O \hat{e}_{1}\right]^{-1}} & 0 \\
+0 & 0
+\end{array}\right) O^{T}
+$$
+
+The q -limit of Eq. (C.32) is
+
+$$
+\underline{\Gamma}^{0, q}=\left(\frac{1}{\nu}\right) \underline{\Pi}^{q} O \hat{e}_{1} \otimes \hat{e}_{1}^{T} O^{T} \underline{\Pi}^{q}\left(\frac{1}{\nu}\right) \frac{1}{\hat{e}_{1}^{T} O^{T} \underline{\Pi}^{q} O \hat{e}_{1}}
+$$
+
+Now I multiply by $\underline{\nu} O \hat{e}_{1}$ from the right side and find
+
+$$
+\left[-\left(\frac{1}{\nu}\right) \underline{\Pi}^{q}+\underline{\Gamma}^{0, q} \underline{\nu}\right] O \hat{e}_{1}=0
+$$
+
+This matrix equation implies that the surface-space matrix in brackets has to be of zero determinant.
+
+Alternatively, using the $q$-limit of Eq. (C.27b) and (C.32), one can express the bare total interaction amplitude $\underline{\Gamma}^{\rho} \equiv \underline{\Gamma}^{0}+\underline{\Gamma}^{1-2}$ as
+
+$$
+\underline{\nu} \underline{\Gamma}^{\rho} \underline{\nu}=-\underline{\nu}-\frac{\operatorname{det} \underline{\Pi}^{q}}{\Pi_{11}^{q}+\Pi_{22}^{q}+2 \Pi_{12}^{q}}\left(\begin{array}{cc}
+1 & -1 \\
+-1 & 1
+\end{array}\right)
+$$
+
+From Eq. (C.38) the following statement immediately follows:
+
+$$
+\operatorname{det}\left[\underline{\nu}+\underline{\nu} \underline{\Gamma}^{\rho} \underline{\nu}\right]=0
+$$
+
+This relationship is equivalent to Eq. (C.37).
+
+# C.3.5 Total density-density response 
+
+Here I present the analysis of the one-Coulomb-line-reducible (sometimes called "total") density-density response $\underline{\Pi}^{\mathrm{RPA}}$. It is defined as
+
+$$
+\underline{\Pi}^{\mathrm{RPA}}(K)=\underline{\Pi}(K)+\underline{\Pi}(K) \underline{U}_{0}(\mathbf{q}) \underline{\Pi}^{\mathrm{RPA}}(K)
+$$
+
+Equation (C.40) implies that $\Pi^{\mathrm{RPA}}$ is obtained a resummation of the RPA-type series, hence the corresponding superscript.
+
+For the present case the aim is to obtain $\underline{\Pi}^{\mathrm{RPA}}$ in the diffusive regime. The very idea of dirty FL is based on replacing dynamic section $\dot{\Delta}_{s, P}$ according to the following prescription:
+
+$$
+\frac{\omega_{m}}{\omega_{m}+i \mathbf{v}_{s}^{F} \cdot \mathbf{q}} \rightarrow \frac{\omega_{m}}{Z_{s} \omega_{m}+D_{s} \mathbf{q}^{2}}
+$$
+
+with $Z_{s}=1$ at the bare level. By using definitions (C.27a) and (C.32), the total density-density response can be written as
+
+$$
+\underline{\Pi}^{\mathrm{RPA}}(K)=\left[\underline{\Pi}^{q}-\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}\right]\left[1+\omega_{m} \underline{\Delta}^{\Gamma}\left[\underline{\Pi}^{q}-\underline{\nu} \underline{\Gamma}^{0} \underline{\nu}\right]\right]
+$$
+
+where
+
+$$
+\Delta^{\Gamma} \equiv \Delta^{\Gamma}\left(\omega_{m}, \mathbf{q}\right)=\left[\underline{\nu} \underline{D} \mathbf{q}^{2}+\left(\underline{\nu} \underline{Z}+\underline{\nu} \underline{\Gamma}^{0+1-2} \underline{\nu}\right) \omega_{m}\right]^{-1}
+$$
+
+These equations are used in the main text (Sec. 5.4.2) to provide a link between the bosonized NL $\sigma \mathrm{M}$ and the dirty FL theory.
+
+## C.3.6 Bare NL $\sigma$ M coupling constants
+
+According to Eqs. (C.34) and (C.38) the bare values of the interaction amplitudes are fully determined by $\nu_{1}, \nu_{2}$ and
+
+$$
+\underline{\Pi}^{q}=-\underline{\nu}(1+\underline{F} \underline{\nu})^{-1}
+$$
+
+where
+
+$$
+\underline{F}=\left(\begin{array}{ll}
+F_{11} & F_{12} \\
+F_{12} & F_{22}
+\end{array}\right)
+$$
+
+are the FL constants in the density channel(s). It is convenient to express $\underline{\nu} \underline{\Gamma}^{\rho} \underline{\nu}$ in Eq. (C.38) through $\underline{F}$ by means of the identity (C.44):
+
+$$
+\frac{\operatorname{det} \underline{\Pi}^{q}}{\prod_{11}^{q}+\prod_{22}^{q}+2 \prod_{12}^{q}}=\frac{-1}{1 / \nu_{1}+1 / \nu_{2}+F_{11}+F_{22}-2 F_{12}}
+$$
+
+In App. C. 2 I presented the general expression for FL constants $\underline{F}^{(d)} \equiv \frac{2 \pi}{\epsilon_{2}} d \underline{f}$ induced by the finite thickness of the topological insulator film. Assuming that there is no additional short range interaction one can deduce the bare value of interaction constants for the NL $\sigma \mathrm{M}$. This is equivalent to the RPA estimate (valid if $\alpha_{T I} \ll 1$ ).
+
+From Eqs. (C.15) and (C.16) it is evident that $F_{\text {symm }}$ and $\underline{F}_{M}$ do not contribute to the combination $F_{11}+F_{22}-2 F_{12}$. By consequence, the bare value interaction constants in RPA estimate are
+
+$$
+\gamma_{11} \equiv \frac{\left[\nu \Gamma^{\rho} \nu\right]_{11}}{\nu_{1}}=-1+\frac{1}{1+\frac{\kappa_{1}}{\kappa_{2}}+2 \kappa_{1} d}
+$$
+
+and
+
+$$
+\gamma_{22} \equiv \frac{\left[\nu \Gamma^{\rho} \nu\right]_{22}}{\nu_{2}}=-1+\frac{1}{1+\frac{\kappa_{2}}{\kappa_{1}}+2 \kappa_{2} d}
+$$
+
+In these equations the inverse single surface screening length is denoted by $\kappa_{s}=2 \pi \nu_{s} / \epsilon_{2}$. It is a curious observation, that only $\epsilon_{2}$ (and not $\epsilon_{1}$ and $\epsilon_{3}$ ) enters these expressions. Recall that $\epsilon_{1}+\epsilon_{3}$, which determined the true long-range expression, were "lost" in the process of overscreening after Eq. (C.34). In view of Eq. (5.66) following from the $\mathcal{F}$-invariance, it is not surprising that the coupling constants are equal as long as $\nu_{1}=\nu_{2}$ even in the case of asymmetric dielectric environment.
+
+The general validity of Eqs. (C.47) was overlooked in the publication [154]. Only certain limits were addressed there. The published expressions in these limits are in full agreement with Eqs. (C.47).
+
+# C. 4 Detailed derivation of RG equations 
+
+In this section I present the detailed derivation of the one-loop corrections to conductivity.
+
+## Correlator $B_{1}$
+
+In the one loop approximation one can use $Q=\Lambda+\delta Q$ with $\delta Q=\left(\begin{array}{ll}0 & q \\ q^{T} & 0\end{array}\right)$. Then one directly singles out the classical contribution in $B_{1}$, Eq. (5.71) and obtains
+
+$$
+B_{1}^{s}=\sigma_{s}-\frac{\sigma_{s}}{4 n} \sum_{\mu=0,2} \operatorname{tr}\left\langle I_{n}^{\alpha} \bar{\tau}_{\mu} \delta Q \mid I_{-n}^{\alpha} \bar{\tau}_{\mu}^{T} \delta Q-I_{n}^{\alpha} \bar{\tau}_{\mu} \delta Q\right]\rangle
+$$
+
+In addition, I write $q=\sum_{\nu=0}^{3} q^{(\nu)} \bar{\tau}_{\nu}^{T}$. When performing the trace in $\tau$-space it turns out that the two diffuson contributions $(\nu=0,2)$ cancel up. This is a consequence of the opposite sign of $\tau_{0}$ and $\tau_{2}$ under transposition. The Cooperons $(\nu=1,3)$ contribute only to the last term in Eq. (C.48). This
+
+leads to
+
+$$
+\begin{aligned}
+B_{1}^{s} & =\sigma_{s}+\frac{\sigma_{s}}{4 n} \sum_{\nu=1,3}\left\langle\operatorname{tr} I_{n}^{\alpha}\left(\begin{array}{cc}
+0 & q_{\nu} \\
+q_{\nu}^{T} & 0
+\end{array}\right) I_{n}^{\alpha}\left(\begin{array}{cc}
+0 & q_{\nu} \\
+q_{\nu}^{T} & 0
+\end{array}\right)\right\rangle \\
+& =\sigma_{s}+2 \int_{\mathbf{p}} D_{s}\left(\omega_{n}, \mathbf{p}\right)
+\end{aligned}
+$$
+
+# Correlator $B_{2}$ 
+
+The second term $B_{2}$, Eq. (5.72), does not contribute on the classical level. Expanding to second order in $q$ yields the tree level contribution which also vanishes:
+
+$$
+B_{2}^{s s^{\prime}} \left\lvert\, \text { tree level }=-\frac{\sigma_{s} \delta_{s s^{\prime}}}{4} \int_{\mathbf{x}-\mathbf{x}^{\prime}} e^{i \mathbf{p}\left(\mathbf{x}-\mathbf{x}^{\prime}\right)} \mathbf{p}^{2} D_{s s}^{\nu}(\mathbf{p}, \omega)=0
+$$
+
+The quartic order in $q$ provides the one-loop corrections to the correlator $B_{2}$. I will first analyze the effect of diffusons. Exploitation of the relation $\left\langle q^{(0)} q^{(0)}\right\rangle=\left\langle q^{(2)} q^{(2)}\right\rangle$, leads to a simplification of the expression for $B_{2}\left({ }^{\star}\right.$ and ${ }^{\#}$ denote Wick contractions):
+
+$$
+\begin{aligned}
+B_{2}^{\left(s s^{\prime}\right)}= & -\frac{\sigma_{s} \sigma_{s^{\prime}}}{8 n} \int_{\mathbf{x}-\mathbf{x}^{\prime}} \sum_{\mu=x, y}\left[\operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{\#} \partial_{\mu} q_{0}^{T \star}\right)_{s, \mathbf{x}} \operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{\#} \partial_{\mu}^{\prime} q_{0}^{T \star}\right)_{s^{\prime}, \mathbf{x}^{\prime}}\right. \\
+& \left.+\operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{T \#} \partial_{\mu} q_{0}^{\star}\right)_{s, \mathbf{x}} \operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{T \#} \partial_{\mu}^{\prime} q_{0}^{\star}\right)_{s^{\prime}, \mathbf{x}^{\prime}}+2 \operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{T \star} \partial_{\mu} q_{0}^{\#}\right)_{s, \mathbf{x}} \operatorname{tr}\left(I_{n}^{\alpha} q_{0}^{\#} \partial_{\mu}^{\prime} q_{0}^{T \star}\right)_{s^{\prime}, \mathbf{x}^{\prime}}\right]
+\end{aligned}
+$$
+
+The Wick contraction produces three types of terms for each of the three terms in (C.51) [see Eq. (5.76)]. First there is the interference term $D_{s} D_{s}$. It contains an additional sum over replicas and hence vanishes in the replica limit. Second, there can be a term $\left(D \Gamma D^{c}\right)_{s s^{\prime}}\left(D \Gamma D^{c}\right)_{s s^{\prime}}$. It vanishes due to its structure in the Matsubara space. The only remaining term is $\left(D \Gamma D^{c}\right)_{s s} D_{s}$ which yields
+
+$$
+\begin{aligned}
+B_{2}^{\left(s s^{\prime}\right)} & =\frac{32 \pi T \delta_{s s^{\prime}}}{\sigma_{s} n} \int_{\mathbf{p}} \mathbf{p}^{2} \sum_{n_{12}=0}^{N_{M}} n_{12} \\
+& \times\left[\left(D \Gamma D^{c}\right)_{s s}\left(\omega_{n_{12}}, \mathbf{p}\right) D_{s}\left(\omega_{n_{12}+n}, \mathbf{p}\right)-\left(D \Gamma D^{c}\right)_{s s}\left(\omega_{n_{12}+n}, \mathbf{p}\right) D_{s}\left(\omega_{n_{12}+2 n}, \mathbf{p}\right)\right]
+\end{aligned}
+$$
+
+At this stage it is legitimate to send $N_{M} \rightarrow \infty$. Furthermore, note that, because disorder is surface uncorrelated, there is no correction to the transconductance $\sigma_{12}$. Since here the zero temperature limit is considered, Eq. (C.52) becomes
+
+$$
+B_{2}^{\left(s s^{\prime}\right)}=\frac{16 \delta_{s s^{\prime}}}{\sigma_{s}} \int_{\mathbf{p}} \mathbf{p}^{2} \int_{0}^{\infty} d \omega\left(D \Gamma D^{c}\right)_{s s}(\omega, \mathbf{p}) D_{s}(\omega, \mathbf{p})
+$$
+
+Now one can use the relation
+
+$$
+\left(D \Gamma D^{c}\right)_{s s}(\omega, \mathbf{p}) D_{s}(\omega, \mathbf{p})=\Gamma_{s s} D_{s}^{2}(\omega, \mathbf{p}) \bar{D}_{s}(\omega, \mathbf{p})-\frac{4 \omega \Gamma_{12}^{2} D_{s}(\omega, \mathbf{p}) \bar{D}_{s}(\omega, \mathbf{p})}{\sigma_{\bar{s}} \operatorname{det}\left[\left(D^{c}(\omega, \mathbf{p})\right)^{-1}\right]}
+$$
+
+in order to split Eq. (C.53) into the single surface and intersurface contributions. Recall that $\bar{s}=3-s$ and
+
+$$
+\bar{D}_{s}(\omega, \mathbf{p})=\left[\mathbf{p}^{2}+L^{-2}+4\left(z_{s}+\Gamma_{s s}\right) \omega / \sigma_{s}\right]^{-1}
+$$
+
+The single surface induced correction is given as
+
+$$
+\begin{aligned}
+B_{2}^{s s^{\prime}} \left.\right|_{\text {single }} & =\frac{16 \delta_{s s^{\prime}}}{\sigma_{s}} \int_{\mathbf{p}} \mathbf{p}^{2} \int_{0}^{\infty} d \omega \Gamma_{s s} D_{s}^{2}(\omega, \mathbf{p}) \bar{D}_{s}(\omega, \mathbf{p}) \\
+& =-4 \delta_{s s^{\prime}} f\left(\Gamma_{s s} / z_{s}\right) \int_{\mathbf{p}} \mathbf{p}^{2} D_{s}^{2}(0, \mathbf{p})
+\end{aligned}
+$$
+
+The function
+
+$$
+f(x)=1-(1+1 / x) \ln (1+x)
+$$
+
+was already introduced in Sec. 1.5.2. For the intersurface interaction induced term one can separate the poles of $\left[\operatorname{det}\left(\underline{D}^{c}(\omega, \mathbf{p})\right)^{-1}\right]$. It yields
+
+$$
+\begin{aligned}
+B_{2}^{s s^{\prime}} \left.\right|_{\text {inter }} & =\frac{64 \delta_{s s^{\prime}} \Gamma_{12}^{2}}{\operatorname{det}(\underline{z}+\underline{\Gamma})} \int_{\mathbf{p}} \mathbf{p}^{2} D_{s}(0, \mathbf{p}) \int_{0}^{\infty} d \omega \omega D_{s}(\omega, \mathbf{p}) \frac{\bar{D}_{s}(\omega, \mathbf{p})}{d_{+}-d_{-}} \sum_{\varsigma=\pm} \frac{\varsigma}{d_{\varsigma}\left(\mathbf{p}^{2}+L^{-2}\right)+4 \omega} \\
+& =\frac{2 \sigma_{s}^{2} \Gamma_{12}^{2} \delta_{s s^{\prime}}}{z_{s}\left(z_{s}+\Gamma_{s s}\right) \operatorname{det}(\underline{z}+\underline{\Gamma})\left(d_{+}-d_{-}\right)}\left[\sum_{\zeta=\pm} \varsigma f_{2}\left(\frac{\sigma_{s}}{z_{s}}, \frac{\sigma_{s}}{z_{s}+\Gamma_{s s}}, d_{\varsigma}\right)\right] \int_{\mathbf{p}} \mathbf{p}^{2} D_{s}^{2}(0, \mathbf{p})
+\end{aligned}
+$$
+
+where
+
+$$
+d_{ \pm}=\frac{\left(z_{1} \sigma_{2}+\sigma_{1} z_{2}\right)}{2 \operatorname{det}(\underline{z}+\underline{\Gamma})}\left[1 \mp \sqrt{1-\frac{4 \sigma_{1} \sigma_{2} \operatorname{det}(\underline{z}+\underline{\Gamma})}{\left(z_{1} \sigma_{2}+\sigma_{1} z_{2}\right)^{2}}}\right]
+$$
+
+and
+
+$$
+f_{2}(a, b, c)=2 \frac{(c-b) a \ln a+(a-c) b \ln b+(b-a) c \ln c}{(b-a)(c-a)(c-b)}
+$$
+
+In the case of the long-range Coulomb interaction the condition $\operatorname{det}(\underline{z}+\underline{\Gamma})=0$ holds. Therefore, $d_{-}$diverges and as a consequence $f_{2}\left(\frac{\sigma_{s}}{z_{s}}, \frac{\sigma_{s}}{z_{s}+\Gamma_{s s}}, d_{-}\right) \rightarrow 0$. The contribution due to $d_{+}$is then, in the exemplary case $s=1$, given as
+
+$$
+B_{2}^{11} \left.\right|_{\text {inter }}=-4\left(1+\frac{\Gamma_{11}}{z_{1}}\right)\left[\frac{\ln \left(1+\frac{\Gamma_{11}}{z_{1}}\right)}{\frac{\Gamma_{11}}{z_{1}}}-\frac{\ln \left(1+\frac{\Gamma_{11}}{z_{1}}+\frac{\sigma_{1}\left(z_{2}+\Gamma_{22}\right)}{\sigma_{2} z_{1}}\right)}{\frac{\Gamma_{11}}{z_{1}}+\frac{\sigma_{1}\left(z_{2}+\Gamma_{22}\right)}{\sigma_{2} z_{1}}}\right] \int_{\mathbf{p}} \mathbf{p}^{2} D_{s}^{2}(0, \mathbf{p})
+$$
+
+Finally, I consider the effect of Cooperons in $B_{2}$. Due to the absence of interaction amplitudes in the Cooper channel all contributions are of the type $D_{s} D_{s}$ and, in analogy with the corresponding diffuson terms, vanish in the replica limit.
+
+![img-55.jpeg](img-55.jpeg)
+
+Figure C.1: Eigenvalues of $\mathbf{M}(\gamma)$ (in units of $1 / \sigma$ ) as a function of $\gamma$. Dashed lines: real part, solid lines: imaginary part.
+
+# C. 5 Stability of the fixed plane of equal surfaces 
+
+Here the stability of the fixed plane of identical surfaces with respect to small perturbations is discussed. As anticipated, it hosts the overall attractive fixed point of the four dimensional RG flow (see also Sec. 5.5.2) and thus is itself attractive. However, the parameters describing the deviation from equal surfaces $\left(\delta t=t-1\right.$ and $\left.\delta \gamma=\gamma_{11}-\gamma_{22}\right)$ flow towards zero in a quite nontrivial manner.
+
+From the general RG equations (5.92) one obtains the equations for small deviations
+
+$$
+\frac{d}{d y}\binom{\delta t}{\delta \gamma}=\mathbf{M}(\gamma)\binom{\delta t}{\delta \gamma}
+$$
+
+with the $\gamma$-dependent matrix
+
+$$
+\mathbf{M}(\gamma)=-\frac{2}{\pi \sigma}\left(\begin{array}{cc}
+\frac{(3+4 \gamma) G(\gamma)}{(1+2 \gamma)^{2}} & \frac{2 G(\gamma)}{(1+2 \gamma)^{2}} \\
+-\left(\gamma+\gamma^{2}\right) & 1+2 \gamma
+\end{array}\right)
+$$
+
+and $G(\gamma)=-1-2 \gamma+(2+2 \gamma) \ln (2+2 \gamma)$. The eigenvalues of the matrix $\mathbf{M}(\gamma)$ are shown in Fig. C.1. They turn out to be complex in most of the interval $\gamma \in[-1,0]$ (except for a narrow region of very small $\gamma$ ). This implies a curious oscillatory scale dependence of the difference of conductivities $\delta t=2\left(\sigma_{1}-\sigma_{2}\right) / \sigma$. Although the fixed plane of equal surfaces is repulsive in the regime $\gamma<\gamma_{*} \approx-0.64$ one should keep in mind that $\gamma$ itself is subjected to renormalization, flowing towards zero and therefore, the plane of identical surfaces becomes ultimately attractive.
+
+## C. 6 RG flow for externally screened interaction
+
+If the single layer screening length $\kappa_{s}^{-1}$ and the typical length scale $L_{E}$ (e.g. the thermal length) exceed the distance to the electrostatic gates, the external screening of interactions can no longer be neglected. Effectively, the interactions become short ranged. This implies the breakdown of $\mathcal{F}$-invariance. As a
+
+consequence, the relations for NL $\sigma$ M parameters $\operatorname{det}(\underline{z}+\underline{\Gamma})=0$ and $\left(z_{1}+\Gamma_{11}\right) /\left(z_{2}+\Gamma_{22}\right)=1$ (derived in the case of long-range interaction in Sec. 5.3.7 and App. C.3.4) are no longer true. Note that the invariance under renormalization of $(\underline{z}+\underline{\Gamma})$ is not a consequence of $\mathcal{F}$-invariance and still holds.
+
+Here I present general RG equations that allow us to describe the crossover between the cases of long-range Coulomb interaction and of no interaction:
+
+$$
+\begin{aligned}
+& \frac{d \sigma_{1}}{d y}=\frac{2}{\pi}\left[\frac{1}{2}-f\left(\frac{\Gamma_{11}}{z_{1}}\right)-\frac{\sigma_{1}^{2} \Gamma_{12}^{2}}{2 z_{1}}\left(\frac{\sum_{\zeta= \pm} \varsigma f_{2}}{z_{1}+\Gamma_{11}}\left(\frac{\sigma_{1}}{z_{1}+\Gamma_{11}}, d_{\zeta}\right)\right.\right. \\
+& \left.\frac{d \sigma_{2}}{d y}=\frac{2}{\pi}\left[\frac{1}{2}-f\left(\frac{\Gamma_{22}}{z_{2}}\right)-\frac{\sigma_{2}^{2} \Gamma_{12}^{2}}{2 z_{2}}\left(\frac{\sum_{\zeta= \pm} \varsigma_{2}}{z_{2}+\Gamma_{22}}\left(\frac{\sigma_{2}}{z_{2}}, d_{\zeta}\right)\right.\right.\right. \\
+& \left.\left.\frac{d z_{1}}{d y}=-\frac{d \Gamma_{11}}{d y}=\frac{\Gamma_{11}}{\pi \sigma_{1}}\right)\right. \\
+& \frac{d z_{2}}{d y}=-\frac{d \Gamma_{22}}{d y}=\frac{\Gamma_{22}}{\pi \sigma_{2}}
+\end{aligned}
+$$
+
+In contrast to the Coulomb case [Eq. (5.90)], these RG equations can not be expressed in terms of the parameter $\gamma_{s s}=\Gamma_{s s} / z_{s}$. Further, it is worthwhile to emphasize that the RG equations for $\Gamma_{s s}$ and $z_{s}$ are exactly the same as in the Coulomb case. In particular, $\Gamma_{12}$ is not renormalized, since the general arguments exposed in Sec. 5.4.2 hold also in the case of short ranged interactions. I repeat that $0 \leq\left|\Gamma_{s s}\right| \leq z_{s}$ and typically $\left|\Gamma_{12}\right| \leq \max _{s=1,2}\left|\Gamma_{s s}\right|$.
+
+For sufficiently strong interactions, the RG flow implies localizing behaviour of the conductivities. However, as the RG flow predicts decreasing interaction amplitudes, the system undergoes a crossover to the free-electron weak-antilocalization effect. (Note that also $\Gamma_{12} / z_{s}$ decreases.) Accordingly, similar to the case of Coulomb interaction, in the case of strong short range interactions a non-monotonic conductivity behavior is predicted. The quantitative difference is the steeper antilocalizing slope in the final stage of the flow.
+
+# Appendix D 
+
+## Half-integer quantum Hall effect
+
+This appendix contains supplementary information regarding Chap. 6.
+
+## D. 1 Derivation of the NL $\sigma \mathbf{M}$ describing the half-integer QHE
+
+## D.1.1 No net $B$-field: Non-Abelian bosonization.
+
+The first step of the derivation of NL $\sigma \mathrm{M}$ for the QH problem is to apply non-Abelian bosonization to the system of disordered Dirac fermions which is TR invariant on average but contains a random Zeeman term.
+
+The model under consideration is Eq. (6.20), with the following white noise scalar disorder potential
+
+$$
+\left\langle V(\mathbf{x}) V\left(\mathbf{x}^{\prime}\right)\right\rangle=\frac{1}{\pi \nu \tau_{s c .}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+$$
+
+and a random Zeeman term $H_{Z}=m \sigma_{z}$
+
+$$
+\left\langle m(\mathbf{x}) m\left(\mathbf{x}^{\prime}\right)\right\rangle=\frac{1}{\pi \nu \tau_{Z .}} \delta\left(\mathbf{x}-\mathbf{x}^{\prime}\right)
+$$
+
+After disorder averaging the Matsubara action of our system receives additional contribution
+
+$$
+\begin{aligned}
+S^{d i s}= & -\frac{1}{2 \pi \nu} \int_{\mathbf{x}}\left[\frac{1}{\tau_{s c .}}\left(\bar{\psi}(\mathbf{x}) \psi(\mathbf{x})\right)\left(\bar{\psi}(\mathbf{x}) \psi(\mathbf{x})\right)\right. \\
+& \left.+\frac{1}{\tau_{Z .}}\left(\bar{\psi}(\mathbf{x}) \sigma_{z} \psi(\mathbf{x})\right)\left(\bar{\psi}(\mathbf{x}) \sigma_{z} \psi(\mathbf{x})\right)\right]
+\end{aligned}
+$$
+
+SCBA. On the mean-field level the fermionic Green's functions are given by the SCBA. The SCBA equation for the self energy reads
+
+$$
+\Sigma_{n}=\frac{-1}{\pi \nu \tau} \mathcal{G}_{n}(\mathbf{x}, \mathbf{x})
+$$
+
+Here the scattering rate $1 / \tau=1 / \tau_{s c .}+1 / \tau_{Z .}$. The solution of Eq. (D.4) is (in the limit $k_{F} l \gg 1$ )
+
+$$
+\Sigma_{n}=\frac{i}{2 \tau} \operatorname{sign}(n)
+$$
+
+Non-Abelian bosonization. In order to go beyond the mean-field treatment we derive the NLorM from the fermionic action. We will employ the double cut-off truncation scheme in Matsubara space[106] and use non-Abelian bosonization,[80] with the dictionary for the $\mathbf{U}\left(2 N_{M}^{\prime} N_{R}\right) \times \mathbf{U}\left(2 N_{M}^{\prime} N_{R}\right)$ invariant model being $[331,332]$
+
+$$
+\begin{aligned}
+& \psi^{\uparrow} \otimes \bar{\psi}^{\downarrow} \leftrightarrow \frac{1}{4 \pi v_{F}} U^{\dagger} \partial_{+} U \\
+& \psi^{\downarrow} \otimes \bar{\psi}^{\uparrow} \leftrightarrow \frac{1}{4 \pi v_{F}} U \partial_{-} U^{\dagger} \\
+& \psi^{\uparrow} \otimes \bar{\psi}^{\uparrow} \leftrightarrow-\lambda U^{\dagger} \\
+& \psi^{\downarrow} \otimes \bar{\psi}^{\downarrow} \leftrightarrow \lambda U
+\end{aligned}
+$$
+
+Here $U \in \mathbf{U}\left(2 N_{M}^{\prime} N_{R}\right)$ is a unitary matrix field. Typically it is decomposed in a phase (abelian bosonization) and a special unitary part $U=e^{\left\langle\sqrt{\frac{2^{2}}{2 N_{M}^{\prime} N_{R}}} \Phi\right.} \hat{U}$. The dimensionful constant $\lambda$ is of the order of the UV-cutoff. In the presence of disorder and a finite chemical potential it turns out to be of the order of the density of states, see below, App. D.1.1.
+
+The kinetic part of the action can now be rewritten as [141-144]
+
+$$
+\begin{aligned}
+S & =\int_{\mathbf{x}} \frac{1}{2}\left(D_{i} \Phi\right)^{2} \\
+& =\int_{\mathbf{x}} \frac{1}{8 \pi} \operatorname{Tr} D_{i} \hat{U}^{\dagger} D_{i} \hat{U} \\
+& +\int_{\mathbf{x}, w} \frac{-i}{12 \pi} \epsilon_{i j k} \operatorname{Tr}\left(\hat{U}^{\dagger} D_{i} \hat{U}\right)\left(\hat{U}^{\dagger} D_{j} \hat{U}\right)\left(\hat{U}^{\dagger} D_{k} \hat{U}\right) \\
+& +\int_{\mathbf{x}, w} \frac{i}{8 \pi} \epsilon_{i j k} \operatorname{Tr} F_{i j}\left(\hat{U}^{\dagger} D_{k} \hat{U}+D_{k} \hat{U} \hat{U}^{\dagger}\right) \\
+& \doteq \int_{\mathbf{x}} \frac{1}{2}\left(D_{i} \Phi\right)^{2} \\
+& +\int_{\mathbf{x}} \frac{1}{8 \pi} \operatorname{Tr} \partial_{i} \hat{U}^{\dagger} \partial_{i} \hat{U} \\
+& +\int_{\mathbf{x}, w} \frac{-i}{12 \pi} \epsilon_{i j k} \operatorname{Tr}\left(\hat{U}^{\dagger} \partial_{i} \hat{U}\right)\left(\hat{U}^{\dagger} \partial_{j} \hat{U}\right)\left(\hat{U}^{\dagger} \partial_{k} \hat{U}\right) \\
+& +\int_{\mathbf{x}} \frac{-i e}{4 \pi} \operatorname{Tr}\left[A_{-} \hat{U}^{\dagger} \partial_{+} \hat{U}+A_{+} \hat{U} \partial_{-} \hat{U}^{\dagger}\right] \\
+& +\int_{\mathbf{x}} \frac{-e^{2}}{4 \pi} \operatorname{Tr}\left[A_{-} \hat{U}^{\dagger} A_{+} \hat{U}-A_{+} A_{-}\right]
+\end{aligned}
+$$
+
+Here the symbols $D_{i}$ denote long derivatives, $D_{i}=\partial_{i}-i e A_{i}^{(0)}$ when acting on a scalar field and $D_{i}=$ $\partial_{i}-i e\left[A_{i}, \cdot\right]$ when acting on a matrix field. The gauge potentials a priori might denote any $\mathbf{U}\left(2 N_{M}^{\prime} N_{R}\right)$ gauge potentials [splitted in traceless (traceful) components $\left.A_{i}\left(A_{i}^{(0)}\right)\right], F_{i j}$ is the corresponding field strength tensor. For the problem of disordered Dirac fermions coupled to $\mathbf{U}(1)$ gauge potentials we will in the end set $A_{i}=\bar{A}_{i}$ [see Eq. (6.23)]. The symbol $\doteqdot$ here denotes equality for all cases when gauge fields are non-topological (recall, that we are interested in situations without net magnetic flux through the spatial plane). The expressions containing integrals over the variable $w$ involve the extension of
+
+the base manifold $[(\mathbf{x}, w) \in\left(\mathbb{R}^{2} \cup\{\infty\},[0,1]\right)]$. In these terms $\tilde{U}$ implicitly denotes a different function $\tilde{U}(\mathbf{x}, w)$ which coincides with the physical field on the physical space $\tilde{U}(\mathbf{x}, 0)=\tilde{U}(\mathbf{x})$ while taking a uniform fixed value at $w=1$, e.g. $\tilde{U}(\mathbf{x}, 1)=\mathbf{1}$.
+
+Bosonized SCBA. The SCBA equation (D.4) can be rederived in the bosonic language
+
+$$
+\begin{aligned}
+\Sigma & =\frac{1}{\pi \nu \tau}\langle\psi \otimes \bar{\psi}\rangle_{S C B A} \\
+& \leftrightarrow \frac{1}{\pi \nu \tau}\left\langle\left(\begin{array}{cc}
+-\lambda U^{\dagger} & \frac{1}{4 \pi v_{F}} U^{\dagger} \partial_{+} U \\
+\frac{1}{4 \pi v_{F}} U \partial_{-} U^{\dagger} & \lambda U
+\end{array}\right)_{\sigma}\right\rangle_{S C B A}
+\end{aligned}
+$$
+
+The symbol $\langle\ldots\rangle_{S C B A}$ denotes self-consistent SCBA average. Equations (D.9) are consistent with the previous solution provided $U=i \Lambda$ and $\lambda=\nu \pi / 2\left(\Lambda_{n n^{\prime}}=\delta_{n n^{\prime}} \operatorname{sign}(n)\right)$.
+
+Bosonized effective action. We now return to Eq. (D.3). We bosonize both channels of possible soft modes
+
+$$
+\begin{aligned}
+S^{d i s} \leftrightarrow & \frac{-1}{2 \pi \nu \tau_{s c .}} \int_{\mathbf{x}}\left[\left\{\operatorname{tr}\left(\begin{array}{cc}
+-\lambda U^{\dagger} & \frac{U^{\dagger} \partial_{+} U}{4 \pi v_{F}} \\
+\frac{U \partial_{-} U^{\dagger}}{4 \pi v_{F}} & \lambda U
+\end{array}\right)_{\sigma}\right\}^{2} \\
+& -\operatorname{tr}\left\{\left(\begin{array}{cc}
+-\lambda U^{\dagger} & \frac{U^{\dagger} \partial_{+} U}{4 \pi v_{F}} \\
+\frac{U \partial_{-} U^{\dagger}}{4 \pi v_{F}} & \lambda U
+\end{array}\right)_{\sigma}^{2}\right\}^{2} \\
++ & \frac{-1}{2 \pi \nu \tau_{Z .}} \int_{\mathbf{x}}\left[\left\{\operatorname{tr}\left(\begin{array}{cc}
+-\lambda U^{\dagger} & \frac{U^{\dagger} \partial_{+} U}{4 \pi v_{F}} \\
+\frac{-U \partial_{-} U^{\dagger}}{4 \pi v_{F}} & -\lambda U
+\end{array}\right)_{\sigma}\right\}^{2} \\
+& -\operatorname{tr}\left\{\left(\begin{array}{cc}
+-\lambda U^{\dagger} & \frac{U^{\dagger} \partial_{+} U}{4 \pi v_{F}} \\
+\frac{-U \partial_{-} U^{\dagger}}{4 \pi v_{F}} & -\lambda U
+\end{array}\right)_{\sigma}^{2}\right\}
+\end{aligned}
+$$
+
+Here, the sign $\doteqdot$ indicates that in this formula we omitted the gradient terms which renormalize the kinetic part of the action as well as a constant.
+
+Saddlepoint equations. By infinitesimal left rotation of spatially constant $U$ we determine the saddle point equations for the disorder induced potential
+
+$$
+\begin{aligned}
+0= & \frac{i \lambda^{2}}{\pi \nu}\left[\frac{\left(U^{2}-\left[U^{\dagger}\right]^{2}\right)}{\tau}+\frac{\left(U^{\dagger}-U\right) \operatorname{tr}\left[U^{\dagger}+U\right]}{\tau_{\mathrm{sc.}}}\right. \\
+& \left.+\frac{\left(U^{\dagger}-U\right) \operatorname{tr}\left[U^{\dagger}+U\right]}{\tau \mathrm{Z}}\right]
+\end{aligned}
+$$
+
+We see that the SCBA solution $U=i \Lambda$ solves the saddle point equation.
+
+Goldstone manifold and field theory. We will now rotate the bosonic fields by slow, small, unitary rotations: $U \rightarrow U_{\text {soft }}^{\dagger} U U_{\text {soft }}$. For the saddle point solution $U=i \Lambda$ these fields equally annihilate the disorder induced mass terms of Eq. (D.10). Thus the effective field theory will be constructed on a saddle point manifold, namely the coset space formed by the $Q=U_{\text {soft }}^{\dagger} \Lambda U_{\text {soft }}$ which is $U\left(2 N_{M} N_{R}\right) / U\left(N_{M} N_{R}\right) \times U\left(N_{M} N_{R}\right)$. To derive the effective field theory, Eq. (6.24) of the main text, the following steps are in order: (i) The prefactor of the gradient term is renormalized by integration of the $U$ fields in SCBA approximation.[154] (ii) Upon restriction to the coset space, the Wess-Zumino-Novikov-Witten term in third line from the bottom of Eq. (D.8) becomes the theta term with short derivatives and angle $\theta=\pi \bmod 2 \pi \cdot[88,89]$ (iii) The last two lines of the same Eq. (D.8) provide the gauge potentials entering the long derivatives of the gradient term. It is an important observation that terms containing $Q^{\dagger} \partial_{ \pm} Q$ and $\epsilon_{i j} \operatorname{tr} A_{i} Q^{\dagger} A_{j} Q$ drop out in view of the hermiticity and unitarity of $Q$. Therefore the theta term has short derivatives. (iv) Frequency and interaction terms were not discussed in this appendix, but can be equally included following Ref. [154]. (v) The subscript soft is omitted in all other parts of this paper.
+
+# D.1.2 Finite net magnetic field: Gradient expansion. 
+
+We now turn to the derivation of the NLøM describing disordered Dirac fermions in strong magnetic field $\left(\Omega_{c} \tau \gg 1\right)$. The fermionic action on saddle point level is
+
+$$
+\begin{aligned}
+S[\bar{\psi}, \psi]= & \int_{\mathbf{x}} \bar{\psi}\left[-i \tilde{\epsilon}-i e \tilde{\Phi}+H_{0}(\mathbf{p}-e[\mathcal{A}+\tilde{\mathbf{A}}])\right. \\
+& \left.-\mu-i\left(\Sigma^{R}\right)^{\prime \prime} Q\right] \psi
+\end{aligned}
+$$
+
+The SCBA is justified in the center of LLs with large index $|n| \gg 1$. For the present case of Dirac fermions, the imaginary part of retarded self energy $\left(\Sigma^{R}\right)^{\prime \prime}=1 / 2 \tau$ is energy dependent and non-trivial (trivial) in spin space for the zeroth (all other) LLs, see e.g. Ref. [247] for more details.
+
+Just as in the previous section we set $Q=U^{\dagger} \Lambda U$ with slow unitary $\left(2 N_{M} N_{R}\right) \times\left(2 N_{M} N_{R}\right)$ matrix field $U$. Note that at this stage, we assume all sums and traces over Matsubara indices go from negative to positive infinity. Thus $\Lambda$ is an infinite matrix with only diagonal entries $\Lambda_{n n^{\prime}}=\delta_{n n^{\prime}} \operatorname{sign}(n)$. In order to obtain finite dimensional $\Lambda$ (and thus $Q$ ) a second cut-off will be introduced at the end of this section.[106]
+
+In order to perform accurate gradient expansion of the action it is convenient to re express the partition function as
+
+$$
+\begin{aligned}
+\mathcal{Z} & =\int \mathcal{D} Q \int \mathcal{D}[\bar{\psi}, \psi] e^{-S[\bar{\psi}, \psi]} \\
+& =\int \mathcal{D} Q \mathcal{J}\left[U, \bar{\Phi}, \hat{A}_{i}\right] \int \mathcal{D}\left[\bar{\psi}^{\prime}, \psi^{\prime}\right] e^{-S\left[\bar{\psi}^{\prime}, \psi^{\prime}\right]}
+\end{aligned}
+$$
+
+Here the rotated fields $\psi^{\prime}=U \psi$ and $\bar{\psi}^{\prime}=\bar{\psi} U^{\dagger}$ were introduced at the expense of the Jacobian $\mathcal{J}\left[U, \bar{\Phi}, \hat{A}_{i}\right]$
+
+The action for the rotated fermions reads
+
+$$
+S\left[\bar{\psi}^{\prime}, \psi^{\prime}\right]=\int_{\mathbf{x}} \bar{\psi}^{\prime}\left[-\mathcal{G}^{-1}-i e \boldsymbol{\Phi}+\mathbf{J} \cdot \mathbb{A}\right] \psi^{\prime}
+$$
+
+where we use the notation $J_{i}=\delta H_{0} / \delta A_{i}$ and the rotated gauge potentials are
+
+$$
+\begin{aligned}
+\boldsymbol{\Phi} & =\frac{1}{e} U\left[\hat{\epsilon}, U^{\dagger}\right]+U \hat{\Phi} U^{\dagger} \\
+\mathbb{A}_{i} & =-\frac{1}{e} U\left[-i \partial_{i}, U^{\dagger}\right]+U \hat{A}_{i} U^{\dagger}
+\end{aligned}
+$$
+
+We denote the SCBA Green's function by
+
+$$
+\begin{aligned}
+\mathcal{G}_{m m^{\prime}}^{\alpha \alpha^{\prime}}\left(\mathbf{x}, \mathbf{x}^{\prime}\right) & =\left(\left[i \epsilon_{m}-H_{0}(\mathbf{p}-e \mathcal{A})+\mu\right.\right. \\
+& \left.\left.+i\left(\Sigma^{R}\right)^{\prime \prime} \operatorname{sign}\left(\epsilon_{m}\right)\right]^{-1}\right)_{\mathbf{x}, \mathbf{x}^{\prime}} \delta_{m m^{\prime}}^{\alpha \alpha^{\prime}}
+\end{aligned}
+$$
+
+As we are working in the limit $\epsilon_{n} \ll\left(\Sigma^{R}\right)^{\prime \prime}$ we will partly drop the frequency dependence below.
+We will use the notation $-\mathbf{G}^{-1}=-\mathcal{G}^{-1}-i e \boldsymbol{\Phi}+\mathbf{J} \cdot \mathbb{A}$. Since we are interested in the topological theta term involving spatial derivatives only, we omit $\boldsymbol{\Phi}$ in the following $[\dot{\Phi}$ can be gauged out and $\frac{1}{e} U\left[\hat{\epsilon}, U^{\dagger}\right]$ produces the frequency term reported in Eq. (6.26)].
+
+Integration of fermions leads to
+
+$$
+\mathcal{Z}=\int \mathcal{D} Q \mathcal{J}\left[U, \bar{\Phi}, \hat{A}_{i}\right] e^{-S_{e f f}}
+$$
+
+with
+
+$$
+S_{e f f}=-\operatorname{Tr} \ln \left[-\mathbf{G}^{-1}\right]
+$$
+
+Capital Tr includes also spatial integration. Its expansion (omitting $\boldsymbol{\Phi}$ and constant) yields
+
+$$
+S_{e f f} \approx \operatorname{Tr}\left[\mathcal{G}_{0} J_{i} \mathbb{A}_{i}\right]+\frac{1}{2} \operatorname{Tr}\left[\mathcal{G}_{0} J_{i} \mathbb{A}_{i} \mathcal{G}_{0} J_{j} \mathbb{A}_{j}\right]
+$$
+
+The RR- and AA-correlators in the term $\mathcal{O}\left(\mathbb{A}^{2}\right)$. First, we will disregard the diffusive fields and set $\mathbb{A}=\hat{A}$. Recall that we are working with infinite Matsubara sums. The expansion contains the standard conductivity term
+
+$$
+\frac{1}{2} \operatorname{Tr}\left[\mathcal{G} J_{i} \hat{A}_{i} \mathcal{G} J_{j} \hat{A}_{j}\right]=e^{2} \sum_{m>0, \alpha} \int_{\mathbf{x}} m\left(A_{i}\right)_{-m}^{\alpha} g_{i j}(m)\left(A_{j}\right)_{m}^{\alpha}
+$$
+
+with
+
+$$
+g_{i j}(m)=\frac{1}{e^{2} A m} \sum_{k} \operatorname{Sp}\left[J_{i} \mathcal{G}_{k+m} J_{j} \mathcal{G}_{k}\right]
+$$
+
+( $A$ denotes the sample area. The symbol Sp involves trace in spin and real space only.) The $R R+A A$ contribution to $g_{x x}$ for Dirac fermions is non-zero but negligible as compared to the $R A$ contribution. In contrast, for the transverse DC conductivity we find the standard $g_{x y}^{I I}$ contribution:
+
+$$
+\begin{aligned}
+& \frac{1}{2} \operatorname{Tr}\left[\mathcal{G} J_{[i} \hat{A}_{i} \mathcal{G} J_{j]} \hat{A}_{j}\right] \\
+& \stackrel{R R+A A}{=} e^{2} g_{x y}^{I I} \epsilon_{i j} \sum_{m>0, \alpha} \int_{\mathbf{x}} m\left(A_{i}\right)_{-m}^{\alpha}\left(A_{j}\right)_{m}^{\alpha}
+\end{aligned}
+$$
+
+(Square brackets in the indices denote antisymmetrization.) Now we return to the full $\mathbb{A}$ which we write as $\mathbb{A}=\Delta \mathbb{A}+\hat{A}$. Clearly, $\Delta \mathbb{A}=\mathbb{A}-\hat{A}$ is a finite $\left(2 N_{M} N_{R}\right) \times\left(2 N_{M} N_{R}\right)$ matrix. We will show that also for the full $\mathbb{A}$ we have
+
+$$
+\begin{aligned}
+& \frac{1}{2} \operatorname{Tr}\left[\mathcal{G} J_{[i} \mathbb{A}_{i} \mathcal{G} J_{j]} \mathbb{A}_{j}\right] \\
+& \stackrel{R R+A A}{=} e^{2} g_{x y}^{I I} \epsilon_{i j} \sum_{m>0, \alpha} \int_{\mathbf{x}} m\left(A_{i}\right)_{-m}^{\alpha}\left(A_{j}\right)_{m}^{\alpha}
+\end{aligned}
+$$
+
+Indeed, all terms linear or quadratic in $\Delta \mathbb{A}_{I}$ involve traces over the finite $\left(2 N_{M} N_{R}\right) \times\left(2 N_{M} N_{R}\right)$ space. All of these finite traces vanish by symmetry, for example
+
+$$
+\begin{aligned}
+& \frac{1}{2} \operatorname{Tr}\left[\mathcal{G} J_{[i} \Delta \mathbb{A}_{i} \mathcal{G} J_{j]} \Delta \mathbb{A}_{j}\right] \stackrel{R R}{=} \\
+& \frac{1}{2 A} \operatorname{Sp}\left[\mathcal{G}^{R} J_{[i} \mathcal{G}^{R} J_{j]}\right] \operatorname{Tr}\left[\Delta \mathbb{A}_{i} \frac{1+\Lambda}{2} \Delta \mathbb{A}_{j} \frac{1+\Lambda}{2}\right] \\
+& =0
+\end{aligned}
+$$
+
+(In these formulae Tr contains only Matsubara, real space and replica summation.)
+
+The RA-correlator in the term $\mathcal{O}\left(\mathbb{A}^{2}\right)$. We obtain the standard result:
+
+$$
+\begin{aligned}
+\frac{1}{2} \operatorname{Tr}\left[\mathcal{G} J_{i} \mathbb{A}_{i} \mathcal{G} J_{j} \mathbb{A}_{j}\right] \stackrel{R A}{=} & \sum_{i} \operatorname{Tr}\left[\mathbb{A}_{i} \mathbb{A}_{i}-\mathbb{A}_{i} \Lambda \mathbb{A}_{i} \Lambda\right] \\
+& \times \frac{1}{8 A} \operatorname{Sp}\left[\mathcal{G}^{A} J_{x} \mathcal{G}^{R} J_{x}+\mathcal{G}^{R} J_{x} \mathcal{G}^{A} J_{x}\right] \\
++ & 2 \operatorname{Tr}\left[\Lambda\left(\mathbb{A}_{x} \mathbb{A}_{y}-\mathbb{A}_{y} \mathbb{A}_{x}\right)\right] \\
+& \times \frac{1}{8 A} \operatorname{Sp}\left[\mathcal{G}^{R} J_{x} \mathcal{G}^{A} J_{y}-\mathcal{G}^{A} J_{x} \mathcal{G}^{R} J_{y}\right]
+\end{aligned}
+$$
+
+In what follows we use the notation
+
+$$
+\begin{aligned}
+& g_{x x}=\frac{1}{e^{2} A} \operatorname{Sp}\left[\mathcal{G}^{R} J_{x} \mathcal{G}^{A} J_{x}\right] \\
+& g_{x y}^{I}=\frac{-1}{2 e^{2} A} \operatorname{Sp}\left[\mathcal{G}^{R} J_{x} \mathcal{G}^{A} J_{y}-\mathcal{G}^{A} J_{x} \mathcal{G}^{R} J_{y}\right]
+\end{aligned}
+$$
+
+Term of $\mathcal{O}\left(\mathbb{A}^{1}\right)$. We follow the steps presented in Ref. [333] and use
+
+$$
+\frac{\partial}{\partial \mu} \mathcal{G}\left(\mathbf{x}, \mathbf{x}^{\prime}\right)=-\int d^{2} x^{\prime \prime} \mathcal{G}\left(\mathbf{x}, \mathbf{x}^{\prime \prime}\right) \mathcal{G}\left(\mathbf{x}^{\prime \prime}, \mathbf{x}^{\prime}\right)
+$$
+
+to rewrite the $\mathcal{O}\left(\mathbb{A}^{1}\right)$ part of the action as
+
+$$
+\begin{aligned}
+\operatorname{Tr} \mathcal{G} \mathbf{J} \cdot \mathbb{A}= & -\int_{-\infty}^{\mu} d \tilde{\mu} \int_{\mathbf{x}, \mathbf{x}^{\prime}} \operatorname{tr}\left[\mathcal{G}\left(\mathbf{x}, \mathbf{x}^{\prime}\right) \mathcal{G}\left(\mathbf{x}^{\prime}, \mathbf{x}\right) J_{i} \mathbb{A}_{i}(\mathbf{x})\right] \\
+= & -\frac{1}{2} \frac{\partial}{\partial B} \int_{-\infty}^{\mu} d \tilde{\mu} \operatorname{tr}^{\sigma} \mathcal{G}^{R-A}(0,0) \operatorname{Tr}\left[\epsilon_{i j} \partial_{i} \mathbb{A}_{j} \Lambda\right] \\
+& -\frac{1}{2} \frac{\partial}{\partial B} \int_{-\infty}^{\mu} d \tilde{\mu} \operatorname{tr}^{\sigma} \mathcal{G}^{R+A}(0,0) \operatorname{Tr}\left[\epsilon_{i j} \partial_{i} \mathbb{A}_{j}\right]
+\end{aligned}
+$$
+
+The term $\operatorname{Tr}\left[\epsilon_{i j} \partial_{i} \mathbb{A}_{j}\right]=0$ vanishes since it contains commutators of small matrices and the only non-commutating term is $\operatorname{Tr} \hat{A}=0$ by assumption of purely dynamic gauge fields. In contrast, the $\operatorname{Tr}\left[\epsilon_{i j} \partial_{i} \mathbb{A}_{j} \Lambda\right]$ term plays an important role, its prefactor $\partial n / \partial B$ is related to $g_{x y}^{I I}$ by the Smrcka-Streda formula.[127]
+
+Collect all terms. We are now in position to present the full gradient expansion of $S_{e f f}$
+
+$$
+\begin{aligned}
+S_{e f f}= & \frac{g_{x x} e^{2}}{4} \operatorname{Tr}\left[\mathbb{A}_{i} \mathbb{A}_{i}-\mathbb{A}_{i} \Lambda \mathbb{A}_{i} \Lambda\right] \\
+& -\frac{g_{x y}^{I} e^{2}}{2} \epsilon_{i j} \operatorname{Tr}\left[\Lambda\left(\mathbb{A}_{i} \mathbb{A}_{j}\right)\right] \\
+& -\frac{g_{x y}^{I I} e^{2}}{2} \epsilon_{i j}\left[\frac{-i}{e} \operatorname{Tr}\left[\partial_{i} \mathbb{A}_{j} \Lambda\right]\right. \\
+& \left.+\sum_{m, \alpha} \int_{\mathbf{x}} m\left(A_{i}\right)_{m}^{\alpha}\left(A_{j}\right)_{-m}^{\alpha}\right]
+\end{aligned}
+$$
+
+In order to rewrite $S_{e f f}$ in a more compact way we will introduce a second cut-off $N_{M}^{\prime}$ in Matsubara space [106]. In particular, now also $\tilde{A}$ and $\Lambda$ are finite matrices of size $\left(2 N_{M}^{\prime} N_{R}\right) \times\left(2 N_{M}^{\prime} N_{R}\right)$. We assume $N_{M}^{\prime} / N_{M} \rightarrow \infty$. Then we can use the notation (from now on Tr denotes finite traces)
+
+$$
+D_{i} Q \equiv \partial_{i} Q-i e\left[\tilde{A}_{i}, Q\right]=-i e U^{\dagger}\left[\mathbb{A}_{i}, \Lambda\right] U
+$$
+
+to express
+
+$$
+\begin{aligned}
+\operatorname{Tr} D_{i} Q D_{i} Q= & 2 e^{2} \operatorname{Tr}\left[\mathbb{A}_{i}^{2}-\left(\mathbb{A}_{i} \Lambda\right)^{2}\right] \\
+\epsilon_{i j} \operatorname{Tr} Q D_{i} Q D_{j} Q= & 4 e^{2} \epsilon_{i j} \operatorname{Tr}\left[\Lambda \mathbb{A}_{i} \mathbb{A}_{j}\right] \\
+= & 4 e \epsilon_{i j}\left[-i \operatorname{Tr}\left(\partial_{i} \mathbb{A}_{j} \Lambda\right)\right. \\
+& \left.+e \int_{\mathbf{x}} \sum_{n, \alpha} n\left(A_{i}\right)_{n}^{\alpha}\left(A_{j}\right)_{-n}^{\alpha}\right]
+\end{aligned}
+$$
+
+Including now the contribution of the Jacobian of the transformation from initial to rotated fermions we find the sigma model action
+
+$$
+\begin{aligned}
+S= & \frac{1}{8}\left(g_{x x} \operatorname{Tr}\left[D_{i} Q\right]^{2}-g_{x y} \epsilon_{i j} \operatorname{Tr} Q D_{i} Q D_{j} Q\right) \\
+& -\ln \mathcal{J}(U, \tilde{A})
+\end{aligned}
+$$
+
+It is now time to discuss the Jacobian $\mathcal{J}(U, \tilde{A})$ in more detail. Generally speaking its precise value depends on the regularization of the functional integral measure of the initial fermionic field theory. The same ambiguity is generally present in the microscopic calculation of $g_{x y}$ due to unbounded spectrum of Dirac fermions. The full answer should however be independent of the regularization. We have learned in Sec. 6.3.1 that one can regularize the fermionic theory in such a manner that the parity symmetry is preserved. In our present problem this does not contradict gauge invariance or any other fundamental principle. Choosing such a regularization we see that $g_{x y}$ vanishes for $B \rightarrow 0$. On the other hand, in the $B \rightarrow 0$ limit, the action should reproduce the result (6.24). We therefore conclude that the Jacobian $-\ln \mathcal{J}(U, \tilde{A})$ equals the theta term with short derivatives. This concludes the derivation of Eq. (6.26) of the main text.
+
+![img-56.jpeg](img-56.jpeg)
+
+Figure D.1: Sketch of three different scenarios for the setup discussed in appendix D.2. The left and right scenario correspond to case $I$, the middle one to case $I I$.
+
+# D. 2 Magnetic mirror charge for a double QH structure 
+
+In this appendix we consider the image magnetic monopole effect for a double QH structure (a double domain-wall of $\mathbf{E} \cdot \mathbf{B}$ states). We consider the setup as in Fig. D. 1 and define the following three regions in real space
+
+$$
+\begin{aligned}
+(1) & =\left\{\mathbf{r} \in \mathbb{R}^{3} \mid 0<z\right\} \\
+(2) & =\left\{\mathbf{r} \in \mathbb{R}^{3} \mid-d \leq z \leq 0\right\} \\
+(3) & =\left\{\mathbf{r} \in \mathbb{R}^{3} \mid z<-d\right\}
+\end{aligned}
+$$
+
+Region (2) might correspond to the 3D TI, its surfaces should be characterized by a QH-state with $\sigma_{x x}=0$ and definite $\sigma_{x y}$. Equivalently, one can can describe the three regions $a \in\{(1),(2),(3)\}$ by definite bulk $\vartheta_{a}$. In addition, localized charges might contribute to non-trivial $\epsilon_{a}$ and $\mu_{a}$.
+
+## D.2.1 Position of the mirror charges
+
+Let $z_{0}>0$ denote the position of the actual charge. We will need the quantity $\tilde{z}_{0}=\left\{\frac{z_{0}}{2 d}\right\} \times 2 d$ (curly brackets denote the fractional part of a real number). We have to consider two separate cases
+I. Let $z_{0} \in[2 k d,(2 k+1) d]$ with $k \in \mathbb{N}_{0}$
+
+We define, according to Fig. D.1, $\Delta z_{0} \equiv \tilde{z}_{0}<d$.
+II. Let $z_{0} \in[(2 k-1) d, 2 k d]$ with $k \in \mathbb{N}$
+
+In this case, by definition and according to Fig. D.1, $\Delta z_{0} \equiv 2 d-\tilde{z}_{0}<d$.
+In both cases, the position of (mirror) charges is thus given by (see again Fig. D.1)
+
+$$
+z_{m}^{s} \equiv 2 m d \pm \Delta z_{0}(m \in \mathbb{Z})
+$$
+
+By convention the defining tuple $(m, s)$ (with $m \in \mathbb{Z}$ and $s= \pm$ ) are ordered by the order implied of $z_{m}^{s}$ (e.g. $(m=2, s=-)<(m=2, s=+))$.
+
+Clearly under the following conditions the charges sit in the following regions:
+
+(1): $(m, s) \geq(0,+)$,
+(2): $(m, s)=(0,-)$,
+(3): $(m, s) \leq(-1,+)$.
+
+In case I, the actual charge sits at $z_{0}=z_{\left[\frac{z_{0}}{2 \pi}\right]}^{+}$while for case II $z_{0}=z_{\left[\frac{z_{0}}{2 \pi}\right]}^{-}$follows.
+
+# D.2.2 Solution of the image charge problem for the thin film 
+
+Following Karch [274], we use the unified description in terms of the vector $(\mathbf{D}, 2 \alpha \mathbf{B})$ which is connected to $\mathbf{E}$ and $\mathbf{H}$ via
+
+$$
+\binom{\mathbf{D}}{2 \alpha \mathbf{B}}=\mathcal{M}\binom{2 \alpha \mathbf{E}}{\mathbf{H}}
+$$
+
+with the matrix $\mathcal{M}=\frac{2 \alpha}{\varepsilon^{2} \epsilon}\left(\begin{array}{cc}\frac{\vartheta^{2}}{4 \pi^{2}}+\left(\frac{\varepsilon \epsilon}{2 \alpha}\right)^{2} & -\frac{\vartheta}{2 \pi} \\ -\frac{\vartheta^{2}}{2 \pi} & 1\end{array}\right)$ in each of the three regions $a \in\{(\mathbb{D}, \mathfrak{D}, \mathscr{D}\}$. We make the following Ansatz for the potential $\underline{\Phi}=\left(\Phi_{E}, 2 \alpha \Phi_{M}\right)$ with $(\mathbf{D}, 2 \alpha \mathbf{B})=-\nabla \underline{\Phi}$ :
+
+$$
+\begin{aligned}
+\underline{\Phi}_{\Phi} & =\sum_{n=-\infty}^{\infty} \sum_{s= \pm} \frac{\underline{A}_{n}^{(s)}}{\left|\mathbf{x}-z_{n}^{(s)} \bar{e}_{z}\right|} \\
+\underline{\Phi}_{\Phi} & =\sum_{n=-\infty}^{\infty} \sum_{s= \pm} \frac{\underline{B}_{n}^{(s)}}{\left|\mathbf{x}-z_{n}^{(s)} \bar{e}_{z}\right|} \\
+\underline{\Phi}_{\Phi} & =\sum_{n=-\infty}^{\infty} \sum_{s= \pm} \frac{\underline{C}_{n}^{(s)}}{\left|\mathbf{x}-z_{n}^{(s)} \bar{e}_{z}\right|}
+\end{aligned}
+$$
+
+In order to fulfill the Poisson/Laplace equation the series of (mirror) charges (defined each as $\underline{A}=$ $\left(A_{E}, 2 \alpha A_{M}\right)$ etc.) has the form
+
+$$
+\begin{aligned}
+& \left(\underline{B}_{n}^{(s)}\right)=\left(\ldots \underline{B}_{-1}^{-}, \underline{B}_{-1}^{+}, 0, \underline{B}_{0}^{+}, \underline{B}_{1}^{-}, \ldots\right) \\
+& \left(\underline{C}_{n}^{(s)}\right)=\left(\ldots, 0,0, \underline{C}_{0}^{-}, \underline{C}_{0}^{+}, \underline{C}_{1}^{-}, \ldots\right)
+\end{aligned}
+$$
+
+Further, in case I
+
+$$
+\left(\underline{A}_{n}^{(s)}\right)=\left(\ldots \underline{A}_{-1}^{-}, \underline{A}_{-1}^{+}, \underline{A}_{0}^{-}, 0, \ldots, 0, \underline{A}_{\left[\frac{z_{0}}{2 \pi}\right]}^{+}, 0, \ldots\right)
+$$
+
+while in case II
+
+$$
+\left(\underline{A}_{n}^{(s)}\right)=\left(\ldots \underline{A}_{-1}^{-}, \underline{A}_{-1}^{+}, \underline{A}_{0}^{-}, 0, \ldots, 0, \underline{A}_{\left[\frac{z_{0}}{2 \pi}\right]}^{-}, 0, \ldots\right)
+$$
+
+Clearly $\underline{A}_{\left[\frac{z_{0}}{2 \pi}\right]}^{+}$and $\underline{A}_{\left[\frac{z_{0}}{2 \pi}\right]}^{-}$are given by the "bare"(actual) value of the charge $\underline{Q}$ placed close to the interface. The color code in the series of charges corresponds to positions in Fig. D.1.
+
+# Derivation of recursion relations 
+
+The position of mirror charges is constructed such that a reflection at the interface (1)-(2) implies $z_{m}^{(s)} \rightarrow$ $z_{-m}^{(-s)}$ and at a reflection at the interface (2)-(3) $z_{m}^{(s)} \rightarrow z_{-(m+1)}^{(-s)}(-s=\mp$ for $s= \pm)$. Then the continuity of perpendicular components of $(\mathbf{D}, 2 \alpha \mathbf{B})$ and parallel components of $(2 \alpha \mathbf{E}, \mathbf{H})$ yields the following infinite series of conditions
+
+$$
+\begin{aligned}
+\underline{A}_{n}^{(s)}-\underline{A}_{-n}^{(-s)} & =\underline{B}_{n}^{(s)}-\underline{B}_{-n}^{(-s)} \\
+\mathcal{M}_{1}^{-1}\left(\underline{A}_{n}^{(s)}+\underline{A}_{-n}^{(-s)}\right) & =\mathcal{M}_{2}^{-1}\left(\underline{B}_{n}^{(s)}+\underline{B}_{-n}^{(-s)}\right)
+\end{aligned}
+$$
+
+with $(n, s) \in(1)$, and
+
+$$
+\begin{aligned}
+\underline{B}_{n}^{(s)}-\underline{B}_{-(n+1)}^{(-s)} & =\underline{C}_{n}^{(s)}-\underline{C}_{-(n+1)}^{(-s)} \\
+\mathcal{M}_{2}^{-1}\left(\underline{B}_{n}^{(s)}+\underline{B}_{-(n+1)}^{(-s)}\right) & =\mathcal{M}_{3}^{-1}\left(\underline{C}_{n}^{(s)}+\underline{C}_{-(n+1)}^{(-s)}\right)
+\end{aligned}
+$$
+
+with $(n, s) \in(1) \cup(2)$. In this region $\underline{C}_{-(n+1)}^{(-s)}=0$ and therefore (D.43a) and (D.43b) lead to
+
+$$
+\begin{aligned}
+0 & =\left(1+\mathcal{M}_{3} \mathcal{M}_{2}^{-1}\right) \underline{B}_{-1}^{+}, \\
+\left(1-\mathcal{M}_{3} \mathcal{M}_{2}^{-1}\right) \underline{B}_{n}^{(s)} & =\left(1+\mathcal{M}_{3} \mathcal{M}_{2}^{-1}\right) \underline{B}_{-(n+1)}^{(-s)}
+\end{aligned}
+$$
+
+where $(n, s) \in(1)$. We can plug this knowledge on $\underline{B}$ 's back into (D.42a) and (D.42b) leading to the following final relations:
+"Initial conditions":
+
+$$
+\begin{aligned}
+R_{21}^{+} \underline{A}_{0}^{-} & =R_{21}^{-} \underline{A}_{0}^{+} \\
+R_{21}^{+} \underline{A}_{-1}^{+} & =R_{21}^{-} \underline{A}_{1}^{-}
+\end{aligned}
+$$
+
+"Recursive relations": $((n, s) \in(1))$
+
+$$
+\begin{aligned}
+R_{32}^{-} R_{21}^{-} \underline{A}_{-n}^{(-s)} & +R_{32}^{+} R_{21}^{+} \underline{A}_{-(n+1)}^{(-s)} \\
+& =R_{32}^{-} R_{21}^{+} \underline{A}_{n}^{(s)}+R_{32}^{+} R_{21}^{-} \underline{A}_{n+1}^{(s)}
+\end{aligned}
+$$
+
+Here we have defined $R_{a b}^{ \pm}=1 \pm \mathcal{M}_{a} \mathcal{M}_{b}^{-1}$.
+
+# Solution of recursion relations 
+
+The general solution of these relations for a charge sitting at $z_{n_{0}}^{(s_{0})}$ is
+
+$$
+\begin{aligned}
+& \underline{A}_{n_{0}}^{(s_{0})}=Q, \\
+& \underline{A}_{n}^{(s_{0})}=0 \forall n \neq n_{0} \\
+& \underline{A}_{n}^{(-s_{0})}=0 \forall n>-n_{0} \\
+& \underline{A}_{-n_{0}}^{(-s_{0})}=\left(R_{21}^{+}\right)^{-1}\left(R_{21}^{-}\right) Q, \\
+& \underline{A}_{-(n_{0}+l)}^{(-s_{0})}=(-)^{l-1}\left[\left(R_{21}^{+}\right)^{-1}\left(R_{32}^{+}\right)^{-1}\left(R_{32}^{-}\right)\left(R_{21}^{-}\right)\right]^{l} \\
+& \times\left[\left(R_{21}^{-}\right)^{-1}\left(R_{21}^{+}\right)-\left(R_{21}^{+}\right)^{-1}\left(R_{21}^{-}\right)\right] Q \forall l \geq 1 .
+\end{aligned}
+$$
+
+## Limits and checks
+
+Two simple checks of the correctness of the result are in order.
+
+1. Let $\left(\epsilon_{2}, \mu_{2}, \vartheta_{2}\right)=\left(\epsilon_{3}, \mu_{3}, \vartheta_{3}\right)$. Then $R_{23}^{-}=0$. It follows that the only non-trivial mirror-charge is
+
+$$
+\begin{aligned}
+A_{-n_{0}}^{(-s_{0})} & =\left(R_{21}^{+}\right)^{-1}\left(R_{21}^{-}\right) \underline{Q} \\
+& =\left(\mathcal{M}_{1} \mathcal{M}_{2}^{-1}+1\right)^{-1}\left(\mathcal{M}_{1} \mathcal{M}_{2}^{-1}-1\right) \underline{Q}
+\end{aligned}
+$$
+
+in accordance with Ref. [274].
+2. Let $\left(\epsilon_{1}, \mu_{1}, \vartheta_{1}\right)=\left(\epsilon_{2}, \mu_{2}, \vartheta_{2}\right)$. Then $R_{21}^{-}=0$ and $R_{21}^{+}=2$. It follows that the only non-trivial mirror-charge is
+
+$$
+A_{-\left(n_{0}-1\right)}^{(-s_{0})}=\left(R_{32}^{+}\right)^{-1}\left(R_{32}^{-}\right) \underline{Q}
+$$
+
+in accordance with the previous limit and Ref. [274].
+
+## The Potential and its Fourier transform
+
+We can thus write
+
+$$
+\begin{aligned}
+\underline{\Phi}_{1!}\left(\mathbf{x}, z_{0}\right) & =\frac{1}{\left|\mathbf{x}-z_{0} \hat{e}_{z}\right|} \underline{Q} \\
+& +\frac{1}{\left|\mathbf{x}+z_{0} \hat{e}_{z}\right|}\left(R_{21}^{+}\right)^{-1}\left(R_{21}^{-}\right) \underline{Q} \\
+& -\sum_{l=1}^{\infty} \frac{\left[-\left(R_{21}^{+}\right)^{-1}\left(R_{32}^{+}\right)^{-1}\left(R_{32}^{-}\right)\left(R_{21}^{-}\right)\right]^{l}}{\left|\mathbf{x}+\left(z_{0}+2 l d\right) \hat{e}_{z}\right|} \\
+& \times\left[\left(R_{21}^{-}\right)^{-1}\left(R_{21}^{+}\right)-\left(R_{21}^{+}\right)^{-1}\left(R_{21}^{-}\right)\right] \underline{Q}
+\end{aligned}
+$$
+
+In Fourier space (Fourier transform only with respect to x and y coordinates) $\underline{\Phi}_{ \pm}$simplifies
+
+$$
+\begin{aligned}
+\underline{\Phi}_{ \pm}\left(q, z, z_{0}\right) & =\frac{2 \pi}{q}\left\{e^{-\left|z-z_{0}\right| q}\right. \\
+& \left.+e^{-\left(z+z_{0}\right) q} T_{\mathrm{eff}}\right\} Q
+\end{aligned}
+$$
+
+We introduced the matrix
+
+$$
+\begin{aligned}
+T_{\text {eff }}= & \left(R_{32}^{+} R_{21}^{+} e^{d q}+R_{32}^{-} R_{21}^{-} e^{-d q}\right)^{-1} \\
+& \times\left(R_{32}^{+} R_{21}^{-} e^{d q}+R_{32}^{-} R_{21}^{+} e^{-d q}\right)
+\end{aligned}
+$$
+
+In view of 2D rotational invariance, the potential only depends on $q=\left|\vec{q}\right|$ (In this appendix 2D vectors are denoted by arrows). One can exploit this formula and Fourier transform back to real space
+
+$$
+\underline{\Phi}_{ \pm}\left(\mathbf{x}, z_{0}\right)=\int_{0}^{\infty} d q \frac{q}{2 \pi} \underline{\Phi}_{ \pm}\left(q, z, z_{0}\right) J_{0}(q \rho)
+$$
+
+where $J_{0}(q \rho)$ is the zeroth Bessel function and $\rho=|\vec{x}|$ is the norm of the 2 D component of $\mathbf{x}$ perpendicular to $\hat{e}_{z}$. This concludes the derivation of Eq. (6.47) of the main text.
+
+# Further limits and checks 
+
+With the help of $\underline{\Phi}_{ \pm}$in Fourier space and the matrix $T_{\text {eff }}$, one can easily check the $d \rightarrow \infty$ and $d \rightarrow 0$ limits.
+
+First consider $d \rightarrow \infty$. As expected, we obtain a single mirror charge at $z=-z_{0}$ with charge $\left(R_{21}^{+}\right)^{-1} R_{21}^{-} Q$
+
+Now consider $d \rightarrow 0$. After a bit of algebra exploiting the definition of $R_{a b}^{ \pm}$, we obtain the expected result: a single mirror charge at $z=-z_{0}$ with charge $\left(R_{31}^{+}\right)^{-1} R_{31}^{-} Q$. (The same result, as if region (2) never existed.)
+
+
+
+
+# Appendix E 
+
+## Superconducting instability
+
+This Appendix supplements Chap. 7.
+
+## E. 1 Symmetry analysis
+
+In this section a detailed symmetry analysis of the model introduced in Eq. (7.11) is presented.
+
+## E.1.1 $\mathrm{U}(1)$ gauge invariance
+
+For this "symmetry" it is partly convenient to return back to Matsubara time. The HS field is split in modulus and phase $\Delta_{\alpha}=\left|\Delta_{\alpha}\right| e^{i 2 \Theta_{\alpha}}$ and
+
+$$
+\left(\begin{array}{cc}
+0 & -\Delta \\
+\Delta^{*} & 0
+\end{array}\right)_{\tau}=u_{\Theta}^{\dagger}\left(\begin{array}{cc}
+0 & -|\Delta| \\
+\left|\Delta^{*}\right| & 0
+\end{array}\right)_{\tau} u_{\Theta}
+$$
+
+where $u_{\Theta}=\sum_{\alpha} \operatorname{diag}\left(e^{-i \Theta_{\alpha}}, e^{i \Theta_{\alpha}}\right)_{\tau} P_{\alpha}$ might be spatially and temporarily dependent.
+The same splitting in Matsubara space is
+
+$$
+\left(\begin{array}{cc}
+0 & -\tilde{\Delta} \\
+\tilde{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau}=u_{\Theta}^{\dagger}\left(\begin{array}{cc}
+0 & -|\tilde{\Delta}| \\
+|\tilde{\Delta}| & 0
+\end{array}\right)_{\tau} u_{\Theta}
+$$
+
+Thus there is a local (in time and space) $\mathbf{U}(1)^{\otimes N_{R}}$ invariance associated with the sequence of angles $\Xi_{\alpha}$ under transformations ${ }^{1}$
+
+$$
+\begin{aligned}
+& \Phi \rightarrow u_{\Xi} \Phi \\
+& \bar{\Phi} \rightarrow \bar{\Phi} C u_{\Xi}^{T} C^{T}=\Phi u_{\Xi}^{-1}
+\end{aligned}
+$$
+
+together with simultaneous shifts of the phase of the HS fields
+
+$$
+\Theta_{\alpha} \rightarrow \Theta_{\alpha}-\Xi_{\alpha}
+$$
+
+[^0]
+[^0]:    ${ }^{1}$ It is important to choose $u_{\Theta}=\sum_{\alpha} \operatorname{diag}\left(e^{-i \Theta_{\alpha}^{T}}, e^{i \Theta_{\alpha}}\right)_{r} P_{\alpha}$ with transposition in the first matrix element, since in the Nambu spinors I paired $\psi_{n}$ and $\psi_{n}^{\dagger}$.
+
+and a gauge transformation of electromagnetic potentials
+
+$$
+\begin{aligned}
+& \left(\begin{array}{cc}
+\hat{\epsilon}+e \hat{A}_{0}^{T} & 0 \\
+0 & \hat{\epsilon}+e \hat{A}_{0}
+\end{array}\right)_{\tau} \rightarrow u \cong\left(\begin{array}{cc}
+\hat{\epsilon}+e \hat{A}_{0}^{T} & 0 \\
+0 & \hat{\epsilon}+e \hat{A}_{0}
+\end{array}\right)_{\tau} u \hat{\underline{\underline { \Xi } }}^{1} \\
+& \left(\begin{array}{cc}
+-\mathbf{p}+e \hat{\mathbf{A}}^{T} & 0 \\
+0 & \mathbf{p}+e \hat{\mathbf{A}}
+\end{array}\right)_{\tau} \rightarrow u \equiv\left(\begin{array}{cc}
+-\mathbf{p}+e \hat{\mathbf{A}}^{T} & 0 \\
+0 & \mathbf{p}+e \hat{\mathbf{A}}
+\end{array}\right)_{\tau} u \hat{\underline{\underline { \Xi } }}^{1}
+\end{aligned}
+$$
+
+which is equivalent to
+
+$$
+\begin{aligned}
+e\left(\hat{A}_{0}\right)_{\alpha} & \rightarrow e\left(\hat{A}_{0}\right)_{\alpha}-i\left[\epsilon, \Xi_{\alpha}\right]=e\left(\hat{A}_{0}\right)_{\alpha}-i \widehat{\omega \Xi_{\alpha}} \\
+e \hat{\mathbf{A}}_{\alpha} & \rightarrow e \hat{\mathbf{A}}_{\alpha}-\nabla \Xi_{\alpha}
+\end{aligned}
+$$
+
+(I used $[\hat{\epsilon}, \widehat{\Xi}]_{n n^{\prime}}=\left(\epsilon_{n}-\epsilon_{n^{\prime}}\right) \widehat{\Xi}_{n n^{\prime}}=\left(\omega_{m} \Xi_{m}^{n} \hat{I}_{m}^{n}\right)_{n n^{\prime} \epsilon}$ )
+
+# E.1.2 Symmetry analysis of disordered systems 
+
+For this type of symmetries I will neglect the term of linear symmetry breaking by the frequency ( $\hat{\epsilon}$ ) term and source fields (external gauge potentials). Also, only a single replica is needed and I will only keep the static channel of the HS field $\Delta_{m=0}$ in which the SSB is expected. In order to treat finite dimensional matrices, one truncates $\hat{J}$ and $\hat{I}$ to be $2 N_{M}^{\prime} \times 2 N_{M}^{\prime}$ dimensional in Matsubara space and denotes their finite dimensional counterparts by the same letters $J$ and $I$ but without tilde.
+
+Thus the Hamiltonian under symmetry inspection is
+
+$$
+\begin{aligned}
+C^{T} H_{t o t} & =-i \sigma_{y} \tau_{x}\left(\begin{array}{cc}
+H^{T} & -\Delta_{0} \\
+\Delta_{0}^{*} & \sigma_{y} H \sigma_{y}
+\end{array}\right)_{\tau} \\
+& =-i \sigma_{y} \tau_{x}\left(\frac{\frac{\left(C^{T} H_{t o t}\right)^{A}}{H^{T}+\sigma_{y} H \sigma_{y}}}{2}+\frac{\frac{\left(C^{T} H_{t o t}\right)^{B}}{\left.\frac{H^{T}-\sigma_{y} H \sigma_{y}}{2} \tau_{z}-\frac{\left(C^{T} H_{t o t}\right)^{C}}{\left.\Delta_{0}\right| u_{\Theta}^{\dagger} i \tau_{y} u_{\Theta} J_{0}}}\right)
+\end{aligned}
+$$
+
+The Hamiltonian $H$ contains both kinetic part, chemical and disorder potentials.
+
+## Classification within the Cartan-Altland-Zirnbauer table.
+
+For this section, I choose a gauge, in which $\Delta_{0}$ is real.
+Full $\mathbf{S U}(2)_{\sigma}$ symmetry. One can rewrite $\Phi=\sqrt{2}\left(-i \tau_{y} \chi_{\uparrow}, \chi_{\downarrow}^{T}\right)_{\sigma}$ so that
+
+$$
+\Phi^{T} C^{T} H_{t o t} \Phi=\chi_{\downarrow} \tilde{H}_{t o t} \chi_{\uparrow}
+$$
+
+with
+
+$$
+\tilde{H}_{t o t}=\frac{H+H^{T}}{2} \tau_{z}+\frac{H-H^{T}}{2}-\Delta_{0} J_{0} \tau_{x}
+$$
+
+Thus, the system is particle-hole ( PH ) invariant $\tilde{H}_{t o t}^{T}=-\tau_{y} \tilde{H}_{t o t} \tau_{y}$, with PH symmetry squaring to -1 . In the case $H=H^{T}$ the system has additional time reversal (TR) $\tilde{H}_{t o t}^{T}=\tilde{H}_{t o t}$ (squaring to 1) and chiral (ch.) symmetries $\tilde{H}_{t o t}=-\tau_{y} \tilde{H}_{t o t} \tau_{y}$. Therefore, in the presence (absence) of TR, the system falls into symmetry class CI (C).
+
+Fully broken spin rotation invariance. I directly analyze
+
+$$
+C^{T} H_{t o t}=-i\left[\frac{\left(H \sigma_{y}\right)-\left(H \sigma_{y}\right)^{T}}{2} \tau_{x}+\frac{\left(H \sigma_{y}\right)+\left(H \sigma_{y}\right)^{T}}{2}\left(i \tau_{y}\right)+\Delta_{0} J_{0} \tau_{z}\left(-i \sigma_{y}\right)\right]
+$$
+
+The system is PH symmetric $\left(C^{T} H_{t o t}\right)^{T}=-C^{T} H_{t o t}$ with PH squaring to +1 . If additionally $\sigma_{y} H \sigma_{y}=H^{T}$ there is also TR squaring to $-1:\left(C^{T} H_{t o t}\right)^{T}=\tau_{y} C^{T} H_{t o t} \tau_{y}$ and chiral symmetries $\tau_{y} C^{T} H_{t o t} \tau_{y}=-C^{T} H_{t o t}$. With (without) TR the system falls into class DIII (BD).
+
+Absence of pairing field. Eventually, one can directly analyze $H$ when the symmetry breaking effect of the $\Delta$ is neglected. In the case of full $\mathbf{S U}(2)_{\sigma}$ symmetry the system falls into class AI (A) with (without) TR symmetry. Contrary, in the situation of fully broken $\mathbf{S U}(2)_{\sigma}$ symmetry the system corresponds to class AII (A) with (without) TR symmetry.
+
+# Continuous symmetries in Matsubara-/replica space. 
+
+The discrete symmetries discussed above lead to certain type of continuos symmetries to be analyzed below. Consider rotations of $\Phi \rightarrow T \Phi$ under which $\bar{\Phi} \rightarrow \bar{\Phi} C T^{T} C^{T}$ with $T$ being a small matrix in Matsubara $\left(2 N_{M} \times 2 N_{M}\right)$, replica, Nambu and spin spaces. I will use the parametrization
+
+$$
+\begin{aligned}
+T & =u_{\Theta_{0}}^{-1} \sqrt{\tau_{x}} O_{J_{0}} S O_{J_{0}}^{T} \sqrt{\tau_{x}} u_{\Theta_{0}} \\
+\Rightarrow C T^{T} C^{T} & =\sigma_{y} u_{\Theta_{0}}^{-1} \sqrt{\tau_{x}}^{-1} O_{J_{0}} S O_{J_{0}}^{T} \sqrt{\tau_{x}}^{-1} u_{\Theta_{0}} \sigma_{y}
+\end{aligned}
+$$
+
+with the matrices
+
+$$
+\begin{aligned}
+O_{J_{0}}^{T} J_{0} O_{J_{0}} & =\Lambda_{z} \\
+\sqrt{\tau_{x}} & =\frac{1+i \tau_{x}}{\sqrt{2 i}}
+\end{aligned}
+$$
+
+This leads to the following table of symmetries, Tab. E.1. (For classes DIII, BD and AII the matrix $S$ is trivial in spin space, otherwise $S$ has structure in spin space.)
+
+| spin <br> rot. | TR | AZ <br> class | Term in Eq. (E.4) | Conditions on T | Conditions on S. | Large group (G) |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| $\checkmark$ | $H=H^{T}$ | CI | $\begin{aligned} & \left(C^{T} H_{t o t}\right)^{A} \\ & \left(C^{T} H_{t o t}\right)^{C} \end{aligned}$ | $T^{T} \tau_{x} \sigma_{y} T=\tau_{x} \sigma_{y}$ <br> $T^{T} u_{\Theta} \tau_{z} u_{\Theta} \sigma_{y} J_{0} T=u_{\Theta} \tau_{z} u_{\Theta} \sigma_{y} J_{0}$ | $\begin{aligned} & S^{T} \sigma_{y} S=\sigma_{y} \\ & S^{-1} \tau_{z} \Lambda_{z} S=-\tau_{z} \Lambda_{z} \end{aligned}$ | $\begin{aligned} & \operatorname{Sp}\left(2_{\tau} \times 2_{\tau \Lambda} \times N_{M} N_{R}\right) \\ & \times \operatorname{Sp}\left(2_{\sigma} \times 2_{\tau \Lambda} \times N_{M} N_{R}\right) \end{aligned}$ |
+| $\checkmark$ | $H \neq H^{T}$ | C | $\begin{aligned} & \left(C^{T} H_{t o t}\right)^{A} \\ & \left(C^{T} H_{t o t}\right)^{C} \\ & \left(C^{T} H_{t o t}\right)^{B} \end{aligned}$ | $T^{T} \tau_{x} \sigma_{y} T=\tau_{x} \sigma_{y}$ <br> $T^{T} u_{\Theta} \tau_{z} u_{\Theta} \sigma_{y} J_{0} T=u_{\Theta} \tau_{z} u_{\Theta} \sigma_{y} J_{0}$ <br> $T^{T} \tau_{y} \sigma_{y} T=\tau_{y} \sigma_{y}$ | $\begin{aligned} & S^{T} \sigma_{y} S=\sigma_{y} \\ & S^{-1} \tau_{z} \Lambda_{z} S=-\tau_{z} \Lambda_{z} \\ & S^{-1} \tau_{y} S=-\tau_{y} \end{aligned}$ | $\begin{aligned} & \operatorname{Sp}\left(2_{\tau} \times 2_{\tau \Lambda} \times N_{M} N_{R}\right) \\ & \text { O }\left(2_{\tau \Lambda} \times N_{M} N_{R}\right) \end{aligned}$ |
+| $\ddagger$ | $H \equiv \sigma_{y} H^{T} \sigma_{y}$ | DHI | $\begin{aligned} & \left(C^{T} H_{t o t}\right)^{A} \\ & \left(C^{T} H_{t o t}\right)^{C} \end{aligned}$ | $T^{T} \tau_{x} T=\tau_{x}$ <br> $T^{T} u_{\Theta} \tau_{z} u_{\Theta} J_{0} T=u_{\Theta} \tau_{z} u_{\Theta} J_{0}$ | $\begin{aligned} & S^{T} S=1 \\ & S^{-1} \tau_{z} \Lambda_{z} S=-\tau_{z} \Lambda_{z} \end{aligned}$ | $\begin{aligned} & \mathbf{O}\left(2_{\tau \Lambda} \times N_{M} N_{R}\right) \\ & \times \mathbf{O}\left(2_{\tau \Lambda} \times N_{M} N_{R}\right) \end{aligned}$ |
+| $\ddagger$ | $H \neq \sigma_{y} H^{T} \sigma_{y}$ | BD | $\begin{aligned} & \left(C^{T} H_{t o t}\right)^{A} \\ & \left(C^{T} H_{t o t}\right)^{C} \\ & \left(C^{T} H_{t o t}\right)^{B} \end{aligned}$ | $T^{T} \tau_{x} T=\tau_{x}$ <br> $T^{T} u_{\Theta} \tau_{z} u_{\Theta} J_{0} T=u_{\Theta} \tau_{z} u_{\Theta} J_{0}$ <br> $T^{T} \tau_{y} T=\tau_{y}$ | $\begin{aligned} & S^{T} S=1 \\ & S^{-1} \tau_{z} \Lambda_{z} S=-\tau_{z} \Lambda_{z} \\ & S^{-1} \tau_{y} S=-\tau_{y} \end{aligned}$ | $\begin{aligned} & \mathbf{O}\left(2_{\tau \Lambda} \times N_{M} N_{R}\right) \\ & \ |
+
+Table E.1: Cartan-Altland-Zirnbauer symmetry analysis of Hamiltonians taking into account the symmetry breaking by $\Delta$. The first column indicates the presence $(\checkmark)$ or absence $(\ddagger)$ of spin-rotation invariance. In the second column, the properties under $T R$ of the single particle Hamiltonian without HS field $\Delta$ is presented. Next the Cartan-AltlandZirnbauer class corresponding to the Bogoliubov-deGennes Hamiltonian is displayed. The various terms of Eq. (E.4) dictate the symmetry group of continuous transformations discussed in the main text of Sec. E.1.2 (fourth to seventh column).
+
+| spin <br> rot. | TR | AZ <br> class | Term in Eq. (E.4) | Conditions on T | Conditions on S | Large group (G) |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| $\checkmark$ | $H=H^{T}$ | AI | $\left(C^{T} H_{t o t}\right)^{A}$ | $T^{T} \tau_{x} \sigma_{y} T=\tau_{x} \sigma_{y}$ | $S^{T} \sigma_{y} S=\sigma_{y}$ | $\mathbf{S p}\left(2_{\tau} \times 2_{\tau} \times 2_{\Lambda} \times N_{M} N_{R}\right)$ |
+| $\ddagger$ | $H=\sigma_{y} H^{T} \sigma_{y}$ | AII | $\left(C^{T} H_{t o t}\right)^{A}$ | $T^{T} \tau_{x} T=\tau_{x}$ | $S^{T} S=1$ | $\mathbf{O}\left(2_{\tau} \times 2_{\Lambda} \times N_{M} N_{R}\right)$ |
+
+Table E.2: Cartan-Altland-Zirnbauer symmetry analysis of $T R$ invariant Hamiltonians neglecting the effect of $\Delta$. The notation and ordering of columns is analogous to Tab. E.1.
+
+# E. 2 Proof of saddle point solution 
+
+In this appendix I present the proof that Eq. (7.18) indeed solves the saddle point Eqs. (7.17).
+With the Ansatz Eq. (7.18) one can express the Fourier transformed mean-field Green's function
+
+$$
+\mathcal{G}(\mathbf{p})=\sum_{n \geq 0, \zeta= \pm, \alpha} P_{|n|}^{\alpha} P_{\zeta} \frac{\xi_{\mathbf{p}, \zeta}-\left(-i\left|\epsilon_{n}\right| \Lambda_{z}+\left(-\Delta_{\alpha, 0} \tau_{+}+\Delta_{\alpha, 0}^{*} \tau_{-}\right) \Lambda_{x}\right)\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]}{\xi_{\mathbf{p}, \zeta}^{2}+\left(\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}\right)\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]^{2}}
+$$
+
+The sum over $\zeta= \pm$ is present only for the 3D TI case and goes over the two bands of the Dirac model. The symbol $\xi_{\mathbf{p}, \zeta}=\zeta \epsilon(\mathbf{p})-\mu$ denotes the dispersion relation counted from the chemical potential, again $\zeta$ appears only for the 3D TI. In this case also non-trivial projectors $P_{\zeta}=1 / 2+\zeta \sigma_{y} \bar{p} \wedge \sigma \sigma_{y} / 2$ have to be considered, they are absent for usual 2DES.
+
+With the given mean field self energy $M_{M F}$ and mean field Green's function $\mathcal{G}$, the saddle point equation (7.17b) becomes the usual BCS gap equation
+
+$$
+\begin{aligned}
+& \frac{\Delta_{\alpha, 0}}{g T} \stackrel{\text { via } \mathcal{G}}{=} \tilde{\alpha} \int_{\mathbf{p}} 2 \sum_{n \geq 0} \frac{\Delta_{\alpha, 0}\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]}{\xi_{\mathbf{p}, \zeta}^{2}+\left(\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}\right)\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]^{2}} \\
+& \doteq \tilde{\alpha} \pi \nu \sum_{n} \frac{\Delta_{\alpha, 0}}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}
+\end{aligned}
+$$
+
+I kept only the part $\zeta$ of the spectrum where the Green's function has a pole near $\xi_{\mathbf{p}, \zeta}=0$. At the symbol $\doteqdot$ summation and integration were interchanged (this is legitimate under appropriate regularization) and it was used that [under the assumption of $\mu$ being the largest scale and $\nu=\nu(\mu)$ ]
+
+$$
+\int_{\mathbf{p}} \frac{1}{\xi_{\mathbf{p}, \zeta}^{2}+a^{2}} \approx \int_{\mathbf{p}} \frac{\pi \delta\left(\xi_{\mathbf{p}, \zeta}\right)}{|a|}=\frac{\pi \nu}{|a|}
+$$
+
+In the main text the same result is obtained and analyzed by directly employing $M_{M F}$ (second equal sign in Eq. (7.17b)).
+
+Concerning the SCBA-like equation (7.17a) one finds
+
+$$
+\begin{aligned}
+i \pi \nu M & =\tilde{\alpha} \int_{\mathbf{p}} \sum_{n \geq 0, \alpha} P_{|\alpha|}^{\alpha} \frac{\pi \delta\left(\xi_{\mathbf{p}, \zeta}\right)\left[\xi_{\mathbf{p}, \zeta}-\left(-i\left|\epsilon_{n}\right| \Lambda_{z}+\left(-\Delta_{\alpha, 0} \tau_{+}+\Delta_{\alpha, 0}^{*} \tau_{-}\right) \Lambda_{x}\right)\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]\right]}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}\left[1+\frac{\tilde{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}\right]} \\
+& =i \pi \nu \tilde{\alpha} \sum_{n \geq 0, \alpha} P_{|n|}^{\alpha} \frac{\left(\left|\epsilon_{n}\right| \Lambda_{z}+i\left(-\Delta_{\alpha, 0} \tau_{+}+\Delta_{\alpha, 0}^{*} \tau_{-}\right) \Lambda_{x}\right)}{\sqrt{\epsilon_{n}^{2}+\left|\Delta_{\alpha, 0}\right|^{2}}}
+\end{aligned}
+$$
+
+The $\delta$-function in the first line occurs in the asymptotic limit $\mu / \mathcal{E} \rightarrow \infty$, where $\mathcal{E}$ is the second largest energy scale in the problem (typically $\mathcal{E}=1 / \tau$ ). From this equation the assertion follows.
+
+# E. 3 Gradient expansion 
+
+Here I present the gradient expansion for the simplest case of parabolic spectrum and without TR breaking. I will keep track of gauge potentials, so that the crossover to the TR broken case will be simple. Transverse modes of both mean-field self-energies $\Delta$ and $M$ are allowed to slowly vary in time and space.
+
+## E.3.1 Self energies and notation
+
+The starting point is Eq. (7.16) with the following self-energies
+
+$$
+\begin{aligned}
+& \left(\begin{array}{cc}
+0 & -\tilde{\Delta} \\
+\tilde{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau}=u^{\dagger}\left(\begin{array}{cc}
+0 & -\tilde{\Delta} \\
+\tilde{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau} u \\
+& M=\tilde{\alpha} T^{-1} u^{\dagger} \bar{\Lambda} u T \equiv \tilde{\alpha} \bar{T}^{-1} \bar{\Lambda} \bar{T}
+\end{aligned}
+$$
+
+The HS-field of Cooper-interaction is denoted by $\tilde{\Delta}=\bar{\Delta} e^{-2 i \Theta}$ where $\Theta$ is the space time dependent transverse mode of the zeroth Matsubara frequency. In particular, $\bar{\Delta}_{\alpha, 0}=\left[\Delta+\delta \Delta_{\alpha, 0}(\mathbf{x})\right], \Delta \in \mathbb{R}$ contains the homogeneous amplitude of the superconducting gap. Similarly, $\tilde{\alpha} \bar{\Lambda}=M_{M F}$ is the saddle point self energy for real $\Delta_{\alpha, 0}=\Delta>0 \forall \alpha$. Both $u$ and $T$ are slowly varying in space and time (i.e. they have non-trivial Matsubara structure). The matrix-field $T$ fulfils the symmetries discussed in E.1.2 and is a small matrix (of size $2 N_{M}$ ) while no cut-off is assumed yet for $\bar{\Theta}=\sum_{\alpha m} \Theta_{\alpha, m} \tilde{I}_{\alpha, m}$ (following Ref. [106], $\tilde{I}_{n}$ is the the infinite dimensional version of $I_{n}$ ). Note that $T$ is smooth on the lengthscale $l=v_{F} \tau$ while $u$ is smooth on the much larger lengthscale of superconducting coherence length. Consequently $T$ respects the symmetries associated with the local, quasi-constant phase and hence according to (E.8) it follows that
+
+$$
+\bar{T}=u T=\sqrt{\tau_{x}} O_{J_{0}} S O_{J_{0}}^{T} \sqrt{\tau_{x}} u \equiv \tilde{S} u
+$$
+
+Therefore, I will use the following two representations of the self energy field
+
+$$
+M=\tilde{\alpha} \bar{Q}=\tilde{\alpha} u^{\dagger} \bar{Q} u
+$$
+
+with $\bar{Q}=\bar{T}^{-1} \bar{\Lambda} \bar{T}$ and $\bar{Q}=\bar{S}^{-1} \bar{\Lambda} \bar{S}$.
+
+## E.3.2 Rotated Green's function and expansion of effective action
+
+One can exploit $\left[\hat{\epsilon}, \tilde{I}_{\alpha, n}\right]=\epsilon_{n} \tilde{I}_{\alpha, n}$ to obtain
+
+$$
+\begin{aligned}
+G_{M}^{-1}= & \bar{T}^{-1}\left[\bar{T}\left(-i \hat{\epsilon}-i q \bar{A}_{0, \tau_{z}}+\frac{\left(\mathbf{p}+q \tilde{\mathbf{A}}_{\tau_{z}}\right)^{2}}{2 m}-\mu+u^{\dagger}\left(\begin{array}{cc}
+0 & -\tilde{\Delta} \\
+\tilde{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau} u\right) \bar{T}^{-1}-\frac{i}{2 \tau} \bar{\Lambda}\right] \bar{T} \\
+= & \bar{T}^{-1}\left[\overbrace{\mathcal{G}_{\tilde{\Lambda}}^{-1}}^{-1} \overbrace{-i \mathbb{A}_{0}+\bar{T} u^{\dagger}}\left[\left(\begin{array}{cc}
+0 & -\Delta \\
+\Delta & 0
+\end{array}\right)_{\tau} \Lambda_{x}, u \bar{T}^{-1}\right]+\bar{T} u^{\dagger}\left(\begin{array}{cc}
+0 & -\tilde{\Delta} \\
+\tilde{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau, n \neq 0} u \bar{T}^{-1}\right. \\
+& \left.+\overbrace{\frac{\{\mathbf{p}, \tilde{\mathbb{A}}\}}{2 m}+\frac{\tilde{\mathbb{A}}^{2}}{2 m}}^{A}\right] \bar{T}
+\end{aligned}
+$$
+
+Here I introduced matrices
+
+$$
+\begin{aligned}
+\hat{A}_{0, \tau_{z}} & =\left(\begin{array}{cc}
+\hat{A}_{0}^{T} & 0 \\
+0 & \hat{A}_{0}
+\end{array}\right)_{\tau} \\
+\hat{\mathbf{A}}_{\tau_{z}} & =\left(\begin{array}{cc}
+-\hat{\mathbf{A}}^{T} & 0 \\
+0 & \hat{\mathbf{A}}
+\end{array}\right)_{\tau}
+\end{aligned}
+$$
+
+as well as
+
+$$
+\begin{aligned}
+& \mathbb{A}_{0}=q \bar{T} \hat{A}_{0, \tau_{z}} \bar{T}^{-1}+\bar{T}\left[\hat{\epsilon}, \bar{T}^{-1}\right]=q \tilde{S} \hat{A}_{0, \tau_{z}} \tilde{S}^{-1}+\tilde{S}\left[\hat{\epsilon}, \tilde{S}^{-1}\right] \\
+& \tilde{\mathbb{A}}=q \bar{T} \hat{\mathbf{A}}_{\tau_{z}} \bar{T}^{-1}+\bar{T}\left[-i \vec{\nabla}, \bar{T}^{-1}\right]=q \tilde{S} \hat{\mathbf{A}}_{\tau_{z}} \tilde{S}^{-1}+\tilde{S}\left[-i \vec{\nabla}, \tilde{S}^{-1}\right]
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+q \hat{A}_{0, \tau_{z}} & =\left(\begin{array}{cc}
+q \hat{A}_{0}^{T}-i \widehat{\omega \Theta}^{T} & 0 \\
+0 & q \hat{A}_{0}-i \widehat{\omega \Theta}
+\end{array}\right)_{\tau} \\
+q \hat{\mathbf{A}}_{\tau_{z}} & =\left(\begin{array}{cc}
+-q \hat{\mathbf{A}}^{T}+\nabla \tilde{\Theta}^{T} & 0 \\
+0 & q \hat{\mathbf{A}}-\nabla \tilde{\Theta}
+\end{array}\right)_{\tau}
+\end{aligned}
+$$
+
+The mean field Green's function is
+
+$$
+\mathcal{G}_{\hat{\Lambda}}^{-1}=-i \hat{\epsilon}+\xi_{\mathbf{p}}+\left(\begin{array}{cc}
+0 & -\Delta \\
+\Delta & 0
+\end{array}\right)_{\tau} \Lambda_{x}-\frac{i}{2 \tau} \hat{\Lambda}
+$$
+
+The Green's function will be split in ${ }^{2}$
+
+$$
+\left(\mathcal{G}_{\hat{\Lambda}}\right)_{n n^{\prime}}(\mathbf{p})=g_{n}(\mathbf{p}) \delta_{n n^{\prime}}+f_{n}(\mathbf{p}) i \tau_{y} \delta_{n,-n^{\prime}}
+$$
+
+where
+
+$$
+\begin{aligned}
+g_{n}(\mathbf{p}) & =\frac{\xi_{\mathbf{p}}+i \epsilon_{n}\left[1+\frac{\hat{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}\right]}{\xi_{\mathbf{p}}^{2}+\left(\epsilon_{n}^{2}+\Delta^{2}\right)\left[1+\frac{\hat{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}\right]^{2}} \\
+f_{n}(\mathbf{p}) & =\frac{\Delta\left[1+\frac{\hat{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}\right]}{\xi_{\mathbf{p}}^{2}+\left(\epsilon_{n}^{2}+\Delta^{2}\right)\left[1+\frac{\hat{\alpha}}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}\right]^{2}}
+\end{aligned}
+$$
+
+[^0]
+[^0]:    ${ }^{2}$ For simplicity, I write $\delta_{n,-n^{\prime}}$ meaning $\delta_{\epsilon_{n},-\epsilon_{n^{\prime}}}$ in this section of the appendix.
+
+The expansion of the "trace-log"-term in Eq. (7.16) yields an effective action to quadratic order in spatial derivatives and frequencies
+
+$$
+\begin{aligned}
+-\frac{1}{2} \operatorname{Tr} \ln \left[-C^{T} G_{M}\right]= & -\frac{1}{2} \operatorname{Tr}\left[\mathcal{G}_{\hat{\Lambda}}\left[\frac{\overrightarrow{\mathbb{A}}^{2}}{2 m}+B\right]\right] \\
+& +\frac{1}{4} \operatorname{Tr}\left[\mathcal{G}_{\hat{\Lambda}}\left[\frac{\{\mathbf{p}, \overrightarrow{\mathbb{A}}\}}{2 m}\right] \mathcal{G}_{\hat{\Lambda}}\left[\frac{\{\mathbf{p}, \overrightarrow{\mathbb{A}}\}}{2 m}\right]\right] \\
+& -\frac{1}{4} \operatorname{Tr}\left[\mathcal{G}_{\hat{\Lambda}} \mathbb{A}_{0} \mathcal{G}_{\hat{\Lambda}} \mathbb{A}_{0}\right]
+\end{aligned}
+$$
+
+# E.3.3 Frequency term and Cooper interaction 
+
+The first term to be investigated is
+
+$$
+\begin{aligned}
+S_{\eta}=-\frac{1}{2} \operatorname{Tr} G_{\hat{\Lambda}} B & =-\frac{\pi \nu}{2} \operatorname{Tr}\left[\hat{Q}\left(\hat{\epsilon}+q \hat{A}_{0, \tau_{z}}+i\left(\begin{array}{cc}
+0 & -\hat{\Delta} \\
+\hat{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau}\right)\right] \\
+& =-\frac{\pi \nu}{2} \operatorname{Tr}\left[\hat{Q}\left(\hat{\epsilon}+q \hat{A}_{0, \tau_{z}}+i\left(\begin{array}{cc}
+0 & -\hat{\Delta} \\
+\hat{\Delta}^{\dagger} & 0
+\end{array}\right)_{\tau}\right)\right]
+\end{aligned}
+$$
+
+In what follows, I will distinguish between bar-basis, see Eq. (E.26a), and tilde-basis Eq. (E.26b).
+
+## E.3.4 Density response
+
+Since there is already a first time derivative in the action for diffusive fields (see previous paragraph) it is sufficient to restrict oneself here to the gauge fields $\hat{A}_{0}$ respectively $\hat{A}_{0}$. For concreteness, I will perform the calculation in the tilde basis, but for the bar basis the same steps occur, so one can replace a tilde by a bar at each step. (At this point I still did not introduce the second Matsubara cut-off).
+
+$$
+S_{A_{0}^{2}}=-\frac{1}{4} \operatorname{Tr}\left[\mathcal{G}_{\hat{\Lambda}} \mathbb{A}_{0} \mathcal{G}_{\hat{\Lambda}} \mathbb{A}_{0}\right]=-c \times \sum_{\alpha m} \int_{\mathbf{x}}\left(q \hat{A}_{0}\right)_{\alpha m}\left(q \hat{A}_{0}\right)_{\alpha-m}
+$$
+
+The following constant (essentially, the $R R+A A$ polarization bubble) was introduced
+
+$$
+c=\int_{\mathbf{p}} \sum_{n}\left[g_{n}^{2}-f_{n}^{2}(\mathbf{p})\right]
+$$
+
+The retarded retarded contribution is
+
+$$
+\begin{aligned}
+c_{R R} & =\int_{\mathbf{p}} \sum_{n \geq 0} \frac{\partial}{\partial \mu} g_{n} \\
+& =\frac{1}{-2 \pi i T} \int_{\mathbf{p}} \int_{-\infty}^{\infty} d \epsilon \frac{\partial}{\partial \mu} g^{(R)}(\epsilon, \mathbf{p})
+\end{aligned}
+$$
+
+By consequence I find [using Eq.(7.22)]
+
+$$
+\begin{aligned}
+c & =c_{R R}+c_{R R}^{*}=\frac{1}{-8 \pi i T} \frac{\partial}{\partial \mu} \int_{\mathbf{p}} \int_{-\infty}^{\infty} d \epsilon n_{F}(\epsilon) \operatorname{tr}^{\tau, \sigma} G^{(R-A)}(\epsilon, \mathbf{p}) \\
+& =-\frac{1}{2 T} \frac{\partial}{\partial \mu} \int_{-\infty}^{\infty} d \epsilon n_{F}(\epsilon) \rho(\epsilon)=-\frac{\nu}{T}
+\end{aligned}
+$$
+
+# E.3.5 Gradient term: paramagnetic contribution 
+
+Now I turn the attention to spatial gradients. The paramagnetic contribution is
+
+$$
+\begin{aligned}
+S^{(\text {para })} & \equiv \frac{1}{4} \operatorname{Tr}\left[G_{\tilde{\Lambda}}\left[\frac{\{\mathbf{p}, \overrightarrow{\mathbb{A}}\}}{2 m}\right] \mathcal{G}_{\tilde{\Lambda}}\left[\frac{\{\mathbf{p}, \overrightarrow{\mathbb{A}}\}}{2 m}\right]\right] \\
+& =\frac{1}{4} \int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2}\left\{g_{n}(\mathbf{p}) g_{n+m}(\mathbf{p})\right. \\
+& \left.+\frac{1}{4} \int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2}\left\{2 g_{n}(\mathbf{p}) f_{n+m}(\mathbf{p})\right.\right. \\
+& \left.+\frac{1}{4} \int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2}\left\{f_{n}(\mathbf{p}) f_{-(n+m)}(\mathbf{p})\right.\right. \\
+& \operatorname{Tr}\left[\overrightarrow{\mathbb{A}}_{n,-(n+m)} i \tau_{y} \cdot \overrightarrow{\mathbb{A}}_{n+m, n} i \tau_{y}\right]\right\}
+\end{aligned}
+$$
+
+$g^{2}$ : retarded-retarded and advanced-advanced contributions For the retarded-retarded and advancedadvanced contributions one can omit the $m$ dependence of fermionic Green's functions $g$ and $f$, since $m \ll n$. Further, I use
+
+$$
+\mathbf{v} g_{n}^{2}=-\partial_{\mathbf{p}} g_{n}+\mathbf{v} f_{n}^{2}
+$$
+
+Thus,
+
+$$
+\begin{aligned}
+S_{g^{2} g^{4}}^{(\text {para })}{ }_{+g^{4} g^{4}} & =\frac{1}{4} \int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2}\left\{g_{n}(\mathbf{p}) g_{n}(\mathbf{p}) \operatorname{Tr}\left[\overrightarrow{\mathbb{A}}_{n, n+m} \cdot \overrightarrow{\mathbb{A}}_{n+m, n}\right] \theta\left(\epsilon_{n} \epsilon_{n+m}\right)\right. \\
+& =\frac{1}{2} \int_{\mathbf{p}} g_{n} \operatorname{Tr}\left[\frac{\overrightarrow{\mathbb{A}}_{n, n^{\prime}} \cdot \overrightarrow{\mathbb{A}}_{n^{\prime}, n}}{2 m}\right] \theta\left(\epsilon_{n} \epsilon_{n^{\prime}}\right)+\frac{\mathbf{v}^{2}}{4} f_{n}^{2} \operatorname{Tr}\left[\overrightarrow{\mathbb{A}}_{n, n^{\prime}} \cdot \overrightarrow{\mathbb{A}}_{n^{\prime}, n}\right] \theta\left(\epsilon_{n} \epsilon_{n^{\prime}}\right)
+\end{aligned}
+$$
+
+$g^{2}$ : retarded-advanced contributions. The evaluation of retarded-advanced contributions with the strong scattering limit of Green's functions
+
+$$
+g_{n} \approx \frac{1}{\xi_{\mathbf{p}}-\frac{i}{2 \tau} \operatorname{sign}(n)} \frac{\left|\epsilon_{n}\right|}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}}
+$$
+
+leads to
+
+$$
+S_{g^{4}}^{(\text {para })}=\frac{\sigma_{D}}{4} \sqrt{\frac{\epsilon_{n}^{2}}{\epsilon_{n}^{2}+\Delta^{2}}} \sqrt{\frac{\epsilon_{n^{\prime}}^{2}}{\epsilon_{n^{\prime}}^{2}+\Delta^{2}}} \operatorname{Tr}\left[\overrightarrow{\mathbb{A}}_{n, n^{\prime}} \cdot \overrightarrow{\mathbb{A}}_{n^{\prime}, n}\right] \theta\left(-\epsilon_{n} \epsilon_{n^{\prime}}\right)
+$$
+
+Here
+
+$$
+\frac{g_{D}}{2}=\sigma_{D}=\int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2} \frac{1}{\xi_{\mathbf{p}}^{2}+\frac{1}{(2 \tau)^{2}}}=2 \pi \frac{v_{F}^{2} \tau}{2} \nu
+$$
+
+is the Drude conductivity per spin of a usual disordered metal.
+$g f$ contribution. The $g f$ contribution is calculated using the strong scattering limit of the anomalous Green's function
+
+$$
+\begin{gathered}
+f_{n} \approx \frac{\frac{\Delta}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}}{\xi_{\mathbf{p}}^{2}+\frac{1}{(2 \tau)^{2}}} \\
+S_{g f}^{(\text {para })}=2 \frac{\sigma_{D}}{4} i \tau \operatorname{sign}(n) \frac{\left|\epsilon_{n}\right| \Delta}{2 \tau\left(\epsilon_{n}^{2}+\Delta^{2}\right)} \operatorname{Tr}\left[\left(\tilde{\mathbb{A}}_{n, n^{\prime}} i \tau_{y} \Lambda_{x} \cdot \tilde{\mathbb{A}}_{n^{\prime}, n}\right)_{n n}\right]
+\end{gathered}
+$$
+
+where I used
+
+$$
+\int_{\mathbf{p}} \frac{\mathbf{v}^{2}}{2} \frac{1}{\xi_{\mathbf{p}}^{2}+\frac{1}{(2 \tau)^{2}}} \frac{1}{\xi_{\mathbf{p}}-\frac{i}{2 \tau} \operatorname{sign}(n)}=\sigma_{D} i \tau \operatorname{sign}(n)
+$$
+
+$f f$ correlator. Finally, one needs to evaluate the $f f$ correlator
+
+$$
+\int_{\mathbf{p}}\left(\frac{\frac{\Delta}{2 \tau \sqrt{\epsilon_{n}^{2}+\Delta^{2}}}}{\xi_{\mathbf{p}}^{2}+\frac{1}{(2 \tau)^{2}}}\right)=\frac{\sigma_{D}}{2} \frac{\Delta^{2}}{\epsilon_{n}^{2}+\Delta^{2}}
+$$
+
+# E.3.6 Gradient term: diamagnetic contribution 
+
+The diamagnetic contribution is
+
+$$
+S^{(\text {diam. })}=-\frac{1}{2} \int_{\mathbf{p}} g_{n}(\mathbf{p}) \operatorname{Tr} \frac{\tilde{\mathbb{A}}_{n n}^{2}}{2 m}+f_{n} \operatorname{Tr} i \tau_{y} \frac{\tilde{\mathbb{A}}_{n,-n}^{2}}{2 m}
+$$
+
+## E.3.7 Collection of all terms.
+
+Finally, one collects the diamagnetic and paramagnetic contributions under the following approximations:
+
+- Leading order in bosonic frequency $m$ for retarded-retarded correlators: In $\tilde{\mathbb{A}}_{n, n+m} \theta\left(\epsilon_{n} \epsilon_{n+m}\right)$ use $\theta\left(\epsilon_{n} \epsilon_{n+m}\right) \approx 1+\mathcal{O}(m)$
+- As a consequence $\tilde{\mathbb{A}}_{n,-n}^{2} \propto \omega_{m} \omega_{-2 n-m}$ contains only large frequencies and is thus to be neglected.
+
+Therefore, the diamagnetic contributions are nearly completely canceled. However, since the system is a superconductor, the retarded-retarded and advanced-advanced contributions of the paramagnetic term do not fully compensate the diamagnetic term, see Eq. (E.33).
+
+Collecting everything I obtain the gradient term
+
+$$
+S_{\nabla^{2}}=\frac{\sigma_{D}}{8} \operatorname{Tr}\left[\tilde{\mathbb{A}}^{2}-(\overrightarrow{\mathbb{A}} \tilde{\Lambda})^{2}\right]=\frac{\sigma_{D}}{16} \operatorname{Tr}\left[\bar{D}_{i} \bar{Q}\right]^{2}=\frac{\sigma_{D}}{16} \operatorname{Tr}\left[\bar{D}_{i} \bar{Q}\right]^{2}
+$$
+
+I again resorted to tilde and bar bases, where $\bar{D}_{i}=\partial_{i}+i e\left[\check{\mathbf{A}}_{\tau_{z}}, \bullet\right]$ and $\bar{D}_{i}=\partial_{i}+i e\left[\check{\mathbf{A}}_{\tau_{z}}, \bullet\right]$.
+This concludes the derivation of Eq. (7.24) of the main text.
+
+# E. 4 Bogoliubov-deGennes NL $\sigma$ M and s-wave superconductivity 
+
+In this appendix, I show that the NL $\sigma \mathrm{M}$ in the case of SSB can not be of Bogoliubov-deGennes type. By this I mean, that the NL $\sigma \mathrm{M}$ field $\bar{Q}=\bar{S}^{-1} \check{\mathrm{~A}} \bar{S}$ can not fulfill both conditions on $\bar{S}$ exposed for classes CI (DIII) in Tab. E.1:
+
+1. TR invariance: $\bar{S}^{T} C \bar{S}=C$,
+2. Bogoliubov-deGennes condition: $\bar{S}^{-1} \tau_{y} J_{0} \bar{S}=\tau_{y} J_{0}$.
+
+This translates to the following conditions for $q=s^{-1} \Lambda s$, where $s=U_{\Delta} \bar{S} U_{\Delta}^{\dagger}$ according to the rotation introduced in Sec. 7.3.4
+
+1. TR invariance: $s^{T} C s=C$,
+2. Bogoliubov-deGennes condition: $s^{-1} U_{\Delta} \tau_{y} J_{0} U_{\Delta}^{\dagger} s=U_{\Delta} \tau_{y} J_{0} U_{\Delta}^{\dagger}$.
+
+The matrix involved in the second condition is
+
+$$
+U_{\Delta} \tau_{y} J_{0} U_{\Delta}^{\dagger}=\sum_{n \geq 0, \alpha} P_{|n|}^{\alpha}\left(\begin{array}{cc}
+\frac{\Delta}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}} & \tau_{y} \frac{\epsilon_{n}}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}} \\
+\tau_{y} \frac{\epsilon_{n}}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}} & -\frac{\Delta}{\sqrt{\epsilon_{n}^{2}+\Delta^{2}}}
+\end{array}\right)
+$$
+
+These conditions can now be investigated at the level of the tangent space. I employ the following parametrization $q \approx \Lambda+W$ (i.e. $s \approx 1+\Lambda W / 2$ ) with
+
+$$
+W=\left(\begin{array}{cc}
+0 & w \\
+\bar{w} & 0
+\end{array}\right)
+$$
+
+Then the two conditions correspond to
+
+1. TR invariance: $\bar{w}=-C w^{T} C$,
+2. Bogoliubov-deGennes condition: $\left[\Lambda W, U_{\Delta} \tau_{y} J_{0} U_{\Delta}^{\dagger}\right]=0$.
+
+The last condition implies
+
+$$
+w_{n_{1}, n_{2}} \frac{\Delta}{\sqrt{\epsilon_{n_{2}}^{2}+\Delta^{2}}}=-\frac{\Delta}{\sqrt{\epsilon_{n_{1}}^{2}+\Delta^{2}}} w_{n_{1}, n_{2}}
+$$
+
+By consequence, there are two situations: either $\Delta=0$ and there is no SSB, or $w=0$ and there is no diffusion.
+
+The physical interpretation for this fact is as follows. Here, an s-wave superconductor is considered and, at the level of the approximations made here, the fermionic spectrum contains a finite gap. The vanishing DOS is reflected by the gap $\Delta$ appearing for all diffusive modes in Eq. (7.30) of the main text. On the other hand, when a Bogoliubov-deGennes type NL $\sigma \mathrm{M}$ is considered, the $\Delta$-gap is interpreted as a hard constraint. Therefore, in this situation, diffusive modes do not exist.
+
+
+
+
+# 269
+
+# Appendix F 
+
+## Symmetry classification of disordered systems
+
+![img-57.jpeg](img-57.jpeg)
+

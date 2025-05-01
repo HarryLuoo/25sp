@@ -1,0 +1,244 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,amsmath,amsfonts,mathpazo,microtype,nicefrac}
+
+\usepackage[font=footnotesize,skip=-10pt]{caption}
+
+% Set-up for hypertext references
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Assignment 7}}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\begin{document}
+\section*{Math 521: Assignment 7 (due 5~PM, May 2)}
+At this point in the course, being able to sketch functions and determine their
+properties is an important skill, which greatly helps in understanding concepts
+such as continuity, differentiability, and uniform convergence. The first
+section of this homework is devoted to this topic.
+
+For questions 1--3 and 4(a), no detailed proofs are required, although you will
+need to provide some discussion in words about what is going on. To begin, I
+would like you to try and draw the graphs by hand. There are many ways to do
+this, such as looking at the behavior as $x\to \pm \infty$, calculating a few
+specific points and drawing a line through them, using calculus, or searching
+for zeroes of the function. After this, you can confirm your results using a
+plotting program if you wish. There are many free ones available, such as
+\textit{Gnuplot} (\url{http://gnuplot.info}) or \textit{Matplotlib}
+(\url{https://matplotlib.org}).
+
+\begin{enumerate}
+  \item Consider the function
+    \[
+    f(x) = \left\{
+    \begin{array}{ll}
+      1-|x-1| & \qquad \textrm{if $0\le x\le 2$} \\
+      0 & \qquad \textrm{if $x>2$}
+    \end{array}
+    \right.
+    \]
+    defined on the interval $[0,\infty)$\footnote[2]{If you try \textit{Gnuplot}, you
+    can define this function by typing \texttt{f(x)=x>2?0:1-abs(x-1)}. It can
+    then be plotted with \texttt{plot [0:4] f(x)}.}. Draw $f(x)$.
+    \begin{enumerate}
+      \item Draw $f(x/2)$, $f(x/3)$, and $f(x/4)$, and explain how the shapes
+	of these curves relate to $f(x)$.
+      \item Draw $2f(x)$, $f(x+\nicefrac{1}{2})$, $f(x)-\nicefrac{1}{2}$ and
+	explain how the shapes of these curves relate to $f(x)$.
+      \item Draw $|f(x)-\nicefrac{1}{2}|$. Is this function continuous? Is it
+	differentiable everywhere?
+      \item Draw $f(x^2)$ and $f(x)^2$.
+    \end{enumerate}
+  \item Consider the sequence of functions
+    \[
+    f_n(x) = \frac{nx^2}{1+nx^2}
+    \]
+    defined on the interval $[0,\infty)$.
+    \begin{enumerate}
+      \item Begin by considering $f_1(x)$. How does it behave as $x\to \infty$?
+	How does it look close to $x=0$? Use these facts to draw $f_1(x)$.
+      \item Show that $f_n(x)=f_1(\sqrt{n} x)$. By considering question 1(a),
+	use this fact to draw several of the $f_n(x)$.
+      \item It can be shown that $f_n$ converges pointwise to a function $f$
+	defined on $[0,\infty)$ as
+	\[
+	f(x) = \left\{
+	\begin{array}{ll}
+	  0 & \qquad \textrm{if $x=0$} \\
+	  1 & \qquad \textrm{if $x>0$.}
+	\end{array}
+	\right.
+	\]
+	Draw $f(x)$ and draw a strip of width $\epsilon=\nicefrac{1}{4}$
+	around $f(x)$. If $f_n\to f$ uniformly, then there exists an
+	$N$ such that $n>N$ implies that $f_n$ lies wholly within this strip.
+	Use the graph to explain in words why no such $N$ exists,
+	so that $f_n$ does not converge uniformly to $f$.
+    \end{enumerate}
+  \item Consider the sequence of functions defined on $\R$ as
+    \[
+    f_n(x) = \left\{
+    \begin{array}{ll}
+      x^n \sin \frac{1}{x} & \qquad \textrm{if $x\ne 0$} \\
+      0 & \qquad \textrm{if $x=0$}
+    \end{array}
+    \right.
+    \]
+    \begin{enumerate}
+      \item Draw the sequence of functions $f_0(x)$, $f_1(x)$ and $f_2(x)$.
+	Which of the functions are continuous at $x=0$? Which of them are
+	differentiable at $x=0$?
+      \item Consider the functions $f_n$ on the interval
+	$[-\nicefrac{1}{2},\nicefrac{1}{2}]$, and define $f(x)=0$. By
+	considering a strip of width $\epsilon$ around $f(x)$,
+	explain why $f_n$ will converge uniformly to $f$ on this interval.
+    \end{enumerate}
+  \item Consider the function $g_0(x)=|x|$ on $\R$. For $n\in \N$, define
+    $g_n(x)=|g_{n-1}(x)-2^{1-n}|$.
+    \begin{enumerate}
+      \item Draw $g_0(x)$, $g_1(x)$, $g_2(x)$, and $g_3(x)$.
+      \item Prove that the functions $g_n$ converge uniformly to a limit $g$ on
+	$\R$.
+    \end{enumerate}
+  \item Suppose $f$ is a continuous function on $[a,b]$, and $f(x)\ge 0$ for
+    all $x\in[a,b]$. Prove that if $\int_a^b f = 0$, then $f(x)=0$ for
+    all $x\in[a,b]$.
+  \item Consider the function
+    \begin{equation}
+      f(x)=\begin{cases}
+        1 & \qquad \text{if $x=2^{-n}$ for $n\in \N$,} \\
+        0 & \qquad \text{otherwise.}
+      \end{cases}
+    \end{equation}
+    Prove that $f$ is integrable on $[0,1]$ and that $\int_0^1 f = 0$.
+  \item Construct an example of a function where $f(x)^2$ is integrable on
+    $[0,1]$ but $f(x)$ is not.
+  \item Construct an example of a sequence of functions $(f_n)$ on $[0,1]$ such
+    that $f_n\to 0$ pointwise, but the sequence $s_n = \int_0^1 f_n$
+    diverges.
+  \item
+    \begin{enumerate}
+      \item Suppose that $g$ is integrable on $[0,1]$ and continuous at 0. Prove
+        that
+        \begin{equation}
+          \lim_{n\to\infty} \int_0^1 g(x^n) dx = g(0).
+          \label{eq:lim}
+        \end{equation}
+      \item Show that the condition in part (a) that $g$ is continuous is
+        necessary for Eq.~\eqref{eq:lim} to be true.
+    \end{enumerate}
+  \item Suppose that $f$ is continuous on $(a,b)$, where $a$ may be $-\infty$
+    and $b$ may be $\infty$. If $\int_a^b |f(x)|dx <\infty$, show that the
+    integral $\int_a^b f(x) dx$ exists and is finite.
+  \item
+    \begin{enumerate}
+      \item Suppose that the real-valued function $f$ satisfies $|f(x)|\le M$
+        for all $x\in[a,b]$. Show that
+        \begin{equation}
+          \left|f(x)^2-f(y)^2 \right| \le 2M |f(x)-f(y)|.
+        \end{equation}
+      \item Prove that if $f$ is integrable on $[a,b]$, then so is $f^2$.
+      \item Suppose that $f$ and $g$ are integrable on $[a,b]$. By considering
+        $(f+g)^2$, or otherwise, show that $fg$ is also integrable on $[a,b]$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item For any two numbers $u,v\in \R$, prove that $uv \le (u^2+v^2)/2$.
+        Let $f$ and $g$ be two integrable functions on $[a,b]$. Prove that if
+        $\int_a^b f^2 = 1$ and $\int_a^b g^2 = 1$ then
+        \begin{equation}
+          \int_a^b fg \le 1.
+        \end{equation}
+      \item
+        Prove the Schwarz inequality, that for any two integrable functions $f$
+        and $g$ on an interval $[a,b]$,
+        \begin{equation}
+          \left| \int_a^b fg\right| \le \left( \int_a^b f^2
+          \right)^{1/2} \left( \int_a^b g^2 \right)^{1/2}.
+        \end{equation}
+      \item Let $X$ be the set of all continuous functions on the interval
+        $[a,b]$. For any $f,g\in X$, define
+        \begin{equation}
+          d(f,g) = \left(\int_a^b |f-g|^2 \right)^{1/2}.
+        \end{equation}
+        Prove that $d$ is a metric.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Further optional exercises}
+\begin{enumerate}
+  \setcounter{enumi}{12}
+  \item \textbf{Optional.} Define the sequence of functions on $[0,1]$ as
+    $h_0(x)=|x-\nicefrac{1}{2}|$ and $h_n(x)=|h_{n-1}(x)-3^{-n}|$. Draw several
+    of the $h_n$. Prove that $h_n$ converges uniformly to a limit $h$.
+    \textit{Difficult:} where is $h$ differentiable?    
+  \item \textbf{Optional.} Given a function $f$ on $[a,b]$ define the \textit{total variation}
+    to be
+    \begin{equation}
+      Vf = \sup \left\{ \sum_{k=1}^n \left|f(x_k) - f(x_{k-1})\right| \right\},
+    \end{equation}
+    where the supremum is taken over all partitions $P=\{a=x_0 < x_1 < \ldots <
+    x_n=b\}$ of $[a,b]$.
+    \begin{enumerate}
+      \item If $f$ is continuously differentiable use the fundamental
+        theorem of calculus to show $Vf \le \int_a^b |f'|$.
+      \item Use the mean value theorem to show that $Vf \ge \int_a^b |f'|$
+        and hence that $Vf=\int_a^b |f'|.$
+    \end{enumerate}
+  \item \textbf{Optional.}
+    \begin{enumerate}
+      \item By using simple properties of $\sin x$ and $\cos x$, show how to
+        define the function $\tan: (-\frac{\pi}{2},\frac{\pi}{2}) \to \R$.
+        Prove that it is differentiable, strictly increasing, and neither
+        bounded above nor below.
+      \item By using inverse function theorems, define $\tan^{-1}: \R \to
+        (-\frac{\pi}{2},\frac{\pi}{2})$ and show that
+        \begin{equation}
+          (\tan^{-1})'(x) = \frac{1}{1+x^2}.
+        \end{equation}
+      \item
+        Prove that for $|x|<1$,
+        \begin{equation}
+          \tan^{-1} x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{2n+1}.
+        \end{equation}
+      \item By making use of Abel's theorem, or otherwise, show that
+        \begin{equation}
+          \frac{\pi}{4} = \sum_{n=0}^\infty \frac{(-1)^n}{2n+1}.
+        \end{equation}
+      \item Calculate $(5+i)^4(239-i)$ and use it to prove Machin's formula
+        \begin{equation}
+          \frac{\pi}{4} = 4\tan^{-1} \frac{1}{5} - \tan^{-1} \frac{1}{239}.
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+\end{document}

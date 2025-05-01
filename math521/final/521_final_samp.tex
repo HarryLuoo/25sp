@@ -1,0 +1,481 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,mathpazo,amsmath,amsfonts,nicefrac,microtype}
+
+\usepackage{hyperref,color,textcomp}
+\definecolor{webgreen}{rgb}{0,.35,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0,0,0.9}
+\hypersetup{
+   colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+   breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,
+   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,
+   hypertexnames=true, pdfhighlight=/O,
+   urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+   pdfauthor={Chris H. Rycroft},
+   pdfsubject={UW--Madison Math 521 (Spring 2025)},
+   pdfkeywords={},
+   pdfcreator={pdfLaTeX},
+   pdfproducer={LaTeX with hyperref}
+}
+\hypersetup{pdftitle={Math 521: Sample final questions}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\newcommand{\sep}{\,:\,}
+\newcommand{\tquad}{\,\,\quad}
+\setlength{\unitlength}{0.5mm}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\iab}{\int_a^b}
+\renewcommand{\labelitemii}{$\diamond$}
+
+\begin{document}
+\section*{Math 521: final exam information}
+\begin{itemize}
+  \item The final exam will take place on Wednesday May 7th from 2:45pm--4:45pm
+    in Social Sciences 6203.
+  \item The exam will cover all parts of the course with equal weighting. It
+    will cover Chapters 1--5, 7--15, 17--21, 23--34, 36 of the Ross textbook.
+  \item The final will consist of seven questions, which will be of a similar
+    style to those on the midterm. This will give you longer per question than
+    on the midterm.
+  \item The exam will be closed book---no textbooks, notebooks, or smartphones
+    allowed. As on the midterms, you will be expected to be familiar with the
+    basic definitions, and know the key results, but it will not be necessary to
+    remember the proof of every theorem by heart.
+\end{itemize}
+
+\section*{Sample final questions}
+\begin{enumerate}
+  \item Consider the power series
+    \[
+    \sum_{n=1}^\infty \frac{x^n}{n^3}, \qquad \sum_{n=1}^\infty \frac{x^{3n}}{2n}, \qquad \sum_{n=0}^\infty x^{2n!}.
+    \]
+    For each power series, determine its radius of convergence $R$. By
+    considering the series at $x=\pm R$, determine the exact interval of
+    convergence.
+  \item
+    \begin{enumerate}
+      \item Prove by using the definition of convergence only, without using
+	limit theorems, that if $(s_n)$ is a sequence converging to $s$, then
+	$\lim_{n\to \infty} s_n^2 = s^2$.
+      \item Prove by using the definition of continuity, or by using the
+	$\epsilon$-$\delta$ property, that $f(x)=x^2$ is a continuous function
+	on $\R$.
+    \end{enumerate}
+  \item Let $f$ be a twice differentiable function defined on the closed
+    interval $[0,1]$. Suppose $r,s,t\in [0,1]$ are defined so that $r<s<t$ and
+    $f(r)=f(s)=f(t)=0$. Prove that there exists an $x\in (0,1)$ such that
+    $f''(x)=0$.
+  \item
+    \begin{enumerate}
+      \item Suppose that $\sum_{n=0}^\infty a_n$ is a convergent series. Define
+	a sequence $(b_n)$ according to $b_n=a_{2n}+a_{2n+1}$ for $n\in \N \cup
+	\{0\}$. Prove that $\sum_{n=0}^\infty b_n$ converges.
+      \item Construct an example of a series $\sum_{n=0}^\infty a_n$ that
+	diverges, but that if $(b_n)$ is defined as above, then
+	$\sum_{n=0}^\infty b_n$ converges.
+    \end{enumerate}
+  \item Suppose $f$ a is real-valued continuous function on $\R$ and that
+    $f(a)f(b)<0$ for some $a,b\in \R$ where $a<b$. Prove that there exists an
+    $x\in (a,b)$ such that $f(x)=0$.
+  \item Let $f$ be a real-valued function defined on an interval $[0,b]$ as
+    \[
+    f(x) = \left\{
+    \begin{array}{ll}
+      x & \qquad \textrm{for $x\in \Q$,} \\
+      0 & \qquad \textrm{for $x\notin \Q$.}
+    \end{array}
+    \right.
+    \]
+    Consider a partition $P=\{0=t_0<t_1<\ldots<t_n=b\}$. What are the upper and
+    lower Darboux sums $U(f,P)$ and $L(f,P)$? Is $f$ integrable on $[0,b]$?
+  \item Let $f$ be a decreasing function defined on $[1,\infty)$, where
+    $f(x)\ge 0$ for all $x\in [1,\infty)$. Prove that $\int_1^\infty f(x)dx$
+    converges if and only if $\sum_{n=1}^\infty f(n)$ converges. {\it [This
+    is essentially a question asking you to prove a general form of the
+    integral test.]}
+  \item Consider the function defined for $x,y\in \R$ as
+    \[
+    d(x,y) = \left\{
+    \begin{array}{ll}
+      1 & \textrm{if $x\ne y$,} \\
+      0 & \textrm{if $x=y$.}
+    \end{array}
+    \right.
+    \]
+    \begin{enumerate}
+      \item Prove that $d$ defines a metric on $\R$.
+      \item What is the neighborhood of radius \nicefrac{1}{2} centered on 0?
+      \item Consider an arbitrary set $S\subseteq \R$. Is $S$ open? Is $S$ compact?
+    \end{enumerate}
+  \item Let $\vec{x}=(x_1,x_2)$ and $\vec{y}=(y_1,y_2)$ be in $\R^2$. Consider
+    the function
+    \[
+    d(\vec{x},\vec{y}) = |x_1-y_1| + |x_2-y_2|.
+    \]
+    \begin{enumerate}
+      \item Prove that $d$ is a metric on $\R^2$.
+      \item Compute and sketch the neighborhood of radius 1 at $(0,0)$.
+    \end{enumerate}
+  \item Consider a function $f$ defined on $\R$ which satisfies
+    \[
+    |f(x)-f(y)|\le(x-y)^2
+    \]
+    for all $x,y\in \R$. Prove that $f$ is a constant function.
+  \item Suppose that $f$ is differentiable on $\R$, and that $2\le f'(x) \le 3$
+    for $x\in \R$. If $f(0)=0$, prove that $2x \le f(x) \le 3x$ for all $x\ge
+    0$.
+  \item Show that if $f$ is integrable on $[a,b]$, then $f$ is integrable on
+    every interval $[c,d]\subseteq[a,b]$.
+  \item
+    \begin{enumerate}
+      \item Suppose $r$ is irrational. Prove that $r^{1/3}$ and $r+1$ are
+	irrational also.
+      \item Prove that $(5+\sqrt{2})^{1/3}+1$ is irrational.
+    \end{enumerate}
+  \item By using L'H\^opital's rule, or otherwise, evaluate
+    \[
+    \lim_{x\to 0} \frac{x}{1-e^{-x^2-3x}}, \qquad \lim_{x\to0} \left(\frac{1}{\sin x} - \frac{1}{x}\right),\qquad \lim_{x\to 0} \frac{x^3}{\sin x-x}.
+    \]
+  \item Let $a\in \R$. Consider the sequence $(s_n)$ defined as
+    \[
+    s_n = \left\{
+    \begin{array}{ll}
+      a & \qquad \textrm{if $n$ is odd,} \\
+      2^{-n} & \qquad \textrm{if $n$ is even.}
+    \end{array}
+    \right.
+    \]
+    Compute $\lim \sup s_n$ and $\lim \inf s_n$. For what value of $a$ does
+    $(s_n)$ converge?
+  \item Consider the function $f: \R^2 \to \R$ defined as
+    \[
+    f(x_1,x_2) = \frac{1}{x_1^2+x_2^2+1}.
+    \]
+    With respect to the usual Euclidean metrics on $\R$ and $\R^2$, prove that
+    $f$ is continuous at $(0,0)$ and at $(0,1)$.
+  \item
+    \begin{enumerate}
+      \item Calculate the improper integral
+	\[
+	\int_0^1 x^{-p} \,dx
+	\]
+	for the cases when $0<p<1$ and $p>1$.
+      \item Prove that
+	\[
+	\int_0^\infty x^{-p} dx = \infty
+	\]
+	for all $p\in(0,\infty)$.
+    \end{enumerate}
+  \item Prove that if $f$ is integrable on $[a,b]$, then
+    \[
+    \lim_{d\to b^-} \int_a^d f(x)\,dx = \int_a^b f(x)\,dx.
+    \]
+  \item Let $f(x)=x^2$, and define a sequence $(s_n)$ according
+    to $s_1=\lambda$ and $s_{n+1}=f(s_n)$ for $n\in \N$. Prove
+    that $(s_n)$ converges for $\lambda \in [-1,1]$, and diverges
+    for $|\lambda|>1$.
+  \item Consider the three sets
+    \[
+    A = [0,\sqrt{2}] \cap \Q, \tquad B = \{x^2+x-1\sep x\in \R\}, \tquad C=\{ x\in \R \sep x^2+x-1<0\}.
+    \]
+    For each set, determine its maximum and minimum if they exist. For
+    each set, determine its supremum and infimum. Detailed proofs are
+    not required, but you should justify your answers.
+  \item Let $f_n(x)=x-x^n$ on $[0,1]$ for $n\in \N$.
+    \begin{enumerate}
+      \item Prove that $f_n$ converges pointwise to a limit $f$, and determine $f$.
+      \item Prove that $f_n$ does not converge uniformly to $f$.
+      \item Find an interval $I$ contained in $[0,1]$ on
+	which $f_n\to f$ uniformly.
+      \item Prove that the $f_n$ are integrable, that $f$ is integrable,
+	and that $\int_0^1 f_n \to \int_0^1 f$.
+    \end{enumerate}
+  \item Define
+    \[
+    f(x) = \left\{
+    \begin{array}{ll}
+      1 & \qquad \textrm{if $|x| \le 1$,} \\
+      -2 & \qquad \textrm{if $1<|x| \le 2$,} \\
+      0 & \qquad \textrm{if $|x|>2$}
+    \end{array}
+    \right.
+    \]
+    for $x\in \R$.
+    \begin{enumerate}
+      \item Calculate $F(x) = \int_0^x f(t) dt$ for $x\in \R$.
+      \item Sketch $f$ and $F$.
+      \item Compute $F'$ and state the precise range over which $F'$ exists.
+	You may make use of the second fundamental theorem of calculus.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Let $f$ and $g$ be continuous functions on $[a,b]$ such that
+	$\iab f=\iab g$. Prove that there exists an $x\in[a,b]$ such that
+	$f(x)=g(x)$.
+      \item Construct an example of integrable functions $f$ and $g$ on $[a,b]$
+	where $\iab f = \iab g$ but that $f(x)\ne g(x)$ for all $x\in [a,b]$.
+    \end{enumerate}
+  \item Consider the function
+    \[
+    f(x) = \frac{x}{1+x}.
+    \]
+    on the interval $[0,\infty)$.
+    \begin{enumerate}
+      \item Show that $\lim_{x\to \infty} f(x) = 1$, and that $0\le f(x)<1$ for all
+	$x \in [0,\infty)$.
+      \item Sketch $f$.
+      \item Calculate $f'$, $f''$, and use them to construct the partial Taylor series at $x=1$ with the form
+	\[
+	f_T(x)=\sum_{n=0}^2 \frac{(x-1)^nf^{(n)}(1)}{n!}.
+	\]
+      \item Show that $f_T$ can be written as a quadratic equation with the
+	form $ax^2+bx+c$, and compute $a$, $b$, and $c$.
+      \item Add a sketch of $f_T$ to the sketch of $f$. {\it[Note:
+	$f_T(1)=f(1)$ so the two curves should intersect at $x=1$.]}
+    \end{enumerate}
+
+  \item Determine the radius of convergence $R$ of the power series
+    \[
+    f_1(x)=\sum_{n=0}^\infty \frac{x^n}{\sqrt{n^2+1}}, \qquad f_2(x)=\sum_{n=1}^\infty \frac{(-2)^n x^{2n}}{n^2}.
+    \]
+    By considering the series at $x=\pm R$, determine the exact intervals of
+    convergence. If you make use of any of the theorems for determining series
+    properties, you should state which ones you use.
+  \item Suppose $(s_n)$ and $(t_n)$ are two sequences that converge to $s$ and
+    $t$ respectively. State the definition of convergence, and use it to prove
+    that $3s_n+t_n \to 3s+t$. Do not use the limit theorems for
+    sequences.
+  \item The Fibonacci numbers are defined by $F_0=0$ and $F_1=1$,
+    and
+    \[
+    F_{n+1} = F_n+F_{n-1}
+    \]
+    for $n\in \N$. Let the golden ratio be defined as
+    $\varphi=\frac{1+\sqrt{5}}{2}$.
+    \begin{enumerate}
+      \item Show that $\varphi^2=1+\varphi$.
+      \item Let
+	\[
+	f(n)=\frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}.
+	\]
+	For $n\in \N$, define $H_n$ to be the hypothesis that ``both
+	$F_n=f(n)$ and $F_{n-1}=f(n-1)$''. Apply mathematical induction to
+	prove that $H_n$ is true for all $n \in \N$, and deduce that
+	$F_n=f(n)$ for all $n \in \N \cup \{0\}$.
+	{\it [Hint: it is simpler to carry out the algebra in terms of
+	$\varphi$ and use the identity in (a), as opposed to calculating
+	explicitly in terms of $(1+\sqrt{5})/2$.]}
+      \item Show that $\frac{F_{n+1}}{F_n} \to \varphi$
+	as $n \to \infty$.
+    \end{enumerate}
+  \item Consider two dimensional space $\R^2$, where an element $\vec{x} \in
+    \R^2$ is written as $\vec{x}=(x_1,x_2)$. Let $d_E(\vec{x},\vec{y})=(
+    (x_1-y_1)^2+(x_2-y_2)^2 )^{1/2}$ be the usual Euclidean metric on $\R^2$.
+    \begin{enumerate}
+      \item Prove that $d_A(\vec{x},\vec{y}) = \min\{|x_1-y_1|,2|x_2-y_2|\}$ is
+	not a metric on $\R^2$.
+      \item Prove that $d_B(\vec{x},\vec{y}) = \max\{|x_1-y_1|,2|x_2-y_2|\}$ is
+	a metric on $\R^2$. Draw the neighborhood of radius $1$ at $(0,0)$.
+      \item Consider an arbitrary metric space $(X,d)$, and a mapping $f: X \to
+	\R^2$. Suppose that $f$ is continuous with respect to $(X,d)$ and
+	$(\R^2,d_E)$. Prove that it is also continuous with respect to $(X,d)$
+	and $(\R^2,d_B)$.
+    \end{enumerate}
+  \item
+    Consider the function defined on $[0,\infty)$ as
+    \[
+    f(x)= \left\{
+    \begin{array}{ll}
+      0 & \qquad \textrm{if $0\le x\le1$,} \\
+      x & \qquad \textrm{if $x> 1$.}
+    \end{array}
+    \right.
+    \]
+    \begin{enumerate}
+      \item Compute $F(x)=\int_0^x f(t) dt$ on $[0,\infty)$.
+      \item Calculate $F'(x)$, stating the precise range over which it exists.
+	You may make use of the second fundamental theorem of calculus.
+      \item Prove that neither $f$ nor $F$ is uniformly continuous on $[0,\infty)$.
+    \end{enumerate}
+  \item Consider the function defined on the domain $[0,\infty)$ as
+    \[
+    g(x) = \left\{
+    \begin{array}{ll}
+      x & \qquad \textrm {if $0\le x \le 1$,} \\
+      0 & \qquad \textrm{if $x>1$.}
+    \end{array}
+    \right.
+    \]
+    Define a sequence of functions on the interval $[0,1]$ according to
+    $f_n(x)=n g(nx)$ for $n\in \N$.
+    \begin{enumerate}
+      \item Sketch $f_1$, $f_2$, and $f_3$ on the interval $[0,1]$.
+      \item Prove that $f_n$ converges pointwise to a limit $f$, and determine
+	$f$.
+      \item Prove that $f_n$ does not converge uniformly to $f$ on $[0,1]$.
+      \item Show that $\int_0^1 f_n = \nicefrac{1}{2}$ for all $n$. Does $\int_0^1 f_n$
+	converge to $\int_0^1 f$?
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}
+      \item Use L'H\^opital's rule to evaluate
+	\[
+	\lim_{x\to 0} \frac{x}{e^{x}-e^{-x}}, \qquad
+	\lim_{x\to 0} \frac{\sin^2 x}{x^2}.
+	\]
+      \item Let $f$ be a real-valued function defined on an interval $(a,b)$.
+	Let $x\in(a,b)$, and suppose $f$ is twice differentiable at $x$.
+	Show that the limit
+	\[
+	\lim_{h\to 0} \frac{f(x+h)+f(x-h) - 2f(x)}{h^2}
+	\]
+	exists and equals $f''(x)$.
+      \item Construct an example of a real-valued function $f$ defined on an
+	interval $(a,b)$, where for some $x\in (a,b)$ the above limit exists
+	and is finite, but $f$ is not twice differentiable at $x$.
+    \end{enumerate}
+  \item Let $(x_n)$ be a sequence. Suppose that the subsequences $(x_{2n})$,
+    $(x_{2n+1})$, and $(x_{7n})$ converge. Prove that $(x_n)$ converges.
+  \item Let $(a_n)$ be a sequence for $n\in \N$ where
+    \[
+      a_n= (-1)^n (c+n^{-1})
+    \]
+    and $c$ is a real constant. Calculate $\lim \sup a_n$ and $\lim \inf
+    a_n$ as a function of $c$. For what value of $c$ does $a_n$ converge?
+  \item
+    \begin{enumerate}
+      \item If $f(x)=\log(\log(x))$, calculate $f'$.
+      \item Use the integral test to show that
+        \[
+          \sum_{n=2}^\infty \frac{1}{n \log n}
+        \]
+        diverges.
+      \item Let $s(n)$ be the sum of digits in $n$. For example,
+        $s(123)=1+2+3=6$, and $s(99)=9+9=18$. Determine whether
+        the series
+        \[
+          \sum_{n=1}^\infty \frac{1}{n\,s(n)}
+        \]
+        converges or diverges.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Suppose $f$ is a continuous function on $[a,b]$, and $f(x)\ge 0$
+        for all $x\in[a,b]$. Prove that if $\int_a^b f = 0$, then $f(x)=0$ for
+        all $x\in[a,b]$.
+      \item Let $X$ be the space of continuous functions on $[a,b]$. Prove
+        that for $g,h\in X$, the function
+        \[
+          d(g,h) = \int_a^b |g(x)-h(x)| dx
+        \]
+        defines a metric on $X$.
+      \item Let $Y$ be the space of integrable functions on $[a,b]$. Show that
+        the function $d$ given in part (b) is not a metric on $Y$.
+    \end{enumerate}
+  \item Define $S=[0,1]$ and let $f_n: S \to \R$ be a sequence of continuous
+    functions such that
+    \[
+      0\le f_{n+1}(x) \le f_n(x) \le \ldots \le f_1(x)
+    \]
+    for all $n\in \N$ and $x\in S$. Suppose that $(f_n)$ converges pointwise to
+    0.
+    \begin{enumerate}
+      \item For $\epsilon>0$, define the sets $E_n=\{ x\in S \sep f_n(x)
+        <\epsilon\}$. Show that for all $n\in \N$, the sets $E_n$ are open in
+        $S$ and $E_n \subseteq E_{n+1}$. In addition, show that the
+        $\{E_n\}_{n\in \N}$ form an open cover of $S$.
+      \item Prove that $(f_n)$ converges uniformly to 0 on $S$.
+      \item Suppose now that $S$ is changed to $(0,1)$ with all other
+        conditions remaining the same. Prove that $(f_n)$ may not converge
+        uniformly to 0 in this case.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Determine whether the two series
+        \[
+        \sum_{n=0}^\infty \frac{(-1)^n}{3n+1}, \qquad \sum_{n=0}^\infty \frac{1}{3n+1}
+        \]
+        converge or diverge.
+      \item Determine the radius of convergence of the power series
+        \[
+          \sum_{n=0}^\infty \frac{(-2)^nx^n}{3n+1}.
+        \]
+        What is the exact interval of convergence?
+    \end{enumerate}
+  \item 
+    \begin{enumerate}
+      \item Prove that the sequence $(s_n)$ is bounded if and only if $\lim \sup |s_n|<\infty$.
+      \item Construct an example where $\lim \sup s_n \in \R$ but $(s_n)$ is unbounded.
+    \end{enumerate}
+  \item
+    Let $(f_n)$ be a sequence of increasing differentiable functions on $[0,1]$
+    where $f_n(0)=0$ for all $n\in \N$, and $\lim_{n\to \infty} f_n(1) = 0$.
+    \begin{enumerate}
+      \item Prove that $(f_n)$ converges uniformly to the zero function on $[0,1]$.
+      \item Define $g_n = \sup \{ |f'_n(x)| \sep x\in [0,1]\}$. Is $(g_n)$
+        always bounded? Prove your assertion.
+    \end{enumerate}
+  \item Let $f(x) = x^2(1-x)$ and $g(x) = |f(x)|$ for $x\in \R$.
+    \begin{enumerate}
+      \item Plot $f$ and $g$ over the range $[-1,2]$.
+      \item By using the definition of differentiability, prove that $g(x)$ is
+	differentiable at $x=0$, but not at $x=1$.
+      \item Compute the derivatives $g^{(n)}(2)$ for $n\in \N$, and use them
+	to write down the Taylor series of $g$ at $x=2$. Prove that this series
+	is equal to $-f(x)$ for all $x\in \R$.
+    \end{enumerate}
+  \item Let $f$ be a continuous strictly increasing function defined on $\R$.
+    Consider a subset $S\subseteq \R$ and let $T=\{f(x) \sep x\in S\}$.
+    \begin{enumerate}
+      \item If $\sup S$ is finite, prove that $\sup T = f(\sup S)$.
+      \item Suppose $(a_n)$ is a sequence such that $\lim \sup a_n$ is finite. Define
+	the sequence $(b_n)$ so that $b_n=f(a_n)$ for all $n$. Prove that $\lim
+	\sup b_n = f(\lim \sup a_n)$.
+      \item Suppose the condition that $f$ is continuous is removed. Construct
+	an example of a strictly increasing function $f$ defined on $\R$, and
+	subset $S\subseteq \R$, where $\sup S$ is finite, but $\sup T \ne
+	f(\sup S)$.
+    \end{enumerate}
+  \item Define the sequence of functions $(h_n)$ on $\R$
+    according to
+    \[
+    h_n(x) = \left\{
+    \begin{array}{ll}
+      n & \qquad\text{if $|x|\le\nicefrac{1}{2n}$,} \\
+      0 & \qquad\text{if $|x|>\nicefrac{1}{2n}$.}
+    \end{array}
+    \right.
+    \]
+    \begin{enumerate}
+      \item Sketch $h_1$, $h_2$, and $h_3$.
+      \item Prove that $(h_n)$ converges pointwise to $0$ on $\R \setminus \{0\}$.
+      \item Let $f$ be a continuous real-valued function on $\R$.
+	Prove that
+	\[
+	\lim_{n\to\infty} \int_{-\infty}^\infty h_n f = f(0).
+	\]
+      \item Construct an example of an integrable function $g$ on $\R$
+	where
+	\[
+	\lim_{n\to\infty} \int_{-\infty}^\infty h_n g
+	\]
+	exists and is a real number, but does not equal $g(0)$.
+    \end{enumerate}
+  \item 
+    \begin{enumerate}
+      \item Define $B=[1,2]\cup(3,4)$ in $\R$ with the standard metric. Calculate
+        the closure $\bar{B}$, and interior $B^\circ$. In addition, calculate
+        the boundary defined as $\p B = \bar{B} \setminus B^\circ$.
+      \item Let $\{A_n\}_{n=1}^\infty$ be a sequence of open sets in a general
+        metric space $(S,d)$ such that $A_{n+1} \supseteq A_n$ for all $n$.
+        Let $(x_n)$ be a sequence where $x_n \in A_{n+1} \setminus A_n$, and
+        $\lim_{n\to\infty} x_n = x$. Define $A=\bigcup_{n=1}^\infty A_n$. Prove
+        that $x \in \p A$.
+    \end{enumerate}    
+\end{enumerate}
+\end{document}

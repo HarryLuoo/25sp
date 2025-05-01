@@ -1,0 +1,270 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{geometry} % More reasonable margins
+\geometry{margin=0.7in}
+
+% Macro definitions
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\sep}{\,:\,}
+\newcommand{\Trans}{\mathsf{T}}
+
+\theoremstyle{definition} % Use upright font for body
+\newtheorem{problem}{Problem}
+\theoremstyle{definition} % Use upright font for body
+\newtheorem*{solution}{Solution Sketch}
+\renewcommand{\qedsymbol}{} % Remove QED symbol from solution environment if amsthm adds one
+
+\title{Problems and Solutions: Properties of the Riemann Integral}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{problem}
+Suppose $f$ is a continuous function on $[a,b]$, and $f(x)\ge 0$ for all $x\in[a,b]$. Prove that if $\int_a^b f = 0$, then $f(x)=0$ for all $x\in[a,b]$.
+\end{problem}
+
+\begin{solution}
+The proof relies on Ross, Theorem 33.4(ii) [2], which states this result directly.
+Alternatively, prove by contradiction:
+\begin{itemize}
+    \item Assume $f(x_0) > 0$ for some $x_0 \in (a,b)$.
+    \item By continuity of $f$, there exists $\delta > 0$ such that for $x \in (x_0-\delta, x_0+\delta) \subset [a,b]$, we have $f(x) > f(x_0)/2$. Let $\alpha = f(x_0)/2 > 0$ and $[c,d] = [x_0-\delta/2, x_0+\delta/2]$.
+    \item Since $f(x) \ge 0$ everywhere, and $f(x) \ge \alpha$ on $[c,d]$, we have by monotonicity of the integral [Ross, Thm. 33.4(i)]:
+    \[
+    \int_a^b f(x) \, dx \ge \int_c^d f(x) \, dx \ge \int_c^d \alpha \, dx = \alpha (d-c) = \alpha \delta > 0
+    \]
+    \item This contradicts the given condition $\int_a^b f = 0$. Thus, the assumption must be false, and $f(x)=0$ for all $x \in [a,b]$. (Handle endpoints $a,b$ similarly if $x_0$ is an endpoint).
+\end{itemize}
+\end{solution}
+
+\begin{problem}
+Consider the function
+\begin{equation*}
+  f(x)=\begin{cases}
+    1 & \qquad \text{if } x=2^{-n} \text{ for } n\in \N, \\
+    0 & \qquad \text{otherwise.}
+  \end{cases}
+\end{equation*}
+Prove that $f$ is integrable on $[0,1]$ and that $\int_0^1 f = 0$.
+\end{problem}
+
+\begin{solution}
+\textbf{Boundedness:} $0 \le f(x) \le 1$, so $f$ is bounded.
+
+\textbf{Lower Integral:} For any partition $P=\{t_0, \dots, t_k\}$ of $[0,1]$, any subinterval $[t_{i-1}, t_i]$ contains points where $f(x)=0$ (e.g., irrationals). Thus, $m_i = \inf\{f(x) : x \in [t_{i-1}, t_i]\} = 0$. The lower sum is
+\[
+L(f,P) = \sum_{i=1}^k m_i (t_i - t_{i-1}) = \sum_{i=1}^k 0 \cdot (t_i - t_{i-1}) = 0
+\]
+The lower Darboux integral is $L(f) = \sup_P \{L(f,P)\} = 0$.
+
+\textbf{Upper Integral:} We use the integrability criterion [Ross, Thm. 32.5]: $f$ is integrable iff for any $\epsilon > 0$, there exists a partition $P$ such that $U(f,P) - L(f,P) < \epsilon$. Since $L(f,P)=0$, we need $U(f,P) < \epsilon$.
+\begin{itemize}
+    \item Let $\epsilon > 0$. The set where $f(x)=1$ is $S=\{2^{-n} : n \in \N\}$. These points accumulate only at 0.
+    \item Choose $N \in \N$ large enough such that $2^{-N} < \epsilon/2$. The points $\{2^{-n} : n > N\}$ are in $[0, 2^{-N})$. The points $x_j = 2^{-j}$ for $j=1, \dots, N$ are in $[2^{-N}, 1]$.
+    \item Choose $\eta > 0$ small enough such that $\eta < \epsilon/(4N)$ and the intervals $[x_j-\eta, x_j+\eta]$ are disjoint within $[2^{-N}, 1]$.
+    \item Define a partition $P$ using points $0, 2^{-N}$ and $x_j \pm \eta$ for $j=1,\dots,N$. Let $P = \{0=t_0 < t_1 < \dots < t_m=1\}$.
+    \item The upper sum is $U(f,P) = \sum_{i=1}^m M_i (t_i - t_{i-1})$, where $M_i = \sup_{[t_{i-1}, t_i]} f$. $M_i=1$ only if the subinterval contains some $2^{-n}$.
+    \item Contribution from the first subinterval $[0, t_1]$ (assuming $t_1 \approx 2^{-N}$, we can ensure $t_1 \le 2^{-N}$): Contains points $2^{-n}$ for $n>N$. $M_1=1$. We can choose $t_1 = 2^{-N}$. Contribution is $M_1(t_1-t_0) = 1 \cdot 2^{-N} < \epsilon/2$.
+    \item Contribution from intervals covering $x_1, \dots, x_N$: Each $x_j$ is contained in one or two subintervals of total length at most $2\eta = \epsilon/(2N)$. $M_i=1$ for these. Total contribution from these $N$ points is bounded by $N \cdot (2\eta) = N \cdot (\epsilon/(2N)) = \epsilon/2$.
+    \item Contribution from other intervals: These contain no points $2^{-n}$, so $M_i=0$. Contribution is 0.
+    \item Total upper sum:
+    \[
+    U(f,P) < \frac{\epsilon}{2} + \frac{\epsilon}{2} + 0 = \epsilon
+    \]
+\end{itemize}
+Since $U(f,P)$ can be made arbitrarily small, the upper integral $U(f) = \inf_P \{U(f,P)\} = 0$.
+
+\textbf{Conclusion:} Since $L(f)=U(f)=0$, $f$ is integrable on $[0,1]$ and $\int_0^1 f = 0$.
+\end{solution}
+
+\begin{problem}
+Construct an example of a function where $f(x)^2$ is integrable on $[0,1]$ but $f(x)$ is not.
+\end{problem}
+
+\begin{solution}
+Define $f: [0,1] \to \mathbb{R}$ by
+\[
+f(x) = \begin{cases} 1 & \quad \text{if } x \in \mathbb{Q} \cap [0,1] \\ -1 & \quad \text{if } x \in (\mathbb{R} \setminus \mathbb{Q}) \cap [0,1] \end{cases}
+\]
+\textbf{Integrability of $f$:} For any partition $P$, any subinterval $[t_{k-1}, t_k]$ contains both rational and irrational numbers.
+\[ m_k = \inf_{x \in [t_{k-1}, t_k]} f(x) = -1, \quad M_k = \sup_{x \in [t_{k-1}, t_k]} f(x) = 1 \]
+The Darboux sums are:
+\[ L(f,P) = \sum_{k=1}^n (-1)(t_k-t_{k-1}) = -1, \quad U(f,P) = \sum_{k=1}^n (1)(t_k-t_{k-1}) = 1 \]
+The lower and upper integrals are $L(f) = -1$ and $U(f) = 1$. Since $L(f) \neq U(f)$, $f$ is not integrable [Ross, Def. 32.3].
+
+\textbf{Integrability of $f^2$:} Consider $g(x) = f(x)^2$.
+If $x$ is rational, $g(x) = (1)^2 = 1$. If $x$ is irrational, $g(x) = (-1)^2 = 1$.
+So, $g(x) = f(x)^2 = 1$ for all $x \in [0,1]$. This is a constant function.
+Constant functions are continuous, and continuous functions on $[a,b]$ are integrable [Ross, Thm. 33.2].
+Therefore, $f^2$ is integrable on $[0,1]$.
+\end{solution}
+
+\begin{problem}
+Construct an example of a sequence of functions $(f_n)$ on $[0,1]$ such that $f_n\to 0$ pointwise, but the sequence $s_n = \int_0^1 f_n$ diverges.
+\end{problem}
+
+\begin{solution}
+Consider the sequence $f_n(x) = n^2 x (1-x^2)^n$ for $x \in [0,1]$ [4].
+
+\textbf{Pointwise Convergence:}
+\begin{itemize}
+    \item If $x=0$, $f_n(0) = 0$ for all $n$, so $\lim_{n\to\infty} f_n(0) = 0$.
+    \item If $0 < x \le 1$, let $r = 1-x^2$. Then $0 \le r < 1$. We need $\lim_{n\to\infty} n^2 x r^n$. Since $0 \le r < 1$, $\lim_{n\to\infty} n^p r^n = 0$ for any $p$ [Rudin, Thm. 3.20(d)]. Thus,
+    \[ \lim_{n\to\infty} f_n(x) = x \lim_{n\to\infty} (n^2 r^n) = x \cdot 0 = 0 \]
+\end{itemize}
+So, $f_n \to 0$ pointwise on $[0,1]$.
+
+\textbf{Sequence of Integrals:} Calculate $s_n = \int_0^1 f_n(x) \, dx$.
+\[ s_n = \int_0^1 n^2 x (1-x^2)^n \, dx \]
+Use substitution $u = 1-x^2$, $du = -2x \, dx$. When $x=0, u=1$. When $x=1, u=0$.
+\[ s_n = n^2 \int_1^0 u^n \left(-\frac{1}{2} \, du\right) = \frac{n^2}{2} \int_0^1 u^n \, du = \frac{n^2}{2} \left[ \frac{u^{n+1}}{n+1} \right]_0^1 = \frac{n^2}{2(n+1)} \]
+
+\textbf{Divergence:} Evaluate the limit of $s_n$:
+\[ \lim_{n\to\infty} s_n = \lim_{n\to\infty} \frac{n^2}{2n+2} = \lim_{n\to\infty} \frac{n}{2 + 2/n} = +\infty \]
+The sequence of integrals $s_n$ diverges.
+\end{solution}
+
+\begin{problem}
+Suppose that $f$ is continuous on $(a,b)$, where $a$ may be $-\infty$ and $b$ may be $\infty$. If $\int_a^b |f(x)|dx <\infty$, show that the integral $\int_a^b f(x) dx$ exists and is finite.
+\end{problem}
+
+\begin{solution}
+Define the positive and negative parts of $f$:
+\[ f^+(x) = \max\{f(x), 0\}, \quad f^-(x) = \max\{-f(x), 0\} \]
+These are continuous and non-negative. We have the relations:
+\[ f(x) = f^+(x) - f^-(x), \quad |f(x)| = f^+(x) + f^-(x) \]
+From these, we get the inequalities:
+\[ 0 \le f^+(x) \le |f(x)|, \quad 0 \le f^-(x) \le |f(x)| \]
+We are given that $\int_a^b |f(x)| \, dx$ converges. By the comparison test for improper integrals [Ross, Exer. 36.6], since $f^+, f^-$ are non-negative and bounded above by the integrable function $|f|$, their improper integrals must also converge:
+\[ \int_a^b f^+(x) \, dx < \infty, \quad \int_a^b f^-(x) \, dx < \infty \]
+The improper integral $\int_a^b f(x) \, dx$ exists if the limits defining it exist and are finite. For $c \in (a,b)$:
+\[ \int_a^b f \, dx = \lim_{y \to a^+} \int_y^c f \, dx + \lim_{z \to b^-} \int_c^z f \, dx \]
+Since $f = f^+ - f^-$, and the integrals of $f^+$ and $f^-$ converge, the limits for $f$ must exist:
+\[ \lim_{y \to a^+} \int_y^c f \, dx = \lim_{y \to a^+} \int_y^c f^+ \, dx - \lim_{y \to a^+} \int_y^c f^- \, dx \quad (\text{exists and is finite}) \]
+\[ \lim_{z \to b^-} \int_c^z f \, dx = \lim_{z \to b^-} \int_c^z f^+ \, dx - \lim_{z \to b^-} \int_c^z f^- \, dx \quad (\text{exists and is finite}) \]
+Therefore, $\int_a^b f(x) \, dx$ exists and is finite, equaling $\int_a^b f^+ \, dx - \int_a^b f^- \, dx$.
+\end{solution}
+
+\begin{problem}
+\begin{enumerate}[(a)]
+  \item Suppose $|f(x)|\le M$ for $x\in[a,b]$. Show $|f(x)^2-f(y)^2| \le 2M |f(x)-f(y)|$.
+  \item Prove that if $f$ is integrable on $[a,b]$, then so is $f^2$.
+  \item Suppose $f, g$ are integrable on $[a,b]$. Show $fg$ is integrable.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+(a) Use the difference of squares:
+\[ |f(x)^2 - f(y)^2| = |(f(x)-f(y))(f(x)+f(y))| = |f(x)-f(y)| |f(x)+f(y)| \]
+By the triangle inequality and the bound $|f(z)| \le M$:
+\[ |f(x)+f(y)| \le |f(x)|+|f(y)| \le M+M = 2M \]
+Substituting gives the result:
+\[ |f(x)^2 - f(y)^2| \le |f(x)-f(y)| (2M) \]
+
+(b) If $f$ is integrable, it is bounded, say $|f(x)| \le M$. Then $|f(x)^2| \le M^2$, so $f^2$ is bounded.
+Use the integrability criterion $U(h,P) - L(h,P) < \epsilon$ [Ross, Thm. 32.5]. Let $\epsilon > 0$.
+For any subinterval $I_k = [t_{k-1}, t_k]$ of a partition $P$, let $M_k(h) = \sup_{I_k} h$ and $m_k(h) = \inf_{I_k} h$. From (a), for $x,y \in I_k$: $|f(x)^2 - f(y)^2| \le 2M |f(x) - f(y)|$. This implies:
+\[ M_k(f^2) - m_k(f^2) \le 2M (M_k(f) - m_k(f)) \]
+Summing over the partition:
+\[ U(f^2, P) - L(f^2, P) = \sum_k (M_k(f^2) - m_k(f^2)) \Delta t_k \le \sum_k 2M (M_k(f) - m_k(f)) \Delta t_k \]
+\[ U(f^2, P) - L(f^2, P) \le 2M (U(f, P) - L(f, P)) \]
+Since $f$ is integrable, choose $P$ such that $U(f, P) - L(f, P) < \epsilon/(2M)$ (assume $M>0$; if $M=0$, $f=0$, $f^2=0$ is integrable).
+Then $U(f^2, P) - L(f^2, P) < 2M (\epsilon/(2M)) = \epsilon$. Thus $f^2$ is integrable.
+
+(c) Use the polarization identity [Ross, Exer. 33.8a]:
+\[ fg = \frac{1}{4} \left( (f+g)^2 - (f-g)^2 \right) \]
+\begin{itemize}
+    \item If $f, g$ are integrable, then $f+g$ and $f-g$ are integrable [Ross, Thm. 33.3].
+    \item By part (b), $(f+g)^2$ and $(f-g)^2$ are integrable.
+    \item The difference $(f+g)^2 - (f-g)^2$ is integrable [Ross, Thm. 33.3].
+    \item Multiplying by the constant $1/4$, $fg$ is integrable [Ross, Thm. 33.3].
+\end{itemize}
+\end{solution}
+
+\begin{problem}
+\begin{enumerate}[(a)]
+  \item For $u,v\in \R$, prove $uv \le (u^2+v^2)/2$. If $\int_a^b f^2 = 1, \int_a^b g^2 = 1$, show $\int_a^b fg \le 1$.
+  \item Prove the Schwarz inequality: $|\int_a^b fg| \le (\int_a^b f^2)^{1/2} (\int_a^b g^2)^{1/2}$.
+  \item Let $X=C[a,b]$. Show $d(f,g) = (\int_a^b |f-g|^2)^{1/2}$ is a metric.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+(a) The inequality $(u-v)^2 = u^2 - 2uv + v^2 \ge 0$ implies $u^2+v^2 \ge 2uv$, hence $uv \le (u^2+v^2)/2$.
+Applying this pointwise: $f(x)g(x) \le \frac{f(x)^2 + g(x)^2}{2}$.
+Since $f, g$ are integrable, $f^2, g^2, fg$ are integrable (Problem 6). Integrate the inequality [Ross, Thm. 33.4(i)]:
+\[ \int_a^b f(x)g(x) \, dx \le \int_a^b \frac{f(x)^2 + g(x)^2}{2} \, dx \]
+Using linearity [Ross, Thm. 33.3]:
+\[ \int_a^b fg \le \frac{1}{2} \left( \int_a^b f^2 + \int_a^b g^2 \right) \]
+Given $\int f^2 = 1$ and $\int g^2 = 1$, we get $\int_a^b fg \le \frac{1}{2}(1+1) = 1$.
+
+(b) Consider the quadratic in $\lambda$:
+\[ Q(\lambda) = \int_a^b (f(x) + \lambda g(x))^2 \, dx \ge 0 \]
+Expand using linearity:
+\[ Q(\lambda) = \int_a^b f^2 \, dx + 2\lambda \int_a^b fg \, dx + \lambda^2 \int_a^b g^2 \, dx \]
+Let $A = \int g^2$, $B = 2 \int fg$, $C = \int f^2$. Then $A\lambda^2 + B\lambda + C \ge 0$.
+If $A=0$, then $g=0$ a.e., $\int fg = 0$, inequality holds ($0 \le 0$).
+If $A > 0$, the quadratic is always $\ge 0$, so its discriminant must be $\le 0$:
+\[ B^2 - 4AC \le 0 \]
+\[ \left( 2 \int_a^b fg \right)^2 - 4 \left( \int_a^b g^2 \right) \left( \int_a^b f^2 \right) \le 0 \]
+\[ 4 \left( \int_a^b fg \right)^2 \le 4 \left( \int_a^b f^2 \right) \left( \int_a^b g^2 \right) \]
+\[ \left( \int_a^b fg \right)^2 \le \left( \int_a^b f^2 \right) \left( \int_a^b g^2 \right) \]
+Taking the square root yields the Schwarz inequality:
+\[ \left| \int_a^b fg \right| \le \left( \int_a^b f^2 \right)^{1/2} \left( \int_a^b g^2 \right)^{1/2} \]
+
+(c) Verify metric properties for $d(f,g) = \left(\int_a^b |f-g|^2 \right)^{1/2}$ on $X=C[a,b]$.
+\begin{enumerate}
+    \item \textbf{Non-negativity:} $|f-g|^2 \ge 0 \implies \int |f-g|^2 \ge 0 \implies d(f,g) \ge 0$.
+    \item \textbf{Identity:} $d(f,g)=0 \iff \int |f-g|^2 = 0$. Since $|f-g|^2$ is continuous and non-negative, this holds iff $|f(x)-g(x)|^2 = 0$ for all $x$, which means $f(x)=g(x)$ for all $x$, i.e., $f=g$ [Ross, Thm. 33.4(ii)].
+    \item \textbf{Symmetry:} $|f-g|^2 = |g-f|^2 \implies \int |f-g|^2 = \int |g-f|^2 \implies d(f,g)=d(g,f)$.
+    \item \textbf{Triangle Inequality (Minkowski):} Show $d(f,h) \le d(f,g) + d(g,h)$. Let $u=f-g, v=g-h$. Need to show $(\int |u+v|^2)^{1/2} \le (\int |u|^2)^{1/2} + (\int |v|^2)^{1/2}$.
+    \[ \int |u+v|^2 = \int (u+v)^2 = \int (u^2 + 2uv + v^2) = \int u^2 + 2\int uv + \int v^2 \]
+    By Schwarz inequality (part b): $\int uv \le |\int uv| \le (\int u^2)^{1/2} (\int v^2)^{1/2}$.
+    \[ \int |u+v|^2 \le \int u^2 + 2(\int u^2)^{1/2}(\int v^2)^{1/2} + \int v^2 \]
+    The right side is $(\|u\|_2 + \|v\|_2)^2$, where $\|w\|_2 = (\int w^2)^{1/2}$.
+    \[ \int |u+v|^2 \le \left( \left(\int u^2\right)^{1/2} + \left(\int v^2\right)^{1/2} \right)^2 \]
+    Taking the square root gives the Minkowski inequality:
+    \[ \left(\int |u+v|^2 \right)^{1/2} \le \left(\int u^2\right)^{1/2} + \left(\int v^2\right)^{1/2} \]
+    Substituting back $u=f-g, v=g-h, u+v=f-h$ gives $d(f,h) \le d(f,g) + d(g,h)$.
+\end{enumerate}
+All properties hold, so $d$ is a metric.
+\end{solution}
+
+\section*{Chapter Summary: The Riemann Integral}
+
+These problems primarily cover material from Ross, Chapters 32 and 33, focusing on the definition and fundamental properties of the Riemann integral.
+
+The core concept is the \textbf{Definition of Riemann Integrability} via Darboux sums (Ross, Def. 32.1, 32.3). A bounded function $f$ on $[a,b]$ is integrable if its lower integral $L(f)$ equals its upper integral $U(f)$. The common value is $\int_a^b f$. The \textbf{Integrability Criterion} (Ross, Thm. 32.5), stating that $f$ is integrable iff for every $\epsilon > 0$, there exists a partition $P$ with $U(f,P) - L(f,P) < \epsilon$, is a key tool for proving integrability (Problems 2, 6(b)).
+
+Essential \textbf{Properties of the Integral} include:
+\begin{itemize}
+    \item \textbf{Linearity} (Ross, Thm. 33.3): $\int (cf+dg) = c\int f + d\int g$.
+    \item \textbf{Monotonicity} (Ross, Thm. 33.4(i)): $f \le g \implies \int f \le \int g$. This leads to the property that if $f \ge 0$ is continuous and $\int f = 0$, then $f \equiv 0$ (Ross, Thm. 33.4(ii), Problem 1).
+    \item \textbf{Absolute Value and Products}: If $f, g$ are integrable, then $|f|$, $f^2$, and $fg$ are integrable (Ross, Thm. 33.5, Exer. 33.7b, 33.8a; Problems 3, 6). The inequality $|\int f| \le \int |f|$ holds (Ross, Thm. 33.5).
+\end{itemize}
+
+Important classes of \textbf{Integrable Functions} include continuous functions (Ross, Thm. 33.2) and monotonic functions (Ross, Thm. 33.1). Functions with limited discontinuities may also be integrable (Problem 2).
+
+The relationship between \textbf{Integration and Limits} is subtle. Pointwise convergence of $f_n$ to $f$ does not suffice to ensure $\int f_n \to \int f$ (Problem 4). Stronger conditions like uniform convergence (Ross, Thm. 25.2) are needed.
+
+The \textbf{Schwarz Inequality} (Problem 7(b)) is a fundamental result relating the integral of a product to the integrals of squares. It forms the basis for the $L^2$ norm and metric structure on function spaces, as demonstrated by showing the triangle inequality for the $L^2$ metric on $C[a,b]$ (Problem 7(c)).
+
+Finally, the concept of \textbf{Absolute Convergence} for improper integrals is introduced (Problem 5), showing that if $\int |f|$ converges, then $\int f$ converges.
+
+\end{document}

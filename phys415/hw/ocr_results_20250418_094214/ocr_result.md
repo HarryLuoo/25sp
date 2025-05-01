@@ -1,0 +1,56 @@
+# Physics 415 <br> Spring 2025 <br> Homework 10 <br> Due Friday, April 18, 2025 
+
+This assignment covers material in Chapter 9 of Reif. I recommend reading through the text and also Lectures Notes 30-33.
+
+Problem 1: (Single-particle density of states) Calculate the energy-dependent density of states $\rho(\varepsilon)$, defined such that $\rho(\varepsilon) d \varepsilon$ is equal to the number of states in the energy range between $\varepsilon$ and $\varepsilon+d \varepsilon$, in the following cases:
+(a) Particle moving in two dimensions with energy $\varepsilon=p^{2} / 2 m=\hbar^{2} k^{2} / 2 m$, where $k=|\mathbf{k}|$ is the magnitude of the two-dimensional wave-vector $\mathbf{k}$.
+(b) Ultra-relativistic particle in three dimensions with single-particle energy $\varepsilon=c p=\hbar c k$, where where $k=|\mathbf{k}|$.
+
+Problem 2: (Pressure of a quantum ideal gas, adapted from Reif 9.5) Consider a free particle in a cubic container of edge length $L$ and volume $V=L^{3}$.
+(a) Each quantum state $r$ of this particle has a corresponding kinetic energy $\varepsilon_{r}$ which depends on $V$. What is $\varepsilon_{r}(V)$ ?
+(b) Find the contribution to the gas pressure $p_{r}=-\partial \varepsilon_{r} / \partial V$ of a particle in this state in terms of $\varepsilon_{r}$ and $V$.
+(c) Use this result to show that the mean pressure $\bar{p}$ of any ideal gas of non-interacting particles is always related to its mean total kinetic energy $\bar{E}$ by $\bar{p}=\frac{2}{3} \bar{E} / V$, irrespective of whether the gas obeys classical, FD, or BE statistics.
+
+Problem 3: (Velocity distribution of a Fermi gas, adapted from Reif 9.16) An ideal Fermi gas is at rest at absolute zero and has a Fermi energy $\varepsilon_{F}$. The mass of each particle is $m$. If $\mathbf{v}$ denotes the velocity of a molecule, find $\overline{v_{x}}$ and $\overline{v_{x}^{2}}$.
+
+Problem 4: (Virial expansion, ultra-relativistic particles) Consider a three-dimensional ultrarelativistic gas, with single-particle energy $\varepsilon=c|\mathbf{p}|=c \hbar|\mathbf{k}|$. Derive the first quantum correction to the equation of state $p(n, T)$ for this system, for both bosons and fermions. Hint: Follow the steps in Lecture Notes 31, using your result for the density of states in Problem 1b to write the thermodynamic quantities as integrals over energy.
+
+Problem 5 (Two-dimensional Fermi gas) Consider an ideal (non-relativistic) Fermi gas in two dimensions, confined to a square area $A^{1}$.
+
+[^0]
+[^0]:    ${ }^{1}$ In semiconductor heterostructures, electrons can be confined in quantum wells, restricting their motion to two dimensions. At the simplest level, such a system can be modeled as a two-dimensional ideal Fermi gas
+
+(a) Find the Fermi energy $\varepsilon_{F}$ in terms of the density $n=N / A$ (where $N$ is the total particle number), and show that the average total energy of the system at $T=0$ is $E_{0}=N \varepsilon_{F} / 2$.
+(b) Explicitly calculate the chemical potential $\mu$ as a function of temperature $T$ and particle density $n$. Verify that $\mu$ has the expected behavior in the degenerate limit $\left(T \ll \varepsilon_{F}\right)$ and non-degenerate limit $\left(T \gg \varepsilon_{F}\right)$. Sketch $\mu$ as a function of $T$. Hint: Use your result for the density of states from Problem 1a to explicitly evaluate the energy integral relating the particle number and chemical potential.
+(c) Calculate the heat capacity $C_{V}$ of the gas in the limit $T \ll \varepsilon_{F}$. Also show that $C_{V}$ has the expected behavior when $T \gg \varepsilon_{F}$. Sketch the heat capacity as a function of $T$.
+
+Problem 6 (Pauli paramagnetism, adapted from Reif 9.21, 9.22) In this problem you analyze the paramagnetism of the conduction electrons in a metal, modeled as a degenerate Fermi gas.
+(a) Following the qualitative approach in Lecture 32, make an estimate of the paramagnetic spin susceptibility $\chi$ of the conduction electrons.
+(b) Verify your estimate by explicitly calculating $\chi$ at $T=0$ in the following way: Suppose the metal has a density of $n$ conduction electrons per unit volume, each electron having an associated magnetic moment $\mu_{m}$ (not to be confused with the chemical potential), and that the metal is placed in a small external magnetic field $H$. The total energy of the conduction electrons in the presence of the field $H$ must be as small as possible. Use this fact to find an explicit expression for $\chi$ due to the spin magnetic moments of these conduction electrons.
+
+Problem 7 (Chandrasekhar limit) When stars exhaust their fuel, the temperature $T \rightarrow 0$ and they have to rely on the Pauli exclusion principle to support themselves through degeneracy pressure. Such stars, supported by electron degeneracy pressure, are called white dwarfs. In this problem, you will investigate conditions for the stability of a white dwarf.
+(a) A crude non-relativistic model of a white dwarf star consists of a sphere of radius $R$ of free electrons at zero temperature, together with a sufficient number of positive ions to make the star electrically neutral. Determine the energy $E_{\mathrm{el}}$ of all the electrons. Assuming the gravitational energy of the star is given by $E_{\text {grav }}=-\gamma G M^{2} / R$, where $M$ is the total mass of the star and $G$ is Newton's constant, show that if the state of equilibrium of the star is obtained by minimizing the total energy $E=E_{\text {grav }}+E_{\text {el }}$, then $R \propto M^{-1 / 3}$. The elements that can compose a white dwarf: helium, carbon or oxygen, all have roughly equal numbers of neutrons and protons, so that we can approximate the total mass of the star as $M=2 N m_{p}$, where $N$ is the number of electrons and $m_{p}$ is the proton mass. For concreteness, you may set $\gamma=3 / 5$, which corresponds to a simplified model in which the mass density of the star is uniform (more realistic modeling is also possible).
+(b) According to part (a), a heavier mass star will have a smaller radius. As $R$ decreases, the Fermi energy $\varepsilon_{F}$ grows until it becomes comparable to the electron rest mass energy $m_{e} c^{2}$, at which point the non-relativistic approximation breaks down. (Alternatively, we may say that the Fermi velocity $v_{F}$ grows to be of order the speed of light $c$, where $v_{F}$ is defined via $\varepsilon_{F}=\frac{1}{2} m_{e} v_{F}^{2}$.) We account for this by using the relativistic energy-momentum relation:
+
+$$
+\varepsilon(p)=\sqrt{p^{2} c^{2}+m_{e}^{2} c^{4}}
+$$
+
+When the electrons become ultra-relativistic $p c \gg m_{e} c^{2}$, this may be approximated as
+
+$$
+\varepsilon(p) \approx c p+\frac{1}{2} \frac{m_{e}^{2} c^{3}}{p}
+$$
+
+Use this approximate form of $\varepsilon(p)$ to compute the zero temperature electronic energy $E_{\mathrm{el}}$ in the ultra-relativistic limit. Hint: Use the de Broglie relation to replace $p=\hbar k$, with $k$ the magnitude of the electron wave-vector, and compute the total energy through an integration over $k$-space.
+(c) Using your result from (b), show that the total energy $E=E_{\mathrm{el}}+E_{\text {grav }}$ in the ultra-relativistic limit now takes the form
+
+$$
+E(R) \approx \frac{A-B}{R}+C R
+$$
+
+and determine the coefficients $A, B$, and $C$.
+(d) As in part (a), the equilibrium radius is determined by minimizing the energy $E(R)$ in Eq. (3). What is the condition on the coefficients $A$ and $B$ for such a minimum to exist? Express this condition as a bound on the mass $M$ of the white dwarf in the form $M<M_{C}$, and determine $M_{C}$. Compare $M_{C}$ to the solar mass $M_{\odot}$.
+The limiting mass $M_{C}$ is known as the Chandrasekhar limit, after S. Chandrasekhar, who first derived it in 1931. A more realistic calculation, which does not assume a constant mass density of the star, yields $M_{C}=1.4 M_{\odot}$. If a star's mass exceeds the Chandrasekhar limit, it cannot become a white-dwarf when its nuclear fuel is exhausted. Instead, it must continue to collapse, becoming either a neutron star or a black hole.
+For those interested, a more detailed discussion of stellar evolution, white dwarfs, and neutron stars at the level of our course can be found here: https://schwartz.scholars.harvard. edu/sites/g/files/omnuum7046/files/schwartz/files/15-stars_0.pdf.
+

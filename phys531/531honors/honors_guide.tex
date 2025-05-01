@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb} % Standard math packages
+\usepackage{graphicx}        % For potential figures later
+\usepackage{bm}              % For bold math symbols (vectors)
+\usepackage{braket}          % For Dirac notation < | >
+\usepackage[left=0.4in,right=2in]{geometry} % Set margins
+
+% Custom commands (optional)
+\newcommand{\pd}{\partial}
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\sigmavec}{\bm{\sigma}} % Bold sigma for vector of Pauli matrices
+\newcommand{\Hc}{\mathcal{H}}       % Hamiltonian symbol
+
+\title{Chapter X: Dirac Fermions in Condensed Matter}
+\author{A Concise Introduction for Harry}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction: Dirac Physics in Solids}
+
+The Dirac equation, fundamental to relativistic quantum mechanics, describes spin-1/2 particles and predicts the energy-momentum relation:
+\begin{equation}
+E^2 = (|\mathbf{p}|c)^2 + (m_0 c^2)^2.
+\label{eq:relativistic_energy}
+\end{equation}
+Remarkably, its mathematical structure also governs the behavior of electron quasiparticles in certain solids, known as \textbf{Dirac materials}. In these systems, the speed of light $c$ is replaced by a Fermi velocity $v \ll c$, and the rest mass $m_0$ by an effective mass $m$. These quasiparticles often possess a \emph{pseudospin} degree of freedom alongside their momentum. This chapter introduces the Hamiltonians describing these quasiparticles and explores their key properties relevant to your project. We set $\hbar = 1$.
+
+\section{Dirac Hamiltonians in Low Dimensions}
+
+Dirac Hamiltonians are characterized by being linear in momentum. They act on multi-component spinors.
+
+\subsection{One Dimension (1D)}
+A typical 1D Dirac Hamiltonian is:
+\begin{equation}
+\Hc_{1D} = v \hat{p}_x \sigma_x + m \sigma_z.
+\label{eq:H_1D}
+\end{equation}
+Here, $\hat{p}_x = -i \pd/\pd x$, and $\sigma_{x,z}$ are Pauli matrices acting on a 2-component spinor. In momentum space ($\hat{p}_x \to p$), the Hamiltonian becomes $\Hc_{1D}(p) = \begin{pmatrix} m & v p \\ v p & -m \end{pmatrix}$. Its eigenvalues yield the dispersion relation:
+\begin{equation}
+E_{\pm}(p) = \pm \sqrt{m^2 + (v p)^2}.
+\label{eq:dispersion_1D}
+\end{equation}
+This shows two energy bands separated by a gap $2|m|$ at $p=0$. If $m=0$, the gap closes, forming a \textbf{Dirac point}. (\textit{Project: Find eigenstates and plot dispersion}).
+
+\subsection{Two Dimensions (2D)}
+In 2D, relevant for graphene or topological insulator surfaces, a common form is:
+\begin{equation}
+\Hc_{2D} = v (\hat{p}_x \sigma_x + \hat{p}_y \sigma_y) + m \sigma_z.
+\label{eq:H_2D}
+\end{equation}
+In momentum space ($\hat{\mathbf{p}} \to \mathbf{p}=(p_x, p_y)$), the Hamiltonian matrix is $\Hc_{2D}(\mathbf{p}) = \begin{pmatrix} m & v(p_x - i p_y) \\ v(p_x + i p_y) & -m \end{pmatrix}$. The eigenvalues give a similar dispersion:
+\begin{equation}
+E_{\pm}(\mathbf{p}) = \pm \sqrt{m^2 + v^2 |\mathbf{p}|^2}.
+\label{eq:dispersion_2D}
+\end{equation}
+Again, a gap $2|m|$ exists at $\mathbf{p}=0$ unless $m=0$, which leads to \textbf{Dirac cones}. (\textit{Project: Find eigenstates and plot dispersion}).
+
+\subsection{Three Dimensions (3D)}
+In 3D, the Hamiltonian typically involves $4 \times 4$ matrices ($\alpha_i, \beta$) satisfying the Clifford algebra:
+\begin{equation}
+\Hc_{3D} = v \sum_{i=x,y,z} \hat{p}_i \alpha_i + m \beta.
+\label{eq:H_3D_standard}
+\end{equation}
+This yields the dispersion $E_{\pm}(\mathbf{p}) = \pm \sqrt{m^2 + v^2 |\mathbf{p}|^2}$. (\textit{Project: Clarify the specific 3D Hamiltonian form given and find its eigenstates/values}).
+
+\section{Momentum Space Geometry: Berry Phase Concepts}
+
+Eigenstates $|\psi(\mathbf{p})\rangle$ contain geometric information revealed as $\mathbf{p}$ varies. The \textbf{Berry connection} measures the infinitesimal phase shift:
+\begin{equation}
+\mathcal{A}_i(\mathbf{p}) = i \braket{\psi(\mathbf{p}) | \frac{\pd}{\pd p_i} | \psi(\mathbf{p})}.
+\label{eq:berry_connection}
+\end{equation}
+It acts like a vector potential in momentum space. Its curl gives the \textbf{Berry curvature}. In 2D:
+\begin{equation}
+\Omega(\mathbf{p}) = \frac{\pd \mathcal{A}_y}{\pd p_x} - \frac{\pd \mathcal{A}_x}{\pd p_y}.
+\label{eq:berry_curvature_2D}
+\end{equation}
+$\Omega(\mathbf{p})$ acts like a momentum-space magnetic field. Its integral over the 2D Brillouin zone, for a gapped band, gives a topological invariant, the integer \textbf{Chern number} $C$:
+\begin{equation}
+C = \frac{1}{2\pi} \int d^2p \, \Omega(\mathbf{p}).
+\label{eq:chern_number}
+\end{equation}
+A non-zero Chern number signals non-trivial topology. (\textit{Project: Calculate $\mathcal{A}_i$ and $\Omega$ for $\Hc_{2D}$}).
+
+\section{Bulk-Boundary Correspondence}
+
+A profound principle connects the bulk topology (like $C$) to the existence of protected boundary states.
+\begin{itemize}
+    \item \textbf{1D:} A domain wall where the mass $m(x)$ changes sign in $\Hc_{1D}$ binds a zero-energy state (Jackiw-Rebbi mechanism), potentially carrying fractional fermion number. (\textit{Project: Yufei's task}).
+    \item \textbf{2D:} A non-zero Chern number $C$ implies $|C|$ gapless, chiral \textbf{edge states} propagating along the boundary. These are robust against disorder and underpin the Quantum Hall Effect (QHE). (\textit{Project: Yufei's task}).
+\end{itemize}
+
+\section{Landau Levels for 2D Dirac Fermions}
+
+Applying a perpendicular magnetic field $\mathbf{B} = B \hat{\mathbf{z}}$ to the 2D system \eqref{eq:H_2D} leads to quantization into \textbf{Landau Levels (LLs)}. We replace $\hat{\mathbf{p}}$ with the canonical momentum $\hat{\mathbf{\Pi}} = \hat{\mathbf{p}} - q\mathbf{A}$, where $q$ is the charge (e.g., $q=-e$ for electrons) and $\mathbf{B} = \nabla \times \mathbf{A}$. The components satisfy $[\hat{\Pi}_x, \hat{\Pi}_y] = i q B$.
+
+Following your professor's notes (Section A.3), ladder operators $b, b^\dagger$ are defined based on $\hat{\Pi}_{\pm} = \hat{\Pi}_x \pm i \hat{\Pi}_y$, satisfying $[b, b^\dagger]=1$. The definitions depend on the sign of $qB$. Let $M = mv_0^2$ (using $v_0$ for velocity as in notes) be the mass term and $\Omega_c = \sqrt{2|qB|}v_0$. The notes provide the Hamiltonian in terms of these operators.
+
+\textbf{Case 1: $qB < 0$} (e.g., electrons, $B>0$)
+\begin{equation}
+\Hc = \begin{pmatrix} M & -\Omega_{c} b \\ -\Omega_{c} b^{\dagger} & -M \end{pmatrix}.
+\label{eq:H_LL_qBneg_notes}
+\end{equation}
+
+\textbf{Case 2: $qB > 0$} (e.g., electrons, $B<0$)
+\begin{equation}
+\Hc = \begin{pmatrix} M & -\Omega_{c} b^{\dagger} \\ -\Omega_{c} b & -M \end{pmatrix}.
+\label{eq:H_LL_qBpos_notes}
+\end{equation}
+\textit{Note:} These specific forms might differ slightly from standard textbook derivations; we proceed assuming these are correct for the intended system.
+
+The resulting energy spectrum is indexed by $n \in \mathbb{Z}$:
+\begin{equation}
+E_{n} = \sgn(n) \sqrt{M^2 + \Omega_c^2 |n|} \quad \text{for } n \neq 0,
+\label{eq:LL_Dirac_n_nonzero_notes}
+\end{equation}
+and a unique zeroth level:
+\begin{equation}
+E_{0} = \sgn(qB) M.
+\label{eq:LL_Dirac_n0_notes}
+\end{equation}
+This spectrum features $\pm E$ symmetry and a characteristic $\sqrt{|n|B}$ dependence. The $n=0$ level's energy depends crucially on the signs of $qB$ and $M$.
+
+Each level $n$ has a degeneracy $N_{deg} = |qB|A / (2\pi) = BA/\Phi_0$, where $\Phi_0 = 2\pi/|q|$ is the flux quantum (with $\hbar=1$). The eigenstates $|n,k\rangle_D$ (given in the notes) involve specific combinations of the standard oscillator states $| |n| \rangle$ and $| |n|-1 \rangle$. The $n=0$ eigenstate is particularly simple: it's fully polarized in the pseudospin basis, aligned with $\sigma_z$ if $qB>0$ ($E_0=M$) and anti-aligned if $qB<0$ ($E_0=-M$).
+
+The notes also provide the average particle density at zero chemical potential (half-filling), obtained by summing over negative energy states:
+\begin{equation}
+\bar{n}_0 = -\sgn(qBm) \frac{1}{2} \frac{|qB|}{2\pi} = -\sgn(qBm) \frac{1}{2} \frac{B}{\Phi_0}.
+\label{eq:density_half_filling_notes}
+\end{equation}
+The factor of $1/2$ and the sign dependence arise from the unique nature of the $n=0$ LL relative to the Fermi level. (\textit{Project: Solve for the spectrum (confirming \eqref{eq:LL_Dirac_n_nonzero_notes}, \eqref{eq:LL_Dirac_n0_notes}), calculate degeneracy, discuss spectrum vs $M$, calculate $\bar{n}_0$ and $d\bar{n}_0/dB$}).
+
+\section{Outlook}
+
+The concepts covered – Dirac Hamiltonians, Berry curvature, bulk-boundary correspondence, and Landau levels – are essential tools for understanding modern condensed matter phenomena like the QHE in graphene, topological insulators, Chern insulators, and Weyl semimetals. This project provides practical experience with these foundational calculations.
+
+\end{document}
