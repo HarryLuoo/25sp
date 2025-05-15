@@ -1,0 +1,2 @@
+\contentsline {chapter}{Lecture 1 (Manual Target)}{5}{section*.2}%
+\contentsline {chapter}{Lecture 2 (Manual Target)}{9}{section*.3}%

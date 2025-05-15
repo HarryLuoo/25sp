@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb} % Needed for \eth
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots} % For plots
+\usepackage{ulem}     % For underline, using normalem to avoid messing with \emph
+
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric} % For TikZ diagrams
+\pgfplotsset{compat=1.18} % Use a recent PGFPlots version
+
+% Custom commands (optional)
+\newcommand{\avg}[1]{\overline{#1}} % Using \bar instead of \overline for simplicity in source
+\newcommand{\prob}[1]{P(#1)}
+\newcommand{\ProbDens}[1]{\mathcal{P}(#1)} % Using script P for density
+\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\dd}[1]{\mathrm{d}#1} % Differential d
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\muState}{\mu\text{-state}} % Microstate
+\newcommand{\OmegaE}{\Omega(E)}
+\newcommand{\omegaE}{\omega(E)}
+\newcommand{\PhiE}{\Phi(E)}
+\newcommand{\deltaE}{\delta E}
+\newcommand{\ethbar}{\text{\it{đ}}} % \eth symbol for inexact differential
+\newcommand{\kb}{k_B} % Boltzmann constant
+\newcommand{\tE}{\tilde{E}} % Most probable energy
+
+\title{Physics 415 - Lecture 10: Laws of Thermodynamics}
+\date{February 12, 2025}
+\author{} % Author not specified
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section*{Summary}
+
+\begin{itemize}
+    \item $\Omega(E) = \#$ accessible states with energy $(E, E+\deltaE)$.
+    \item Entropy: $S = \ln \Omega$. (State function).
+    \item Temperature: $\frac{1}{T} = \left( \pderiv{S}{E} \right)_V$. (State function).
+    \item Pressure relation: $\frac{p}{T} = \left( \pderiv{S}{V} \right)_E$. ($p$ is state function).
+    \item Thermodynamic Identity: $dE = T dS - p dV$. (Relation between state functions/variables for infinitesimal change between equilibrium states).
+    \item Equilibrium conditions (Systems 1 \& 2): $T_1=T_2$ and $p_1=p_2$. (Follows from maximizing $S_{tot} = S_1+S_2$).
+    \item Quasi-static process: $dS = \ethbar Q / T$.
+\end{itemize}
+
+\section*{Comments on Entropy}
+
+\subsection*{Classical Mechanics vs Quantum Mechanics}
+\begin{itemize}
+    \item In QM, if the energy $E$ and external parameters (e.g., volume $V$) are specified, the number of states $\Omega$ and hence the entropy $S=\ln\Omega$ are completely determined.
+    \item The same is not true in CM. Recall: In CM, we introduce phase space cells of undetermined size $\delta q \delta p = h_0$ (for 1 DOF). For $S$ DOFs, cell volume is $h_0^S$.
+    \item $\Omega(E) = \frac{\text{Vol. of accessible phase space}}{\text{Vol. of phase space cell}} = \frac{1}{h_0^S} \int_{\Gamma} dq_1 \dots dq_S dp_1 \dots dp_S$. (Integral over accessible region $E \le H(q,p) \le E+\deltaE$).
+    \item $\implies S = \ln \Omega = \ln\left(\int dq_1 \dots dp_S\right) - S \ln h_0$.
+    \item Entropy in CM contains an arbitrary additive constant that depends on the arbitrary cell size $h_0$.
+    \item Considering entropy differences $\Delta S$ makes results well-defined in CM, as the constant drops out.
+    \item The arbitrary cell size is ultimately fixed by QM. Taking the "classical limit" of quantum statistical mechanics, one finds $h_0 \to h = \text{Planck's constant}$ ($h=2\pi\hbar$). This is essentially a consequence of Heisenberg's uncertainty principle, which limits how precisely we can simultaneously determine position and momentum.
+\end{itemize}
+
+\subsection*{Behavior as $T \to 0$ (Third Law)}
+\begin{itemize}
+    \item Consider the behavior as $E \to E_0$, where $E_0$ is the ground state energy.
+    \item In QM:
+        \begin{itemize}
+            \item If the ground state is unique (non-degenerate), then $\Omega(E_0) = 1$.
+            \item If the ground state is $g$-fold degenerate, then $\Omega(E_0) = g$.
+        \end{itemize}
+        $\implies S(E_0) = \ln \Omega(E_0) = \begin{cases} 0 & \text{unique ground state} \\ \ln g & g\text{-fold degenerate ground state} \end{cases}$.
+    \item We showed earlier that typically $T$ is a monotonically increasing function of $E$ ($\partial T / \partial E > 0$).
+    \item Therefore, as $T \to 0$, we must have $E \to E_0$.
+    \item $\implies S \to S_0$ as $T \to 0$, where $S_0 = 0$ (or $\ln g$). The entropy approaches a constant value (independent of other parameters like V) as $T \to 0$.
+    \item This is a result of QM, where quantum states are naturally discrete. There is no general analog in CM (and counter-examples are easy to construct).
+\end{itemize}
+
+\section*{Laws of Thermodynamics}
+
+Our developments thus far regarding statistical mechanics can be summarized in a set of macroscopic laws for thermodynamics. Historically, these laws were identified before the development of statistical mechanics (Carnot, Clapeyron, Kelvin, Joule, ...). We now see that these laws are simple corollaries of the fundamental postulate of statistical mechanics and the identification of entropy $S=\ln \Omega$.
+
+\begin{description}
+    \item[Zeroth Law:] If system A is in thermal equilibrium with system C, and if system B is in thermal equilibrium with system C, then A is in thermal equilibrium with B.
+        ($\implies$ Follows immediately from the equilibrium condition $T_A=T_C, T_B=T_C \implies T_A=T_B$).
+
+    \item[First Law:] A macrostate of system A is characterized by its (mean) energy $E$. The change in $E$ due to interaction with other systems is $\Delta E = Q - W$.
+        ($\implies$ Defines heat $Q$ absorbed. $W$ is work done *by* the system. This decomposition follows from statistical considerations of energy conservation and work associated with external parameters).
+
+    \item[Second Law:] An equilibrium macrostate is characterized by a function $S=$ "entropy" such that:
+        (i) For a process in which an isolated system goes from one macrostate to another, $\Delta S \ge 0$.
+        (ii) If the system is not isolated and undergoes a quasi-static process, $dS = \ethbar Q / T$.
+        ($\implies$ (i) and (ii) follow from the statistical definition $S=\ln \Omega$ and the fundamental postulate).
+
+    \item[Third Law (Nernst Postulate):] As $T \to 0$, the entropy $S \to S_0$, where $S_0$ is a constant independent of all external parameters of the system. ($S_0$ is often 0 or $k_B \ln g$).
+        ($\implies$ Follows from QM level structure and the statistical definition of $S$).
+\end{description}
+
+\section*{Applications of Macroscopic Thermodynamics}
+
+Next major topic: application of macroscopic thermodynamics, i.e., of the thermo laws, in some important examples. Although we have seen that these laws are consequences of microscopic statistical mechanics, we will, for now, mostly adopt a macroscopic viewpoint.
+
+Focus primarily on a system with a single external parameter = volume $V$. Macrostate determined by $(E, V)$. (We mean average values, but fluctuations are negligible).
+Given $(E, V)$, other macro parameters are determined: $S=S(E,V)$, $T=T(E,V)$, $p=p(E,V)$.
+
+In many cases, $(E,V)$ are not the most convenient independent variables. We may want to use other pairs:
+\begin{itemize}
+    \item $(T, V) \implies S=S(T,V), E=E(T,V), p=p(T,V)$
+    \item $(T, p) \implies S=S(T,p), E=E(T,p), V=V(T,p)$
+    \item etc...
+\end{itemize}
+
+\subsection*{Response Functions}
+
+Often we probe macroscopic systems by varying some thermodynamic variable and measuring the change in another. A common way of characterizing macro systems is to measure "response functions". Some important examples are:
+
+\subsubsection*{Heat Capacities}
+Measure change in temperature $dT$ due to added heat $\ethbar Q$.
+\[ \ethbar Q = C_x dT \]
+$C_x$ is the "heat capacity" at constant parameter $x$.
+\begin{itemize}
+    \item \textbf{Heat capacity at constant volume ($C_V$):}
+    \[ \ethbar Q |_V = C_V dT \]
+    From First Law, $\ethbar Q = dE + \ethbar W$. At constant volume, $\ethbar W = p dV = 0$.
+    So, $\ethbar Q |_V = dE |_V$.
+    Considering $E=E(T,V)$, $dE = (\partial E / \partial T)_V dT + (\partial E / \partial V)_T dV$.
+    At constant $V$, $dE|_V = (\partial E / \partial T)_V dT$.
+    \[ \implies C_V = \left( \pderiv{E}{T} \right)_V \]
+
+    \item \textbf{Heat capacity at constant pressure ($C_p$):}
+    \[ \ethbar Q |_p = C_p dT \]
+    $\ethbar Q |_p = dE |_p + p dV |_p$.
+    Considering $E=E(T,p)$ and $V=V(T,p)$:
+    $dE|_p = (\partial E / \partial T)_p dT$ (since $dp=0$).
+    $dV|_p = (\partial V / \partial T)_p dT$ (since $dp=0$).
+    $\ethbar Q |_p = (\partial E / \partial T)_p dT + p (\partial V / \partial T)_p dT$.
+    \[ \implies C_p = \left( \pderiv{E}{T} \right)_p + p \left( \pderiv{V}{T} \right)_p \]
+    (Alternative using enthalpy $H=E+pV$ often simplifies this: $C_p = (\partial H / \partial T)_p$).
+\end{itemize}
+
+\subsubsection*{Compressibility and Expansivity}
+Other response functions include, e.g.:
+\begin{itemize}
+    \item \textbf{Isothermal Compressibility ($K_T$):} Measures relative change in volume under pressure at fixed $T$.
+    \[ K_T = -\frac{1}{V} \left( \pderiv{V}{p} \right)_T \]
+    (Minus sign because volume decreases as pressure increases, making $K_T > 0$).
+
+    \item \textbf{Thermal Expansivity ($\alpha_p$):} Measures relative change in volume with temperature at fixed $p$.
+    \[ \alpha_p = \frac{1}{V} \left( \pderiv{V}{T} \right)_p \]
+\end{itemize}
+
+\section*{Extensive and Intensive Quantities}
+
+When discussing macroscopic thermodynamics, we distinguish between:
+\begin{itemize}
+    \item \textbf{Extensive quantities:} Proportional to system size (volume, \# of particles). Additive.
+        \textbf{Examples:} Total energy $E$, volume $V$, entropy $S$, number of particles $N$.
+    \item \textbf{Intensive quantities:} Independent of system size. Not additive.
+        \textbf{Examples:} Pressure $p$, temperature $T$, density $\rho$.
+\end{itemize}
+
+\end{document}

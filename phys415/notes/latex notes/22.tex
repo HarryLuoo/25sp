@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb} % Needed for \eth
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots} % For plots
+\usepackage{ulem}     % For underline, using normalem to avoid messing with \emph
+\usepackage{tcolorbox} % For boxing equations
+\usepackage{braket}    % For QM state notation if needed
+
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, patterns, calc} % Added calc library as requested
+\pgfplotsset{compat=1.18} % Use a recent PGFPlots version
+
+% Custom commands (optional)
+\newcommand{\avg}[1]{\overline{#1}}
+\newcommand{\prob}[1]{P(#1)}
+\newcommand{\ProbDens}[1]{\mathcal{P}(#1)} % Using script P for density
+\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\dd}[1]{\mathrm{d}#1} % Differential d
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\muState}{\mu\text{-state}} % Microstate
+\newcommand{\OmegaE}{\Omega(E)}
+\newcommand{\omegaE}{\omega(E)}
+\newcommand{\PhiE}{\Phi(E)}
+\newcommand{\deltaE}{\delta E}
+\newcommand{\ethbar}{\text{\it{đ}}} % \eth symbol for inexact differential
+\newcommand{\kb}{k_B} % Boltzmann constant
+\newcommand{\gasR}{R} % Ideal gas constant
+\newcommand{\partfn}{Z} % Partition function symbol
+\newcommand{\grandpartfn}{\mathcal{Z}} % Grand partition function symbol
+
+% Define a tcolorbox style for boxed equations
+\tcbuselibrary{skins}
+\newtcolorbox{eqbox}[1][]{
+  enhanced,
+  colback=yellow!10!white,
+  colframe=blue!75!black,
+  boxrule=1pt,
+  arc=3mm,
+  #1
+}
+
+\title{Physics 415 - Lecture 22: Classical Ideal Gas, Gibbs Paradox}
+\date{March 12, 2025}
+\author{} % Author not specified
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section*{Summary}
+
+\begin{itemize}
+    \item Canonical Ensemble (CE): Fixed $T, V, N$. $P_r = e^{-\beta E_r} / \partfn$, $\partfn = \sum_r e^{-\beta E_r}$ ($\beta=1/T$).
+    \item Helmholtz Free Energy: $F = \avg{E} - TS = -T \ln \partfn$.
+    \item From $F=F(T,V,N)$: $dF = -S dT - p dV + \mu dN$. Allows finding $S, p, \mu$.
+    \item Average Energy: $\avg{E} = -\pderiv{}{\beta} (\ln \partfn)$.
+\end{itemize}
+
+We now take up several important examples in statistical mechanics using the CE (describing system at fixed T).
+
+\section*{Classical Ideal Gas (Monatomic)}
+
+We use the classical description where microstates correspond to phase space cells. From QM, the volume of a fundamental cell is $(2\pi\hbar)^S$ for $S$ degrees of freedom.
+The (provisional) classical partition function $Z'$ is given by the phase space integral:
+\[ Z' = \int \frac{d^S q \, d^S p}{(2\pi\hbar)^S} e^{-\beta E(q,p)} \]
+(We use $Z'$ because this formula needs correction for identical particles).
+Use Cartesian coordinates for $N$ particles in 3D. $S=3N$.
+$q = (\vec{x}_1, \dots, \vec{x}_N)$, $p = (\vec{p}_1, \dots, \vec{p}_N)$.
+$d^S q = \prod_{i=1}^N d^3 x_i$, $d^S p = \prod_{i=1}^N d^3 p_i$.
+The energy is $E(q,p) = K(p) + U(q)$, where $K(p) = \sum_{i=1}^N \frac{|\vec{p}_i|^2}{2m}$ and $U(q) = U(\vec{x}_1, \dots, \vec{x}_N)$.
+\[ Z' = \frac{1}{(2\pi\hbar)^{3N}} \int \left( \prod_{i=1}^N d^3 p_i \right) e^{-\beta K(p)} \int \left( \prod_{i=1}^N d^3 x_i \right) e^{-\beta U(q)} \]
+The $p$ and $q$ integrations factorize.
+
+For an \textbf{ideal gas}, we neglect interactions between particles, so $U(q)=0$.
+The position integral becomes:
+\[ \int \left( \prod_{i=1}^N d^3 x_i \right) e^0 = \left( \int d^3 x \right)^N = V^N \]
+(Assuming the gas is confined to a volume $V$).
+The momentum integral also factorizes because $K(p)$ is a sum of independent terms:
+\[ \int \left( \prod_{i=1}^N \frac{d^3 p_i}{(2\pi\hbar)^3} \right) e^{-\beta \sum_j p_j^2/(2m)} = \prod_{i=1}^N \left[ \int \frac{d^3 p_i}{(2\pi\hbar)^3} e^{-\beta p_i^2/(2m)} \right] \]
+\[ = \left[ \int \frac{d^3 p}{(2\pi\hbar)^3} e^{-\beta p^2/(2m)} \right]^N \]
+Evaluate the single-particle integral:
+\[ \int \frac{d^3 p}{(2\pi\hbar)^3} e^{-\beta p^2/(2m)} = \frac{1}{(2\pi\hbar)^3} \left( \int_{-\infty}^{\infty} dp_x e^{-\beta p_x^2/(2m)} \right)^3 \]
+Using $\int_{-\infty}^{\infty} e^{-ay^2} dy = \sqrt{\pi/a}$:
+\[ \int_{-\infty}^{\infty} dp_x e^{-\beta p_x^2/(2m)} = \sqrt{\frac{\pi}{\beta/(2m)}} = \sqrt{\frac{2\pi m}{\beta}} = \sqrt{2\pi m T} \]
+So the 3D integral is $\frac{1}{(2\pi\hbar)^3} (2\pi m T)^{3/2} = \left( \frac{m T}{2\pi\hbar^2} \right)^{3/2}$.
+Let $\lambda_{th} = \frac{h}{\sqrt{2\pi m T}} = \frac{2\pi\hbar}{\sqrt{2\pi m T}}$ be the thermal de Broglie wavelength.
+Then the integral is $\left( \frac{2\pi m T}{h^2} \right)^{3/2} = \frac{1}{\lambda_{th}^3}$.
+The N-particle momentum integral is $(1/\lambda_{th}^3)^N$.
+
+Combining factors for $Z'$:
+\[ Z' = V^N \left( \frac{1}{\lambda_{th}^3} \right)^N = \left( \frac{V}{\lambda_{th}^3} \right)^N \]
+It is convenient to define the single-particle partition function $\xi$:
+\[ \xi = \frac{V}{\lambda_{th}^3} = V \left( \frac{m T}{2\pi\hbar^2} \right)^{3/2} = V \left( \frac{m}{2\pi\hbar^2\beta} \right)^{3/2} \]
+Then $Z' = \xi^N$.
+
+\subsection*{Thermodynamics from $Z'$}
+Let's calculate thermodynamic properties using $F' = -T \ln Z' = -NT \ln \xi$.
+\[ F' = -NT \left[ \ln V + \frac{3}{2} \ln T + \frac{3}{2} \ln\left(\frac{m}{2\pi\hbar^2}\right) \right] \]
+(Using $T$ in energy units, $k_B=1$).
+\begin{itemize}
+    \item Pressure: $p = -(\partial F' / \partial V)_{T,N} = - (-NT/V) = NT/V \implies pV = NT$. (Correct ideal gas law). $\checkmark$
+    \item Energy: $\avg{E} = -T^2 (\partial (F'/T) / \partial T)_V = -T^2 (\partial (-N \ln \xi) / \partial T)_V$.
+    $F'/T = -N [\ln V + \frac{3}{2} \ln T + \text{const}]$.
+    $\partial(F'/T)/\partial T = -N (\frac{3}{2} \frac{1}{T})$.
+    $\avg{E} = -T^2 (-N \frac{3}{2 T}) = \frac{3}{2} NT$. (Correct energy). $\checkmark$
+    \item Heat Capacity: $C_V = (\partial \avg{E} / \partial T)_V = \frac{3}{2} N$. (Correct). $\checkmark$
+    \item Entropy: $S = -(\partial F' / \partial T)_{V,N}$.
+    $S = - [-N(\ln V + \frac{3}{2}\ln T + C) - NT(\frac{3}{2}\frac{1}{T})]$.
+    $S = N[\ln V + \frac{3}{2}\ln T + C] + \frac{3}{2}N$. Let $\sigma = C + 3/2$.
+    $S = N[\ln V + \frac{3}{2}\ln T + \sigma]$ where $\sigma = \frac{3}{2} \ln(\frac{m}{2\pi\hbar^2}) + \frac{3}{2}$.
+\end{itemize}
+However, this expression for $S$ is incorrect!
+
+\subsection*{Gibbs Paradox}
+The issue is that the entropy $S = N[\ln V + \frac{3}{2}\ln T + \sigma]$ derived from $Z'$ is not properly extensive. An extensive quantity should scale linearly with system size. If we rescale $N \to \lambda N$ and $V \to \lambda V$ (keeping density $N/V$ and $T$ constant), we expect $S \to \lambda S$.
+But from the formula:
+$S \to \lambda N [\ln(\lambda V) + \frac{3}{2}\ln T + \sigma] = \lambda N [\ln V + \frac{3}{2}\ln T + \sigma] + \lambda N \ln \lambda = \lambda S_{original} + \lambda N \ln \lambda$.
+The extra term $\lambda N \ln \lambda$ shows $S$ is not extensive.
+
+This leads to a paradox when considering the mixing of two identical gases.
+Initial state: Gas 1 ($N_1, V_1, T$) and Gas 2 ($N_2, V_2, T$) separated by partition. Assume same gas, same density $n=N_1/V_1 = N_2/V_2$.
+$S_i = S_1 + S_2 = N_1[\ln V_1 + \Delta(T)] + N_2[\ln V_2 + \Delta(T)]$ where $\Delta(T) = \frac{3}{2}\ln T + \sigma$.
+Final state: Partition removed. Total system ($N=N_1+N_2, V=V_1+V_2, T$). Density $N/V=n$ is unchanged.
+$S_f = N[\ln V + \Delta(T)]$.
+Entropy change upon mixing: $\Delta S_{mix} = S_f - S_i$.
+$\Delta S_{mix} = N \ln V - N_1 \ln V_1 - N_2 \ln V_2$.
+Using $N_1=nV_1, N_2=nV_2, N=n(V_1+V_2)$:
+$\Delta S_{mix} = n(V_1+V_2) \ln(V_1+V_2) - nV_1 \ln V_1 - nV_2 \ln V_2$.
+Let $x_1=V_1/V, x_2=V_2/V$, so $x_1+x_2=1$. $N_1=n x_1 V, N_2=n x_2 V, N=nV$.
+$\Delta S_{mix} = N \ln V - (N x_1) \ln(x_1 V) - (N x_2) \ln(x_2 V)$
+$\Delta S_{mix} = N \ln V - N x_1 (\ln x_1 + \ln V) - N x_2 (\ln x_2 + \ln V)$
+$\Delta S_{mix} = N (1 - x_1 - x_2) \ln V - N (x_1 \ln x_1 + x_2 \ln x_2)$
+$\Delta S_{mix} = -N (x_1 \ln x_1 + x_2 \ln x_2)$.
+Since $0 < x_1, x_2 < 1$, $\ln x_1 < 0$ and $\ln x_2 < 0$. So $\Delta S_{mix} > 0$.
+Example: $V_1=V_2=V/2$. $N_1=N_2=N/2$. $x_1=x_2=1/2$.
+$\Delta S_{mix} = -N (\frac{1}{2}\ln\frac{1}{2} + \frac{1}{2}\ln\frac{1}{2}) = -N \ln\frac{1}{2} = N \ln 2 > 0$.
+The calculation predicts an entropy increase even though removing the partition between identical gases at the same T, p (or T, n) should result in no macroscopic change, hence $\Delta S_{mix}$ should be 0. This is the Gibbs Paradox.
+
+\subsection*{Resolution: Indistinguishable Particles}
+
+Resort to QM: Identical particles are fundamentally indistinguishable. Swapping two identical particles does not lead to a new distinct microstate.
+Our classical partition function $Z'$ overcounted the states because configurations related by permutations of identical particles were treated as distinct.
+To fix this, divide $Z'$ by $N!$ (the number of permutations of N particles).
+The correct classical partition function for $N$ identical particles is:
+\[ Z = \frac{Z'}{N!} = \frac{1}{N!} \int \frac{d^{3N}q \, d^{3N}p}{(2\pi\hbar)^{3N}} e^{-\beta E(q,p)} \]
+(We will derive this $1/N!$ factor explicitly from QM later).
+
+Returning to the ideal gas: $Z = Z'/N! = \xi^N / N!$.
+Corrected Helmholtz Free Energy: $F = -T \ln Z = -T (\ln Z' - \ln N!) = F' - T(-\ln N!)$.
+Using Stirling's approximation $\ln N! \approx N \ln N - N$:
+$F \approx F' + T (N \ln N - N)$.
+Substituting $F' = -NT[\ln V + \frac{3}{2}\ln T + \sigma - \frac{3}{2}]$:
+$F \approx -NT[\ln V + \frac{3}{2}\ln T + \sigma - \frac{3}{2}] + NT \ln N - NT$
+$F \approx -NT[\ln V - \ln N + \frac{3}{2}\ln T + \sigma - \frac{3}{2} + 1]$
+\[ F \approx -NT \left[ \ln\left(\frac{V}{N}\right) + \frac{3}{2}\ln T + \sigma_0 - 1 \right] \]
+where $\sigma_0 = \sigma + 1 = \frac{3}{2} \ln(\frac{m}{2\pi\hbar^2}) + \frac{5}{2}$.
+This is the Sackur-Tetrode equation for $F$. Note $F$ now depends on density $V/N$.
+
+Corrected Entropy: $S = -(\partial F / \partial T)_{V,N}$.
+\[ S = N \left[ \ln\left(\frac{V}{N}\right) + \frac{3}{2}\ln T + \sigma_0 - 1 \right] + NT \left( \frac{3}{2T} \right) \]
+\[ S = N \left[ \ln\left(\frac{V}{N}\right) + \frac{3}{2}\ln T + \sigma_0 \right] \]
+where $\sigma_0 = \frac{3}{2} \ln(\frac{m}{2\pi\hbar^2}) + \frac{5}{2}$.
+
+Check extensivity: $V \to \lambda V, N \to \lambda N$. The term $V/N$ remains constant.
+$S \to \lambda N [\ln(V/N) + \frac{3}{2}\ln T + \sigma_0] = \lambda S$. The corrected entropy is properly extensive. $\checkmark$
+
+Check Gibbs Paradox resolution: Use corrected entropy $S = N[\ln(V/N) + \Delta(T)]$.
+$S_i = S_1 + S_2 = N_1[\ln(V_1/N_1) + \Delta] + N_2[\ln(V_2/N_2) + \Delta]$.
+$S_f = (N_1+N_2)[\ln((V_1+V_2)/(N_1+N_2)) + \Delta]$.
+Since density $n = N_1/V_1 = N_2/V_2 = (N_1+N_2)/(V_1+V_2) = N/V$, the terms $\ln(V/N)$ are all equal to $\ln(1/n)$.
+$S_i = N_1[\ln(1/n)+\Delta] + N_2[\ln(1/n)+\Delta]$.
+$S_f = (N_1+N_2)[\ln(1/n)+\Delta]$.
+$\Delta S_{mix} = S_f - S_i = (N_1+N_2)[\dots] - N_1[\dots] - N_2[\dots] = 0$. $\checkmark$
+The paradox is resolved by correctly accounting for indistinguishability using the $1/N!$ factor.
+
+\subsection*{Factorization of Z (General)}
+Even with interactions $U(q) \neq 0$, the classical partition function $Z=Z'/N!$ factorizes:
+\[ Z = \frac{1}{N!} \left[ \int \prod \frac{d^3 p_i}{(2\pi\hbar)^3} e^{-\beta K(p)} \right] \left[ \int \prod d^3 x_i e^{-\beta U(q)} \right] \]
+The momentum integral part gave $(1/\lambda_{th}^3)^N$.
+\[ Z = \frac{1}{N! \lambda_{th}^{3N}} \int \prod_{i=1}^N d^3 x_i e^{-\beta U(q)} \]
+Let $Z_{conf} = \int \prod_{i=1}^N d^3 x_i e^{-\beta U(q)}$ be the "Configurational Integral".
+\[ Z = \frac{1}{N! \lambda_{th}^{3N}} Z_{conf} \]
+The challenge of dealing with interacting systems lies in evaluating the configurational integral. We will return to interacting systems later.
+
+\end{document}

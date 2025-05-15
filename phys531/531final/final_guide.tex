@@ -78,7 +78,7 @@ Our plan is to dissect this Hamiltonian. We'll start by analyzing the two extrem
 
 Let's formalize our quantum players. The core degree of freedom is the superconducting phase difference \(\hat{\phi}\), which behaves mathematically like an angle, confined to \(\phi \in [-\pi, \pi)\). Its conjugate partner is the charge operator \(\hat{N}\), which counts the number of excess Cooper pairs (fundamental charge \(2e\)) residing on a small superconducting "island" (see Figure~\ref{fig:cpb_schematic}). Because \(\phi\) is an angle, adding \(2\pi\) shouldn't change the physics, a periodicity inherent in the system.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \begin{tikzpicture}[
         circuit ee IEC,
@@ -206,7 +206,7 @@ E_N^{(0)}(n_g) = 4 E_C (N - n_g)^2
 \end{equation}
 These are plotted against the gate charge \(n_g\) in Figure~\ref{fig:charging_levels}. Each energy level forms a parabola, centered at \(n_g = N\). Notice that the parabolas for adjacent charge states (like \(N=0\) and \(N=1\)) cross exactly when \(n_g\) is a half-integer (\(n_g = 1/2, 3/2, \dots\)). At these special "degeneracy points," the system doesn't care energetically whether it has charge \(N\) or \(N+1\).
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{fig_charge_levels.png}
     \caption[Charging energy levels vs. gate charge]{The energy levels \(E_N^{(0)}\) versus gate charge \(n_g\). Each parabola corresponds to a definite number \(N\) of excess Cooper pairs. Degeneracy occurs where parabolas intersect (e.g., \(N=0\) and \(N=1\) are degenerate at \(n_g=1/2\)).}
@@ -269,7 +269,7 @@ Where in \(n_g\) space is the effect of the perturbation strongest?
 
 Standard perturbation theory relies on energy denominators being large. It breaks down when levels become degenerate! Looking at Figure~\ref{fig:charging_levels}, the unperturbed energies \(E_N^{(0)}\) are degenerate (or nearly degenerate) precisely at the half-integer values of \(n_g\). Near these points, the perturbation \(V\) has its most dramatic effect, mixing the degenerate states and lifting the degeneracy. This is where we need degenerate perturbation theory.
 
-\subsection[The Charge Qubit: Zooming in near n_g = 1/2]{The Charge Qubit: Zooming in near \(n_g = 1/2\)}
+\subsection[The Charge Qubit: Zooming in near ng = 1/2]{The Charge Qubit: Zooming in near \(n_g = 1/2\)}
 \label{subsec:charge_qubit}
 
 Let's focus on the most important degeneracy point, \(n_g = 1/2\), where \(E_0^{(0)}\) and \(E_1^{(0)}\) cross.  These two states, \(|0\rangle\) and \(|1\rangle\), form the basis for the traditional Cooper Pair Box operated as a “charge qubit.”  We need to find how the perturbation \(V\) acts within this two-dimensional subspace.  We construct the Hamiltonian matrix \(H_{eff}\) in the basis \(\{|0\rangle, |1\rangle\}\).
@@ -331,7 +331,7 @@ E_{\pm}(n_g) = \pm \sqrt{\epsilon_0(n_g)^2 + (E_J^{(1)}/2)^2} = \pm \sqrt{[4 E_C
 \end{equation}
 This energy spectrum is plotted in Figure~\ref{fig:avoided_crossing}. Instead of crossing, the levels repel each other, forming an "avoided crossing" with a minimum energy gap (the qubit splitting) of \(E_J^{(1)}\) exactly at the degeneracy point \(n_g=1/2\).
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{fig_avoid_crossing.png}
     \caption[Avoided crossing near n\_g=1/2]{Energy levels near the \(n_g = 1/2\) degeneracy point. Dashed lines are the unperturbed energies \(E_0^{(0)}, E_1^{(0)}\). Solid lines show the actual energies \(E_{\pm}\) (Eq.~\ref{eq:charge_qubit_energies}), demonstrating the avoided crossing caused by the Josephson coupling \(E_J^{(1)}\).}
@@ -344,7 +344,7 @@ P(N=0) = \frac{1}{2} \left( 1 + \frac{-\epsilon_0}{\sqrt{\epsilon_0^2 + (E_J^{(1
 \end{equation}
 As we tune \(n_g\) across \(1/2\), this probability smoothly transitions from nearly 1 (mostly \(|0\rangle\) state for \(n_g \ll 1/2\)) to nearly 0 (mostly \(|1\rangle\) state for \(n_g \gg 1/2\)). At \(n_g = 1/2\), \(P(N=0) = 1/2\), an equal superposition. Figure~\ref{fig:charge_prob} shows this for a specific parameter choice.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{fig_charge_prob.png}
     \caption[Ground state charge probability near n\_g=1/2]{Probability \(P(N=0)\) that the ground state has charge 0, plotted versus the deviation from the degeneracy point, \(x = n_g - 1/2\), for \(E_J^{(1)} = 0.08 E_C\). The sharp dependence on \(n_g\) highlights the qubit's sensitivity to gate charge fluctuations.}

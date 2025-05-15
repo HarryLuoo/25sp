@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb} % Needed for \eth
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots} % For plots
+\usepackage{ulem}     % For underline, using normalem to avoid messing with \emph
+\usepackage{tcolorbox} % For boxing equations if needed
+\usepackage{braket}    % For QM state notation if needed
+
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric, patterns, calc} % Added calc library
+\pgfplotsset{compat=1.18} % Use a recent PGFPlots version
+
+% Custom commands (optional)
+\newcommand{\avg}[1]{\overline{#1}}
+\newcommand{\prob}[1]{P(#1)}
+\newcommand{\ProbDens}[1]{\mathcal{P}(#1)} % Using script P for density
+\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\dd}[1]{\mathrm{d}#1} % Differential d
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\muState}{\mu\text{-state}} % Microstate
+\newcommand{\OmegaE}{\Omega(E)}
+\newcommand{\omegaE}{\omega(E)}
+\newcommand{\PhiE}{\Phi(E)}
+\newcommand{\deltaE}{\delta E}
+\newcommand{\ethbar}{\text{\it{đ}}} % \eth symbol for inexact differential
+\newcommand{\kb}{k_B} % Boltzmann constant (set to 1 for calculations)
+\newcommand{\gasR}{R} % Ideal gas constant
+\newcommand{\partfn}{Z} % Partition function symbol
+\newcommand{\grandpartfn}{\mathcal{Z}} % Grand partition function symbol
+\newcommand{\lambdaT}{\lambda_{th}} % Thermal wavelength
+\newcommand{\eps}{\epsilon}
+\newcommand{\nbar}{\overline{n}} % Mean occupation number
+\newcommand{\ef}{\epsilon_F} % Fermi energy
+\newcommand{\kf}{k_F} % Fermi wavevector
+\newcommand{\tf}{T_F} % Fermi temperature
+\newcommand{\rhoeps}{\rho(\epsilon)} % Density of states per unit energy
+\newcommand{\tc}{T_c} % Critical Temperature (BEC)
+
+\title{Physics 415 - Lecture 34: Bose Gas and Bose-Einstein Condensation}
+\date{April 16, 2025}
+\author{} % Author not specified
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section*{Summary}
+
+\begin{itemize}
+    \item Bose Gas (BG): Gas of weakly interacting particles obeying Bose-Einstein (BE) statistics.
+    \item GCE description (fixed $T, \mu, V$):
+        \begin{itemize}
+            \item Grand Partition Function: $\grandpartfn = \prod_r \left( \sum_{n_r=0}^{\infty} e^{-\beta(\eps_r-\mu)n_r} \right) = \prod_r \frac{1}{1 - e^{-\beta(\eps_r-\mu)}}$. Converges only if $\eps_r - \mu > 0$ for all $r$, i.e., $\mu < \eps_{min}$. Usually $\eps_{min}=0$, so $\mu < 0$.
+            \item Grand Potential: $\Phi = -T \ln \grandpartfn = T \sum_r \ln(1 - e^{-\beta(\eps_r-\mu)})$.
+            \item Mean occupation number: $\nbar_r = \frac{1}{e^{\beta(\eps_r-\mu)} - 1}$.
+        \end{itemize}
+    \item Sum over states $r \to g \int d\eps \rho(\eps)$, where $\rho(\eps) = \frac{V}{4\pi^2}(\frac{2m}{\hbar^2})^{3/2} \sqrt{\eps}$ (spatial DOS) and $g=2J+1$ is spin degeneracy.
+        \begin{itemize}
+            \item $\Phi = g T \int_0^\infty d\eps \rho(\eps) \ln(1 - e^{-\beta(\eps-\mu)})$.
+            \item $N = \sum_r \nbar_r = g \int_0^\infty d\eps \rho(\eps) \frac{1}{e^{\beta(\eps-\mu)} - 1}$. This determines $\mu(T, N, V)$.
+        \end{itemize}
+\end{itemize}
+
+\section*{Bose-Einstein Condensation (BEC)}
+
+Properties of the Bose gas at low temperatures are dramatically different from those of the Fermi gas. We will see the phenomenon of Bose-Einstein condensation = macroscopic occupation of the ground state, even for $T>0$.
+
+For this discussion, set the zero of energy such that the lowest single-particle state has $\eps_0 = 0$. The condition for convergence of $\grandpartfn$ then requires $\mu < 0$.
+
+Consider the evolution of $\mu$ as $T$ changes, determined by the constraint on the total number of particles $N$.
+\[ N = g \int_0^\infty d\eps \frac{\rho(\eps)}{e^{\beta(\eps-\mu)} - 1} \]
+Substitute $\rho(\eps) = A V \sqrt{\eps}$ and change variables $x=\beta\eps$:
+\[ N = g AV \int_0^\infty \frac{\sqrt{\eps} d\eps}{e^{\beta\eps}e^{-\beta\mu} - 1} = g AV T^{3/2} \int_0^\infty \frac{\sqrt{x} dx}{z^{-1}e^x - 1} \]
+where $z = e^{\beta\mu} = e^{\mu/T}$ is the fugacity.
+Using $AV = \frac{V}{2\pi^2} (\frac{2m}{\hbar^2})^{3/2} \sqrt{2} = \frac{V}{2\pi^2} (\frac{m T \lambdaT^2}{\pi \hbar^2 T})^{3/2}$? No.
+Use $A V T^{3/2} = \frac{V}{2\pi^2} (\frac{m}{\hbar^2})^{3/2} \sqrt{2} T^{3/2} = \frac{V}{2\pi^2} (\frac{mT}{2\pi\hbar^2})^{3/2} \frac{(2\pi)^{3/2}}{\sqrt{2}} 2\pi^2$? No.
+Use $\lambdaT = h/\sqrt{2\pi m T}$.
+\[ N = g \frac{V}{\lambdaT^3} \left[ \frac{2}{\sqrt{\pi}} \int_0^\infty \frac{\sqrt{x} dx}{z^{-1}e^x - 1} \right] \]
+Let $F(z) = \frac{2}{\sqrt{\pi}} \int_0^\infty \frac{\sqrt{x} dx}{z^{-1}e^x - 1}$.
+\[ n = \frac{N}{V} = \frac{g}{\lambdaT^3} F(z) \]
+Since $\mu < 0$, the fugacity $z = e^{\mu/T}$ lies in the range $0 < z < 1$.
+The function $F(z)$ behaves as follows:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Fugacity $z=e^{\mu/T}$}, ylabel={$F(z)$},
+    xmin=0, xmax=1.1, ymin=0, ymax=3,
+    axis lines=left,
+    xtick={0, 1}, ytick={0},
+    extra y ticks={2.612}, extra y tick labels={$\zeta(3/2)\approx 2.612$},
+    extra y tick style={grid=major, yticklabel style={anchor=east}}
+]
+\addplot [domain=0:1, samples=50, smooth, thick, blue] {x + x^2/2^(1.5) + x^3/3^(1.5)}; % Approximation g_3/2(z)
+\draw [dashed] (axis cs:1, 0) -- (axis cs:1, 2.612);
+\node at (axis cs:0.5, 1) {$F(z)$ increases};
+\node at (axis cs:1, 2.612) [anchor=south east] {$F(1)=\zeta(3/2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+$F(z)$ increases monotonically with $z$, from $F(0)=0$ to a maximum finite value $F(1)$.
+$F(1) = \frac{2}{\sqrt{\pi}} \int_0^\infty \frac{\sqrt{x} dx}{e^x - 1}$. This integral evaluates to $\Gamma(3/2)\zeta(3/2) = (\sqrt{\pi}/2)\zeta(3/2)$.
+So, $F(1) = \frac{2}{\sqrt{\pi}} (\frac{\sqrt{\pi}}{2}) \zeta(3/2) = \zeta(3/2) \approx 2.612$, where $\zeta$ is the Riemann zeta function.
+
+Now consider fixed density $n$. The relation is $n \lambdaT^3 / g = F(z)$.
+As $T$ decreases, $\lambdaT \propto 1/\sqrt{T}$ increases, so $n\lambdaT^3/g$ increases. To maintain the equality, $F(z)$ must increase, which means $z=e^{\mu/T}$ must increase (i.e., $\mu$ must become less negative, approaching 0).
+
+However, there is a limiting value, since $z \le 1$ (or $\mu \le 0$). This limit is reached when $n\lambdaT^3/g$ reaches its maximum possible value $F(1)$. This occurs at a critical temperature $T_c$:
+\[ n \frac{\lambda T_c^3}{g} = \zeta(3/2) \]
+\[ \frac{N}{V} \frac{1}{g} \left( \frac{2\pi\hbar^2}{m T_c} \right)^{3/2} = \zeta(3/2) \]
+Solving for $T_c$:
+\[ T_c(n) = \frac{2\pi\hbar^2}{m} \left( \frac{n}{g\zeta(3/2)} \right)^{2/3} \approx \frac{3.313}{g^{2/3}} \frac{\hbar^2}{m} n^{2/3} \]
+($T_c$ in energy units).
+
+What happens for $T < T_c$? The equation $n \lambdaT^3 / g = F(z)$ seems impossible to satisfy, since $n\lambdaT^3/g > \zeta(3/2)$ but $F(z) \le \zeta(3/2)$. Demanding $\mu=0$ ($z=1$) would imply $N = g \int d\eps \rho(\eps)/(e^{\beta\eps}-1)$ which gives a number of particles $N_{ex} = N (T/T_c)^{3/2} < N$. Where are the other particles?
+
+Resolution: The replacement of the sum $\sum_r$ by the integral $\int d\eps \rho(\eps)$ is invalid for the ground state $\eps_0=0$, because $\rho(\eps) \propto \sqrt{\eps} \to 0$ as $\eps \to 0$, effectively ignoring the ground state.
+We must treat the ground state ($r=0, \eps_0=0$) separately in the sum:
+\[ N = \sum_r \nbar_r = \nbar_0 + \sum_{r>0} \nbar_r \]
+\[ N = \frac{1}{e^{\beta(0-\mu)} - 1} + \sum_{r>0} \frac{1}{e^{\beta(\eps_r-\mu)} - 1} \]
+Let $N_0 = \nbar_0$ be the number of particles in the ground state. The sum over excited states $r>0$ can be accurately replaced by the integral for large $V$:
+\[ N_{\eps>0} = \sum_{r>0} \nbar_r \approx g \int_0^\infty d\eps \frac{\rho(\eps)}{e^{\beta(\eps-\mu)} - 1} = N \left(\frac{T}{T_c}\right)^{3/2} \frac{F(z)}{F(1)} \]
+So, $N = N_0 + N_{\eps>0}$.
+
+For $T > T_c$, we must have $\mu < 0$ ($z<1$). In this regime, $N_0 = 1/(z^{-1}-1)$. Since $z<1$, $z^{-1}>1$, $N_0$ is finite and non-macroscopic. So effectively $N \approx N_{\eps>0}$, and the equation $n \lambdaT^3 / g = F(z)$ determines $z$ (and $\mu$).
+For $T < T_c$, the excited states cannot accommodate all $N$ particles if $\mu<0$. The equation $N = N_0 + N_{\eps>0}$ can only be satisfied if the chemical potential becomes essentially fixed at $\mu = 0$ ($z=1$), allowing the ground state occupation $N_0$ to become macroscopic.
+For $T < T_c$, we set $\mu=0$. Then:
+\[ N_{\eps>0} = g \int_0^\infty d\eps \frac{\rho(\eps)}{e^{\beta\eps} - 1} = g \frac{V}{\lambdaT^3} F(1) = g \frac{V}{\lambdaT^3} \zeta(3/2) \]
+Using $N = g \frac{V}{\lambda T_c^3} \zeta(3/2)$, we get:
+\[ N_{\eps>0} = N \frac{\lambda T_c^3}{\lambdaT^3} = N \left( \frac{T}{T_c} \right)^{3/2} \]
+The number of particles in the ground state (the condensate) is:
+\[ N_0(T) = N - N_{\eps>0} = N \left[ 1 - \left(\frac{T}{T_c}\right)^{3/2} \right] \quad (\text{for } T \le T_c) \]
+$N_0(T)=0$ for $T>T_c$. This macroscopic occupation of the $\eps_0=0$ state below $T_c$ is \textbf{Bose-Einstein Condensation}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$T / T_c$}, ylabel={$N_0 / N$},
+    xmin=0, xmax=1.5, ymin=0, ymax=1.1,
+    axis lines=left,
+    xtick={1}, xticklabels={$T_c$},
+    ytick={1},
+    title={Condensate Fraction vs Temperature}
+]
+\addplot [domain=0:1, samples=100, smooth, thick, blue] {1 - x^(1.5)};
+\addplot [domain=1:1.5, samples=50, thick, blue] {0};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Thermodynamics below $T_c$}
+
+For $T < T_c$, we have $\mu=0$.
+\textbf{Energy:} The condensate particles ($N_0$) are in state $\eps_0=0$ and do not contribute to energy.
+\[ E = \sum_{r>0} \nbar_r \eps_r = g \int_0^\infty d\eps \frac{\rho(\eps) \eps}{e^{\beta\eps} - 1} \]
+The integral can be evaluated: $E = g V (\frac{m}{2\pi\hbar^2})^{3/2} T^{5/2} [\Gamma(5/2)\zeta(5/2)]$.
+$E = N \frac{(3/2)\zeta(5/2)}{\zeta(3/2)} T_c (T/T_c)^{5/2} \approx 0.770 N T_c (T/T_c)^{5/2}$.
+Let $E(T_c)$ be the energy at $T=T_c$. Then $E(T) = E(T_c) (T/T_c)^{5/2}$ for $T < T_c$.
+
+\textbf{Pressure:} Using $pV = \frac{2}{3}E$:
+\[ p(T) = \frac{2}{3} \frac{E(T)}{V} = p(T_c) \left( \frac{T}{T_c} \right)^{5/2} \]
+where $p(T_c) = \frac{2}{3} E(T_c)/V \approx 0.513 n T_c$.
+Note that for $T < T_c$, the pressure $p(T)$ depends only on $T$, not on $V$ or $n$. This is because adding more particles (increasing $n$) at fixed $T < T_c$ only increases the condensate fraction $N_0$; the number of excited particles $N_{\eps>0}$ and thus the pressure remains unchanged.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$T$}, ylabel={$p$},
+    xmin=0, xmax=1.5, ymin=0, ymax=1.2,
+    axis lines=left,
+    xtick={1}, xticklabels={$T_c$},
+    ytick=\empty,
+    title={Pressure vs Temperature for Bose Gas}
+]
+% T < Tc: p ~ T^(5/2)
+\addplot [domain=0:1, samples=50, smooth, thick, blue] {x^(2.5)};
+% T > Tc: p = nT (ideal gas) - schematic linear increase
+\addplot [domain=1:1.5, samples=10, thick, dashed, red] {1 + 1.5*(x-1)};
+\node at (axis cs: 0.5, 0.1) [anchor=north] {$p \propto T^{5/2}$};
+\node at (axis cs: 1.25, 1.2) [anchor=south] {$p \propto T$ (Classical)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Heat Capacity:} $C_V = (\partial E / \partial T)_V$.
+For $T < T_c$: $C_V = \deriv{}{T} [E(T_c) (T/T_c)^{5/2}] = E(T_c) \frac{5}{2} T^{3/2} / T_c^{5/2} = \frac{5}{2} \frac{E(T)}{T}$.
+$C_V(T) = C_V(T_c) (T/T_c)^{3/2}$, where $C_V(T_c) = \frac{5}{2} E(T_c)/T_c \approx 1.925 N$.
+Compare to classical value $C_V = \frac{3}{2}N = 1.5 N$. Note $C_V(T_c) > 1.5 N$.
+The specific heat shows a cusp at $T=T_c$, where the slope $\partial C_V / \partial T$ is discontinuous.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$T / T_c$}, ylabel={$C_V / N$},
+    xmin=0, xmax=1.5, ymin=0, ymax=2.2,
+    axis lines=left,
+    xtick={1}, xticklabels={$T_c$},
+    ytick={1.5, 1.925}, yticklabels={$3/2$, $1.925$},
+    extra y tick style={grid=major, yticklabel style={font=\tiny}},
+    title={Heat Capacity of Bose Gas}
+]
+% T < Tc: Cv ~ T^(3/2)
+\addplot [domain=0:1, samples=100, smooth, thick, blue] {1.925*x^(1.5)};
+% T > Tc: Approaches classical 3/2 N from above
+\addplot [domain=1:1.5, samples=50, thick, dashed, red] {1.5 + 0.425*exp(-2*(x-1))}; % Schematic approach to 1.5
+\draw [dotted] (axis cs:0, 1.5) -- (axis cs:1.5, 1.5);
+\node at (axis cs:0.5, 0.5) {$C_V \propto T^{3/2}$};
+\node at (axis cs:1, 1.925) [circle, fill=black, inner sep=1pt] {};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+(Note: The cusp is specific to non-interacting particles. Interactions tend to modify the singularity, e.g., making it stronger like in superfluid $^4$He).
+
+Qualitative argument for $C_V \sim T^{3/2}$: At low $T$, only low energy states $\eps \lesssim T$ are significantly excited. Number of excited states $N_{excited} \approx g \int_0^T \rho(\eps) d\eps \propto V \int_0^T \sqrt{\eps} d\eps \propto V T^{3/2}$. Each carries energy $\sim T$. Total excitation energy $\Delta E \sim N_{excited} T \propto T^{5/2}$. $C_V = dE/dT \propto T^{3/2}$. $\checkmark$
+
+\section*{BEC in the Real World}
+
+\begin{itemize}
+    \item BEC of dilute alkali gases ($^{87}$Rb, $^{23}$Na, $^7$Li...) first observed in 1995 (Cornell/Wieman, Ketterle). These are closest to the ideal BEC theory developed here.
+    \item Superfluidity of liquid $^4$He (below $T \approx 2.17$ K). $^4$He atoms are bosons. While liquid interactions are strong, the phenomenon is understood as a BEC.
+    \item Superfluidity of liquid $^3$He (below $T \approx 2$ mK). $^3$He atoms are fermions. Fermions first "pair" up (like electrons in superconductivity) to form effective bosons, which then undergo BEC.
+    \item Superconductivity: Electrons (fermions) in a metal form "Cooper pairs" (effective bosons) which undergo BEC, leading to superconductivity.
+\end{itemize}
+
+\end{document}
